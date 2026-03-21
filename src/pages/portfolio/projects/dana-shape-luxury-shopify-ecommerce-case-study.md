@@ -111,7 +111,7 @@ This user-centered UX strategy minimizes friction and increases conversion oppor
 
 <div style="text-align: center; margin: 2rem 0;">
   <a href="https://danashape.com/" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; border-radius: 9999px; background: linear-gradient(to right, #2bd6c1, #0dbc82); color: #171717 !important; font-weight: 600; text-decoration: none !important; -webkit-text-fill-color: #171717 !important; font-size: 0.875rem;">
-    Visit Live Siteo →
+    Visit Live Site →
   </a>
 </div>
 

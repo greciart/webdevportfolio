@@ -49,7 +49,7 @@ I designed this platform’s architecture to be gamification-ready, leveraging G
 ### 🧠 Empowering ADHD & Neurodivergent Learners
 Standard educational systems often fail to support the executive functions of neurodivergent brains. This UI specifically addresses the needs of users with ADHD by providing:
 
-**Instant Feedback Loops:** Visual cues such as badges and experience points (XP) provide the immediate dopamine rewards necessary to maintain motivation and focus, something essential to AHDH brains.
+**Instant Feedback Loops:** Visual cues such as badges and experience points (XP) provide the immediate dopamine rewards necessary to maintain motivation and focus, something essential to ADHD brains.
 
 **Visual Progress Tracking:** Clear, interactive progress bars break down overwhelming courses into manageable "quests," helping users overcome the "wall of awful" often associated with complex tasks.
 

@@ -8,18 +8,18 @@ image:
   alt: "Photo of Grecia Valentina Pernía Valero (Grevaleart) for the blog"
 ---
 
-I am **Grecia V.**, a *UI Designer* and *Web Developer* focused on building digital experiences that captivate and convert. My work lives at the intersection of premium visual design, frontend development, and 3D interactivity.
+I am a UI Designer and Web Developer focused on creating digital experiences that engage users and deliver real results. My work sits at the intersection of visual design, frontend development, and interactive web experiences.
 
-I specialize in *User Interface (UI)* design with a strong foundation in *User Experience (UX)*. I have extensive experience working with entrepreneurs and medium-to-large companies across sectors like E-commerce, landing pages, corporate services, and digital marketing platforms (Kajabi).
+I specialize in User Interface (UI) design, supported by a strong foundation in User Experience (UX). I have worked with entrepreneurs and growing companies across industries such as e-commerce, landing pages, corporate websites, and digital platforms like Kajabi.
 
 ## What I Bring to Your Project
-🎨**UI/UX Design:** High-fidelity prototyping in Figma focused on conversion, usability, and modern aesthetics.
+🎨**UI/UX Design:** High-fidelity prototyping in Figma focused on usability, clarity, and modern visual design.
 
-💻**Web Development:** Building robust, responsive websites using Astro JS, WordPress, and Shopify. From high-converting webinar landing pages to complex online stores.
+💻**Web Development:** Development of responsive and reliable websites using Astro, WordPress, and Shopify — from landing pages to full e-commerce platforms.
 
-🕹️**Game UI & Interactivity:** I design interfaces for interactive applications and web-based games using JavaScript frameworks and 3D integration.
+🕹️ Having a strong interest in game dev and design I also design UI game interfaces for interactive applications or games and web-based experiences using JavaScript frameworks.
 
-📦**3D Ecosystem:** I don’t just design 2D interfaces; I use Blender to model and animate assets that I integrate interactively into the web, elevating the visual storytelling of every project.
+📦 I also integrate 3D assets created in Blender to enhance visual storytelling and create more engaging digital experiences.
 
 ## Tailored Solutions: From Agile CMS to Custom Code
 I adapt my workflow based on project scope and performance needs:
@@ -31,7 +31,7 @@ I adapt my workflow based on project scope and performance needs:
 ## 💼 What I learn through time
 ### Freelance Visual Designer & Web Developer
 *Jan 2021 – Present*: 
-As a specialized freelancer, I merge visual art with technical development. I create high-performance ecosystems using Astro, WordPress, and Shopify, integrating Blender 3D assets to create immersive interfaces. I help clients scale through conversion-focused design and technical SEO optimization.
+As a specialized freelancer, I merge visual art with technical development. I create high-performance ecosystems using Astro, WordPress, and Shopify, integrating Blender 3D assets to create immersive interfaces. I help clients scale through conversion-focused design and technical SEO optimization. My background in full-stack development allows me to connect backend logic with intuitive frontend design, ensuring that every project is both functional and easy to use.
 
 ### Web Developer | Global Consulting Factory
 *Jun 2019 – Jan 2020*: 
@@ -43,12 +43,16 @@ I designed and developed a medical consultation platform with integrated payment
 
 ## 🛠️ Technical Toolbox
 - **CMS & E-commerce:** Shopify, WordPress, Elementor, WooCommerce, Kajabi.
-- **Frontend Development:** Astro JS, HTML5, CSS3, Tailwind CSS, JavaScript (React, Node.js), GSAP, Git/GitHub.
+- **Frontend Development:** Astro JS, HTML5, CSS3, Tailwind CSS, JavaScript (React, Node.js), GSAP (for beautiful and complex animations, parallax, etc), Git/GitHub.
 - **Design & 3D:** Figma, Blender (Modeling & Animation), Spline, Photoshop, Illustrator, Inkscape.
 - **Workflow:** VS Code, Obsidian (Zettelkasten), Notion, Trello, Netlify.
 
 ## 🧪 Creative Exploration & Experimental Projects
-Aside from client work, I dedicate time to building experimental web interfaces that allow me to push my coding and design skills to the limit. These projects serve as my playground for Game UI concepts and creative frontend engineering:
+Beyond client work, I explore experimental projects where I push the limits of web design and development. These projects allow me to experiment with interactive interfaces, creative coding, and digital storytelling. 
+
+I build personal platforms, retro-inspired interfaces, and concept-driven experiences that combine design, development, and creativity in unique ways.
+
+That allow me to push my coding and design skills to the limit. These projects serve as my playground for Game UI concepts and creative frontend engineering:
 
 **Digital Garden (Personal Knowledge Management):** A curated space built with Markdown and Astro where I document my learning journey. It’s a hybrid between a blog and a second brain, showcasing my ability to handle complex information architecture.
 

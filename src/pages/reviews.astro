@@ -1,0 +1,232 @@
+---
+// src/pages/reviews.astro
+import Layout from "../layouts/Layout.astro";
+import Contact from "../components/portfolio/Contact.astro";
+import Heading from "../components/ui/Heading.astro";
+import { Icon } from "astro-icon/components";
+
+const pageTitle = "Client Reviews | Grecia V. - Web Designer & Developer";
+const description = "Real reviews from clients I've worked with across multiple platforms. See what they say about my web design and development work.";
+
+// Agrega aquí tus reseñas reales
+const reviews = [
+  {
+    id: 1,
+    platform: "Upwork",
+    platformIcon: "upwork", // cambia por el icono que tengas
+    platformColor: "#6FDA44",
+    clientName: "Client Name",
+    clientLocation: "USA",
+    rating: 5,
+    date: "March 2024",
+    screenshotUrl: "/images/reviews/review-upwork-1.webp",
+    transcription: "Grecia did an amazing job on our website redesign. She was professional, communicative, and delivered beyond our expectations. Highly recommend!",
+    reviewUrl: "https://www.upwork.com/your-profile",
+    projectUrl: "/portfolio/projects/your-project",
+    projectName: "Project Name",
+    tags: ["WordPress", "UI/UX", "E-commerce"],
+  },
+  {
+    id: 2,
+    platform: "Fiverr",
+    platformIcon: "fiverr",
+    platformColor: "#1DBF73",
+    clientName: "Client Name",
+    clientLocation: "Canada",
+    rating: 5,
+    date: "January 2024",
+    screenshotUrl: "/images/reviews/review-fiverr-1.webp",
+    transcription: "Outstanding work! The design was exactly what we needed. Fast delivery and great communication throughout the project.",
+    reviewUrl: "https://www.fiverr.com/your-profile",
+    projectUrl: "/portfolio/projects/your-project-2",
+    projectName: "Project Name 2",
+    tags: ["Shopify", "Branding"],
+  },
+  {
+    id: 3,
+    platform: "LinkedIn",
+    platformIcon: "linkedin",
+    platformColor: "#0A66C2",
+    clientName: "Client Name",
+    clientLocation: "Mexico",
+    rating: 5,
+    date: "November 2023",
+    screenshotUrl: "/images/reviews/review-linkedin-1.webp",
+    transcription: "Working with Grecia was a fantastic experience. She understood our vision immediately and translated it into a beautiful, functional website.",
+    reviewUrl: "https://www.linkedin.com/in/your-profile",
+    projectUrl: "/portfolio/projects/your-project-3",
+    projectName: "Project Name 3",
+    tags: ["Astro", "Performance", "SEO"],
+  },
+];
+
+const stats = [
+  { value: "50+", label: "Projects Completed" },
+  { value: "5★", label: "Average Rating" },
+  { value: "3+", label: "Platforms" },
+  { value: "100%", label: "Client Satisfaction" },
+];
+---
+
+<Layout pageTitle={pageTitle} description={description}>
+  
+  <!-- Hero Section -->
+  <section class="relative px-8 max-sm:px-4 pt-16 pb-8 max-sm:pt-10 overflow-hidden">
+    
+    <!-- Background blur effect matching the site -->
+    <div class="blur-circle"></div>
+    
+    <div class="max-w-4xl mx-auto text-center flex flex-col items-center gap-6">
+      
+      <span class="inline-flex items-center gap-2 text-xs font-semibold dark:text-mint-300 text-mint-600 uppercase tracking-widest">
+        <span class="w-8 h-px bg-mint-400"></span>
+        What clients say
+        <span class="w-8 h-px bg-mint-400"></span>
+      </span>
+
+      <div>
+        <Heading text="Client" textGradient="Reviews" level={1} />
+      </div>
+
+      <p class="text-base max-md:text-sm dark:text-gray-300 text-blacktext/80 max-w-xl leading-7 font-normal">
+        Real feedback from clients I've had the pleasure of working with across different platforms and industries. Every project is a commitment to quality.
+      </p>
+
+      <!-- Stats row -->
+      <div class="grid grid-cols-4 max-sm:grid-cols-2 gap-4 w-full max-w-2xl mt-4">
+        {stats.map((stat) => (
+          <div class="flex flex-col items-center gap-1 p-4 rounded-2xl dark:bg-zinc-900/50 bg-mint-50/50 border dark:border-zinc-800 border-mint-100">
+            <span class="text-2xl font-black bg-linear-to-r from-riptide-400 to-mint-400 bg-clip-text text-transparent">{stat.value}</span>
+            <span class="text-xs dark:text-zinc-400 text-blacktext/60 text-center font-medium">{stat.label}</span>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Reviews Grid -->
+  <section class="px-8 max-sm:px-4 py-8 mb-16">
+    <div class="max-w-7xl mx-auto flex flex-col gap-16">
+
+      {reviews.map((review, index) => (
+        <article class={`group relative flex gap-10 max-lg:flex-col max-lg:gap-6 items-start ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>
+          
+          <!-- Screenshot side -->
+          <div class="relative lg:w-1/2 w-full flex-shrink-0">
+            
+            <!-- Platform badge -->
+            <div class="absolute -top-3 -left-3 z-10 flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-bold text-white shadow-lg"
+              style={`background-color: ${review.platformColor}`}>
+              <Icon name={review.platformIcon} class="size-3.5" />
+              {review.platform}
+            </div>
+
+            <!-- Screenshot container -->
+            <div class="relative rounded-2xl overflow-hidden border dark:border-zinc-800 border-mint-100 bg-linear-to-br from-mint-300 dark:from-mint-600 to-mint-50 dark:to-mint-200/5 p-[2px] hover:shadow-[0_10px_50px_rgba(13,188,130,0.2)] transition-all duration-500">
+              <div class="rounded-2xl overflow-hidden dark:bg-zinc-900 bg-white">
+                <a href={review.reviewUrl} target="_blank" rel="noopener" aria-label={`Ver reseña en ${review.platform}`}>
+                  <img
+                    src={review.screenshotUrl}
+                    alt={`Review screenshot from ${review.platform} - ${review.clientName}`}
+                    class="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+                    loading="lazy"
+                  />
+                </a>
+              </div>
+            </div>
+
+            <!-- Rating stars -->
+            <div class="absolute -bottom-3 left-4 flex gap-0.5 bg-white dark:bg-zinc-900 px-3 py-1.5 rounded-full shadow-lg border dark:border-zinc-800 border-mint-100">
+              {Array.from({ length: review.rating }).map(() => (
+                <span class="text-yellow-400 text-sm">★</span>
+              ))}
+            </div>
+
+          </div>
+
+          <!-- Content side -->
+          <div class="lg:w-1/2 w-full flex flex-col gap-5 pt-4">
+            
+            <!-- Client info -->
+            <div class="flex flex-col gap-1">
+              <div class="flex items-center gap-3">
+                <div class="size-10 rounded-full bg-linear-to-br from-riptide-400 to-mint-500 flex items-center justify-center text-white font-bold text-sm">
+                  {review.clientName.charAt(0)}
+                </div>
+                <div>
+                  <p class="font-bold dark:text-white text-blacktext text-sm">{review.clientName}</p>
+                  <p class="text-xs dark:text-zinc-400 text-blacktext/60">{review.clientLocation} · {review.date}</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tags -->
+            <div class="flex flex-wrap gap-2">
+              {review.tags.map((tag) => (
+                <span class="text-xs px-3 py-1 rounded-full dark:bg-mint-900/30 bg-mint-50 dark:text-mint-300 text-mint-700 font-medium border dark:border-mint-800/50 border-mint-200">
+                  {tag}
+                </span>
+              ))}
+            </div>
+
+            <!-- Transcription -->
+            <div class="relative">
+              <!-- Quote mark -->
+              <span class="absolute -top-2 -left-2 text-5xl font-black dark:text-mint-900 text-mint-100 leading-none select-none">"</span>
+              <blockquote class="relative z-10 dark:text-gray-300 text-blacktext/80 text-base max-md:text-sm leading-7 font-normal pl-4 border-l-2 border-mint-400 dark:border-mint-500 italic">
+                {review.transcription}
+              </blockquote>
+            </div>
+
+            <!-- CTA Buttons -->
+            <div class="flex gap-3 flex-wrap mt-2">
+              <a
+                href={review.reviewUrl}
+                target="_blank"
+                rel="noopener"
+                class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 hover:scale-105 dark:bg-zinc-800 bg-white border dark:border-zinc-700 border-mint-200 dark:text-white text-blacktext hover:border-mint-400 dark:hover:border-mint-500 dark:hover:text-mint-300 hover:text-mint-600"
+              >
+                <Icon name={review.platformIcon} class="size-4" />
+                View on {review.platform}
+              </a>
+              <a
+                href={review.projectUrl}
+                class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 hover:scale-105 bg-linear-to-r from-riptide-400 to-mint-500 dark:from-riptide-500 dark:to-mint-500 text-blacktext hover:shadow-[0_4px_20px_rgba(13,188,130,0.4)]"
+              >
+                <Icon name="code" class="size-4" />
+                Ver proyecto
+              </a>
+            </div>
+
+          </div>
+
+        </article>
+      ))}
+
+    </div>
+  </section>
+
+  <Contact />
+</Layout>
+
+<style>
+  /* Staggered animation on load */
+  article {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 0.6s ease forwards;
+  }
+  article:nth-child(1) { animation-delay: 0.1s; }
+  article:nth-child(2) { animation-delay: 0.25s; }
+  article:nth-child(3) { animation-delay: 0.4s; }
+  article:nth-child(4) { animation-delay: 0.55s; }
+  article:nth-child(5) { animation-delay: 0.7s; }
+
+  @keyframes fadeUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
