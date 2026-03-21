@@ -1,67 +1,59 @@
 ---
 import Layout from "./Layout.astro";
-import DatePub from "../components/blog/DatePub.astro";
 import Capsule from "../components/ui/Capsule.astro";
 import Heading from "../components/ui/Heading.astro";
 import NavArticle from "../components/layout/NavArticle.astro";
 import Contact from "../components/portfolio/Contact.astro";
+import ProjectGallery from "../components/layout/ProjectGallery.astro";
 const { frontmatter } = Astro.props;
-
+const gallery = frontmatter.gallery ?? [];
 ---
-
 
 <Layout
   pageTitle={frontmatter.title}
   description={frontmatter.description}
   ogimage={frontmatter.image}
 >
-  <section
-    class="relative mx-auto px-8 max-sm:px-4 flex flex-row justify-center gap-6"
-  >
-    <div class="w-64 max-xl:hidden"></div>
-    <article
-      class="flex flex-col gap-8 max-w-3xl max-md:w-full pb-10 pt-8 mt-8 px-14 max-md:px-10 max-sm:px-4  dark:bg-transparent bg-white dark:border-0 border border-neutral-100 rounded-2xl" 
-    >
+  <section class="relative mx-auto px-8 max-sm:px-4 flex flex-row justify-center gap-6">
+    
+    <ProjectGallery images={gallery} />
+
+    <article class="flex flex-col gap-8 max-w-3xl max-md:w-full pb-10 pt-8 mt-8 px-14 max-md:px-10 max-sm:px-4 dark:bg-transparent bg-white dark:border-0 border border-neutral-100 rounded-2xl">
       <header class="flex flex-col gap-4" id="start">
         <div class="flex gap-2 flex-wrap">
-          {
-            frontmatter.languages.map((language: string) => (
-              <Capsule linkEnabled={false} lang={language} />
-            ))
-          }
+          {frontmatter.languages.map((language: string) => (
+            <Capsule linkEnabled={false} lang={language} />
+          ))}
         </div>
-        
-        <DatePub date={frontmatter.pubDate} />
-
-        <Heading text={frontmatter.title} />
-
-      
+        <div class="mt-3">
+          <Heading text={frontmatter.title} />
+        </div>
       </header>
 
+      <!-- Mobile gallery arriba -->
+      {gallery.length > 0 && (
+        <div class="xl:hidden flex flex-col gap-4">
+          <h3 class="dark:text-zinc-400 text-blacktext/90 font-black tracking-wide text-sm uppercase">Project Gallery</h3>
+          {gallery.map((img: {url: string, alt: string}) => (
+            <a href={img.url} target="_blank" rel="noopener noreferrer">
+              <img src={img.url} alt={img.alt} class="w-full rounded-xl hover:opacity-90 transition-opacity" />
+            </a>
+          ))}
+        </div>
+      )}
+
       <figure>
-        {
-          frontmatter.image?.url && (
-            <img
-              class="w-full rounded-xl"
-              src={frontmatter.image.url}
-              alt={frontmatter.image.alt || "Article image"}
-            />
-          )
-        }
+        {frontmatter.image?.url && (
+          <img class="w-full rounded-xl" src={frontmatter.image.url} alt={frontmatter.image.alt || "Article image"} />
+        )}
       </figure>
 
-      <div class="markdown " id="content">
+      <div class="markdown" id="content">
         <slot />
       </div>
-      
     </article>
+
     <NavArticle title={frontmatter.title} />
   </section>
-  <div
-    class="flex flex-col gap-6 max-w-4xl max-lg:py-2 py-3 max-xl:py-2 mx-auto"
-  >
-  
-
-  </div>
   <Contact />
 </Layout>

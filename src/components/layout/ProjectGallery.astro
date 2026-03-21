@@ -1,0 +1,77 @@
+---
+const { images = [] } = Astro.props;
+---
+
+{images.length > 0 && (
+  <div class="max-xl:hidden">
+    <div class="sticky w-64 top-14 mt-16 max-h-[calc(100svh-3.5rem)] flex flex-col gap-3 overflow-hidden">
+      
+      <div class="relative w-full rounded-2xl border border-neutral-100 dark:border-zinc-800 bg-white dark:bg-zinc-900/50 overflow-hidden">
+        
+        <!-- Track deslizante -->
+        <div
+          id="gallery-track"
+          class="flex transition-transform duration-500 ease-in-out"
+          style="width: 100%;"
+        >
+          {images.map((img: {url: string, alt: string}) => (
+            <div class="gallery-slide min-w-full">
+              <a href={img.url} target="_blank" rel="noopener noreferrer" aria-label="Ver imagen completa">
+                <img
+                  src={img.url}
+                  alt={img.alt}
+                  class="w-full object-cover object-top hover:opacity-90 transition-opacity duration-300"
+                  style="height: calc(100svh - 10rem); object-fit: cover;"
+                />
+              </a>
+            </div>
+          ))}
+        </div>
+
+        {images.length > 1 && (
+          <div class="flex items-center justify-between px-3 py-2 bg-white/5 backdrop-blur-sm">
+            <button
+              id="gallery-prev"
+              class="text-xs text-mint-400 hover:text-mint-300 transition-colors disabled:opacity-30 font-bold px-2 py-1 rounded"
+              aria-label="Imagen anterior"
+            >
+              ← Prev
+            </button>
+            <span id="gallery-counter" class="text-xs text-neutral-400">1 / {images.length}</span>
+            <button
+              id="gallery-next"
+              class="text-xs text-mint-400 hover:text-mint-300 transition-colors disabled:opacity-30 font-bold px-2 py-1 rounded"
+              aria-label="Siguiente imagen"
+            >
+              Next →
+            </button>
+          </div>
+        )}
+      </div>
+
+    </div>
+  </div>
+)}
+
+<script>
+  const track = document.getElementById('gallery-track') as HTMLElement;
+  const slides = document.querySelectorAll('.gallery-slide');
+  const counter = document.getElementById('gallery-counter');
+  const prevBtn = document.getElementById('gallery-prev') as HTMLButtonElement;
+  const nextBtn = document.getElementById('gallery-next') as HTMLButtonElement;
+  let current = 0;
+
+  function goTo(n: number) {
+    current = n;
+    if (track) track.style.transform = `translateX(-${current * 100}%)`;
+    if (counter) counter.textContent = `${current + 1} / ${slides.length}`;
+    if (prevBtn) prevBtn.disabled = current === 0;
+    if (nextBtn) nextBtn.disabled = current === slides.length - 1;
+  }
+
+  if (slides.length > 0) {
+    goTo(0);
+    prevBtn?.addEventListener('click', () => { if (current > 0) goTo(current - 1); });
+    nextBtn?.addEventListener('click', () => { if (current < slides.length - 1) goTo(current + 1); });
+  }
+</script>

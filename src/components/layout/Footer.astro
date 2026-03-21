@@ -31,19 +31,20 @@ const {
     <div
       class="relative h-6 cursor-pointer before:absolute before:left-1/2 before:top-1/2 before:h-full before:w-[40%] before:-translate-x-1/2 before:-translate-y-1/2 before:rounded-full before:bg-[#50fd8f25] before:blur-3xl before:opacity-80 before:-z-1 hover:text-mint-500 transition-all [text-shadow:0_1px_2px_#000]"
     >
-      <a href="/" aria-label="Return to homepage">
-        <!-- This icon represents the logo -->
-        <Icon name="logo" aria-hidden="true" />
-      </a>
+      <a href="/" aria-label="Go to home">
+  <div class="relative h-6 cursor-pointer before:absolute before:left-1/2 before:top-1/2 before:h-full before:w-[40%] before:-translate-x-1/2 before:-translate-y-1/2 before:rounded-full before:bg-[#50fd8f25] before:blur-3xl before:opacity-80 before:-z-1 hover:text-mint-500 transition-all [text-shadow:0_1px_2px_#000]">
+    <img src="/logo.png" class="h-6 cursor-pointer" style="width: auto; height: 38px; object-fit: contain; position: relative; top: -7.5px;" alt="Logo" />
+  </div>
+</a>
     </div>
     <div class="text-center">
       <a
         href={github}
-        class="flex items-center justify-center gap-3 text-base font-normal italic max-sm:text-sm"
+        class="flex items-center justify-center gap-3 text-sm font-normal italic max-sm:text-sm"
         aria-label="About the website development"
         ><Icon name="code" aria-hidden="true" /> Developed by <strong
           >{alias}</strong
-        >, with Astro</a
+        > with Astro</a
       >
     </div>
     <div
@@ -56,16 +57,7 @@ const {
         iconName={emailIconName}
         label={`Send email to ${email}`}
       />
-      <Social
-        link={instagram}
-        iconName={instagramIconName}
-        label={`Visit ${alias} on Instagram`}
-      />
-      <Social
-        link={youtube}
-        iconName={youtubeIconName}
-        label={`Visit ${alias} on YouTube`}
-      />
+
       <Social
         link={github}
         iconName={githubIconName}

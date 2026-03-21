@@ -1,0 +1,113 @@
+<div class="max-lg:hidden">
+  <div
+    id="sidebar-stats"
+    class="sticky w-64 mt-8 rounded-2xl dark:border-0 border border-neutral-100 bg-white dark:bg-transparent top-14 max-h-[calc(100svh-3.5rem)] overflow-y-auto overflow-x-hidden px-5 pt-8 pb-12"
+  >
+    <div class="flex flex-col gap-6">
+
+      <!-- LANGUAGES -->
+      <div class="flex flex-col gap-3">
+        <h3 class="dark:text-zinc-400 text-blacktext/90 font-black tracking-wide text-sm uppercase">
+          Languages
+        </h3>
+        <div class="flex flex-col gap-3">
+
+          <div class="flex flex-col gap-1">
+            <div class="flex justify-between items-center">
+              <span class="text-xs font-semibold dark:text-neutral-300 text-neutral-600">Spanish</span>
+              <span class="text-xs font-bold text-mint-400 dark:text-mint-300">100%</span>
+            </div>
+            <div class="w-full h-2 rounded-full bg-neutral-200 dark:bg-zinc-800 overflow-hidden">
+              <div
+                class="h-full rounded-full bg-linear-to-r from-riptide-400 to-mint-400"
+                style="width: 100%"
+              ></div>
+            </div>
+          </div>
+
+          <div class="flex flex-col gap-1">
+            <div class="flex justify-between items-center">
+              <span class="text-xs font-semibold dark:text-neutral-300 text-neutral-600">English</span>
+              <span class="text-xs font-bold text-mint-400 dark:text-mint-300">95%</span>
+            </div>
+            <div class="w-full h-2 rounded-full bg-neutral-200 dark:bg-zinc-800 overflow-hidden">
+              <div
+                class="h-full rounded-full bg-linear-to-r from-riptide-400 to-mint-400"
+                style="width: 95%"
+              ></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <hr class="dark:border-neutral-700 border-neutral-200" />
+
+      <!-- LAB PROGRESS -->
+      <div class="flex flex-col gap-3">
+        <h3 class="dark:text-zinc-400 text-blacktext/90 font-black tracking-wide text-sm uppercase">
+          Lab Progress
+        </h3>
+        <div class="flex flex-col gap-4">
+
+          <div class="flex flex-col gap-1">
+            <div class="flex justify-between items-center">
+              <span class="text-xs font-semibold dark:text-neutral-300 text-neutral-600">Digital Garden</span>
+              <span class="text-xs font-bold text-riptide-400 dark:text-riptide-300">40%</span>
+            </div>
+            <div class="w-full h-2 rounded-full bg-neutral-200 dark:bg-zinc-800 overflow-hidden">
+              <div
+                class="progress-bar h-full rounded-full bg-linear-to-r from-mint-500 to-riptide-400 relative overflow-hidden"
+                style="width: 40%"
+              >
+                <div class="absolute inset-0 bg-linear-to-r from-transparent via-white/20 to-transparent animate-shimmer"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex flex-col gap-1">
+            <div class="flex justify-between items-center">
+              <span class="text-xs font-semibold dark:text-neutral-300 text-neutral-600">Vaporwave OS</span>
+              <span class="text-xs font-bold text-riptide-400 dark:text-riptide-300">40%</span>
+            </div>
+            <div class="w-full h-2 rounded-full bg-neutral-200 dark:bg-zinc-800 overflow-hidden">
+              <div
+                class="progress-bar h-full rounded-full bg-linear-to-r from-mint-500 to-riptide-400 relative overflow-hidden"
+                style="width: 40%"
+              >
+                <div class="absolute inset-0 bg-linear-to-r from-transparent via-white/20 to-transparent animate-shimmer"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex flex-col gap-1">
+            <div class="flex justify-between items-center">
+              <span class="text-xs font-semibold dark:text-neutral-300 text-neutral-600">Retro Web</span>
+              <span class="text-xs font-bold text-riptide-400 dark:text-riptide-300">40%</span>
+            </div>
+            <div class="w-full h-2 rounded-full bg-neutral-200 dark:bg-zinc-800 overflow-hidden">
+              <div
+                class="progress-bar h-full rounded-full bg-linear-to-r from-mint-500 to-riptide-400 relative overflow-hidden"
+                style="width: 40%"
+              >
+                <div class="absolute inset-0 bg-linear-to-r from-transparent via-white/20 to-transparent animate-shimmer"></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<style>
+  @keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(200%); }
+  }
+  .animate-shimmer {
+    animation: shimmer 2s infinite;
+  }
+</style>

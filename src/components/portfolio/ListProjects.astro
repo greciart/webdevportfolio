@@ -23,29 +23,24 @@ allPosts.sort(
       <Heading text="Projects" textGradient="Completed" level={2} />
     </div>
 
-    <p
-      class="z-2 text-center mx-auto text-lg max-xl:text-base max-w-2xl dark:text-gray-200 text-blacktext my-6 leading-6 font-medium"
-    >
-      I love <b
+<p
+  class="z-2 text-center mx-auto text-base max-xl:text-sm max-w-2xl dark:text-gray-200 text-blacktext my-6 leading-6 font-normal"
+>
+
+
+      A curated collection of high-performance <b
         class="bg-linear-to-r from-riptide-500 to-mint-500 dark:from-riptide-300 dark:to-mint-200 text-transparent bg-clip-text"
-        >turning ideas into real projects.</b
-      >
-      <br /> Here I show you some of the <b
-        class="bg-linear-to-r from-riptide-500 to-mint-500 dark:from-riptide-300 dark:to-mint-200 text-transparent bg-clip-text"
-        >developments</b
-      > I've worked on, applying technology, design, and lots of creativity.
-      <b
-        class="bg-linear-to-r from-riptide-500 to-mint-500 dark:from-riptide-300 dark:to-mint-200 text-transparent bg-clip-text"
-        >Check them out!</b
-      >
+        >web design and development</b
+      > projects, including e-commerce websites, landing pages, and scalable digital platforms built to enhance user experience, increase engagement, and drive business growth.
+       
     </p>
     <slot />
   </div>
 
-  <div
-    id="containerProjects"
-    class="mx-auto max-w-7xl grid grid-cols-3 max-lg:grid-cols-2 max-md:grid-cols-1 gap-5 p-2 py-4 max-h-[150vh] overflow-hidden transition-[max-height] duration-500 ease-in-out"
-  >
+<div
+  id="containerProjects"
+  class="mx-auto max-w-7xl grid grid-cols-3 max-lg:grid-cols-2 max-md:grid-cols-1 gap-5 p-2 py-4 max-h-[1400px] overflow-hidden transition-[max-height] duration-700 ease-in-out"
+>
     {
       allPosts.map((post) => (
         <Project
@@ -74,18 +69,14 @@ allPosts.sort(
 
 <script>
   document.querySelector("#moreProjects")?.addEventListener("click", () => {
-    const container = document.querySelector("#containerProjects");
+    const container = document.querySelector("#containerProjects") as HTMLElement;
     const moreProjectsBtn = document.querySelector("#moreProjects");
 
     if (container && moreProjectsBtn) {
-      // Expand container to show all projects
-      container.classList.remove("h-[150vh]");
-      container.classList.remove("h-auto");
-      // Hide the "View More" button after animation completes
-      moreProjectsBtn.classList.add("hidden");
+      container.style.maxHeight = container.scrollHeight + "px";
       setTimeout(() => {
         moreProjectsBtn.classList.add("hidden");
-      }, 500);
+      }, 700);
     }
   });
 </script>

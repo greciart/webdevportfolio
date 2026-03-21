@@ -89,19 +89,19 @@ a.inline-block.leading-5.pl-12{
 	@apply  font-bold dark:text-white text-blacktext;
 }
 .markdown h2 {
-	@apply dark:text-white text-blacktext  text-3xl font-bold  mt-16 mb-10;
+  @apply dark:text-white text-blacktext text-2xl font-bold mt-16 mb-10;
 }
 .markdown h3 {
-	@apply text-2xl font-bold dark:text-white text-blacktext mt-6 mb-4;
+	@apply text-xl font-bold dark:text-white text-blacktext mt-6 mb-4;
 }
 .markdown h4 {
-	@apply text-xl dark:text-white text-blacktext font-bold  mt-6 mb-4;
+	@apply text-lg dark:text-white text-blacktext font-bold  mt-6 mb-4;
 }
 .markdown h5 {
-	@apply text-lg font-bold dark:text-white text-blacktext mt-6 mb-4;
+	@apply text-base font-bold dark:text-white text-blacktext mt-6 mb-4;
 }
 .markdown h6 {
-	@apply text-base font-bold dark:text-white text-blacktext mt-6 mb-4;
+	@apply text-sm font-bold dark:text-white text-blacktext mt-6 mb-4;
 }
 
 
@@ -109,27 +109,41 @@ a.inline-block.leading-5.pl-12{
 	@apply tracking-normal font-montserrat text-pretty text-xl max-md:text-lg text-blacktext dark:text-gray-200 mb-8 leading-8;
 }
 
+
+.markdown ul {
+  @apply mb-8 mt-8 pl-4 pb-0;
+  list-style: none;
+}
+
+.markdown ul li {
+  @apply text-base dark:text-gray-200 text-blacktext max-md:text-sm py-1;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.markdown ul li::before {
+  content: "◆";
+  color: var(--color-riptide-400);
+  position: absolute;
+  left: 0;
+  top: 0.7rem;
+  font-size: 0.5rem;
+}
+
+.markdown ol {
+  @apply list-decimal mb-8 mt-8 pb-0;
+  padding-left: 1.5rem;
+}
+
+.markdown ol li {
+  @apply text-base dark:text-gray-200 text-blacktext max-md:text-sm py-1;
+}
 .markdown a {
-	@apply text-xl max-md:text-lg font-semibold dark:text-riptide-300! text-mint-500! underline hover:text-riptide-400! transition-all;
-}
-
-.markdown ol{
-	@apply list-decimal mb-8;
-}
-.markdown ul{
-	@apply list-disc mb-8;
-}
-.markdown ul, .markdown ol{
-	@apply text-xl dark:text-gray-200 text-blacktext  max-md:text-lg  pl-4 pb-0;
-}
-
-.markdown li {
-	@apply text-xl dark:text-gray-200 text-blacktext  max-md:text-lg py-1;
+  @apply text-base max-md:text-sm font-semibold dark:text-riptide-300! text-mint-500! underline hover:text-riptide-400! transition-all;
 }
 
 .markdown hr {
-	@apply dark:text-mint-300/50 text-blacktext/30;
-
+  @apply dark:text-mint-300/50 text-blacktext/30 my-8;
 }
 
 .markdown blockquote {
@@ -272,4 +286,68 @@ a.inline-block.leading-5.pl-12{
 	border-radius: 50%;
 	filter: blur(10px);
 
+}
+
+
+/* ================================
+   MARKDOWN TYPOGRAPHY STYLES
+   Aplica a: About Me, Blog, Proyectos
+================================ */
+
+/* Tamaño base del párrafo — About Me usa text-xl del global, 
+   este override es solo para MarkdownAbout si lo necesitas separado.
+   Si quieres el mismo tamaño en todos, elimina este bloque. */
+.markdown p {
+  font-size: 1rem;
+  line-height: 1.75rem;
+}
+
+@media (max-width: 1280px) {
+  .markdown p {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+}
+
+/* Negrita — gradiente verde */
+.markdown strong {
+  background: linear-gradient(to right, var(--color-riptide-400), var(--color-mint-400));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+}
+
+/* Cursiva — verde claro sólido */
+.markdown em {
+  color: var(--color-riptide-300);
+  font-style: italic;
+}
+
+/* Cursiva + Negrita — gradiente más intenso */
+.markdown strong em,
+.markdown em strong {
+  background: linear-gradient(to right, var(--color-mint-300), var(--color-riptide-300));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-style: italic;
+  font-weight: 700;
+}
+
+/* Subrayado */
+.markdown u {
+  text-decoration: underline;
+  text-decoration-color: var(--color-riptide-400);
+  text-underline-offset: 4px;
+  color: inherit;
+}
+
+/* Tachado */
+.markdown s,
+.markdown del {
+  text-decoration: line-through;
+  text-decoration-color: var(--color-mint-400);
+  color: var(--color-mint-300);
+  opacity: 0.7;
 }

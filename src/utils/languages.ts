@@ -110,6 +110,77 @@ export const languages: Record<string, Language> = {
     name: "Python",
     iconName: "python",
   },
+  github: {
+    name: "GitHub",
+    iconName: "github",
+  },
+  elementor: {
+    name: "Elementor",
+    iconName: "elementor",
+  },
+  nodejs: {
+    name: "Node.js",
+    iconName: "node",
+  },
+react: {
+    name: "React",
+    iconName: "react",
+  },
+  vscode: {
+    name: "VS Code",
+    iconName: "vscode",
+  },
+  notion: {
+    name: "Notion",
+    iconName: "notion",
+    className: "bg-white!",
+  },
+  trello: {
+    name: "Trello",
+    iconName: "trello",
+  },
+  obsidian: {
+    name: "Obsidian",
+    iconName: "obsidian",
+  },
+  photoshop: {
+    name: "Photoshop",
+    iconName: "photoshop",
+  },
+  illustrator: {
+    name: "Illustrator",
+    iconName: "illustrator",
+  },
+  inkscape: {
+    name: "Inkscape",
+    iconName: "inkscape",
+  },
+  gsap: {
+    name: "GSAP",
+    iconName: "gsap",
+  },
+  woocommerce: {
+    name: "WooCommerce",
+    iconName: "woo",
+  },
+  shopify: {
+    name: "Shopify",
+    iconName: "shopify",
+  },
+    kajabi: {
+    name: "Kajabi",
+    iconName: "kajabi",
+  },
+
+    blender: {
+    name: "Blender",
+    iconName: "blender",
+  },
+
+    uiux: {
+    name: "UI/UX Design",
+    iconName: "uiux",
+  },
 };
 
 export const getLanguage = (lang: string): Language => {
