@@ -1,6 +1,6 @@
 ---
 layout:  /src/layouts/ProjectLayout.astro
-title: 'Shinerz Car Rental | Modern Elementor Design & Turo Integration'
+title: 'Car Rental Website Design with Elementor & Turo Integration'
 pubDate: 2025-07-07
 description: 'A deep dive into the Shinerz Car Rental project: A WordPress site built with Elementor, featuring seamless Turo integration and minimalistic UI.'
 languages: ["elementor", "wordpress","uiux"]

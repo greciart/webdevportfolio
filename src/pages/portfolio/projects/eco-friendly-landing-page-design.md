@@ -1,6 +1,6 @@
 ---
 layout:  /src/layouts/ProjectLayout.astro
-title: 'Green Eco-Friendly Landing page Design | Refined Minimalist & Sustainable UI'
+title: 'Eco-Friendly Landing Page Design'
 pubDate: 2025-07-07
 description: 'Custom-built eco-friendly landing design created in Figma, featuring a clean layout, nature-inspired green tones, and premium sustainable branding elements.'
 languages: ["figma","uiux"]

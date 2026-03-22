@@ -1,6 +1,6 @@
 ---
 layout:  /src/layouts/ProjectLayout.astro
-title: 'Alma Street: Full Digital Marketing & Event Web Design'
+title: 'Alma Street: Marketing & Events Website Design and Development'
 pubDate: 2025-07-07
 description: 'Custom web design for Alma Street Creative Consulting. A growth-focused WordPress website for marketing agencies, featuring tailored services and workshop management.'
 languages: ["elementor", "wordpress", "uiux"]

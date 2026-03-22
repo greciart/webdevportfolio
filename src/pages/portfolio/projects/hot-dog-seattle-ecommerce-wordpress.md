@@ -1,6 +1,6 @@
 ---
 layout:  /src/layouts/ProjectLayout.astro
-title: '🌭 Hot Dog Seattle: High-Conversion E-commerce Design with WordPress & Elementor'
+title: '🌭 E-commerce Website Design with WordPress & Elementor'
 pubDate: 2025-04-05
 description: 'Scaling street food culture into a profitable digital asset. A experience-focused custom WordPress & Elementor storefront built for ordering and startup growth.'
 languages: ["elementor", "wordpress"]

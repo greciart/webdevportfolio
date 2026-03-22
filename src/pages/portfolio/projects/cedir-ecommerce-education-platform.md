@@ -1,6 +1,6 @@
 ---
 layout:  /src/layouts/ProjectLayout.astro
-title: 'Cedir | Full E-commerce & Educational Blog Web Design'
+title: 'Cedir | E-commerce & Educational Platform Web Design'
 pubDate: 2025-07-07
 description: 'A professional WordPress & Elementor ecosystem for electronics students, featuring 4-tier user access, WooCommerce store, and integrated Calendly booking.'
 languages: ["elementor", "wordpress","uiux"]

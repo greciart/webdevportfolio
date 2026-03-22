@@ -17,7 +17,7 @@ I specialize in User Interface (UI) design, supported by a strong foundation in 
 
 💻**Web Development:** Development of responsive and reliable websites using Astro, WordPress, and Shopify — from landing pages to full e-commerce platforms.
 
-🕹️ Having a strong interest in game dev and design I also design UI game interfaces for interactive applications or games and web-based experiences using JavaScript frameworks.
+🕹️ Having a strong interest in game dev and design I also design user interfaces for interactive experiences, including game UI concepts created through game jams and experimental projects. These experiences allow me to explore player-centered design, real-time feedback, and interface clarity in dynamic environments.
 
 📦 I also integrate 3D assets created in Blender to enhance visual storytelling and create more engaging digital experiences.
 

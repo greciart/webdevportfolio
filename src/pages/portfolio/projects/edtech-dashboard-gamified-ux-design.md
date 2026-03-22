@@ -1,6 +1,6 @@
 ---
 layout:  /src/layouts/ProjectLayout.astro
-title: '🎓 EdTech Dashboard: Gamified UX for Neuro-inclusive Learning'
+title: '🎓 EdTech Dashboard Design with Gamified UX for Neurodivergent Learning'
 pubDate: 2025-04-05
 description: 'An inclusive digital learning ecosystem designed to support neurodivergent students through dopamine-driven UX and advanced student analytics.'
 languages: ["figma", "uiux"]
@@ -44,7 +44,7 @@ This dashboard acts as a *"Mission Control"* for the teacher. By integrating Saa
 - **Pastel Palette:** A selection of light colors and pastels creates a friendly and calming atmosphere.
 
 ## 👾 Gamification as a Tool for Neuro-Inclusive Design
-I designed this platform’s architecture to be gamification-ready, leveraging Game UI mechanics to transform the learning experience from a passive task into an engaging journey. Beyond mere aesthetics, this is a commitment to inclusive design and digital accessibility.
+I designed this platform’s architecture to be gamification-ready, leveraging Game UI and Game Interface Design mechanics to transform the learning experience from a passive task into an engaging journey. Beyond mere aesthetics, this is a commitment to inclusive design and digital accessibility.
 
 ### 🧠 Empowering ADHD & Neurodivergent Learners
 Standard educational systems often fail to support the executive functions of neurodivergent brains. This UI specifically addresses the needs of users with ADHD by providing:

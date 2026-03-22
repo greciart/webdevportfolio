@@ -1,6 +1,6 @@
 ---
 layout:  /src/layouts/ProjectLayout.astro
-title: 'Soft Solutions Case Study: Premium UI/UX & Strategic Branding for Tech Agencies'
+title: 'Soft Solutions Case Study: UI/UX Design & Branding for Tech Agency Website'
 pubDate: 2025-04-05
 description: 'High-performance landing page using Figma and UX strategy to balance technical logic and creative innovation.'
 languages: ["figma", "uiux"]

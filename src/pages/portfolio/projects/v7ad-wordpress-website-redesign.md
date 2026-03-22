@@ -1,6 +1,6 @@
 ---
 layout:  /src/layouts/ProjectLayout.astro
-title: 'V7ad Case Study | Premium WordPress & Elementor Redesign'
+title: 'V7ad Case Study | WordPress & Elementor Website Redesign for Creative Agency'
 pubDate: 2025-07-07
 description: 'Complete UI/UX redesign for V7ad Creative Agency. Using WordPress and Elementor to transform a cluttered site into a scalable, premium digital presence for founders.'
 languages: ["elementor", "wordpress"]
