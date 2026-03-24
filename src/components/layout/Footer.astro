@@ -6,12 +6,14 @@ import { getCollection } from "astro:content";
 const [staticData] = await getCollection("staticData");
 const {
   github,
+  contra,
   alias,
   instagram,
   email,
   youtube,
   linkedin,
   emailIconName,
+  contraIconName,
   youtubeIconName,
   linkedinIconName,
   instagramIconName,
@@ -56,6 +58,12 @@ const {
         link={`mailto:${email}`}
         iconName={emailIconName}
         label={`Send email to ${email}`}
+      />
+
+        <Social
+        link={contra}
+        iconName={contraIconName}
+        label={`Visit ${alias} on Contra`}
       />
 
       <Social

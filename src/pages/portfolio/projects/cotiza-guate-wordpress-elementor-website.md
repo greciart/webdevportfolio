@@ -5,7 +5,7 @@ pubDate: 2025-07-07
 description: 'Case study of Cotiza Guate: A Quetzal-inspired tech brand featuring a dual-mode (Dark/Light) WordPress platform built with Elementor for revenue-focused quoting.'
 languages: ["elementor", "wordpress", "uiux", "illustrator"]
 image:
-  url: "/images/projects/cotiza-guate-white-mode-ui-showcase.webp"
+  url: "/images/projects/cotizaguatemain.webp"
   alt: "Responsive wellness platform interface across laptop and tablet, demonstrating fluid design and consistent branding for bioresonance products"
 gallery:
   - url: "/images/projects/cotiza-guate-wordpress-tech-homepage.webp"

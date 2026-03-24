@@ -6,7 +6,7 @@ import { Icon } from "astro-icon/components";
 import { getCollection } from "astro:content";
 
 const [staticData] = await getCollection("staticData");
-const { github, githubIconName, linkedin, linkedinIconName } = staticData.data;
+const { github, githubIconName, linkedin, linkedinIconName, contra, contraIconName } = staticData.data;
 
 const currentPath = Astro.url.pathname;
 const routes = ["/", "/portfolio", "/about-me"];
@@ -37,6 +37,7 @@ const navItems = isActiveRoute
 
     <div class="flex items-center gap-5 text-xl">
       <div class="max-md:hidden flex items-center justify-center gap-5" role="group">
+        <Social link={contra} iconName={contraIconName} />
         <Social link={github} iconName={githubIconName} />
         <Social link={linkedin} iconName={linkedinIconName} />
       </div>

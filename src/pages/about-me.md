@@ -10,14 +10,15 @@ image:
 
 I am a UI Designer and Web Developer focused on creating digital experiences that engage users and deliver real results. My work sits at the intersection of visual design, frontend development, and interactive web experiences.
 
-I specialize in User Interface (UI) design, supported by a strong foundation in User Experience (UX). I have worked with entrepreneurs and growing companies across industries such as e-commerce, landing pages, corporate websites, and digital platforms like Kajabi.
+I specialize in User Interface (UI) design, supported by a strong foundation in User Experience (UX). I have worked with entrepreneurs and growing companies across industries such as e-commerce, landing pages, corporate websites, and digital platforms .
 
 ## What I Bring to Your Project
 🎨**UI/UX Design:** High-fidelity prototyping in Figma focused on usability, clarity, and modern visual design.
 
 💻**Web Development:** Development of responsive and reliable websites using Astro, WordPress, and Shopify — from landing pages to full e-commerce platforms.
 
-🕹️ Having a strong interest in game dev and design, alongside my work in web design, I design user interfaces for interactive experiences, including game UI concepts created through game jams and experimental projects. These experiences allow me to explore player-centered design, real-time feedback, and interface clarity in dynamic environments.
+🕹️ Having a strong interest in game dev and design, alongside my work in web design I design user interfaces for interactive experiences, including game UI concepts created through game jams and experimental projects. These experiences allow me to explore player-centered design, real-time feedback, and interface clarity in dynamic environments.
+
 📦 I also integrate 3D assets created in Blender to enhance visual storytelling and create more engaging digital experiences.
 
 ## Tailored Solutions: From Agile CMS to Custom Code
