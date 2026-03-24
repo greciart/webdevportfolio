@@ -1,7 +1,7 @@
 ---
 layout:  /src/layouts/ProjectLayout.astro
 title: 'Cotiza Guate | Tech Branding & Scalable WordPress Development'
-pubDate: 2025-07-07
+pubDate: 2025-04-08
 description: 'Case study of Cotiza Guate: A Quetzal-inspired tech brand featuring a dual-mode (Dark/Light) WordPress platform built with Elementor for revenue-focused quoting.'
 languages: ["elementor", "wordpress", "uiux", "illustrator"]
 image:
