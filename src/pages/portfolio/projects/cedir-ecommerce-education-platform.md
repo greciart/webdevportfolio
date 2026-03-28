@@ -1,7 +1,7 @@
 ---
 layout:  /src/layouts/ProjectLayout.astro
 title: 'Cedir | E-commerce & Educational Platform Web Design'
-pubDate: 2025-07-07
+pubDate: 2025-07-26
 description: 'A professional WordPress & Elementor ecosystem for electronics students, featuring 4-tier user access, WooCommerce store, and integrated Calendly booking.'
 languages: ["elementor", "wordpress","uiux"]
 image:
@@ -118,5 +118,5 @@ If your business manages multiple services, products, and content streams, you n
 
 Let's transform your brand into an authoritative platform that educates and sells simultaneously.
 
-## 📩 Book a Strategy Call Today
+## 📩 Book a Free Call Today: [https://calendly.com/greciavalentinapv](https://calendly.com/greciavalentinapv)
 Building scalable ecosystems for the digital future.

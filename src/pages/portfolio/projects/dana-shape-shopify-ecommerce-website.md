@@ -1,7 +1,7 @@
 ---
 layout:  /src/layouts/ProjectLayout.astro
 title: 'Dana shape: Shopify E-commerce Website Design for Shapewear Brand'
-pubDate: 2025-07-07
+pubDate: 2025-07-27
 description: 'Shopify website design and development for a modern shapewear brand featuring elegant UI, feminine branding. High-end e-commerce UI/UX case study optimized for conversions.'
 languages: ["shopify", "uiux"]
 image:
