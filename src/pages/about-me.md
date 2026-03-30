@@ -62,4 +62,20 @@ That allow me to push my coding and design skills to the limit. These projects s
 
 These experiments are where I refine my skills in interactive storytelling and UI animation, moving closer to my goal of creating immersive environments in the Game Development world👾.
 
-Calendly link for bookinga free call: [https://calendly.com/greciavalentinapv](https://calendly.com/greciavalentinapv)
+
+<br><br>
+
+
+<div style="text-align: center; margin: 3rem 0;">
+  <p style="font-size: 1rem; font-weight: 600; color: #6ce9b7; margin-bottom: 1.5rem; letter-spacing: 0.05em; text-transform: uppercase;">
+    Ready to build something remarkable?
+  </p>
+  <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+    <a href="https://calendly.com/greciavalentinapv" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; border-radius: 9999px; background: linear-gradient(to right, #2bd6c1, #0dbc82); color: #171717 !important; font-weight: 600; text-decoration: none !important; -webkit-text-fill-color: #171717 !important; font-size: 0.875rem;">
+      📅 Book a Free Call
+    </a>
+    <a href="mailto:greciavalentinapv@gmail.com" style="display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; border-radius: 9999px; background: transparent; color: #2bd6c1 !important; font-weight: 600; text-decoration: none !important; -webkit-text-fill-color: #2bd6c1 !important; font-size: 0.875rem; border: 2px solid #2bd6c1;">
+      ✉️ Send Me an Email
+    </a>
+  </div>
+</div>

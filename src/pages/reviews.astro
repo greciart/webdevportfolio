@@ -136,6 +136,41 @@ const reviews = [
   },
 ];
 
+
+const totalReviews = reviews.length;
+const averageRating = reviews.reduce((acc, rev) => acc + rev.rating, 0) / totalReviews;
+
+const schemaData = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Web Design & Development Services by Grecia V.",
+  "provider": {
+    "@type": "Person",
+    "name": "Grecia V."
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": averageRating.toFixed(1),
+    "reviewCount": totalReviews,
+    "bestRating": "5"
+  },
+  "review": reviews.map((rev) => ({
+    "@type": "Review",
+    "author": {
+      "@type": "Person",
+      "name": rev.clientName
+    },
+    "datePublished": rev.date,
+    "reviewBody": rev.transcription,
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": rev.rating,
+      "bestRating": "5"
+    }
+  }))
+};
+
+
 const stats = [
   { value: "50+", label: "Projects Completed" },
   { value: "4.8★", label: "Average Rating" },
@@ -145,6 +180,7 @@ const stats = [
 ---
 
 <Layout pageTitle={pageTitle} description={description}>
+  <script type="application/ld+json" set:html={JSON.stringify(schemaData)} />
   
   <section class="relative px-8 max-sm:px-4 pt-16 pb-8 max-sm:pt-10">
     <div class="blur-circle"></div>
