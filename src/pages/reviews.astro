@@ -142,10 +142,11 @@ const averageRating = reviews.reduce((acc, rev) => acc + rev.rating, 0) / totalR
 
 const schemaData = {
   "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Grecia V.",
-  "jobTitle": "Web Designer & Frontend Developer",
+  "@type": "ProfessionalService",
+  "name": "Grecia V. - Web Design & Development",
+  "description": "Web designer and frontend developer specializing in UX/UI design, WordPress, Shopify and Astro.",
   "url": "https://greciavdev.netlify.app",
+  "priceRange": "$$",
   "aggregateRating": {
     "@type": "AggregateRating",
     "ratingValue": averageRating.toFixed(1),
