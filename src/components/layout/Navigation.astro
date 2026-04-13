@@ -36,41 +36,36 @@ const baseClasses = {
 ---
 
 <script>
-  document.addEventListener("DOMContentLoaded", () => {
+  // Usamos una función autoejecutable o definida para limpiar el scope
+  const initNavigation = () => {
     const isHome = window.location.pathname === "/";
+    const navLinks = document.querySelectorAll("nav a");
+    
+    // 1. Definimos las clases fuera para no recrear el array en cada iteración
+    const activeClasses = ["text-mint-500", "dark:text-mint-400", "font-bold", "[text-shadow:1px_1px_11px_rgba(208,251,229,0.7)]"];
+    const inactiveClasses = ["dark:text-zinc-300", "text-blacktext"];
 
-    // Classes for link states
-    const linkClasses = {
-      active: [
-        "text-mint-500",
-        "dark:text-mint-400",
-        "font-bold",
-        "[text-shadow:1px_1px_11px_rgba(208,251,229,0.7)]",
-      ],
-      inactive: ["dark:text-zinc-300", "text-blacktext"],
-    };
-
-    function toggleLinkClasses(link: Element, isActive: boolean) {
+    function toggleLinkClasses(link, isActive) {
       if (isActive) {
-        link.classList.add(...linkClasses.active);
-        link.classList.remove(...linkClasses.inactive);
+        link.classList.add(...activeClasses);
+        link.classList.remove(...inactiveClasses);
         link.setAttribute("aria-current", "page");
       } else {
-        link.classList.remove(...linkClasses.active);
-        link.classList.add(...linkClasses.inactive);
+        link.classList.remove(...activeClasses);
+        link.classList.add(...inactiveClasses);
         link.removeAttribute("aria-current");
       }
     }
 
     function updateActiveLink() {
       const currentPath = window.location.pathname;
-      const currentHash = window.location.hash
-        ? `#${window.location.hash.substring(1)}`
-        : "";
+      const currentHash = window.location.hash || "";
+      // Combinación para detectar tanto rutas planas como anclas en Home
+      const fullPath = currentHash ? `/${currentHash}` : currentPath;
 
-      document.querySelectorAll("nav a").forEach((link) => {
+      navLinks.forEach((link) => {
         const path = link.getAttribute("data-path");
-        toggleLinkClasses(link, path === currentPath || path === currentHash);
+        toggleLinkClasses(link, path === currentPath || path === fullPath);
       });
     }
 
@@ -78,24 +73,23 @@ const baseClasses = {
       if (!isHome) return;
 
       const sections = document.querySelectorAll("section[id]");
-      const navLinks = document.querySelectorAll("nav a");
-
+      
       const observerOptions = {
         root: null,
-        rootMargin: "-50% 0px",
+        rootMargin: "-25% 0px -65% 0px", // Ajustado para detectar mejor la sección central
         threshold: 0,
       };
 
       const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
+          // Solo actualizamos si entra en el viewport para evitar cálculos innecesarios
           if (entry.isIntersecting) {
             const sectionId = entry.target.getAttribute("id");
-            if (sectionId) {
-              navLinks.forEach((link) => {
-                const path = link.getAttribute("data-path");
-                toggleLinkClasses(link, path === `/#${sectionId}`);
-              });
-            }
+            const targetPath = `/#${sectionId}`;
+            
+            navLinks.forEach((link) => {
+              toggleLinkClasses(link, link.getAttribute("data-path") === targetPath);
+            });
           }
         });
       }, observerOptions);
@@ -103,10 +97,19 @@ const baseClasses = {
       sections.forEach((section) => observer.observe(section));
     }
 
+    // Ejecución inicial
     updateActiveLink();
     setupScrollSpy();
+
+    // Listener para cambios de hash manuales (clics)
     window.addEventListener("hashchange", updateActiveLink);
-  });
+  };
+
+  // 2. Astro "Magic": Esto funciona con o sin ViewTransitions
+  // Si no usas ViewTransitions, DOMContentLoaded sigue siendo válido, 
+  // pero astro:page-load es la mejor práctica actual.
+  document.addEventListener("DOMContentLoaded", initNavigation);
+  document.addEventListener("astro:page-load", initNavigation);
 </script>
 
 <nav class={baseClasses.nav} role="navigation" aria-label="Main Navigation">
