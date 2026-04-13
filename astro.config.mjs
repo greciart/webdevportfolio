@@ -13,6 +13,11 @@ export default defineConfig({
       !page.includes("/blog/tags") &&
       !page.includes("/blog/techs"),
   }),],
+  
+  // Añade esta sección para eliminar el bloqueo de renderizado
+  build: {
+    inlineStylesheets: 'always', 
+  },
 
   vite: {
     plugins: [tailwindcss()],
