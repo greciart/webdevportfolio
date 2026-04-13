@@ -198,7 +198,15 @@ a.inline-block.leading-5.pl-12{
   @apply dark:text-zinc-300 bg-linear-to-t from-white to-white/90 dark:from-zinc-950 dark:to-zinc-950/80;
   @apply bg-clip-padding backdrop-filter backdrop-blur backdrop-saturate-100 backdrop-contrast-100;
   z-index: 999; /* <--- AGREGA ESTO */
+  position: fixed; /* Cambia absolute por fixed */
+  top: 60px; /* Ajusta esto según la altura de tu navbar */
+  left: 0;
+  right: 0;
+  bottom: 0; /* Esto hará que cubra toda la pantalla */
+  overflow-y: auto; /* Permite scroll interno si hay muchos links */
+
 }
+
 
 
 .hamburger-icon {
