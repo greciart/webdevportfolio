@@ -61,11 +61,11 @@ This project serves as a digital marketing case study in responsive web architec
 
 ![Professional responsive web design for Alma Street Creative Consulting displayed on two iMac screens featuring digital marketing services and a turquoise brand aesthetic.](/images/projects/mockup-macbook-pro-presentacion-web-creativa.webp)
 
-<div style="text-align: center; margin: 2rem 0;">
+<!-- <div style="text-align: center; margin: 2rem 0;">
   <a href="https://almastreet.ca/" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; border-radius: 9999px; background: linear-gradient(to right, #2bd6c1, #0dbc82); color: #171717 !important; font-weight: 600; text-decoration: none !important; -webkit-text-fill-color: #171717 !important; font-size: 0.875rem;">
     Visit Live Site →
   </a>
-</div>
+</div> -->
 
 ## 🎯Do you need a platform that sells your services and your knowledge?
 
