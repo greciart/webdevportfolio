@@ -70,7 +70,7 @@ const {
           <div
             aria-label={profileAlt}
             class="h-full w-full max-sm:rounded-full rounded-2xl max-sm:size-20 bg-center bg-cover"
-            style={`background-image: url(${profileImage})`}
+            style={`background-image: url(${(profileImage as any).src})`}
           >
             <a href={profileLink} class="h-full w-full flex"></a>
           </div>

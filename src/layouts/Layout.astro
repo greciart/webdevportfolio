@@ -7,7 +7,7 @@ const {
   pageTitle = "Grecia V. | Web Designer & Frontend Developer Portfolio",
   description = "Web designer and frontend developer portfolio showcasing UX/UI design, e-commerce websites, and modern web development projects built with WordPress, Shopify, and Astro.",
   ogimage = {
-    url: "/images/imagedefault.webp",
+    url: "../../assets/greciavdev.webp",
     alt: "Portfolio of Grecia V., web designer and frontend developer, featuring modern website design, UX/UI projects, and e-commerce platforms.",
   },
 } = Astro.props;
@@ -74,7 +74,7 @@ const twitterimage = `${siteUrl}${ogimage.url}`;
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={twitterimage} />
     <meta name="twitter:image:alt" content={ogimage.alt} />
-    <meta name="twitter:site" content={SEO.twitter} />
+    <!-- <meta name="twitter:site" content={SEO.twitter} /> -->
   
     <meta name="theme-color" content="#0E0E11"/>
 

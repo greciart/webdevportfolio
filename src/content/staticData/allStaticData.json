@@ -1,12 +1,12 @@
 {
-  "profileImage": "/images/profile.jpg",
+  "profileImage": "../../assets/profile.jpg",
   "profileAlt": "Photo of Grecia V. for the blog",
   "profileLink": "/about-me",
   "profileTitle": "Web Designer & Frontend Developer",
   "profileName": "Grecia V.",
   "github": "https://github.com/GVPV12",
   "githubText": "My github profile",
-  "portfolioImage": "/images/portafolio1.webp",
+  "portfolioImage": "../../assets/portafolio1.webp",
   "email": "greciavalentinapv@gmail.com",
   "linkedin": "https://www.linkedin.com/in/grecia-valentina-valero/",
   "youtube": "https://www.youtube.com/@grevaleart",
@@ -39,7 +39,7 @@
   "pageTitle": "Grecia V. | Web Designer & Frontend Developer Portfolio",
   "pageDescription": "Portfolio of Grecia V., a web designer and frontend developer specializing in UX/UI design, modern websites, and e-commerce experiences. Explore projects built with WordPress, Shopify, and Astro.",
   "OGImage": {
-    "url": "/images/greciavdev.webp",
+    "url": "../../assets/greciavdev.webp",
     "alt": "Portfolio of Grecia V., web designer and frontend developer, featuring modern website design, UX/UI projects, and e-commerce platforms built with WordPress, Shopify, and Astro."
   }
 }
