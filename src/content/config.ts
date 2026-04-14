@@ -40,6 +40,31 @@ const jsonDataCollection = defineCollection({
   }),
 });
 
+
+// 👇 Solo agrega esto nuevo
+const projects = defineCollection({
+  type: 'content',
+  schema: ({ image }) =>
+    z.object({
+      title: z.string(),
+      pubDate: z.coerce.date(),
+      description: z.string(),
+      languages: z.array(z.string()),
+      image: z.object({
+        url: image(),
+        alt: z.string(),
+      }),
+      gallery: z
+        .array(z.object({
+          url: image(),
+          alt: z.string(),
+        }))
+        .optional(),
+    }),
+});
+
+// 👇 Y agrega projects aquí
 export const collections = {
   staticData: jsonDataCollection,
+  projects,  // 👈 nueva línea
 };
