@@ -194,7 +194,14 @@ a.inline-block.leading-5.pl-12{
   }
 
 .expanded {
-	@apply transition-all duration-700 w-full flex! flex-col! left-0 top-full mt-4 absolute shadow-xl  dark:text-zinc-300 bg-linear-to-t from-white to-white/90 dark:from-zinc-950 dark:to-zinc-950/80 bg-clip-padding backdrop-filter backdrop-blur backdrop-saturate-100 backdrop-contrast-100;
+  display: flex !important;
+  flex-direction: column !important;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  margin-top: 1rem;
+  width: 100%;
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1);
 }
 
 

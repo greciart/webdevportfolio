@@ -54,3 +54,31 @@ const navItems = isActiveRoute
     </div>
   </div>
 </header>
+
+<script>
+  function initHamburger() {
+    const hamburger = document.querySelector(".hamburger");
+    const nav = document.getElementById("mobile-menu");
+
+    if (!hamburger || !nav) return;
+
+    hamburger.addEventListener("click", () => {
+      const isExpanded = hamburger.getAttribute("aria-expanded") === "true";
+      hamburger.setAttribute("aria-expanded", String(!isExpanded));
+      hamburger.classList.toggle("active");
+      nav.classList.toggle("expanded");
+    });
+
+    nav.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        hamburger.classList.remove("active");
+        hamburger.setAttribute("aria-expanded", "false");
+        nav.classList.remove("expanded");
+      });
+    });
+  }
+
+  initHamburger();
+  document.addEventListener("astro:page-load", initHamburger);
+  document.addEventListener("astro:after-swap", initHamburger);
+</script>
