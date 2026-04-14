@@ -5,6 +5,9 @@ import Heading from "../components/ui/Heading.astro";
 import NavArticle from "../components/layout/NavArticle.astro";
 import Contact from "../components/portfolio/Contact.astro";
 import ProjectGallery from "../components/layout/ProjectGallery.astro";
+import { Image } from 'astro:assets';  // 👈 agrega esto
+import type { ImageMetadata } from 'astro';
+
 const { frontmatter } = Astro.props;
 const gallery = frontmatter.gallery ?? [];
 ---
@@ -34,19 +37,19 @@ const gallery = frontmatter.gallery ?? [];
       {gallery.length > 0 && (
         <div class="xl:hidden flex flex-col gap-4">
           <h3 class="dark:text-zinc-400 text-blacktext/90 font-black tracking-wide text-sm uppercase">Project Gallery</h3>
-          {gallery.map((img: {url: string, alt: string}) => (
-            <a href={img.url} target="_blank" rel="noopener noreferrer">
-              <img src={img.url} alt={img.alt} class="w-full rounded-xl hover:opacity-90 transition-opacity" />
-            </a>
-          ))}
+{gallery.map((img: {url: ImageMetadata, alt: string}) => (
+  <a href={(img.url as any).src} target="_blank">
+    <Image src={img.url} alt={img.alt} class="w-full rounded-xl" />
+  </a>
+))}
         </div>
       )}
 
-      <figure>
-        {frontmatter.image?.url && (
-          <img class="w-full rounded-xl" src={frontmatter.image.url} alt={frontmatter.image.alt || "Article image"} />
-        )}
-      </figure>
+<figure>
+  {frontmatter.image?.url && (
+    <Image class="w-full rounded-xl" src={frontmatter.image.url} alt={frontmatter.image.alt || "Article image"} />
+  )}
+</figure>
 
       <div class="markdown" id="content">
         <slot />
