@@ -1,3 +1,4 @@
+
 ---
 layout:  /src/layouts/ProjectLayout.astro
 title: 'V7ad Case Study | WordPress & Elementor Website Redesign for Creative Agency'
@@ -5,21 +6,25 @@ pubDate: 2025-07-26
 description: 'Complete UI/UX redesign for V7ad Creative Agency. Using WordPress and Elementor to transform a cluttered site into a scalable, premium digital presence for founders.'
 languages: ["elementor", "wordpress"]
 image:
-  url: "/images/projects/v7ad-creative-agency-ui-design.webp"
+  url: "/src/assets/projects/v7ad-creative-agency-ui-design.webp"
   alt: "V7ad creative agency website redesign featuring a clean WordPress layout, Elementor Pro development, and premium portfolio showcase for entrepreneurs."
 gallery:
-  - url: "/images/projects/v7ad-creative-agency-home-page-ui-design.webp"
+  - url: "/src/assets/projects/v7ad-creative-agency-home-page-ui-design.webp"
     alt: "V7ad creative agency home page featuring a premium dark UI design and high-conversion landing page architecture built with Elementor."
-  - url: "/images/projects/v7ad-about-us-branding-strategy-section.webp"
+  - url: "/src/assets/projects/v7ad-about-us-branding-strategy-section.webp"
     alt: "About Us section for V7ad agency, highlighting technical branding strategy and digital presence for creative entrepreneurs."
-  - url: "/images/projects/v7ad-creative-services-layout-elementor.webp"
+  - url: "/src/assets/projects/v7ad-creative-services-layout-elementor.webp"
     alt: "Interactive services section for V7ad, showcasing UI/UX strategy and custom web development solutions for startups." 
-  - url: "/images/projects/v7ad-portfolio-showcase-grid-hierarchy.webp"
+  - url: "/src/assets/projects/v7ad-portfolio-showcase-grid-hierarchy.webp"
     alt: "Premium portfolio showcase for V7ad creative agency, featuring a clean grid layout and high-end visual hierarchy for work display."    
             
 --- 
 
-![Responsive laptop mockup for V7ad creative agency, highlighting technical branding and minimalist web architecture for entrepreneurs.](/images/projects/v7ad-modern-laptop-mockup-branding-showcase.webp)
+import { Image } from 'astro:assets';
+import v7adMockup from '/src/assets/projects/v7ad-modern-laptop-mockup-branding-showcase.webp';
+import v7adContact from '/src/assets/projects/v7ad-contact-page-lead-generation-ui.webp';
+
+<Image src={v7adMockup} alt="Responsive laptop mockup for V7ad creative agency, highlighting technical branding and minimalist web architecture for entrepreneurs." />
 
 ## 📋 Technical Specifications (Ficha Técnica)
 - Role: Lead Web Developer & UI/UX Strategist.
@@ -44,7 +49,7 @@ My approach focused on a total aesthetic transformation, turning technical debt 
 ## 🚀 Strategic Partnerships: Empowering Creative Founders
 This project is a testament to how I help entrepreneurs and creative founders reclaim their brand authority. Many small business owners struggle with "ugly" or dysfunctional websites that hurt their credibility. By acting as a startup growth partner, I bridge the gap between a cluttered, DIY look and a premium visual identity. I specialize in helping founders form a dominant digital presence through technical branding and scalable web solutions.
 
-![Contact Us page for V7ad agency, optimized for lead generation and seamless communication with startup founders.](/images/projects/v7ad-contact-page-lead-generation-ui.webp)
+<Image src={v7adContact} alt="Contact Us page for V7ad agency, optimized for lead generation and seamless communication with startup founders." />
 
 ## 🛠️ Technical Implementation & UX Strategy
 This project serves as a comprehensive creative agency web design case study, focusing on UI/UX redesign and WordPress development. My goal as a freelance specialist was to prioritize conversion rate optimization (CRO) and mobile, tablet and device accessibility through expert responsiveness with Elementor development. By replacing a cluttered interface with a sleek, minimalist architecture, this platform ensures a seamless experience that empowers entrepreneurs to showcase their work with authority.

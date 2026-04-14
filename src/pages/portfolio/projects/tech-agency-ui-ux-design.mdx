@@ -1,3 +1,4 @@
+
 ---
 layout:  /src/layouts/ProjectLayout.astro
 title: 'Soft Solutions Case Study: UI/UX Design & Branding for Tech Agency Website'
@@ -5,15 +6,18 @@ pubDate: 2025-04-05
 description: 'High-performance landing page using Figma and UX strategy to balance technical logic and creative innovation.'
 languages: ["figma", "uiux"]
 image:
-  url: "/images/projects/softsolutionsmockup.webp"
+  url: "/src/assets/projects/softsolutionsmockup.webp"
   alt: "Soft Solutions Landing Page UI Design by Grecia V. showcasing a minimalist purple aesthetic, geometric shapes, and clean UX for a software agency."
 gallery:
-  - url: "/images/projects/softsolutions.webp"
+  - url: "/src/assets/projects/softsolutions.webp"
     alt: "Soft Solutions landing page"
 
 --- 
 
-![Mi foto](/images/projects/softsolutions2.webp)
+import { Image } from 'astro:assets';
+import softsolutions2 from '/src/assets/projects/softsolutions2.webp';
+
+<Image src={softsolutions2} alt="Mi foto" />
 
 ## Case Study: Soft Solutions – Balancing Logic & Creativity with Isometric UI/UX
 ### High-Performance Landing Page Design: Merging Technical Architecture with Premium Isometric Visuals

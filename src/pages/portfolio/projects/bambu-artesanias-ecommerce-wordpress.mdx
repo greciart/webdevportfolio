@@ -1,3 +1,4 @@
+
 ---
 layout:  /src/layouts/ProjectLayout.astro
 title: 'Bambú Artesanías: Sustainable E-commerce Design for Artisan Entrepreneurs'
@@ -5,23 +6,27 @@ pubDate: 2025-07-07
 description: 'Sustainable e-commerce design for Bambú Artesanías. A results-driven WordPress & Elementor shop focused on artisan branding and digital presence for startups.'
 languages: ["elementor", "wordpress","uiux"]
 image:
-  url: "/images/projects/bambu-artesanias-premium-desktop-mockup.webp"
+  url: "/src/assets/projects/bambu-artesanias-premium-desktop-mockup.webp"
   alt: "High-fidelity desktop mockup of the Bambú Artesanías e-commerce site, showcasing responsive UI design."
 gallery:
-  - url: "/images/projects/bambu-artesanias-ecommerce-home-design.webp"
+  - url: "/src/assets/projects/bambu-artesanias-ecommerce-home-design.webp"
     alt: "Bambú Artesanías home page featuring a sustainable and organic UI design for handmade products."
-  - url: "/images/projects/bambu-artesanias-product-catalog-layout.webp"
+  - url: "/src/assets/projects/bambu-artesanias-product-catalog-layout.webp"
     alt: "Artisan e-commerce shop interface with a minimalist grid layout and user-centric navigation."
-  - url: "/images/projects/bambu-artesanias-customer-support-interface.webp"
+  - url: "/src/assets/projects/bambu-artesanias-customer-support-interface.webp"
     alt: "Contact page for Bambú Artesanías, optimized for lead generation and customer inquiries." 
-  - url: "/images/projects/bambu-artesanias-ecommerce-cart-ui-design.webp"
+  - url: "/src/assets/projects/bambu-artesanias-ecommerce-cart-ui-design.webp"
     alt: "Minimalist e-commerce cart interface for Bambú Artesanías, featuring a clean layout, product summary, and clear call-to-action for artisan entrepreneurs."
-  - url: "/images/projects/bambu-artesanias-secure-checkout-ux-implementation.webp"
+  - url: "/src/assets/projects/bambu-artesanias-secure-checkout-ux-implementation.webp"
     alt: "Streamlined secure checkout page for Bambú Artesanías, showcasing multi-step payment gateway integration and high-conversion UX for sustainable startups."            
             
 --- 
+import { Image } from 'astro:assets';
+import bambuLaptop from '/src/assets/projects/bambu-artesanias-responsive-laptop-ui-showcase.webp';
+import bambuFlow from '/src/assets/projects/bambu-artesanias-ecommerce-user-flow-map.webp';
 
-![Modern laptop mockup of the Bambú Artesanías storefront, highlighting a mobile-first approach for entrepreneurs.](/images/projects/bambu-artesanias-responsive-laptop-ui-showcase.webp)
+
+<Image src={bambuLaptop} alt="Modern laptop mockup of the Bambú Artesanías storefront, highlighting a mobile-first approach for entrepreneurs." />
 
 ## Case Study: Bambú Artesanías – Scaling Traditional Craftsmanship for E-commerce
 
@@ -48,7 +53,7 @@ For this freelance project, I focused on creating a balance between *"natural ae
 ## 🚀 Strategic Partnerships: Empowering Sustainable Entrepreneurs
 With my expertise in helping entrepreneurs transform their passion into a profitable digital asset, I acted as a startup growth partner, bridging the gap between handmade quality and high-performance web design, ensuring that local creators can compete in the global e-commerce landscape.
 
-![Complete e-commerce user flow and sitemap architecture for Bambú Artesanías, focusing on conversion funnel optimization.](/images/projects/bambu-artesanias-ecommerce-user-flow-map.webp)
+<Image src={bambuFlow} alt="Complete e-commerce user flow and sitemap architecture for Bambú Artesanías, focusing on conversion funnel optimization." />
 
 ## 🗺️ The UX Flow: Designed for Conversion
 The information architecture of this project (visible in the UX map) follows a logical conversion funnel:

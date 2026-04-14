@@ -1,3 +1,4 @@
+
 ---
 layout:  /src/layouts/ProjectLayout.astro
 title: 'Expansion Works: Professional Web Design for Executive Coach'
@@ -5,19 +6,23 @@ pubDate: 2025-07-07
 description: 'Fully customized minimalist web design for Expansion Works. A UX-driven WordPress & Elementor platform for executive coaches, focusing on professional feminine empowerment branding and lead generation.'
 languages: ["elementor", "wordpress", "uiux"]
 image:
-  url: "/images/projects/expansion-works-multi-device-responsive-showcase.webp"
+  url: "/src/assets/projects/expansion-works-multi-device-responsive-showcase.webp"
   alt: "High-fidelity responsive mockup of Expansion Works on laptop, tablet, and mobile, highlighting a seamless cross-device experience."
 gallery:
-  - url: "/images/projects/expansion-works-coaching-home-page-design.webp"
+  - url: "/src/assets/projects/expansion-works-coaching-home-page-design.webp"
     alt: "Expansion Works home page featuring a minimalist and professional UI design for executive coaching services."
-  - url: "/images/projects/expansion-works-coach-branding-identity.webp"
+  - url: "/src/assets/projects/expansion-works-coach-branding-identity.webp"
     alt: "About Us section for Expansion Works, showcasing professional branding for female-led leadership coaching."
-  - url: "/images/projects/expansion-works-coaching-packages-layout.webp"
+  - url: "/src/assets/projects/expansion-works-coaching-packages-layout.webp"
     alt: "Service access and package selection layout for Expansion Works, optimized for professional consulting lead generation." 
-  - url: "/images/projects/expansion-works-contact-lead-generation-ui.webp"
+  - url: "/src/assets/projects/expansion-works-contact-lead-generation-ui.webp"
     alt: "Contact and Calendly integration page for Expansion Works, designed for seamless coaching session bookings."    
-            
---- 
+
+---
+
+import { Image } from 'astro:assets';
+import ewFlow from '/src/assets/projects/expansion-works-coaching-user-flow-architecture.webp';
+
 
 ## 📋 Project Specifications (Technical Specs)
 - **Role:** Lead Web Developer & UI/UX Designer.
@@ -39,7 +44,7 @@ For this project, I focused on a "Less is More" philosophy to highlight the coac
 
 ***Personalized WordPress Development:*** Built from scratch using Elementor Pro, I ensured a pixel-perfect execution that allows the client to manage her digital assets and schedule sessions seamlessly via Calendly integration.
 
-![Comprehensive user flow for a coaching platform, featuring Calendly integration, service info, and secure checkout completion.](/images/projects/expansion-works-coaching-user-flow-architecture.webp)
+<Image src={ewFlow} alt="Comprehensive user flow for a coaching platform, featuring Calendly integration, service info, and secure checkout completion." />
 
 ## 🗺️ The UX Flow: Professional Funnel for High-Ticket Coaching
 The information architecture of Expansion Works was engineered to build trust and eliminate friction in the booking process. The journey follows a strategic path designed for lead generation:

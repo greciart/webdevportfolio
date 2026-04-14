@@ -3,7 +3,8 @@ import Project from "./Project.astro";
 import Heading from "../ui/Heading.astro";
 import { Icon } from "astro-icon/components";
 
-const modules = import.meta.glob("../../pages/portfolio/projects/*.md", { eager: true });
+const modules = import.meta.glob("../../pages/portfolio/projects/*.{md,mdx}", { eager: true });
+
 const allPosts: any[] = Object.values(modules);
 
 // Sort by descending date (most recent first)

@@ -1,3 +1,4 @@
+
 ---
 layout:  /src/layouts/ProjectLayout.astro
 title: 'Car Rental Website Design with Elementor & Turo Integration'
@@ -5,21 +6,28 @@ pubDate: 2025-07-07
 description: 'A deep dive into the Shinerz Car Rental project: A WordPress site built with Elementor, featuring seamless Turo integration and minimalistic UI.'
 languages: ["elementor", "wordpress","uiux"]
 image:
-  url: "/images/projects/shinerz-car-rental-web-design-sections.webp"
+  url: "/src/assets/projects/shinerz-car-rental-web-design-sections.webp"
   alt: "Detailed layout sections of Shinerz car rental website featuring seamless Turo booking integration and clean typography."
 gallery:
-  - url: "/images/projects/shinerz-car-rental-elementor-hero-video.webp"
+  - url: "/src/assets/projects/shinerz-car-rental-elementor-hero-video.webp"
     alt: "High-performance car rental homepage built with Elementor featuring dynamic background video and a sleek navigation layout."
-  - url: "/images/projects/luxury-car-fleet-brand-storytelling.webp"
+  - url: "/src/assets/projects/luxury-car-fleet-brand-storytelling.webp"
     alt: "Minimalist 'About Us' section for a car rental business, showcasing a premium fleet and a history of excellence in travel."
-  - url: "/images/projects/turo-integrated-car-booking-catalog.webp"
+  - url: "/src/assets/projects/turo-integrated-car-booking-catalog.webp"
     alt: "Responsive car rental inventory interface with direct Turo integration and vehicle preview cards."        
             
 --- 
 
-![User interacting with the Shinerz car rental platform on a laptop, highlighting the professional 'Well-Maintained Vehicles' section.](/images/projects/elementor-wordpress-car-rental-showcase.webp)
+import { Image } from 'astro:assets';
+import shinerzLaptop from '/src/assets/projects/elementor-wordpress-car-rental-showcase.webp';
+import shinerzMobile from '/src/assets/projects/shinerz-mobile-responsive-ui-design.webp';
+import shinerzSitemap from '/src/assets/projects/shinerz-site-architecture-map.webp';
+import shinerzUX from '/src/assets/projects/shinerz-ux-user-flow-turo-redirection.webp';
+import shinerzFeatures from '/src/assets/projects/shinerz-full-web-design-features-presentation.webp';
 
-![Smartphone mockup showcasing the mobile-first responsive interface for Shinerz car rental built with Elementor.](/images/projects/shinerz-mobile-responsive-ui-design.webp)
+<Image src={shinerzLaptop} alt="User interacting with the Shinerz car rental platform on a laptop, highlighting the professional 'Well-Maintained Vehicles' section." />
+
+<Image src={shinerzMobile} alt="Smartphone mockup showcasing the mobile-first responsive interface for Shinerz car rental built with Elementor." />
 
 ## Shinerz Car Rental: A High-Velocity Digital Showcase 🚗
 ### The Vision: Engineered for Motion
@@ -43,7 +51,7 @@ To maintain a "premium" feel while keeping the site lightning-fast within the Wo
 - **Asset Lifecycle:** Using Next-gen Image Formats (WebP), I ensured that every vehicle preview is sharp yet lightweight, catering to mobile users on limited data plans.
 - **SEO-First Indexing:** Each page was structured with a clear Header Hierarchy (H1-H3) and semantic HTML, making it easier for crawlers to understand the rental categories and service areas.
 
-![Simple site map diagram showing the web architecture for the Shinerz car rental project including legal and service pages.](/images/projects/shinerz-site-architecture-map.webp)
+<Image src={shinerzSitemap} alt="Simple site map diagram showing the web architecture for the Shinerz car rental project including legal and service pages." />
 
 ## Project Architecture & Conversion Strategy 🗺️
 To ensure the Shinerz Car Rental platform was both scalable and user-friendly, I developed a robust structural foundation. This phase focused on two critical areas: Information Architecture (IA) and Strategic User Flow.
@@ -55,7 +63,7 @@ The sitemap was engineered to be lean and crawler-friendly, ensuring that both u
 **Service & Fleet Pages:** Dedicated sections to highlight "Well-Maintained Vehicles," boosting rankings for niche rental searches.
 **Trust & Legal Infrastructure:** Inclusion of Privacy, Refund, and Terms pages to satisfy Google’s E-E-A-T (Experience, Expertise, Authoritativeness, and Trustworthiness) requirements.
 
-![Detailed UX flow diagram illustrating the user journey from the homepage to the external Turo booking platform.](/images/projects/shinerz-ux-user-flow-turo-redirection.webp)
+<Image src={shinerzUX} alt="Detailed UX flow diagram illustrating the user journey from the homepage to the external Turo booking platform." />
 
 ### User Flow: The Frictionless Redirection Funnel
 The UX flow was meticulously mapped to solve a specific business challenge: moving users from a custom WordPress environment into the Turo ecosystem without losing momentum.
@@ -71,7 +79,7 @@ The UX flow was meticulously mapped to solve a specific business challenge: movi
 - *Conversion Tracking:* The flow is designed to allow for easy Event Tracking in Google Analytics (GA4), specifically monitoring clicks on the Turo redirection buttons.
 - *Logical Hierarchy:* By using a clear parent-child page relationship, the site maintains a strong "Silo Structure," which is a gold standard for Search Engine Optimization.
 
-![Professional presentation slide for Shinerz web design listing features like SEO optimization and Turo redirection on tablet and mobile devices.](/images/projects/shinerz-full-web-design-features-presentation.webp)
+<Image src={shinerzFeatures} alt="Professional presentation slide for Shinerz web design listing features like SEO optimization and Turo redirection on tablet and mobile devices." />
 
 ## Development Platform: WordPress with a fully custom Elementor layout.
 

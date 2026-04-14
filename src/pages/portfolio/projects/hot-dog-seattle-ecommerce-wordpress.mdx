@@ -1,3 +1,4 @@
+
 ---
 layout:  /src/layouts/ProjectLayout.astro
 title: '🌭 E-commerce Website Design with WordPress & Elementor'
@@ -5,16 +6,19 @@ pubDate: 2025-04-05
 description: 'Scaling street food culture into a profitable digital asset. A experience-focused custom WordPress & Elementor storefront built for ordering and startup growth.'
 languages: ["elementor", "wordpress"]
 image:
-  url: "/images/projects/hotdogseattle.webp"
+  url: "/src/assets/projects/hotdogseattle.webp"
   alt: "Gamified UI design for ADHD accessibility featuring progress bars and achievement badges by Grecia V."
 gallery:
-  - url: "/images/projects/tienda-hotdogseattle.webp"
+  - url: "/src/assets/projects/tienda-hotdogseattle.webp"
     alt: "Interactive hot dog menu and e-commerce shop interface for Hot Dog Seattle, featuring custom toppings and mobile-friendly ordering."
-  - url: "/images/projects/ubicacion-hotdogseattle.webp"
+  - url: "/src/assets/projects/ubicacion-hotdogseattle.webp"
     alt: "Store location and contact map for Hot Dog Seattle, optimized for local search and fast-casual dining discovery."
-  - url: "/images/projects/contacto-hotdogseattle.webp"
+  - url: "/src/assets/projects/contacto-hotdogseattle.webp"
     alt: "Contact form and customer support page for Hot Dog Seattle, designed for seamless communication with entrepreneurs and local customers."    
 --- 
+
+import { Image } from 'astro:assets';
+import uxflowHotdog from '/src/assets/projects/uxflow-hotdogseattle.webp';
 
 ## Case Study: Hot Dog Seattle – High-Conversion E-commerce for Street Food Culture
 
@@ -38,7 +42,7 @@ For this project, I focused on a high-fidelity implementation, ensuring the fina
 
 **E-commerce Optimization:** I streamlined the checkout flow and created an intuitive product selection menu to reduce bounce rates and maximize return on investment (ROI) for the brand.
 
-![E-commerce sitemap and user flow architecture by Grecia V. showcasing the journey from home page to checkout completed, featuring payment gateway integrations and user feedback loops.](/images/projects//uxflow-hotdogseattle.webp)
+<Image src={uxflowHotdog} alt="E-commerce sitemap and user flow architecture by Grecia V. showcasing the journey from home page to checkout completed, featuring payment gateway integrations and user feedback loops." />
 
 ## 🗺️ Information Architecture: High-Conversion E-commerce User Flow
 This visual map outlines the user journey and site map architecture designed to maximize *retention* and streamline the *purchasing process*. By prioritizing a **logical conversion funnel**, this flow ensures that entrepreneurs can offer a frictionless experience from initial discovery to the final transaction.

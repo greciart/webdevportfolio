@@ -1,3 +1,4 @@
+
 ---
 layout:  /src/layouts/ProjectLayout.astro
 title: '🎓 EdTech Dashboard Design with Gamified UX for Neurodivergent Learning'
@@ -5,10 +6,13 @@ pubDate: 2025-04-05
 description: 'An inclusive digital learning ecosystem designed to support neurodivergent students through dopamine-driven UX and advanced student analytics.'
 languages: ["figma", "uiux"]
 image:
-  url: "/images/projects/edtech.webp"
+  url: "/src/assets/projects/edtech.webp"
   alt: "Gamified UI design for ADHD accessibility featuring progress bars and achievement badges by Grecia V."
 gallery: []
 --- 
+
+import { Image } from 'astro:assets';
+import edutechfull from '/src/assets/projects/edutechfull.webp';
 
 - **Core Skills:** UI/UX Design, Dashboard Architecture, User Retention Strategy.
 - **Tools Used:** Figma (Components, Auto-layout), Adobe Creative Suite.
@@ -25,7 +29,7 @@ Most EdTech platforms are functional but uninspiring. Students often lose intere
 - **Foster Community:** Creating direct channels for student-teacher interaction.
 - **Visualize Success:** Using Data Visualization to make student statistics actionable and clear.
 
-![Modern E-learning dashboard UI design featuring student analytics, progress tracking, and gamification elements in a minimalist pastel interface.](/images/projects/edutechfull.webp)
+<Image src={edutechfull} alt="Modern E-learning dashboard UI design featuring student analytics, progress tracking, and gamification elements in a minimalist pastel interface." />
 
 ## 💡 The Solution: A Unified "Control Center" for Educators
 This dashboard acts as a *"Mission Control"* for the teacher. By integrating SaaS UI principles, I developed a layout that manages complex workflows—assignments, live courses, and grading—without overwhelming the user.

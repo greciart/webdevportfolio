@@ -1,0 +1,65 @@
+---
+// src/components/Button.astro
+interface Props {
+  text: string;
+  href?: string; // El signo ? significa que es opcional
+  target?: string;
+}
+
+const { text, href, target = "_self" } = Astro.props;
+
+// Decidimos qué etiqueta usar: si hay href es un enlace 'a', si no es un 'button'
+const Element = href ? 'a' : 'button';
+---
+
+<div class="button-container">
+  <Element 
+    href={href} 
+    target={href ? target : undefined}
+    rel={target === '_blank' ? 'noopener' : undefined}
+    class="custom-btn"
+  >
+    {text}
+  </Element>
+</div>
+
+<style>
+  .button-container {
+    text-align: center;
+    margin: 2.5rem 0;
+  }
+
+  .custom-btn {
+    appearance: none;
+    border: none;
+    cursor: pointer;
+    text-decoration: none !important;
+    
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 36px;
+    border-radius: 9999px;
+    background: linear-gradient(135deg, #2bd6c1, #0dbc82);
+    
+    /* Forzamos el color negro siempre */
+    color: #000000 !important; 
+    -webkit-text-fill-color: #000000 !important; /* Evita que gradientes de texto globales lo cambien */
+    
+    font-weight: 800;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+  }
+
+  /* El truco: repetimos el color en el hover con !important */
+  .custom-btn:hover {
+    transform: translateY(-3px);
+    color: #000000 !important; 
+    -webkit-text-fill-color: #000000 !important;
+    
+    /* Cambiamos el fondo para que se note el hover, pero NO el texto */
+    filter: brightness(1.1); 
+    box-shadow: 0 8px 25px rgba(13, 188, 130, 0.4);
+  }
+</style>
+
