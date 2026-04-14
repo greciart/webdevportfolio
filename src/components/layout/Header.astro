@@ -4,6 +4,8 @@ import ThemeIcon from "../ui/ThemeIcon.astro";
 import Social from "../ui/Social.astro";
 import { Icon } from "astro-icon/components";
 import { getCollection } from "astro:content";
+import { Image } from "astro:assets";
+import logo from "../../assets/logo.png";
 
 const [staticData] = await getCollection("staticData");
 const { github, githubIconName, linkedin, linkedinIconName, contra, contraIconName } = staticData.data;
@@ -26,11 +28,20 @@ const navItems = isActiveRoute
 >
   <div class="relative mx-auto flex max-w-7xl flex-row items-center justify-between max-xl:px-6">
   
-    <img 
+    <!-- <img 
   src="/logo.png" 
   height="24"
   style="width: auto; height: 36px; object-fit: contain;"
   alt="Logo" 
+/> -->
+
+<Image
+  src={logo}
+  alt="Logo"
+  height={50}
+  loading="eager"
+  decoding="async"
+  class="h-[35px] w-auto object-contain"
 />
 
     <Navigation items={navItems} />
