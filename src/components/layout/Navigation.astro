@@ -24,7 +24,7 @@ const menu = {
 
 // Common base classes
 const baseClasses = {
-  nav: "nav-links flex justify-center gap-6 max-md:gap-0 max-md:py-6 md:-ml-25", // Añadí md: al margen negativo
+  nav: "nav-links flex justify-center gap-6 max-md:gap-3 max-md:py-6 -ml-25",
   link: "px-2 py-2 text-sm transition-all hover:text-mint-300 max-md:mx-auto max-md:w-full max-md:px-6 max-md:py-2 ",
   socialContainer: "flex items-center justify-center gap-5 md:hidden",
   dropdown: "relative group flex items-center",
@@ -107,25 +107,6 @@ const baseClasses = {
     setupScrollSpy();
     window.addEventListener("hashchange", updateActiveLink);
   });
-
-
-  // Añade esto al final de tu script existente
-const hamburger = document.querySelector('.hamburger');
-const nav = document.querySelector('.nav-links');
-
-hamburger?.addEventListener('click', () => {
-  nav?.classList.toggle('expanded');
-  hamburger?.classList.toggle('active');
-});
-
-// Cerrar el menú al hacer clic en un enlace (importante en móviles)
-document.querySelectorAll('.nav-links a').forEach(link => {
-  link.addEventListener('click', () => {
-    nav?.classList.remove('expanded');
-    hamburger?.classList.remove('active');
-  });
-});
-
 </script>
 
 <nav class={baseClasses.nav} role="navigation" aria-label="Main Navigation">

@@ -194,17 +194,7 @@ a.inline-block.leading-5.pl-12{
   }
 
 .expanded {
-  @apply flex! flex-col! absolute top-full left-0 w-full p-6 shadow-2xl;
-  background-color: rgba(23, 23, 23, 0.95); /* Un fondo oscuro sólido para que no se trasluzca el contenido */
-  backdrop-filter: blur(10px);
-  z-index: 100; /* Asegura que esté por encima de las cards */
-  display: flex !important;
-}
-
-/* En modo oscuro, asegúrate de que se vea bien */
-.dark .expanded {
-  background-color: rgba(9, 9, 11, 0.98);
-  border-bottom: 1px solid rgba(108, 233, 183, 0.2); /* Un borde sutil color menta */
+	@apply transition-all duration-700 w-full flex! flex-col! left-0 top-full mt-4 absolute shadow-xl  dark:text-zinc-300 bg-linear-to-t from-white to-white/90 dark:from-zinc-950 dark:to-zinc-950/80 bg-clip-padding backdrop-filter backdrop-blur backdrop-saturate-100 backdrop-contrast-100;
 }
 
 
