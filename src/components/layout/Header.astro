@@ -56,29 +56,22 @@ const navItems = isActiveRoute
 </header>
 
 <script>
-  function initHamburger() {
-    const hamburger = document.querySelector(".hamburger");
-    const nav = document.getElementById("mobile-menu");
+  const hamburger = document.querySelector(".hamburger");
+  const nav = document.getElementById("mobile-menu");
 
-    if (!hamburger || !nav) return;
-
+  if (hamburger && nav) {
     hamburger.addEventListener("click", () => {
-      const isExpanded = hamburger.getAttribute("aria-expanded") === "true";
-      hamburger.setAttribute("aria-expanded", String(!isExpanded));
-      hamburger.classList.toggle("active");
-      nav.classList.toggle("expanded");
-    });
-
-    nav.querySelectorAll("a").forEach(link => {
-      link.addEventListener("click", () => {
-        hamburger.classList.remove("active");
-        hamburger.setAttribute("aria-expanded", "false");
-        nav.classList.remove("expanded");
-      });
+      const isOpen = nav.style.display === "flex";
+      nav.style.display = isOpen ? "none" : "flex";
+      nav.style.flexDirection = "column";
+      nav.style.position = "absolute";
+      nav.style.top = "100%";
+      nav.style.left = "0";
+      nav.style.width = "100%";
+      nav.style.zIndex = "50";
+      nav.style.padding = "1rem 0";
+      nav.style.backdropFilter = "blur(12px)";
+      nav.style.background = "var(--tw-backdrop, white)";
     });
   }
-
-  initHamburger();
-  document.addEventListener("astro:page-load", initHamburger);
-  document.addEventListener("astro:after-swap", initHamburger);
 </script>
