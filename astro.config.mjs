@@ -4,11 +4,12 @@ import tailwindcss from "@tailwindcss/vite";
 import preact from "@astrojs/preact";
 import sitemap from "@astrojs/sitemap"
 import icon from "astro-icon";
+import mdx from '@astrojs/mdx';
 
 // https://astro.build/config
 export default defineConfig({
   site: "https://greciavdev.netlify.app",
-  integrations: [preact(), icon(), sitemap({
+  integrations: [preact(), icon(), mdx(),sitemap({
     filter: (page) =>
       !page.includes("/blog/tags") &&
       !page.includes("/blog/techs"),

@@ -8,20 +8,22 @@ image:
   url: "/images/projects/dana-shape-luxury-shopify-home-ui.webp"
   alt: "Responsive wellness platform interface across laptop and tablet, demonstrating fluid design and consistent branding for bioresonance products"
 gallery:
-  - url: "/images/projects/home-luxury-ecommerce-design.webp"
+  - url: "../../assets/projects/home-luxury-ecommerce-design.webp"
     alt: "Luxury e-commerce homepage design with modern minimalist UI and featured products"
-  - url: "/images/projects/about-us-luxury-brand-ui.webp"
+  - url: "../../assets/projects/about-us-luxury-brand-ui.webp"
     alt: "About us page design for a luxury brand website with elegant typography and layout"
-  - url: "/images/projects/catalog-ecommerce-ui-design.webp"
+  - url: "../../assets/projects/catalog-ecommerce-ui-design.webp"
     alt: "E-commerce product catalog page with grid layout and modern filtering system"  
-  - url: "/images/projects/product-page-luxury-ui.webp"
+  - url: "../../assets/projects/product-page-luxury-ui.webp"
     alt: "Luxury product page design with high-quality visuals and conversion-focused layout"
-  - url: "/images/projects/contact-page-modern-ui.webp"
-    alt: "Modern contact page design with clean layout and user-friendly interface"
-
-              
-            
+  - url: "../../assets/projects/contact-page-modern-ui.webp"
+    alt: "Modern contact page design with clean layout and user-friendly interface"          
 --- 
+
+import { Image } from 'astro:assets';
+import miImagen from '../../assets/projects/luxury-ecommerce-mockup.webp';
+
+<Image src={miImagen} alt="Immersive desktop experience for Anywhere Healing, highlighting the 'Your Body Speaks' headline and relaxing aesthetic on a high-resolution display." />
 
 ![Immersive desktop experience for Anywhere Healing, highlighting the 'Your Body Speaks' headline and relaxing aesthetic on a high-resolution display.](/images/projects/luxury-ecommerce-mockup.webp)
 
