@@ -64,6 +64,8 @@ const navItems = isActiveRoute
       const isOpen = nav.style.display === "flex";
       nav.style.display = isOpen ? "none" : "flex";
       nav.style.flexDirection = "column";
+      nav.style.alignItems = "center";
+      nav.style.textAlign = "center";
       nav.style.position = "absolute";
       nav.style.top = "100%";
       nav.style.left = "0";
@@ -71,7 +73,12 @@ const navItems = isActiveRoute
       nav.style.zIndex = "50";
       nav.style.padding = "1rem 0";
       nav.style.backdropFilter = "blur(12px)";
-      nav.style.background = "var(--tw-backdrop, white)";
+      nav.style.borderBottom = "1px solid rgba(13,188,130,0.2)";
+
+      const isDark = document.documentElement.classList.contains("dark");
+      nav.style.background = isDark
+        ? "rgba(14,14,17,0.95)"
+        : "rgba(255,255,255,0.95)";
     });
   }
 </script>
