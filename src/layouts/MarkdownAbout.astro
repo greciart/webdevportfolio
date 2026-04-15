@@ -62,6 +62,10 @@ const { frontmatter } = Astro.props;
         src={profileImage}
         alt="Photo of Grecia V. for the blog"
         class="w-full h-full object-cover rounded-full"
+        width={240}
+        height={240}
+        widths={[120, 240, 480]}
+        sizes="(max-width: 768px) 128px, 240px"
       />
 
       <!-- clickable overlay -->
