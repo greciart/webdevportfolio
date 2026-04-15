@@ -73,7 +73,8 @@ allPosts.sort(
     const moreProjectsBtn = document.querySelector("#moreProjects");
 
     if (container && moreProjectsBtn) {
-      container.style.maxHeight = container.scrollHeight + "px";
+      const fullHeight = container.scrollHeight; // 1️⃣ leer primero
+      container.style.maxHeight = fullHeight + "px"; // 2️⃣ modificar después
       setTimeout(() => {
         moreProjectsBtn.classList.add("hidden");
       }, 700);

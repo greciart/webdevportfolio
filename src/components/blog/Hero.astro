@@ -5,6 +5,7 @@ import Languages from "../blog/Languages.astro";
 import { Icon } from "astro-icon/components";
 import Heading from "../ui/Heading.astro";
 import { getCollection } from "astro:content";
+import { Image } from "astro:assets";
 
 const [staticData] = await getCollection("staticData");
 const {
@@ -64,17 +65,25 @@ const {
       <article
         class="group hover:shadow-[0_10px_50px_rgba(13,188,130,0.2)] w-full h-full overflow-hidden p-4 max-md:p-4 gap-4 max-md:gap-1 max-lg:gap-0 rounded-2xl bg-linear-to-tr from-riptide-100 to-mint-50 flex dark:bg-linear-to-r z-0 dark:overflow-hidden relative dark:from-mint-900 dark:to-mint-950 dark:before:bg-[radial-gradient(circle,rgba(13,188,130)_0,rgba(1,45,34)_100%)] before:bg-[radial-gradient(circle,rgba(95,255,202)_0,rgba(144,253,210)_100%)] dark:before:h-[80%] before:h-[30%] before:absolute before:aspect-square dark:before:left-30 before:left-50 dark:before:-bottom-0 before:bottom-40 before:rounded-full dark:before:blur-3xl before:blur-2xl dark:before:opacity-80 before:opacity-100 before:-z-10 before:transition"
       >
-        <div
-          class="group-hover:scale-103 ease-in-out duration-500 w-5/12 max-sm:w-auto flex justify-center items-center"
-        >
-          <div
-            aria-label={profileAlt}
-            class="h-full w-full max-sm:rounded-full rounded-2xl max-sm:size-20 bg-center bg-cover"
-            style={`background-image: url(${(profileImage as any).src})`}
-          >
-            <a href={profileLink} class="h-full w-full flex"></a>
-          </div>
-        </div>
+<div
+  class="group-hover:scale-103 ease-in-out duration-500 w-5/12 max-sm:w-auto flex justify-center items-center"
+>
+  <div class="h-full w-full max-sm:rounded-full rounded-2xl max-sm:size-20 overflow-hidden relative">
+    
+    <a href={profileLink} class="absolute inset-0 z-10"></a>
+
+    <Image
+      src={profileImage}
+      alt={profileAlt}
+      fill
+      class="object-cover object-center"
+      sizes="(max-width: 640px) 80px, 200px"
+      loading="lazy"
+      decoding="async"
+    />
+    
+  </div>
+</div>
         <div
           class="p-4 w-7/12 flex flex-col justify-center gap-4 max-sm:w-fit max-md:gap-2"
         >
