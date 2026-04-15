@@ -46,12 +46,15 @@ const {
     <div class="relative z-20 w-full h-full rounded-full bg-mint-900 overflow-hidden">
 
       <!-- 🔥 imagen real -->
-      <Image
-        src={profileImage}
-        alt={profileAlt}
-        class="w-full h-full object-cover rounded-full"
-      />
-
+<Image
+  src={profileImage}
+  alt={profileAlt}
+  width={240}
+  height={240}
+  widths={[80, 160, 240]}
+  sizes="(max-width: 640px) 80px, 240px"
+  class="w-full h-full object-cover rounded-full"
+/>
       <!-- clickable overlay -->
       <a
         href={profileLink}

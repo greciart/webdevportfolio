@@ -72,15 +72,17 @@ const {
     
     <a href={profileLink} class="absolute inset-0 z-10"></a>
 
-    <Image
-      src={profileImage}
-      alt={profileAlt}
-      fill
-      class="object-cover object-center"
-      sizes="(max-width: 640px) 80px, 200px"
-      loading="lazy"
-      decoding="async"
-    />
+<Image
+  src={profileImage}
+  alt={profileAlt}
+  width={240}
+  height={240}
+  widths={[80, 160, 240]}
+  sizes="(max-width: 640px) 80px, 200px"
+  class="w-full h-full object-cover object-center"
+  loading="lazy"
+  decoding="async"
+/>
     
   </div>
 </div>
