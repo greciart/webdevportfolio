@@ -63,7 +63,7 @@ The whole thing is responsive between laptop and monitor sizes, with custom CSS 
 
 ## It's open source
 
-The full source is on GitHub: **[github.com/gvpv12/starmoon-commonplace](https://github.com/gvpv12/starmoon-commonplace)**
+The full source is on GitHub: **[github.com/gvpv12/commonplacebook](https://github.com/GVPV12/commonplacebook)**
 
 The README documents every JSON field, with examples and tables explaining what's required and what's optional. The goal was to make it easy for anyone to fork and replace my data with their own.
 
@@ -86,4 +86,4 @@ For now though, the commonplace book is finished and feels exactly like what I w
 
 ---
 
-*Built with HTML, CSS, JS, and too much cyan. Source on [GitHub](https://github.com/gvpv12/starmoon-commonplace). Live at [starmoon.nekoweb.org](https://starmoon.nekoweb.org/commonplace_book.html).*
+*Built with HTML, CSS, JS, and too much cyan. Source on [GitHub](https://github.com/GVPV12/commonplacebook). Live at [starmoon.nekoweb.org](https://starmoon.nekoweb.org/commonplace_book.html).*
