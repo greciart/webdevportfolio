@@ -1,10 +1,10 @@
 ---
 layout: /src/layouts/MarkdownPostLayout.astro
-title: I built a digital commonplace book — and it's fully open source
+title: I built a digital commonplace book and it's fully open source
 author: Grecia V.
 description: "Discover an open source digital commonplace project. Digital book built with HTML, CSS and JavaScript, featuring retro vaporwave styling, simple JSON-driven data and a static-site friendly workflow."
 image:
-  url: "/images/posts/commonplacebook.png"
+  url: "/images/posts/commonplacebook.webp"
   alt: "Screenshot of a vaporwave-inspired digital commonplace book web app interface with retro OS styling and pixel art accents."
 pubDate: 2026-05-07
 tags:
@@ -20,6 +20,8 @@ There's a concept I've loved for a long time: the **commonplace book**. Before t
 I wanted one. But digital, and mine in every sense of the word.
 
 ---
+
+![Digital Commonplace book Study log to keep motivation](/images/posts/studylog.webp)
 
 ## What I built
 
@@ -60,6 +62,8 @@ The review overlay for Biblioteca opens as a "book" — two columns styled like 
 The whole thing is responsive between laptop and monitor sizes, with custom CSS handling the differences in font size, grid columns, and layout.
 
 ---
+
+![Commonplace book Digital Library UI design to keep all the books you read in one place](/images/posts/library.webp)
 
 ## It's open source
 
