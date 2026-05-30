@@ -23,6 +23,7 @@
     "astro-icon": "^1.1.5",
     "preact": "^10.26.2",
     "prismjs": "^1.30.0",
+    "sharp": "^0.34.5",
     "tailwindcss": "^4.1.8"
   },
   "devDependencies": {
