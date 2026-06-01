@@ -20,7 +20,7 @@ tags:
     "developer mindset",
     "AI-assisted development"
   ]
-languages: ["javascript", "typescript", "nodejs"]
+languages: ["AI", "LLM"]
 ---
 
 
