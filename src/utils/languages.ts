@@ -181,6 +181,16 @@ react: {
     name: "UI/UX Design",
     iconName: "uiux",
   },
+
+      AI: {
+    name: "AI",
+    iconName: "robot",
+  },
+
+      LLM: {
+    name: "LLM",
+    iconName: "robot",
+  },
 };
 
 export const getLanguage = (lang: string): Language => {
