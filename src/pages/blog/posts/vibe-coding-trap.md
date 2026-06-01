@@ -25,9 +25,9 @@ languages: ["javascript", "typescript", "nodejs"]
 
 
 
-# Why Vibe Coding Is Dangerous (And Why AI Should Never Replace Understanding)
+# Using AI to Code Is Smart. Depending on It Isn't.
 
-## The Problem With Building Software You Don't Understand
+## The Problem With Building Things You Don't Understand
 
 Programming takes a long time to learn, and that's okay.
 
