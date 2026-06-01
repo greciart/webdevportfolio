@@ -25,9 +25,9 @@ languages: ["javascript", "typescript", "nodejs"]
 
 
 
-# Using AI to Code Is Smart. Depending on It Isn't.
-
 ## The Problem With Building Things You Don't Understand
+
+Using AI to Code Is Smart. Depending on It Isn't.
 
 Programming takes a long time to learn, and that's okay.
 
