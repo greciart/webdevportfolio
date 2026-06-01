@@ -15,7 +15,7 @@ tags:
 languages: ["html", "css", "javascript"]
 ---
 
-There's a concept I've loved for a long time: the **commonplace book**. Before the internet existed, people kept handwritten notebooks where they copied quotes, poems, ideas, observations — things worth remembering. A personal archive of everything that moved them.
+There's a concept I've loved for a long time: the **commonplace book**. Before the internet existed, people kept handwritten notebooks where they copied quotes, poems, ideas, observations: things worth remembering. A personal archive of everything that moved them.
 
 I wanted one. But digital, and mine in every sense of the word.
 
@@ -55,9 +55,9 @@ There's also something that feels right about owning the format. The JSON files 
 
 ## The design
 
-The vaporwave aesthetic wasn't just a style choice — it reflects how I feel about the web. The old internet had personality. Every site looked like the person who made it. I wanted that.
+The vaporwave aesthetic wasn't just a style choice: it reflects how I feel about the web. The old internet had personality. Every site looked like the person who made it. I wanted that.
 
-The review overlay for Biblioteca opens as a "book" — two columns styled like facing pages, with ruled-line backgrounds and a light/dark mode toggle. The study log opens the same way. The tracklist is a full data table with columns for status, progress, and hook text. On monitors wider than 1440px, extra columns appear.
+The review overlay for Biblioteca opens as a "book": two columns styled like facing pages, with ruled-line backgrounds and a light/dark mode toggle. The study log opens the same way. The tracklist is a full data table with columns for status, progress, and hook text. On monitors wider than 1440px, extra columns appear.
 
 The whole thing is responsive between laptop and monitor sizes, with custom CSS handling the differences in font size, grid columns, and layout.
 
@@ -84,7 +84,7 @@ That's it. No build step, no `npm install`, no config file.
 
 ## What's next
 
-The commonplace book is one piece of a larger system I'm building. I'm working on a React app called **Dopamint** — a gamification layer for all my projects, with a tamagotchi that dies if I'm not active. The plan is to share data between Dopamint and the commonplace book via GitHub raw URLs, so both apps read from the same JSON files.
+The commonplace book is one piece of a larger system I'm building. I'm working on a React app called **Dopamint**, a gamification layer for all my projects, with a tamagotchi that dies if I'm not active. The plan is to share data between Dopamint and the commonplace book via GitHub raw URLs, so both apps read from the same JSON files.
 
 For now though, the commonplace book is finished and feels exactly like what I wanted: a quiet, personal space on the web that looks like me and holds the things that matter to me.
 
