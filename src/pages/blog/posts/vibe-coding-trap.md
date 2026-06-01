@@ -1,6 +1,6 @@
 ---
 layout: /src/layouts/MarkdownPostLayout.astro
-title: The Vibe Coding Trap: Fast Development, Expensive Mistakes, Expensive AI
+title: The Vibe Coding Trap. Fast Development, Expensive Mistakes, Expensive AI
 author: Grecia V.
 description: "Why vibe coding can be dangerous in modern software development. Learn about the risks of blindly trusting AI-generated code, security vulnerabilities, technical debt, and how to use AI safely as a developer."
 image:
