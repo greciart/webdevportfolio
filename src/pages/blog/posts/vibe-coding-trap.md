@@ -23,7 +23,7 @@ tags:
 languages: ["javascript", "typescript", "nodejs"]
 ---
 
-![Vibe coding vs Vibe debugging meme](/images/posts/vibecodingmeme.jpeg)
+
 
 # Why Vibe Coding Is Dangerous (And Why AI Should Never Replace Understanding)
 
@@ -53,6 +53,8 @@ I'm against using AI without supervision.
 
 And I'm especially against using AI without supervision when the person building the product has no idea how the underlying technology works.
 
+![Vibe coding vs Vibe debugging meme](/images/posts/vibecodingmeme.jpeg)
+
 That's why many websites and applications built entirely through vibe coding eventually fail in one of two areas:
 
 * Design
@@ -73,6 +75,8 @@ But the execution must be supervised.
 And most importantly, the person building the project should be willing to learn the technologies being used so that when something inevitably breaks, they know how to fix it.
 
 Because eventually, something always breaks.
+
+![Using AI for code is not the same as Vibe coding](/images/posts/aicode.png)
 
 ## What Is Vibe Coding?
 
