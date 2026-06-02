@@ -351,7 +351,7 @@ Separately they are incomplete.
 
 ## Final Thoughts
 
-As you can see, my thoughts are not black or white. Not another AI obsessed person that make AI their entire personality or an intense AI hater that lives in fear because of AI. I think AI is not for that. For this complex context, I think its importants to know the limitations and the dangerous line of AI and copyright. And of course as I mention before the issue with security and lack of soul / creativity.
+As you can see, my thoughts are not black or white. Not another AI obsessed person that makes AI their entire personality or an intense AI hater that lives in fear because of AI. I think AI is not for that. For this complex context, I think it's important to know the limitations and the dangerous line of AI and copyright. And of course, as I mentioned before, the issue is with security and lack of soul / creativity.
 
 The goal should never be to remove yourself from the process.
 
@@ -361,7 +361,7 @@ AI is one of the greatest productivity tools software development has ever seen.
 
 But productivity without understanding is a liability.
 
-If you're building a website, an app, a SaaS product, etc, learn enough about the technology to understand what is happening behind the scenes.
+If you’re building a website, an app, a SaaS product, etc, learn enough about the technology to understand what is happening behind the scenes.
 
 Use AI as leverage.
 
@@ -369,14 +369,14 @@ Use AI as an assistant.
 
 Use AI as a multiplier.
 
-Just don't outsource your thinking to it.
+Just don’t outsource your thinking to it.
 
-Because when things go wrong, AI won't be the one responsible for fixing the problem.
+Because when things go wrong, AI won’t be the one responsible for fixing the problem.
 
 You will.
 
-So, its better to know when to use and how to use it, for speeding repetitive task, not soul driven and creative tasks. 
+So, it's better to know when to use it and how to use it for speeding up repetitive tasks, not soul-driven and creative tasks.
 
-In other words: the idea and the sould NEEDS to be crafted by the human and the execution by IA (That in terms of code). Of course in other areas like illustration, music, photography, etc, the thing changes. 
+In other words, the idea and the soul NEED to be crafted by the human and the execution by IA (in terms of code). Of course, in other areas like illustration, music, photography, etc, the thing changes.
 
-My final thought about this is to really know when to use it, not in all scenarios is safe to, and its really important for people to educate more about this topic because I don't see much people talking about it.
+My final thought about this is to really know when to use it, not in all scenarios is safe to, and its really important for people to educate more about this topic because I don’t see much people talking about it.
