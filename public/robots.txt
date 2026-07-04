@@ -1,7 +1,4 @@
-User-agent: *
-Allow: /
-
-# Block AI crawlers
+# Blocking AI crawlers
 User-agent: GPTBot
 Disallow: /
 
@@ -51,6 +48,9 @@ User-agent: img2dataset
 Disallow: /
 
 # Allow search engines
+User-agent: *
+Allow: /
+
 User-agent: Googlebot
 Allow: /
 
