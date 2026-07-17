@@ -40,13 +40,15 @@ gallery:
 import { Image } from 'astro:assets';
 import edutechfull from '/src/assets/projects/edutechfull.webp';
 import Video from '/src/components/Video.astro';
+import studentPoster from "../../assets/projects/gamified-edtech-student-dashboard-ux.png";
+import teacherPoster from "../../assets/projects/teacher-student-database-management-ui.png";
 
 
 ## Students version
-<Video provider="vimeo" id="1210693147" poster="../../assets/projects/gamified-edtech-student-dashboard-ux.png" />
+<Video provider="vimeo" id="1210693147" poster={studentPoster.src} />
 
 ## Teachers version
-<Video provider="vimeo" id="1210693526" poster="../../assets/projects/teacher-student-database-management-ui.png" />
+<Video provider="vimeo" id="1210693526" poster={teacherPoster.src} />
 
 - **Core Skills:** UI/UX Design, Dashboard Architecture, User Retention Strategy.
 - **Tools Used:** Figma (Components, Auto-layout), Adobe Creative Suite.
