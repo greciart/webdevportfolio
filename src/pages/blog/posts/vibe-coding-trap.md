@@ -27,13 +27,13 @@ languages: ["AI", "LLM"]
 
 ## The Problem With Building Things You Don't Understand
 
-Using AI to Code Is Smart. Depending on It Isn't.
+Using AI to code is smart. Depending on it, it isn't.
 
-Programming takes a long time to learn, and that's okay.
+Programming takes a long time to learn, and that’s okay.
 
-It is completely reasonable to want to accelerate the process. For many people (for everyone?) programming can be tedious, frustrating, and overwhelming. But wanting to speed up development is very different from wanting to build an app, sell it, and profit from it without understanding what you're actually selling.
+It is completely reasonable to want to accelerate the process. For many people (for everyone?) programming can be tedious, frustrating, and overwhelming. But wanting to speed up development is very different from wanting to build an app, sell it, and profit from it without understanding what you’re actually selling.
 
-Recently, the concept of **vibe coding** has become incredibly popular.
+Recently, the concept of vibe coding has become incredibly popular.
 
 A lot of people use it as a form of flexing. They want to show that they built a SaaS in a weekend, launched an app in a few hours, or generated thousands of lines of code with AI. Some of them don't even know what programming language the AI used.
 
