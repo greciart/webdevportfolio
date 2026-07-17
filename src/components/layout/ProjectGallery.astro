@@ -2,29 +2,47 @@
 import { Image } from 'astro:assets';
 import type { ImageMetadata } from 'astro';
 
+type GalleryImage = { url: ImageMetadata; alt: string };
+
 const { images = [] } = Astro.props;
+
+const isLandscape = (img: GalleryImage) => img.url.height <= img.url.width;
+const allLandscape = images.length > 0 && images.every(isLandscape);
 ---
 
 {images.length > 0 && (
   <div class="max-xl:hidden">
-    <div class="sticky w-64 top-14 mt-16 max-h-[calc(100svh-3.5rem)] flex flex-col gap-3 overflow-hidden">
-      
+    <div
+      class:list={[
+        "sticky top-14 mt-16 max-h-[calc(100svh-3.5rem)] flex flex-col gap-3 overflow-hidden",
+        allLandscape ? "w-[24rem] 2xl:w-[30rem]" : "w-64",
+      ]}
+    >
+
       <div class="relative w-full rounded-2xl border border-neutral-100 dark:border-zinc-800 bg-white dark:bg-zinc-900/50 overflow-hidden">
-        
+
         <div
           id="gallery-track"
-          class="flex transition-transform duration-500 ease-in-out"
+          class="flex items-start transition-[transform,height] duration-500 ease-in-out"
           style="width: 100%;"
         >
-          {images.map((img: {url: ImageMetadata, alt: string}) => (
+          {images.map((img: GalleryImage) => (
             <div class="gallery-slide min-w-full">
               <a href={(img.url as any).src} target="_blank" rel="noopener noreferrer" aria-label="Ver imagen completa">
-                <Image
-                  src={img.url}
-                  alt={img.alt}
-                  class="w-full object-cover object-top hover:opacity-90 transition-opacity duration-300"
-                  style="height: calc(100svh - 10rem); object-fit: cover;"
-                />
+                {isLandscape(img) ? (
+                  <Image
+                    src={img.url}
+                    alt={img.alt}
+                    class="w-full aspect-video object-contain object-center hover:opacity-90 transition-opacity duration-300"
+                  />
+                ) : (
+                  <Image
+                    src={img.url}
+                    alt={img.alt}
+                    class="w-full object-cover object-top hover:opacity-90 transition-opacity duration-300"
+                    style="height: calc(100svh - 10rem);"
+                  />
+                )}
               </a>
             </div>
           ))}
@@ -57,11 +75,18 @@ const { images = [] } = Astro.props;
 
 <script>
   const track = document.getElementById('gallery-track') as HTMLElement;
-  const slides = document.querySelectorAll('.gallery-slide');
+  const slides = document.querySelectorAll<HTMLElement>('.gallery-slide');
   const counter = document.getElementById('gallery-counter');
   const prevBtn = document.getElementById('gallery-prev') as HTMLButtonElement;
   const nextBtn = document.getElementById('gallery-next') as HTMLButtonElement;
   let current = 0;
+
+  function syncHeight() {
+    // items-start lets slides keep their own height, so the track has to follow
+    // the visible one — galleries can mix 16:9 shots with tall page captures.
+    const slide = slides[current];
+    if (track && slide) track.style.height = `${slide.offsetHeight}px`;
+  }
 
   function goTo(n: number) {
     current = n;
@@ -69,11 +94,14 @@ const { images = [] } = Astro.props;
     if (counter) counter.textContent = `${current + 1} / ${slides.length}`;
     if (prevBtn) prevBtn.disabled = current === 0;
     if (nextBtn) nextBtn.disabled = current === slides.length - 1;
+    syncHeight();
   }
 
   if (slides.length > 0) {
     goTo(0);
     prevBtn?.addEventListener('click', () => { if (current > 0) goTo(current - 1); });
     nextBtn?.addEventListener('click', () => { if (current < slides.length - 1) goTo(current + 1); });
+    window.addEventListener('resize', syncHeight);
+    window.addEventListener('load', syncHeight);
   }
 </script>
