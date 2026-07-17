@@ -8,16 +8,19 @@ const { images = [] } = Astro.props;
 
 const isLandscape = (img: GalleryImage) => img.url.height <= img.url.width;
 const allLandscape = images.length > 0 && images.every(isLandscape);
+
+// Landscape shots are short enough to stack two per page; tall page captures
+// already fill the viewport on their own.
+const perPage = allLandscape ? 2 : 1;
+const pages: GalleryImage[][] = [];
+for (let i = 0; i < images.length; i += perPage) {
+  pages.push(images.slice(i, i + perPage));
+}
 ---
 
 {images.length > 0 && (
   <div class="max-xl:hidden">
-    <div
-      class:list={[
-        "sticky top-14 mt-16 max-h-[calc(100svh-3.5rem)] flex flex-col gap-3 overflow-hidden",
-        allLandscape ? "w-[24rem] 2xl:w-[30rem]" : "w-64",
-      ]}
-    >
+    <div class="sticky w-64 top-14 mt-16 max-h-[calc(100svh-3.5rem)] flex flex-col gap-3 overflow-hidden">
 
       <div class="relative w-full rounded-2xl border border-neutral-100 dark:border-zinc-800 bg-white dark:bg-zinc-900/50 overflow-hidden">
 
@@ -26,29 +29,31 @@ const allLandscape = images.length > 0 && images.every(isLandscape);
           class="flex items-start transition-[transform,height] duration-500 ease-in-out"
           style="width: 100%;"
         >
-          {images.map((img: GalleryImage) => (
-            <div class="gallery-slide min-w-full">
-              <a href={(img.url as any).src} target="_blank" rel="noopener noreferrer" aria-label="Ver imagen completa">
-                {isLandscape(img) ? (
-                  <Image
-                    src={img.url}
-                    alt={img.alt}
-                    class="w-full aspect-video object-contain object-center hover:opacity-90 transition-opacity duration-300"
-                  />
-                ) : (
-                  <Image
-                    src={img.url}
-                    alt={img.alt}
-                    class="w-full object-cover object-top hover:opacity-90 transition-opacity duration-300"
-                    style="height: calc(100svh - 10rem);"
-                  />
-                )}
-              </a>
+          {pages.map((page) => (
+            <div class="gallery-slide min-w-full flex flex-col">
+              {page.map((img) => (
+                <a href={(img.url as any).src} target="_blank" rel="noopener noreferrer" aria-label="Ver imagen completa">
+                  {isLandscape(img) ? (
+                    <Image
+                      src={img.url}
+                      alt={img.alt}
+                      class="w-full aspect-video object-contain object-center hover:opacity-90 transition-opacity duration-300"
+                    />
+                  ) : (
+                    <Image
+                      src={img.url}
+                      alt={img.alt}
+                      class="w-full object-cover object-top hover:opacity-90 transition-opacity duration-300"
+                      style="height: calc(100svh - 10rem);"
+                    />
+                  )}
+                </a>
+              ))}
             </div>
           ))}
         </div>
 
-        {images.length > 1 && (
+        {pages.length > 1 && (
           <div class="flex items-center justify-between px-3 py-2 bg-white/5 backdrop-blur-sm">
             <button
               id="gallery-prev"
@@ -57,7 +62,7 @@ const allLandscape = images.length > 0 && images.every(isLandscape);
             >
               ← Prev
             </button>
-            <span id="gallery-counter" class="text-xs text-neutral-400">1 / {images.length}</span>
+            <span id="gallery-counter" class="text-xs text-neutral-400">1 / {pages.length}</span>
             <button
               id="gallery-next"
               class="text-xs text-mint-400 hover:text-mint-300 transition-colors disabled:opacity-30 font-bold px-2 py-1 rounded"
@@ -83,7 +88,7 @@ const allLandscape = images.length > 0 && images.every(isLandscape);
 
   function syncHeight() {
     // items-start lets slides keep their own height, so the track has to follow
-    // the visible one — galleries can mix 16:9 shots with tall page captures.
+    // the visible one — the last page can hold fewer images than the rest.
     const slide = slides[current];
     if (track && slide) track.style.height = `${slide.offsetHeight}px`;
   }
