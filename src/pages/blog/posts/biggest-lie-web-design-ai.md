@@ -105,14 +105,14 @@ If your only advantage is being cheaper, someone will always be cheaper.
 
 If your only advantage is being faster, technology will eventually outrun you. It already has.
 
-But if your advantage is quality, you're not really competing with the crowd anymore. You're building something fewer and fewer people are willing to spend the time to build — and the clients who care about that are still out there, still looking, still frustrated by how hard it is to find.
+But if your advantage is quality, you're not really competing with the crowd anymore. You're building something fewer and fewer people are willing to spend the time to build, and the clients who care about that are still out there, still looking, still frustrated by how hard it is to find.
 
 
 ## Is this another propaganda?
 
 I didn't write this because it sounds inspiring on a LinkedIn carousel. I wrote it because I've lived the difference.
 
-I've picked the slower option more than once. I've spent extra hours refining details most people will never consciously notice — the kerning on a headline, the easing curve on a menu, the way a form behaves when someone types something wrong. And those details have consistently been the reason clients come back and refer me to other people.
+I've picked the slower option more than once. I've spent extra hours refining details most people will never consciously notice, the kerning on a headline, the easing curve on a menu, the way a form behaves when someone types something wrong. And those details have consistently been the reason clients come back and refer me to other people.
 
 AI isn't the reason people stop growing. Fear is. Believing there's no future is. Believing you have nothing unique to offer is.
 
