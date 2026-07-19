@@ -6,7 +6,7 @@ description: "The real threat to web designers isn't AI, it's the scarcity minds
 image:
   url: "/images/posts/front-end-developer-hands-typing-web-analytics.webp"
   alt: "Close-up of a front-end developer's hands typing on a laptop keyboard, reviewing data charts and user experience analytics to optimize website conversion rates."
-pubDate: 2026-07-11
+pubDate: 2026-07-18
 tags:
   [
     "AI",
