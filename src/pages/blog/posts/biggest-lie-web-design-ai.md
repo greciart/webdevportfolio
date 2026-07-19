@@ -8,14 +8,14 @@ image:
   alt: "Close-up of a front-end developer's hands typing on a laptop keyboard, reviewing data charts and user experience analytics to optimize website conversion rates."
 pubDate: 2026-07-11
 tags:
-[
-  "AI",
-  "Web Design",
-  "Web Development",
-  "Frontend",
-  "UI/UX",
-  "Career"
-]
+  [
+    "AI",
+    "Web Design",
+    "Web Development",
+    "Frontend",
+    "UI UX Design",
+    "Career"
+  ]
 languages: ["AI", "LLM"]
 ---
 
