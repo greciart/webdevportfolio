@@ -19,8 +19,6 @@ tags:
 languages: ["AI", "LLM"]
 ---
 
-I am not saying that all jobs will prevail. Jobs that are 100% repetitive and don't require thinking are going to be inevitable replaced by AI, like data entry for example.
-
 Spend five minutes on social media and you'll find the same three posts on repeat: "AI is replacing web designers." "There won't be jobs anymore." "Learn AI or become irrelevant." They show up so often that they start to feel like weather reports instead of opinions, and after a while you catch yourself doing the math. Maybe there really won't be work in a few years. Maybe I'm wasting my time trying to get better at this. Maybe quality doesn't matter anymore.
 
 I've been there. I've had that exact spiral at 2am with a half-finished layout open on one screen and a doom thread open on the other.
@@ -32,6 +30,8 @@ But after a couple of years of actually working with clients, sharpening my craf
 The biggest lie isn't that AI exists. AI exists, it's good at a lot of things, and pretending otherwise is silly.
 
 The biggest lie is convincing you that opportunity is running out.
+
+I am not saying that all jobs will prevail. Jobs that are 100% repetitive and don't require thinking are going to be inevitable replaced by AI, like data entry for example.
 
 
 ## Fear sells better than confidence
