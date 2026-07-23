@@ -9,15 +9,12 @@ image:
 pubDate: 2026-07-09
 tags:
   [
-    "Claude Code",
+    "AI Tools & Coding",
     "AI coding",
     "developer security",
     "Windows",
     "macOS",
     "Linux",
-    "PowerShell",
-    "terminal",
-    "settings.json",
     "privacy"
   ]
 languages: ["AI", "LLM"]

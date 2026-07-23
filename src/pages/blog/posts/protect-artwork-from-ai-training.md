@@ -9,11 +9,9 @@ image:
 pubDate: 2026-06-09
 tags:
   [
-    "AI art protection",
-    "protect artwork",
+    "Content Protection",
+    "Career & Craft",
     "AI training",
-    "digital copyright",
-    "Adobe Content Authenticity",
     "artists",
     "designers",
     "creative rights",

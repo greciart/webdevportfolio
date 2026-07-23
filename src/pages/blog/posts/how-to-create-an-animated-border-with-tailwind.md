@@ -9,7 +9,7 @@ image:
 pubDate: 2025-03-27
 tags:
   [
-    "CSS", "Tailwind", "Animation", "Frontend", "UI"
+    "CSS", "Tailwind", "Animation", "Frontend", "UI", "Web Development"
    
   ]
 languages: ["tailwind", "html", ]

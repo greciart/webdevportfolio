@@ -9,7 +9,7 @@ image:
 pubDate: 2026-07-11
 tags:
   [
-    "open-source", "Github free projects", ".json", "Frontend", "UI","vaporwave", "retroweb"
+    tags: ["Career & Craft", "AI & Web Design"]
    
   ]
 languages: ["AI", "LLM"]

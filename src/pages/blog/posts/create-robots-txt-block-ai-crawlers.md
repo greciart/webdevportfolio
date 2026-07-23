@@ -16,9 +16,6 @@ tags:
     "AI scraping",
     "SEO",
     "web development",
-    "digital copyright",
-    "GPTBot",
-    "ClaudeBot"
   ]
 languages: ["AI", "LLM"]
 ---

@@ -9,12 +9,8 @@ image:
 pubDate: 2026-07-18
 tags:
   [
-    "AI",
-    "Web Design",
-    "Web Development",
-    "Frontend",
-    "UI UX Design",
-    "Career"
+    "AI & Web Design",
+    "Career & Craft"
   ]
 languages: ["AI", "LLM"]
 ---
@@ -23,7 +19,7 @@ Spend five minutes on social media and you'll find the same three posts on repea
 
 I've been there. I've had that exact spiral at 2am with a half-finished layout open on one screen and a doom thread open on the other.
 
-But after a couple of years of actually working with clients, sharpening my craft and — more importantly — changing how I think about all of this, I've landed somewhere else entirely.
+But after a couple of years of actually working with clients, sharpening my craft and (more importantly) changing how I think about all of this, I've landed somewhere else entirely.
 
 ![Back view of a creative director leaning back at a minimalist desk with abstract line art on the wall, symbolizing design judgment and taste over automated AI execution.](/images/posts/strategic-web-designer-taste-creative-judgment.webp)
 
@@ -38,7 +34,7 @@ I am not saying that all jobs will prevail. Jobs that are 100% repetitive and do
 
 Competition itself isn't the problem. Competition is what pushes people to build better products and stop coasting. I like competition.
 
-What I don't like is what happens when people believe there isn't enough work to go around. Because then they don't compete from confidence — they compete from panic. They drop their prices. They rush projects that needed another week. They stop learning, because learning feels like a luxury when you're scared. They try to produce more instead of producing better.
+What I don't like is what happens when people believe there isn't enough work to go around. Because then they don't compete from confidence, they compete from panic. They drop their prices. They rush projects that needed another week. They stop learning, because learning feels like a luxury when you're scared. They try to produce more instead of producing better.
 
 ("If I don't deliver this website today, someone cheaper will take my place.")
 
@@ -59,7 +55,7 @@ They buy trust. They buy clarity. They buy someone who took the time to understa
 
 Because nobody has ever woken up thinking "what I really need is an AI-generated website." What they think is closer to: "I need more clients." "I need people to take my company seriously." "I need a site that actually converts."
 
-Those are completely different problems, and solving them still requires judgment — the kind that comes from asking uncomfortable questions in a kickoff call, not from a text box.
+Those are completely different problems, and solving them still requires judgment, the kind that comes from asking uncomfortable questions in a kickoff call, not from a text box.
 
 
 ## Quality is getting rarer (and that's good news for you)
@@ -80,7 +76,7 @@ Which is precisely why quality matters more now than it did five years ago. When
 
 You can choose speed, or you can choose craft. You can choose volume, or you can choose value. These are usually opposites, and pretending they aren't is how portfolios end up full of work nobody's proud of.
 
-Right now something like eight or nine out of every ten things published online feel disposable — websites, logos, blog posts, images, entire brands generated simply because generating them was easy. There's an enormous amount of noise.
+Right now something like eight or nine out of every ten things published online feel disposable websites, logos, blog posts, images, entire brands generated simply because generating them was easy. There's an enormous amount of noise.
 
 Which is exactly what makes something thoughtful stand out so violently.
 
@@ -95,7 +91,7 @@ Taste is what's left after years of designing things, breaking them, and figurin
 
 None of that fits in a prompt.
 
-AI accelerates execution beautifully. It does not replace judgment — and judgment is where the money has always been.
+AI accelerates execution beautifully. It does not replace judgment and judgment is where the money has always been.
 
 ![A professional freelance web designer working on a laptop at a wooden desk in a bright office studio with a brick wall, focusing on bespoke client solutions.](/images/posts/freelance-web-designer-studio-workspace.webp)
 

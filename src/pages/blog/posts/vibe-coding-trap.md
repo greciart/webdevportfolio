@@ -9,16 +9,7 @@ image:
 pubDate: 2026-05-31
 tags:
   [
-    "vibe coding",
-    "AI programming",
-    "software development",
-    "web development",
-    "AI tools",
-    "coding best practices",
-    "software security",
-    "technical debt",
-    "developer mindset",
-    "AI-assisted development"
+    "AI Tools & Coding", "Career & Craft"
   ]
 languages: ["AI", "LLM"]
 ---

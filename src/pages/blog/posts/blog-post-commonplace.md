@@ -9,7 +9,7 @@ image:
 pubDate: 2026-05-07
 tags:
   [
-    "open-source", "Github free projects", ".json", "Frontend", "UI","vaporwave", "retroweb"
+    "open-source", "Github free projects", "Personal Project", "Frontend Development", "Vaporwave & Retro Design", "Case Study"
    
   ]
 languages: ["html", "css", "javascript"]
