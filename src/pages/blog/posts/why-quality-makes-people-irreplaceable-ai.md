@@ -7,11 +7,7 @@ image:
   url: "/images/posts/strategic-web-design-ai-era.webp"
   alt: "A professional web designer interacting with a digital interface of quality control icons, representing human-led strategic web design in the era of AI."
 pubDate: 2026-07-11
-tags:
-  [
-    tags: ["Career & Craft", "AI & Web Design"]
-   
-  ]
+tags: ["Career & Craft", "AI & Web Design"]
 languages: ["AI", "LLM"]
 ---
 
