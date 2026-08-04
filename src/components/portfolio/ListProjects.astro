@@ -2,7 +2,7 @@
 import Project from "./Project.astro";
 import Heading from "../ui/Heading.astro";
 import { Icon } from "astro-icon/components";
-import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+import { getLangFromUrl, localizePath, useTranslations } from "../../i18n/utils";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -15,6 +15,9 @@ allPosts.sort(
     new Date(b.data.pubDate).getTime() -
     new Date(a.data.pubDate).getTime(),
 );
+
+const uiLang = getLangFromUrl(Astro.url);
+const p = (path) => localizePath(path, uiLang);
 ---
 
 <section
@@ -45,7 +48,7 @@ allPosts.sort(
 {
   allPosts.map((post) => (
     <Project
-      url={`/portfolio/projects/${post.slug}`}
+      url={p(`/portfolio/projects/${post.slug}`)}
       title={post.data.title}
       description={post.data.description}
       date={post.data.pubDate}

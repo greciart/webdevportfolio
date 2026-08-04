@@ -1,6 +1,11 @@
 ---
+import { getLangFromUrl, localizePath } from "../../i18n/utils";
 import { Icon } from "astro-icon/components";
 import { getLanguage } from "../../utils/languages";
+
+// Named uiLang so it doesn't shadow the `lang` prop, which is the tech tag.
+const uiLang = getLangFromUrl(Astro.url);
+const p = (path: string) => localizePath(path, uiLang);
 
 interface Props {
   lang: string;
@@ -49,7 +54,7 @@ const getIconContainerClasses = () => {
   linkEnabled ? (
     <a
       class="cursor-pointer"
-      href={`/blog/techs/${lang}`}
+      href={p(`/blog/techs/${lang}`)}
       aria-label={`View articles about ${selectedLanguage.name}`}
       role="link"
     >

@@ -1,4 +1,5 @@
 ---
+import { getLangFromUrl, localizePath } from "../i18n/utils";
 import Layout from "./Layout.astro";
 import DatePub from "../components/blog/DatePub.astro";
 import Tag from "../components/ui/Tag.astro";
@@ -13,6 +14,9 @@ const tweetText = encodeURIComponent(
   `"${frontmatter.title}" - by ${frontmatter.author} | Grevaleart`
 );
 import Heading from "../components/ui/Heading.astro";
+
+const uiLang = getLangFromUrl(Astro.url);
+const p = (path) => localizePath(path, uiLang);
 ---
 
 <script>
@@ -103,7 +107,7 @@ import Heading from "../components/ui/Heading.astro";
             <a
               id={frontmatter.title}
               class="leading-0 text-sm font-semibold items-center gap-3 text-blacktext dark:text-riptide-50"
-              href="/blog"
+              href={p("/blog/")}
               >Grecia V.
             </a>
           </div>

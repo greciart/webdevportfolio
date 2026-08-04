@@ -1,7 +1,7 @@
 ---
 import BlogPost from "./BlogPost.astro";
 import Heading from "../ui/Heading.astro";
-import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+import { getLangFromUrl, localizePath, useTranslations } from "../../i18n/utils";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -46,6 +46,9 @@ if (currentPostUrl) {
 if (!all) {
   postsToShow = postsToShow.slice(0, 4);
 }
+
+const uiLang = getLangFromUrl(Astro.url);
+const p = (path) => localizePath(path, uiLang);
 ---
 
 <section
@@ -77,7 +80,7 @@ if (!all) {
     !all && (
       <div id="morePosts" class="w-full flex justify-center text-center my-12">
         <a
-          href="/blog/posts/"
+          href={p("/blog/posts/")}
           class="font-bold cursor-pointer text-mint-400 dark:text-mint-100 hover:text-mint-500 dark:hover:text-mint-300 transition-all"
         >
           {t("blog.viewAll")}

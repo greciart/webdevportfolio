@@ -1,4 +1,5 @@
 ---
+import { getLangFromUrl, localizePath } from "../../i18n/utils";
 import Button from "../ui/Button.astro";
 import LastPost from "../blog/LastPost.astro";
 import Languages from "../blog/Languages.astro";
@@ -18,6 +19,9 @@ const {
   profileTitle,
   profileName,
 } = staticData.data;
+
+const uiLang = getLangFromUrl(Astro.url);
+const p = (path) => localizePath(path, uiLang);
 ---
 
 <section class="py-8 px-8 max-sm:px-4 max-sm:py-2">
@@ -71,7 +75,7 @@ const {
 >
   <div class="h-full w-full max-sm:rounded-full rounded-2xl max-sm:size-20 overflow-hidden relative">
     
-    <a href={profileLink} class="absolute inset-0 z-10"></a>
+    <a href={p("/about-me")} class="absolute inset-0 z-10"></a>
 
 <Image
   src={profileImage}
@@ -99,7 +103,7 @@ const {
           >
           <Heading text={profileName} level={3} />
           <Button
-            link={profileLink}
+            link={p("/about-me")}
             text="About Me"
             iconName="person"
             class="drop-shadow-xl"
