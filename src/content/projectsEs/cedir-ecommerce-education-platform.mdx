@@ -2,28 +2,28 @@
 ---
 title: 'Cedir | Diseño web de plataforma educativa y tienda en línea'
 pubDate: 2025-07-26
-description: 'Un ecosistema profesional en WordPress y Elementor para estudiantes de electrónica, con cuatro niveles de acceso, tienda WooCommerce y reservas integradas con Calendly.'
+description: 'Plataforma para una empresa de formación en electrónica, que combina una tienda WooCommerce con una biblioteca de cursos. Cuatro niveles de membresía controlan el acceso, y todo funciona sin vídeo para mantener la carga baja.'
 languages: ["elementor", "wordpress","uiux"]
 image:
   url: "../../assets/projects/cedir-electronics-multidevice-responsive-showcase.webp"
-  alt: "Muestra responsiva completa de la interfaz de Cedir en pantallas de teléfono, tableta, laptop y escritorio."
+  alt: "Vista responsiva de la plataforma Cedir en pantallas de teléfono, tableta, laptop y escritorio."
 gallery:
   - url: "../../assets/projects/cedir-multidisciplinary-web-homepage-layout.webp"
-    alt: "Maqueta completa de la página de inicio de Cedir, con un menú centralizado para la tienda, el blog y los servicios profesionales."
+    alt: "Maquetado de la página de inicio de Cedir con un menú central que cubre la tienda, el blog y los servicios profesionales."
   - url: "../../assets/projects/cedir-educational-consultation-portal-design.webp"
-    alt: "Maquetado del portal educativo de Cedir, con el listado de cursos y las opciones de reserva de consultoría profesional."
+    alt: "Maquetado del portal educativo de Cedir con el listado de cursos y la reserva de consultoría."
   - url: "../../assets/projects/cedir-institutional-projects-gallery-showcase.webp"
-    alt: "Galería de proyectos minimalista de Cedir mostrando un portafolio de trabajos de consultoría profesional y casos de estudio."  
+    alt: "Galería de proyectos de Cedir mostrando sus trabajos de consultoría y casos de estudio."  
   - url: "../../assets/projects/cedir-content-authority-blog-section.webp"
-    alt: "Maquetado de la sección de blog y contenido educativo profesional, diseñado para la legibilidad y la autoridad SEO."
+    alt: "Sección de blog y contenido educativo construida para la legibilidad y la visibilidad en buscadores."
   - url: "../../assets/projects/cedir-ecommerce-shop-grid-interface.webp"
-    alt: "Interfaz limpia de la tienda de Cedir mostrando una rejilla de productos con navegación intuitiva."
+    alt: "Interfaz de tienda de Cedir con rejilla de productos y navegación por categorías."
   - url: "../../assets/projects/cedir-single-product-page-conversion-ui.webp"
-    alt: "Diseño detallado de página de producto individual con botones de llamada a la acción optimizados e imágenes en alta resolución para Cedir."  
+    alt: "Página de producto individual de Cedir con acciones claras e imágenes detalladas del componente."  
   - url: "../../assets/projects/cedir-advanced-category-filter-search-ux.webp"
-    alt: "Interfaz de búsqueda con filtro avanzado por categorías, que permite ordenar los productos y proyectos de Cedir de forma eficiente."
+    alt: "Interfaz de filtro avanzado por categorías para ordenar los productos y proyectos de Cedir."
   - url: "../../assets/projects/cedir-dynamic-search-results-interface.webp"
-    alt: "Interfaz limpia y ordenada de la página de resultados de búsqueda de la plataforma Cedir, optimizada para la intención de búsqueda."
+    alt: "Página de resultados de búsqueda de la plataforma Cedir, organizada por tipo de contenido."
 
 ---
 
@@ -36,95 +36,71 @@ import cedirJourney from '/src/assets/projects/cedir-user-journey-conversion-wir
 import Button from "/src/components/Button.astro"
 
 
-<Image src={cedirSystem} alt="Maquetado isométrico en 3D de las páginas web de Cedir, incluyendo la tienda WooCommerce, el blog de electrónica y el portafolio de proyectos." />
+<Image src={cedirSystem} alt="Vista isométrica de las páginas de Cedir, incluyendo la tienda WooCommerce, el blog de electrónica y el portafolio de proyectos." />
 
-Entra [aquí](https://drive.google.com/drive/folders/1pwU_-p2fsb-Ztu59a1Pfi8G12AwOC7iW?usp=sharing) para ver todas las imágenes en alta definición. Tuve que comprimirlas por motivos de optimización.
+## Dos negocios que tenían que alimentarse entre sí
 
-## Funcionalidades
-- Blog donde se explican y filtran por categorías tanto los proyectos como los artículos
-- Tienda en línea con WooCommerce
-- Módulo de búsqueda para todo el sitio
-- Función para comparar varios productos dentro de la tienda
-- Integración de boletín con Mailchimp
-- Integración con Calendly, incrustado en una de las páginas para facilitar la experiencia
-- Inicio de sesión, registro y página de mi cuenta donde se pueden editar los datos personales
-- Cuatro tipos de usuario, filtrados por niveles. Ciertos usuarios tienen acceso a contenido exclusivo
-- Formulario de contacto e información de contacto
-- Optimización SEO y de imágenes (carga rápida gracias a una compresión alta sin perder calidad)
-- Diseño simple, limpio, profesional y elegante
-- Carruseles y deslizadores para explorar con facilidad el contenido y los productos
-- Integración con WhatsApp
+Cedir enseña ingeniería electrónica y vende componentes. Eso suele estar en sitios separados. Aquí tenían que ser uno solo, porque la formación es lo que capacita a alguien para comprar los componentes, y los proyectos gratuitos son lo que atrae a esa persona.
 
-<Image src={cedirComparison} alt="Módulo emergente de comparación de cursos a medida para Cedir, que permite al alumnado comparar planes de estudio de electrónica y precios." />
-Función de comparar productos en la tienda: se ve fácilmente qué producto conviene más.
+El problema de diseño era construir un sitio donde el contenido educativo llevara con naturalidad a la tienda sin que ninguno de los dos pareciera un cebo del otro.
 
-<Image src={cedirContact} alt="Vista detallada de la sección de contacto de Cedir con la reserva de Calendly incrustada y una interfaz de chat de soporte por WhatsApp." />
-Integración de WhatsApp y Calendly: se puede chatear con la administración con un clic y elegir una fecha desde Calendly.
+## El sistema de membresías
 
-## Especificaciones técnicas y herramientas 
-**Stack principal:** WordPress + Elementor Pro (contenedores a medida para rendimiento).
+El núcleo del proyecto es una estructura de acceso en cuatro niveles, con promoción manual por parte de la administración y no automática por compra:
 
-**Comercio electrónico:** WooCommerce con lógica especializada de comparación en tienda.
+- **Suscriptor** para quien se registra
+- **Entusiasta** para miembros activos de la comunidad
+- **Estudiante** para acceder a los módulos de curso
+- **Profesional** para datos técnicos avanzados y archivos de proyecto
 
-**CRM y automatización:** integración con Mailchimp para el seguimiento automatizado de clientes potenciales.
+La promoción manual fue una decisión deliberada. Los niveles automáticos basados en gasto convierten una comunidad en un muro de pago. Promover a la gente por su participación hace que los niveles signifiquen algo, y eso es lo que mantiene una comunidad técnica implicada en vez de transaccional.
 
-**Sistema de reservas:** Calendly incrustado para una gestión de agenda fluida.
+Cada miembro gestiona su propio perfil desde un área de cuenta a medida, así que la administración solo se ocupa del nivel.
 
-**Optimización de velocidad:** compresión avanzada sin pérdida en las imágenes y arquitectura sin fondos de vídeo.
+<Image src={cedirComparison} alt="Módulo de comparación de cursos de Cedir, que permite comparar planes de estudio y precios uno junto a otro." />
 
-**Seguridad:** paneles de cuenta privados con visibilidad de contenido según el rol.
+## Funciones que salieron de cómo se comporta el público
 
-## La visión del cliente: elegancia con autoridad técnica
-El objetivo era construir una plataforma sofisticada donde el estudiantado de ingeniería electrónica pudiera pasar de explorar proyectos gratuitos a comprar cursos especializados y componentes. El cliente pedía una estética limpia y profesional con un requisito estricto: máxima velocidad de carga sin usar vídeo.
+**Un módulo de comparación** en la tienda. Quien estudia ingeniería compara especificaciones antes de comprar, y esa costumbre no la contempla la mayoría de plantillas de comercio electrónico.
 
-Para lograrlo me centré en una interfaz inspirada en el movimiento, guiada por deslizadores y carruseles, permitiendo navegar por grandes volúmenes de contenido y productos sin fatiga visual. Cada recurso pasó por una compresión extrema manteniendo la integridad visual, garantizando un LCP (Largest Contentful Paint) ultrarrápido.
+**Búsqueda en todo el sitio.** El contenido y los productos están indexados juntos, porque quien busca un componente y quien busca el proyecto que lo usa suelen ser la misma persona.
 
-## Experiencia de usuario estratégica: arquitectura de permisos en cuatro niveles 
-Una pieza central de este proyecto fue la implementación de un sistema de acceso a contenido por niveles. Para fomentar el crecimiento de la comunidad y la fidelidad, el sitio tiene una jerarquía de membresía manual:
+**Reserva de consultoría incrustada en la página.** Calendly vive dentro del sitio en vez de enlazar fuera, para que la decisión de agendar ocurra donde se generó el interés.
 
-**Suscriptor:** el punto de entrada por defecto para quien acaba de llegar.
+<Image src={cedirContact} alt="Sección de contacto de Cedir con la reserva de Calendly incrustada y soporte por WhatsApp." />
 
-**Entusiasta:** para miembros activos de la comunidad.
+**WhatsApp para las preguntas directas**, porque en este mercado es donde de verdad ocurren las consultas técnicas, y fingir lo contrario cuesta ventas.
 
-**Estudiante:** acceso a módulos formativos específicos.
+**Automatización de boletín** para mantener el contacto con quien está aprendiendo pero todavía no compra.
 
-**Profesional:** entrada exclusiva a datos técnicos y proyectos avanzados.
+## La restricción de velocidad
 
-Configuré un ecosistema propio de inicio de sesión y registro donde cada persona puede gestionar su perfil, mientras la administración promueve manualmente a los usuarios según su nivel de participación, creando una sensación de "club" exclusivo que impulsa la retención.
+El cliente tenía un requisito firme: rápido y sin vídeo en ninguna parte.
 
-## Funciones e integraciones principales 
-**Tienda de doble propósito:** con WooCommerce, la tienda permite vender simultáneamente cursos digitales y hardware electrónico físico, con un módulo único de comparación.
+Eso descartaba la forma habitual de dar vida a un sitio técnico. En su lugar metí el movimiento en deslizadores y carruseles, que permiten recorrer grandes volúmenes de productos y proyectos sin que la página crezca sin fin, y que casi no cuestan nada de carga.
 
-**Embudo educativo:** los módulos de Calendly integrados permiten al alumnado reservar consultas gratuitas directamente en la interfaz, reduciendo notablemente la fricción entre la marca y quien aprende.
+Cada imagen pasó por una compresión agresiva probada contra su tamaño real de visualización. En un sitio con tanto catálogo, el peso de las imágenes es toda la historia del rendimiento.
 
-**Autoridad de contenido:** un blog y portafolio de proyectos sólido, filtrado por categorías especializadas, que permite al cliente mostrar su experiencia técnica y mejorar su visibilidad en búsqueda orgánica.
+<Image src={cedirSitemap} alt="Diagrama del mapa del sitio mostrando la jerarquía de la tienda y el blog de Cedir." />
 
-**Conectividad global:** integración directa con WhatsApp para soporte instantáneo y sincronización con el boletín de Mailchimp para nutrir los contactos generados por el módulo de búsqueda del sitio.
+<Image src={cedirJourney} alt="Recorrido de usuario mostrando el camino desde el contenido educativo del blog hasta una compra en la tienda." />
 
-<Image src={cedirSitemap} alt="Diagrama completo del mapa del sitio ilustrando la estructura jerárquica de la plataforma de comercio electrónico y blog de Cedir." />
+## Arquitectura
 
-<Image src={cedirJourney} alt="Flujo de usuario detallado mostrando la transición desde el contenido educativo del blog hasta la conversión en la tienda." />
+Estructuré el sitio como dos silos, aprender y comprar, conectados en puntos deliberados en lugar de fundidos. Esa separación permite a los buscadores categorizar a Cedir como autoridad en ambas áreas en vez de leerlo como un sitio confuso.
 
-## Arquitectura del proyecto: mapa del sitio y flujo de UX 
-### Arquitectura de mapa del sitio escalable
-Diseñé una estructura de silo que separa el "aprender" (cursos y blog) del "comprar" (tienda). Esta jerarquía lógica hace que los rastreadores de los buscadores puedan categorizar fácilmente a Cedir como autoridad tanto en formación en electrónica como en venta.
+El camino típico va: encontrar un proyecto gratuito por búsqueda, reservar una consulta, y después comprar un curso o los componentes que necesita.
 
-### El flujo de UX "del contenido a la conversión"
-El recorrido está diseñado para una venta guiada por la educación. Un camino típico empieza encontrando un proyecto gratuito mediante la búsqueda del menú principal, sigue reservando una consulta con la integración de Calendly, y termina comprando un plan de estudios completo en el pago de WooCommerce.
+## Stack
 
-![Mockup profesional en iMac mostrando la página de inicio de Cedir, con un deslizador de electrónica a medida y una navegación limpia en Elementor.](/images/projects/cedir-electronics-homepage-desktop-ui.webp)
-
+**WordPress** con **Elementor Pro** usando contenedores nativos, **WooCommerce** para la tienda con lógica de comparación a medida, Mailchimp para el boletín y Calendly incrustado para las reservas. Las áreas de cuenta están restringidas por rol, así que el contenido por nivel se aplica en el servidor y no se oculta con CSS.
 
 <Button 
-  text="Visitar sitio en vivo →" 
+  text="Visitar sitio en vivo" 
   href="https://electronica-cedir-qro.com/" 
   target="_blank" 
 />
 
-## ¿Lista para centralizar tu presencia digital? 
-Si tu negocio maneja varios servicios, productos y flujos de contenido, necesitas una arquitectura robusta que los reúna. Me especializo en construir centros digitales integrados que convierten información compleja en un recorrido simple y de alto rendimiento.
+## ¿Manejas varias cosas a la vez?
 
-Transformemos tu marca en una plataforma con autoridad que eduque y venda al mismo tiempo.
-
-## 📩 Agenda una llamada gratuita hoy: [https://calendly.com/greciavalentinapv](https://calendly.com/greciavalentinapv)
-Construyendo ecosistemas escalables para el futuro digital.
+Los sitios que alojan contenido, cursos y tienda suelen fallar por tratarlos como secciones separadas. El valor está en cómo se conectan, y eso hay que diseñarlo antes de construir nada.

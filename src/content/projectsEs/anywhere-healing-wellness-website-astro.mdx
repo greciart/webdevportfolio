@@ -1,23 +1,23 @@
 
 ---
-title: 'Anywhere Healing: diseño y desarrollo web de bienestar con Astro'
+title: 'Anywhere Healing: sitio de bienestar de alto rendimiento con Astro'
 pubDate: 2025-07-07
-description: 'Un ecosistema digital sereno construido con AstroJS y Netlify. Cómo el diseño minimalista y una arquitectura guiada por el rendimiento crean una experiencia sin estrés.'
+description: 'Sitio estático para una marca de bienestar, construido con Astro y desplegado en Netlify. Lógica de pago a medida con cuotas en el producto de alto valor, y la calma de la interfaz respaldada por velocidad real de carga.'
 languages: ["astro", "html","css","netlify","uiux"]
 image:
   url: "../../assets/projects/anywhere-healing-cross-platform-responsive-wellness.webp"
-  alt: "Interfaz responsiva de una plataforma de bienestar en laptop y tableta, mostrando un diseño fluido y un branding consistente para productos de biorresonancia"
+  alt: "Sitio de bienestar responsivo mostrado en laptop y tableta, con maquetado e identidad consistentes en ambos."
 gallery:
   - url: "../../assets/projects/anywhere-healing-minimalist-landing-page-design.webp"
-    alt: "Diseño minimalista de landing page de salud y bienestar con una paleta verde relajante, optimizada para carga rápida y claridad mental."
+    alt: "Landing page de bienestar minimalista con paleta verde tranquila, construida para cargar rápido."
   - url: "../../assets/projects/anywhere-healing-brand-philosophy-vision.webp"
-    alt: "Vista detallada de la página de misión de la marca Anywhere Healing, mostrando la tipografía limpia y el maquetado accesible diseñado para la concienciación sobre salud mental."
+    alt: "Página de misión de marca de Anywhere Healing, con tipografía limpia y un maquetado de lectura accesible."
   - url: "../../assets/projects/anywhere-healing-product-page-bioresonance-tech.webp"
-    alt: "Página de producto centrada en la tecnología del 'Rejuvena Pod', usando espacio en blanco y tipografía suave para explicar los beneficios de la biorresonancia sin saturar."  
+    alt: "Página de producto del Rejuvena Pod, usando espacio en blanco y tipografía contenida para explicar la tecnología sin saturar."  
   - url: "../../assets/projects/anywhere-healing-ecommerce-bundle-tabs-interface.webp"
-    alt: "Interfaz intuitiva de pago con pestañas de producto para artículos de bienestar individuales y la selección del paquete completo de sanación."
+    alt: "Interfaz de pago con pestañas para productos de bienestar individuales y la opción de paquete completo."
   - url: "../../assets/projects/anywhere-healing-accessible-wellness-contact-page.webp"
-    alt: "Maquetado accesible y fácil de usar de las páginas Sobre nosotros y Contacto, reflejando la misión de transparencia y relajación de la marca."
+    alt: "Maquetado de las páginas Sobre nosotros y Contacto de Anywhere Healing, construido para la legibilidad."
                     
 --- 
 
@@ -32,97 +32,80 @@ import ahOrder from '/src/assets/projects/anywhere-healing-order-summary-fulfill
 import ahEcosystem from '/src/assets/projects/anywhere-healing-full-ecosystem-brand-presentation.webp';
 import Button from "/src/components/Button.astro"
 
-<Image src={ahZen} alt="Experiencia envolvente de escritorio para Anywhere Healing, destacando el titular 'Tu cuerpo habla' y una estética relajante en pantalla de alta resolución." />
+<Image src={ahZen} alt="Vista de escritorio del sitio de Anywhere Healing en pantalla de alta resolución." />
 
-<Image src={ahLaptop} alt="Sitio de bienestar de alta velocidad construido con el framework AstroJS, mostrando la sección sobre el futuro de la sanación natural en una laptop moderna." />
+<Image src={ahLaptop} alt="Sitio de bienestar construido con Astro, mostrado en una laptop con la sección de presentación del producto." />
 
-## Anywhere Healing: un ecosistema digital sereno para el bienestar integral 🌿
-### Resumen del proyecto: stack técnico
-- **Framework:** AstroJS (basado en componentes, sin sobrecarga de JavaScript por defecto).
-- **Despliegue:** Netlify (integración continua y CDN global).
-- **Filosofía de diseño:** interfaz zen minimalista centrada en la salud mental y la reducción del estrés.
-- **Optimización:** compresión de recursos sin pérdida y CSS moderno para una experiencia sin peso innecesario.
+## La contradicción a resolver
 
-## La visión: diseñar para la claridad mental
-El objetivo principal de Anywhere Healing era crear un santuario digital. Como la marca se especializa en productos para el insomnio y el alivio del estrés, la interfaz tenía que ser el primer paso del proceso de relajación. Implementé una paleta inspirada en la cromoterapia, con verdes suaves y azules calmantes, acompañada de un espacio en blanco amplio para reducir la carga cognitiva y evocar una sensación inmediata de *tranquilidad*.
+Anywhere Healing vende productos para el insomnio y el estrés. Su sitio anterior tardaba cuatro segundos en ser usable.
 
-## La ventaja técnica: arquitectura centrada en el rendimiento
-Para cumplir el requisito del cliente de un sitio *"rápido y atractivo"* elegí ***AstroJS***. Aprovechando la ***generación de sitios estáticos (SSG)***, conseguí que la plataforma cargue casi al instante, algo crítico para mantener una experiencia "sin estrés" y lograr puntuaciones superiores en las Core Web Vitals. El proyecto está desplegado en Netlify, garantizando escalabilidad global y seguridad de primer nivel.
+Eso no es un dato de rendimiento, es un problema de credibilidad. Alguien que llega estresado y se queda mirando un indicador de carga ya recibió un mensaje sobre la marca antes de leer una palabra. La interfaz tenía que ser la primera parte del producto, no un obstáculo delante de él.
 
-<Image src={ahWireflow} alt="Diagrama de arquitectura de información y wireflow de la plataforma Anywhere Healing, mostrando el camino desde la página de inicio hasta el pago." />
+## La decisión técnica
 
-Un sitio de alto rendimiento construido con AstroJS necesita una estructura de navegación igual de eficiente. Para Anywhere Healing desarrollé un wireflow de UX completo que sirve de plano para todo el recorrido. Esta fase fue crítica para asegurar que la estética relajante de la marca fuera acompañada de una experiencia funcional sin fricciones.
+Construí el sitio en **Astro**, y la razón es concreta, no una preferencia de framework.
 
-## Embudo de conversión estratégico
-El wireflow ilustra una transición simplificada del conocimiento de marca a la transacción:
+Astro no envía JavaScript por defecto y genera HTML estático durante el build. Para un sitio que es esencialmente contenido más un proceso de pago, la mayor parte de la página no necesita código en tiempo de ejecución. Las piezas interactivas se cargan solo donde se usan. El resultado es una página legible casi al instante, no después de que arranque un framework.
 
-**Puntos de entrada:** zonas de aterrizaje optimizadas (inicio, Rejuvena Pod) diseñadas para reducir la carga cognitiva.
+Desplegado en **Netlify**, así que las páginas se sirven desde un CDN cercano a quien visita. La calma que vende la marca es, en parte, simplemente la ausencia de espera.
 
-**Puente educativo:** enlaces fluidos a las secciones de filosofía y "sobre nosotros" para establecer confianza.
+## Decisiones de interfaz
 
-**Pedido con alta intención:** un camino directo al módulo de pedido con pestañas, donde se pueden seleccionar de forma intuitiva los productos individuales o el paquete completo.
+**Una paleta tomada de la cromoterapia.** Verdes suaves y azules apagados, elegidos porque son de lo que trata el producto, no porque estén de moda.
 
-## Jerarquía técnica y accesibilidad
-**Nodos lógicos:** cada punto de interacción se mapeó para minimizar el esfuerzo requerido, garantizando que una compra se pueda completar en los menos pasos posibles.
+**El espacio en blanco como ritmo.** Un espaciado generoso entre secciones le da a la vista dónde descansar. En un sitio dirigido a personas con problemas de sueño, la densidad es la textura equivocada.
 
-**Flujo adaptativo:** el diagrama contempla comportamientos mobile-first, asegurando que la lógica de pago especializada (cuotas frente a pago inmediato) siga siendo clara en cualquier tamaño de pantalla.
+**Imágenes dimensionadas a su hueco.** Cada recurso exportado al tamaño real en que se muestra y en formato moderno. La fotografía rica y una página ligera no están reñidas si la exportación se hace bien.
 
-**Arquitectura guiada por SEO:** al planificar la jerarquía en la etapa de wireflow, aseguré una "estructura de silo" que los buscadores pueden rastrear eficientemente, reforzando la relevancia temática del sitio.
+<Image src={ahWireflow} alt="Arquitectura de información y wireflow de la plataforma Anywhere Healing, trazando la ruta desde la página de inicio hasta el pago completado." />
 
-## UX y arquitectura estratégica 
-**Arquitectura de información que respira:** diseñé un flujo de navegación simplificado que elimina la fricción, permitiendo encontrar soluciones de bienestar sin sensación de agobio.
+## El pago fue la parte difícil
 
-**Visuales guiados por el rendimiento:** cada recurso está optimizado para la velocidad sin sacrificar la sensación de calidad que la marca necesita. El resultado es un sitio visualmente rico que sigue siendo increíblemente ligero.
+El catálogo tiene dos tipos de producto muy distintos. Los artículos pequeños de bienestar son compra por impulso. El Rejuvena Pod es un dispositivo caro y meditado, y su precio era el principal obstáculo para la conversión.
 
-**Diseño zen adaptable:** el maquetado es totalmente responsivo, manteniendo su estética relajante y su integridad funcional en teléfonos, tabletas y escritorio.
+Vender ambos con un solo flujo habría perjudicado a uno de los dos. Así que construí dos:
 
-## Funciones financieras 
-**Versatilidad de pago:** implementación de facturación diferida (cuotas) y cobro inmediato dentro del mismo ecosistema.
+**Compra directa** para los artículos pequeños. Directo al pago, sin pasos intermedios.
 
-**UX sin fricciones:** formularios de pago minimalistas diseñados para evitar el abandono del carrito y generar confianza.
+**Compra en cuotas** para el Pod. Se elige entre pago completo o un plan estructurado, y la interfaz calcula cada cuota en vivo mientras se cambian las condiciones. Ver la cifra mensual en lugar del total cambia la decisión, y por eso el cálculo tenía que ser inmediato y no revelarse al final.
 
-**Integridad transaccional:** totalmente integrado con APIs seguras para gestionar la lógica compleja de las soluciones de bienestar individuales y en paquete.
+<Image src={ahInstallment} alt="Módulo de selección de nivel de pago, mostrando la elección entre facturación inmediata y diferida." />
 
-**Retroalimentación dinámica de la interfaz:** cálculo en tiempo real de las cuotas según la selección, dando claridad inmediata sobre el precio.
+<Image src={ahCheckout} alt="Interfaz de pago mostrando las opciones de plan en cuotas para el dispositivo Rejuvena Pod." />
 
-<Image src={ahInstallment} alt="Vista detallada del módulo de selección de pago por niveles, que permite elegir entre facturación inmediata o diferida." />
+<Image src={ahSecure} alt="Pantalla de procesamiento de pago de la tienda de bienestar, con una interfaz de transacción limpia." />
 
-<Image src={ahCheckout} alt="Interfaz especializada de pago mostrando las opciones de plan en cuotas para el dispositivo de biorresonancia Rejuvena Pod." />
+<Image src={ahOrder} alt="Página de resumen del pedido con precios transparentes y una sola acción de confirmación." />
 
-<Image src={ahSecure} alt="Pantalla de procesamiento de pago seguro para productos de bienestar, con una interfaz financiera limpia y centrada en la confianza." />
+Ambos caminos pasan por el mismo túnel de procesamiento cifrado, así que la separación existe en la interfaz sin duplicar la superficie de seguridad.
 
-<Image src={ahOrder} alt="Página de resumen de pedido simplificada con precios transparentes y una llamada a la acción de pago seguro para artículos de salud integral." />
-
-## Integración financiera fluida: arquitectura de pago flexible 
-Un componente crítico de la plataforma de Anywhere Healing fue la experiencia de pago diseñada a medida. Para acompañar la naturaleza de alto valor del Rejuvena Pod, desarrollé una lógica de pago por niveles que atiende distintas preferencias financieras:
-
-**Cobro inmediato:** para los productos de bienestar estándar implementé un flujo de transacción directo, de un clic, para asegurar el procesamiento inmediato del pedido.
-
-**Compra en cuotas:** para el Rejuvena Pod, de mayor valor, integré un módulo de financiación flexible. Permite elegir entre el pago completo inmediato o un plan estructurado de cuotas, reduciendo notablemente la barrera de entrada y aumentando el valor medio del pedido.
-
-**Cifrado con la seguridad primero:** todo el túnel de procesamiento está construido con cifrado estándar del sector, garantizando que los datos financieros sensibles queden protegidos y ofreciendo a la vez una confirmación sin fricciones ni demoras.
-
-<Image src={ahEcosystem} alt="Ecosistema digital completo de Anywhere Healing, con el selector de paquetes de la tienda y la interfaz optimizada para móvil en varios dispositivos." />
+<Image src={ahEcosystem} alt="Vista completa del sitio de Anywhere Healing, mostrando el selector de paquetes y el maquetado móvil en varios dispositivos." />
 
 <div style="display: flex; justify-content: center; gap: 16px; margin: 2rem 0; flex-wrap: wrap;">
 <Button 
-  text="Ver demo en vivo →" 
+  text="Ver demo en vivo" 
   href="https://greciart.github.io/anywhere-healing/" 
   target="_blank" 
 />
 <Button 
-  text="Ver código fuente →" 
+  text="Ver código fuente" 
   href="https://github.com/greciart/anywhere-healing" 
   target="_blank" 
 />
 </div>
 
+## Stack
 
+- **Astro** para generación estática sin JavaScript de base
+- **HTML y CSS** escritos a mano, sin framework de utilidades, porque el sistema de diseño era lo bastante pequeño para no necesitarlo
+- **Netlify** para el despliegue y la entrega por CDN
+- Lógica de cuotas a medida en JavaScript sin dependencias, cargada solo en el pago
 
-## ¿Lista para elevar tu marca con velocidad de rayo? ⚡
-Si tu negocio vive de dar tranquilidad, tu sitio web debería hacerlo también. Me especializo en construir santuarios digitales optimizados para el rendimiento, que cargan al instante y se ven bien.
+## Resultado
 
-Construyamos un sitio que refleje la calidad de tu marca.
+Un sitio cuya velocidad forma parte de lo que vende, y un proceso de pago que hizo comprable el producto caro cambiando cómo se presenta el precio, no cuál es.
 
-### 📩 Consulta sobre tu próximo proyecto
-Creando experiencias web rápidas, limpias y con sentido.
+## ¿Tu sitio contradice tu producto?
+
+Las marcas de bienestar, finanzas y salud venden una sensación que un sitio lento y recargado desmiente de inmediato. Eso tiene solución, y normalmente es técnica.

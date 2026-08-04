@@ -2,28 +2,28 @@
 ---
 title: 'Cedir | E-commerce & Educational Platform Web Design'
 pubDate: 2025-07-26
-description: 'A professional WordPress & Elementor ecosystem for electronics students, featuring 4-tier user access, WooCommerce store, and integrated Calendly booking.'
+description: 'Platform for an electronics training company, combining a WooCommerce store with a course library. Four membership tiers gate content, and everything runs without video to keep load times down.'
 languages: ["elementor", "wordpress","uiux"]
 image:
   url: "../../assets/projects/cedir-electronics-multidevice-responsive-showcase.webp"
-  alt: "Comprehensive multi-device responsive UI showcase of the Cedir platform across smartphone, tablet, laptop, and desktop displays."
+  alt: "Responsive view of the Cedir platform across phone, tablet, laptop and desktop screens."
 gallery:
   - url: "../../assets/projects/cedir-multidisciplinary-web-homepage-layout.webp"
-    alt: "Full homepage layout for Cedir featuring a centralized menu for e-commerce, blog, and professional services."
+    alt: "Cedir home page layout with a central menu covering the store, blog and professional services."
   - url: "../../assets/projects/cedir-educational-consultation-portal-design.webp"
-    alt: "Educational portal layout for Cedir featuring course listings and professional consultation booking options."
+    alt: "Educational portal layout for Cedir with course listings and consultation booking."
   - url: "../../assets/projects/cedir-institutional-projects-gallery-showcase.webp"
-    alt: "Minimalist project gallery for Cedir displaying a portfolio of professional consulting work and case studies."  
+    alt: "Project gallery for Cedir showing their consulting work and case studies."  
   - url: "../../assets/projects/cedir-content-authority-blog-section.webp"
-    alt: "Professional blog and educational content section layout designed for readability and SEO authority."
+    alt: "Blog and educational content section built for readability and search visibility."
   - url: "../../assets/projects/cedir-ecommerce-shop-grid-interface.webp"
-    alt: "Clean e-commerce store interface for Cedir showcasing a grid of products with intuitive navigation."
+    alt: "Store interface for Cedir with a product grid and category navigation."
   - url: "../../assets/projects/cedir-single-product-page-conversion-ui.webp"
-    alt: "Detailed single product page design with optimized CTA buttons and high-resolution imagery for Cedir."  
+    alt: "Single product page for Cedir with clear actions and detailed component imagery."  
   - url: "../../assets/projects/cedir-advanced-category-filter-search-ux.webp"
-    alt: "User interface for an advanced category filter search, allowing users to sort Cedir's products and projects efficiently."
+    alt: "Advanced category filter interface for sorting Cedir's products and projects."
   - url: "../../assets/projects/cedir-dynamic-search-results-interface.webp"
-    alt: "Clean and organized search results page UI for the Cedir web platform, optimized for user intent."
+    alt: "Search results page for the Cedir platform, organised by content type."
 
 ---
 
@@ -36,95 +36,71 @@ import cedirJourney from '/src/assets/projects/cedir-user-journey-conversion-wir
 import Button from "/src/components/Button.astro"
 
 
-<Image src={cedirSystem} alt="Isometric 3D layout of Cedir’s web pages including the WooCommerce store, electronics blog, and project portfolio." />
+<Image src={cedirSystem} alt="Isometric view of Cedir's pages, including the WooCommerce store, electronics blog and project portfolio." />
 
-Go [here](https://drive.google.com/drive/folders/1pwU_-p2fsb-Ztu59a1Pfi8G12AwOC7iW?usp=sharing) to see all the images in HD. I have to compress all the images for optimization purposes.
+## Two businesses that had to feed each other
 
-## Features
-- Blog function where both projects and posts are explained and filtered by categories
-- E-commerce function with WooCommerce
-- Search module for the entire page
-- Function to compare several stores in the store
-- Newsletter integration with Mailchimp
-- Integration with Calendly, inserting it into one of the pages to make easier the user experience
-- Login / registration and my account page where the user can edit their personal data
-- 4 types of users, filtered as levels. Specific users will have access to certain exclusive content of the page
-- Contact form and contact information
-- SEO and image optimization (fast load due to high compression without losing quality)
-- Simple, clean, professional, and elegant design
-- Carousels and sliders for easily search the content and products of the website
-- WhatsApp integration
+Cedir teaches electronics engineering and sells components. Those are usually separate sites. Here they needed to be one, because the teaching is what makes someone qualified to buy the components, and the free projects are what brings them in.
 
-<Image src={cedirComparison} alt="Custom course comparison pop-up module for Cedir, allowing students to compare electronics curricula and pricing." />
-Compare products function on the shop page: the user can easily see which product they want more.
+The design problem was building a site where the educational content leads naturally into the store without either feeling like bait for the other.
 
-<Image src={cedirContact} alt="Detail view of Cedir’s contact section featuring embedded Calendly booking and a WhatsApp support chat interface." />
-WhatsApp and calendly integration: the user can easily chat with the admin with the click of a button and choose a date with calendly.
+## The membership system
 
-## Technical Specifications & Tools 
-**Core Stack:** WordPress + Elementor Pro (Custom Containers for Performance).
+The core of the build is a four-tier access structure, promoted manually by the administrator rather than automatically by purchase:
 
-**E-commerce:** WooCommerce with specialized store-comparison logic.
+- **Subscriber** for anyone who registers
+- **Enthusiast** for active community members
+- **Student** for access to the course modules
+- **Professional** for advanced technical data and project files
 
-**CRM & Automation:** Mailchimp integration for automated lead nurturing.
+Manual promotion was a deliberate choice. Automatic tiers based on spending turn a community into a paywall. Promoting people based on participation makes the levels mean something, and that is what keeps a technical community engaged rather than transactional.
 
-**Booking System:** Embedded Calendly for seamless schedule management.
+Each member manages their own profile through a custom account area, so the administrator only handles the tier itself.
 
-**Speed Optimization:** Advanced Lossless Compression for images and zero-video background architecture.
+<Image src={cedirComparison} alt="Course comparison module for Cedir, letting students compare curricula and pricing side by side." />
 
-**Security:** Private User Account Dashboards with role-based content visibility.
+## Features that came out of how the audience behaves
 
-## The Client’s Vision: Elegance Meets Engineering Authority
-The objective was to build a sophisticated platform where electronics engineering students could transition from browsing free projects to purchasing specialized courses and components. The client demanded a clean, professional aesthetic with a strict requirement: maximum loading speed without the use of video.
+**A comparison module** in the store. Engineering students compare specifications before buying, which is not a habit most e-commerce templates account for.
 
-To achieve this, I focused on a motion-inspired UI driven by sliders and carousels, allowing users to navigate through high volumes of content and products without visual fatigue. Every asset was subjected to extreme compression while maintaining visual integrity, ensuring a lightning-fast LCP (Largest Contentful Paint).
+**Search across the whole site.** Content and products are indexed together, because someone looking for a component and someone looking for the project that uses it are often the same person.
 
-## Strategic User Experience: 4-Level Permission Architecture 
-A cornerstone of this project was the implementation of a tiered content access system. To foster community growth and loyalty, the site features a manual membership hierarchy:
+**Consultation booking embedded in the page.** Calendly sits inside the site rather than linking out, so the decision to book happens where the interest was created.
 
-**Subscriber:** The default entry point for new users.
+<Image src={cedirContact} alt="Cedir contact section with embedded Calendly booking and WhatsApp support." />
 
-**Enthusiast:** For active community members.
+**WhatsApp for direct questions**, because in this market that is where technical queries actually happen, and pretending otherwise costs sales.
 
-**Student:** Access to specific educational modules.
+**Newsletter automation** to keep contact with people who are learning but not yet buying.
 
-**Professional:** Exclusive entry to advanced technical data and projects.
+## The speed constraint
 
-I configured a custom Login & Registration ecosystem where users can manage their personal profiles, while the administrator manually promotes users based on their engagement levels, creating an exclusive "club" feel that drives retention.
+The client had one firm requirement: fast, with no video anywhere.
 
-## Core Platform Features & Integrations 
-**Dual-Purpose Storefront:** Powered by WooCommerce, the shop allows for the simultaneous sale of digital courses and physical electronic hardware, featuring a unique Store Comparison module.
+That ruled out the usual approach to making a technical site feel alive. Instead I built the movement into sliders and carousels, which let visitors move through large volumes of products and projects without the page growing endlessly, and which cost almost nothing to load.
 
-**Educational Funnel:** Integrated Calendly modules allow students to book free consultations directly within the UI, significantly reducing the friction between the brand and the learner.
+Every image went through aggressive compression tested against its actual display size. On a site with this much catalogue, image weight is the whole performance story.
 
-**Content Authority:** A robust Blog & Project Portfolio filtered by specialized categories, allowing the client to showcase technical expertise and improve Organic Search (SEO) visibility.
+<Image src={cedirSitemap} alt="Sitemap diagram showing the hierarchy of the Cedir store and blog platform." />
 
-**Global Connectivity:** Direct WhatsApp integration for instant support and a Mailchimp Newsletter sync to nurture the leads generated by the site's high-intent search module.
+<Image src={cedirJourney} alt="User journey showing the path from educational blog content through to a store purchase." />
 
-<Image src={cedirSitemap} alt="Comprehensive sitemap diagram illustrating the hierarchical structure of the Cedir e-commerce and blog platform." />
+## Architecture
 
-<Image src={cedirJourney} alt="Detailed user journey User Flow showing the transition from educational blog content to e-commerce conversion." />
+I structured the site as two silos, learning and buying, connected at deliberate points rather than merged. That separation lets search engines categorise Cedir as an authority in both areas instead of reading it as one confused site.
 
-## Project Architecture: Sitemap & UX Flow 
-### Scalable Sitemap Architecture
-I designed a Silo Structure that separates the "Learning" (Courses/Blog) from the "Buying" (Store). This logical hierarchy ensures that search engine crawlers can easily categorize Cedir as an authority in both electronics education and retail.
+The typical path runs: find a free project through search, book a consultation, then buy a course or the components it needs.
 
-### The "Content-to-Conversion" UX Flow
-The user journey is engineered for education-led sales. A typical path involves a user finding a free project via the Main Menu Search, booking a consultation via the Calendly Integration, and eventually purchasing a full curriculum through the WooCommerce Checkout.
+## Stack
 
-![Professional iMac mockup showcasing the Cedir homepage, featuring a custom electronics slider and clean Elementor navigation.](/images/projects/cedir-electronics-homepage-desktop-ui.webp)
-
+**WordPress** with **Elementor Pro** using native containers, **WooCommerce** for the store with custom comparison logic, Mailchimp for the newsletter, and Calendly embedded for bookings. Account areas are role-gated so tier content is enforced server-side rather than hidden with CSS.
 
 <Button 
-  text="Visit Live Site →" 
+  text="Visit Live Site" 
   href="https://electronica-cedir-qro.com/" 
   target="_blank" 
 />
 
-## Ready to Centralize Your Digital Presence? 
-If your business manages multiple services, products, and content streams, you need a robust architecture that brings them all together. I specialize in building integrated digital hubs that turn complex information into a simple, high-performing user journey.
+## Running several things at once?
 
-Let's transform your brand into an authoritative platform that educates and sells simultaneously.
-
-## 📩 Book a Free Call Today: [https://calendly.com/greciavalentinapv](https://calendly.com/greciavalentinapv)
-Building scalable ecosystems for the digital future.
+Sites that host content, courses and a store usually fail by treating them as separate sections. The value is in how they connect, and that has to be designed before anything gets built.

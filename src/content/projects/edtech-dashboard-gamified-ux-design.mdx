@@ -1,39 +1,39 @@
 
 ---
-title: '🎓 EdTech Dashboard Design with Gamified UX for Neurodivergent Learning'
+title: 'EdTech Dashboard Design with Gamified UX for Neurodivergent Learning'
 pubDate: 2025-04-05
-description: 'An inclusive digital learning ecosystem designed to support neurodivergent students through dopamine-driven UX and advanced student analytics.'
+description: 'Learning platform designed in Figma with two separate dashboards, student and teacher. Progress mechanics built around executive function support for ADHD, not decoration.'
 languages: ["figma", "uiux"]
 image:
   url: "../../assets/projects/edtech.webp"
-  alt: "Gamified UI design for ADHD accessibility featuring progress bars and achievement badges by Grecia V."
+  alt: "Gamified interface design for ADHD accessibility, with progress bars and achievement badges, by Grecia V."
 gallery: 
   - url: "../../assets/projects/gamified-edtech-student-dashboard-ux.png"
-    alt: "Main interface of a gamified student dashboard focusing on user experience in EdTech platforms."
+    alt: "Main interface of a gamified student dashboard for an education platform."
   - url: "../../assets/projects/student-academic-subjects-list-ui.png"
-    alt: "Academic subjects list and grades overview screen in a modern student LMS dashboard."
+    alt: "Subject list and grades overview screen in a student learning dashboard."
   - url: "../../assets/projects/student-task-kanban-board-progress-tracker.png"
-    alt: "Gamified task progress board featuring to do, in progress, and done columns for students." 
+    alt: "Task board with to do, in progress and done columns for tracking student work." 
   - url: "../../assets/projects/student-portal-news-announcements-ux.png"
-    alt: "News and school announcements board UI design on a gamified student portal dashboard."    
+    alt: "News and announcements board in a student portal dashboard."    
   - url: "../../assets/projects/student-learning-progress-analytics-ui.png"
-    alt: "Data visualization and learning progress tracking UI on a gamified student portal."
+    alt: "Learning progress tracking and data visualisation in a student portal."
   - url: "../../assets/projects/teacher-welcome-dashboard-interface-design.png"
-    alt: "Clean welcome screen UI of a teacher's central hub dashboard in an EdTech application."
+    alt: "Welcome screen of the teacher dashboard in an education application."
   - url: "../../assets/projects/teacher-student-database-management-ui.png"
-    alt: "Student roster and academic profiles database UI design for e-learning platforms."
+    alt: "Student roster and academic profiles interface for a learning platform."
   - url: "../../assets/projects/school-news-announcements-teacher-dashboard.png"
-    alt: "Announcements and campus news feed module in an EdTech teacher dashboard." 
+    alt: "Announcements and campus news module in a teacher dashboard." 
   - url: "../../assets/projects/teacher-student-assignments-tracker-ux.png"
-    alt: "UX UI design of an assignment manager and student homework tracker for teachers."    
+    alt: "Assignment manager and homework tracker interface for teachers."    
   - url: "../../assets/projects/teacher-calendar-events-management-ui.png"
-    alt: "Interactive school calendar and event planner UI design for educational platforms."    
+    alt: "School calendar and event planner interface for an education platform."    
   - url: "../../assets/projects/lms-teacher-portal-curriculum-progress-tracker.png"
-    alt: "Subject curriculum tracker UI on a teacher portal, displaying topic-by-topic learning progress for each academic course." 
+    alt: "Curriculum tracker in a teacher portal, showing topic-by-topic progress for each course." 
   - url: "../../assets/projects/teacher-dashboard-class-analytics-subjects-ui.png"
-    alt: "Teacher dashboard interface design showing class performance analytics, overall grades, and subject statistics."    
+    alt: "Teacher dashboard showing class performance analytics, grades and subject statistics."    
   - url: "../../assets/projects/edtech-teacher-analytics-performance-dashboard.png"
-    alt: "Teacher analytics dashboard UI displaying student performance metrics and learning statistics."    
+    alt: "Teacher analytics view displaying student performance metrics and learning statistics."    
 
 --- 
 
@@ -44,73 +44,48 @@ import studentPoster from "../../assets/projects/gamified-edtech-student-dashboa
 import teacherPoster from "../../assets/projects/teacher-student-database-management-ui.png";
 
 
-## Students' version
+## Student view
 <Video provider="vimeo" id="1210693147" poster={studentPoster.src} />
 
-## Teacher's version
+## Teacher view
 <Video provider="vimeo" id="1210693526" poster={teacherPoster.src} />
 
-- **Core Skills:** UI/UX Design, Dashboard Architecture, User Retention Strategy.
-- **Tools Used:** Figma (Components, Auto-layout), Adobe Creative Suite.
-- **Target Industry:** Inclusive Education platforms, SaaS, Learning Management Systems (LMS), Education platforms with Neurodivergent Accesibility.
+## The premise
 
-## Transforming E-Learning with Interactive Data Visualization & Community-Driven UX
-In the modern digital landscape, online education often suffers from a lack of motivation and "digital isolation." I designed this E-Learning Platform Home Page to bridge the gap between technical functionality and emotional engagement, creating a Learning Management System (LMS) that feels as intuitive as it is powerful.
+Most learning platforms are built for a student who can hold a long task in their head, break it down unprompted, and stay motivated without feedback. That student exists. Plenty of others do not work that way, and they are the ones who drop out of online courses.
 
-## The Challenge: Combatting Educational Tedium
-Most EdTech platforms are functional but uninspiring. Students often lose interest due to cluttered interfaces, while educators struggle to manage data across multiple tools. The core problem? A disconnect between Performance Tracking and Real-time Communication.
+I designed this platform around the second group, specifically around the executive function difficulties that come with ADHD. The interesting part is that almost everything that helps there also helps everyone else, which is the whole argument for universal design.
 
-## Strategic Objectives:
-- **Reduce Cognitive Load:** Organizing teacher tools in a single, cohesive workspace.
-- **Foster Community:** Creating direct channels for student-teacher interaction.
-- **Visualize Success:** Using Data Visualization to make student statistics actionable and clear.
+## Where gamification is actually load-bearing
 
-<Image src={edutechfull} alt="Modern E-learning dashboard UI design featuring student analytics, progress tracking, and gamification elements in a minimalist pastel interface." />
-<small><center>*First UI concept for the teacher's dashboard.*</center></small>
+Points and badges get dismissed as decoration, and often they are. Here each mechanic maps to a specific difficulty:
 
-## The Solution: A Unified "Control Center" for Educators
-This dashboard acts as a *"Mission Control"* for the teacher. By integrating SaaS UI principles, I developed a layout that manages complex workflows—assignments, live courses, and grading—without overwhelming the user.
+**Immediate feedback after every action.** ADHD is, in practical terms, a difficulty with delayed reward. A course that pays off in three months provides nothing to work with today. Visible progress after each completed step gives the loop something to close.
 
-## Key Features for Maximum Engagement:
- ***Advanced Analytics Dashboard:*** Teachers can monitor class-wide progress through real-time statistics, allowing for data-backed pedagogical adjustments.
+**Long tasks broken into visible units.** A twelve-week course shown as one bar is paralysing. Shown as a sequence of small steps with a marker of where you are, it becomes something you can start. This is what gets past the wall that stops people before they begin.
 
- ***Mentorship-First UX:*** A dedicated interface for direct student inquiries, ensuring no question goes unanswered and fostering a sense of belonging.
+**A single next action per screen.** Task switching is expensive. The interface shows what to do now and puts everything else one level down, so returning after an interruption does not mean re-deciding where you were.
 
- ***Live Course Integration:*** A centralized hub for scheduling and hosting online sessions, assignments, and grade books in one place.
+<Image src={edutechfull} alt="Learning dashboard interface with student analytics, progress tracking and gamification elements in a pastel layout." />
 
-## Design Systems & Visual Identity
-- **The aesthetic is *"Soft-Tech"*:** clean, professional, and accessible.
-- **Minimalist Minimalism:** I focused on White Space to improve focus, ensuring the platform looks neat and clean but remains highly practical.
-- **Color Psychology (Knowledge & Order):** The primary use of Purple signifies wisdom, creativity, and structural order—essential traits for an effective e-learning environment.
-- **Pastel Palette:** A selection of light colors and pastels creates a friendly and calming atmosphere.
+## Two products, not one with a toggle
 
-## Gamification as a Tool for Neuro-Inclusive Design
-I designed this platform’s architecture to be gamification-ready, leveraging Game UI and Game Interface Design mechanics to transform the learning experience from a passive task into an engaging journey. Beyond mere aesthetics, this is a commitment to inclusive design and digital accessibility.
+Students and teachers need opposite things from the same data, so I designed them as separate applications sharing a system.
 
-### 🧠 Empowering ADHD & Neurodivergent Learners
-Standard educational systems often fail to support the executive functions of neurodivergent brains. This UI specifically addresses the needs of users with ADHD by providing:
+**The student dashboard** is focused and quiet. Current tasks, a progress view, one clear next step. Everything not needed right now is hidden rather than collapsed.
 
-**Instant Feedback Loops:** Visual cues such as badges and experience points (XP) provide the immediate dopamine rewards necessary to maintain motivation and focus, something essential to ADHD brains.
+**The teacher dashboard** is dense on purpose. Class-wide analytics, per-subject statistics, assignment tracking and a calendar in one place. A teacher needs comparison across thirty students, and hiding that behind navigation would make the tool slower than the spreadsheet it replaces.
 
-**Visual Progress Tracking:** Clear, interactive progress bars break down overwhelming courses into manageable "quests," helping users overcome the "wall of awful" often associated with complex tasks.
+## Visual system
 
-**Reduced Cognitive Load:** The organized, minimalist hierarchy prevents sensory overload while keeping essential tools within reach, supporting better concentration and task switching.
+Purple as the primary colour, chosen for its association with focus rather than the alerting quality of the reds and oranges most platforms reach for. Pastel supporting tones and generous whitespace, because sensory load is a real accessibility concern for this audience, not a style preference.
 
-### Universal Design: Benefits for Everyone
-While these features are life-changing for neurodivergent students, they follow the principles of Universal Design.
+Everything was built in **Figma** as a component library with auto layout and defined states, so the two dashboards stay consistent while differing in density.
 
-**Intrinsic Motivation:** Even for neurotypical users, game-like elements tap into a natural love for play, turning "duty" into "achievement."
+## Result
 
-**Enhanced Engagement:** A level-up system creates a sense of mastery and ownership over the learning process, significantly increasing user retention and course completion rates.
+A platform where the interface does part of the work the student is expected to do alone elsewhere, and a teacher view that makes class-wide patterns visible at a glance.
 
-By integrating these Game UI strategies, I’ve created a space where learning is not just **accessible**, but addictive in the best way possible—ensuring that the system works for the student, rather than against them.
+## Designing for accessibility
 
-
-## Technical Implementation & Strategic Branding
-This project serves as a comprehensive interactive e-learning UI case study, designed as a *responsive LMS interface*. My focus as a *UI/UX specialist* was to prioritize digital accessibility and **neuro-inclusive design**. By providing executive function support through *dopamine-driven design* and a student analytics dashboard, this platform ensures **high engagement for all learners**.
-
-
-
-
-
-
+Accessibility is usually treated as contrast ratios and alt text. Cognitive accessibility is less discussed and often matters more. If you are building something people have to return to repeatedly, it is worth designing for.
