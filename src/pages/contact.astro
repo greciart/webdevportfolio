@@ -443,6 +443,20 @@ const eyebrow =
 
         if (!response.ok) throw new Error(`Request failed with ${response.status}`);
 
+        // Netlify can answer 200 while still refusing the submission — a failed
+        // captcha or an unregistered form comes back as an HTML error page, not
+        // an error status. On success it echoes back one of our own pages, so
+        // rather than guessing at error wording (which risks a false alarm on a
+        // message that did send), check for a marker every page of this site
+        // carries. An empty body falls back to trusting the status code.
+        //
+        // Spam classification happens after this response and cannot be seen
+        // from here: those submissions really are accepted first.
+        const body = await response.text();
+        if (body.trim() && !body.includes("js-reveal")) {
+          throw new Error("Netlify returned a page that is not part of this site");
+        }
+
         form.classList.add("hidden");
         success.classList.remove("hidden");
         success.classList.add("flex");
