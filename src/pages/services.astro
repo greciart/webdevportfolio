@@ -5,12 +5,16 @@ import Button from "../components/ui/Button.astro";
 import MasonryGallery from "../components/portfolio/MasonryGallery.astro";
 import GalleryLightbox from "../components/portfolio/GalleryLightbox.astro";
 import { Icon } from "astro-icon/components";
-import { brandingGallery, threeDGallery, immersiveGallery } from "../data/services";
+import { getBrandingGallery, getThreeDGallery, getImmersiveGallery } from "../data/services";
 import { servicesCopy } from "../i18n/services";
 import { getLangFromUrl, localizePath } from "../i18n/utils";
 
 const lang = getLangFromUrl(Astro.url);
 const c = servicesCopy[lang];
+
+const brandingGallery = getBrandingGallery(lang);
+const threeDGallery = getThreeDGallery(lang);
+const immersiveGallery = getImmersiveGallery(lang);
 const p = (path) => localizePath(path, lang);
 
 const { pageTitle, description } = c;

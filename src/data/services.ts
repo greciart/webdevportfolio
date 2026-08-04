@@ -1,4 +1,5 @@
 import type { ImageMetadata } from "astro";
+import { defaultLang, type Lang } from "../i18n/ui";
 
 // Branding covers pulled from behance.net/greciavalero
 import brandingCotizaGuate from "../assets/services/branding/cotizaguate-logo-3d-brand-mascot.webp";
@@ -25,102 +26,197 @@ export type GalleryItem = {
   tags?: string[];
 };
 
+/** Caption text per language; the image and the link are shared. */
+type Caption = { title: string; alt: string; tags?: string[] };
+type Entry = { url: ImageMetadata; href?: string } & Record<Lang, Caption>;
+
 const BEHANCE = "https://www.behance.net/gallery";
 
-export const brandingGallery: GalleryItem[] = [
+const branding: Entry[] = [
   {
     url: brandingCotizaGuate,
-    title: "CotizaGuate — Logo & 3D Brand Mascot",
-    alt: "CotizaGuate logo design and 3D quetzal brand mascot character",
     href: `${BEHANCE}/250822737/CotizaGuate-Logo-Design-3D-Brand-Mascot-Character`,
-    tags: ["Logo", "Mascot", "3D"],
+    en: {
+      title: "CotizaGuate — Logo & 3D Brand Mascot",
+      alt: "CotizaGuate logo design and 3D quetzal brand mascot character",
+      tags: ["Logo", "Mascot", "3D"],
+    },
+    es: {
+      title: "CotizaGuate — Logo y mascota de marca 3D",
+      alt: "Diseño de logo de CotizaGuate y personaje mascota de marca en 3D con forma de quetzal",
+      tags: ["Logo", "Mascota", "3D"],
+    },
   },
   {
     url: brandingApidevs,
-    title: "Apidevs — Logo & 3D Brand Mascot",
-    alt: "Apidevs logo and 3D brand mascot design for a developer platform",
     href: `${BEHANCE}/250668627/Apidevs-Logo-and-3D-Brand-Mascot-design-for-Developer`,
-    tags: ["Logo", "Mascot", "3D"],
+    en: {
+      title: "Apidevs — Logo & 3D Brand Mascot",
+      alt: "Apidevs logo and 3D brand mascot design for a developer platform",
+      tags: ["Logo", "Mascot", "3D"],
+    },
+    es: {
+      title: "Apidevs — Logo y mascota de marca 3D",
+      alt: "Logo de Apidevs y diseño de mascota de marca en 3D para una plataforma de desarrollo",
+      tags: ["Logo", "Mascota", "3D"],
+    },
   },
   {
     url: brandingNeurosurgery,
-    title: "Medical Neurosurgery — Visual Identity",
-    alt: "Visual identity system for a medical neurosurgery brand",
     href: `${BEHANCE}/250579449/Medical-Neurosurgery-Brand-Visual-Identity`,
-    tags: ["Full Branding", "Identity"],
+    en: {
+      title: "Medical Neurosurgery — Visual Identity",
+      alt: "Visual identity system for a medical neurosurgery brand",
+      tags: ["Full Branding", "Identity"],
+    },
+    es: {
+      title: "Neurocirugía médica — Identidad visual",
+      alt: "Sistema de identidad visual para una marca médica de neurocirugía",
+      tags: ["Branding completo", "Identidad"],
+    },
   },
   {
     url: brandingMariaValentina,
-    title: "Maria Valentina Swimwear — Logo Design",
-    alt: "Logo design for Maria Valentina swimwear brand",
     href: `${BEHANCE}/250704587/Diseno-de-Logo-para-Maria-Valentina-Swimwear`,
-    tags: ["Logo"],
+    en: {
+      title: "Maria Valentina Swimwear — Logo Design",
+      alt: "Logo design for Maria Valentina swimwear brand",
+      tags: ["Logo"],
+    },
+    es: {
+      title: "Maria Valentina Swimwear — Diseño de logo",
+      alt: "Diseño de logo para la marca de trajes de baño Maria Valentina",
+      tags: ["Logo"],
+    },
   },
   {
     url: branding3dtRobot,
-    title: "3DT Robot — Rebranding",
-    alt: "Rebranding project featuring a 3D robot character for 3DT",
     href: `${BEHANCE}/164998227/3dt-robot-rebranding-project`,
-    tags: ["Rebranding", "3D"],
+    en: {
+      title: "3DT Robot — Rebranding",
+      alt: "Rebranding project featuring a 3D robot character for 3DT",
+      tags: ["Rebranding", "3D"],
+    },
+    es: {
+      title: "Robot 3DT — Rediseño de marca",
+      alt: "Proyecto de rediseño de marca con un personaje robot en 3D para 3DT",
+      tags: ["Rediseño de marca", "3D"],
+    },
   },
 ];
 
-export const threeDGallery: GalleryItem[] = [
+const threeD: Entry[] = [
   {
     url: threeDPhoneCase,
-    title: "Phone Case Ad — Blender 3D",
-    alt: "Product advertising render of a phone case modeled in Blender 3D",
     href: `${BEHANCE}/151827409/Phone-case-Ad-Made-in-Blender-3D`,
-    tags: ["Product", "High poly"],
+    en: {
+      title: "Phone Case Ad — Blender 3D",
+      alt: "Product advertising render of a phone case modeled in Blender 3D",
+      tags: ["Product", "High poly"],
+    },
+    es: {
+      title: "Anuncio de funda de móvil — Blender 3D",
+      alt: "Render publicitario de producto de una funda de móvil modelada en Blender 3D",
+      tags: ["Producto", "High poly"],
+    },
   },
   {
     url: threeDCoin,
-    title: "App Project — 3D Coin Animation & Assets",
-    alt: "3D coin animation and in-app assets modeled and animated in Blender",
     href: `${BEHANCE}/218781515/App-project-3D-coin-animation-and-assets`,
-    tags: ["Animation", "Assets"],
+    en: {
+      title: "App Project — 3D Coin Animation & Assets",
+      alt: "3D coin animation and in-app assets modeled and animated in Blender",
+      tags: ["Animation", "Assets"],
+    },
+    es: {
+      title: "Proyecto de app — Animación y recursos 3D de moneda",
+      alt: "Animación de moneda en 3D y recursos para aplicación modelados y animados en Blender",
+      tags: ["Animación", "Recursos"],
+    },
   },
   {
     url: threeDTunnel,
-    title: "Neon Vaporwave Tunnel",
-    alt: "3D neon vaporwave triangular and circular tunnel animation",
     href: `${BEHANCE}/168153607/3D-neon-vaporwave-triangular-and-circular-tunnel`,
-    tags: ["Animation", "Environment"],
+    en: {
+      title: "Neon Vaporwave Tunnel",
+      alt: "3D neon vaporwave triangular and circular tunnel animation",
+      tags: ["Animation", "Environment"],
+    },
+    es: {
+      title: "Túnel vaporwave de neón",
+      alt: "Animación 3D de un túnel triangular y circular vaporwave de neón",
+      tags: ["Animación", "Entorno"],
+    },
   },
   {
     url: threeDSun,
-    title: "Retro Vaporwave 3D Sun",
-    alt: "Retro vaporwave style 3D sun render made in Blender",
     href: `${BEHANCE}/168156215/Retro-vaporwave-style-3D-sun`,
-    tags: ["Environment"],
+    en: {
+      title: "Retro Vaporwave 3D Sun",
+      alt: "Retro vaporwave style 3D sun render made in Blender",
+      tags: ["Environment"],
+    },
+    es: {
+      title: "Sol 3D vaporwave retro",
+      alt: "Render de un sol en 3D de estilo vaporwave retro hecho en Blender",
+      tags: ["Entorno"],
+    },
   },
   {
     url: threeDMoon,
-    title: "Purple Synthwave Moon — Loop Animation",
-    alt: "Purple retro synthwave moon short loop animation",
     href: `${BEHANCE}/175342487/Purple-retro-Synthwave-Moon-(Short-Loop-Animation)`,
-    tags: ["Animation", "Loop"],
+    en: {
+      title: "Purple Synthwave Moon — Loop Animation",
+      alt: "Purple retro synthwave moon short loop animation",
+      tags: ["Animation", "Loop"],
+    },
+    es: {
+      title: "Luna synthwave morada — Animación en bucle",
+      alt: "Animación corta en bucle de una luna synthwave retro en morado",
+      tags: ["Animación", "Bucle"],
+    },
   },
   {
     url: threeDCommissioned,
-    title: "3D Commissioned Work",
-    alt: "Collection of commissioned 3D models and renders",
     href: `${BEHANCE}/149059437/3D-commissioned-work`,
-    tags: ["Commission", "Objects"],
+    en: {
+      title: "3D Commissioned Work",
+      alt: "Collection of commissioned 3D models and renders",
+      tags: ["Commission", "Objects"],
+    },
+    es: {
+      title: "Trabajos 3D por encargo",
+      alt: "Colección de modelos y renders en 3D realizados por encargo",
+      tags: ["Encargo", "Objetos"],
+    },
   },
   {
     url: threeDObjects,
-    title: "3D Objects Collection — Part 2",
-    alt: "Collection of stylized 3D objects modeled in Blender",
     href: `${BEHANCE}/149057049/3D-objects-collection-part-2`,
-    tags: ["Objects", "Low poly"],
+    en: {
+      title: "3D Objects Collection — Part 2",
+      alt: "Collection of stylized 3D objects modeled in Blender",
+      tags: ["Objects", "Low poly"],
+    },
+    es: {
+      title: "Colección de objetos 3D — Parte 2",
+      alt: "Colección de objetos 3D estilizados modelados en Blender",
+      tags: ["Objetos", "Low poly"],
+    },
   },
   {
     url: branding3dtRobot,
-    title: "3DT Robot — Character Model",
-    alt: "3D robot character modeled for the 3DT rebranding project",
     href: `${BEHANCE}/164998227/3dt-robot-rebranding-project`,
-    tags: ["Character", "Mid poly"],
+    en: {
+      title: "3DT Robot — Character Model",
+      alt: "3D robot character modeled for the 3DT rebranding project",
+      tags: ["Character", "Mid poly"],
+    },
+    es: {
+      title: "Robot 3DT — Modelo de personaje",
+      alt: "Personaje robot en 3D modelado para el proyecto de rediseño de marca de 3DT",
+      tags: ["Personaje", "Mid poly"],
+    },
   },
 ];
 
@@ -141,76 +237,174 @@ const immersiveFiles = import.meta.glob<{ default: ImageMetadata }>(
  * Hand-written captions win over the filename. Add an entry here when a piece
  * deserves a proper title; anything without one still shows up automatically.
  */
-const immersiveMeta: Record<string, Omit<GalleryItem, "url">> = {
+const immersiveMeta: Record<string, Record<Lang, Caption>> = {
   "balam-ball-title-screen-logo": {
-    title: "Balam Ball — Title Screen & Logo",
-    alt: "Balam Ball title screen with the pixel art game logo, jaguar deity masks and the main menu",
-    tags: ["Game art", "Logo", "Menu UI"],
+    en: {
+      title: "Balam Ball — Title Screen & Logo",
+      alt: "Balam Ball title screen with the pixel art game logo, jaguar deity masks and the main menu",
+      tags: ["Game art", "Logo", "Menu UI"],
+    },
+    es: {
+      title: "Balam Ball — Pantalla de título y logo",
+      alt: "Pantalla de título de Balam Ball con el logo del juego en pixel art, máscaras de deidades jaguar y el menú principal",
+      tags: ["Arte de juego", "Logo", "UI de menú"],
+    },
   },
   "balam-ball-arena-round-ui": {
-    title: "Balam Ball — Arena & Round UI",
-    alt: "Balam Ball gameplay arena: a Mesoamerican ball court in the jungle with player masks, score counters and the round banner",
-    tags: ["Game art", "Environment", "Score UI"],
+    en: {
+      title: "Balam Ball — Arena & Round UI",
+      alt: "Balam Ball gameplay arena: a Mesoamerican ball court in the jungle with player masks, score counters and the round banner",
+      tags: ["Game art", "Environment", "Score UI"],
+    },
+    es: {
+      title: "Balam Ball — Arena e interfaz de ronda",
+      alt: "Arena de juego de Balam Ball: un juego de pelota mesoamericano en la selva con máscaras de jugador, marcadores y el cartel de ronda",
+      tags: ["Arte de juego", "Entorno", "UI de marcador"],
+    },
   },
   "balam-ball-victory-screen": {
-    title: "Balam Ball — Victory State",
-    alt: "Balam Ball victory screen showing the game logo, the player record and the replay options",
-    tags: ["Game UI", "End state"],
+    en: {
+      title: "Balam Ball — Victory State",
+      alt: "Balam Ball victory screen showing the game logo, the player record and the replay options",
+      tags: ["Game UI", "End state"],
+    },
+    es: {
+      title: "Balam Ball — Pantalla de victoria",
+      alt: "Pantalla de victoria de Balam Ball mostrando el logo del juego, el récord del jugador y las opciones para volver a jugar",
+      tags: ["UI de juego", "Estado final"],
+    },
   },
   "balam-ball-credits-pixel-art": {
-    title: "Balam Ball — Credits & Pixel Art",
-    alt: "Balam Ball credits screen with a pixel art jaguar mask crediting programming, art and music",
-    tags: ["Game art", "Credits"],
-  },
-  "game-jam-isometric-map-hud-tutorial": {
-    title: "Isometric City Map — HUD & Tutorial",
-    alt: "Game jam UI: isometric city map with a stats HUD, location markers and a tutorial dialog box",
-    tags: ["Game UI", "HUD", "Onboarding"],
+    en: {
+      title: "Balam Ball — Credits & Pixel Art",
+      alt: "Balam Ball credits screen with a pixel art jaguar mask crediting programming, art and music",
+      tags: ["Game art", "Credits"],
+    },
+    es: {
+      title: "Balam Ball — Créditos y pixel art",
+      alt: "Pantalla de créditos de Balam Ball con una máscara de jaguar en pixel art acreditando programación, arte y música",
+      tags: ["Arte de juego", "Créditos"],
+    },
   },
   "starmoon-boot-sequence": {
-    title: "Starmoon — Boot Sequence",
-    alt: "Starmoon retro OS simulator boot screen with pixel art mascot, loading bars and system init log",
-    tags: ["Nekoweb", "Vaporwave", "Interactive"],
+    en: {
+      title: "Starmoon — Boot Sequence",
+      alt: "Starmoon retro OS simulator boot screen with pixel art mascot, loading bars and system init log",
+      tags: ["Nekoweb", "Vaporwave", "Interactive"],
+    },
+    es: {
+      title: "Starmoon — Secuencia de arranque",
+      alt: "Pantalla de arranque del simulador de sistema operativo retro Starmoon, con mascota en pixel art, barras de carga y registro de inicio del sistema",
+      tags: ["Nekoweb", "Vaporwave", "Interactivo"],
+    },
   },
   "starmoon-welcome-menu": {
-    title: "Starmoon — Landing & Menu",
-    alt: "Starmoon landing window listing the site sections over a starfield background",
-    tags: ["Nekoweb", "Retro 00s"],
+    en: {
+      title: "Starmoon — Landing & Menu",
+      alt: "Starmoon landing window listing the site sections over a starfield background",
+      tags: ["Nekoweb", "Retro 00s"],
+    },
+    es: {
+      title: "Starmoon — Portada y menú",
+      alt: "Ventana de bienvenida de Starmoon listando las secciones del sitio sobre un fondo de campo de estrellas",
+      tags: ["Nekoweb", "Retro de los 2000"],
+    },
   },
   "starmoon-desktop-character-sheet": {
-    title: "Starmoon — Desktop & Character Sheet",
-    alt: "Starmoon desktop environment with draggable windows, an RPG style character sheet, mascot panel and vaporwave radio player",
-    tags: ["Nekoweb", "OS simulator", "Window UI"],
+    en: {
+      title: "Starmoon — Desktop & Character Sheet",
+      alt: "Starmoon desktop environment with draggable windows, an RPG style character sheet, mascot panel and vaporwave radio player",
+      tags: ["Nekoweb", "OS simulator", "Window UI"],
+    },
+    es: {
+      title: "Starmoon — Escritorio y ficha de personaje",
+      alt: "Entorno de escritorio de Starmoon con ventanas arrastrables, una ficha de personaje estilo rol, panel de mascotas y reproductor de radio vaporwave",
+      tags: ["Nekoweb", "Simulador de OS", "UI de ventanas"],
+    },
   },
   "starmoon-desktop-windows": {
-    title: "Starmoon — Multi-Window Desktop",
-    alt: "Starmoon desktop showing the welcome note, navigation helper, collections window and taskbar",
-    tags: ["Nekoweb", "Window UI"],
+    en: {
+      title: "Starmoon — Multi-Window Desktop",
+      alt: "Starmoon desktop showing the welcome note, navigation helper, collections window and taskbar",
+      tags: ["Nekoweb", "Window UI"],
+    },
+    es: {
+      title: "Starmoon — Escritorio multiventana",
+      alt: "Escritorio de Starmoon mostrando la nota de bienvenida, el asistente de navegación, la ventana de colecciones y la barra de tareas",
+      tags: ["Nekoweb", "UI de ventanas"],
+    },
   },
   "starmoon-file-explorer": {
-    title: "Starmoon — File Explorer",
-    alt: "Starmoon file explorer application with sidebar navigation, breadcrumb path and folder grid, styled as a retro operating system",
-    tags: ["Nekoweb", "App UI"],
+    en: {
+      title: "Starmoon — File Explorer",
+      alt: "Starmoon file explorer application with sidebar navigation, breadcrumb path and folder grid, styled as a retro operating system",
+      tags: ["Nekoweb", "App UI"],
+    },
+    es: {
+      title: "Starmoon — Explorador de archivos",
+      alt: "Aplicación de explorador de archivos de Starmoon con navegación lateral, ruta de migas y rejilla de carpetas, con estética de sistema operativo retro",
+      tags: ["Nekoweb", "UI de app"],
+    },
   },
-  "game-jam-venue-open-air-stage": {
-    title: "Open-Air Venue & Crowd Traits",
-    alt: "Game jam UI: lit open-air plaza stage showing the audience type label and the crowd trait selector",
-    tags: ["Game UI", "Environment"],
+  "game-jam-isometric-map-hud-tutorial": {
+    en: {
+      title: "Isometric City Map — HUD & Tutorial",
+      alt: "Game jam UI: isometric city map with a stats HUD, location markers and a tutorial dialog box",
+      tags: ["Game UI", "HUD", "Onboarding"],
+    },
+    es: {
+      title: "Mapa isométrico de ciudad — HUD y tutorial",
+      alt: "Interfaz de game jam: mapa isométrico de ciudad con HUD de estadísticas, marcadores de ubicación y un cuadro de diálogo de tutorial",
+      tags: ["UI de juego", "HUD", "Onboarding"],
+    },
   },
   "game-jam-location-stats-panel": {
-    title: "Location Panel & Progression Gates",
-    alt: "Game jam UI: isometric map with a side panel showing venue capacity, reputation and charisma requirements",
-    tags: ["Game UI", "Data display"],
+    en: {
+      title: "Location Panel & Progression Gates",
+      alt: "Game jam UI: isometric map with a side panel showing venue capacity, reputation and charisma requirements",
+      tags: ["Game UI", "Data display"],
+    },
+    es: {
+      title: "Panel de ubicación y requisitos de progresión",
+      alt: "Interfaz de game jam: mapa isométrico con un panel lateral mostrando el aforo del local y los requisitos de reputación y carisma",
+      tags: ["UI de juego", "Visualización de datos"],
+    },
   },
   "game-jam-narrative-modal-dialog": {
-    title: "Narrative Modal & Reward Dialog",
-    alt: "Game jam UI: bartender character scene with a modal card showing stat rewards and an accept action",
-    tags: ["Game UI", "Narrative"],
+    en: {
+      title: "Narrative Modal & Reward Dialog",
+      alt: "Game jam UI: bartender character scene with a modal card showing stat rewards and an accept action",
+      tags: ["Game UI", "Narrative"],
+    },
+    es: {
+      title: "Modal narrativo y diálogo de recompensa",
+      alt: "Interfaz de game jam: escena con el personaje del barman y una tarjeta modal mostrando las recompensas de estadísticas y la acción de aceptar",
+      tags: ["UI de juego", "Narrativa"],
+    },
+  },
+  "game-jam-venue-open-air-stage": {
+    en: {
+      title: "Open-Air Venue & Crowd Traits",
+      alt: "Game jam UI: lit open-air plaza stage showing the audience type label and the crowd trait selector",
+      tags: ["Game UI", "Environment"],
+    },
+    es: {
+      title: "Escenario al aire libre y rasgos del público",
+      alt: "Interfaz de game jam: escenario iluminado en una plaza al aire libre mostrando la etiqueta del tipo de público y el selector de rasgos",
+      tags: ["UI de juego", "Entorno"],
+    },
   },
   "game-jam-credits-art-direction": {
-    title: "Credits Screen & Art Direction",
-    alt: "Game jam credits screen with rubber hose style cartoon illustrations crediting the team",
-    tags: ["Art direction", "Credits"],
+    en: {
+      title: "Credits Screen & Art Direction",
+      alt: "Game jam credits screen with rubber hose style cartoon illustrations crediting the team",
+      tags: ["Art direction", "Credits"],
+    },
+    es: {
+      title: "Pantalla de créditos y dirección de arte",
+      alt: "Pantalla de créditos de game jam con ilustraciones de dibujos animados estilo rubber hose acreditando al equipo",
+      tags: ["Dirección de arte", "Créditos"],
+    },
   },
 };
 
@@ -224,17 +418,34 @@ const titleFromFilename = (slug: string) =>
     )
     .join(" ");
 
-export const immersiveGallery: GalleryItem[] = Object.entries(immersiveFiles)
-  .sort(([a], [b]) => a.localeCompare(b))
-  .map(([path, mod]) => {
-    const slug = path.split("/").pop()!.replace(/\.\w+$/, "");
-    const meta = immersiveMeta[slug];
-    if (meta) return { url: mod.default, ...meta };
+const pick = (entry: Entry, lang: Lang): GalleryItem => {
+  const caption = entry[lang] ?? entry[defaultLang];
+  return { url: entry.url, href: entry.href, ...caption };
+};
 
-    const title = titleFromFilename(slug);
-    return {
-      url: mod.default,
-      title,
-      alt: `${title} — interactive experience and game design work by Grecia V.`,
-    };
-  });
+export function getBrandingGallery(lang: Lang): GalleryItem[] {
+  return branding.map((entry) => pick(entry, lang));
+}
+
+export function getThreeDGallery(lang: Lang): GalleryItem[] {
+  return threeD.map((entry) => pick(entry, lang));
+}
+
+export function getImmersiveGallery(lang: Lang): GalleryItem[] {
+  return Object.entries(immersiveFiles)
+    .sort(([a], [b]) => a.localeCompare(b))
+    .map(([path, mod]) => {
+      const slug = path.split("/").pop()!.replace(/\.\w+$/, "");
+      const meta = immersiveMeta[slug];
+      if (meta) return { url: mod.default, ...(meta[lang] ?? meta[defaultLang]) };
+
+      // Untitled drop-ins fall back to the filename, which reads the same
+      // in both languages.
+      const title = titleFromFilename(slug);
+      return {
+        url: mod.default,
+        title,
+        alt: `${title} — interactive experience and game design work by Grecia V.`,
+      };
+    });
+}
