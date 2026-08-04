@@ -6,6 +6,11 @@ import { Icon } from "astro-icon/components";
 import Hobbies from "../portfolio/Hobbies.astro";
 import { getCollection } from "astro:content";
 import { Image } from "astro:assets";
+import { getLangFromUrl, useTranslations, localizePath } from "../../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const p = (path) => localizePath(path, lang);
 
 const [staticData] = await getCollection("staticData");
 const {
@@ -62,7 +67,7 @@ const {
 />
       <!-- clickable overlay -->
       <a
-        href={profileLink}
+        href={p("/about-me")}
         class="absolute inset-0"
         aria-label="View about me page"
       ></a>
@@ -80,7 +85,7 @@ const {
           <span
             class="before:mr-2 before:block before:h-1.5 before:w-1.5 before:rounded-full before:bg-green-400 before:shadow-[0px_0px_0px_3px_rgba(34,197,94,0.5)] before:animate-pulse before:content-['']"
           ></span>
-          Available for work
+          {t("home.available")}
         </span>
 
         <h1
@@ -93,24 +98,24 @@ const {
         >
           <span
             class="bg-linear-to-r from-riptide-500 to-mint-500 bg-clip-text font-black text-transparent dark:from-riptide-300 dark:to-mint-200"
-            >{profileTitle}</span
+            >{t("home.role")}</span
           > with <span
             class="bg-linear-to-r from-riptide-500 to-mint-500 bg-clip-text font-black text-transparent dark:from-riptide-300 dark:to-mint-200"
-            >5+ years of experience</span
-          > creating modern, user-focused digital experiences.
-          <br> I help brands turn ideas into effective websites through thoughtful UX design, clean UI, and reliable frontend development.
+            >{t("home.years")}</span
+          > {t("home.intro")}
+          <br /> {t("home.intro2")}
         </p>
 
         <div class="flex gap-4 max-sm:flex-col max-sm:items-center max-sm:mt-4">
         <Button
-          link="/contact"
-          text={contactSectionButtonText}
+          link={p("/contact")}
+          text={t("contactBand.button")}
           iconName={emailIconName}
           variant="small"
         />
         <Button
-          link={profileLink}
-          text="About Me"
+          link={p("/about-me")}
+          text={t("home.aboutBtn")}
           iconName="person"
           variant="smalldark"
         />
@@ -129,7 +134,7 @@ const {
       class="col-start-2 row-start-2 flex flex-col gap-3 rounded-2xl border border-emerald-50 bg-linear-to-r from-riptide-200 to-mint-200 p-8 dark:border-zinc-800 dark:border-2 dark:bg-zinc-800 dark:bg-gradient-radial dark:from-riptide-500 dark:to-mint-500 max-md:gap-0 max-xl:p-5 max-md:p-4 max-lg:gap-1 md:col-start-4"
     >
       <div class="flex flex-col-reverse items-start gap-4 max-md:gap-2">
-        <Heading text="Beyond the Code" level={3} />
+        <Heading text={t("home.beyondCode")} level={3} />
       </div>
 
       <div class="overflow-y-auto max-sm:text-xs">
@@ -153,7 +158,7 @@ const {
               class="relative flex h-full flex-col gap-8 p-8 dark:before:bg-[radial-gradient(circle,rgba(13,188,130)_0,rgba(1,45,34)_100%)] before:bg-[radial-gradient(circle,rgba(95,255,202)_0,rgba(144,253,210)_100%)] before:absolute before:left-30 before:bottom-30 before:h-[30%] before:aspect-square before:rounded-full before:blur-3xl before:opacity-90 before:transition before:z-0 max-xl:p-5 max-md:p-4 xl:before:bottom-10"
             >
               <div class="z-2">
-                <Heading text="Visit my GitHub" level={3} />
+                <Heading text={t("home.visitGithub")} level={3} />
               </div>
 
               <Icon
@@ -180,14 +185,14 @@ const {
               name="dashboard"
               aria-hidden="true"
             />
-            <Heading text="Tech" textGradient="Stack" level={3} />
+            <Heading text={t("home.techStack")} textGradient={t("home.techStackAccent")} level={3} />
           </div>
 
           <a
-            href="/services"
+            href={p("/services")}
             class="group/link z-10 flex shrink-0 items-center gap-1.5 whitespace-nowrap rounded-full border border-mint-400/40 bg-white/60 px-3 py-1.5 text-xs font-semibold text-mint-700 transition-all hover:border-mint-500 hover:bg-white dark:border-mint-400/30 dark:bg-zinc-900/50 dark:text-mint-200 dark:hover:border-mint-300 dark:hover:bg-zinc-900 max-sm:px-2 max-sm:py-1 max-sm:text-[10px]"
           >
-            All my services
+            {t("home.allServices")}
             <span
               class="transition-transform duration-300 group-hover/link:translate-x-0.5"
               aria-hidden="true">→</span
@@ -216,14 +221,12 @@ const {
             name="code"
             aria-hidden="true"
           />
-          <Heading text="Projects" level={3} />
+          <Heading text={t("home.projects")} level={3} />
         </div>
         <p
           class="z-2 my-6 text-base font-normal leading-6 dark:text-gray-200 text-blacktext max-xl:text-sm max-w-[90%] max-md:max-w-[85%]"
         >
-        Compilation of my projects as a <span
-            class="bg-linear-to-r from-riptide-500 to-mint-500 bg-clip-text font-black text-transparent dark:from-riptide-300 dark:to-mint-200"
-            >freelancer</span>. I have had the opportunity to work on a variety of projects, collaborating with clients from all over the world in different industries and backgrounds.
+        {t("home.projectsCopy")}
           
 
   

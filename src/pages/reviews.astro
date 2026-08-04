@@ -3,9 +3,14 @@ import Layout from "../layouts/Layout.astro";
 import Contact from "../components/portfolio/Contact.astro";
 import Heading from "../components/ui/Heading.astro";
 import { Icon } from "astro-icon/components";
+import { getLangFromUrl, useTranslations, localizePath } from "../i18n/utils";
 
-const pageTitle = "Client Reviews | Grecia V. - Web Designer & Developer";
-const description = "Real testimonials from clients and professional recommendations. I've worked with across multiple platforms. See what they say about my web design and development work.";
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const p = (path) => localizePath(path, lang);
+
+const pageTitle = t("reviews.pageTitle");
+const description = t("reviews.description");
 
 const reviews = [
   {
@@ -173,10 +178,10 @@ const schemaData = {
 
 
 const stats = [
-  { value: "50+", label: "Projects Completed" },
-  { value: "4.8★", label: "Average Rating" },
-  { value: "3+", label: "Platforms" },
-  { value: "98%", label: "Client Satisfaction" },
+  { value: "50+", label: t("reviews.statProjects") },
+  { value: "4.8★", label: t("reviews.statRating") },
+  { value: "3+", label: t("reviews.statPlatforms") },
+  { value: "98%", label: t("reviews.statSatisfaction") },
 ];
 ---
 
@@ -189,16 +194,16 @@ const stats = [
       
       <span class="inline-flex items-center gap-2 text-xs font-semibold dark:text-mint-300 text-mint-600 uppercase tracking-widest">
         <span class="w-8 h-px bg-mint-400"></span>
-        What clients say
+        {t("reviews.eyebrow")}
         <span class="w-8 h-px bg-mint-400"></span>
       </span>
 
       <div>
-        <Heading text="Client" textGradient="Reviews" level={1} />
+        <Heading text={t("reviews.title")} textGradient={t("reviews.titleAccent")} level={1} />
       </div>
 
       <p class="text-base max-md:text-sm dark:text-gray-300 text-blacktext/80 max-w-xl leading-7 font-normal">
-        Real reviews from clients and professional recommendations. I've worked with across multiple platforms. See what they say about my web design and development work.
+        {t("reviews.intro")}
       </p>
 
       <div data-reveal-stagger="scale" class="grid grid-cols-4 max-sm:grid-cols-2 gap-4 w-full max-w-2xl mt-4">
@@ -309,15 +314,15 @@ const stats = [
                 class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 hover:scale-105 dark:bg-zinc-800 bg-white border dark:border-zinc-700 border-mint-200 dark:text-white text-blacktext hover:border-mint-400 dark:hover:border-mint-500 dark:hover:text-mint-300 hover:text-mint-600"
               >
                 <span class="text-xs">↗</span>
-                View on {review.platform}
+                {t("reviews.viewOn")} {review.platform}
               </a>
               {review.projectUrl && (
                 <a
-                  href={review.projectUrl}
+                  href={p(review.projectUrl)}
                   class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 hover:scale-105 bg-linear-to-r from-riptide-400 to-mint-500 dark:from-riptide-500 dark:to-mint-500 text-blacktext hover:shadow-[0_4px_20px_rgba(13,188,130,0.4)]"
                 >
                   <Icon name="code" class="size-4" />
-                  Ver proyecto
+                  {t("reviews.viewProject")}
                 </a>
               )}
             </div>

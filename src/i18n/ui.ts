@@ -97,6 +97,22 @@ export const ui = {
     "blog.share": "Share",
     "blog.publishedOn": "Published on",
 
+    // --- Reviews ---
+    "reviews.eyebrow": "What clients say",
+    "reviews.title": "Client",
+    "reviews.titleAccent": "Reviews",
+    "reviews.intro":
+      "Real reviews from clients and professional recommendations. I've worked with across multiple platforms. See what they say about my web design and development work.",
+    "reviews.pageTitle": "Client Reviews | Grecia V. - Web Designer & Developer",
+    "reviews.description":
+      "Real testimonials from clients and professional recommendations across multiple platforms. See what they say about my web design and development work.",
+    "reviews.statProjects": "Projects Completed",
+    "reviews.statRating": "Average Rating",
+    "reviews.statPlatforms": "Platforms",
+    "reviews.statSatisfaction": "Client Satisfaction",
+    "reviews.viewOn": "View on",
+    "reviews.viewProject": "View project",
+
     // --- 404 ---
     "404.title": "Page not found",
     "404.copy": "The page you're looking for doesn't exist or has moved.",
@@ -185,6 +201,22 @@ export const ui = {
     "blog.readMore": "Leer más",
     "blog.share": "Compartir",
     "blog.publishedOn": "Publicado el",
+
+    // --- Testimonios ---
+    "reviews.eyebrow": "Lo que dicen mis clientes",
+    "reviews.title": "Testimonios",
+    "reviews.titleAccent": "de clientes",
+    "reviews.intro":
+      "Reseñas reales de clientes y recomendaciones profesionales en distintas plataformas. Mira lo que dicen sobre mi trabajo de diseño y desarrollo web.",
+    "reviews.pageTitle": "Testimonios | Grecia V. - Diseñadora y desarrolladora web",
+    "reviews.description":
+      "Testimonios reales de clientes y recomendaciones profesionales en distintas plataformas. Mira lo que dicen sobre mi trabajo de diseño y desarrollo web.",
+    "reviews.statProjects": "Proyectos completados",
+    "reviews.statRating": "Valoración media",
+    "reviews.statPlatforms": "Plataformas",
+    "reviews.statSatisfaction": "Satisfacción del cliente",
+    "reviews.viewOn": "Ver en",
+    "reviews.viewProject": "Ver proyecto",
 
     // --- 404 ---
     "404.title": "Página no encontrada",
