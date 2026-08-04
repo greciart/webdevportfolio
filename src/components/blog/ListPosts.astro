@@ -15,8 +15,9 @@ export interface Props {
 
 const { excludeLatest = false, currentPostUrl = "", all = false } = Astro.props;
 
-const modules = import.meta.glob("../../pages/blog/posts/*.md", { eager: true });
-const allPosts: any[] = Object.values(modules);
+import { getPosts } from "../../i18n/posts";
+const allPostsByLang = getPosts(lang);
+const allPosts: any[] = allPostsByLang;
 // Sort by date in descending order (newest first)
 allPosts.sort((a, b) => {
   const dateA = new Date(a.frontmatter.pubDate).getTime();

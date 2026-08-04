@@ -4,8 +4,11 @@ import ReadMore from "../ui/ReadMore.astro";
 import Capsule from "../ui/Capsule.astro";
 import DatePub from "./DatePub.astro";
 
-const modules = import.meta.glob("../../pages/blog/posts/*.md", { eager: true });
-const allPosts: any[] = Object.values(modules);
+import { getPosts } from "../../i18n/posts";
+import { getLangFromUrl } from "../../i18n/utils";
+const lang = getLangFromUrl(Astro.url);
+const allPostsByLang = getPosts(lang);
+const allPosts: any[] = allPostsByLang;
 
 const latestPost = allPosts.reduce((latest, current) => {
   const latestDate = new Date(latest.frontmatter.pubDate).getTime();

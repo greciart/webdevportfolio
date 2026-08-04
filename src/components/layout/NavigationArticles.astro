@@ -1,6 +1,9 @@
 ---
-const modules = import.meta.glob("../../pages/blog/posts/*.md", { eager: true });
-const allPosts: any[] = Object.values(modules);
+import { getPosts } from "../../i18n/posts";
+import { getLangFromUrl } from "../../i18n/utils";
+const lang = getLangFromUrl(Astro.url);
+const allPostsByLang = getPosts(lang);
+const allPosts: any[] = allPostsByLang;
 
 
 // Ensure posts have a date before sorting them
