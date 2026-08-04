@@ -2,22 +2,22 @@
 ---
 title: 'Alma Street: Marketing & Events Website Design and Development'
 pubDate: 2025-07-07
-description: 'Custom web design for Alma Street Creative Consulting. A growth-focused WordPress website for marketing agencies, featuring tailored services and workshop management.'
+description: 'Website for a Canadian marketing agency running both consulting and workshops. WordPress and Elementor build with two parallel funnels, event management and newsletter automation.'
 languages: ["elementor", "wordpress", "uiux"]
 image:
   url: "../../assets/projects/alma-street-responsive-web-design-imac-mockup.webp"
-  alt: "Professional responsive web design for Alma Street Creative Consulting displayed on two iMac screens featuring digital marketing services and a turquoise brand aesthetic."
+  alt: "Responsive web design for Alma Street Creative Consulting shown on two iMac screens, with digital marketing services and a turquoise brand palette."
 gallery:
   - url: "../../assets/projects/alma-street-marketing-agency-home-design.webp"
-    alt: "Alma Street home page design featuring unique events, marketing workshops, and professional branding for creative entrepreneurs."
+    alt: "Alma Street home page showing upcoming events, marketing workshops and the agency's positioning."
   - url: "../../assets/projects/alma-street-team-creatives-branding.webp"
-    alt: "About Us section for Alma Street, showcasing the expert team and holistic approach to digital marketing and consulting."
+    alt: "About section for Alma Street, presenting the team and their approach to marketing consulting."
   - url: "../../assets/projects/alma-street-bespoke-marketing-solutions-layout.webp"
-    alt: "Bespoke marketing services and events section for Alma Street, highlighting tailored digital strategies for small businesses." 
+    alt: "Services and events section for Alma Street, laying out their consulting offering for small businesses." 
   - url: "../../assets/projects/alma-street-contact-us-lead-generation.webp"
-    alt: "Contact page for Alma Street Creative Consulting, optimized for service inquiries and agency collaboration."    
+    alt: "Contact page for Alma Street Creative Consulting, set up for service enquiries."    
   - url: "../../assets/projects/alma-street-upcoming-workshops-events-ui.webp"
-    alt: "Events and workshops interface for Alma Street, featuring upcoming courses and professional training for startups."      
+    alt: "Events and workshops interface for Alma Street, listing upcoming courses and professional training."      
     
 --- 
 
@@ -26,55 +26,43 @@ import { Image } from 'astro:assets';
 import almaFunnel from '/src/assets/projects/alma-street-marketing-funnel-ux-architecture.webp';
 import almaMockup from '/src/assets/projects/mockup-macbook-pro-presentacion-web-creativa.webp';
 
-## Project Specifications
-- **Role:** Lead Web Developer & UI/UX Strategist.
-- **Tech Stack:** WordPress CMS & Elementor Pro (Custom Design Implementation).
-- **Integrations:** Event Calendars, Newsletter Automation, and Secure Contact Funnels.
-- **Niche:** Digital Marketing Agencies, Professional Consulting, and Workshop Founders.
-- **Key Focus:** Technical Branding, Holistic UX, and Strategic Lead Acquisition.
+## Two businesses, one site
 
-## Case Study: Alma Street – Comprehensive Digital Marketing & Workshop Platform
-### The Challenge: Designing for a Multi-Faceted Creative Agency
-Alma Street, a marketing agency based in Canada, required a digital presence that could seamlessly bridge the gap between their specialized consulting services and their vibrant community events. The goal was to build a high-performance web platform that showcases their holistic approach to digital communication while providing a clear pathway for entrepreneurs to join their upcoming workshops and courses.
+Alma Street is a marketing agency in Canada that does two different things. They sell consulting to companies, which is a slow, relationship-driven sale. They also run workshops, which is a fast, ticketed sale to a completely different audience.
 
-## The Strategy: Holistic Branding & Visual Storytelling
-For this project, I developed a user-centric design that balances professional authority with creative energy.
+Most sites in this position pick one and bury the other. The consulting page gets the attention and the events end up as a neglected list somewhere in the footer, or the reverse. The design problem here was giving both equal standing without making the home page feel like two sites stitched together.
 
-**Strategic Visual Identity:** I implemented a clean, corporate-yet-dynamic aesthetic, using high-quality imagery and structured layouts to reflect the agency’s "bespoke solutions" philosophy.
+## How I resolved it
 
-**Dual-Purpose Architecture:** I engineered a layout that highlights both B2B marketing services and educational workshops, ensuring that neither side overshadows the other.
+**Two funnels, one identity.** Rather than splitting the site, I built parallel paths that share a visual language but have different pacing. The consulting route is longer and builds trust before asking for anything. The events route is short: see the workshop, see the date, register.
 
-**Custom Development Performance:** Built from scratch using WordPress and Elementor Pro, I ensured the site is ultra-fast and SEO-optimized, allowing the agency to rank for both local consulting and global digital marketing keywords.
+**The team as the trust anchor.** For consulting, people buy the people. I gave the team section real weight rather than treating it as an obligatory About page, because that is where a prospect decides whether to send the enquiry.
 
-<Image src={almaFunnel} alt="Comprehensive UX flow and sitemap for a marketing agency, focusing on service discovery and event conversion funnels." />
+**Events as live content, not a static page.** The workshop module pulls from a calendar, so upcoming sessions surface on the home page automatically and past ones drop off. Nobody has to remember to update it, which is why most agency event pages go stale.
 
-## The UX Flow: From Awareness to Community Engagement
-The information architecture of Alma Street is designed to lead the user through a logical conversion funnel:
+<Image src={almaFunnel} alt="UX flow and sitemap for a marketing agency, showing the service discovery path alongside the event registration funnel." />
 
-**Discovery (Home):** A high-impact hero section introduces the "Unique Events" and the agency's core mission, immediately filtering the target audience.
+## The architecture
 
-**Authority (About Us):** By introducing the "Team of Creatives," we establish a human connection and professional trust, highlighting their global expertise.
+The flow maps four stages, with the two audiences separating at the second:
 
-**Exploration (Services & Events):** A dedicated services grid allows users to explore marketing solutions, while the events module showcases upcoming training, driving both service inquiries and ticket sales.
+1. **Home** presents both offerings and lets the visitor self-select.
+2. **About** carries the consulting funnel; **Events** carries the workshop funnel.
+3. **Services** and the event listings each go deep on their own terms.
+4. **Contact and newsletter** catch anyone not ready to commit, so interest is not lost just because the timing is wrong.
 
-**Action (Contact & Subscribe):** Strategic calls-to-action (CTA) and a newsletter integration ensure that even if a user isn't ready to buy, they stay within the agency's digital ecosystem.
+That last piece is deliberate. Consulting sales rarely close on the first visit, and a newsletter signup keeps the agency in front of a prospect until the timing works.
 
-## Technical Implementation & Strategic Results
-The Alma Street Creative Consulting website features a **high-performance interactive design focused on engagement**. To elevate the *User Experience (UX)*, I implemented smooth CSS animations, including subtle fade-ins, zoom-in effects, and gentle directional bouncing transitions. These micro-interactions are meticulously optimized to ensure a fluid navigation, providing a modern, professional feel that keeps users engaged with the brand’s story.
+## Stack and motion
 
-This project serves as a digital marketing case study in responsive web architecture. By integrating a custom events-management UI with a direct lead generation strategy, I’ve created a robust platform that empowers small business owners to scale their ROI through creative consulting.
+Built on **WordPress** with **Elementor Pro**, with the event calendar and a newsletter integration wired in so both run without manual maintenance.
 
-<Image src={almaMockup} alt="Professional responsive web design for Alma Street Creative Consulting displayed on two iMac screens featuring digital marketing services and a turquoise brand aesthetic." />
+I added movement carefully: section fade-ins, a subtle zoom on cards, easing on directional transitions. All of it CSS driven and tied to scroll position rather than running on load, which keeps the page responsive on mid-range hardware. Motion here is there to mark transitions between sections, not to decorate.
 
- {/* <div style="text-align: center; margin: 2rem 0;">
-  <a href="https://almastreet.ca/" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; border-radius: 9999px; background: linear-gradient(to right, #2bd6c1, #0dbc82); color: #171717 !important; font-weight: 600; text-decoration: none !important; -webkit-text-fill-color: #171717 !important; font-size: 0.875rem;">
-    Visit Live Site →
-  </a>
-</div>  */}
+## Result
 
-## 🎯Do you need a platform that sells your services and your knowledge?
+Both sides of the business have a proper route through the site, and the events section maintains itself.
 
-I help companies build high-performance digital assets that capture leads and build communities. Let's transform your agency's presence into a strategic growth tool.
+## Running more than one offering?
 
-### Let’s Build Your Digital Strategy!
-
+Sites that serve two audiences usually fail by treating them as one. Mapping the paths separately before designing anything is what stops one of them being an afterthought.

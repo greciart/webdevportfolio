@@ -1,68 +1,63 @@
 
 ---
-title: '🌭 E-commerce Website Design with WordPress & Elementor'
+title: 'Hot Dog Seattle: E-commerce Website Design with WordPress & Elementor'
 pubDate: 2025-04-05
-description: 'Scaling street food culture into a profitable digital asset. A experience-focused custom WordPress & Elementor storefront built for ordering and startup growth.'
+description: 'Online ordering for a street food brand. WordPress and Elementor build with a mobile-first menu, a customisation flow that mirrors ordering in person, and a short checkout.'
 languages: ["elementor", "wordpress"]
 image:
   url: "../../assets/projects/hotdogseattle.webp"
-  alt: "Gamified UI design for ADHD accessibility featuring progress bars and achievement badges by Grecia V."
+  alt: "Hot Dog Seattle e-commerce site with a bold street food interface and an ordering flow built for mobile."
 gallery:
   - url: "../../assets/projects/tienda-hotdogseattle.webp"
-    alt: "Interactive hot dog menu and e-commerce shop interface for Hot Dog Seattle, featuring custom toppings and mobile-friendly ordering."
+    alt: "Interactive hot dog menu and shop interface for Hot Dog Seattle, with topping customisation and mobile ordering."
   - url: "../../assets/projects/ubicacion-hotdogseattle.webp"
-    alt: "Store location and contact map for Hot Dog Seattle, optimized for local search and fast-casual dining discovery."
+    alt: "Store location and contact map for Hot Dog Seattle, set up for local search."
   - url: "../../assets/projects/contacto-hotdogseattle.webp"
-    alt: "Contact form and customer support page for Hot Dog Seattle, designed for seamless communication with entrepreneurs and local customers."    
+    alt: "Contact form and support page for Hot Dog Seattle."    
 --- 
 
 import { Image } from 'astro:assets';
 import uxflowHotdog from '/src/assets/projects/uxflow-hotdogseattle.webp';
 
-## Case Study: Hot Dog Seattle – High-Conversion E-commerce for Street Food Culture
+## The context
 
-### Project Specifications
-- **Role:** Freelance Digital Partner & Web Developer.
-- **Platform:** WordPress CMS (High-Performance Architecture).
-- **Page Builder:** Elementor Pro (Custom Pixel-Perfect Implementation).
-- **Core Skills:** E-commerce Optimization, Responsive Design, and Conversion Rate Optimization (CRO).
-- **Target Industry:** Food & Beverage, Small Business Entrepreneurs, and Fast-Casual Startups.
-- **Key Features:** Interactive Menu, Mobile-First Ordering Flow, and Strategic Digital Presence Setup.
+Hot Dog Seattle is a fast-casual brand with a strong visual identity and a menu built around customisation. Ordering in person is quick and social. Ordering online, on their previous setup, was neither.
 
-### The Challenge: Digitizing a Classic Food Experience
-Hot Dog Seattle, a vibrant fast-casual brand, needed an **e-commerce web design** that captured the energy of street food while providing a frictionless ordering experience. My mission as a freelance digital partner was to take a pre-defined creative vision and transform it into a functional, conversion-focused digital storefront that drives online orders and builds *brand authority*.
+Food ordering has a particular constraint that most e-commerce does not: people are usually hungry, often standing up, and almost always on a phone. Every extra tap costs you an order. The design problem was compressing a customisable menu into something you can complete one-handed.
 
-## The Strategy: Technical Execution & Strategic UX
-For this project, I focused on a high-fidelity implementation, ensuring the final product was as "tasty" as the visual concept.
+## Design decisions
 
-**WordPress CMS Mastery:** I utilized WordPress as the core engine, providing the client with a scalable, easy-to-manage platform for their growing menu and business operations.
+**Mobile first, and not as a figure of speech.** The phone layout was designed first and the desktop version derived from it. For a food brand, desktop is the edge case.
 
-**Pixel-Perfect Elementor Development:** Using Elementor, I meticulously built the layout to match the original design, ensuring a mobile-first experience with fluid animations and zero compromise on visual quality.
+**Customisation modelled on the counter.** Choosing toppings online tends to become a long form. I structured it the way ordering in person works: pick the item, then adjust it, with the running price visible throughout so nobody is surprised at checkout.
 
-**E-commerce Optimization:** I streamlined the checkout flow and created an intuitive product selection menu to reduce bounce rates and maximize return on investment (ROI) for the brand.
+**Photography doing the selling.** Food is bought with the eyes. The menu grid gives each item a large image and gets the interface out of the way, with product names and prices as the only competing elements.
 
-<Image src={uxflowHotdog} alt="E-commerce sitemap and user flow architecture by Grecia V. showcasing the journey from home page to checkout completed, featuring payment gateway integrations and user feedback loops." />
+**A checkout with no detours.** No account creation, no upsell interstitials. Cart, details, pay.
 
-## Information Architecture: High-Conversion E-commerce User Flow
-This visual map outlines the user journey and site map architecture designed to maximize *retention* and streamline the *purchasing process*. By prioritizing a **logical conversion funnel**, this flow ensures that entrepreneurs can offer a frictionless experience from initial discovery to the final transaction.
+<Image src={uxflowHotdog} alt="E-commerce sitemap and user flow for Hot Dog Seattle, mapping the journey from home page to completed checkout including payment integrations and review prompts." />
 
-### Discovery & Navigation (The Entry Point)
-The journey begins at the home page, designed with a **clear visual hierarchy**. From here, users can access key sections like About Us, Shop, Location, and Contact. This broad navigation ensures that search engine crawlers can easily index the site's most important pages while providing users with multiple paths to engagement.
+## The flow
 
-### The Conversion Funnel: From Shop to Checkout
-The core of this e-commerce UX strategy lies in its simplified product selection:
+The site map is deliberately shallow. From the home page, four destinations: about, shop, location and contact. Nothing is more than two taps from the menu, which keeps crawl depth low for search engines and cognitive load low for customers.
 
-**Product Page & User Feedback:** Each product is supported by social proof (user reviews and ratings), which significantly boosts trust and conversion rate optimization (CRO).
+Through the funnel:
 
-**Cart Management:** A minimalist cart interface allows users to review their selection without distractions, reducing cart abandonment rates.
+- **Product pages** carry reviews, because social proof does more work for food than description does.
+- **The cart** shows the order clearly enough to check before committing, which is where most abandonment happens.
+- **Checkout** offers card, PayPal and local methods, since limiting payment options in a local food business loses real orders.
+- **After the sale**, a rating prompt feeds reviews back into the product pages.
 
-**Streamlined Checkout:** The flow leads to a secure checkout interface, offering multiple payment gateway integrations (including PayPal, credit card, and alternative methods) to ensure a seamless global transaction.
+## Stack
 
-## Retention & Post-Purchase Experience
-The flow doesn't end at the sale. Once the checkout is completed, the user is prompted to provide a rating (User Feedback). This closed-loop system is essential for reputation management and provides valuable data for continuous user experience improvements.
+**WordPress** with **Elementor Pro** for the front end, on a lean build: native containers, no page-builder add-ons, and images exported as **WebP** at display size.
 
-## Strategic Partnerships: Empowering Entrepreneurs
-Beyond the technical build, this project reflects my commitment to helping entrepreneurs establish a dominant digital presence. By acting as a startup growth partner, I help business owners bridge the gap between a high-end design and a live, profitable asset. I specialize in transforming early-stage ideas into high-performance digital assets that allow small business owners to scale their operations with confidence.
+That last part matters more here than on most sites. A hungry customer on mobile data will not wait four seconds for a menu to load, and food photography is exactly the kind of asset that gets shipped unoptimised.
 
-## Technical Implementation & Entrepreneurial Strategy
-This case study demonstrates the power of solution-oriented Elementor development. My goal was to prioritize technical SEO and load speed through expert asset management and responsive web architecture. By combining a high-impact food menu UI with a streamlined conversion funnel, I’ve created a robust platform that empowers local entrepreneurs to scale their operations in a competitive digital marketplace.
+## Result
+
+The client moved from taking orders by phone and message to a storefront that handles them, and can update the menu seasonally without a developer.
+
+## Running a local food business?
+
+Online ordering fails on friction far more often than on design. If yours is losing customers between the menu and the payment screen, that path is worth mapping.

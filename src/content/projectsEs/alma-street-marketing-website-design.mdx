@@ -2,22 +2,22 @@
 ---
 title: 'Alma Street: diseño y desarrollo web para marketing y eventos'
 pubDate: 2025-07-07
-description: 'Diseño web a medida para Alma Street Creative Consulting. Un sitio en WordPress orientado al crecimiento para agencias de marketing, con servicios a medida y gestión de talleres.'
+description: 'Sitio para una agencia de marketing canadiense que hace consultoría y talleres. Construcción en WordPress y Elementor con dos embudos paralelos, gestión de eventos y automatización de boletín.'
 languages: ["elementor", "wordpress", "uiux"]
 image:
   url: "../../assets/projects/alma-street-responsive-web-design-imac-mockup.webp"
-  alt: "Diseño web responsivo y profesional para Alma Street Creative Consulting mostrado en dos pantallas iMac, con servicios de marketing digital y una estética de marca turquesa."
+  alt: "Diseño web responsivo para Alma Street Creative Consulting mostrado en dos pantallas iMac, con servicios de marketing digital y paleta de marca turquesa."
 gallery:
   - url: "../../assets/projects/alma-street-marketing-agency-home-design.webp"
-    alt: "Diseño de la página de inicio de Alma Street con eventos únicos, talleres de marketing y branding profesional para emprendedores creativos."
+    alt: "Página de inicio de Alma Street mostrando los próximos eventos, los talleres de marketing y el posicionamiento de la agencia."
   - url: "../../assets/projects/alma-street-team-creatives-branding.webp"
-    alt: "Sección Sobre nosotros de Alma Street, mostrando al equipo experto y su enfoque integral del marketing y la consultoría digital."
+    alt: "Sección Sobre nosotros de Alma Street, presentando al equipo y su enfoque de la consultoría de marketing."
   - url: "../../assets/projects/alma-street-bespoke-marketing-solutions-layout.webp"
-    alt: "Sección de servicios de marketing a medida y eventos de Alma Street, destacando las estrategias digitales personalizadas para pequeños negocios." 
+    alt: "Sección de servicios y eventos de Alma Street, exponiendo su oferta de consultoría para pequeños negocios." 
   - url: "../../assets/projects/alma-street-contact-us-lead-generation.webp"
-    alt: "Página de contacto de Alma Street Creative Consulting, optimizada para consultas de servicios y colaboración entre agencias."    
+    alt: "Página de contacto de Alma Street Creative Consulting, preparada para consultas de servicios."    
   - url: "../../assets/projects/alma-street-upcoming-workshops-events-ui.webp"
-    alt: "Interfaz de eventos y talleres de Alma Street, con los próximos cursos y formación profesional para emprendimientos."      
+    alt: "Interfaz de eventos y talleres de Alma Street, listando los próximos cursos y la formación profesional."      
     
 --- 
 
@@ -26,55 +26,43 @@ import { Image } from 'astro:assets';
 import almaFunnel from '/src/assets/projects/alma-street-marketing-funnel-ux-architecture.webp';
 import almaMockup from '/src/assets/projects/mockup-macbook-pro-presentacion-web-creativa.webp';
 
-## Especificaciones del proyecto
-- **Rol:** desarrolladora web principal y estratega UI/UX.
-- **Stack técnico:** WordPress CMS y Elementor Pro (implementación de diseño a medida).
-- **Integraciones:** calendarios de eventos, automatización de boletines y embudos de contacto seguros.
-- **Nicho:** agencias de marketing digital, consultoría profesional y organizadores de talleres.
-- **Foco principal:** branding técnico, UX integral y captación estratégica de clientes potenciales.
+## Dos negocios, un solo sitio
 
-## Caso de estudio: Alma Street, plataforma integral de marketing digital y talleres
-### El reto: diseñar para una agencia creativa con muchas caras
-Alma Street, una agencia de marketing con sede en Canadá, necesitaba una presencia digital capaz de tender un puente entre sus servicios de consultoría especializada y sus vibrantes eventos comunitarios. El objetivo era construir una plataforma web de alto rendimiento que mostrara su enfoque integral de la comunicación digital y a la vez ofreciera un camino claro para que los emprendedores se sumaran a sus próximos talleres y cursos.
+Alma Street es una agencia de marketing en Canadá que hace dos cosas distintas. Vende consultoría a empresas, que es una venta lenta y basada en la relación. También organiza talleres, que es una venta rápida con entradas y para un público completamente diferente.
 
-## La estrategia: branding integral y narrativa visual
-Para este proyecto desarrollé un diseño centrado en el usuario que equilibra la autoridad profesional con la energía creativa.
+La mayoría de los sitios en esta situación eligen uno y entierran el otro. La página de consultoría se lleva toda la atención y los eventos acaban como una lista abandonada en el pie de página, o al revés. El problema de diseño aquí era darles el mismo peso sin que la portada pareciera dos sitios cosidos.
 
-**Identidad visual estratégica:** implementé una estética limpia, corporativa pero dinámica, usando imágenes de calidad y maquetas estructuradas para reflejar la filosofía de "soluciones a medida" de la agencia.
+## Cómo lo resolví
 
-**Arquitectura de doble propósito:** diseñé una maqueta que destaca tanto los servicios de marketing B2B como los talleres formativos, asegurando que ninguna de las dos vertientes eclipse a la otra.
+**Dos embudos, una identidad.** En vez de dividir el sitio, construí caminos paralelos que comparten lenguaje visual pero tienen ritmos distintos. La ruta de consultoría es más larga y construye confianza antes de pedir nada. La de eventos es corta: ves el taller, ves la fecha, te inscribes.
 
-**Rendimiento de desarrollo a medida:** construido desde cero con WordPress y Elementor Pro, garanticé que el sitio fuera ultrarrápido y optimizado para SEO, permitiendo a la agencia posicionar tanto por consultoría local como por marketing digital global.
+**El equipo como ancla de confianza.** En consultoría se compra a las personas. Le di peso real a la sección de equipo en vez de tratarla como una página obligatoria, porque ahí es donde alguien decide si envía la consulta.
 
-<Image src={almaFunnel} alt="Flujo de UX y mapa del sitio completo para una agencia de marketing, centrado en el descubrimiento de servicios y los embudos de conversión de eventos." />
+**Eventos como contenido vivo, no como página estática.** El módulo de talleres se alimenta de un calendario, así que las sesiones próximas aparecen solas en la portada y las pasadas desaparecen. Nadie tiene que acordarse de actualizarlo, que es justo por lo que las páginas de eventos de las agencias suelen quedar desfasadas.
 
-## El flujo de UX: del descubrimiento a la comunidad
-La arquitectura de información de Alma Street está diseñada para llevar a la persona por un embudo de conversión lógico:
+<Image src={almaFunnel} alt="Flujo de UX y mapa del sitio de una agencia de marketing, mostrando el camino de descubrimiento de servicios junto al embudo de inscripción a eventos." />
 
-**Descubrimiento (inicio):** una sección hero de alto impacto presenta los "eventos únicos" y la misión central de la agencia, filtrando de inmediato al público objetivo.
+## La arquitectura
 
-**Autoridad (sobre nosotros):** al presentar al "equipo de creativos" establecemos una conexión humana y confianza profesional, destacando su experiencia internacional.
+El flujo traza cuatro etapas, y los dos públicos se separan en la segunda:
 
-**Exploración (servicios y eventos):** una rejilla de servicios dedicada permite explorar las soluciones de marketing, mientras el módulo de eventos muestra la formación próxima, impulsando tanto las consultas de servicio como la venta de entradas.
+1. **Inicio** presenta ambas ofertas y deja que cada visitante se identifique.
+2. **Sobre nosotros** lleva el embudo de consultoría; **Eventos** lleva el de talleres.
+3. **Servicios** y el listado de eventos profundizan cada uno en sus propios términos.
+4. **Contacto y boletín** recogen a quien no está listo para comprometerse, para no perder el interés solo porque el momento no era el adecuado.
 
-**Acción (contacto y suscripción):** llamadas a la acción estratégicas y una integración de boletín aseguran que, aunque alguien no esté listo para comprar, se quede dentro del ecosistema digital de la agencia.
+Esa última pieza es deliberada. La venta de consultoría rara vez se cierra en la primera visita, y una suscripción al boletín mantiene a la agencia presente hasta que el momento llega.
 
-## Implementación técnica y resultados estratégicos
-El sitio de Alma Street Creative Consulting tiene un **diseño interactivo de alto rendimiento centrado en la interacción**. Para elevar la *experiencia de usuario (UX)*, implementé animaciones CSS suaves, incluyendo apariciones graduales, efectos de acercamiento y transiciones direccionales de rebote sutil. Estas microinteracciones están cuidadosamente optimizadas para garantizar una navegación fluida, aportando una sensación moderna y profesional que mantiene a la gente conectada con la historia de la marca.
+## Stack y movimiento
 
-Este proyecto funciona como un caso de estudio de marketing digital en arquitectura web responsiva. Al integrar una interfaz de gestión de eventos a medida con una estrategia directa de generación de clientes potenciales, creé una plataforma robusta que permite a los dueños de pequeños negocios escalar su retorno de inversión mediante consultoría creativa.
+Construido sobre **WordPress** con **Elementor Pro**, con el calendario de eventos y una integración de boletín conectados para que ambos funcionen sin mantenimiento manual.
 
-<Image src={almaMockup} alt="Diseño web responsivo y profesional para Alma Street Creative Consulting mostrado en dos pantallas iMac, con servicios de marketing digital y una estética de marca turquesa." />
+Añadí movimiento con cuidado: apariciones graduales de sección, un acercamiento sutil en las tarjetas y suavizado en las transiciones direccionales. Todo guiado por CSS y ligado a la posición del scroll en vez de ejecutarse al cargar, lo que mantiene la página ágil en equipos de gama media. El movimiento aquí está para marcar las transiciones entre secciones, no para decorar.
 
- {/* <div style="text-align: center; margin: 2rem 0;">
-  <a href="https://almastreet.ca/" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; border-radius: 9999px; background: linear-gradient(to right, #2bd6c1, #0dbc82); color: #171717 !important; font-weight: 600; text-decoration: none !important; -webkit-text-fill-color: #171717 !important; font-size: 0.875rem;">
-    Visitar sitio en vivo →
-  </a>
-</div>  */}
+## Resultado
 
-## 🎯¿Necesitas una plataforma que venda tus servicios y tu conocimiento?
+Las dos partes del negocio tienen su propio recorrido por el sitio, y la sección de eventos se mantiene sola.
 
-Ayudo a las empresas a construir activos digitales de alto rendimiento que captan clientes potenciales y construyen comunidad. Convirtamos la presencia de tu agencia en una herramienta estratégica de crecimiento.
+## ¿Tienes más de una oferta?
 
-### ¡Construyamos tu estrategia digital!
-
+Los sitios que atienden a dos públicos suelen fallar por tratarlos como uno. Mapear los caminos por separado antes de diseñar nada es lo que evita que uno de los dos quede como algo secundario.

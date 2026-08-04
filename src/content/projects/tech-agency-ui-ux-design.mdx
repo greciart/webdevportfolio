@@ -2,65 +2,61 @@
 ---
 title: 'Soft Solutions Case Study: UI/UX Design & Branding for Tech Agency Website'
 pubDate: 2025-04-05
-description: 'High-performance landing page using Figma and UX strategy to balance technical logic and creative innovation.'
+description: 'Landing page for a software agency, designed in Figma. Custom isometric illustrations to make abstract infrastructure legible, on a geometric system that separates technical content from creative content.'
 languages: ["figma", "uiux"]
 image:
   url: "../../assets/projects/softsolutionsmockup.webp"
-  alt: "Soft Solutions Landing Page UI Design by Grecia V. showcasing a minimalist purple aesthetic, geometric shapes, and clean UX for a software agency."
+  alt: "Soft Solutions landing page interface by Grecia V., with a minimalist purple palette, geometric shapes and a clean layout for a software agency."
 gallery:
   - url: "../../assets/projects/softsolutions.webp"
-    alt: "Soft Solutions landing page"
+    alt: "Soft Solutions landing page showing the isometric illustration system and pricing layout."
 
 --- 
 
 import { Image } from 'astro:assets';
 import softsolutions2 from '/src/assets/projects/softsolutions2.webp';
 
-<Image src={softsolutions2} alt="Mi foto" />
+<Image src={softsolutions2} alt="Detail of the Soft Solutions landing page, showing the isometric illustrations and section spacing." />
 
-## Case Study: Soft Solutions – Balancing Logic & Creativity with Isometric UI/UX
-### High-Performance Landing Page Design: Merging Technical Architecture with Premium Isometric Visuals
-In the world of *SaaS* and enterprise software, clarity is everything. For the Soft Solutions project, the mission was to create a digital gateway that felt as robust as their backend code and as innovative as their creative problem-solving. By leveraging Figma and custom isometric vector illustrations, I transformed a complex service offering into a seamless, high-converting user journey.
+## The problem with selling software
 
-## The Challenge: Visualizing the Invisible
-Soft Solutions needed more than just a website; they needed a way to explain their ***"invisible"*** software architecture. The client specifically requested *vector illustrations* to represent their services, aiming for a modern, high-tech aesthetic that could simplify complex concepts like *"Scalable Systems"* and *"Backend Architecture"* for the end user.
+Soft Solutions sells backend architecture and scalable systems. Nobody can picture that. Their previous site described the work in words, and the words were accurate and completely inert: prospects arrived, read "scalable infrastructure", and left no closer to understanding what they would be buying.
 
-## The Strategy: Geometric Harmony & Isometric Precision
-My design approach centered on **the synergy between logical structure (squares) and creative fluidity (circles)**, brought to life through a consistent isometric perspective.
+The brief asked for vector illustrations. The actual job was making an invisible product legible.
 
-### High quality Isometric Vector Illustrations
-I used a series of custom isometric assets to act as the visual anchor of the landing page.
+## Why isometric
 
-Why Isometric? This 3D-on-2D perspective provides depth and professional polish without the heavy loading times of real 3D files. It allows the user to "see" the software infrastructure as a physical, organized entity.
+I chose an isometric system rather than flat illustration or 3D renders, for reasons that were practical before they were aesthetic.
 
-Being vector-based, these illustrations ensure razor-sharp clarity on any screen size, from 4K monitors to mobile devices, maintaining the "Quality Software" brand promise.
+Isometric projection gives you depth and spatial relationships without perspective distortion, which means a system diagram reads as a structure rather than a picture. Someone looking at it can see that this component sits on top of that one. Flat illustration loses that; real 3D renders get it back but cost far more in file weight and production time for the same clarity.
 
-### The "Square vs. Circle" UI Framework
-To mirror the agency’s dual nature **(Logical + Creative)**, I implemented a strict geometric hierarchy:
+Being vector, the illustrations stay sharp at any size and weigh a fraction of a raster equivalent. For an agency whose pitch is technical competence, a slow site would have undercut the message.
 
-**The Logic (Squares):** Structured layouts for pricing tables and technical specifications, providing a sense of stability.
+## The geometric system
 
-**The Creativity (Circles):** Organic shapes and circular glowing accents that interact with the isometric vectors, creating a dynamic "flow" that guides the user’s eye toward the Call to Action (CTA).
+The agency describes itself as both rigorous and creative, which is the kind of claim that usually stays as a claim. I built the visual language to demonstrate it instead:
 
-### UX & Spacing: Breathing Room for High-Tech Data
-Using Figma’s *advanced grid systems*, I focused on White Space to balance the detailed isometric illustrations. **This prevents visual clutter**, ensuring the user stays focused on the **value proposition and the conversion path**.
+**Squares carry the logic.** Pricing tables, technical specifications and comparison blocks sit in strict rectangular structures with hard alignment. Stability where the reader needs to compare numbers.
 
-## UX Concepts & Performance Engineering
-- **Information Architecture:** I mapped out a user journey that starts with high-level visual impact (The Hero Section) and moves into granular technical details, backed by Data Visualization and clear pricing.
+**Circles carry the movement.** Rounded shapes and circular accents sit around the illustrations and guide the eye toward the calls to action. Motion where the reader needs to be led.
 
-- **Conversion-Driven UI:** Every isometric element is strategically placed to point toward engagement hubs, increasing the ***Click-Through Rate (CTR)*** for the agency’s core services.
+Keeping those two vocabularies separate means each section signals what kind of attention it wants before anyone reads a word.
 
-- **SEO-Ready Performance:** The design was built with Astro JS in mind, ensuring that even with rich vector illustrations, the site maintains a *"Lightning Fast"* score on Google PageSpeed Insights.
+## Spacing as a technical decision
 
-### The Result: A Digital Landmark for Software Innovation
-The Soft Solutions landing page successfully redefined the agency as a leader in the tech space. The combination of minimalist UI and beautiful isometric vectors created a unique brand language that communicates both "***Software Quality***" and "***Creative Excellence.***"
+Detailed illustrations need room or they turn into clutter. I set the grid in **Figma** with deliberately generous gutters, then held that rhythm across every section. The illustrations get isolation; the reader gets a resting point between dense blocks.
 
-## Design & Tech Stack
-- **UI/UX Design:** *Figma* (Design Systems & Prototyping).
+## Tools
 
-- **Illustration:** *Adobe Illustrator & Freepik* (Custom Isometric Vectors).
+- **Figma** for the interface, the grid system and the component library
+- **Adobe Illustrator** for the isometric vector assets
 
-## Technical Implementation & Strategic Branding
-This project highlights my expertise as a *UI/UX specialist*, focusing on *technical branding strategy* and *high-conversion web design*. By developing a Figma landing page architecture that balances minimalist tech aesthetics with responsive frontend solutions, I’ve created a *SaaS visual identity* tailored for *high-performance software agencies*.
+The layout was specified with a static site build in mind, so the illustration weight would not compromise load time in production.
 
-The integration of isometric vector illustrations and digital product prototyping ensures that this high-conversion software website not only captures leads but also communicates **complex information architecture** with *clarity and precision*.
+## Result
+
+The agency ended up with a page that explains its offering visually rather than asking prospects to take the description on faith, and an illustration system it can extend as new services are added.
+
+## Explaining something abstract?
+
+Technical products often fail online because the value is invisible, not because the copy is weak. If that describes your site, get in touch.
