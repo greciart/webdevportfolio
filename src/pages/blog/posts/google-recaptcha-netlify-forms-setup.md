@@ -36,11 +36,11 @@ If you generate v3 keys, everything will look configured, and every submission w
 
 Go to [google.com/recaptcha/admin/create](https://www.google.com/recaptcha/admin/create) and sign in with your Google account.
 
-**Label** — an internal name so you can identify the site later. Your domain or project name works: `mysite-contact`.
+**Label**: an internal name so you can identify the site later. Your domain or project name works: `mysite-contact`.
 
-**reCAPTCHA type** — change it from "Score based (v3)" to **"Challenge (v2)"**. A sub-option appears. Choose **"I'm not a robot" Checkbox**.
+**reCAPTCHA type**: change it from "Score based (v3)" to **"Challenge (v2)"**. A sub-option appears. Choose **"I'm not a robot" Checkbox**.
 
-**Domains** — add the domain where the form lives, without `https://` and without a trailing slash:
+**Domains**: add the domain where the form lives, without `https://` and without a trailing slash:
 
 ```text
 mysite.netlify.app
@@ -48,7 +48,7 @@ mysite.netlify.app
 
 Add your custom domain too if you have one. Each domain goes on its own line. Don't add `localhost`: reCAPTCHA won't work on a local dev server with Netlify Forms anyway, since form handling only runs on Netlify's infrastructure.
 
-**Google Cloud project** — reCAPTCHA is now part of Google Cloud, so it asks you to pick or create a project. Any project works; it doesn't affect how the captcha behaves.
+**Google Cloud project**: reCAPTCHA is now part of Google Cloud, so it asks you to pick or create a project. Any project works; it doesn't affect how the captcha behaves.
 
 Accept the terms and submit.
 
@@ -197,9 +197,9 @@ Without this, the second attempt fails with a stale token and it looks like your
 
 Worth asking honestly. Layer your defenses and understand what each one actually does:
 
-* **Honeypot** — free, invisible, verified by Netlify server-side. Blocks unsophisticated bots. Always use it.
-* **reCAPTCHA v2** — verified server-side by Netlify. Blocks nearly everything, at the cost of asking real visitors to click a box.
-* **Timing checks and JavaScript traps** — free, but client-side only, so they don't stop a bot posting straight to the endpoint. Useful as an extra signal, not as your main defense.
+* **Honeypot**: free, invisible, verified by Netlify server-side. Blocks unsophisticated bots. Always use it.
+* **reCAPTCHA v2**: verified server-side by Netlify. Blocks nearly everything, at the cost of asking real visitors to click a box.
+* **Timing checks and JavaScript traps**: free, but client-side only, so they don't stop a bot posting straight to the endpoint. Useful as an extra signal, not as your main defense.
 
 If your form gets a couple of spam messages a month, the honeypot alone may be enough and you spare visitors the friction. If you're drowning in them, add the captcha. And if you'd rather not send visitors through Google at all, Cloudflare Turnstile is a lighter, more private alternative, though it needs a serverless function to verify tokens since Netlify doesn't check it natively.
 

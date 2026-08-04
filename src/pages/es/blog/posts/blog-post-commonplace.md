@@ -25,19 +25,19 @@ Yo quería uno. Pero digital, y mío en todos los sentidos de la palabra.
 
 ## Qué construí
 
-[**STARMOON Commonplace Book**](https://starmoon.nekoweb.org/commonplace_book.html) es una aplicación web de una sola página —sin frameworks, sin bases de datos, sin cuentas— que vive en mi sitio personal. Está diseñada como un sistema operativo retro con paleta vaporwave: cian y magenta sobre casi negro, tipografías de píxeles y efectos de líneas de escaneo.
+[**STARMOON Commonplace Book**](https://starmoon.nekoweb.org/commonplace_book.html) es una aplicación web de una sola página, sin frameworks, sin bases de datos, sin cuentas, que vive en mi sitio personal. Está diseñada como un sistema operativo retro con paleta vaporwave: cian y magenta sobre casi negro, tipografías de píxeles y efectos de líneas de escaneo.
 
 Tiene nueve pestañas:
 
-- **Tracklist** — todo lo que estoy leyendo, jugando, viendo o escuchando ahora mismo, con barras de progreso y etiquetas de estado
-- **Recent Books** — se obtiene automáticamente de mi cuenta de Goodreads vía RSS, extrayendo la valoración y buscando la sinopsis en OpenLibrary
-- **Biblioteca** — cada libro que he terminado, con una interfaz de reseña completa que se abre como un pliego de dos páginas: portada, cuadrícula de valoración y resumen a la izquierda; citas y reflexiones a la derecha
-- **Writings** — mis poemas y reflexiones
-- **Microblogs** — entradas cortas de diario con una barra de ánimo y estadísticas de actividad, como un registro diario
-- **Short Thoughts** — estados traídos de [status.cafe](https://status.cafe), mi plataforma social lo-fi favorita
-- **Songs** — canciones que amo, con traducciones y significado
-- **Study Log** — un seguimiento de mis sesiones de estudio de japonés con valoraciones, notas y una galería de imágenes
-- **日本語** — el registro de estudio filtrado solo a japonés, con barras de progreso
+- **Tracklist**: todo lo que estoy leyendo, jugando, viendo o escuchando ahora mismo, con barras de progreso y etiquetas de estado
+- **Recent Books**: se obtiene automáticamente de mi cuenta de Goodreads vía RSS, extrayendo la valoración y buscando la sinopsis en OpenLibrary
+- **Biblioteca**: cada libro que he terminado, con una interfaz de reseña completa que se abre como un pliego de dos páginas: portada, cuadrícula de valoración y resumen a la izquierda; citas y reflexiones a la derecha
+- **Writings**: mis poemas y reflexiones
+- **Microblogs**: entradas cortas de diario con una barra de ánimo y estadísticas de actividad, como un registro diario
+- **Short Thoughts**: estados traídos de [status.cafe](https://status.cafe), mi plataforma social lo-fi favorita
+- **Songs**: canciones que amo, con traducciones y significado
+- **Study Log**: un seguimiento de mis sesiones de estudio de japonés con valoraciones, notas y una galería de imágenes
+- **日本語**: el registro de estudio filtrado solo a japonés, con barras de progreso
 
 Todo se alimenta de archivos JSON que edito en local y subo a mi sitio. Sin CMS, sin panel de administración. Solo archivos de texto.
 

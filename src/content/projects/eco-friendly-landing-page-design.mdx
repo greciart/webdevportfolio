@@ -2,14 +2,14 @@
 ---
 title: 'Eco-Friendly Landing Page Design'
 pubDate: 2025-07-07
-description: 'Custom-built eco-friendly landing design created in Figma, featuring a clean layout, nature-inspired green tones, and premium sustainable branding elements.'
+description: 'Landing page for a sustainable energy brand, designed in Figma. Organic green palette, modular card layout and a component system built to hand off cleanly to development.'
 languages: ["figma","uiux"]
 image:
   url: "../../assets/projects/green-sustainable-figma-web-layout-design.webp"
-  alt: "Premium minimalist eco-friendly home page layout in Figma featuring solar energy branding and organic green tones."
+  alt: "Minimalist eco-friendly home page layout designed in Figma, featuring solar energy branding and organic green tones."
 gallery:
   - url: "../../assets/projects/full-page-sustainable-energy-web-design-figma.webp"
-    alt: "Full-page layout of a green eco-friendly website designed in Figma, featuring a hero section for sustainable energy, modular content cards with rounded corners, and an organic visual hierarchy centered on environmental conservation and clean UI."
+    alt: "Full-page layout of a green eco-friendly website designed in Figma, with a sustainable energy hero section, rounded modular content cards and a visual hierarchy centred on environmental conservation."
    
 --- 
 
@@ -17,35 +17,36 @@ import { Image } from 'astro:assets';
 import ecoMain from '/src/assets/projects/green-sustainable-figma-web-layout-design.webp';
 import ecoFull from '/src/assets/projects/full-page-sustainable-energy-web-design-figma.webp';
 
-## Custom-built Eco-Friendly Web Design: A Refined Approach to Sustainable Branding 🌿
-### The Vision: Digital Serenity & Nature-Driven Layout
-For this project, the primary goal was to translate an eco-conscious lifestyle into a premium digital experience. The client’s brief was specific: they required a clean landing page that moved away from cluttered, aggressive marketing schemes. Instead, they envisioned a virtual space that evoked *relaxation*, *tranquility*, and a *genuine connection to the natural world*.
+## The brief
 
-To achieve this, I followed a *"less is more"* philosophy. I curated an *organic color palette* dominated by forest greens and soft neutrals, paired with a sophisticated typography system that prioritizes readability and "visual breathing room." The result is an interface that doesn't just display information but invites the user to **engage calmly with the brand's story**. 
+A sustainable energy company came to me with a landing page that was doing the opposite of what their brand stood for. It was dense, loud, and built around the same aggressive marketing patterns you find on any conversion template: stacked banners, competing calls to action, almost no breathing room.
 
-## Design Excellence: Precision in Figma 
-This entire layout was meticulously crafted in **Figma**, allowing for a responsive pixel-perfect transition from the initial concept to the final visual assets. By focusing on a detailed design workflow, I ensured that every element—from the grid system to the whitespace—contributes to a sense of total balance.
+Their product is about calm and long-term thinking. The page felt like a discount ad. That gap was the actual problem to solve, not the visuals.
 
-**Tailored Modular Structure:** Moving away from generic templates, this design utilizes soft-cornered cards and layered elements to provide depth without creating visual noise.
+## How I approached it
 
-**Atmospheric Whitespace:** I used negative space strategically to mirror the peace found in natural environments, preventing "cognitive overload" for the visitor.
+I treated whitespace as the main design tool rather than a leftover. Instead of asking how much I could fit above the fold, I asked what each section had to accomplish and cut everything that did not serve it.
 
-**Seamless Information Flow:** The architecture was built to guide the user intuitively through key sections, such as solar energy solutions and sustainable product showcases, with elegance and clarity.
+Three decisions carried most of the weight:
 
-<Image src={ecoFull} alt="Full-page layout of a green eco-friendly website designed in Figma, featuring a hero section for sustainable energy, modular content cards with rounded corners, and an organic visual hierarchy centered on environmental conservation and clean UI." />
+**A restrained palette.** Forest greens and warm neutrals, with a single accent reserved for actions. Limiting the palette meant the call to action never has to shout to be found.
 
-## Technical Excellence & Digital Sustainability 
-Beyond the aesthetics, this project was conceived with environmentally-conscious standards in mind. As a digital creator, I believe that a *"green"* site should also be lean and efficient. My focus remained on:
+**A modular card system.** Rather than a bespoke layout per section, I built a small set of reusable cards with soft corners and consistent padding. This gives the page depth without visual noise, and it means the client can add sections later without the design falling apart.
 
-**Asset Optimization:** Planning for high-fidelity visuals to be delivered in modern formats like *WebP* to minimize data transfer and server energy consumption.
+**Typography with room to breathe.** A clear type scale with generous line height, so the reading experience matches the tone the brand is selling.
 
-**Modern UI Frameworks:** Implementing a design system that is both aesthetically pleasing and ready to be translated into clean, efficient code.
+<Image src={ecoFull} alt="Full-page layout of a green eco-friendly website designed in Figma, with a sustainable energy hero section, rounded modular content cards and a visual hierarchy centred on environmental conservation." />
 
-**Responsive Accuracy:** Ensuring the *"tranquil"* feeling remains consistent across all devices, from ultra-wide monitors to mobile screens, maintaining a top-tier finish on every platform.
+## Built for handoff
 
-## 🎯Do you need a platform that sells your services and your knowledge?
+The whole layout was produced in **Figma** using components and auto layout, not as flat mockups. Every card, button and section is a reusable component with defined states, so whoever builds it gets spacing tokens and variants instead of guesswork.
 
-I help companies build high-performance digital assets that capture leads and build communities. Let's transform your agency's presence into a strategic growth tool.
+I also specified the export path up front: images delivered as **WebP**, sized for their actual display dimensions. A page about energy efficiency that ships multi-megabyte hero images undercuts its own message, and the lighter payload is the difference between a fast page and a slow one on mobile connections.
 
-### Let’s Build Your Digital Strategy!
+## What it delivers
 
+The result is a page a visitor can read without effort. The hierarchy guides you from the value proposition to the solar offering to the contact form in one pass, and the component library means the brand can grow the site without commissioning a redesign every time.
+
+## Need a landing page that reflects your product?
+
+I design and build pages that stay readable as they grow, with a component system your developers can actually use. Let's talk about what yours needs to do.

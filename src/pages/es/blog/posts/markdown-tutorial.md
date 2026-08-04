@@ -156,8 +156,8 @@ Aquí hay una frase con una nota al pie. [^1]
 
 - [Markdown Guide](https://www.markdownguide.org/)
 - [Chuleta de Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
-- [Dillinger](https://dillinger.io/) — editor de Markdown en línea
-- [Markdown Preview](https://markdownlivepreview.com/) — herramienta de vista previa en vivo
+- [Dillinger](https://dillinger.io/): editor de Markdown en línea
+- [Markdown Preview](https://markdownlivepreview.com/): herramienta de vista previa en vivo
 
 ## Conclusión
 

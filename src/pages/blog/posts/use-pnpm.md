@@ -19,7 +19,7 @@ languages: ["javascript", "typescript", "nodejs"]
 
 If you're building applications with Node.js, chances are you've been using npm for years without thinking twice about it. It comes bundled with Node, it's the default choice for most developers, and it's deeply integrated into the JavaScript ecosystem.
 
-However, the events we've seen throughout 2026 have made many developers—including me—reconsider whether npm should remain the default package manager in our daily workflow.
+However, the events we've seen throughout 2026 have made many developers, including me, reconsider whether npm should remain the default package manager in our daily workflow.
 
 Recent supply chain attacks have compromised popular npm packages such as Axios, @antv packages, TanStack packages, SAP packages, and many others. In several cases, attackers gained access to maintainer accounts and published malicious versions capable of stealing credentials, API keys, cloud secrets, and CI/CD tokens.
 

@@ -36,11 +36,11 @@ Si generas llaves v3, todo parecerá configurado y todos los envíos serán rech
 
 Entra a [google.com/recaptcha/admin/create](https://www.google.com/recaptcha/admin/create) e inicia sesión con tu cuenta de Google.
 
-**Etiqueta** — un nombre interno para identificar el sitio después. Tu dominio o el nombre del proyecto sirven: `misitio-contacto`.
+**Etiqueta**: un nombre interno para identificar el sitio después. Tu dominio o el nombre del proyecto sirven: `misitio-contacto`.
 
-**Tipo de reCAPTCHA** — cámbialo de "Basado en una puntuación (v3)" a **"Desafío (v2)"**. Aparecerá una subopción. Elige **Casilla de verificación "No soy un robot"**.
+**Tipo de reCAPTCHA**: cámbialo de "Basado en una puntuación (v3)" a **"Desafío (v2)"**. Aparecerá una subopción. Elige **Casilla de verificación "No soy un robot"**.
 
-**Dominios** — añade el dominio donde vive el formulario, sin `https://` y sin barra al final:
+**Dominios**: añade el dominio donde vive el formulario, sin `https://` y sin barra al final:
 
 ```text
 misitio.netlify.app
@@ -48,7 +48,7 @@ misitio.netlify.app
 
 Añade también tu dominio propio si lo tienes. Cada dominio va en su propia línea. No agregues `localhost`: reCAPTCHA no va a funcionar en un servidor de desarrollo local con Netlify Forms de todos modos, porque la gestión de formularios solo corre en la infraestructura de Netlify.
 
-**Proyecto de Google Cloud** — reCAPTCHA ahora forma parte de Google Cloud, así que te pedirá elegir o crear un proyecto. Cualquiera sirve; no afecta al comportamiento del captcha.
+**Proyecto de Google Cloud**: reCAPTCHA ahora forma parte de Google Cloud, así que te pedirá elegir o crear un proyecto. Cualquiera sirve; no afecta al comportamiento del captcha.
 
 Acepta los términos y envía.
 
@@ -197,9 +197,9 @@ Sin esto, el segundo intento falla con un token caducado y parece que tu formula
 
 Vale la pena preguntárselo con honestidad. Combina tus defensas y entiende qué hace cada una realmente:
 
-* **Honeypot** — gratis, invisible, verificado por Netlify en el servidor. Bloquea bots poco sofisticados. Úsalo siempre.
-* **reCAPTCHA v2** — verificado por Netlify en el servidor. Bloquea casi todo, a cambio de pedirle a personas reales que marquen una casilla.
-* **Comprobaciones de tiempo y trampas de JavaScript** — gratis, pero solo del lado del cliente, así que no detienen a un bot que envía directamente al endpoint. Útiles como señal extra, no como defensa principal.
+* **Honeypot**: gratis, invisible, verificado por Netlify en el servidor. Bloquea bots poco sofisticados. Úsalo siempre.
+* **reCAPTCHA v2**: verificado por Netlify en el servidor. Bloquea casi todo, a cambio de pedirle a personas reales que marquen una casilla.
+* **Comprobaciones de tiempo y trampas de JavaScript**: gratis, pero solo del lado del cliente, así que no detienen a un bot que envía directamente al endpoint. Útiles como señal extra, no como defensa principal.
 
 Si tu formulario recibe un par de mensajes de spam al mes, puede que el honeypot solo sea suficiente y les ahorres la fricción a tus visitantes. Si estás ahogándote en ellos, añade el captcha. Y si prefieres no pasar a tus visitantes por Google, Cloudflare Turnstile es una alternativa más ligera y privada, aunque necesita una función serverless para verificar los tokens, ya que Netlify no lo comprueba de forma nativa.
 

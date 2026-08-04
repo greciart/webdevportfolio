@@ -31,7 +31,7 @@ Si tienes un portafolio, un blog, una tienda en línea o el sitio de tu negocio,
 
 Un **robots.txt** es un documento de texto plano que se coloca en el directorio raíz de tu sitio web.
 
-Su propósito es dar instrucciones a los bots automatizados sobre qué páginas o carpetas pueden —o no pueden— rastrear.
+Su propósito es dar instrucciones a los bots automatizados sobre qué páginas o carpetas pueden, o no pueden, rastrear.
 
 Los buscadores llevan décadas usando este estándar, y ahora muchas empresas de IA publican los nombres de sus rastreadores para que quienes tienen un sitio puedan decidir si permiten el acceso.
 

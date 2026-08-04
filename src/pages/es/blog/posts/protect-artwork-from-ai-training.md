@@ -22,7 +22,7 @@ languages: ["AI", "LLM"]
 
 Crear trabajo original toma tiempo, creatividad y años de práctica. Ya seas diseñadora, ilustradora, fotógrafa o artista digital, ver tu trabajo raspado por conjuntos de datos de IA o copiado sin permiso puede ser increíblemente frustrante.
 
-Después de investigar distintas formas de proteger el trabajo creativo en internet, encontré que muchas de las soluciones más populares —como Nightshade y Glaze— requieren tarjetas gráficas potentes que no están al alcance de todo el mundo, especialmente de quienes trabajan desde una laptop o una tableta.
+Después de investigar distintas formas de proteger el trabajo creativo en internet, encontré que muchas de las soluciones más populares, como Nightshade y Glaze, requieren tarjetas gráficas potentes que no están al alcance de todo el mundo, especialmente de quienes trabajan desde una laptop o una tableta.
 
 Por suerte, existen alternativas efectivas que cualquiera puede usar para reducir el riesgo de entrenamiento de IA no autorizado y de robo de contenido.
 
@@ -34,7 +34,7 @@ Una de las herramientas más sencillas que he encontrado es la **aplicación web
 
 En lugar de funcionar como una protección de copyright tradicional, firma digitalmente tu trabajo creando un registro a prueba de manipulaciones, y te permite indicar que tus imágenes **no deben usarse para entrenar IA generativa**.
 
-Si estás cansada de ver trabajo copiado desde portafolios, redes sociales o plataformas como Dribbble —a menudo por gente que promete tutoriales irreales de "gana millones con IA"—, esta es una forma fácil de establecer autoría y añadir una capa extra de protección.
+Si estás cansada de ver trabajo copiado desde portafolios, redes sociales o plataformas como Dribbble, a menudo por gente que promete tutoriales irreales de "gana millones con IA", esta es una forma fácil de establecer autoría y añadir una capa extra de protección.
 
 ![Panel de preferencias de Adobe Content Authenticity con cuentas sociales verificadas y la opción de excluirse del entrenamiento y uso de IA generativa.](/images/posts/adobe-content-authenticity-ai-training-preferences.webp)
 
@@ -167,7 +167,7 @@ En mi opinión, la solución más efectiva a largo plazo es tener tu propio siti
 
 A diferencia de las redes sociales, un sitio propio te da mucho más control sobre cómo se indexa, se muestra y se accede a tu contenido. Puedes configurar reglas en robots.txt, gestionar metadatos, elegir tu entorno de hosting e implementar medidas de seguridad adicionales que simplemente no existen en la mayoría de las plataformas de portafolio.
 
-Si quieres aprender a configurar un archivo robots.txt —aunque no tengas perfil técnico—, explico todo el proceso paso a paso en mi blog.
+Si quieres aprender a configurar un archivo robots.txt, aunque no tengas perfil técnico, explico todo el proceso paso a paso en mi blog.
 
 ![Candado digital luminoso sobre una placa de circuitos, simbolizando la autenticidad del contenido, la protección de derechos de autor y la seguridad frente a los raspadores de entrenamiento de IA.](/images/posts/ai-content-protection-lock.webp)
 
@@ -175,7 +175,7 @@ Si quieres aprender a configurar un archivo robots.txt —aunque no tengas perfi
 
 Este artículo cubre solo algunas de las plataformas más populares, así que antes de publicar tu trabajo en cualquier sitio, dedica unos minutos a revisar la política de entrenamiento de IA vigente de esa plataforma y su configuración de privacidad.
 
-La realidad es que todo lo que se publica en internet público conlleva cierto nivel de riesgo. Sin embargo, combinar varias medidas de protección —firmar digitalmente tus archivos, exportar versiones de menor resolución, incrustar metadatos, usar avisos de copyright y elegir con cuidado dónde publicas— puede hacer el entrenamiento de IA no autorizado y el robo de contenido considerablemente más difíciles.
+La realidad es que todo lo que se publica en internet público conlleva cierto nivel de riesgo. Sin embargo, combinar varias medidas de protección (firmar digitalmente tus archivos, exportar versiones de menor resolución, incrustar metadatos, usar avisos de copyright y elegir con cuidado dónde publicas) puede hacer el entrenamiento de IA no autorizado y el robo de contenido considerablemente más difíciles.
 
 Ninguna solución es perfecta, pero cada capa adicional de protección aumenta el esfuerzo necesario para usar mal tu trabajo.
 

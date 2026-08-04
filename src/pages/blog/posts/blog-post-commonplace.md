@@ -25,19 +25,19 @@ I wanted one. But digital, and mine in every sense of the word.
 
 ## What I built
 
-[**STARMOON Commonplace Book**](https://starmoon.nekoweb.org/commonplace_book.html) is a single-page web app — no frameworks, no databases, no accounts — that lives on my personal website. It's styled like a retro OS with a vaporwave palette: cyan and magenta on near-black, pixel fonts, scanline effects.
+[**STARMOON Commonplace Book**](https://starmoon.nekoweb.org/commonplace_book.html) is a single-page web app,  no frameworks, no databases, no accounts , that lives on my personal website. It's styled like a retro OS with a vaporwave palette: cyan and magenta on near-black, pixel fonts, scanline effects.
 
 It has nine tabs:
 
-- **Tracklist** — everything I'm currently reading, playing, watching or listening to, with progress bars and status tags
-- **Recent Books** — auto-fetched from my Goodreads account via RSS, with rating extraction and synopsis lookup from OpenLibrary
-- **Biblioteca** — every book I've finished, with a full review UI that opens like a two-page spread: cover, rating grid, summary on the left; quotes and thoughts on the right
-- **Writings** — my poems and reflections
-- **Microblogs** — short diary entries with a mood bar and activity stats, like a daily check-in
-- **Short Thoughts** — statuses pulled from [status.cafe](https://status.cafe), my favorite low-fi social platform
-- **Songs** — songs I love with translations and meaning
-- **Study Log** — a tracker for my Japanese study sessions with ratings, notes, and an image gallery
-- **日本語** — the study log filtered to just Japanese, with progress bars
+- **Tracklist**: everything I'm currently reading, playing, watching or listening to, with progress bars and status tags
+- **Recent Books**: auto-fetched from my Goodreads account via RSS, with rating extraction and synopsis lookup from OpenLibrary
+- **Biblioteca**: every book I've finished, with a full review UI that opens like a two-page spread: cover, rating grid, summary on the left; quotes and thoughts on the right
+- **Writings**: my poems and reflections
+- **Microblogs**: short diary entries with a mood bar and activity stats, like a daily check-in
+- **Short Thoughts**: statuses pulled from [status.cafe](https://status.cafe), my favorite low-fi social platform
+- **Songs**: songs I love with translations and meaning
+- **Study Log**: a tracker for my Japanese study sessions with ratings, notes, and an image gallery
+- **日本語**: the study log filtered to just Japanese, with progress bars
 
 Everything is driven by JSON files I edit locally and push to my site. No CMS, no admin panel. Just text files.
 

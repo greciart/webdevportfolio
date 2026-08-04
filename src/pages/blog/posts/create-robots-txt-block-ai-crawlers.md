@@ -31,7 +31,7 @@ If you own a portfolio, blog, online store, or business website, setting up a ro
 
 A **robots.txt** file is a plain text document placed in the root directory of your website.
 
-Its purpose is to provide instructions to automated bots about which pages or folders they are allowed—or not allowed—to crawl.
+Its purpose is to provide instructions to automated bots about which pages or folders they are allowed, or not allowed, to crawl.
 
 Search engines have used this standard for decades, and many AI companies now publish the names of their crawlers so website owners can choose whether to allow access.
 
@@ -176,4 +176,4 @@ As AI continues to evolve, protecting creative work requires more than simply pu
 
 Combined with metadata, copyright information, content authenticity credentials, and careful platform choices, it becomes part of a stronger strategy for safeguarding your writing, artwork, photography, and other original creations.
 
-Ultimately, owning your own website gives you the greatest level of control. Unlike social media platforms, you decide how your content is hosted, indexed, and accessed—making it one of the best long-term investments for protecting your work online.
+Ultimately, owning your own website gives you the greatest level of control. Unlike social media platforms, you decide how your content is hosted, indexed, and accessed, making it one of the best long-term investments for protecting your work online.

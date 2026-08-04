@@ -19,7 +19,7 @@ languages: ["javascript", "typescript", "nodejs"]
 
 Si construyes aplicaciones con Node.js, lo más probable es que lleves años usando npm sin pensarlo dos veces. Viene incluido con Node, es la opción por defecto para la mayoría, y está profundamente integrado en el ecosistema de JavaScript.
 
-Sin embargo, lo que hemos visto a lo largo de 2026 ha hecho que mucha gente —yo incluida— se replantee si npm debería seguir siendo el gestor de paquetes por defecto en el día a día.
+Sin embargo, lo que hemos visto a lo largo de 2026 ha hecho que mucha gente, yo incluida, se replantee si npm debería seguir siendo el gestor de paquetes por defecto en el día a día.
 
 Los ataques recientes a la cadena de suministro han comprometido paquetes populares de npm como Axios, los paquetes de @antv, los de TanStack, los de SAP y muchos otros. En varios casos, los atacantes obtuvieron acceso a cuentas de mantenedores y publicaron versiones maliciosas capaces de robar credenciales, claves de API, secretos de la nube y tokens de CI/CD.
 
