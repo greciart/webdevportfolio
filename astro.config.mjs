@@ -8,7 +8,7 @@ import mdx from '@astrojs/mdx';
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://greciavdev.netlify.app",
+  site: "https://grevaleart.com",
 
   // English stays at the root so no existing URL changes; Spanish lives under
   // /es/. Everything is generated at build time, so translation costs the

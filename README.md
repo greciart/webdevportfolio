@@ -1,1 +1,1 @@
-https://greciavdev.netlify.app
+https://grevaleart.com
