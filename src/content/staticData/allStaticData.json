@@ -12,6 +12,8 @@
   "youtube": "https://www.youtube.com/@grevaleart",
   "instagram": "https://instagram.com/yourhandle",
   "contra": "https://contra.com/greciavalentina_/work?r=greciavalentina_",
+  "behance": "https://www.behance.net/greciavalero",
+  "calendly": "https://calendly.com/greciavalentinapv",
   "alias": "Grecia V.",
   "contactSectionTitle": "Have a project in mind?",
   "contactSectionSubtitle": "Let's work together.",
@@ -22,6 +24,7 @@
   "youtubeIconName": "youtube",
   "githubIconName": "github",
   "contraIconName": "contra",
+  "behanceIconName": "behance",
   "linkedinIconName": "linkedin",
   "emailIconName": "envelope",
   "hobbies": [

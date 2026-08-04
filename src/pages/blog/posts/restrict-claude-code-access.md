@@ -10,12 +10,8 @@ pubDate: 2026-07-09
 tags:
   [
     "AI Tools & Coding",
-    "AI coding",
-    "developer security",
-    "Windows",
-    "macOS",
-    "Linux",
-    "privacy"
+    "Security & Privacy",
+    "Tutorials & Guides"
   ]
 languages: ["AI", "LLM"]
 ---

@@ -60,7 +60,7 @@ That allow me to push my coding and design skills to the limit. These projects s
 
 **Retro & Interactive Web (Neocities):** I explore the "Old Web" aesthetic through Neocities, creating original, non-generic layouts using pure HTML/CSS/JS. One of my favorite sub-projects is a Kawaii-style digital cookbook where I share my healthy recipes, experimenting with unique UI components that break the mold of traditional, serious corporate design.
 
-These experiments are where I refine my skills in interactive storytelling and UI animation, moving closer to my goal of creating immersive environments in the Game Development world👾.
+These experiments are where I refine my skills in interactive storytelling and UI animation, moving closer to my goal of creating immersive environments in the Game Development world.
 
 
 <br><br>
@@ -72,10 +72,10 @@ These experiments are where I refine my skills in interactive storytelling and U
   </p>
   <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
     <a href="https://calendly.com/greciavalentinapv" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; border-radius: 9999px; background: linear-gradient(to right, #2bd6c1, #0dbc82); color: #171717 !important; font-weight: 600; text-decoration: none !important; -webkit-text-fill-color: #171717 !important; font-size: 0.875rem;">
-      📅 Book a Free Call
+      Book a Free Call
     </a>
     <a href="mailto:greciavalentinapv@gmail.com" style="display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; border-radius: 9999px; background: transparent; color: #2bd6c1 !important; font-weight: 600; text-decoration: none !important; -webkit-text-fill-color: #2bd6c1 !important; font-size: 0.875rem; border: 2px solid #2bd6c1;">
-      ✉️ Send Me an Email
+      Send Me an Email
     </a>
   </div>
 </div>

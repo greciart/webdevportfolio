@@ -185,7 +185,7 @@ const stats = [
   
   <section class="relative px-8 max-sm:px-4 pt-16 pb-8 max-sm:pt-10">
     <div class="blur-circle"></div>
-    <div class="max-w-4xl mx-auto text-center flex flex-col items-center gap-6">
+    <div data-reveal="sharpen" class="max-w-4xl mx-auto text-center flex flex-col items-center gap-6">
       
       <span class="inline-flex items-center gap-2 text-xs font-semibold dark:text-mint-300 text-mint-600 uppercase tracking-widest">
         <span class="w-8 h-px bg-mint-400"></span>
@@ -201,7 +201,7 @@ const stats = [
         Real reviews from clients and professional recommendations. I've worked with across multiple platforms. See what they say about my web design and development work.
       </p>
 
-      <div class="grid grid-cols-4 max-sm:grid-cols-2 gap-4 w-full max-w-2xl mt-4">
+      <div data-reveal-stagger="scale" class="grid grid-cols-4 max-sm:grid-cols-2 gap-4 w-full max-w-2xl mt-4">
         {stats.map((stat) => (
           <div class="flex flex-col items-center gap-1 p-4 rounded-2xl dark:bg-zinc-900/50 bg-mint-50/50 border dark:border-zinc-800 border-mint-100">
             <span class="text-2xl font-black bg-linear-to-r from-riptide-400 to-mint-400 bg-clip-text text-transparent">{stat.value}</span>
@@ -217,7 +217,7 @@ const stats = [
     <div class="max-w-7xl mx-auto flex flex-col gap-16">
 
       {reviews.map((review, index) => (
-        <article class={`group relative flex gap-10 max-lg:flex-col max-lg:gap-6 items-start ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>
+        <article data-reveal={index % 2 === 1 ? "blur-up" : "up"} class={`group relative flex gap-10 max-lg:flex-col max-lg:gap-6 items-start ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>
           
           <div class="relative lg:w-1/2 w-full flex-shrink-0">
             
@@ -333,22 +333,6 @@ const stats = [
   <Contact />
 </Layout>
 
-<style>
-  article {
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeUp 0.6s ease forwards;
-  }
-  article:nth-child(1) { animation-delay: 0.1s; }
-  article:nth-child(2) { animation-delay: 0.25s; }
-  article:nth-child(3) { animation-delay: 0.4s; }
-  article:nth-child(4) { animation-delay: 0.55s; }
-  article:nth-child(5) { animation-delay: 0.7s; }
-
-  @keyframes fadeUp {
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-</style>
+<!-- Reviews now use the shared scroll-reveal system (see global.css). The old
+     unconditional fade-in ran on page load with opacity:0, which delayed LCP
+     and only covered the first five articles. -->

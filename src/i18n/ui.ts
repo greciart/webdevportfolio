@@ -1,0 +1,194 @@
+export const languages = {
+  en: { label: "English", short: "EN", htmlLang: "en", ogLocale: "en_US" },
+  es: { label: "Español", short: "ES", htmlLang: "es", ogLocale: "es_ES" },
+} as const;
+
+export const defaultLang = "en";
+
+export type Lang = keyof typeof languages;
+
+/**
+ * Every visible string on the site, keyed by a dotted namespace.
+ * `en` is the source of truth: a key missing from `es` falls back to English
+ * rather than rendering blank (see `useTranslations`).
+ */
+export const ui = {
+  en: {
+    // --- Navigation ---
+    "nav.home": "Home",
+    "nav.experience": "Experience",
+    "nav.experience.desc": "Career & background",
+    "nav.projects": "Projects",
+    "nav.projects.desc": "Selected case studies",
+    "nav.about": "About",
+    "nav.aboutMe": "About Me",
+    "nav.aboutMe.desc": "My story, stack & process",
+    "nav.services": "Services",
+    "nav.services.desc": "Branding · 3D · Interactive",
+    "nav.blog": "Blog",
+    "nav.allPosts": "All Posts",
+    "nav.allPosts.desc": "Everything I've written",
+    "nav.reviews": "Testimonials",
+    "nav.contact": "Contact",
+    "nav.openMenu": "Open menu",
+    "nav.main": "Main Navigation",
+    "nav.social": "Social Media Links",
+
+    // --- Language switcher ---
+    "lang.switch": "Change language",
+    "lang.current": "Current language",
+
+    // --- Home hero ---
+    "home.available": "Available for work",
+    "home.role": "Web Designer & Frontend Developer",
+    "home.years": "5+ years of experience",
+    "home.intro":
+      "creating modern, user-focused digital experiences.",
+    "home.intro2":
+      "I help brands turn ideas into effective websites through thoughtful UX design, clean UI, and reliable frontend development.",
+    "home.aboutBtn": "About Me",
+    "home.beyondCode": "Beyond the Code",
+    "home.visitGithub": "Visit my GitHub",
+    "home.techStack": "Tech",
+    "home.techStackAccent": "Stack",
+    "home.allServices": "All my services",
+    "home.projects": "Projects",
+    "home.projectsCopy":
+      "Compilation of my projects as a freelancer. I have had the opportunity to work on a variety of projects, collaborating with clients from all over the world in different industries and backgrounds.",
+    "home.freelancer": "freelancer",
+
+    // --- Experience ---
+    "experience.title": "Work",
+    "experience.titleAccent": "Experience",
+    "experience.aria": "Professional experience",
+
+    // --- Projects ---
+    "projects.title": "Projects",
+    "projects.titleAccent": "Completed",
+    "projects.copy":
+      "A curated collection of high-performance web design and development projects, including e-commerce websites, landing pages, and scalable digital platforms built to enhance user experience, increase engagement, and drive business growth.",
+    "projects.highlight": "web design and development",
+    "projects.viewMore": "View More Projects...",
+
+    // --- Contact band ---
+    "contactBand.title": "Have a project in mind?",
+    "contactBand.subtitle": "Let's work together.",
+    "contactBand.button": "Contact Me",
+
+    // --- Footer ---
+    "footer.developedBy": "Developed by",
+    "footer.with": "with Astro",
+    "footer.home": "Go to home",
+    "footer.nav": "Footer navigation",
+    "footer.social": "Social media links",
+
+    // --- Sidebar ---
+    "sidebar.languages": "Languages",
+    "sidebar.softSkills": "Soft Skills",
+    "sidebar.labProgress": "Lab Progress",
+    "sidebar.toc": "Table of Contents",
+
+    // --- Blog ---
+    "blog.allPosts": "All",
+    "blog.allPostsAccent": "Posts",
+    "blog.viewAll": "View all posts...",
+    "blog.techs": "TECHS",
+    "blog.readMore": "Read more",
+    "blog.share": "Share",
+    "blog.publishedOn": "Published on",
+
+    // --- 404 ---
+    "404.title": "Page not found",
+    "404.copy": "The page you're looking for doesn't exist or has moved.",
+    "404.back": "Back to home",
+  },
+
+  es: {
+    // --- Navegación ---
+    "nav.home": "Inicio",
+    "nav.experience": "Experiencia",
+    "nav.experience.desc": "Trayectoria y formación",
+    "nav.projects": "Proyectos",
+    "nav.projects.desc": "Casos de estudio seleccionados",
+    "nav.about": "Sobre mí",
+    "nav.aboutMe": "Quién soy",
+    "nav.aboutMe.desc": "Mi historia, stack y proceso",
+    "nav.services": "Servicios",
+    "nav.services.desc": "Branding · 3D · Interactivo",
+    "nav.blog": "Blog",
+    "nav.allPosts": "Todos los artículos",
+    "nav.allPosts.desc": "Todo lo que he escrito",
+    "nav.reviews": "Testimonios",
+    "nav.contact": "Contacto",
+    "nav.openMenu": "Abrir menú",
+    "nav.main": "Navegación principal",
+    "nav.social": "Redes sociales",
+
+    // --- Selector de idioma ---
+    "lang.switch": "Cambiar idioma",
+    "lang.current": "Idioma actual",
+
+    // --- Hero del inicio ---
+    "home.available": "Disponible para trabajar",
+    "home.role": "Diseñadora web y desarrolladora frontend",
+    "home.years": "más de 5 años de experiencia",
+    "home.intro": "creando experiencias digitales modernas y centradas en el usuario.",
+    "home.intro2":
+      "Ayudo a las marcas a convertir ideas en sitios web efectivos, con diseño UX pensado, interfaces limpias y desarrollo frontend confiable.",
+    "home.aboutBtn": "Sobre mí",
+    "home.beyondCode": "Más allá del código",
+    "home.visitGithub": "Visita mi GitHub",
+    "home.techStack": "Stack",
+    "home.techStackAccent": "técnico",
+    "home.allServices": "Todos mis servicios",
+    "home.projects": "Proyectos",
+    "home.projectsCopy":
+      "Recopilación de mis proyectos como freelance. He tenido la oportunidad de trabajar en proyectos muy variados, colaborando con clientes de todo el mundo en distintos sectores y contextos.",
+    "home.freelancer": "freelance",
+
+    // --- Experiencia ---
+    "experience.title": "Experiencia",
+    "experience.titleAccent": "laboral",
+    "experience.aria": "Experiencia profesional",
+
+    // --- Proyectos ---
+    "projects.title": "Proyectos",
+    "projects.titleAccent": "completados",
+    "projects.copy":
+      "Una selección de proyectos de diseño y desarrollo web de alto rendimiento: tiendas en línea, landing pages y plataformas digitales escalables, construidos para mejorar la experiencia de usuario, aumentar la interacción e impulsar el negocio.",
+    "projects.highlight": "diseño y desarrollo web",
+    "projects.viewMore": "Ver más proyectos...",
+
+    // --- Franja de contacto ---
+    "contactBand.title": "¿Tienes un proyecto en mente?",
+    "contactBand.subtitle": "Trabajemos juntos.",
+    "contactBand.button": "Contáctame",
+
+    // --- Pie de página ---
+    "footer.developedBy": "Desarrollado por",
+    "footer.with": "con Astro",
+    "footer.home": "Ir al inicio",
+    "footer.nav": "Navegación del pie de página",
+    "footer.social": "Redes sociales",
+
+    // --- Barra lateral ---
+    "sidebar.languages": "Idiomas",
+    "sidebar.softSkills": "Habilidades blandas",
+    "sidebar.labProgress": "Progreso del laboratorio",
+    "sidebar.toc": "Tabla de contenidos",
+
+    // --- Blog ---
+    "blog.allPosts": "Todos los",
+    "blog.allPostsAccent": "artículos",
+    "blog.viewAll": "Ver todos los artículos...",
+    "blog.techs": "TECNOLOGÍAS",
+    "blog.readMore": "Leer más",
+    "blog.share": "Compartir",
+    "blog.publishedOn": "Publicado el",
+
+    // --- 404 ---
+    "404.title": "Página no encontrada",
+    "404.copy": "La página que buscas no existe o fue movida.",
+    "404.back": "Volver al inicio",
+  },
+} as const;

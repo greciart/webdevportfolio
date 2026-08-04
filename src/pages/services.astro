@@ -1,0 +1,513 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Heading from "../components/ui/Heading.astro";
+import Button from "../components/ui/Button.astro";
+import MasonryGallery from "../components/portfolio/MasonryGallery.astro";
+import GalleryLightbox from "../components/portfolio/GalleryLightbox.astro";
+import { Icon } from "astro-icon/components";
+import { brandingGallery, threeDGallery, immersiveGallery } from "../data/services";
+
+const pageTitle = "Services | Grecia V. - Branding, 3D & Interactive Design";
+const description =
+  "Branding and logo design, 3D modeling and animation in Blender, and design of immersive interactive experiences and game UI. See the work behind each service.";
+
+const sections = [
+  { id: "branding", label: "Branding", icon: "illustrator" },
+  { id: "3d-modeling", label: "3D & Animation", icon: "blender" },
+  { id: "immersive", label: "Interactive & Games", icon: "robot" },
+];
+
+const brandingPackages = [
+  {
+    name: "Logo Design",
+    tagline: "Just the mark, done right.",
+    description:
+      "For brands that already know who they are and only need a memorable symbol.",
+    includes: [
+      "Primary logo + secondary variations",
+      "Isotype / icon version",
+      "Base color palette & typography",
+      "Files in SVG, AI, PNG & JPG",
+    ],
+  },
+  {
+    name: "Full Branding",
+    tagline: "The complete visual system.",
+    featured: true,
+    description:
+      "Everything you need to look consistent across your website, packaging and social media.",
+    includes: [
+      "Everything in Logo Design",
+      "Extended palette & typographic scale",
+      "Patterns, textures & iconography",
+      "Social media & stationery templates",
+      "Presentation mockups",
+    ],
+  },
+  {
+    name: "Brand Manual",
+    tagline: "The rulebook for your identity.",
+    description:
+      "A guidelines document so any designer, agency or printer applies your brand correctly.",
+    includes: [
+      "Logo usage, safe area & minimum size",
+      "Correct & incorrect applications",
+      "Color specs in HEX, RGB, CMYK & Pantone",
+      "Typography hierarchy & tone of voice",
+      "Real-world application examples",
+    ],
+  },
+];
+
+const threeDCapabilities = [
+  {
+    name: "Products & Objects",
+    description:
+      "Packaging, devices, props and product shots modeled and rendered for ads, e-commerce or landing pages.",
+  },
+  {
+    name: "Brand Mascots & Characters",
+    description:
+      "3D mascots that give your brand a face, modeled, textured, rigged and posed for any channel.",
+  },
+  {
+    name: "Animation & Motion",
+    description:
+      "Short loops, product animations and in-app assets, rendered in Blender and edited into final deliverables.",
+  },
+];
+
+const polyLevels = [
+  {
+    name: "Low poly",
+    description: "Light, stylized meshes ready for the web, real-time engines and games.",
+  },
+  {
+    name: "Mid poly",
+    description: "The balance point: enough detail for marketing, still fast to load and render.",
+  },
+  {
+    name: "High poly",
+    description: "Photorealistic detail for hero renders, close-up product shots and print.",
+  },
+];
+
+const immersiveCapabilities = [
+  {
+    name: "Game UI & UX",
+    description:
+      "HUDs, menus, inventories and onboarding flows designed for real-time feedback and readability under pressure. Built through game jams, where a tight deadline forces every screen to be understood at a glance.",
+  },
+  {
+    name: "Web Apps That Fit Real Brains",
+    description:
+      "Products like Focus Time, a productivity app built on methods that genuinely work, and designed so they work for neurodivergent people too, especially users with ADHD, instead of assuming a neurotypical default.",
+  },
+  {
+    name: "Fully Themed Interactive Sites",
+    description:
+      "My Nekoweb projects behave more like small games than websites: an OS simulator you boot up, drag windows around and explore. Every pixel is custom-built for one specific aesthetic, in this case retro 00s and vaporwave.",
+  },
+  {
+    name: "Playable Prototypes",
+    description:
+      "Fast, jam-style concepts built to test a mechanic or an interaction before committing to production, plus scroll-driven storytelling and micro-interactions for the web.",
+  },
+];
+
+const cardBorder =
+  "relative rounded-2xl bg-linear-to-br from-mint-300 dark:from-mint-600 to-mint-50 dark:to-mint-200/5 p-[2px] transition-all duration-500 hover:shadow-[0_10px_50px_rgba(13,188,130,0.2)]";
+const cardInner =
+  "h-full rounded-[calc(1rem-1px)] bg-white p-7 max-sm:p-5 dark:bg-zinc-900/80";
+const eyebrow =
+  "inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-mint-600 dark:text-mint-300";
+const bodyText =
+  "text-base max-md:text-sm font-normal leading-7 text-blacktext/80 dark:text-gray-300";
+const chip =
+  "rounded-full border border-mint-200 bg-mint-50 px-3 py-1.5 text-xs font-semibold text-mint-700 dark:border-mint-800/50 dark:bg-mint-900/30 dark:text-mint-300";
+---
+
+<Layout pageTitle={pageTitle} description={description}>
+  <!-- ===================== HERO ===================== -->
+  <section class="relative px-8 pb-8 pt-16 max-sm:px-4 max-sm:pt-10">
+    <div class="blur-circle"></div>
+    <div data-reveal="sharpen" class="mx-auto flex max-w-4xl flex-col items-center gap-6 text-center">
+      <span class={eyebrow}>
+        <span class="h-px w-8 bg-mint-400"></span>
+        What I can build for you
+        <span class="h-px w-8 bg-mint-400"></span>
+      </span>
+
+      <Heading text="Creative" textGradient="Services" level={1} />
+
+      <p class={`${bodyText} max-w-2xl`}>
+        Beyond websites, I help brands build the visual world around them: the identity
+        they are recognised by, the 3D pieces that make them stand out, and the
+        interactive experiences that make people stay.
+      </p>
+
+      <nav
+        class="mt-2 flex flex-wrap items-center justify-center gap-3"
+        aria-label="Services"
+      >
+        {
+          sections.map((section) => (
+            <a
+              href={`#${section.id}`}
+              class="group flex items-center gap-2 rounded-full border border-mint-200 bg-white px-5 py-2.5 text-sm font-semibold text-blacktext transition-all hover:-translate-y-0.5 hover:border-mint-400 hover:text-mint-600 dark:border-zinc-800 dark:bg-zinc-900 dark:text-white dark:hover:border-mint-500 dark:hover:text-mint-300 max-sm:text-xs"
+            >
+              <Icon
+                name={section.icon}
+                class="size-4 text-mint-500 dark:text-mint-300"
+                aria-hidden="true"
+              />
+              {section.label}
+            </a>
+          ))
+        }
+      </nav>
+
+      <p class="text-xs font-normal text-blacktext/50 dark:text-zinc-500">
+        Looking for web design & development?{" "}
+        <a
+          href="/#projects"
+          class="font-semibold text-mint-600 underline underline-offset-4 transition-colors hover:text-riptide-500 dark:text-mint-300"
+          >See my web projects →</a
+        >
+      </p>
+    </div>
+  </section>
+
+  <!-- ===================== BRANDING ===================== -->
+  <section id="branding" class="scroll-m-24 px-8 py-16 max-sm:px-4 max-sm:py-10">
+    <div class="mx-auto flex max-w-7xl flex-col gap-10">
+      <header data-reveal="blur" class="flex flex-col gap-4">
+        <span class={eyebrow}>
+          <span class="h-px w-8 bg-mint-400"></span>
+          Service 01
+        </span>
+        <div class="flex items-center gap-4">
+          <Icon
+            class="text-3xl text-mint-500 dark:text-white max-sm:text-2xl"
+            name="illustrator"
+            aria-hidden="true"
+          />
+          <Heading text="Brand" textGradient="Identity" level={2} />
+        </div>
+        <p class={bodyText}>
+          I design brand systems that hold up everywhere, from a favicon to a billboard.
+          Depending on what you actually need, we can work on the <strong
+            class="font-bold text-mint-600 dark:text-mint-300">logo only</strong
+          >, a <strong class="font-bold text-mint-600 dark:text-mint-300"
+            >complete branding</strong
+          > package, or a full <strong class="font-bold text-mint-600 dark:text-mint-300"
+            >brand manual</strong
+          > with the rules to keep it consistent over time.
+        </p>
+      </header>
+
+      <div data-reveal-stagger="up" class="grid grid-cols-3 gap-6 max-lg:grid-cols-1">
+        {
+          brandingPackages.map((pack) => (
+            <article
+              class={`${cardBorder} ${pack.featured ? "lg:-mt-2 lg:mb-2" : ""}`}
+            >
+              {pack.featured && (
+                /* Corner ribbon: the clipping box carries the card's own radius
+                   so the band is cut exactly along the rounded tip. */
+                <div class="pointer-events-none absolute right-0 top-0 z-10 size-28 overflow-hidden rounded-tr-2xl">
+                  <span class="absolute top-3.5 -right-10 w-[150px] rotate-45 bg-linear-to-r from-riptide-400 to-mint-500 py-1 text-center text-[9px] font-bold uppercase tracking-widest text-blacktext shadow-md">
+                    Popular
+                  </span>
+                </div>
+              )}
+              <div class={`${cardInner} flex flex-col gap-4`}>
+                <div class="flex flex-col gap-1">
+                  <h3 class="text-xl font-bold text-blacktext dark:text-white">
+                    {pack.name}
+                  </h3>
+                  <p class="bg-linear-to-r from-riptide-500 to-mint-500 bg-clip-text text-sm font-semibold text-transparent dark:from-riptide-300 dark:to-mint-200">
+                    {pack.tagline}
+                  </p>
+                </div>
+                <span
+                  class="h-0.5 w-10 rounded-full bg-linear-to-r from-riptide-400 to-mint-500"
+                  aria-hidden="true"
+                />
+                <p class="text-sm font-normal leading-6 text-blacktext/70 dark:text-zinc-400">
+                  {pack.description}
+                </p>
+                <ul class="mt-1 flex flex-col gap-2">
+                  {pack.includes.map((line) => (
+                    <li class="flex items-start gap-2.5 text-sm font-normal leading-6 text-blacktext/80 dark:text-gray-300">
+                      <span
+                        class="mt-2 size-1.5 shrink-0 rotate-45 bg-riptide-400"
+                        aria-hidden="true"
+                      />
+                      {line}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </article>
+          ))
+        }
+      </div>
+
+      <div data-reveal="fade" class="flex flex-wrap items-center gap-3">
+        <span class="text-xs font-semibold uppercase tracking-widest text-blacktext/50 dark:text-zinc-500">
+          Tools
+        </span>
+        {
+          ["Illustrator", "Photoshop", "Figma", "Inkscape", "Blender (3D mockups)"].map(
+            (tool) => <span class={chip}>{tool}</span>,
+          )
+        }
+      </div>
+
+      <div class="flex flex-col gap-6">
+        <div class="flex items-baseline justify-between gap-4 max-sm:flex-col max-sm:gap-2">
+          <h3 class="text-xl font-bold text-blacktext dark:text-white">
+            Branding work
+          </h3>
+          <a
+            href="https://www.behance.net/greciavalero"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-sm font-semibold text-mint-600 underline underline-offset-4 transition-colors hover:text-riptide-500 dark:text-mint-300"
+          >
+            See it all on Behance ↗
+          </a>
+        </div>
+        <MasonryGallery items={brandingGallery} group="branding" reveal="scale" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 3D ===================== -->
+  <section
+    id="3d-modeling"
+    class="scroll-m-24 border-y border-mint-100 bg-linear-to-b from-mint-50/60 to-transparent px-8 py-16 dark:border-zinc-800/70 dark:from-mint-950/30 max-sm:px-4 max-sm:py-10"
+  >
+    <div class="mx-auto flex max-w-7xl flex-col gap-10">
+      <header data-reveal="blur-up" class="flex flex-col gap-4">
+        <span class={eyebrow}>
+          <span class="h-px w-8 bg-mint-400"></span>
+          Service 02
+        </span>
+        <div class="flex items-center gap-4">
+          <Icon
+            class="text-3xl text-mint-500 dark:text-white max-sm:text-2xl"
+            name="blender"
+            aria-hidden="true"
+          />
+          <Heading text="3D Modeling &" textGradient="Animation" level={2} />
+        </div>
+        <p class={bodyText}>
+          I model and animate everything in <strong
+            class="font-bold text-mint-600 dark:text-mint-300">Blender</strong
+          >, and finish the edit in <strong
+            class="font-bold text-mint-600 dark:text-mint-300"
+            >Premiere Pro or CapCut</strong
+          >, so what you get is not a raw render, but a piece ready to publish. I model
+          products, objects and brand mascots, in low, mid or high poly depending on
+          where the asset needs to live.
+        </p>
+      </header>
+
+      <div data-reveal-stagger="scale" class="grid grid-cols-3 gap-6 max-lg:grid-cols-1">
+        {
+          threeDCapabilities.map((item) => (
+            <article class={cardBorder}>
+              <div class={`${cardInner} flex flex-col gap-3`}>
+                <h3 class="text-lg font-bold text-blacktext dark:text-white">
+                  {item.name}
+                </h3>
+                <span
+                  class="h-0.5 w-10 rounded-full bg-linear-to-r from-riptide-400 to-mint-500"
+                  aria-hidden="true"
+                />
+                <p class="text-sm font-normal leading-6 text-blacktext/70 dark:text-zinc-400">
+                  {item.description}
+                </p>
+              </div>
+            </article>
+          ))
+        }
+      </div>
+
+      <!-- Poly levels -->
+      <div data-reveal="up" class="rounded-2xl border border-mint-100 bg-white/70 p-7 dark:border-zinc-800 dark:bg-zinc-900/50 max-sm:p-5">
+        <h3 class="mb-5 text-sm font-bold uppercase tracking-widest text-blacktext/60 dark:text-zinc-400">
+          Level of detail
+        </h3>
+        <div class="grid grid-cols-3 gap-6 max-md:grid-cols-1">
+          {
+            polyLevels.map((level, index) => (
+              <div class="flex flex-col gap-2">
+                <div class="flex items-center gap-3">
+                  <span class="flex size-7 items-center justify-center rounded-full bg-linear-to-br from-riptide-400 to-mint-500 text-xs font-bold text-blacktext">
+                    {index + 1}
+                  </span>
+                  <span class="text-base font-bold text-blacktext dark:text-white">
+                    {level.name}
+                  </span>
+                </div>
+                <p class="text-sm font-normal leading-6 text-blacktext/70 dark:text-zinc-400">
+                  {level.description}
+                </p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+
+      <!-- Pipeline -->
+      <div data-reveal="fade" class="flex flex-wrap items-center gap-3">
+        <span class="text-xs font-semibold uppercase tracking-widest text-blacktext/50 dark:text-zinc-500">
+          Pipeline
+        </span>
+        {
+          ["Blender — modeling", "Blender — animation & render", "Premiere Pro / CapCut — edit"].map(
+            (step, index) => (
+              <>
+                {index > 0 && (
+                  <span class="text-mint-400" aria-hidden="true">
+                    →
+                  </span>
+                )}
+                <span class={chip}>{step}</span>
+              </>
+            ),
+          )
+        }
+      </div>
+
+      <div class="flex flex-col gap-6">
+        <div class="flex items-baseline justify-between gap-4 max-sm:flex-col max-sm:gap-2">
+          <h3 class="text-xl font-bold text-blacktext dark:text-white">3D work</h3>
+          <a
+            href="https://www.behance.net/greciavalero"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-sm font-semibold text-mint-600 underline underline-offset-4 transition-colors hover:text-riptide-500 dark:text-mint-300"
+          >
+            See it all on Behance ↗
+          </a>
+        </div>
+        <MasonryGallery items={threeDGallery} group="threed" reveal="blur" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== IMMERSIVE ===================== -->
+  <section id="immersive" class="scroll-m-24 px-8 py-16 max-sm:px-4 max-sm:py-10">
+    <div class="mx-auto flex max-w-7xl flex-col gap-10">
+      <header data-reveal="blur" class="flex flex-col gap-4">
+        <span class={eyebrow}>
+          <span class="h-px w-8 bg-mint-400"></span>
+          Service 03
+        </span>
+        <div class="flex items-center gap-4">
+          <Icon
+            class="text-3xl text-mint-500 dark:text-white max-sm:text-2xl"
+            name="robot"
+            aria-hidden="true"
+          />
+          <Heading text="Immersive Interactive" textGradient="Experiences" level={2} />
+        </div>
+        <p class={bodyText}>
+          Mostly <strong class="font-bold text-mint-600 dark:text-mint-300"
+            >game design</strong
+          >, interfaces that are part of the world instead of a layer on top of it, but
+          the same thinking carries into <strong
+            class="font-bold text-mint-600 dark:text-mint-300">web apps</strong
+          > and fully themed <strong class="font-bold text-mint-600 dark:text-mint-300"
+            >interactive sites</strong
+          >. I've built <strong class="font-bold text-mint-600 dark:text-mint-300"
+            >Focus Time</strong
+          >, a productivity app based on methods that actually work and made accessible
+          for neurodivergent users, especially people with ADHD, not just neurotypical
+          ones. And on <strong class="font-bold text-mint-600 dark:text-mint-300"
+            >Nekoweb</strong
+          > I build sites that behave like small games: a bootable OS simulator with draggable
+          windows, custom-built down to the pixel for a single aesthetic, retro 00s and
+          vaporwave.
+        </p>
+      </header>
+
+      <div data-reveal-stagger="up" class="grid grid-cols-2 gap-6 max-lg:grid-cols-1">
+        {
+          immersiveCapabilities.map((item) => (
+            <article class={cardBorder}>
+              <div class={`${cardInner} flex flex-col gap-3`}>
+                <h3 class="text-lg font-bold text-blacktext dark:text-white">
+                  {item.name}
+                </h3>
+                <span
+                  class="h-0.5 w-10 rounded-full bg-linear-to-r from-riptide-400 to-mint-500"
+                  aria-hidden="true"
+                />
+                <p class="text-sm font-normal leading-6 text-blacktext/70 dark:text-zinc-400">
+                  {item.description}
+                </p>
+              </div>
+            </article>
+          ))
+        }
+      </div>
+
+      <div data-reveal="fade" class="flex flex-wrap items-center gap-3">
+        <span class="text-xs font-semibold uppercase tracking-widest text-blacktext/50 dark:text-zinc-500">
+          Tools
+        </span>
+        {
+          ["Figma", "HTML / CSS / JS", "GSAP", "Blender", "Game jams", "Nekoweb", "Accessible UI"].map((tool) => (
+            <span class={chip}>{tool}</span>
+          ))
+        }
+      </div>
+
+      <div class="flex flex-col gap-6">
+        <h3 class="text-xl font-bold text-blacktext dark:text-white">
+          Games, apps & interactive sites
+        </h3>
+        <MasonryGallery
+          items={immersiveGallery}
+          group="immersive"
+          reveal="up"
+          emptyTitle="Game jam gallery coming soon"
+          emptyText="Screens and prototypes from my game jam entries are being prepared. In the meantime, you can read about my interactive and experimental projects on the About Me page."
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CTA ===================== -->
+  <section class="px-8 pb-20 max-sm:px-4 max-sm:pb-12">
+    <div
+      data-reveal="scale"
+      class="mx-auto max-w-5xl rounded-2xl bg-linear-to-r from-mint-300 to-mint-50 p-[2px] dark:from-mint-600 dark:to-mint-200/5"
+    >
+      <div
+        class="flex items-center justify-between gap-8 rounded-[calc(1rem-1px)] bg-linear-to-tr from-riptide-100 to-white px-10 py-12 dark:from-mint-950 dark:to-zinc-950 max-sm:flex-col max-sm:px-6 max-sm:py-8 max-sm:text-center"
+      >
+        <div class="flex max-w-lg flex-col gap-3">
+          <Heading text="Not sure which one" textGradient="you need?" level={2} />
+          <p class={bodyText}>
+            Tell me about your project and I'll recommend the right scope, no
+            commitment.
+          </p>
+        </div>
+        <Button
+          variant="mediumbig"
+          link="/contact"
+          text="Start a project"
+          iconName="paperplane"
+        />
+      </div>
+    </div>
+  </section>
+
+  <GalleryLightbox />
+</Layout>

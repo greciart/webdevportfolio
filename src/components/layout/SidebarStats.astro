@@ -1,3 +1,31 @@
+---
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const languages = ["Spanish (native)", "English (professional)"];
+
+// The traits clients and hiring managers actually screen for, not tool skills.
+const softSkills = [
+  "Clear communication",
+  "Problem solving",
+  "Attention to detail",
+  "Reliability & deadlines",
+  "Adaptability",
+  "Client & user empathy",
+];
+
+const labProgress = [
+  { name: "Personal projects", value: 60 },
+  { name: "Game projects", value: 50 },
+];
+
+const headingCls =
+  "dark:text-zinc-400 text-blacktext/90 font-black tracking-wide text-sm uppercase";
+const bulletTextCls =
+  "text-xs font-semibold dark:text-neutral-300 text-neutral-600 leading-5";
+---
+
 <div class="max-lg:hidden">
   <div
     id="sidebar-stats"
@@ -7,94 +35,70 @@
 
       <!-- LANGUAGES -->
       <div class="flex flex-col gap-3">
-        <h3 class="dark:text-zinc-400 text-blacktext/90 font-black tracking-wide text-sm uppercase">
-          Languages
-        </h3>
-        <div class="flex flex-col gap-3">
+        <h3 class={headingCls}>{t("sidebar.languages")}</h3>
+        <ul class="flex flex-col gap-2">
+          {
+            languages.map((language) => (
+              <li class="flex items-start gap-2.5">
+                <span
+                  class="mt-1.5 size-1.5 shrink-0 rotate-45 bg-riptide-400"
+                  aria-hidden="true"
+                />
+                <span class={bulletTextCls}>{language}</span>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
 
-          <div class="flex flex-col gap-1">
-            <div class="flex justify-between items-center">
-              <span class="text-xs font-semibold dark:text-neutral-300 text-neutral-600">Spanish</span>
-              <span class="text-xs font-bold text-mint-400 dark:text-mint-300">100%</span>
-            </div>
-            <div class="w-full h-2 rounded-full bg-neutral-200 dark:bg-zinc-800 overflow-hidden">
-              <div
-                class="h-full rounded-full bg-linear-to-r from-riptide-400 to-mint-400"
-                style="width: 100%"
-              ></div>
-            </div>
-          </div>
+      <hr class="dark:border-neutral-700 border-neutral-200" />
 
-          <div class="flex flex-col gap-1">
-            <div class="flex justify-between items-center">
-              <span class="text-xs font-semibold dark:text-neutral-300 text-neutral-600">English</span>
-              <span class="text-xs font-bold text-mint-400 dark:text-mint-300">95%</span>
-            </div>
-            <div class="w-full h-2 rounded-full bg-neutral-200 dark:bg-zinc-800 overflow-hidden">
-              <div
-                class="h-full rounded-full bg-linear-to-r from-riptide-400 to-mint-400"
-                style="width: 95%"
-              ></div>
-            </div>
-          </div>
-
-        </div>
+      <!-- SOFT SKILLS -->
+      <div class="flex flex-col gap-3">
+        <h3 class={headingCls}>{t("sidebar.softSkills")}</h3>
+        <ul class="flex flex-col gap-2">
+          {
+            softSkills.map((skill) => (
+              <li class="flex items-start gap-2.5">
+                <span
+                  class="mt-1.5 size-1.5 shrink-0 rotate-45 bg-riptide-400"
+                  aria-hidden="true"
+                />
+                <span class={bulletTextCls}>{skill}</span>
+              </li>
+            ))
+          }
+        </ul>
       </div>
 
       <hr class="dark:border-neutral-700 border-neutral-200" />
 
       <!-- LAB PROGRESS -->
       <div class="flex flex-col gap-3">
-        <h3 class="dark:text-zinc-400 text-blacktext/90 font-black tracking-wide text-sm uppercase">
-          Lab Progress
-        </h3>
+        <h3 class={headingCls}>{t("sidebar.labProgress")}</h3>
         <div class="flex flex-col gap-4">
-
-          <div class="flex flex-col gap-1">
-            <div class="flex justify-between items-center">
-              <span class="text-xs font-semibold dark:text-neutral-300 text-neutral-600">Digital Garden</span>
-              <span class="text-xs font-bold text-riptide-400 dark:text-riptide-300">40%</span>
-            </div>
-            <div class="w-full h-2 rounded-full bg-neutral-200 dark:bg-zinc-800 overflow-hidden">
-              <div
-                class="progress-bar h-full rounded-full bg-linear-to-r from-mint-500 to-riptide-400 relative overflow-hidden"
-                style="width: 40%"
-              >
-                <div class="absolute inset-0 bg-linear-to-r from-transparent via-white/20 to-transparent animate-shimmer"></div>
+          {
+            labProgress.map((item) => (
+              <div class="flex flex-col gap-1">
+                <div class="flex justify-between items-center">
+                  <span class="text-xs font-semibold dark:text-neutral-300 text-neutral-600">
+                    {item.name}
+                  </span>
+                  <span class="text-xs font-bold text-riptide-400 dark:text-riptide-300">
+                    {item.value}%
+                  </span>
+                </div>
+                <div class="w-full h-2 rounded-full bg-neutral-200 dark:bg-zinc-800 overflow-hidden">
+                  <div
+                    class="progress-bar h-full rounded-full bg-linear-to-r from-mint-500 to-riptide-400 relative overflow-hidden"
+                    style={`width: ${item.value}%`}
+                  >
+                    <div class="absolute inset-0 bg-linear-to-r from-transparent via-white/20 to-transparent animate-shimmer" />
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-
-          <div class="flex flex-col gap-1">
-            <div class="flex justify-between items-center">
-              <span class="text-xs font-semibold dark:text-neutral-300 text-neutral-600">Vaporwave OS</span>
-              <span class="text-xs font-bold text-riptide-400 dark:text-riptide-300">40%</span>
-            </div>
-            <div class="w-full h-2 rounded-full bg-neutral-200 dark:bg-zinc-800 overflow-hidden">
-              <div
-                class="progress-bar h-full rounded-full bg-linear-to-r from-mint-500 to-riptide-400 relative overflow-hidden"
-                style="width: 40%"
-              >
-                <div class="absolute inset-0 bg-linear-to-r from-transparent via-white/20 to-transparent animate-shimmer"></div>
-              </div>
-            </div>
-          </div>
-
-          <div class="flex flex-col gap-1">
-            <div class="flex justify-between items-center">
-              <span class="text-xs font-semibold dark:text-neutral-300 text-neutral-600">Retro Web</span>
-              <span class="text-xs font-bold text-riptide-400 dark:text-riptide-300">40%</span>
-            </div>
-            <div class="w-full h-2 rounded-full bg-neutral-200 dark:bg-zinc-800 overflow-hidden">
-              <div
-                class="progress-bar h-full rounded-full bg-linear-to-r from-mint-500 to-riptide-400 relative overflow-hidden"
-                style="width: 40%"
-              >
-                <div class="absolute inset-0 bg-linear-to-r from-transparent via-white/20 to-transparent animate-shimmer"></div>
-              </div>
-            </div>
-          </div>
-
+            ))
+          }
         </div>
       </div>
 

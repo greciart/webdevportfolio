@@ -1,0 +1,94 @@
+---
+import { Image } from "astro:assets";
+import type { GalleryItem } from "../../data/services";
+
+interface Props {
+  items?: GalleryItem[];
+  /** Unique key so the lightbox can page through this gallery only. */
+  group: string;
+  /** Scroll-reveal variant applied to the tiles, staggered one by one. */
+  reveal?: "fade" | "up" | "scale" | "blur" | "sharpen";
+  emptyTitle?: string;
+  emptyText?: string;
+}
+
+const {
+  items = [],
+  group,
+  reveal,
+  emptyTitle = "Gallery coming soon",
+  emptyText = "New work is being prepared for this section.",
+} = Astro.props as Props;
+---
+
+{
+  items.length > 0 ? (
+    <div
+      data-reveal-stagger={reveal}
+      class="gap-5 max-sm:gap-4 columns-3 max-lg:columns-2 max-sm:columns-1"
+    >
+      {items.map((item, index) => (
+        <figure class="mb-5 max-sm:mb-4 break-inside-avoid">
+          <div class="group/card relative rounded-2xl bg-linear-to-br from-mint-300 dark:from-mint-600 to-mint-50 dark:to-mint-200/5 p-[2px] transition-all duration-500 hover:shadow-[0_10px_50px_rgba(13,188,130,0.25)]">
+            <button
+              type="button"
+              class="block w-full cursor-zoom-in overflow-hidden rounded-[calc(1rem-1px)] bg-white text-left dark:bg-zinc-900"
+              data-lb
+              data-lb-group={group}
+              data-lb-index={index}
+              data-lb-src={item.url.src}
+              data-lb-alt={item.alt}
+              data-lb-title={item.title}
+              data-lb-href={item.href ?? ""}
+              aria-label={`Open ${item.title} in full size`}
+            >
+              <div class="relative overflow-hidden">
+                <Image
+                  src={item.url}
+                  alt={item.alt}
+                  widths={[400, 640, 808]}
+                  sizes="(max-width: 640px) 92vw, (max-width: 1024px) 45vw, 30vw"
+                  loading="lazy"
+                  decoding="async"
+                  class="w-full h-auto object-cover transition-transform duration-700 ease-out group-hover/card:scale-105"
+                />
+
+                {/* Caption plate: always readable on touch, lifts on hover */}
+                <figcaption class="absolute inset-x-0 bottom-0 flex flex-col gap-1.5 bg-linear-to-t from-black/85 via-black/55 to-transparent px-4 pb-3 pt-10 opacity-0 translate-y-2 transition-all duration-300 group-hover/card:opacity-100 group-hover/card:translate-y-0 max-md:opacity-100 max-md:translate-y-0">
+                  <span class="text-sm font-bold leading-snug text-white max-sm:text-xs">
+                    {item.title}
+                  </span>
+                  {item.tags && item.tags.length > 0 && (
+                    <span class="flex flex-wrap gap-1.5">
+                      {item.tags.map((tag) => (
+                        <span class="rounded-full border border-mint-300/40 bg-mint-500/20 px-2 py-0.5 text-[10px] font-semibold text-mint-100 backdrop-blur-sm">
+                          {tag}
+                        </span>
+                      ))}
+                    </span>
+                  )}
+                </figcaption>
+
+                <span
+                  class="absolute right-3 top-3 flex size-8 items-center justify-center rounded-full bg-black/50 text-white opacity-0 backdrop-blur-sm transition-opacity duration-300 group-hover/card:opacity-100"
+                  aria-hidden="true"
+                >
+                  <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
+                  </svg>
+                </span>
+              </div>
+            </button>
+          </div>
+        </figure>
+      ))}
+    </div>
+  ) : (
+    <div class="flex flex-col items-center gap-3 rounded-2xl border-2 border-dashed border-mint-200 px-8 py-14 text-center dark:border-zinc-800">
+      <p class="text-base font-bold text-blacktext dark:text-white">{emptyTitle}</p>
+      <p class="max-w-md text-sm font-normal leading-6 text-blacktext/60 dark:text-zinc-400">
+        {emptyText}
+      </p>
+    </div>
+  )
+}

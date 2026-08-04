@@ -9,8 +9,10 @@ image:
 pubDate: 2025-03-27
 tags:
   [
-    "CSS", "Tailwind", "Animation", "Frontend", "UI", "Web Development"
-   
+    "Web Development",
+    "Web Design & UX",
+    "Creative Coding",
+    "Tutorials & Guides"
   ]
 languages: ["tailwind", "html", ]
 ---

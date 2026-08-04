@@ -39,6 +39,7 @@ const { frontmatter } = Astro.props;
     <SidebarStats />
 
     <article
+      data-reveal="sharpen"
       class="flex flex-col gap-8 max-w-3xl max-md:w-full pb-10 pt-8 mt-8 max-sm:mt-0 px-14 max-md:px-10 max-sm:px-6 dark:bg-transparent bg-white dark:border-0 border border-neutral-100 rounded-2xl"
     >
       <div class="w-full h-auto mb-4 mx-auto" id="#">
@@ -49,7 +50,7 @@ const { frontmatter } = Astro.props;
   <!-- wrapper -->
   <div class="group relative z-10 flex w-full h-full cursor-pointer items-center justify-center overflow-hidden rounded-full p-[2px] transition-all duration-500 group-hover:scale-105">
 
-    <!-- 🔥 borde animado -->
+    <!-- borde animado -->
     <div
       class="absolute inset-0 rounded-full bg-conic/[from_var(--border-angle)] animate-rotate-border dark:from-transparent dark:to-mint-300 from-transparent to-riptide-500"
     ></div>
@@ -57,7 +58,7 @@ const { frontmatter } = Astro.props;
     <!-- fondo interior -->
     <div class="relative z-20 w-full h-full rounded-full bg-mint-900 overflow-hidden">
 
-      <!-- 🔥 IMAGE (ASTRO WAY) -->
+      <!-- IMAGE (ASTRO WAY) -->
       <Image
         src={profileImage}
         alt="Photo of Grecia V. for the blog"
@@ -94,7 +95,7 @@ const { frontmatter } = Astro.props;
                 class="bg-linear-to-r from-riptide-400 to-mint-500 dark:to-mint-200 dark:from-riptide-300 text-transparent bg-clip-text"
                 >5+ years of experience</b
               >, passionate about design, development, user interfaces and user experience (UI/UX).
-I love bringing digital projects to life. 🚀
+I love bringing digital projects to life.
             </p>
           </div>
         </div>
@@ -110,14 +111,14 @@ I love bringing digital projects to life. 🚀
     <NavArticle title={frontmatter.title} />
   </section>
   <section class="py-8 px-8 max-md:py-4 mb-4 scroll-m-16" id="experience">
-    <div class="flex flex-col gap-8 pt-8 max-w-4xl mx-auto">
+    <div data-reveal="blur-up" class="flex flex-col gap-8 pt-8 max-w-4xl mx-auto">
       
 
       <Experience />
     </div>
   </section>
   <section class="py-8 px-8 max-md:py-4 mt-10 mb-20 scroll-m-16" id="sttack">
-    <div class="flex flex-col gap-8 max-w-3xl justify-center mx-auto">
+    <div data-reveal="up" class="flex flex-col gap-8 max-w-3xl justify-center mx-auto">
       <div class="flex gap-4 items-center justify-center">
         <Icon class="text-3xl text-white" name="dashboard" />
         <Heading text="Stack" textGradient="Technological" level={2} />

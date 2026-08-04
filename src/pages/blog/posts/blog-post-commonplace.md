@@ -9,8 +9,8 @@ image:
 pubDate: 2026-05-07
 tags:
   [
-    "open-source", "Github free projects", "Personal Project", "Frontend Development", "Vaporwave & Retro Design", "Case Study"
-   
+    "Creative Coding",
+    "Web Development"
   ]
 languages: ["html", "css", "javascript"]
 ---

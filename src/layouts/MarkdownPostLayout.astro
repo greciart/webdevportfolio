@@ -66,12 +66,14 @@ import Heading from "../components/ui/Heading.astro";
   description={frontmatter.description}
   ogimage={frontmatter.image}
 >
+  <!-- The article grows to fill whatever the table of contents does not use, so
+       the gap between them stays constant instead of widening on big monitors. -->
   <section
-    class="relative mx-auto px-8 max-sm:px-4 flex flex-row justify-center gap-6"
+    class="relative mx-auto max-w-7xl px-8 max-sm:px-4 flex flex-row justify-start gap-10 max-lg:justify-center"
   >
-    <div class="w-64 max-xl:hidden"></div>
     <article
-      class="flex flex-col gap-8 max-w-3xl max-md:w-full pb-10 pt-8 mt-8 px-14 max-md:px-10 max-sm:px-4 dark:bg-transparent bg-white dark:border-0 border border-neutral-100 rounded-2xl"
+      data-reveal="sharpen"
+      class="flex flex-col gap-8 flex-1 min-w-0 max-w-4xl max-md:w-full pb-10 pt-8 mt-8 px-14 max-md:px-10 max-sm:px-4 dark:bg-transparent bg-white dark:border-0 border border-neutral-100 rounded-2xl"
     >
       <header class="flex flex-col gap-4" id="start">
         <div class="flex gap-2 flex-wrap">

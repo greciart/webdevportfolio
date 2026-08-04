@@ -2,6 +2,8 @@
 import Navigation from "./Navigation.astro";
 import ThemeIcon from "../ui/ThemeIcon.astro";
 import Social from "../ui/Social.astro";
+import LanguageSwitcher from "../ui/LanguageSwitcher.astro";
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
 import { Icon } from "astro-icon/components";
 import { getCollection } from "astro:content";
 import { Image } from "astro:assets";
@@ -10,15 +12,11 @@ import logo from "../../assets/logo.png";
 const [staticData] = await getCollection("staticData");
 const { github, githubIconName, linkedin, linkedinIconName, contra, contraIconName } = staticData.data;
 
-const currentPath = Astro.url.pathname;
-const routes = ["/", "/portfolio", "/about-me"];
+// Home and About carry their own sub-menus, so the same set works on every route.
+const navItems = ["home", "about", "blog", "reviews", "contact"];
 
-// Check if the current route is in the list of routes
-const isActiveRoute = routes.includes(currentPath);
-
-const navItems = isActiveRoute
-  ? ["home", "experience", "projects", "about", "blog", "reviews"]
-  : ["home", "blog", "about", "reviews"];
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <header
@@ -46,7 +44,8 @@ const navItems = isActiveRoute
 
     <Navigation items={navItems} />
 
-    <div class="flex items-center gap-5 text-xl">
+    <div class="flex items-center gap-5 max-md:gap-3 text-xl">
+      <LanguageSwitcher />
       <div class="max-md:hidden flex items-center justify-center gap-5" role="group">
         <Social link={contra} iconName={contraIconName} />
         <Social link={github} iconName={githubIconName} />
@@ -55,7 +54,7 @@ const navItems = isActiveRoute
       <ThemeIcon />
       <button
         class="hamburger"
-        aria-label="Open menu"
+        aria-label={t("nav.openMenu")}
         aria-expanded="false"
         aria-controls="mobile-menu"
       >

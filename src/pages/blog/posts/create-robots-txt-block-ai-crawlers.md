@@ -9,13 +9,10 @@ image:
 pubDate: 2026-07-10
 tags:
   [
-    "robots.txt",
-    "AI crawlers",
-    "website security",
-    "content protection",
-    "AI scraping",
-    "SEO",
-    "web development",
+    "Security & Privacy",
+    "SEO & Content",
+    "AI & Web Design",
+    "Tutorials & Guides"
   ]
 languages: ["AI", "LLM"]
 ---

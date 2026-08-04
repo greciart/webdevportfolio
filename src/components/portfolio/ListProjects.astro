@@ -2,6 +2,10 @@
 import Project from "./Project.astro";
 import Heading from "../ui/Heading.astro";
 import { Icon } from "astro-icon/components";
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 import { getCollection } from "astro:content";
 
 const allPosts = await getCollection("projects");
@@ -17,10 +21,10 @@ allPosts.sort(
   class="bg-linear-to-t dark:from-[#0e0e10] from-white from-50% to-transparent to-100% scroll-m-16 relative pt-8 pb-32 max-2xl:px-8 max-md:pt-4"
   id="projects"
 >
-  <div class="mx-auto max-w-7xl py-8">
+  <div data-reveal="blur-up" class="mx-auto max-w-7xl py-8">
     <div class="flex gap-4 items-center justify-center text-center">
       <Icon class="text-3xl dark:text-white text-blacktext" name="code" />
-      <Heading text="Projects" textGradient="Completed" level={2} />
+      <Heading text={t("projects.title")} textGradient={t("projects.titleAccent")} level={2} />
     </div>
 
 <p
@@ -39,6 +43,7 @@ allPosts.sort(
 
 <div
   id="containerProjects"
+  data-reveal-stagger="scale"
   class="mx-auto max-w-7xl grid grid-cols-3 max-lg:grid-cols-2 max-md:grid-cols-1 gap-5 p-2 py-4 max-h-[1400px] overflow-hidden transition-[max-height] duration-700 ease-in-out"
 >
 {
@@ -62,7 +67,7 @@ allPosts.sort(
     <button
       class="absolute font-bold cursor-pointer text-mint-400 dark:text-mint-100 hover:text-mint-500 dark:hover:text-mint-300 transition-all"
     >
-      View More Projects...
+      {t("projects.viewMore")}
     </button>
   </div>
 </section>

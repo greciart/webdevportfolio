@@ -19,6 +19,6 @@ const variantClasses: Record<VariantType, string> = {
 const classes = `${baseClasses} ${variantClasses[variant]}`;
 ---
 
-<div id="tags" class={classes}>
+<div id="tags" class={classes} data-reveal={variant === "default" ? "fade" : undefined}>
     {tags.map((tag) => <Tag tag={tag}></Tag>)}
 </div>

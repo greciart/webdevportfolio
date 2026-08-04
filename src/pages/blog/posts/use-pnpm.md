@@ -9,14 +9,9 @@ image:
 pubDate: 2026-05-31
 tags:
   [
-    "pnpm",
-    "npm",
-    "Node.js",
-    "JavaScript",
-    "Package Manager",
-    "Web Development",
     "Developer Tools",
-    "Software Security" 
+    "Web Development",
+    "Tutorials & Guides"
   ]
 languages: ["javascript", "typescript", "nodejs"]
 ---

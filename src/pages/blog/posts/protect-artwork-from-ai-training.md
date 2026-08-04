@@ -9,14 +9,9 @@ image:
 pubDate: 2026-06-09
 tags:
   [
-    "Content Protection",
-    "Career & Craft",
-    "AI training",
-    "artists",
-    "designers",
-    "creative rights",
-    "digital art",
-    "portfolio security"
+    "Security & Privacy",
+    "AI & Web Design",
+    "Career & Craft"
   ]
 languages: ["AI", "LLM"]
 ---

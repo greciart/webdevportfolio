@@ -1,6 +1,11 @@
 ---
 import Social from "../ui/Social.astro";
 import { getCollection } from "astro:content";
+import { getLangFromUrl, useTranslations, localizePath } from "../../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const p = (path: string) => localizePath(path, lang);
 
 const [staticData] = await getCollection("staticData");
 const { github, githubIconName, linkedin, linkedinIconName, contra, contraIconName } = staticData.data;
@@ -10,36 +15,67 @@ const { items = [] }: { items: (keyof typeof menu)[] } = Astro.props as {
 };
 
 const menu = {
-  about: { name: "About Me", path: "/about-me" },
-  reviews: { name: "Testimonials", path: "/reviews" },
-  blog: {
-    name: "Blog",
-    path: "/blog/",
-    dropdown: [{ name: "All Posts", path: "/blog/posts/" }],
+  home: {
+    name: t("nav.home"),
+    path: p("/"),
+    match: [p("/"), `${p("/")}#home`.replace("//#", "/#")],
+    dropdown: [
+      { name: t("nav.experience"), path: `${p("/")}#experience`.replace("//#", "/#"), desc: t("nav.experience.desc") },
+      { name: t("nav.projects"), path: `${p("/")}#projects`.replace("//#", "/#"), desc: t("nav.projects.desc") },
+    ],
   },
-  home: { name: "Home", path: "/#home" },
-  experience: { name: "Experience", path: "/#experience" },
-  projects: { name: "Projects", path: "/#projects" },
+  about: {
+    name: t("nav.about"),
+    path: p("/about-me"),
+    dropdown: [
+      { name: t("nav.aboutMe"), path: p("/about-me"), desc: t("nav.aboutMe.desc") },
+      { name: t("nav.services"), path: p("/services"), desc: t("nav.services.desc") },
+    ],
+  },
+  blog: {
+    name: t("nav.blog"),
+    path: p("/blog/"),
+    dropdown: [{ name: t("nav.allPosts"), path: p("/blog/posts/"), desc: t("nav.allPosts.desc") }],
+  },
+  reviews: { name: t("nav.reviews"), path: p("/reviews") },
+  contact: { name: t("nav.contact"), path: p("/contact") },
 };
 
 // Common base classes
 const baseClasses = {
-  nav: "nav-links md:flex justify-center gap-6 max-md:gap-3 max-md:py-6",
-  link: "px-2 py-2 text-sm transition-all hover:text-mint-300 max-md:mx-auto max-md:px-6 max-md:py-2",
+  nav: "nav-links md:flex md:items-center justify-center gap-1 max-md:gap-0 max-md:py-4",
+  link:
+    "block px-3 py-2 text-sm rounded-full whitespace-nowrap transition-all hover:text-mint-500 dark:hover:text-mint-300 max-md:mx-auto max-md:px-6 max-md:py-2",
+  trigger:
+    "flex items-center gap-1 px-3 py-2 text-sm rounded-full whitespace-nowrap transition-all hover:text-mint-500 dark:hover:text-mint-300 max-md:px-6 max-md:py-2",
   socialContainer: "flex items-center justify-center gap-5 md:hidden mt-4 mb-2",
-  dropdown: "relative group flex items-center",
-  dropdownMenu:
-    "absolute left-0 top-full hidden group-hover:block bg-white dark:bg-zinc-800 shadow-lg rounded-md py-2 min-w-[200px] z-50",
+  // Group wraps trigger + panel. On mobile it collapses into a plain stacked list.
+  group: "nav-group relative flex items-center group max-md:w-full max-md:flex-col",
+  // Desktop: floating panel revealed on hover/focus. Mobile: always-visible sub-list.
+  panel:
+    "max-md:flex max-md:flex-col max-md:items-center max-md:w-full max-md:pb-2 " +
+    "md:absolute md:left-1/2 md:top-full md:-translate-x-1/2 md:pt-3 md:z-50 " +
+    "md:opacity-0 md:invisible md:translate-y-1 md:transition-all md:duration-200 md:ease-out " +
+    "md:group-hover:opacity-100 md:group-hover:visible md:group-hover:translate-y-0 " +
+    "md:group-focus-within:opacity-100 md:group-focus-within:visible md:group-focus-within:translate-y-0",
+  panelInner:
+    "md:min-w-[240px] md:rounded-2xl md:border md:border-mint-100 md:dark:border-zinc-800 " +
+    "md:bg-white/95 md:dark:bg-zinc-900/95 md:backdrop-blur-md md:shadow-xl md:shadow-mint-500/10 md:p-2 " +
+    "max-md:flex max-md:flex-col max-md:items-center max-md:w-full",
   dropdownItem:
-    "block px-4 py-2 text-sm hover:bg-mint-100 dark:hover:bg-zinc-700 transition-colors",
+    "block rounded-xl px-4 py-2.5 text-sm font-medium transition-colors hover:bg-mint-50 dark:hover:bg-zinc-800 hover:text-mint-600 dark:hover:text-mint-300 max-md:text-xs max-md:py-1.5 max-md:opacity-80",
+  dropdownDesc:
+    "max-md:hidden block text-[11px] font-normal mt-0.5 text-blacktext/50 dark:text-zinc-500",
 } as const;
 ---
 
 <script>
   document.addEventListener("DOMContentLoaded", () => {
-    const isHome = window.location.pathname === "/";
+    // "/", "/es" and "/es/" are all the home page.
+    const path = window.location.pathname.replace(/\/$/, "") || "/";
+    const isHome = path === "/" || path === "/es";
+    const langPrefix = path === "/es" || path.startsWith("/es/") ? "/es" : "";
 
-    // Classes for link states
     const linkClasses = {
       active: [
         "text-mint-500",
@@ -49,6 +85,13 @@ const baseClasses = {
       ],
       inactive: ["dark:text-zinc-300", "text-blacktext"],
     };
+
+    const nav = document.querySelector("nav[data-main-nav]");
+    if (!nav) return;
+
+    const links = Array.from(
+      nav.querySelectorAll<HTMLAnchorElement>("a[data-path]"),
+    );
 
     function toggleLinkClasses(link: Element, isActive: boolean) {
       if (isActive) {
@@ -62,43 +105,70 @@ const baseClasses = {
       }
     }
 
-    function updateActiveLink() {
-      const currentPath = window.location.pathname;
-      const currentHash = window.location.hash
-        ? `#${window.location.hash.substring(1)}`
-        : "";
+    // A link is active when any of its declared paths matches the current target.
+    function linkMatches(link: HTMLAnchorElement, targets: string[]) {
+      const raw = link.dataset.match;
+      let paths: string[] = [];
+      if (raw) {
+        try {
+          paths = JSON.parse(raw);
+        } catch {
+          paths = [];
+        }
+      }
+      if (paths.length === 0 && link.dataset.path) paths = [link.dataset.path];
+      return paths.some((p) => targets.includes(p));
+    }
 
-      document.querySelectorAll("nav a").forEach((link) => {
-        const path = link.getAttribute("data-path");
-        toggleLinkClasses(link, path === currentPath || path === currentHash);
+    function apply(targets: string[]) {
+      links.forEach((link) => toggleLinkClasses(link, linkMatches(link, targets)));
+
+      // A parent stays lit while one of its sub-pages is the active one.
+      nav.querySelectorAll<HTMLElement>("[data-nav-group]").forEach((group) => {
+        const trigger = group.querySelector<HTMLAnchorElement>("[data-nav-trigger]");
+        if (!trigger || trigger.getAttribute("aria-current") === "page") return;
+        const childActive = Array.from(
+          group.querySelectorAll<HTMLAnchorElement>("[data-nav-item]"),
+        ).some((item) => item.getAttribute("aria-current") === "page");
+        if (childActive) toggleLinkClasses(trigger, true);
       });
+    }
+
+    function targetsFromLocation() {
+      const path = window.location.pathname;
+      const targets = [path];
+      // Treat "/blog" and "/blog/" as the same destination.
+      const trimmed = path.replace(/\/$/, "");
+      targets.push(trimmed === "" ? "/" : trimmed, `${trimmed}/`);
+      if (window.location.hash) {
+        targets.push(`${path}${window.location.hash}`, window.location.hash);
+      }
+      return targets;
+    }
+
+    function updateActiveLink() {
+      apply(targetsFromLocation());
     }
 
     function setupScrollSpy() {
       if (!isHome) return;
 
       const sections = document.querySelectorAll("section[id]");
-      const navLinks = document.querySelectorAll("nav a");
-
-      const observerOptions = {
-        root: null,
-        rootMargin: "-50% 0px",
-        threshold: 0,
-      };
-
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
             const sectionId = entry.target.getAttribute("id");
-            if (sectionId) {
-              navLinks.forEach((link) => {
-                const path = link.getAttribute("data-path");
-                toggleLinkClasses(link, path === `/#${sectionId}`);
-              });
-            }
-          }
-        });
-      }, observerOptions);
+            if (sectionId)
+              apply([
+                `${langPrefix}/#${sectionId}`,
+                `/#${sectionId}`,
+                `#${sectionId}`,
+              ]);
+          });
+        },
+        { root: null, rootMargin: "-50% 0px", threshold: 0 },
+      );
 
       sections.forEach((section) => observer.observe(section));
     }
@@ -109,37 +179,68 @@ const baseClasses = {
   });
 </script>
 
-<nav id="mobile-menu" class={baseClasses.nav} role="navigation" aria-label="Main Navigation">
+<nav
+  id="mobile-menu"
+  data-main-nav
+  class={baseClasses.nav}
+  role="navigation"
+  aria-label={t("nav.main")}
+>
   {
     items.map((key: string) => {
       const item = menu[key as keyof typeof menu];
       if (!item) return null;
 
+      const matchAttr = JSON.stringify(
+        "match" in item && item.match ? item.match : [item.path],
+      );
+
       if ("dropdown" in item) {
         return (
-          <div class={baseClasses.dropdown}>
+          <div class={baseClasses.group} data-nav-group>
             <a
               href={item.path}
-              class={baseClasses.link}
+              class={baseClasses.trigger}
               data-path={item.path}
+              data-match={matchAttr}
+              data-nav-trigger
               aria-label={item.name}
-              aria-current={
-                item.path === Astro.url.pathname ? "page" : undefined
-              }
+              aria-haspopup="true"
+              aria-current={item.path === Astro.url.pathname ? "page" : undefined}
             >
               {item.name}
+              <svg
+                class="size-3 opacity-60 transition-transform duration-200 md:group-hover:rotate-180"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="3"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="m6 9 6 6 6-6" />
+              </svg>
             </a>
-            <div class={baseClasses.dropdownMenu}>
-              {item.dropdown.map((dropdownItem) => (
-                <a
-                  href={dropdownItem.path}
-                  class={baseClasses.dropdownItem}
-                  data-path={dropdownItem.path}
-                  aria-label={dropdownItem.name}
-                >
-                  {dropdownItem.name}
-                </a>
-              ))}
+
+            <div class={baseClasses.panel}>
+              <div class={baseClasses.panelInner}>
+                {item.dropdown.map((dropdownItem) => (
+                  <a
+                    href={dropdownItem.path}
+                    class={baseClasses.dropdownItem}
+                    data-path={dropdownItem.path}
+                    data-match={JSON.stringify([dropdownItem.path])}
+                    data-nav-item
+                    aria-label={dropdownItem.name}
+                  >
+                    {dropdownItem.name}
+                    {"desc" in dropdownItem && dropdownItem.desc && (
+                      <span class={baseClasses.dropdownDesc}>{dropdownItem.desc}</span>
+                    )}
+                  </a>
+                ))}
+              </div>
             </div>
           </div>
         );
@@ -150,6 +251,7 @@ const baseClasses = {
           href={item.path}
           class={baseClasses.link}
           data-path={item.path}
+          data-match={matchAttr}
           aria-label={item.name}
           aria-current={item.path === Astro.url.pathname ? "page" : undefined}
         >
@@ -162,7 +264,7 @@ const baseClasses = {
   <div
     class={baseClasses.socialContainer}
     role="group"
-    aria-label="Social Media Links"
+    aria-label={t("nav.social")}
   >
     <Social link={github} iconName={githubIconName} />
     <Social link={linkedin} iconName={linkedinIconName} />

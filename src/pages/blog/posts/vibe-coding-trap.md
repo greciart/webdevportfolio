@@ -9,7 +9,8 @@ image:
 pubDate: 2026-05-31
 tags:
   [
-    "AI Tools & Coding", "Career & Craft"
+    "AI Tools & Coding",
+    "Career & Craft"
   ]
 languages: ["AI", "LLM"]
 ---

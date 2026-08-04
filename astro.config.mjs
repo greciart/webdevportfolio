@@ -9,6 +9,16 @@ import mdx from '@astrojs/mdx';
 // https://astro.build/config
 export default defineConfig({
   site: "https://greciavdev.netlify.app",
+
+  // English stays at the root so no existing URL changes; Spanish lives under
+  // /es/. Everything is generated at build time, so translation costs the
+  // visitor nothing at runtime.
+  i18n: {
+    defaultLocale: "en",
+    locales: ["en", "es"],
+    routing: { prefixDefaultLocale: false },
+  },
+
   integrations: [preact(), icon(), mdx(),sitemap({
     filter: (page) =>
       !page.includes("/blog/tags") &&

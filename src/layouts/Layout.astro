@@ -3,6 +3,7 @@ import "../styles/global.css";
 import Header from "../components/layout/Header.astro";
 import Footer from "../components/layout/Footer.astro";
 import  SpeedInsights  from "@vercel/speed-insights/astro"
+import { getLangFromUrl, getAlternateLinks, languages } from "../i18n/utils";
 const {
   pageTitle = "Grecia V. | Web Designer & Frontend Developer Portfolio",
   description = "Web designer and frontend developer portfolio showcasing UX/UI design, e-commerce websites, and modern web development projects built with WordPress, Shopify, and Astro.",
@@ -12,11 +13,14 @@ const {
   },
 } = Astro.props;
 
+const lang = getLangFromUrl(Astro.url);
+const alternates = getAlternateLinks(Astro.url);
+
 const siteUrl = new URL(Astro.url).origin;
 const SEO = {
   sitename: "Grecia V.",
   url: siteUrl,
-  locale: "en_US",
+  locale: languages[lang].ogLocale,
   author: "Grecia V.",
 };
 
@@ -25,11 +29,11 @@ const twitterimage = `${siteUrl}${ogimage.url}`;
 ---
 
 <html
-  lang="en"
+  lang={languages[lang].htmlLang}
   class="dark:bg-[#0E0E11] bg-mint-50/5 font-montserrat scroll-smooth"
 >
   <head>
-    <!-- ✅ Fonts optimizadas (NO bloqueantes) -->
+    <!-- Fonts optimizadas (NO bloqueantes) -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -56,7 +60,21 @@ const twitterimage = `${siteUrl}${ogimage.url}`;
     <meta name="description" content={description} />
     <meta name="author" content={SEO.author} />
     <meta name="robots" content="index, follow" />
-    <link rel="canonical" href={`${Astro.site}${Astro.url.pathname}`}>
+    <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site).href}>
+    {
+      alternates.map((alt) => (
+        <link
+          rel="alternate"
+          hreflang={alt.htmlLang}
+          href={new URL(alt.path, Astro.site).href}
+        />
+      ))
+    }
+    <link
+      rel="alternate"
+      hreflang="x-default"
+      href={new URL(alternates[0].path, Astro.site).href}
+    />
     <!-- Open Graph / Facebook -->
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={description} />
@@ -80,7 +98,12 @@ const twitterimage = `${siteUrl}${ogimage.url}`;
 
     <!-- Sitemap -->
     <link rel="sitemap" href="/sitemap-index.xml" />
-    
+
+    <!-- Arms the scroll-reveal styles before first paint so nothing flashes.
+         Without JS this class is never set and no element is ever hidden. -->
+    <script is:inline>
+      document.documentElement.classList.add("js-reveal");
+    </script>
   </head>
   <body class="overflow-x-hidden">
     <SpeedInsights/>
@@ -99,6 +122,39 @@ const twitterimage = `${siteUrl}${ogimage.url}`;
     <Footer />
     <script>
       import "../scripts/menu.js";
+    </script>
+
+    <script>
+      // Scroll reveal. All the animation lives in CSS; this only decides *when*
+      // to un-pause it, so there is no per-frame JavaScript at all.
+      const root = document.documentElement;
+      const targets = document.querySelectorAll<HTMLElement>(
+        "[data-reveal], [data-reveal-stagger]",
+      );
+
+      if (targets.length > 0) {
+        if (!("IntersectionObserver" in window)) {
+          // No observer means nothing would ever be revealed: show everything.
+          root.classList.remove("js-reveal");
+        } else {
+          const observer = new IntersectionObserver(
+            (entries) => {
+              for (const entry of entries) {
+                if (!entry.isIntersecting) continue;
+                const el = entry.target as HTMLElement;
+                observer.unobserve(el);
+                el.classList.add("reveal-in");
+                // Retire the animation once it has finished so hover transforms
+                // and composited blur layers go back to normal.
+                window.setTimeout(() => el.classList.add("reveal-done"), 1600);
+              }
+            },
+            { rootMargin: "0px 0px -8% 0px", threshold: 0.05 },
+          );
+
+          targets.forEach((el) => observer.observe(el));
+        }
+      }
     </script>
   </body>
 </html>

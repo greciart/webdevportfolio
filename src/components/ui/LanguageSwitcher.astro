@@ -1,0 +1,76 @@
+---
+import { getLangFromUrl, getAlternateLinks, useTranslations } from "../../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const alternates = getAlternateLinks(Astro.url);
+const current = alternates.find((a) => a.lang === lang)!;
+---
+
+<!-- Plain anchors: switching language is a navigation, not a state change, so
+     it needs no JavaScript and each language keeps its own indexable URL. -->
+<div class="lang-switcher relative flex items-center group" data-lang-switcher>
+  <button
+    type="button"
+    class="flex cursor-pointer items-center gap-1.5 rounded-full border border-mint-200 bg-white/70 px-3 py-1.5 text-xs font-bold tracking-wide text-blacktext transition-all hover:border-mint-400 hover:text-mint-600 dark:border-zinc-700 dark:bg-zinc-900/70 dark:text-zinc-200 dark:hover:border-mint-400 dark:hover:text-mint-300"
+    aria-label={t("lang.switch")}
+    aria-haspopup="true"
+  >
+    <svg
+      class="size-3.5 opacity-70"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      aria-hidden="true"
+    >
+      <circle cx="12" cy="12" r="10" />
+      <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+    </svg>
+    {current.short}
+    <svg
+      class="size-3 opacity-60 transition-transform duration-200 md:group-hover:rotate-180"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="3"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      aria-hidden="true"
+    >
+      <path d="m6 9 6 6 6-6" />
+    </svg>
+  </button>
+
+  <div
+    class="absolute right-0 top-full z-50 pt-3 opacity-0 invisible translate-y-1 transition-all duration-200 ease-out group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 group-focus-within:opacity-100 group-focus-within:visible group-focus-within:translate-y-0"
+  >
+    <div
+      class="min-w-[150px] rounded-2xl border border-mint-100 bg-white/95 p-2 shadow-xl shadow-mint-500/10 backdrop-blur-md dark:border-zinc-800 dark:bg-zinc-900/95"
+    >
+      {
+        alternates.map((alt) => (
+          <a
+            href={alt.path}
+            hreflang={alt.htmlLang}
+            lang={alt.htmlLang}
+            aria-current={alt.lang === lang ? "true" : undefined}
+            class:list={[
+              "flex items-center justify-between gap-3 rounded-xl px-3 py-2 text-sm font-medium transition-colors",
+              alt.lang === lang
+                ? "bg-mint-50 text-mint-600 dark:bg-zinc-800 dark:text-mint-300"
+                : "text-blacktext hover:bg-mint-50 hover:text-mint-600 dark:text-zinc-300 dark:hover:bg-zinc-800 dark:hover:text-mint-300",
+            ]}
+          >
+            {alt.label}
+            <span class="text-[10px] font-bold tracking-wider opacity-60">
+              {alt.short}
+            </span>
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</div>
