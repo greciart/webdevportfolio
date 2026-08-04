@@ -1,5 +1,5 @@
 ---
-import { getLangFromUrl, localizePath } from "../i18n/utils";
+import { getLangFromUrl, localizePath, useTranslations } from "../i18n/utils";
 import Layout from "./Layout.astro";
 import { Icon } from "astro-icon/components";
 import Heading from "../components/ui/Heading.astro";
@@ -22,6 +22,7 @@ const { frontmatter } = Astro.props;
 
 const uiLang = getLangFromUrl(Astro.url);
 const p = (path) => localizePath(path, uiLang);
+const t = useTranslations(uiLang);
 ---
 
 <script>
@@ -94,10 +95,10 @@ const p = (path) => localizePath(path, uiLang);
             >
               <b
                 class="bg-linear-to-r from-riptide-400 to-mint-500 dark:to-mint-200 dark:from-riptide-300 text-transparent bg-clip-text"
-                >Web developer and designer</b
+                >{t("about.role")}</b
               > with <b
                 class="bg-linear-to-r from-riptide-400 to-mint-500 dark:to-mint-200 dark:from-riptide-300 text-transparent bg-clip-text"
-                >5+ years of experience</b
+                >{t("about.years")}</b
               >, passionate about design, development, user interfaces and user experience (UI/UX).
 I love bringing digital projects to life.
             </p>
@@ -105,7 +106,7 @@ I love bringing digital projects to life.
         </div>
       </div>
       <div class="flex gap-4 items-center">
-        <Heading text="About" textGradient="me" />
+        <Heading text={t("about.title")} textGradient={t("about.titleAccent")} />
       </div>
 
       <div class="markdown text-white text-lg max-xl:text-base" id="content">
@@ -125,7 +126,7 @@ I love bringing digital projects to life.
     <div data-reveal="up" class="flex flex-col gap-8 max-w-3xl justify-center mx-auto">
       <div class="flex gap-4 items-center justify-center">
         <Icon class="text-3xl text-white" name="dashboard" />
-        <Heading text="Stack" textGradient="Technological" level={2} />
+        <Heading text={t("about.stack")} textGradient={t("about.stackAccent")} level={2} />
       </div>
       <Tools variant="center" />
     </div>

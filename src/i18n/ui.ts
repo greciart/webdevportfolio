@@ -97,6 +97,28 @@ export const ui = {
     "blog.share": "Share",
     "blog.publishedOn": "Published on",
 
+    // --- About page ---
+    "about.title": "About",
+    "about.titleAccent": "me",
+    "about.role": "Web developer and designer",
+    "about.years": "5+ years of experience",
+    "about.intro":
+      ", passionate about design, development, user interfaces and user experience (UI/UX). I love bringing digital projects to life.",
+    "about.stack": "Technological",
+    "about.stackAccent": "Stack",
+
+    // --- Sidebar values ---
+    "sidebar.langSpanish": "Spanish (native)",
+    "sidebar.langEnglish": "English (professional)",
+    "sidebar.skill1": "Clear communication",
+    "sidebar.skill2": "Problem solving",
+    "sidebar.skill3": "Attention to detail",
+    "sidebar.skill4": "Reliability & deadlines",
+    "sidebar.skill5": "Adaptability",
+    "sidebar.skill6": "Client & user empathy",
+    "sidebar.labPersonal": "Personal projects",
+    "sidebar.labGames": "Game projects",
+
     // --- Reviews ---
     "reviews.eyebrow": "What clients say",
     "reviews.title": "Client",
@@ -201,6 +223,28 @@ export const ui = {
     "blog.readMore": "Leer más",
     "blog.share": "Compartir",
     "blog.publishedOn": "Publicado el",
+
+    // --- Página Sobre mí ---
+    "about.title": "Sobre",
+    "about.titleAccent": "mí",
+    "about.role": "Diseñadora y desarrolladora web",
+    "about.years": "más de 5 años de experiencia",
+    "about.intro":
+      ", apasionada por el diseño, el desarrollo, las interfaces y la experiencia de usuario (UI/UX). Me encanta dar vida a proyectos digitales.",
+    "about.stack": "Stack",
+    "about.stackAccent": "tecnológico",
+
+    // --- Valores de la barra lateral ---
+    "sidebar.langSpanish": "Español (nativo)",
+    "sidebar.langEnglish": "Inglés (profesional)",
+    "sidebar.skill1": "Comunicación clara",
+    "sidebar.skill2": "Resolución de problemas",
+    "sidebar.skill3": "Atención al detalle",
+    "sidebar.skill4": "Cumplimiento de plazos",
+    "sidebar.skill5": "Adaptabilidad",
+    "sidebar.skill6": "Empatía con cliente y usuario",
+    "sidebar.labPersonal": "Proyectos personales",
+    "sidebar.labGames": "Proyectos de videojuegos",
 
     // --- Testimonios ---
     "reviews.eyebrow": "Lo que dicen mis clientes",

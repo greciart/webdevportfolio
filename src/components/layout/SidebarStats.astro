@@ -3,21 +3,21 @@ import { getLangFromUrl, useTranslations } from "../../i18n/utils";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
-const languages = ["Spanish (native)", "English (professional)"];
+const languages = [t("sidebar.langSpanish"), t("sidebar.langEnglish")];
 
 // The traits clients and hiring managers actually screen for, not tool skills.
 const softSkills = [
-  "Clear communication",
-  "Problem solving",
-  "Attention to detail",
-  "Reliability & deadlines",
-  "Adaptability",
-  "Client & user empathy",
+  t("sidebar.skill1"),
+  t("sidebar.skill2"),
+  t("sidebar.skill3"),
+  t("sidebar.skill4"),
+  t("sidebar.skill5"),
+  t("sidebar.skill6"),
 ];
 
 const labProgress = [
-  { name: "Personal projects", value: 60 },
-  { name: "Game projects", value: 50 },
+  { name: t("sidebar.labPersonal"), value: 60 },
+  { name: t("sidebar.labGames"), value: 50 },
 ];
 
 const headingCls =
