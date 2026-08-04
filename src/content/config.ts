@@ -47,30 +47,38 @@ const staticData = defineCollection({
 });
 
 
-// 👇 Solo agrega esto nuevo
-const projects = defineCollection({
-  type: 'content',
-  schema: ({ image }) =>
-    z.object({
-      title: z.string(),
-      pubDate: z.coerce.date(),
-      description: z.string(),
-      languages: z.array(z.string()),
-      image: z.object({
+const projectSchema = ({ image }: { image: () => any }) =>
+  z.object({
+    title: z.string(),
+    pubDate: z.coerce.date(),
+    description: z.string(),
+    languages: z.array(z.string()),
+    image: z.object({
+      url: image(),
+      alt: z.string(),
+    }),
+    gallery: z
+      .array(z.object({
         url: image(),
         alt: z.string(),
-      }),
-      gallery: z
-        .array(z.object({
-          url: image(),
-          alt: z.string(),
-        }))
-        .optional(),
-    }),
+      }))
+      .optional(),
+  });
+
+const projects = defineCollection({
+  type: 'content',
+  schema: projectSchema,
 });
 
-// 👇 Y agrega projects aquí
+// Spanish case studies. Same slugs and same schema as `projects`; a slug with
+// no translation falls back to its English entry (see src/i18n/projects.ts).
+const projectsEs = defineCollection({
+  type: 'content',
+  schema: projectSchema,
+});
+
 export const collections = {
   staticData,
-  projects,  // 👈 nueva línea
+  projects,
+  projectsEs,
 };

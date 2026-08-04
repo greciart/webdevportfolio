@@ -6,18 +6,10 @@ import { getLangFromUrl, localizePath, useTranslations } from "../../i18n/utils"
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
-import { getCollection } from "astro:content";
+import { getSortedProjects } from "../../i18n/projects";
 
-const allPosts = await getCollection("projects");
-
-allPosts.sort(
-  (a, b) =>
-    new Date(b.data.pubDate).getTime() -
-    new Date(a.data.pubDate).getTime(),
-);
-
-const uiLang = getLangFromUrl(Astro.url);
-const p = (path) => localizePath(path, uiLang);
+const allPosts = await getSortedProjects(lang);
+const p = (path) => localizePath(path, lang);
 ---
 
 <section
