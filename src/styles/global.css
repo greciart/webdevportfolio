@@ -10,7 +10,7 @@
    menu writes; when it is absent the site renders at the base size.
 ================================ */
 html {
-  font-size: calc(15px * var(--a11y-text-scale, 1));
+  font-size: calc(14.5px * var(--a11y-text-scale, 1));
 }
 
 /* Accessibility: underline every link in running text, for readers who need
@@ -189,6 +189,14 @@ a.inline-block.leading-5.pl-12{
 /* A figure already owns the spacing; its image should sit flush inside it. */
 .markdown figure img {
   @apply my-0;
+}
+
+/* The poster inside a video embed is absolutely positioned and pinned to all
+   four edges of its box. Prose margins would offset it there rather than space
+   it, pushing the image down and out the bottom of the player until a click
+   swapped it for the real <video>. Rounding comes from the wrapper instead. */
+.markdown .astro-video-placeholder img {
+  @apply my-0 rounded-none;
 }
 
 .markdown figcaption {
