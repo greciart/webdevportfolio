@@ -1,0 +1,85 @@
+
+---
+title: 'CotizaGuate: branding, mascota 3D y desarrollo en WooCommerce'
+pubDate: 2025-08-02
+description: 'Identidad y sitio completos para una plataforma guatemalteca de comparación de precios. Logo basado en el quetzal, mascota de marca modelada en Blender y un sitio WooCommerce que el cliente edita sin tocar código.'
+languages: ["wordpress", "woocommerce", "blender", "uiux"]
+image:
+  url: "../../assets/projects/cotizaguatemain.webp"
+  alt: "Sitio web e identidad de CotizaGuate, mostrando el logo del quetzal y la interfaz de comparación de precios de electrónica."
+gallery:
+  - url: "../../assets/projects/cotiza-guate-quetzal-logo-identity.webp"
+    alt: "Logo de CotizaGuate construido a partir del quetzal, ave nacional de Guatemala, con sus colores dentro de la letra C."
+  - url: "../../assets/projects/cotiza-guate-wordpress-tech-homepage.webp"
+    alt: "Página de inicio de CotizaGuate en modo claro, mostrando el maquetado de comparación de precios de electrónica."
+  - url: "../../assets/projects/cotiza-guate-wordpress-tech-homepage-dark-mode.webp"
+    alt: "Página de inicio de CotizaGuate en modo oscuro, con el mismo maquetado adaptado a una paleta oscura."
+  - url: "../../assets/projects/cotiza-guate-elementor-product-catalog.webp"
+    alt: "Catálogo de productos construido en Elementor, listando dispositivos electrónicos con los precios de las tiendas asociadas."
+  - url: "../../assets/projects/cotiza-guate-elementor-product-catalog-dark-mode.webp"
+    alt: "Catálogo de productos en modo oscuro, manteniendo la legibilidad de los precios en ambos temas."
+  - url: "../../assets/projects/cotiza-guate-conversion-product-ui.webp"
+    alt: "Página de producto individual de CotizaGuate, comparando precios entre las tiendas afiliadas."
+  - url: "../../assets/projects/cotiza-guate-mobile-first-search-ux.webp"
+    alt: "Interfaz de búsqueda móvil de CotizaGuate, diseñada para comparar precios desde el teléfono."
+  - url: "../../assets/projects/cotiza-guate-tablet-ui-catalog.webp"
+    alt: "Vista en tableta del catálogo de CotizaGuate, mostrando la rejilla responsiva."
+  - url: "../../assets/projects/cotiza-guate-lead-generation-form.webp"
+    alt: "Formulario de contacto de CotizaGuate, preparado para las consultas de las tiendas asociadas."
+  - url: "../../assets/projects/cotiza-guate-user-flow-architecture-logic.webp"
+    alt: "Flujo de usuario y arquitectura del sitio de CotizaGuate, trazando la búsqueda hasta la tienda asociada."
+
+---
+
+import { Image } from 'astro:assets';
+import cgDesktop from '/src/assets/projects/cotiza-guate-wordpress-desktop-experience.webp';
+import cgLogo from '/src/assets/projects/cotiza-guate-quetzal-logo-identity.webp';
+import cgFlow from '/src/assets/projects/cotiza-guate-user-flow-architecture-logic.webp';
+
+<Image src={cgDesktop} alt="CotizaGuate en escritorio, mostrando la tabla de comparación de precios y el sistema de color de la marca." />
+
+## Qué hace el producto
+
+CotizaGuate compara precios de dispositivos electrónicos entre tiendas guatemaltecas. Alguien busca un dispositivo y obtiene una tabla con lo que cobra cada tienda afiliada, de modo que la comparación ocurre en un solo lugar en vez de en ocho pestañas del navegador.
+
+El proyecto abarcó tres piezas que normalmente van a tres personas distintas: la identidad, una mascota 3D y el sitio web. Hacer las tres permitió construir la marca una sola vez y aplicarla con coherencia, en lugar de que cada entrega la reinterpretara.
+
+## La identidad
+
+El logo parte del **quetzal**, ave nacional de Guatemala. En vez de ilustrar el ave junto al nombre, integré sus franjas de color dentro de la letra C de Cotiza, para que la marca se lea primero como monograma y revele la referencia después.
+
+Eso importaba por una razón práctica: un comparador de precios vive en espacios pequeños, favicons, iconos de aplicación, listados de socios. Un ave detallada se habría disuelto a esos tamaños. Una letra aguanta.
+
+<Image src={cgLogo} alt="Logo de CotizaGuate, con los colores del quetzal integrados en la letra C." />
+
+## La mascota 3D
+
+La mascota extiende ese mismo quetzal a un personaje, modelado y renderizado en **Blender**. Pasó por rondas de bocetos antes del modelado, porque una mascota que funciona en plano no funciona automáticamente en tres dimensiones, y descubrirlo después del rigging sale caro.
+
+El papel que cumple es concreto. La comparación de precios es una categoría árida, y toda la competencia parece una hoja de cálculo. Un personaje le da a la marca un lugar cálido desde donde hablar en un mercado donde eso escasea.
+
+## El sitio web
+
+Construido en **WordPress** con **WooCommerce**, como una plantilla escrita desde cero y no un tema comprado adaptado después. Esa decisión salió del requisito real del cliente: necesitaban añadir y editar productos por su cuenta, de forma permanente, sin depender de desarrollo.
+
+Un tema comprado habría cumplido el encargo visual más rápido y luego habría opuesto resistencia cada vez que el catálogo creciera. Construir la plantilla contra las propias reglas de tipografía, color y espaciado de la marca hace que la interfaz de edición produzca páginas coherentes por defecto, en vez de depender de que el cliente recuerde las reglas.
+
+**Los dos temas.** El sitio incluye modo claro y oscuro, con la paleta probada en ambos para que los precios se lean bien en cualquiera. En un comparador, un número difícil de leer es una página fallida.
+
+<Image src={cgFlow} alt="Flujo de usuario de CotizaGuate, trazando la búsqueda y la comparación hasta la tienda asociada." />
+
+## Stack
+
+- **Blender** para la mascota 3D, del modelado al render
+- **Illustrator** para el logo y el sistema de marca
+- **WordPress** con plantilla a medida, sin tema comprado
+- **WooCommerce** para la estructura de productos y los datos de precios de las tiendas
+- **Elementor** para los maquetados de catálogo que mantiene el cliente
+
+## Resultado
+
+El cliente gestiona el catálogo por su cuenta, la marca se sostiene desde el favicon hasta la mascota, y los dos temas de color funcionan sin una segunda pasada de diseño.
+
+## ¿Necesitas identidad y sitio a la vez?
+
+Repartir el branding y el desarrollo entre dos proveedores es donde suele romperse la coherencia. Hacer ambos significa que las decisiones tomadas en el logo llegan intactas hasta el gestor de contenidos.

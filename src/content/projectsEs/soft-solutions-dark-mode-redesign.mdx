@@ -1,0 +1,70 @@
+
+---
+title: 'Rediseño de Soft Solutions: de plantilla SaaS clara a marca oscura para desarrollo'
+pubDate: 2025-08-04
+description: 'Reconstruir el sitio de una agencia de software en modo oscuro. Acentos neón sobre casi negro, paneles de cristal, tipografía condensada de titulares y un bloque de precios reestructurado para compararse, no para leerse.'
+languages: ["figma", "uiux"]
+image:
+  url: "../../assets/projects/soft-solutions-dark-mode-redesign-hero.webp"
+  alt: "Portada de Soft Solutions tras la reconstrucción en modo oscuro, con acentos neón cian y magenta sobre un fondo casi negro."
+gallery:
+  - url: "../../assets/projects/soft-solutions-before-after-comparison.webp"
+    alt: "Comparación lado a lado del sitio de Soft Solutions antes y después de la reconstrucción, mostrando el cambio de una paleta lila pálida al modo oscuro."
+  - url: "../../assets/projects/soft-solutions-dark-mode-redesign-hero.webp"
+    alt: "Zona hero de la página reconstruida de Soft Solutions, combinando ilustración isométrica con una maqueta de editor de código y distintivos de confianza."
+
+---
+
+import { Image } from 'astro:assets';
+import Video from '/src/components/Video.astro';
+import ssHero from '/src/assets/projects/soft-solutions-dark-mode-redesign-hero.webp';
+import ssCompare from '/src/assets/projects/soft-solutions-before-after-comparison.webp';
+
+## Recorrido
+<Video provider="file" src="/videos/soft-solutions-dark-mode-redesign.mp4" poster={ssHero.src} aspect="56.2%" alt="Recorrido por la portada reconstruida de Soft Solutions" />
+
+## Por qué tocar algo que funcionaba
+
+La versión anterior de esta página la diseñé yo, y cumplía su función. Lila pálido, ilustración isométrica, tono amable. Puedes verla en el [caso de estudio original](/es/portfolio/projects/tech-agency-ui-ux-design/).
+
+El problema apareció después, cuando el cliente empezó a competir contra nombres más grandes. Quien decide la compra son perfiles de ingeniería. Ese público pasa el día dentro de una terminal y un editor de código, y una página luminosa y accesible les dice que el producto está pensado para otra persona. Lo visual decía *startup simpática* mientras la conversación de venta decía *infraestructura seria*.
+
+No había nada roto. Simplemente el posicionamiento se había adelantado al diseño, algo que le pasa a casi cualquier empresa en un par de años y que rara vez se diagnostica como un asunto de diseño.
+
+<Image src={ssCompare} alt="Comparación antes y después del sitio de Soft Solutions, mostrando el cambio de paleta, tipografía y tratamiento de tarjetas entre versiones." />
+
+## Qué cambió de verdad
+
+**Paleta.** Los degradados lila dieron paso a un casi negro con cian y magenta usados con moderación. Esos dos tonos cargan una asociación concreta para este público, porque son los del resaltado de sintaxis. La referencia hace el posicionamiento en silencio, sin una línea de texto reclamando solvencia técnica.
+
+**Tipografía.** La sans-serif anterior era neutra hasta el anonimato. La sustituí en los titulares por una condensada de display con relleno degradado, que le da voz a la página de un vistazo. El cuerpo de texto se mantuvo sobrio, porque el contraste solo funciona si un lado se queda quieto.
+
+**Hero.** La ilustración sola pedía imaginar el producto. Poner a su lado una maqueta de editor de código, más distintivos de confianza visibles, hace que quien llega en frío vea con qué va a trabajar en el primer segundo y no en el tercer scroll.
+
+**Tarjetas.** Los bloques de color plano pasaron a paneles de cristal con bordes definidos e insignias de icono. Más allá del acabado, los bordes resuelven un problema real de legibilidad: sobre fondo oscuro, las secciones sin límite se funden entre sí y la vista pierde dónde termina una idea.
+
+**Precios.** La tabla anterior enumeraba datos. El bloque reconstruido está hecho para compararse, con los niveles pesados de forma distinta y los descuentos marcados donde existen. La gente no lee los precios, los recorre buscando el que le encaja.
+
+## Trabajar en modo oscuro sin perder legibilidad
+
+Las interfaces oscuras fallan de forma predecible: se recurre a blanco puro sobre negro puro, y el contraste se vuelve tan duro que cansa la vista en un párrafo.
+
+Mantuve el cuerpo de texto ligeramente roto hacia el hueso y reservé el neón a plena intensidad para lo que hay que encontrar, no leer: botones, insignias y estados activos. Cada combinación se comprobó contra los umbrales de contraste de WCAG, porque las paletas oscuras los incumplen más a menudo que las claras y el fallo pasa desapercibido si miras tu propia pantalla en una habitación en penumbra.
+
+<Image src={ssHero} alt="Detalle de la zona hero reconstruida, mostrando los acentos neón sobre el fondo oscuro." />
+
+## Herramientas
+
+- **Figma** para la interfaz, con tokens de color de modo oscuro y variantes de componente, para que cada estado quedara definido y no improvisado
+- **Adobe Illustrator** para las piezas vectoriales isométricas
+- **Inkscape** para recursos de apoyo
+
+Construirlo con tokens en lugar de valores fijos importa aquí. Una paleta tan específica se desarma en cuanto alguien añade una sección con un color aproximado, y los tokens hacen que el valor correcto sea el más fácil de alcanzar.
+
+## Qué produjo
+
+Una página cuyo lenguaje visual está a la altura de la seriedad técnica de lo que vende la empresa, y una biblioteca de componentes que el equipo puede ampliar sin que el diseño se desvíe.
+
+## ¿Tu sitio describe una versión antigua de tu empresa?
+
+El posicionamiento avanza más rápido que el diseño. Cuando dejan de coincidir, el sitio infravalora al negocio en silencio, y suele pasar inadvertido porque nada parece estar roto.

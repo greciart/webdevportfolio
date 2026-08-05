@@ -1,0 +1,85 @@
+
+---
+title: 'CotizaGuate: Branding, 3D Mascot and WooCommerce Development'
+pubDate: 2025-08-02
+description: 'Full identity and website for a Guatemalan price comparison platform. Quetzal-based logo, a 3D brand mascot modelled in Blender, and a WooCommerce site the client edits without touching code.'
+languages: ["wordpress", "woocommerce", "blender", "uiux"]
+image:
+  url: "../../assets/projects/cotizaguatemain.webp"
+  alt: "CotizaGuate website and branding, showing the quetzal logo and the electronics price comparison interface."
+gallery:
+  - url: "../../assets/projects/cotiza-guate-quetzal-logo-identity.webp"
+    alt: "CotizaGuate logo built from the quetzal, Guatemala's national bird, with its colours inside the letter C."
+  - url: "../../assets/projects/cotiza-guate-wordpress-tech-homepage.webp"
+    alt: "CotizaGuate home page in light mode, showing the electronics price comparison layout."
+  - url: "../../assets/projects/cotiza-guate-wordpress-tech-homepage-dark-mode.webp"
+    alt: "CotizaGuate home page in dark mode, with the same layout adapted to a dark palette."
+  - url: "../../assets/projects/cotiza-guate-elementor-product-catalog.webp"
+    alt: "Product catalogue built in Elementor, listing electronic devices with prices from partner retailers."
+  - url: "../../assets/projects/cotiza-guate-elementor-product-catalog-dark-mode.webp"
+    alt: "Product catalogue in dark mode, keeping price legibility across both themes."
+  - url: "../../assets/projects/cotiza-guate-conversion-product-ui.webp"
+    alt: "Single product page for CotizaGuate, comparing prices across affiliated stores."
+  - url: "../../assets/projects/cotiza-guate-mobile-first-search-ux.webp"
+    alt: "Mobile search interface for CotizaGuate, designed for comparing prices on a phone."
+  - url: "../../assets/projects/cotiza-guate-tablet-ui-catalog.webp"
+    alt: "Tablet view of the CotizaGuate catalogue, showing the responsive grid."
+  - url: "../../assets/projects/cotiza-guate-lead-generation-form.webp"
+    alt: "Contact form for CotizaGuate, set up for enquiries from partner retailers."
+  - url: "../../assets/projects/cotiza-guate-user-flow-architecture-logic.webp"
+    alt: "User flow and site architecture for CotizaGuate, mapping search through to the partner store."
+
+---
+
+import { Image } from 'astro:assets';
+import cgDesktop from '/src/assets/projects/cotiza-guate-wordpress-desktop-experience.webp';
+import cgLogo from '/src/assets/projects/cotiza-guate-quetzal-logo-identity.webp';
+import cgFlow from '/src/assets/projects/cotiza-guate-user-flow-architecture-logic.webp';
+
+<Image src={cgDesktop} alt="CotizaGuate on desktop, showing the price comparison table and the brand's colour system." />
+
+## What the product does
+
+CotizaGuate compares prices of electronic devices across Guatemalan retailers. A visitor searches for a device and gets a table showing what each affiliated store charges, so the comparison happens in one place instead of across eight browser tabs.
+
+The project covered three pieces that usually go to three different people: the identity, a 3D mascot, and the website itself. Doing all three meant the brand could be built once and applied consistently rather than reinterpreted at each handoff.
+
+## The identity
+
+The logo comes from the **quetzal**, Guatemala's national bird. Rather than illustrating the bird next to the name, I built its colour bands into the letter C of Cotiza, so the mark reads as a monogram first and reveals the reference second.
+
+That mattered for a practical reason: a price comparison site lives in small spaces, favicons, app icons, partner listings. A detailed bird would have dissolved at those sizes. A letterform holds.
+
+<Image src={cgLogo} alt="CotizaGuate logo, with the quetzal's colours built into the letter C." />
+
+## The 3D mascot
+
+The mascot extends the same quetzal into a character, modelled and rendered in **Blender**. It went through sketch rounds before modelling, because a mascot that reads well flat does not automatically read well in three dimensions, and finding that out after rigging is expensive.
+
+The role it plays is specific. Price comparison is a dry category, and every competitor looks like a spreadsheet. A character gives the brand somewhere warm to speak from in a market where that is rare.
+
+## The website
+
+Built in **WordPress** with **WooCommerce**, as a template written from scratch rather than a purchased theme adapted afterwards. That decision came from the client's actual requirement: they needed to add and edit products themselves, permanently, without a developer.
+
+A bought theme would have met the visual brief faster and then fought back every time the catalogue grew. Building the template against the brand's own typography, colour and spacing rules meant the editing interface produces on-brand pages by default, rather than depending on the client remembering the rules.
+
+**Both themes.** The site ships light and dark modes, with the palette tested in both so prices stay legible either way. On a comparison site, a number that is hard to read is a failed page.
+
+<Image src={cgFlow} alt="User flow for CotizaGuate, mapping search through comparison to the partner retailer." />
+
+## Stack
+
+- **Blender** for the 3D mascot, modelling through to render
+- **Illustrator** for the logo and the brand system
+- **WordPress** with a custom template, no purchased theme
+- **WooCommerce** for the product structure and the partner pricing data
+- **Elementor** for the catalogue layouts the client maintains
+
+## Result
+
+The client runs the catalogue themselves, the brand holds together from favicon to mascot, and both colour themes work without a second design pass.
+
+## Need identity and site together?
+
+Splitting branding and development across two suppliers is where consistency usually breaks. Building both means decisions taken in the logo carry through to the CMS.

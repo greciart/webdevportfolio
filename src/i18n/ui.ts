@@ -109,7 +109,7 @@ export const ui = {
 
     // --- Sidebar values ---
     "sidebar.langSpanish": "Spanish (native)",
-    "sidebar.langEnglish": "English (professional)",
+    "sidebar.langEnglish": "English (fluent)",
     "sidebar.skill1": "Clear communication",
     "sidebar.skill2": "Problem solving",
     "sidebar.skill3": "Attention to detail",
@@ -236,7 +236,7 @@ export const ui = {
 
     // --- Valores de la barra lateral ---
     "sidebar.langSpanish": "Español (nativo)",
-    "sidebar.langEnglish": "Inglés (profesional)",
+    "sidebar.langEnglish": "Inglés (fluido)",
     "sidebar.skill1": "Comunicación clara",
     "sidebar.skill2": "Resolución de problemas",
     "sidebar.skill3": "Atención al detalle",

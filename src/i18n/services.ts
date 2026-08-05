@@ -204,7 +204,7 @@ const en: ServicesCopy = {
         "Fast, jam-style concepts built to test a mechanic or an interaction before committing to production, plus scroll-driven storytelling and micro-interactions for the web.",
     },
   ],
-  immersiveTools: ["Figma", "HTML / CSS / JS", "GSAP", "Blender", "Game jams", "Nekoweb", "Accessible UI"],
+  immersiveTools: ["Figma", "HTML / CSS / JS", "GSAP", "Blender", "Nekoweb"],
   immersiveGalleryTitle: "Games, apps & interactive sites",
   immersiveEmptyTitle: "Game jam gallery coming soon",
   immersiveEmptyText:
@@ -358,7 +358,7 @@ const es: ServicesCopy = {
         "Conceptos rápidos, al estilo de una game jam, para probar una mecánica o una interacción antes de comprometerse con la producción, además de narrativa guiada por scroll y microinteracciones para la web.",
     },
   ],
-  immersiveTools: ["Figma", "HTML / CSS / JS", "GSAP", "Blender", "Game jams", "Nekoweb", "UI accesible"],
+  immersiveTools: ["Figma", "HTML / CSS / JS", "GSAP", "Blender", "Nekoweb"],
   immersiveGalleryTitle: "Juegos, apps y sitios interactivos",
   immersiveEmptyTitle: "Galería de game jams en camino",
   immersiveEmptyText:

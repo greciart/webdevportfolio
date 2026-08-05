@@ -358,30 +358,6 @@ const immersiveMeta: Record<string, Record<Lang, Caption>> = {
       tags: ["UI de juego", "HUD", "Onboarding"],
     },
   },
-  "game-jam-location-stats-panel": {
-    en: {
-      title: "Location Panel & Progression Gates",
-      alt: "Game jam UI: isometric map with a side panel showing venue capacity, reputation and charisma requirements",
-      tags: ["Game UI", "Data display"],
-    },
-    es: {
-      title: "Panel de ubicación y requisitos de progresión",
-      alt: "Interfaz de game jam: mapa isométrico con un panel lateral mostrando el aforo del local y los requisitos de reputación y carisma",
-      tags: ["UI de juego", "Visualización de datos"],
-    },
-  },
-  "game-jam-narrative-modal-dialog": {
-    en: {
-      title: "Narrative Modal & Reward Dialog",
-      alt: "Game jam UI: bartender character scene with a modal card showing stat rewards and an accept action",
-      tags: ["Game UI", "Narrative"],
-    },
-    es: {
-      title: "Modal narrativo y diálogo de recompensa",
-      alt: "Interfaz de game jam: escena con el personaje del barman y una tarjeta modal mostrando las recompensas de estadísticas y la acción de aceptar",
-      tags: ["UI de juego", "Narrativa"],
-    },
-  },
   "game-jam-venue-open-air-stage": {
     en: {
       title: "Open-Air Venue & Crowd Traits",
