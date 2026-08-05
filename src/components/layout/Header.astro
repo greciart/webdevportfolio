@@ -3,6 +3,7 @@ import Navigation from "./Navigation.astro";
 import ThemeIcon from "../ui/ThemeIcon.astro";
 import Social from "../ui/Social.astro";
 import LanguageSwitcher from "../ui/LanguageSwitcher.astro";
+import AccessibilityMenu from "../ui/AccessibilityMenu.astro";
 import { getLangFromUrl, useTranslations } from "../../i18n/utils";
 import { Icon } from "astro-icon/components";
 import { getCollection } from "astro:content";
@@ -24,7 +25,9 @@ const t = useTranslations(lang);
   aria-label="Main navigation"
   class="sticky top-0 z-50 w-full p-4 font-medium text-blacktext dark:text-zinc-300 dark:bg-[#0E0E11]/80 dark:border-b dark:border-zinc-800 bg-white/90 backdrop-blur-xs dark:backdrop-blur-xs max-md:z-50 max-md:px-0 transition-all"
 >
-  <div class="relative mx-auto flex max-w-7xl flex-row items-center justify-between max-xl:px-6">
+  <!-- Tighter padding and gaps under md: the logo alone takes half a 360px
+       screen, so the controls beside it have very little room to work with. -->
+  <div class="relative mx-auto flex max-w-7xl flex-row items-center justify-between max-xl:px-6 max-lg:px-4 max-md:px-3">
   
     <!-- <img 
   src="/logo.png" 
@@ -39,14 +42,17 @@ const t = useTranslations(lang);
   height={50}
   loading="eager"
   decoding="async"
-  class="h-[35px] w-auto object-contain"
+  class="h-[35px] max-lg:h-6 w-auto object-contain"
 />
 
     <Navigation items={navItems} />
 
-    <div class="flex items-center gap-5 max-md:gap-3 text-xl">
+    <div class="flex items-center gap-5 max-lg:gap-3 max-md:gap-2 text-xl">
+      <AccessibilityMenu />
       <LanguageSwitcher />
-      <div class="max-md:hidden flex items-center justify-center gap-5" role="group">
+      <!-- Held back to lg: at 768px the desktop nav is already competing with
+           the logo and the two menus, and the social row tipped it over. -->
+      <div class="max-lg:hidden flex items-center justify-center gap-5" role="group">
         <Social link={contra} iconName={contraIconName} />
         <Social link={github} iconName={githubIconName} />
         <Social link={linkedin} iconName={linkedinIconName} />

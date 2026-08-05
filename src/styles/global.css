@@ -2,6 +2,35 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+/* ================================
+   BASE TEXT SIZE
+   Every size in the site is expressed in rem, so this single value sets the
+   scale of the whole page. 15px instead of the 16px default takes the copy
+   down about 6%. `--a11y-text-scale` is the multiplier the accessibility
+   menu writes; when it is absent the site renders at the base size.
+================================ */
+html {
+  font-size: calc(15px * var(--a11y-text-scale, 1));
+}
+
+/* Accessibility: underline every link in running text, for readers who need
+   links distinguishable by more than colour. */
+html[data-a11y-underline="on"] :is(main, article, footer) a {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+/* Accessibility: kill motion on demand, matching what the OS-level
+   prefers-reduced-motion setting already does elsewhere. */
+html[data-a11y-motion="off"] *,
+html[data-a11y-motion="off"] *::before,
+html[data-a11y-motion="off"] *::after {
+  animation-duration: 0.001ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.001ms !important;
+  scroll-behavior: auto !important;
+}
+
 @theme {
   --font-montserrat: 'Montserrat', sans-serif;
   --font-roboto: 'Roboto', sans-serif;

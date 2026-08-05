@@ -103,6 +103,16 @@ const twitterimage = `${siteUrl}${ogimage.url}`;
          Without JS this class is never set and no element is ever hidden. -->
     <script is:inline>
       document.documentElement.classList.add("js-reveal");
+
+      // Replays the saved accessibility preferences before the first paint,
+      // otherwise the page renders at the base size and visibly jumps once the
+      // menu's own script runs.
+      try {
+        var a11y = JSON.parse(localStorage.getItem("a11y-prefs") || "{}");
+        if (a11y.text) document.documentElement.style.setProperty("--a11y-text-scale", a11y.text);
+        document.documentElement.dataset.a11yUnderline = a11y.underline ? "on" : "off";
+        document.documentElement.dataset.a11yMotion = a11y.motion ? "off" : "on";
+      } catch (e) {}
     </script>
   </head>
   <body class="overflow-x-hidden">

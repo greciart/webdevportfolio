@@ -1,100 +1,68 @@
 ---
+/**
+ * Lazy video embed. Renders a poster with a play button and only builds the
+ * iframe or <video> on interaction, so an unplayed embed costs nothing beyond
+ * the poster image.
+ *
+ * Props:
+ *  - provider: 'youtube' | 'vimeo' | 'file' (default: 'youtube')
+ *  - id: video id, for youtube/vimeo
+ *  - src: url of a local file (mp4), for provider 'file'
+ *  - poster: poster image url
+ *  - captions: optional VTT url
+ *  - aspect: padding-top percentage, e.g. '56.25%'
+ *  - class: extra classes on the wrapper
+ */
+interface Props {
+  provider?: "youtube" | "vimeo" | "file";
+  id?: string;
+  src?: string;
+  poster?: string;
+  captions?: string;
+  aspect?: string;
+  alt?: string;
+  class?: string;
+  "aria-label"?: string;
+}
+
+const {
+  provider = "youtube",
+  id = "",
+  src = "",
+  poster = "",
+  captions = "",
+  aspect = "56.25%",
+  alt = "Video preview",
+  class: className = "",
+  "aria-label": ariaLabel = "Reproducir video",
+} = Astro.props;
+
+const fallbackPoster =
+  poster || (provider === "youtube" && id ? `https://i.ytimg.com/vi/${id}/hqdefault.jpg` : "");
 ---
-<!--
-Reusable Video component with lazy-load for YouTube, Vimeo and local files.
-Props:
- - provider: 'youtube' | 'vimeo' | 'file' (default: 'youtube')
- - id: video id for youtube/vimeo
- - src: url for local file (mp4) or HLS
- - poster: poster image url
- - captions: optional VTT url
- - aspect: padding-top percentage (e.g. '56.25%')
- - class: extra classes
--->
 
-<script type="module">
-  // Delegate click/keyboard to replace placeholder with iframe/video
-  function mountVideo(el) {
-    if (!el) return;
-    const provider = el.dataset.provider;
-    const id = el.dataset.id;
-    const src = el.dataset.src;
-    const poster = el.dataset.poster;
-    const captions = el.dataset.captions;
-
-    if (provider === 'youtube' && id) {
-      const iframe = document.createElement('iframe');
-      iframe.src = `https://www.youtube.com/embed/${id}?autoplay=1&rel=0`;
-      iframe.frameBorder = '0';
-      iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
-      iframe.allowFullscreen = true;
-      setFill(iframe);
-      el.innerHTML = '';
-      el.appendChild(iframe);
-      return;
-    }
-
-    if (provider === 'vimeo' && id) {
-      const iframe = document.createElement('iframe');
-      iframe.src = `https://player.vimeo.com/video/${id}?autoplay=1&title=0&byline=0&portrait=0&badge=0&dnt=1`;
-      iframe.frameBorder = '0';
-      iframe.allow = 'autoplay; fullscreen; picture-in-picture';
-      iframe.allowFullscreen = true;
-      setFill(iframe);
-      el.innerHTML = '';
-      el.appendChild(iframe);
-      return;
-    }
-
-    if (provider === 'file' && src) {
-      const video = document.createElement('video');
-      video.controls = true;
-      video.playsInline = true;
-      video.autoplay = true;
-      video.muted = false;
-      video.preload = 'metadata';
-      setFill(video);
-      const source = document.createElement('source');
-      source.src = src;
-      // Guess type from extension
-      if (src.endsWith('.mp4')) source.type = 'video/mp4';
-      el.innerHTML = '';
-      el.appendChild(video);
-      video.appendChild(source);
-      if (captions) {
-        const track = document.createElement('track');
-        track.kind = 'captions';
-        track.src = captions;
-        track.srclang = 'es';
-        track.label = 'Español';
-        video.appendChild(track);
-      }
-      video.play().catch(()=>{});
-      return;
-    }
-  }
-
-  function setFill(el) {
-    el.style.position = 'absolute';
-    el.style.left = '0';
-    el.style.top = '0';
-    el.style.width = '100%';
-    el.style.height = '100%';
-  }
-
-  // Event delegation for placeholders
-  document.addEventListener('click', (e) => {
-    const ph = e.target.closest('.astro-video-placeholder');
-    if (ph) mountVideo(ph);
-  });
-
-  document.addEventListener('keydown', (e) => {
-    if ((e.key === 'Enter' || e.key === ' ') && document.activeElement && document.activeElement.classList.contains('astro-video-placeholder')) {
-      e.preventDefault();
-      mountVideo(document.activeElement);
-    }
-  });
-</script>
+<div class:list={["astro-video-wrapper", className]}>
+  <div class="astro-video-inner" style={`padding-top:${aspect};`}>
+    <div
+      class="astro-video-placeholder"
+      role="button"
+      tabindex="0"
+      aria-label={ariaLabel}
+      data-provider={provider}
+      data-id={id}
+      data-src={src}
+      data-poster={poster}
+      data-captions={captions}
+    >
+      {fallbackPoster ? (
+        <img src={fallbackPoster} alt={alt} />
+      ) : (
+        <div style="background:#000;width:100%;height:100%;"></div>
+      )}
+      <button class="astro-video-play" aria-hidden="true" tabindex="-1">▶</button>
+    </div>
+  </div>
+</div>
 
 <style>
   .astro-video-wrapper { max-width:100%; }
@@ -104,33 +72,74 @@ Props:
   .astro-video-play { position:relative; z-index:2; background:rgba(0,0,0,0.6); color:#fff; border:0; border-radius:999px; padding:0.5rem 0.7rem; font-size:1.25rem; }
 </style>
 
----
+<script>
+  // Swaps the poster for the real player on click. Delegated from the document,
+  // so one listener covers every embed on the page no matter how many render.
+  function setFill(el: HTMLElement) {
+    el.style.position = "absolute";
+    el.style.left = "0";
+    el.style.top = "0";
+    el.style.width = "100%";
+    el.style.height = "100%";
+  }
 
-{/** Props extraction in Astro frontmatter is not needed here; use data- attributes when using the component. */}
+  function mountVideo(el: HTMLElement | null) {
+    if (!el) return;
+    const { provider, id, src, captions } = el.dataset;
 
-<div class="astro-video-wrapper {Astro.props.class || ''}">
-  <div class="astro-video-inner" style={`padding-top:${Astro.props.aspect || '56.25%'};`}>
-    <div
-      class="astro-video-placeholder"
-      role="button"
-      tabindex="0"
-      aria-label={Astro.props['aria-label'] || 'Reproducir video'}
-      data-provider={Astro.props.provider || 'youtube'}
-      data-id={Astro.props.id || ''}
-      data-src={Astro.props.src || ''}
-      data-poster={Astro.props.poster || ''}
-      data-captions={Astro.props.captions || ''}
-    >
-      {Astro.props.poster ? (
-        <img src={Astro.props.poster} alt={Astro.props.alt || 'Video preview'} />
-      ) : (
-        (Astro.props.provider === 'youtube' && Astro.props.id) ? (
-          <img src={`https://i.ytimg.com/vi/${Astro.props.id}/hqdefault.jpg`} alt={Astro.props.alt || 'Video preview'} />
-        ) : (
-          <div style="background:#000;width:100%;height:100%;"></div>
-        )
-      )}
-      <button class="astro-video-play" aria-hidden="true">▶</button>
-    </div>
-  </div>
-</div>
+    if ((provider === "youtube" || provider === "vimeo") && id) {
+      const iframe = document.createElement("iframe");
+      iframe.src =
+        provider === "youtube"
+          ? `https://www.youtube.com/embed/${id}?autoplay=1&rel=0`
+          : `https://player.vimeo.com/video/${id}?autoplay=1&title=0&byline=0&portrait=0&badge=0&dnt=1`;
+      iframe.allow =
+        "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen";
+      iframe.allowFullscreen = true;
+      iframe.setAttribute("frameborder", "0");
+      setFill(iframe);
+      el.replaceChildren(iframe);
+      return;
+    }
+
+    if (provider === "file" && src) {
+      const video = document.createElement("video");
+      video.controls = true;
+      video.playsInline = true;
+      video.autoplay = true;
+      video.preload = "metadata";
+      setFill(video);
+
+      const source = document.createElement("source");
+      source.src = src;
+      if (src.endsWith(".mp4")) source.type = "video/mp4";
+      video.appendChild(source);
+
+      if (captions) {
+        const track = document.createElement("track");
+        track.kind = "captions";
+        track.src = captions;
+        track.srclang = "es";
+        track.label = "Español";
+        video.appendChild(track);
+      }
+
+      el.replaceChildren(video);
+      video.play().catch(() => {});
+    }
+  }
+
+  document.addEventListener("click", (e) => {
+    const target = e.target as HTMLElement | null;
+    mountVideo(target?.closest<HTMLElement>(".astro-video-placeholder") ?? null);
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key !== "Enter" && e.key !== " ") return;
+    const active = document.activeElement as HTMLElement | null;
+    if (active?.classList.contains("astro-video-placeholder")) {
+      e.preventDefault();
+      mountVideo(active);
+    }
+  });
+</script>

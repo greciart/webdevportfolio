@@ -37,6 +37,15 @@ export const ui = {
     // --- Language switcher ---
     "lang.switch": "Change language",
     "lang.current": "Current language",
+    "a11y.title": "Accessibility",
+    "a11y.open": "Accessibility options",
+    "a11y.textSize": "Text size",
+    "a11y.textNormal": "Normal",
+    "a11y.textLarge": "Large",
+    "a11y.textLarger": "Larger",
+    "a11y.underline": "Underline links",
+    "a11y.motion": "Reduce motion",
+    "a11y.reset": "Reset",
 
     // --- Home hero ---
     "home.available": "Available for work",
@@ -165,6 +174,15 @@ export const ui = {
     // --- Selector de idioma ---
     "lang.switch": "Cambiar idioma",
     "lang.current": "Idioma actual",
+    "a11y.title": "Accesibilidad",
+    "a11y.open": "Opciones de accesibilidad",
+    "a11y.textSize": "Tamaño del texto",
+    "a11y.textNormal": "Normal",
+    "a11y.textLarge": "Grande",
+    "a11y.textLarger": "Más grande",
+    "a11y.underline": "Subrayar enlaces",
+    "a11y.motion": "Reducir movimiento",
+    "a11y.reset": "Restablecer",
 
     // --- Hero del inicio ---
     "home.available": "Disponible para trabajar",
