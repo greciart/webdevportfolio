@@ -12,7 +12,8 @@ const { title, url, image, video, languages, description, size = "xs" } = Astro.
   {video ? (
     <video
       class="w-full aspect-video object-cover object-top rounded-xl transition-all duration-300 ease-in-out group-hover:scale-105"
-      data-lazy-preview={video.src}
+      data-lazy-preview
+      src={video.src}
       poster={video.poster.src}
       muted
       loop
@@ -54,9 +55,12 @@ const { title, url, image, video, languages, description, size = "xs" } = Astro.
 </a>
 
 <script>
-  // Card preview clips: nothing is fetched until the card is close to the
-  // viewport, and playback stops the moment it leaves, so an offscreen grid
-  // costs zero bytes and zero decode time.
+  // Card preview clips. `preload="none"` is what keeps the bytes off the wire:
+  // the URL sits in src from the start, but nothing is fetched until play() is
+  // called. Assigning src later instead does not work here, because a <video>
+  // inserted with no source parks in NETWORK_EMPTY and a later property write
+  // never re-runs resource selection, so play() waits forever on data nobody
+  // requested.
   const previews = document.querySelectorAll<HTMLVideoElement>("video[data-lazy-preview]");
 
   if (previews.length) {
@@ -69,8 +73,6 @@ const { title, url, image, video, languages, description, size = "xs" } = Astro.
           for (const entry of entries) {
             const video = entry.target as HTMLVideoElement;
             if (entry.isIntersecting) {
-              const src = video.dataset.lazyPreview;
-              if (src && !video.src) video.src = src;
               video.play().catch(() => {});
             } else if (!video.paused) {
               video.pause();
