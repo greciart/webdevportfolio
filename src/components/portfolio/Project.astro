@@ -68,18 +68,23 @@ const { title, url, image, video, languages, description, size = "xs" } = Astro.
     const saveData = (navigator as any).connection?.saveData === true;
 
     if (!stillMode && !saveData) {
+      // Playback is tied to the card actually being on screen: half of it has
+      // to be visible before it starts, and leaving rewinds it so the next
+      // visit to the section begins at the first frame rather than resuming
+      // wherever it happened to be paused.
       const observer = new IntersectionObserver(
         (entries) => {
           for (const entry of entries) {
             const video = entry.target as HTMLVideoElement;
-            if (entry.isIntersecting) {
+            if (entry.intersectionRatio >= 0.5) {
               video.play().catch(() => {});
             } else if (!video.paused) {
               video.pause();
+              video.currentTime = 0;
             }
           }
         },
-        { rootMargin: "200px 0px" },
+        { threshold: [0, 0.5] },
       );
 
       previews.forEach((video) => observer.observe(video));

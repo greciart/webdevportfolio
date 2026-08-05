@@ -145,6 +145,28 @@ a.inline-block.leading-5.pl-12{
 }
 
 /* ================================
+   MARKDOWN MEDIA
+   Paragraphs only carry a bottom margin, so without this the text that
+   follows an image sits flush against its bottom edge. Vertical margins go
+   on the media itself rather than on `p + *`, so the spacing also holds
+   between two consecutive images and between an image and a list.
+================================ */
+.markdown img,
+.markdown figure,
+.markdown .astro-video-wrapper {
+  @apply my-10 rounded-xl;
+}
+
+/* A figure already owns the spacing; its image should sit flush inside it. */
+.markdown figure img {
+  @apply my-0;
+}
+
+.markdown figcaption {
+  @apply mt-3 text-center text-sm text-blacktext/70 dark:text-gray-400;
+}
+
+/* ================================
    MARKDOWN TABLES
    `display: block` + `width: max-content` is the pattern GitHub uses: the table
    sizes to its content, caps at the article width, and scrolls horizontally on
