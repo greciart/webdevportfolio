@@ -1,85 +1,114 @@
 
 ---
-title: 'CotizaGuate: branding, mascota 3D y desarrollo en WooCommerce'
+title: 'CotizaGuate: identidad de marca, mascota 3D y desarrollo en WooCommerce'
 pubDate: 2025-08-02
-description: 'Identidad y sitio completos para una plataforma guatemalteca de comparación de precios. Logo basado en el quetzal, mascota de marca modelada en Blender y un sitio WooCommerce que el cliente edita sin tocar código.'
-languages: ["wordpress", "woocommerce", "blender", "uiux"]
+description: 'Identidad visual para una plataforma guatemalteca de comparación de precios: un monograma con el quetzal, un personaje llamado Quetzo modelado en Blender, mockups de merchandising y la tienda WooCommerce donde se aplicó el sistema.'
+languages: ["blender", "wordpress", "woocommerce", "uiux"]
 image:
-  url: "../../assets/projects/cotizaguatemain.webp"
-  alt: "Sitio web e identidad de CotizaGuate, mostrando el logo del quetzal y la interfaz de comparación de precios de electrónica."
+  url: "../../assets/projects/cotizaguate-brand-identity-board.webp"
+  alt: "Tablero de marca de CotizaGuate que reúne el monograma del quetzal, la paleta de color, la mascota 3D y los mockups de producto."
 gallery:
-  - url: "../../assets/projects/cotiza-guate-quetzal-logo-identity.webp"
-    alt: "Logo de CotizaGuate construido a partir del quetzal, ave nacional de Guatemala, con sus colores dentro de la letra C."
-  - url: "../../assets/projects/cotiza-guate-wordpress-tech-homepage.webp"
-    alt: "Página de inicio de CotizaGuate en modo claro, mostrando el maquetado de comparación de precios de electrónica."
-  - url: "../../assets/projects/cotiza-guate-wordpress-tech-homepage-dark-mode.webp"
-    alt: "Página de inicio de CotizaGuate en modo oscuro, con el mismo maquetado adaptado a una paleta oscura."
-  - url: "../../assets/projects/cotiza-guate-elementor-product-catalog.webp"
-    alt: "Catálogo de productos construido en Elementor, listando dispositivos electrónicos con los precios de las tiendas asociadas."
-  - url: "../../assets/projects/cotiza-guate-elementor-product-catalog-dark-mode.webp"
-    alt: "Catálogo de productos en modo oscuro, manteniendo la legibilidad de los precios en ambos temas."
-  - url: "../../assets/projects/cotiza-guate-conversion-product-ui.webp"
-    alt: "Página de producto individual de CotizaGuate, comparando precios entre las tiendas afiliadas."
-  - url: "../../assets/projects/cotiza-guate-mobile-first-search-ux.webp"
-    alt: "Interfaz de búsqueda móvil de CotizaGuate, diseñada para comparar precios desde el teléfono."
-  - url: "../../assets/projects/cotiza-guate-tablet-ui-catalog.webp"
-    alt: "Vista en tableta del catálogo de CotizaGuate, mostrando la rejilla responsiva."
-  - url: "../../assets/projects/cotiza-guate-lead-generation-form.webp"
-    alt: "Formulario de contacto de CotizaGuate, preparado para las consultas de las tiendas asociadas."
-  - url: "../../assets/projects/cotiza-guate-user-flow-architecture-logic.webp"
-    alt: "Flujo de usuario y arquitectura del sitio de CotizaGuate, trazando la búsqueda hasta la tienda asociada."
+  - url: "../../assets/projects/cotizaguate-homepage-dark-navigation.webp"
+    alt: "Página de inicio de CotizaGuate en modo oscuro, con el monograma del quetzal anclando la izquierda de la barra de navegación."
+  - url: "../../assets/projects/cotizaguate-product-page-full-view.webp"
+    alt: "Página de producto completa de CotizaGuate, listando el mismo artículo en seis tiendas guatemaltecas afiliadas con los precios enfrentados."
+  - url: "../../assets/projects/cotizaguate-category-results-full-view.webp"
+    alt: "Página de resultados por categoría de CotizaGuate para hardware gamer, con la rejilla de doce productos y los distintivos de oferta."
+  - url: "../../assets/projects/cotizaguate-tablet-catalog-mockup.webp"
+    alt: "Mockup en tableta del catálogo de CotizaGuate, mostrando cómo se reacomoda la rejilla en una pantalla intermedia."
+  - url: "../../assets/projects/cotizaguate-mobile-menu-mockup.webp"
+    alt: "Mockup en teléfono de CotizaGuate con el menú abierto y el monograma solo, a tamaño completo."
 
 ---
 
 import { Image } from 'astro:assets';
-import cgDesktop from '/src/assets/projects/cotiza-guate-wordpress-desktop-experience.webp';
-import cgLogo from '/src/assets/projects/cotiza-guate-quetzal-logo-identity.webp';
+import cgWordmark from '/src/assets/projects/cotizaguate-quetzal-logo-wordmark-palette.webp';
+import cgGlass from '/src/assets/projects/cotizaguate-logo-glass-3d-render.webp';
+import cgNeonBox from '/src/assets/projects/cotizaguate-logo-neon-packaging-mockup.webp';
+import cgPalette from '/src/assets/projects/cotizaguate-logo-palette-dark-background.webp';
+import cgSketches from '/src/assets/projects/cotizaguate-mascot-concept-sketches.webp';
+import cgMascot from '/src/assets/projects/cotizaguate-quetzo-3d-mascot-render.webp';
+import cgSheet from '/src/assets/projects/cotizaguate-quetzo-character-sheet.webp';
+import cgTurnaround from '/src/assets/projects/cotizaguate-mascot-turnaround-expressions.webp';
+import cgMerch from '/src/assets/projects/cotizaguate-brand-merchandise-mockups.webp';
+import cgDesk from '/src/assets/projects/cotizaguate-logo-desk-mousepad-mockup.webp';
 import cgFlow from '/src/assets/projects/cotiza-guate-user-flow-architecture-logic.webp';
 
-<Image src={cgDesktop} alt="CotizaGuate en escritorio, mostrando la tabla de comparación de precios y el sistema de color de la marca." />
+## El encargo
 
-## Qué hace el producto
+CotizaGuate compara lo que cobran las tiendas guatemaltecas por el mismo producto electrónico. El problema comercial no era el motor de comparación, era el reconocimiento: en esta categoría toda la competencia parece una hoja de cálculo con un logo encima, y nadie recuerda una hoja de cálculo.
 
-CotizaGuate compara precios de dispositivos electrónicos entre tiendas guatemaltecas. Alguien busca un dispositivo y obtiene una tabla con lo que cobra cada tienda afiliada, de modo que la comparación ocurre en un solo lugar en vez de en ocho pestañas del navegador.
+Por eso el trabajo empezó por la identidad y no por la interfaz. Tres piezas que normalmente se reparten entre tres proveedores: la marca, un personaje y la tienda donde todo el sistema iba a vivir.
 
-El proyecto abarcó tres piezas que normalmente van a tres personas distintas: la identidad, una mascota 3D y el sitio web. Hacer las tres permitió construir la marca una sola vez y aplicarla con coherencia, en lugar de que cada entrega la reinterpretara.
+## Construir la marca desde una letra
 
-## La identidad
+El punto de partida fue el **quetzal**, ave nacional de Guatemala y, convenientemente, nombre de la moneda. Los dos significados están en juego aquí, y esa clase de coincidencia se aprovecha.
 
-El logo parte del **quetzal**, ave nacional de Guatemala. En vez de ilustrar el ave junto al nombre, integré sus franjas de color dentro de la letra C de Cotiza, para que la marca se lea primero como monograma y revele la referencia después.
+En lugar de poner el ave junto al nombre, la integré dentro de la C de Cotiza, con trazado de circuito formando la letra. Se lee primero como monograma y entrega el ave después.
 
-Eso importaba por una razón práctica: un comparador de precios vive en espacios pequeños, favicons, iconos de aplicación, listados de socios. Un ave detallada se habría disuelto a esos tamaños. Una letra aguanta.
+<Image src={cgWordmark} alt="Lockup del logo de CotizaGuate: quetzal integrado en una letra C trazada como circuito, con el wordmark y el eslogan debajo y la paleta de tres colores a la izquierda." />
 
-<Image src={cgLogo} alt="Logo de CotizaGuate, con los colores del quetzal integrados en la letra C." />
+Esa decisión salió de dónde tiene que sobrevivir la marca de verdad. Una plataforma de comparación vive a 16 píxeles, en favicons, iconos de aplicación y listados de socios. Un ave ilustrada se deshace a ese tamaño. Una letra con una silueta dentro, no.
 
-## La mascota 3D
+<Image src={cgPalette} alt="El monograma de CotizaGuate sobre fondo negro junto a sus tres muestras de color: teal principal, azul circuito y verde lima." />
 
-La mascota extiende ese mismo quetzal a un personaje, modelado y renderizado en **Blender**. Pasó por rondas de bocetos antes del modelado, porque una mascota que funciona en plano no funciona automáticamente en tres dimensiones, y descubrirlo después del rigging sale caro.
+La sostienen tres colores: un teal tomado del plumaje del quetzal, un azul de circuito y un verde lima para todo lo que hay que pulsar. La moneda dorada en el pico cumple doble función, referencia a la divisa y única nota cálida en una paleta fría, de modo que la vista aterriza ahí.
 
-El papel que cumple es concreto. La comparación de precios es una categoría árida, y toda la competencia parece una hoja de cálculo. Un personaje le da a la marca un lugar cálido desde donde hablar en un mercado donde eso escasea.
+<Image src={cgGlass} alt="Render en vidrio tallado del monograma de CotizaGuate, mostrando cómo la marca conserva su silueta al convertirse en objeto tridimensional." />
 
-## El sitio web
+## Quetzo, la mascota
 
-Construido en **WordPress** con **WooCommerce**, como una plantilla escrita desde cero y no un tema comprado adaptado después. Esa decisión salió del requisito real del cliente: necesitaban añadir y editar productos por su cuenta, de forma permanente, sin depender de desarrollo.
+El personaje vino después, y necesitaba una razón de ser más allá de decorar. Comparar precios es un trámite árido. La gente llega ligeramente molesta por tener que revisar ocho pestañas. Un guía cambia el registro de esa visita.
 
-Un tema comprado habría cumplido el encargo visual más rápido y luego habría opuesto resistencia cada vez que el catálogo creciera. Construir la plantilla contra las propias reglas de tipografía, color y espaciado de la marca hace que la interfaz de edición produzca páginas coherentes por defecto, en vez de depender de que el cliente recuerde las reglas.
+<Image src={cgSketches} alt="Hoja de conceptos a lápiz y tinta explorando la mascota de CotizaGuate, desde estudios realistas del ave hasta la versión estilizada posada sobre la letra C." />
 
-**Los dos temas.** El sitio incluye modo claro y oscuro, con la paleta probada en ambos para que los precios se lean bien en cualquiera. En un comparador, un número difícil de leer es una página fallida.
+Los bocetos fueron antes que el modelado. Silueta, proporción y pose se resuelven en papel en una tarde; las mismas correcciones cuestan días cuando ya existe una malla. La hoja de arriba recoge el paso del ave anatómica a una forma lo bastante simple para funcionar como recurso de marca.
 
-<Image src={cgFlow} alt="Flujo de usuario de CotizaGuate, trazando la búsqueda y la comparación hasta la tienda asociada." />
+<Image src={cgMascot} alt="Render 3D final de Quetzo, la mascota de CotizaGuate, posado sobre el monograma iluminado y con una moneda dorada en el pico." />
+
+Se llama **Quetzo**, contracción de quetzal y Cotizo. Corto, fonético en español y suena a software. Su ficha es deliberadamente estrecha: analítico, rápido, no le hace perder el tiempo a nadie, y su único trabajo es encontrar un precio más bajo. El plumaje se modeló en **Blender**, con el motivo de circuito del logo trasladado a las alas para que ambos recursos se lean como un mismo sistema.
+
+<Image src={cgSheet} alt="Ficha de personaje de Quetzo con el nombre de la mascota, su descripción de personalidad y su perfil técnico, ilustrada con el render 3D y una versión plana en icono." />
+
+<Image src={cgTurnaround} alt="Turnaround de Quetzo con vistas frontal, trasera y lateral, más ocho poses que cubren caminar, pensar, presentar y reposo." />
+
+El turnaround y el set de poses existen para que el cliente nunca se quede sin recurso. Un solo render heroico es un callejón sin salida la primera vez que alguien necesita al personaje en un banner, un estado vacío o una notificación. Ocho poses y tres vistas permiten desplegar la mascota sin volver a encargar ilustración.
+
+## Aplicar el sistema
+
+<Image src={cgMerch} alt="Mockups de merchandising aplicando la identidad de CotizaGuate a la tapa de un portátil, una funda de teléfono, la esfera de un reloj, un termo, unos audífonos y unos auriculares." />
+
+Los mockups son la manera de descubrir si una identidad funciona de verdad. Grabada en la tapa de un portátil la marca pierde el color y tiene que sostenerse solo con la silueta; en la esfera de un reloj baja a unos milímetros; en una funda recibe la paleta completa. Probarla en esos extremos revela los fallos que un tablero de presentación esconde.
+
+<Image src={cgNeonBox} alt="Mockup de packaging con el monograma de CotizaGuate como incrustación de circuito iluminada sobre una caja negra mate." />
+
+<Image src={cgDesk} alt="Mockup de alfombrilla con el monograma iluminado de CotizaGuate entre un teclado mecánico y un ratón." />
+
+## La tienda
+
+El sitio corre sobre **WordPress** con **WooCommerce**, construido como plantilla escrita desde cero en vez de un tema comprado y forzado.
+
+Eso salió de un requisito explícito: el cliente añade y edita productos por su cuenta, de forma permanente, sin desarrollo de por medio. Un tema comprado cumple el encargo visual más rápido y luego opone resistencia a cada cambio posterior al lanzamiento. Escribir la plantilla contra las reglas propias de tipografía, color y espaciado hace que la pantalla de edición produzca páginas coherentes por defecto, sin depender de que nadie recuerde las reglas.
+
+<Image src={cgFlow} alt="Wireflow de CotizaGuate trazando el recorrido desde la búsqueda hasta la tienda afiliada, pasando por los resultados de categoría y la tabla comparativa." />
+
+El flujo de arriba quedó cerrado antes de diseñar ninguna página. Es corto a propósito: buscar, comparar, salir hacia la tienda. Cada pantalla o reduce opciones o entrega al visitante, y lo que no hacía ninguna de las dos cosas se eliminó.
+
+Se entregaron los dos temas, claro y oscuro, con la paleta verificada en ambos para que los precios se lean bien en cualquiera. En una plataforma de comparación, una cifra difícil de leer es una página fallida.
 
 ## Stack
 
-- **Blender** para la mascota 3D, del modelado al render
-- **Illustrator** para el logo y el sistema de marca
-- **WordPress** con plantilla a medida, sin tema comprado
+- **Blender** para Quetzo, del bloqueo inicial al pelaje, los materiales y los renders finales
+- **Illustrator** para el monograma, el wordmark y el sistema de color
+- **Photoshop** para los mockups de merchandising y packaging
+- **WordPress** con plantilla hecha a mano, sin tema comprado
 - **WooCommerce** para la estructura de productos y los datos de precios de las tiendas
 - **Elementor** para los maquetados de catálogo que mantiene el cliente
 
 ## Resultado
 
-El cliente gestiona el catálogo por su cuenta, la marca se sostiene desde el favicon hasta la mascota, y los dos temas de color funcionan sin una segunda pasada de diseño.
+Una plataforma joven que parece asentada, una mascota que el cliente puede desplegar sin encargar ilustración cada vez, y un catálogo que gestiona por su cuenta.
 
-## ¿Necesitas identidad y sitio a la vez?
+## ¿Necesitas la identidad y el desarrollo en un mismo sitio?
 
-Repartir el branding y el desarrollo entre dos proveedores es donde suele romperse la coherencia. Hacer ambos significa que las decisiones tomadas en el logo llegan intactas hasta el gestor de contenidos.
+Repartir branding y desarrollo entre dos proveedores es donde suele romperse la coherencia. Hacer ambos significa que las decisiones tomadas en el logo siguen en pie cuando llegan al gestor de contenidos.

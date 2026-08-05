@@ -26,9 +26,30 @@ export async function getProjects(lang: Lang): Promise<AnyProject[]> {
   return english.map((entry) => translated.get(entry.slug) ?? entry);
 }
 
-/** Newest first. */
+/**
+ * Older work that should close the grid regardless of its publication date,
+ * in the order listed. Everything else stays newest first.
+ */
+const PINNED_LAST = [
+  "hot-dog-seattle-ecommerce-wordpress",
+  "bambu-artesanias-ecommerce-wordpress",
+  "eco-friendly-landing-page-design",
+  "tech-agency-ui-ux-design",
+];
+
+/** Newest first, with the pinned slugs pushed to the end. */
 export async function getSortedProjects(lang: Lang): Promise<AnyProject[]> {
-  return (await getProjects(lang)).sort(
-    (a, b) => new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime(),
-  );
+  const rank = (slug: string) => {
+    const pinned = PINNED_LAST.indexOf(slug);
+    return pinned === -1 ? -1 : pinned;
+  };
+
+  // Copied before sorting: getCollection hands back a cached array, and sorting
+  // it in place would reorder it for every other caller too.
+  return [...(await getProjects(lang))].sort((a, b) => {
+    const rankA = rank(a.slug);
+    const rankB = rank(b.slug);
+    if (rankA !== rankB) return rankA - rankB;
+    return new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime();
+  });
 }

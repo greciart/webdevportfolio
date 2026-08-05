@@ -57,6 +57,15 @@ const projectSchema = ({ image }: { image: () => any }) =>
       url: image(),
       alt: z.string(),
     }),
+    // Optional looping clip for the card in the projects grid. `src` lives in
+    // /public/videos; `poster` is a still from the same clip so the card keeps
+    // its box before a single byte of video is fetched.
+    video: z
+      .object({
+        src: z.string(),
+        poster: image(),
+      })
+      .optional(),
     gallery: z
       .array(z.object({
         url: image(),
