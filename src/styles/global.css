@@ -10,7 +10,7 @@
    menu writes; when it is absent the site renders at the base size.
 ================================ */
 html {
-  font-size: calc(14.5px * var(--a11y-text-scale, 1));
+  font-size: calc(14px * var(--a11y-text-scale, 1));
 }
 
 /* Accessibility: underline every link in running text, for readers who need
