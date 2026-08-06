@@ -151,10 +151,6 @@ react: {
     name: "Illustrator",
     iconName: "illustrator",
   },
-  inkscape: {
-    name: "Inkscape",
-    iconName: "inkscape",
-  },
   gsap: {
     name: "GSAP",
     iconName: "gsap",
@@ -190,6 +186,25 @@ react: {
       LLM: {
     name: "LLM",
     iconName: "robot",
+  },
+  framer: {
+    name: "Framer",
+    iconName: "framer",
+  },
+  // Official mark is black, so it needs a light chip behind it the same way
+  // Notion does, otherwise it disappears on the dark theme.
+  threejs: {
+    name: "Three.js",
+    iconName: "threejs",
+    className: "bg-white!",
+  },
+  spline: {
+    name: "Spline",
+    iconName: "spline",
+  },
+  claude: {
+    name: "Claude",
+    iconName: "claude",
   },
 };
 
