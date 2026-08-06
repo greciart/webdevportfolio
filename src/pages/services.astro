@@ -137,9 +137,14 @@ const chip =
             >
               {pack.featured && (
                 /* Corner ribbon: the clipping box carries the card's own radius
-                   so the band is cut exactly along the rounded tip. */
-                <div class="pointer-events-none absolute right-0 top-0 z-10 size-28 overflow-hidden rounded-tr-2xl">
-                  <span class="absolute top-3.5 -right-10 w-[150px] rotate-45 bg-linear-to-r from-riptide-400 to-mint-500 py-1 text-center text-[9px] font-bold uppercase tracking-widest text-blacktext shadow-md">
+                   so the band is cut exactly along the rounded tip. The band is
+                   150px wide inside a 98px box, so it has to hang (150-98)/2
+                   = 26px past the right edge to stay centred on the diagonal.
+                   The box is sized in px too: at a 14px base, size-28 resolves
+                   to 98 rather than the 112 a 16px base would give, and the
+                   band would drift off centre with the text scale. */
+                <div class="pointer-events-none absolute right-0 top-0 z-10 h-[98px] w-[98px] overflow-hidden rounded-tr-2xl">
+                  <span class="absolute top-[14px] right-[-26px] w-[150px] rotate-45 bg-linear-to-r from-riptide-400 to-mint-500 py-1 text-center text-[9px] font-bold uppercase tracking-widest text-blacktext shadow-md">
                     {c.ribbon}
                   </span>
                 </div>

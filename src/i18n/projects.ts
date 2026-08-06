@@ -37,6 +37,15 @@ const PINNED_LAST = [
   "tech-agency-ui-ux-design",
 ];
 
+/**
+ * Slugs that must sit immediately before another one, whatever their dates
+ * say. Kept here rather than nudging pubDate, which would misstate when the
+ * work was actually done.
+ */
+const ORDER_BEFORE: Record<string, string> = {
+  "anywhere-healing-wellness-website-astro": "cedir-ecommerce-education-platform",
+};
+
 /** Newest first, with the pinned slugs pushed to the end. */
 export async function getSortedProjects(lang: Lang): Promise<AnyProject[]> {
   const rank = (slug: string) => {
@@ -46,10 +55,20 @@ export async function getSortedProjects(lang: Lang): Promise<AnyProject[]> {
 
   // Copied before sorting: getCollection hands back a cached array, and sorting
   // it in place would reorder it for every other caller too.
-  return [...(await getProjects(lang))].sort((a, b) => {
+  const sorted = [...(await getProjects(lang))].sort((a, b) => {
     const rankA = rank(a.slug);
     const rankB = rank(b.slug);
     if (rankA !== rankB) return rankA - rankB;
     return new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime();
   });
+
+  for (const [slug, before] of Object.entries(ORDER_BEFORE)) {
+    const from = sorted.findIndex((entry) => entry.slug === slug);
+    if (from === -1) continue;
+    const [entry] = sorted.splice(from, 1);
+    const to = sorted.findIndex((other) => other.slug === before);
+    sorted.splice(to === -1 ? sorted.length : to, 0, entry);
+  }
+
+  return sorted;
 }
