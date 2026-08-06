@@ -18,7 +18,6 @@ import threeDCommissioned from "../assets/services/3d/3d-commissioned-work.webp"
 import threeDObjects from "../assets/services/3d/3d-objects-collection-part-2.webp";
 
 // Hand-inked line art, from gvpv12.github.io/biblioteca/dibujos/lineart
-import illoWingedEye from "../assets/services/illustration/lineart-winged-eye-ink-illustration.webp";
 import illoPortrait from "../assets/services/illustration/lineart-portrait-crosshatching-ink.webp";
 import illoCharacter from "../assets/services/illustration/lineart-character-design-fantasy.webp";
 import illoMoonCat from "../assets/services/illustration/lineart-moon-cat-brand-asset.webp";
@@ -403,20 +402,7 @@ const titleFromFilename = (slug: string) =>
     .join(" ");
 
 const illustration: Entry[] = [
-  {
-    url: illoWingedEye,
-    en: {
-      title: "Winged eye · ink illustration",
-      alt: "Hand inked line art of a winged eye surrounded by feathered wings, drawn with brush pens on paper",
-      tags: ["Ink", "Hero art", "Symbolic"],
-    },
-    es: {
-      title: "Ojo alado · ilustración a tinta",
-      alt: "Line art a tinta de un ojo alado rodeado de alas emplumadas, dibujado con rotuladores de pincel sobre papel",
-      tags: ["Tinta", "Ilustración principal", "Simbólico"],
-    },
-  },
-  {
+    {
     url: illoPortrait,
     en: {
       title: "Portrait study · crosshatching",

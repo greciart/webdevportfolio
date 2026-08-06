@@ -71,20 +71,20 @@ export type PackagesCopy = {
 const en: PackagesCopy = {
   pageTitle: "Packages & Pricing | Grecia V. - Web Design and Development Tiers",
   description:
-    "How my web design packages work, from a WordPress and Elementor build to fully animated sites with GSAP scroll animations and Three.js 3D. What every project includes, what raises the price, and what counts as an extra.",
+    "Web design tiers from WordPress and Shopify stores to coded sites with GSAP and Three.js. What is included, what raises the price, what counts as extra.",
 
   heroEyebrow: "How I price web projects",
   heroTitle: "Packages &",
   heroTitleAccent: "Pricing",
   heroIntro:
-    "Every site I build sits somewhere on a scale. At one end there is WordPress with Elementor, which is the fastest to produce and the most affordable. At the other there are coded sites with scroll driven animation and 3D running in the browser, which take far longer and cost accordingly. Most people land somewhere in the middle, and this page exists so you can work out roughly where before we ever talk numbers.",
+    "Four ways of building a site, from a CMS store you manage yourself to a coded build with scroll animation and 3D. This page is here so you can work out roughly where your project sits before we ever talk numbers.",
   heroNote:
     "I don't publish fixed prices, because two sites with the same page count can take very different amounts of work. What I can tell you is what moves the number.",
 
   tiersTitle: "The four",
   tiersTitleAccent: "tiers",
   tiersIntro:
-    "These are not rigid boxes. They describe how a build is put together, and that is what actually decides the timeline and the cost.",
+    "These are not rigid boxes, and they are not ordered by price. They describe how a build is put together, which is what actually decides the timeline. Startups mostly begin at the first one because it is the fastest way to a working store. Larger companies, and anyone with room to invest more, pick the other three just as often, and for them the choice is about what the site has to do rather than about cost.",
   tierLabel: "Tier",
   bestForLabel: "Best for",
   includesLabel: "What you get",
@@ -92,35 +92,35 @@ const en: PackagesCopy = {
   tiers: [
     {
       step: "01",
-      name: "WordPress build",
-      stack: "WordPress · Elementor · WooCommerce",
-      tagline: "The most accessible option, and the one most people pick.",
+      name: "Popular CMS ecommerce website",
+      stack: "WordPress · Elementor · WooCommerce · Shopify",
+      tagline: "Where most startups begin, and where most stores stay.",
       description:
-        "Built on WordPress with Elementor, using a template I lay out against your brand rather than a purchased theme. It is the quickest route to a finished site, and the reason it costs less is honest: the tooling does a lot of the heavy lifting, so I spend my time on the design decisions instead of on the plumbing.",
+        "WordPress with Elementor or Shopify, depending on whether the site is a business with a shop attached or a shop first. Either way I lay out a template against your brand rather than adapting a purchased theme. It is the quickest route to a finished store, and the reason it costs less is honest: the platform handles the plumbing, so my time goes into design decisions instead.",
       bestFor:
-        "Businesses that want to add pages and products themselves, without a developer on call.",
+        "Startups and established stores that want to add pages and products themselves, without a developer on call.",
       includes: [
         "Custom layout built to your brand, not a bought theme",
         "You edit pages and products yourself from the dashboard",
-        "WooCommerce set up if you sell",
+        "WooCommerce or Shopify set up around your catalogue",
+        "Payment methods your customers actually use, local transfer included",
         "Contact and lead forms wired to your inbox",
-        "Light and dark themes if you want both",
       ],
-      featured: true,
     },
     {
       step: "02",
-      name: "No code, high polish",
-      stack: "Framer · Shopify",
-      tagline: "For when the design matters more than the CMS.",
+      name: "Visual & motion first",
+      stack: "Framer",
+      tagline: "For when the look is the argument.",
       description:
-        "Framer for marketing sites that need finer typography and motion than a page builder gives you, Shopify when the store is the whole point. Both keep you in control of the content afterwards, with a tighter design ceiling than WordPress and without stepping into full custom code.",
-      bestFor: "Brands and stores where the visual bar is high and launch dates are tight.",
+        "Framer, for sites whose job is to hold attention rather than to run a catalogue. Finer typography, transitions and scroll motion than a page builder allows, and you still edit the content yourself afterwards. Worth being clear: this is not a cheaper tier than the two below it. Depending on how much motion and how many bespoke sections you want, it can cost more than a coded site. The order on this page is about how a build is put together, not a price ladder.",
+      bestFor:
+        "Brands, launches and portfolios where the aesthetic does the selling and there is no large catalogue behind it.",
       includes: [
         "Design led layout with real typographic control",
-        "Built in transitions and interactions",
-        "Product and collection structure for Shopify builds",
+        "Scroll and hover motion built into the page",
         "Editable by you, no code required",
+        "Fast to launch when the deadline is tight",
       ],
     },
     {
@@ -371,20 +371,20 @@ const en: PackagesCopy = {
 const es: PackagesCopy = {
   pageTitle: "Paquetes y precios | Grecia V. - Niveles de diseño y desarrollo web",
   description:
-    "Cómo funcionan mis paquetes de diseño web, desde un sitio en WordPress con Elementor hasta webs completamente animadas con GSAP e integración 3D con Three.js. Qué incluye cada proyecto, qué sube el precio y qué cuenta como extra.",
+    "Paquetes de diseño web, desde tiendas WordPress y Shopify hasta sitios en código con GSAP y Three.js. Qué incluye, qué sube el precio y qué es extra.",
 
   heroEyebrow: "Cómo cotizo los proyectos web",
   heroTitle: "Paquetes y",
   heroTitleAccent: "precios",
   heroIntro:
-    "Cada sitio que hago cae en algún punto de una escala. En un extremo está WordPress con Elementor, el más rápido de producir y el más accesible. En el otro están los sitios en código con animaciones por scroll y 3D corriendo en el navegador, que llevan muchísimo más tiempo y cuestan en consecuencia. La mayoría de la gente aterriza en el medio, y esta página existe para que sepas más o menos dónde antes de que hablemos de números.",
+    "Cuatro maneras de construir un sitio, desde una tienda con CMS que gestionas tú misma hasta un desarrollo en código con animaciones por scroll y 3D. Esta página está para que sepas más o menos dónde cae tu proyecto antes de que hablemos de números.",
   heroNote:
     "No publico precios fijos, porque dos sitios con la misma cantidad de páginas pueden implicar cargas de trabajo muy distintas. Lo que sí puedo decirte es qué mueve la cifra.",
 
   tiersTitle: "Los cuatro",
   tiersTitleAccent: "niveles",
   tiersIntro:
-    "No son cajas rígidas. Describen cómo se construye el sitio, y eso es lo que de verdad decide el tiempo y el costo.",
+    "No son cajas rígidas, ni están ordenados por precio. Describen cómo se construye cada sitio, que es lo que de verdad decide el tiempo. Las startups suelen empezar por el primero porque es la vía más rápida a una tienda funcionando. Las empresas más grandes, y quien tenga margen para invertir más, eligen los otros tres con la misma frecuencia, y ahí la decisión va de qué tiene que hacer el sitio y no de cuánto cuesta.",
   tierLabel: "Nivel",
   bestForLabel: "Ideal para",
   includesLabel: "Qué obtienes",
@@ -392,35 +392,35 @@ const es: PackagesCopy = {
   tiers: [
     {
       step: "01",
-      name: "Sitio en WordPress",
-      stack: "WordPress · Elementor · WooCommerce",
-      tagline: "La opción más accesible, y la que elige la mayoría.",
+      name: "Ecommerce con CMS popular",
+      stack: "WordPress · Elementor · WooCommerce · Shopify",
+      tagline: "Donde empiezan casi todas las startups, y donde se quedan casi todas las tiendas.",
       description:
-        "Hecho en WordPress con Elementor, con una plantilla que maqueto contra tu marca en vez de un tema comprado. Es la ruta más rápida a un sitio terminado, y la razón de que cueste menos es honesta: las herramientas hacen buena parte del trabajo pesado, así que dedico mi tiempo a las decisiones de diseño y no a la fontanería.",
+        "WordPress con Elementor o Shopify, según si el sitio es un negocio con tienda al lado o una tienda ante todo. En cualquiera de los dos maqueto una plantilla contra tu marca en vez de adaptar un tema comprado. Es la ruta más rápida a una tienda terminada, y la razón de que cueste menos es honesta: la plataforma se encarga de la fontanería, así que mi tiempo se va en decisiones de diseño.",
       bestFor:
-        "Negocios que quieren añadir páginas y productos por su cuenta, sin depender de desarrollo.",
+        "Startups y tiendas ya asentadas que quieren añadir páginas y productos por su cuenta, sin depender de desarrollo.",
       includes: [
         "Maquetado a medida de tu marca, sin tema comprado",
         "Editas páginas y productos tú misma desde el panel",
-        "WooCommerce configurado si vendes",
+        "WooCommerce o Shopify montados alrededor de tu catálogo",
+        "Métodos de pago que tus clientes usan de verdad, transferencia local incluida",
         "Formularios de contacto conectados a tu correo",
-        "Tema claro y oscuro si quieres los dos",
       ],
-      featured: true,
     },
     {
       step: "02",
-      name: "Sin código, muy pulido",
-      stack: "Framer · Shopify",
-      tagline: "Para cuando el diseño pesa más que el gestor de contenidos.",
+      name: "Visual y movimiento primero",
+      stack: "Framer",
+      tagline: "Para cuando el aspecto es el argumento.",
       description:
-        "Framer para sitios de marketing que necesitan mejor tipografía y movimiento del que da un maquetador visual, Shopify cuando la tienda es el objetivo entero. Los dos te dejan el control del contenido después, con un techo de diseño más alto que WordPress y sin entrar en código a medida.",
-      bestFor: "Marcas y tiendas con el listón visual alto y fechas de lanzamiento ajustadas.",
+        "Framer, para sitios cuyo trabajo es retener la atención y no gestionar un catálogo. Mejor tipografía, transiciones y movimiento por scroll del que permite un maquetador visual, y sigues editando el contenido tú después. Conviene aclararlo: este nivel no es más barato que los dos de abajo. Según cuánto movimiento y cuántas secciones a medida quieras, puede costar más que un sitio en código. El orden de esta página va de cómo se construye cada sitio, no es una escalera de precios.",
+      bestFor:
+        "Marcas, lanzamientos y portafolios donde la estética es la que vende y no hay un catálogo grande detrás.",
       includes: [
         "Maquetado guiado por diseño, con control tipográfico real",
-        "Transiciones e interacciones integradas",
-        "Estructura de productos y colecciones en Shopify",
+        "Movimiento por scroll y hover integrado en la página",
         "Editable por ti, sin tocar código",
+        "Rápido de lanzar cuando la fecha aprieta",
       ],
     },
     {
