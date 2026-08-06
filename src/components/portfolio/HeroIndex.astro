@@ -91,7 +91,7 @@ const {
         <h1
           class="text-[1.75rem] font-black leading-none text-blacktext dark:text-white max-xl:text-2xl max-lg:text-xl max-sm:text-center max-sm:mt-4"
         >
-          {profileName} 👋
+          {t("home.greeting")} {profileName} 👋
         </h1>
         <p
           class="mb-0 text-base font-normal leading-relaxed text-blacktext dark:text-gray-200 max-sm:text-center"
@@ -106,7 +106,7 @@ const {
           <br /> {t("home.intro2")}
         </p>
 
-        <div class="flex gap-4 max-sm:flex-col max-sm:items-center max-sm:mt-4">
+        <div class="mt-6 flex gap-4 max-sm:mt-4 max-sm:flex-col max-sm:items-center">
         <Button
           link={p("/contact")}
           text={t("contactBand.button")}

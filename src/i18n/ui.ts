@@ -49,6 +49,7 @@ export const ui = {
 
     // --- Home hero ---
     "home.available": "Available for work",
+    "home.greeting": "Hello, I'm",
     "home.role": "Web Designer & Frontend Developer",
     "home.years": "5+ years of experience",
     "home.intro":
@@ -186,6 +187,7 @@ export const ui = {
 
     // --- Hero del inicio ---
     "home.available": "Disponible para trabajar",
+    "home.greeting": "Hola, soy",
     "home.role": "Diseñadora web y desarrolladora frontend",
     "home.years": "más de 5 años de experiencia",
     "home.intro": "creando experiencias digitales modernas y centradas en el usuario.",
