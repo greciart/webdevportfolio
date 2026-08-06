@@ -177,7 +177,7 @@ const sectionWrap = "scroll-m-24 px-8 py-16 max-sm:px-4 max-sm:py-10";
     <div class="mx-auto flex max-w-7xl flex-col gap-10">
       <header data-reveal="blur" class="flex flex-col gap-4">
         <Heading text={c.scaleTitle} textGradient={c.scaleTitleAccent} level={2} />
-        <p class={`${bodyText} max-w-3xl`}>{c.scaleIntro}</p>
+        <p class={bodyText}>{c.scaleIntro}</p>
       </header>
 
       <div
@@ -203,7 +203,7 @@ const sectionWrap = "scroll-m-24 px-8 py-16 max-sm:px-4 max-sm:py-10";
     <div class="mx-auto flex max-w-7xl flex-col gap-10">
       <header data-reveal="blur-up" class="flex flex-col gap-4">
         <Heading text={c.extrasTitle} textGradient={c.extrasTitleAccent} level={2} />
-        <p class={`${bodyText} max-w-3xl`}>{c.extrasIntro}</p>
+        <p class={bodyText}>{c.extrasIntro}</p>
       </header>
 
       <!-- Cards on small screens, table from lg up: a four column table of
@@ -280,7 +280,7 @@ const sectionWrap = "scroll-m-24 px-8 py-16 max-sm:px-4 max-sm:py-10";
 
       <p
         data-reveal="fade"
-        class="max-w-3xl text-sm font-normal leading-6 text-blacktext/60 dark:text-zinc-400"
+        class="text-sm font-normal leading-6 text-blacktext/60 dark:text-zinc-400"
       >
         {c.extrasFootnote}
       </p>
@@ -299,7 +299,7 @@ const sectionWrap = "scroll-m-24 px-8 py-16 max-sm:px-4 max-sm:py-10";
           />
           <Heading text={c.needTitle} textGradient={c.needTitleAccent} level={2} />
         </div>
-        <p class={`${bodyText} max-w-3xl`}>{c.needIntro}</p>
+        <p class={bodyText}>{c.needIntro}</p>
       </header>
 
       <ol
@@ -358,7 +358,7 @@ const sectionWrap = "scroll-m-24 px-8 py-16 max-sm:px-4 max-sm:py-10";
 
       <p
         data-reveal="fade"
-        class="max-w-3xl text-sm font-normal leading-6 text-blacktext/60 dark:text-zinc-400"
+        class="text-sm font-normal leading-6 text-blacktext/60 dark:text-zinc-400"
       >
         {c.needNote}
       </p>
@@ -369,12 +369,12 @@ const sectionWrap = "scroll-m-24 px-8 py-16 max-sm:px-4 max-sm:py-10";
   <section class="px-8 pb-20 max-sm:px-4 max-sm:pb-12">
     <div
       data-reveal="scale"
-      class="mx-auto max-w-5xl rounded-2xl bg-linear-to-r from-mint-300 to-mint-50 p-[2px] dark:from-mint-600 dark:to-mint-200/5"
+      class="mx-auto max-w-7xl rounded-2xl bg-linear-to-r from-mint-300 to-mint-50 p-[2px] dark:from-mint-600 dark:to-mint-200/5"
     >
       <div
         class="flex items-center justify-between gap-8 rounded-[calc(1rem-1px)] bg-linear-to-tr from-riptide-100 to-white px-10 py-12 dark:from-mint-950 dark:to-zinc-950 max-sm:flex-col max-sm:px-6 max-sm:py-8 max-sm:text-center"
       >
-        <div class="flex max-w-lg flex-col gap-3">
+        <div class="flex max-w-3xl flex-col gap-3">
           <Heading text={c.ctaTitle} textGradient={c.ctaTitleAccent} level={2} />
           <p class="text-sm font-normal leading-6 text-blacktext/80 dark:text-gray-300">
             {c.ctaCopy}

@@ -22,7 +22,7 @@ import illoPortrait from "../assets/services/illustration/lineart-portrait-cross
 import illoCharacter from "../assets/services/illustration/lineart-character-design-fantasy.webp";
 import illoMoonCat from "../assets/services/illustration/lineart-moon-cat-brand-asset.webp";
 import illoCake from "../assets/services/illustration/lineart-melting-cake-surreal-ink.webp";
-import illoCrown from "../assets/services/illustration/lineart-crowned-figure-hatching.webp";
+import illoWitch from "../assets/services/illustration/lineart-witch-antler-hat-portrait.webp";
 
 export type GalleryItem = {
   url: ImageMetadata;
@@ -429,16 +429,16 @@ const illustration: Entry[] = [
     },
   },
   {
-    url: illoCrown,
+    url: illoWitch,
     en: {
-      title: "Crowned figure · dense hatching",
-      alt: "Hand inked illustration of a figure being crowned, with hair and shadow built entirely from dense parallel hatching",
-      tags: ["Ink", "Editorial", "Narrative"],
+      title: "Witch portrait · antlered hat",
+      alt: "Hand inked portrait of a witch in a pointed hat sprouting antlers and leaves, with hair and fabric shaded in fine hatching",
+      tags: ["Ink", "Character", "Portrait"],
     },
     es: {
-      title: "Figura coronada · tramado denso",
-      alt: "Ilustración a tinta de una figura siendo coronada, con el cabello y las sombras construidos por completo con tramado paralelo denso",
-      tags: ["Tinta", "Editorial", "Narrativo"],
+      title: "Retrato de bruja · sombrero con astas",
+      alt: "Retrato a tinta de una bruja con sombrero puntiagudo del que brotan astas y hojas, con el cabello y la tela sombreados con tramado fino",
+      tags: ["Tinta", "Personaje", "Retrato"],
     },
   },
   {

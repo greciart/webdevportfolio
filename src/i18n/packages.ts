@@ -114,7 +114,7 @@ const en: PackagesCopy = {
       stack: "Framer",
       tagline: "For when the look is the argument.",
       description:
-        "Framer, for sites whose job is to hold attention rather than to run a catalogue. Finer typography, transitions and scroll motion than a page builder allows, and you still edit the content yourself afterwards. Worth being clear: this is not a cheaper tier than the two below it. Depending on how much motion and how many bespoke sections you want, it can cost more than a coded site. The order on this page is about how a build is put together, not a price ladder.",
+        "Framer, for sites whose job is to hold attention rather than to run a catalogue. Finer typography, transitions and scroll motion than a page builder allows, and you still edit the content yourself afterwards. On price, this tier can land above tiers 3 and 4: the more motion and bespoke sections you want, the closer it gets, and it often passes them. Tier numbers here describe how a site is built, not what it costs.",
       bestFor:
         "Brands, launches and portfolios where the aesthetic does the selling and there is no large catalogue behind it.",
       includes: [
@@ -190,7 +190,7 @@ const en: PackagesCopy = {
     },
     {
       name: "Customer support widget",
-      icon: "whatsapp",
+      icon: "chat-bubble",
       description:
         "A floating button pinned to the bottom left of every page that opens a WhatsApp chat with you. Visitors ask from wherever they are instead of hunting for a contact page, which is where most enquiries are lost.",
     },
@@ -429,7 +429,7 @@ const es: PackagesCopy = {
       stack: "Framer",
       tagline: "Para cuando el aspecto es el argumento.",
       description:
-        "Framer, para sitios cuyo trabajo es retener la atención y no gestionar un catálogo. Mejor tipografía, transiciones y movimiento por scroll del que permite un maquetador visual, y sigues editando el contenido tú después. Conviene aclararlo: este nivel no es más barato que los dos de abajo. Según cuánto movimiento y cuántas secciones a medida quieras, puede costar más que un sitio en código. El orden de esta página va de cómo se construye cada sitio, no es una escalera de precios.",
+        "Framer, para sitios cuyo trabajo es retener la atención y no gestionar un catálogo. Mejor tipografía, transiciones y movimiento por scroll del que permite un maquetador visual, y sigues editando el contenido tú después. Sobre el precio: este nivel puede quedar por encima de los niveles 3 y 4. Cuanto más movimiento y más secciones a medida quieras, más se acerca, y con frecuencia los supera. Los números de nivel describen cómo se construye el sitio, no lo que cuesta.",
       bestFor:
         "Marcas, lanzamientos y portafolios donde la estética es la que vende y no hay un catálogo grande detrás.",
       includes: [
@@ -505,7 +505,7 @@ const es: PackagesCopy = {
     },
     {
       name: "Widget de atención al cliente",
-      icon: "whatsapp",
+      icon: "chat-bubble",
       description:
         "Un botón flotante anclado abajo a la izquierda en todas las páginas que abre un chat de WhatsApp contigo. La gente pregunta desde donde esté en vez de ir a buscar la página de contacto, que es donde se pierden la mayoría de las consultas.",
     },
