@@ -136,15 +136,18 @@ const chip =
               class={`${cardBorder} ${pack.featured ? "lg:-mt-2 lg:mb-2" : ""}`}
             >
               {pack.featured && (
-                /* Corner ribbon: the clipping box carries the card's own radius
-                   so the band is cut exactly along the rounded tip. The band is
-                   150px wide inside a 98px box, so it has to hang (150-98)/2
-                   = 26px past the right edge to stay centred on the diagonal.
-                   The box is sized in px too: at a 14px base, size-28 resolves
-                   to 98 rather than the 112 a 16px base would give, and the
-                   band would drift off centre with the text scale. */
+                /* Corner ribbon. The clipping box carries the card's own radius
+                   so the band is cut along the rounded tip, and both box and
+                   offsets are in fixed px so the text scale cannot drag them.
+
+                   The word is centred in the band, so it only lands in the
+                   middle of the visible chord when the band's centre sits on
+                   the corner bisector, the line x + y = 98 in box coordinates.
+                   Centre is (right edge - 75, top + height/2) = (61, 36.5),
+                   which sums to 98. Sliding along the band this way keeps its
+                   distance from the corner, so the ribbon does not move. */
                 <div class="pointer-events-none absolute right-0 top-0 z-10 h-[98px] w-[98px] overflow-hidden rounded-tr-2xl">
-                  <span class="absolute top-[14px] right-[-26px] w-[150px] rotate-45 bg-linear-to-r from-riptide-400 to-mint-500 py-1 text-center text-[9px] font-bold uppercase tracking-widest text-blacktext shadow-md">
+                  <span class="absolute top-[26px] right-[-38px] w-[150px] rotate-45 bg-linear-to-r from-riptide-400 to-mint-500 py-1 text-center text-[9px] font-bold uppercase tracking-widest text-blacktext shadow-md">
                     {c.ribbon}
                   </span>
                 </div>
