@@ -104,6 +104,17 @@ const twitterimage = `${siteUrl}${ogimage.url}`;
     <script is:inline>
       document.documentElement.classList.add("js-reveal");
 
+      // Blocks the right click menu and the drag handle on artwork, which is
+      // where the "save image as" and "copy image" entries live. Deliberately
+      // scoped to images: killing the context menu on the whole page breaks
+      // copying text and opening links in a new tab for everyone.
+      document.addEventListener("contextmenu", function (e) {
+        if (e.target && e.target.tagName === "IMG") e.preventDefault();
+      });
+      document.addEventListener("dragstart", function (e) {
+        if (e.target && e.target.tagName === "IMG") e.preventDefault();
+      });
+
       // Replays the saved accessibility preferences before the first paint,
       // otherwise the page renders at the base size and visibly jumps once the
       // menu's own script runs.

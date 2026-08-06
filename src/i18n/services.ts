@@ -202,7 +202,7 @@ const en: ServicesCopy = {
         "HUDs, menus, inventories and onboarding flows designed for real-time feedback and readability under pressure. Built through game jams, where a tight deadline forces every screen to be understood at a glance.",
     },
     {
-      name: "Web Apps That Fit Real Brains",
+      name: "Web Apps",
       description:
         "Products like Focus Time, a productivity app built on methods that genuinely work, and designed so they work for neurodivergent people too, especially users with ADHD, instead of assuming a neurotypical default.",
     },
@@ -226,7 +226,7 @@ const en: ServicesCopy = {
   illustrationTitle: "Hand Drawn",
   illustrationTitleAccent: "Illustration",
   illustrationIntro:
-    "Everything here is inked by hand on paper, then cleaned up and vectorised for the web. I draw {0} for websites, plus {1} like mascots, icon sets and section dividers, and {2} when a brand needs a face nobody else has. The reason clients keep asking for this one is simple: generated illustration all converges on the same look, so a site that leans on it ends up looking like every other site. A drawing carries a hand, and that is the part people remember.",
+    "Everything here is drawn by hand, in ink, charcoal, pastel or paint, then cleaned up and vectorised for the web. I draw {0} for websites, plus {1} like mascots, icon sets and section dividers, and {2} when a brand needs a face nobody else has. The reason clients keep asking for this one is simple: generated illustration all converges on the same look, so a site that leans on it ends up looking like every other site. A drawing carries a hand, and that is the part people remember.",
   illustrationIntroStrong: ["editorial pieces", "brand assets", "original characters"],
   illustrationCapabilities: [
     {
@@ -250,8 +250,8 @@ const en: ServicesCopy = {
         "Crosshatching, stippling and brush work for pieces that need weight and texture, the kind of detail flat generated art cannot fake.",
     },
   ],
-  illustrationTools: ["Ink on paper", "Illustrator", "Photoshop", "SVG export"],
-  illustrationGalleryTitle: "Selected line art",
+  illustrationTools: ["Ink", "Charcoal & pastel", "Acrylic", "Illustrator", "SVG export"],
+  illustrationGalleryTitle: "",
 
   ctaTitle: "Not sure which one",
   ctaTitleAccent: "you need?",
@@ -391,7 +391,7 @@ const es: ServicesCopy = {
         "HUDs, menús, inventarios y flujos de onboarding diseñados para dar retroalimentación en tiempo real y leerse con claridad bajo presión. Construidos en game jams, donde el plazo ajustado obliga a que cada pantalla se entienda de un vistazo.",
     },
     {
-      name: "Apps web que encajan con cerebros reales",
+      name: "Apps web",
       description:
         "Productos como Focus Time, una app de productividad construida sobre métodos que de verdad funcionan, y diseñada para que también funcionen para personas neurodivergentes, sobre todo con TDAH, en lugar de asumir un usuario neurotípico por defecto.",
     },
@@ -415,7 +415,7 @@ const es: ServicesCopy = {
   illustrationTitle: "Ilustración",
   illustrationTitleAccent: "a mano",
   illustrationIntro:
-    "Todo esto está entintado a mano sobre papel y después limpiado y vectorizado para web. Dibujo {0} para sitios, {1} como mascotas, sets de iconos y separadores de sección, y {2} cuando una marca necesita una cara que no tenga nadie más. El motivo por el que este servicio se pide tanto es simple: la ilustración generada converge toda en el mismo aspecto, así que una web que se apoya en ella termina pareciéndose a todas las demás. Un dibujo lleva una mano detrás, y eso es lo que la gente recuerda.",
+    "Todo esto está hecho a mano, en tinta, carboncillo, pastel o pintura, y después limpiado y vectorizado para web. Dibujo {0} para sitios, {1} como mascotas, sets de iconos y separadores de sección, y {2} cuando una marca necesita una cara que no tenga nadie más. El motivo por el que este servicio se pide tanto es simple: la ilustración generada converge toda en el mismo aspecto, así que una web que se apoya en ella termina pareciéndose a todas las demás. Un dibujo lleva una mano detrás, y eso es lo que la gente recuerda.",
   illustrationIntroStrong: ["piezas editoriales", "recursos de marca", "personajes originales"],
   illustrationCapabilities: [
     {
@@ -439,8 +439,8 @@ const es: ServicesCopy = {
         "Tramado cruzado, puntillismo y trabajo de pincel para piezas que necesitan peso y textura, ese tipo de detalle que la ilustración generada plana no consigue fingir.",
     },
   ],
-  illustrationTools: ["Tinta sobre papel", "Illustrator", "Photoshop", "Exportación SVG"],
-  illustrationGalleryTitle: "Line art seleccionado",
+  illustrationTools: ["Tinta", "Carboncillo y pastel", "Acrílico", "Illustrator", "Exportación SVG"],
+  illustrationGalleryTitle: "",
 
   ctaTitle: "¿No sabes cuál",
   ctaTitleAccent: "necesitas?",

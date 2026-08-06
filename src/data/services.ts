@@ -23,6 +23,11 @@ import illoCharacter from "../assets/services/illustration/lineart-character-des
 import illoMoonCat from "../assets/services/illustration/lineart-moon-cat-brand-asset.webp";
 import illoCake from "../assets/services/illustration/lineart-melting-cake-surreal-ink.webp";
 import illoWitch from "../assets/services/illustration/lineart-witch-antler-hat-portrait.webp";
+import illoBoots from "../assets/services/illustration/charcoal-platform-boots-white-on-black.webp";
+import illoEye from "../assets/services/illustration/charcoal-cosmic-eye-eclipse.webp";
+import illoJelly from "../assets/services/illustration/charcoal-jellyfish-bioluminescent.webp";
+import illoPainting from "../assets/services/illustration/acrylic-jellyfish-moon-painting.webp";
+import illoWatch from "../assets/services/illustration/pastel-shattered-pocket-watch.webp";
 
 export type GalleryItem = {
   url: ImageMetadata;
@@ -402,6 +407,71 @@ const titleFromFilename = (slug: string) =>
     .join(" ");
 
 const illustration: Entry[] = [
+  {
+    url: illoEye,
+    en: {
+      title: "Cosmic eye · white charcoal",
+      alt: "White charcoal drawing on black paper of a large eye surrounded by lashes, with eclipsing rings above and below it in a starfield",
+      tags: ["Charcoal","Surreal","Black paper"],
+    },
+    es: {
+      title: "Ojo cósmico · carboncillo blanco",
+      alt: "Dibujo a carboncillo blanco sobre papel negro de un ojo grande rodeado de pestañas, con anillos en eclipse arriba y abajo sobre un campo de estrellas",
+      tags: ["Carboncillo","Surrealista","Papel negro"],
+    },
+  },
+  {
+    url: illoJelly,
+    en: {
+      title: "Jellyfish · light study",
+      alt: "White charcoal jellyfish on black paper, with trailing tentacles and bubbles rendered as points of light",
+      tags: ["Charcoal","Light study","Nature"],
+    },
+    es: {
+      title: "Medusa · estudio de luz",
+      alt: "Medusa a carboncillo blanco sobre papel negro, con tentáculos y burbujas trabajados como puntos de luz",
+      tags: ["Carboncillo","Estudio de luz","Naturaleza"],
+    },
+  },
+  {
+    url: illoPainting,
+    en: {
+      title: "Jellyfish moon · acrylic",
+      alt: "Acrylic painting on canvas of a seated figure silhouetted against a blue moon, surrounded by glowing green jellyfish",
+      tags: ["Acrylic","Colour","Canvas"],
+    },
+    es: {
+      title: "Luna de medusas · acrílico",
+      alt: "Pintura acrílica sobre lienzo de una figura sentada en contraluz frente a una luna azul, rodeada de medusas verdes luminosas",
+      tags: ["Acrílico","Color","Lienzo"],
+    },
+  },
+  {
+    url: illoWatch,
+    en: {
+      title: "Shattered pocket watch · pastel",
+      alt: "Pastel drawing on black paper of a pocket watch breaking apart, its shards suspended around it and catching coloured light",
+      tags: ["Pastel","Conceptual","Black paper"],
+    },
+    es: {
+      title: "Reloj de bolsillo roto · pastel",
+      alt: "Dibujo a pastel sobre papel negro de un reloj de bolsillo rompiéndose, con las esquirlas suspendidas alrededor atrapando luz de color",
+      tags: ["Pastel","Conceptual","Papel negro"],
+    },
+  },
+  {
+    url: illoBoots,
+    en: {
+      title: "Platform boots · white pencil",
+      alt: "White pencil study on black paper of a pair of laced platform boots, built entirely from highlights",
+      tags: ["Pencil","Still life","Black paper"],
+    },
+    es: {
+      title: "Botas de plataforma · lápiz blanco",
+      alt: "Estudio a lápiz blanco sobre papel negro de un par de botas de plataforma con cordones, construido solo con luces",
+      tags: ["Lápiz","Naturaleza muerta","Papel negro"],
+    },
+  },
     {
     url: illoPortrait,
     en: {

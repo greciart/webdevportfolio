@@ -13,6 +13,20 @@ html {
   font-size: calc(14px * var(--a11y-text-scale, 1));
 }
 
+/* ================================
+   ARTWORK PROTECTION
+   Raises the effort needed to lift the drawings: no drag to desktop, no long
+   press save sheet on mobile, no text selection around them. It is a
+   deterrent, not security. Anything rendered in a browser can still be
+   screenshotted or pulled from the network tab.
+================================ */
+img,
+video {
+  -webkit-user-drag: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+}
+
 /* Accessibility: underline every link in running text, for readers who need
    links distinguishable by more than colour. */
 html[data-a11y-underline="on"] :is(main, article, footer) a {
