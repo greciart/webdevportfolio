@@ -1,6 +1,7 @@
 ---
 import { getLangFromUrl, localizePath } from "../../i18n/utils";
 import { Icon } from "astro-icon/components";
+import { Image } from "astro:assets";
 import { getLanguage } from "../../utils/languages";
 
 // Named uiLang so it doesn't shadow the `lang` prop, which is the tech tag.
@@ -68,7 +69,11 @@ const getIconContainerClasses = () => {
           role="img"
           aria-label={`${selectedLanguage.name} icon`}
         >
+          {selectedLanguage.logo ? (
+          <Image class="w-full! rounded-full" src={selectedLanguage.logo} alt="" width={40} height={40} loading="lazy" />
+        ) : (
           <Icon class="w-full!" name={selectedLanguage.iconName} />
+        )}
         </div>
         {selectedLanguage.name}
       </span>
@@ -84,7 +89,11 @@ const getIconContainerClasses = () => {
         role="img"
         aria-label={`${selectedLanguage.name} icon`}
       >
-        <Icon class="w-full!" name={selectedLanguage.iconName} />
+        {selectedLanguage.logo ? (
+          <Image class="w-full! rounded-full" src={selectedLanguage.logo} alt="" width={40} height={40} loading="lazy" />
+        ) : (
+          <Icon class="w-full!" name={selectedLanguage.iconName} />
+        )}
       </div>
       {selectedLanguage.name}
     </span>

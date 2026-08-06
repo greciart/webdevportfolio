@@ -53,6 +53,14 @@ export type PackagesCopy = {
   extras: Extra[];
   extrasFootnote: string;
 
+  needTitle: string;
+  needTitleAccent: string;
+  needIntro: string;
+  needFromYou: Item[];
+  needMustHaveLabel: string;
+  needMustHave: string[];
+  needNote: string;
+
   ctaTitle: string;
   ctaTitleAccent: string;
   ctaCopy: string;
@@ -176,6 +184,11 @@ const en: PackagesCopy = {
         "If you sell, the store is part of the build: products, categories, checkout and the payment methods your customers actually use, including local transfer where cards are not the norm.",
     },
     {
+      name: "Customer support widget",
+      description:
+        "A floating button pinned to the bottom left of every page that opens a WhatsApp chat with you. Visitors ask from wherever they are instead of hunting for a contact page, which is where most enquiries are lost.",
+    },
+    {
       name: "Contact and lead capture",
       description:
         "Forms that reach your inbox reliably, with spam handling, so an enquiry never quietly disappears.",
@@ -297,6 +310,55 @@ const en: PackagesCopy = {
   ],
   extrasFootnote:
     "Prices are in USD and cover the work described. If you want several of these, tell me at the start and I'll fold them into one timeline rather than bolting them on afterwards.",
+
+  needTitle: "What I need",
+  needTitleAccent: "from you",
+  needIntro:
+    "Every project that ran late did so for the same reason: it started before this was ready. None of it is difficult, but the more of it you bring on day one, the faster and cheaper the build goes.",
+  needFromYou: [
+    {
+      name: "What the site is for",
+      description:
+        "A few sentences on the business: what you sell, what you want this site to achieve, who you are talking to, who your competitors are and what makes you different from them.",
+    },
+    {
+      name: "The look you want",
+      description:
+        "Be specific about style. Photography only, 2D illustration, 3D, video, motion or none of it. Send between two and five reference sites so we are talking about the same thing rather than about adjectives.",
+    },
+    {
+      name: "Main colours",
+      description:
+        "Two or three is the useful number. More than that and the palette stops being a palette. If you have a brand manual, that covers it.",
+    },
+    {
+      name: "Your logo",
+      description:
+        "In vector if you have it. If you don't have one yet, I can design it as an extra, and it is better to settle that before the site than after.",
+    },
+    {
+      name: "Copy and content",
+      description:
+        "Text, product data and images, as a document or a spreadsheet. If the copy is not ready I will lay out with placeholder text, but the design always lands better against real words.",
+    },
+    {
+      name: "Hosting and domain access",
+      description:
+        "Needed to publish. You can send it over chat rather than by email if you prefer, and I will tell you exactly which credentials are required and which are not.",
+    },
+    {
+      name: "Plugin preferences",
+      description:
+        "For WordPress builds, tell me if you already rely on specific plugins. If you have no preference, I install the set I consider necessary for security, performance and SEO.",
+    },
+  ],
+  needMustHaveLabel: "Before we start, you need to have",
+  needMustHave: [
+    "Your own hosting and domain purchased, or the budget set aside for them",
+    "Read through this page, so the scope we agree on is the scope you expect",
+  ],
+  needNote:
+    "I don't design from nothing. Without direction the result is a guess, and guesses cost revisions. Two rounds of revisions are included in every project; each specific change counts as one, so it pays to bring the real information up front.",
 
   ctaTitle: "Want a number",
   ctaTitleAccent: "for your project?",
@@ -422,6 +484,11 @@ const es: PackagesCopy = {
         "Si vendes, la tienda es parte del desarrollo: productos, categorías, checkout y los métodos de pago que tus clientes usan de verdad, incluida la transferencia local donde la tarjeta no es lo habitual.",
     },
     {
+      name: "Widget de atención al cliente",
+      description:
+        "Un botón flotante anclado abajo a la izquierda en todas las páginas que abre un chat de WhatsApp contigo. La gente pregunta desde donde esté en vez de ir a buscar la página de contacto, que es donde se pierden la mayoría de las consultas.",
+    },
+    {
       name: "Contacto y captación",
       description:
         "Formularios que llegan a tu correo de forma fiable, con manejo de spam, para que una consulta no se pierda en silencio.",
@@ -543,6 +610,55 @@ const es: PackagesCopy = {
   ],
   extrasFootnote:
     "Los precios están en dólares y cubren el trabajo descrito. Si quieres varios, dímelo al inicio y los meto en un mismo plazo en vez de irlos añadiendo después.",
+
+  needTitle: "Qué necesito",
+  needTitleAccent: "de ti",
+  needIntro:
+    "Todos los proyectos que se me han alargado fue por el mismo motivo: empezaron antes de tener esto listo. Nada de esto es difícil, pero cuanto más traigas el primer día, más rápido y más barato sale el desarrollo.",
+  needFromYou: [
+    {
+      name: "Para qué es el sitio",
+      description:
+        "Unas frases sobre el negocio: qué vendes, qué quieres lograr con esta web, a quién le hablas, quiénes son tus competidores y qué te diferencia de ellos.",
+    },
+    {
+      name: "El estilo que quieres",
+      description:
+        "Sé específica con el estilo. Solo fotografía, ilustración 2D, 3D, video, animaciones o nada de eso. Manda entre dos y cinco sitios de referencia, así hablamos de lo mismo y no de adjetivos.",
+    },
+    {
+      name: "Colores principales",
+      description:
+        "Dos o tres es el número útil. Más que eso y la paleta deja de ser una paleta. Si tienes manual de marca, con eso está resuelto.",
+    },
+    {
+      name: "Tu logo",
+      description:
+        "En vectorial si lo tienes. Si aún no tienes, puedo diseñarlo como extra, y conviene resolverlo antes del sitio y no después.",
+    },
+    {
+      name: "Textos y contenido",
+      description:
+        "Textos, datos de producto e imágenes, en un documento o una hoja de cálculo. Si los textos no están listos maqueto con texto de relleno, pero el diseño siempre queda mejor contra palabras reales.",
+    },
+    {
+      name: "Acceso a hosting y dominio",
+      description:
+        "Hace falta para publicar. Si prefieres, me lo pasas por chat en vez de por correo, y te digo exactamente qué credenciales se necesitan y cuáles no.",
+    },
+    {
+      name: "Preferencias de plugins",
+      description:
+        "En desarrollos con WordPress, dime si ya dependes de plugins concretos. Si no tienes preferencia, instalo el conjunto que considero necesario para seguridad, rendimiento y SEO.",
+    },
+  ],
+  needMustHaveLabel: "Antes de empezar necesitas tener",
+  needMustHave: [
+    "Tu hosting y dominio comprados, o el presupuesto reservado para ellos",
+    "Esta página leída, para que el alcance que acordemos sea el que esperas",
+  ],
+  needNote:
+    "No diseño desde cero sin especificaciones. Sin dirección el resultado es una adivinanza, y las adivinanzas se pagan en revisiones. Cada proyecto incluye dos rondas de revisión y cada cambio concreto cuenta como una, así que conviene traer la información real desde el principio.",
 
   ctaTitle: "¿Quieres una cifra",
   ctaTitleAccent: "para tu proyecto?",

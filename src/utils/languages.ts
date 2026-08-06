@@ -1,6 +1,16 @@
+import type { ImageMetadata } from "astro";
+import splineLogo from "../assets/logos/spline.webp";
+
 export interface Language {
   name: string;
+  /** Name of an SVG in src/icons. Ignored when `logo` is set. */
   iconName: string;
+  /**
+   * Raster brand mark, for logos that are not vector artwork. astro-icon only
+   * collects SVGs, and an <image> inside one is dropped, so these are rendered
+   * through astro:assets instead.
+   */
+  logo?: ImageMetadata;
   className?: string;
 }
 
@@ -201,6 +211,7 @@ react: {
   spline: {
     name: "Spline",
     iconName: "spline",
+    logo: splineLogo,
   },
   claude: {
     name: "Claude",

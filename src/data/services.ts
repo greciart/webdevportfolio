@@ -22,6 +22,8 @@ import illoWingedEye from "../assets/services/illustration/lineart-winged-eye-in
 import illoPortrait from "../assets/services/illustration/lineart-portrait-crosshatching-ink.webp";
 import illoCharacter from "../assets/services/illustration/lineart-character-design-fantasy.webp";
 import illoMoonCat from "../assets/services/illustration/lineart-moon-cat-brand-asset.webp";
+import illoCake from "../assets/services/illustration/lineart-melting-cake-surreal-ink.webp";
+import illoCrown from "../assets/services/illustration/lineart-crowned-figure-hatching.webp";
 
 export type GalleryItem = {
   url: ImageMetadata;
@@ -438,6 +440,32 @@ const illustration: Entry[] = [
       title: "Diseño de personaje · concepto original",
       alt: "Ilustración a tinta de un personaje original con trenzas, túnicas superpuestas y detalles de estampado",
       tags: ["Personaje", "Concepto", "Tinta"],
+    },
+  },
+  {
+    url: illoCrown,
+    en: {
+      title: "Crowned figure · dense hatching",
+      alt: "Hand inked illustration of a figure being crowned, with hair and shadow built entirely from dense parallel hatching",
+      tags: ["Ink", "Editorial", "Narrative"],
+    },
+    es: {
+      title: "Figura coronada · tramado denso",
+      alt: "Ilustración a tinta de una figura siendo coronada, con el cabello y las sombras construidos por completo con tramado paralelo denso",
+      tags: ["Tinta", "Editorial", "Narrativo"],
+    },
+  },
+  {
+    url: illoCake,
+    en: {
+      title: "Melting cake · surreal ink",
+      alt: "Surreal hand inked illustration of a melting cake with candles and flowing ribbons, filled with texture line work",
+      tags: ["Ink", "Surreal", "Texture"],
+    },
+    es: {
+      title: "Pastel derretido · tinta surrealista",
+      alt: "Ilustración surrealista a tinta de un pastel derritiéndose con velas y cintas onduladas, rellena de trabajo de línea texturizado",
+      tags: ["Tinta", "Surrealista", "Textura"],
     },
   },
   {

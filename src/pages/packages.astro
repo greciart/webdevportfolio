@@ -288,6 +288,77 @@ const sectionWrap = "scroll-m-24 px-8 py-16 max-sm:px-4 max-sm:py-10";
     </div>
   </section>
 
+  <!-- ===================== WHAT I NEED FROM YOU ===================== -->
+  <section id="requirements" class={sectionWrap}>
+    <div class="mx-auto flex max-w-7xl flex-col gap-10">
+      <header data-reveal="blur" class="flex flex-col gap-4">
+        <div class="flex items-center gap-4">
+          <Icon
+            class="text-3xl text-mint-500 dark:text-white"
+            name="briefcase"
+            aria-hidden="true"
+          />
+          <Heading text={c.needTitle} textGradient={c.needTitleAccent} level={2} />
+        </div>
+        <p class={`${bodyText} max-w-3xl`}>{c.needIntro}</p>
+      </header>
+
+      <ol
+        data-reveal-stagger="up"
+        class="grid grid-cols-3 gap-6 max-lg:grid-cols-2 max-md:grid-cols-1"
+      >
+        {
+          c.needFromYou.map((item, i) => (
+            <li class={cardBorder}>
+              <div class={`${cardInner} flex flex-col gap-3`}>
+                <span class="text-xs font-bold text-mint-600 dark:text-mint-300">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <h3 class="text-base font-bold text-blacktext dark:text-white">{item.name}</h3>
+                <span
+                  class="h-0.5 w-10 rounded-full bg-linear-to-r from-riptide-400 to-mint-500"
+                  aria-hidden="true"
+                />
+                <p class="text-sm font-normal leading-6 text-blacktext/70 dark:text-zinc-400">
+                  {item.description}
+                </p>
+              </div>
+            </li>
+          ))
+        }
+      </ol>
+
+      <div
+        data-reveal="up"
+        class="rounded-2xl border border-mint-100 bg-white/70 p-7 dark:border-zinc-800 dark:bg-zinc-900/50 max-sm:p-5"
+      >
+        <span class="text-xs font-bold uppercase tracking-widest text-mint-600 dark:text-mint-300">
+          {c.needMustHaveLabel}
+        </span>
+        <ul class="mt-4 flex flex-col gap-2">
+          {
+            c.needMustHave.map((item) => (
+              <li class="flex items-start gap-2.5 text-sm font-normal leading-6 text-blacktext/80 dark:text-zinc-300">
+                <span
+                  class="mt-2 size-1.5 shrink-0 rotate-45 bg-riptide-400"
+                  aria-hidden="true"
+                />
+                {item}
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <p
+        data-reveal="fade"
+        class="max-w-3xl text-sm font-normal leading-6 text-blacktext/60 dark:text-zinc-400"
+      >
+        {c.needNote}
+      </p>
+    </div>
+  </section>
+
   <!-- ===================== CTA ===================== -->
   <section class="px-8 pb-20 max-sm:px-4 max-sm:pb-12">
     <div
