@@ -188,7 +188,9 @@ const eyebrow =
               <div class="flex flex-col gap-2">
                 <label class={labelCls} for="budget">{c.labelBudget}</label>
                 <select class={field} id="budget" name="budget">
-                  <option value="">{c.budgetPlaceholder}</option>
+                  {/* Selected by default, and carries its own value so the
+                      email reads "Not defined yet" instead of arriving blank. */}
+                  <option value={c.budgetPlaceholder}>{c.budgetPlaceholder}</option>
                   {budgets.map((budget) => <option value={budget}>{budget}</option>)}
                 </select>
               </div>

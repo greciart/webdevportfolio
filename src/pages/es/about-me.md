@@ -28,6 +28,8 @@ Adapto mi forma de trabajar según el alcance del proyecto y sus necesidades de 
 
 ***Experiencias de alta complejidad (código a medida):*** Para marcas que buscan un impacto visual disruptivo, construyo sitios a medida con Astro JS y GSAP. Implemento efectos dinámicos avanzados como parallax de alto nivel y transiciones fluidas. Estos proyectos ofrecen mejor rendimiento y un acabado visual único, y reflejan una inversión mayor en tiempo y presupuesto.
 
+Todo esto lo desgloso bien en la [página de paquetes](/es/packages/): los cuatro niveles uno al lado del otro, lo que va incluido en cualquiera de ellos, lo que hace subir una cotización y lo que cuenta como extra opcional.
+
 ## 💼 Lo que he aprendido con el tiempo
 ### Diseñadora visual y desarrolladora web freelance
 *Ene 2021 – Actualidad*:

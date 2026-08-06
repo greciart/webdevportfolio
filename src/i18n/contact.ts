@@ -68,7 +68,7 @@ const en: ContactCopy = {
   placeholderMessage:
     "What are you building, who is it for, and when do you need it? Links to references are very welcome.",
   servicePlaceholder: "Select a service…",
-  budgetPlaceholder: "Prefer not to say",
+  budgetPlaceholder: "Not defined yet",
   services: [
     "Web design & development",
     "Branding (logo, full branding, brand manual)",
@@ -76,20 +76,20 @@ const en: ContactCopy = {
     "Immersive interactive experiences / game UI",
     "Something else",
   ],
-  budgets: ["$500 – $1,000", "$1,000 – $3,000", "$3,000+", "Not defined yet"],
+  budgets: ["$500 – $1,000", "$1,000 – $3,000", "$3,000+"],
   submit: "Send message",
   submitting: "Sending…",
   orWrite: "Or write directly to",
   honeypot: "Don't fill this out if you're human:",
 
-  errorTooFast: "That was a little too quick — please review your message and send it again.",
+  errorTooFast: "That was a little too quick · please review your message and send it again.",
   errorCaptcha: "Please complete the “I'm not a robot” check before sending.",
   errorGeneric:
     "Something went wrong sending your message. Please email me directly at greciavalentinapv@gmail.com and I'll reply right away.",
 
   successTitle: "Message sent!",
   successCopy:
-    "Thanks for reaching out. I'll get back to you within 24 hours — if it's urgent, you can also book a call directly.",
+    "Thanks for reaching out. I'll get back to you within 24 hours · if it's urgent, you can also book a call directly.",
   bookCall: "Book a free call",
 
   callTitle: "Prefer a quick call?",
@@ -128,7 +128,7 @@ const es: ContactCopy = {
   placeholderMessage:
     "¿Qué estás construyendo, para quién es y para cuándo lo necesitas? Los enlaces de referencia son muy bienvenidos.",
   servicePlaceholder: "Elige un servicio…",
-  budgetPlaceholder: "Prefiero no decirlo",
+  budgetPlaceholder: "Aún sin definir",
   services: [
     "Diseño y desarrollo web",
     "Branding (logo, branding completo, manual de marca)",
@@ -136,20 +136,20 @@ const es: ContactCopy = {
     "Experiencias interactivas inmersivas / UI de videojuegos",
     "Otra cosa",
   ],
-  budgets: ["$500 – $1.000", "$1.000 – $3.000", "$3.000+", "Aún sin definir"],
+  budgets: ["$500 – $1.000", "$1.000 – $3.000", "$3.000+"],
   submit: "Enviar mensaje",
   submitting: "Enviando…",
   orWrite: "O escríbeme directamente a",
   honeypot: "No completes esto si eres humano:",
 
-  errorTooFast: "Eso fue demasiado rápido — revisa tu mensaje y vuelve a enviarlo.",
+  errorTooFast: "Eso fue demasiado rápido · revisa tu mensaje y vuelve a enviarlo.",
   errorCaptcha: "Completa la verificación «No soy un robot» antes de enviar.",
   errorGeneric:
     "Algo salió mal al enviar tu mensaje. Escríbeme directamente a greciavalentinapv@gmail.com y te respondo enseguida.",
 
   successTitle: "¡Mensaje enviado!",
   successCopy:
-    "Gracias por escribirme. Te respondo en menos de 24 horas — si es urgente, también puedes agendar una llamada directamente.",
+    "Gracias por escribirme. Te respondo en menos de 24 horas · si es urgente, también puedes agendar una llamada directamente.",
   bookCall: "Agenda una llamada gratis",
 
   callTitle: "¿Prefieres una llamada rápida?",

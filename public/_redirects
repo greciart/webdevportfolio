@@ -1,0 +1,3 @@
+# La pagina de servicios paso a llamarse extras. 301 para no perder lo indexado.
+/services      /extras      301
+/es/services   /es/extras   301

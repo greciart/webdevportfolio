@@ -15,7 +15,7 @@ I specialize in User Interface (UI) design, supported by a strong foundation in 
 ## What I Bring to Your Project
 🎨**UI/UX Design:** High-fidelity prototyping in Figma focused on usability, clarity, and modern visual design.
 
-💻**Web Development:** Development of responsive and reliable websites using Astro, WordPress, and Shopify — from landing pages to full e-commerce platforms.
+💻**Web Development:** Development of responsive and reliable websites using Astro, WordPress, and Shopify · from landing pages to full e-commerce platforms.
 
 🕹️ Having a strong interest in game dev and design, alongside my work in web design I design user interfaces for interactive experiences, including game UI concepts created through game jams and experimental projects. These experiences allow me to explore player-centered design, real-time feedback, and interface clarity in dynamic environments.
 
@@ -27,6 +27,8 @@ I adapt my workflow based on project scope and performance needs:
 ***Agile Solutions (CMS):*** I develop in WordPress and Shopify, optimizing the user journey with smooth animations and effective hover interactions for quick, functional launches.
 
 ***High-Complexity Experiences (Bespoke Code):*** For brands seeking a disruptive visual impact, I build custom sites using Astro JS and GSAP. I implement advanced dynamic effects like high-level Parallax and fluid transitions. These projects offer superior performance and unique visual polish, reflecting a higher investment in time and budget.
+
+I break all of this down properly on the [packages page](/packages/): the four tiers side by side, what every project includes whichever one you pick, what pushes a quote up, and what counts as an optional extra.
 
 ## 💼 What I learn through time
 ### Freelance Visual Designer & Web Developer

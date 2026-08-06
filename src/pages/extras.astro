@@ -5,7 +5,12 @@ import Button from "../components/ui/Button.astro";
 import MasonryGallery from "../components/portfolio/MasonryGallery.astro";
 import GalleryLightbox from "../components/portfolio/GalleryLightbox.astro";
 import { Icon } from "astro-icon/components";
-import { getBrandingGallery, getThreeDGallery, getImmersiveGallery } from "../data/services";
+import {
+  getBrandingGallery,
+  getThreeDGallery,
+  getIllustrationGallery,
+  getImmersiveGallery,
+} from "../data/services";
 import { servicesCopy } from "../i18n/services";
 import { getLangFromUrl, localizePath } from "../i18n/utils";
 
@@ -14,20 +19,25 @@ const c = servicesCopy[lang];
 
 const brandingGallery = getBrandingGallery(lang);
 const threeDGallery = getThreeDGallery(lang);
+const illustrationGallery = getIllustrationGallery(lang);
 const immersiveGallery = getImmersiveGallery(lang);
 const p = (path) => localizePath(path, lang);
 
 const { pageTitle, description } = c;
 
+// Illustration sits third, between 3D and Interactive: the page then runs from
+// brand identity through visual craft and ends on the most technical service.
 const sections = [
   { id: "branding", label: c.sections.branding, icon: "illustrator" },
   { id: "3d-modeling", label: c.sections.threeD, icon: "blender" },
+  { id: "illustration", label: c.sections.illustration, icon: "photoshop" },
   { id: "immersive", label: c.sections.immersive, icon: "robot" },
 ];
 
 const brandingPackages = c.brandingPackages;
 const threeDCapabilities = c.threeDCapabilities;
 const polyLevels = c.polyLevels;
+const illustrationCapabilities = c.illustrationCapabilities;
 const immersiveCapabilities = c.immersiveCapabilities;
 
 // Splits "text {0} text" into alternating literals and placeholder indexes so
@@ -333,12 +343,80 @@ c.brandingTools.map((tool) => <span class={chip}>{tool}</span>)
   </section>
 
   <!-- ===================== IMMERSIVE ===================== -->
+  <!-- ===================== HAND DRAWN ILLUSTRATION ===================== -->
+  <section id="illustration" class="scroll-m-24 px-8 py-16 max-sm:px-4 max-sm:py-10">
+    <div class="mx-auto flex max-w-7xl flex-col gap-10">
+      <header data-reveal="blur-up" class="flex flex-col gap-4">
+        <span class={eyebrow}>
+          <span class="h-px w-8 bg-mint-400"></span>
+          {c.serviceLabel("03")}
+        </span>
+        <div class="flex items-center gap-4">
+          <Heading
+            text={c.illustrationTitle}
+            textGradient={c.illustrationTitleAccent}
+            level={2}
+          />
+        </div>
+        <p class={bodyText}>
+          {
+            withStrong(c.illustrationIntro, c.illustrationIntroStrong).map((part) =>
+              part.strong ? (
+                <strong class="font-bold text-mint-600 dark:text-mint-300">
+                  {part.strong}
+                </strong>
+              ) : (
+                part.text
+              ),
+            )
+          }
+        </p>
+      </header>
+
+      <div data-reveal-stagger="scale" class="grid grid-cols-4 gap-6 max-xl:grid-cols-2 max-md:grid-cols-1">
+        {
+          illustrationCapabilities.map((item) => (
+            <article class={cardBorder}>
+              <div class={`${cardInner} flex flex-col gap-3`}>
+                <h3 class="text-lg font-bold text-blacktext dark:text-white">
+                  {item.name}
+                </h3>
+                <span
+                  class="h-0.5 w-10 rounded-full bg-linear-to-r from-riptide-400 to-mint-500"
+                  aria-hidden="true"
+                />
+                <p class="text-sm font-normal leading-6 text-blacktext/70 dark:text-zinc-400">
+                  {item.description}
+                </p>
+              </div>
+            </article>
+          ))
+        }
+      </div>
+
+      <div data-reveal="fade" class="flex flex-wrap items-center gap-3">
+        <span class="text-xs font-semibold uppercase tracking-widest text-blacktext/50 dark:text-zinc-500">
+          {c.toolsLabel}
+        </span>
+        {c.illustrationTools.map((tool) => <span class={chip}>{tool}</span>)}
+      </div>
+
+      <div class="flex flex-col gap-6">
+        <h3 class="text-xl font-bold text-blacktext dark:text-white">
+          {c.illustrationGalleryTitle}
+        </h3>
+        <MasonryGallery items={illustrationGallery} group="illustration" reveal="blur" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== IMMERSIVE ===================== -->
   <section id="immersive" class="scroll-m-24 px-8 py-16 max-sm:px-4 max-sm:py-10">
     <div class="mx-auto flex max-w-7xl flex-col gap-10">
       <header data-reveal="blur" class="flex flex-col gap-4">
         <span class={eyebrow}>
           <span class="h-px w-8 bg-mint-400"></span>
-          {c.serviceLabel("03")}
+          {c.serviceLabel("04")}
         </span>
         <div class="flex items-center gap-4">
           <Heading text={c.immersiveTitle} textGradient={c.immersiveTitleAccent} level={2} />

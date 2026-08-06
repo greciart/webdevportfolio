@@ -13,7 +13,7 @@ type Level = { name: string; description: string };
 export type ServicesCopy = {
   pageTitle: string;
   description: string;
-  sections: { branding: string; threeD: string; immersive: string };
+  sections: { branding: string; threeD: string; illustration: string; immersive: string };
 
   heroEyebrow: string;
   heroTitle: string;
@@ -56,6 +56,14 @@ export type ServicesCopy = {
   immersiveEmptyTitle: string;
   immersiveEmptyText: string;
 
+  illustrationTitle: string;
+  illustrationTitleAccent: string;
+  illustrationIntro: string;
+  illustrationIntroStrong: [string, string, string];
+  illustrationCapabilities: Capability[];
+  illustrationTools: string[];
+  illustrationGalleryTitle: string;
+
   ctaTitle: string;
   ctaTitleAccent: string;
   ctaCopy: string;
@@ -63,16 +71,21 @@ export type ServicesCopy = {
 };
 
 const en: ServicesCopy = {
-  pageTitle: "Services | Grecia V. - Branding, 3D & Interactive Design",
+  pageTitle: "Extras | Grecia V. - Branding, 3D, Hand Drawn Illustration & Interactive Design",
   description:
-    "Branding and logo design, 3D modeling and animation in Blender, and design of immersive interactive experiences and game UI. See the work behind each service.",
-  sections: { branding: "Branding", threeD: "3D & Animation", immersive: "Interactive & Games" },
+    "Branding and logo design, 3D modelling and animation in Blender, hand drawn ink illustration for web and brand assets, and immersive interactive experiences. See the work behind each one.",
+  sections: {
+    branding: "Branding",
+    threeD: "3D & Animation",
+    illustration: "Illustration",
+    immersive: "Interactive & Games",
+  },
 
   heroEyebrow: "What I can build for you",
   heroTitle: "Creative",
-  heroTitleAccent: "Services",
+  heroTitleAccent: "Extras",
   heroIntro:
-    "Beyond websites, I help brands build the visual world around them: the identity they are recognised by, the 3D pieces that make them stand out, and the interactive experiences that make people stay.",
+    "Beyond websites, I help brands build the visual world around them: the identity they are recognised by, the 3D pieces that make them stand out, the hand drawn illustration nobody else has, and the interactive experiences that make people stay.",
   heroWebLead: "Looking for web design & development?",
   heroWebLink: "See my web projects →",
 
@@ -168,7 +181,7 @@ const en: ServicesCopy = {
       description: "Photorealistic detail for hero renders, close-up product shots and print.",
     },
   ],
-  pipeline: ["Blender — modeling", "Blender — animation & render", "Premiere Pro / CapCut — edit"],
+  pipeline: ["Blender · modeling", "Blender · animation & render", "Premiere Pro / CapCut · edit"],
   threeDGalleryTitle: "3D work",
 
   immersiveTitle: "Immersive Interactive",
@@ -210,6 +223,36 @@ const en: ServicesCopy = {
   immersiveEmptyText:
     "Screens and prototypes from my game jam entries are being prepared. In the meantime, you can read about my interactive and experimental projects on the About Me page.",
 
+  illustrationTitle: "Hand Drawn",
+  illustrationTitleAccent: "Illustration",
+  illustrationIntro:
+    "Everything here is inked by hand on paper, then cleaned up and vectorised for the web. I draw {0} for websites, plus {1} like mascots, icon sets and section dividers, and {2} when a brand needs a face nobody else has. The reason clients keep asking for this one is simple: generated illustration all converges on the same look, so a site that leans on it ends up looking like every other site. A drawing carries a hand, and that is the part people remember.",
+  illustrationIntroStrong: ["editorial pieces", "brand assets", "original characters"],
+  illustrationCapabilities: [
+    {
+      name: "Web illustration",
+      description:
+        "Hero art, section headers and empty states drawn to fit your layout, then exported as SVG so they stay sharp at any size and weigh almost nothing.",
+    },
+    {
+      name: "Brand assets",
+      description:
+        "Mascots, icon sets, patterns and dividers built as one family, so everything on the site reads as the same hand instead of a pile of stock.",
+    },
+    {
+      name: "Character design",
+      description:
+        "Original characters from first sketch through final ink, with turnarounds and expression sheets so you can reuse them without commissioning again.",
+    },
+    {
+      name: "Ink and shading",
+      description:
+        "Crosshatching, stippling and brush work for pieces that need weight and texture, the kind of detail flat generated art cannot fake.",
+    },
+  ],
+  illustrationTools: ["Ink on paper", "Illustrator", "Photoshop", "SVG export"],
+  illustrationGalleryTitle: "Selected line art",
+
   ctaTitle: "Not sure which one",
   ctaTitleAccent: "you need?",
   ctaCopy: "Tell me about your project and I'll recommend the right scope, no commitment.",
@@ -217,16 +260,21 @@ const en: ServicesCopy = {
 };
 
 const es: ServicesCopy = {
-  pageTitle: "Servicios | Grecia V. - Branding, 3D y diseño interactivo",
+  pageTitle: "Extras | Grecia V. - Branding, 3D, ilustración a mano y diseño interactivo",
   description:
-    "Branding y diseño de logos, modelado y animación 3D en Blender, y diseño de experiencias interactivas inmersivas e interfaces para videojuegos. Mira el trabajo detrás de cada servicio.",
-  sections: { branding: "Branding", threeD: "3D y animación", immersive: "Interactivo y juegos" },
+    "Branding y diseño de logos, modelado y animación 3D en Blender, ilustración a tinta hecha a mano para web y recursos de marca, y experiencias interactivas inmersivas. Mira el trabajo detrás de cada uno.",
+  sections: {
+    branding: "Branding",
+    threeD: "3D y animación",
+    illustration: "Ilustración",
+    immersive: "Interactivo y juegos",
+  },
 
   heroEyebrow: "Lo que puedo construir para ti",
-  heroTitle: "Servicios",
+  heroTitle: "Extras",
   heroTitleAccent: "creativos",
   heroIntro:
-    "Más allá de los sitios web, ayudo a las marcas a construir el mundo visual que las rodea: la identidad por la que se les reconoce, las piezas 3D que las hacen destacar y las experiencias interactivas que hacen que la gente se quede.",
+    "Más allá de los sitios web, ayudo a las marcas a construir el mundo visual que las rodea: la identidad por la que se les reconoce, las piezas 3D que las hacen destacar, la ilustración hecha a mano que no se parece a la de nadie más y las experiencias interactivas que hacen que la gente se quede.",
   heroWebLead: "¿Buscas diseño y desarrollo web?",
   heroWebLink: "Mira mis proyectos web →",
 
@@ -322,7 +370,7 @@ const es: ServicesCopy = {
       description: "Detalle fotorrealista para renders protagonistas, primeros planos de producto e impresión.",
     },
   ],
-  pipeline: ["Blender — modelado", "Blender — animación y render", "Premiere Pro / CapCut — edición"],
+  pipeline: ["Blender · modelado", "Blender · animación y render", "Premiere Pro / CapCut · edición"],
   threeDGalleryTitle: "Trabajos en 3D",
 
   immersiveTitle: "Experiencias interactivas",
@@ -363,6 +411,36 @@ const es: ServicesCopy = {
   immersiveEmptyTitle: "Galería de game jams en camino",
   immersiveEmptyText:
     "Estoy preparando pantallas y prototipos de mis participaciones en game jams. Mientras tanto, puedes leer sobre mis proyectos interactivos y experimentales en la página Sobre mí.",
+
+  illustrationTitle: "Ilustración",
+  illustrationTitleAccent: "a mano",
+  illustrationIntro:
+    "Todo esto está entintado a mano sobre papel y después limpiado y vectorizado para web. Dibujo {0} para sitios, {1} como mascotas, sets de iconos y separadores de sección, y {2} cuando una marca necesita una cara que no tenga nadie más. El motivo por el que este servicio se pide tanto es simple: la ilustración generada converge toda en el mismo aspecto, así que una web que se apoya en ella termina pareciéndose a todas las demás. Un dibujo lleva una mano detrás, y eso es lo que la gente recuerda.",
+  illustrationIntroStrong: ["piezas editoriales", "recursos de marca", "personajes originales"],
+  illustrationCapabilities: [
+    {
+      name: "Ilustración web",
+      description:
+        "Piezas principales, cabeceras de sección y estados vacíos dibujados a la medida de tu maquetado, exportados en SVG para que se vean nítidos a cualquier tamaño y no pesen casi nada.",
+    },
+    {
+      name: "Recursos de marca",
+      description:
+        "Mascotas, sets de iconos, patrones y separadores construidos como una misma familia, para que todo lo que pongas en el sitio se lea como la misma mano y no como un montón de banco de imágenes.",
+    },
+    {
+      name: "Diseño de personajes",
+      description:
+        "Personajes originales desde el primer boceto hasta la tinta final, con turnaround y hoja de expresiones para que puedas reutilizarlos sin volver a encargar ilustración.",
+    },
+    {
+      name: "Tinta y sombreado",
+      description:
+        "Tramado cruzado, puntillismo y trabajo de pincel para piezas que necesitan peso y textura, ese tipo de detalle que la ilustración generada plana no consigue fingir.",
+    },
+  ],
+  illustrationTools: ["Tinta sobre papel", "Illustrator", "Photoshop", "Exportación SVG"],
+  illustrationGalleryTitle: "Line art seleccionado",
 
   ctaTitle: "¿No sabes cuál",
   ctaTitleAccent: "necesitas?",
