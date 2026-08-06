@@ -11,7 +11,8 @@ type Tier = {
   featured?: boolean;
 };
 
-type Item = { name: string; description: string };
+/** `icon` is a name from src/icons. Optional: the pricing factors go without. */
+type Item = { name: string; description: string; icon?: string };
 type Extra = { name: string; description: string; price: string; days: string };
 
 export type PackagesCopy = {
@@ -92,7 +93,7 @@ const en: PackagesCopy = {
   tiers: [
     {
       step: "01",
-      name: "Popular CMS ecommerce website",
+      name: "CMS ecommerce website",
       stack: "WordPress · Elementor · WooCommerce · Shopify",
       tagline: "Where most startups begin, and where most stores stay.",
       description:
@@ -165,41 +166,49 @@ const en: PackagesCopy = {
   included: [
     {
       name: "SEO optimisation",
+      icon: "seo-search",
       description:
         "Titles, meta descriptions, headings, alt text, sitemap and structured data set up properly from the start, so search engines can read the site the way people do.",
     },
     {
       name: "Speed optimisation",
+      icon: "speed-gauge",
       description:
         "Images compressed and served in modern formats, fonts and scripts loaded so they never block the first paint, and layouts that hold their shape while they load.",
     },
     {
       name: "Responsive on every screen",
+      icon: "devices",
       description:
         "Designed for the phone as its own layout, not shrunk down from desktop. Checked at real widths, from small Android phones through to large monitors.",
     },
     {
       name: "Ecommerce integration",
+      icon: "cart",
       description:
         "If you sell, the store is part of the build: products, categories, checkout and the payment methods your customers actually use, including local transfer where cards are not the norm.",
     },
     {
       name: "Customer support widget",
+      icon: "whatsapp",
       description:
         "A floating button pinned to the bottom left of every page that opens a WhatsApp chat with you. Visitors ask from wherever they are instead of hunting for a contact page, which is where most enquiries are lost.",
     },
     {
       name: "Contact and lead capture",
+      icon: "envelope",
       description:
         "Forms that reach your inbox reliably, with spam handling, so an enquiry never quietly disappears.",
     },
     {
       name: "Accessibility basics",
+      icon: "accessibility",
       description:
         "Contrast checked against WCAG thresholds, keyboard navigation that works, and semantic markup that screen readers can follow.",
     },
     {
       name: "Handover",
+      icon: "handover-key",
       description:
         "You get the accounts, the files and a walkthrough of how to edit your own content. Nothing is held hostage.",
     },
@@ -318,36 +327,43 @@ const en: PackagesCopy = {
   needFromYou: [
     {
       name: "What the site is for",
+      icon: "target",
       description:
         "A few sentences on the business: what you sell, what you want this site to achieve, who you are talking to, who your competitors are and what makes you different from them.",
     },
     {
       name: "The look you want",
+      icon: "palette",
       description:
         "Be specific about style. Photography only, 2D illustration, 3D, video, motion or none of it. Send between two and five reference sites so we are talking about the same thing rather than about adjectives.",
     },
     {
       name: "Main colours",
+      icon: "droplet",
       description:
         "Two or three is the useful number. More than that and the palette stops being a palette. If you have a brand manual, that covers it.",
     },
     {
       name: "Your logo",
+      icon: "shapes",
       description:
         "In vector if you have it. If you don't have one yet, I can design it as an extra, and it is better to settle that before the site than after.",
     },
     {
       name: "Copy and content",
+      icon: "document",
       description:
         "Text, product data and images, as a document or a spreadsheet. If the copy is not ready I will lay out with placeholder text, but the design always lands better against real words.",
     },
     {
       name: "Hosting and domain access",
+      icon: "server",
       description:
         "Needed to publish. You can send it over chat rather than by email if you prefer, and I will tell you exactly which credentials are required and which are not.",
     },
     {
       name: "Plugin preferences",
+      icon: "puzzle",
       description:
         "For WordPress builds, tell me if you already rely on specific plugins. If you have no preference, I install the set I consider necessary for security, performance and SEO.",
     },
@@ -392,7 +408,7 @@ const es: PackagesCopy = {
   tiers: [
     {
       step: "01",
-      name: "Ecommerce con CMS popular",
+      name: "Ecommerce con CMS",
       stack: "WordPress · Elementor · WooCommerce · Shopify",
       tagline: "Donde empiezan casi todas las startups, y donde se quedan casi todas las tiendas.",
       description:
@@ -465,41 +481,49 @@ const es: PackagesCopy = {
   included: [
     {
       name: "Optimización SEO",
+      icon: "seo-search",
       description:
         "Títulos, meta descripciones, encabezados, textos alternativos, sitemap y datos estructurados bien puestos desde el inicio, para que los buscadores lean el sitio como lo lee una persona.",
     },
     {
       name: "Optimización de velocidad",
+      icon: "speed-gauge",
       description:
         "Imágenes comprimidas y servidas en formatos modernos, fuentes y scripts cargados sin bloquear el primer pintado, y maquetados que no dan saltos mientras cargan.",
     },
     {
       name: "Responsive en toda pantalla",
+      icon: "devices",
       description:
         "Diseñado para el teléfono como maquetado propio, no encogido desde escritorio. Revisado a anchos reales, desde móviles Android pequeños hasta monitores grandes.",
     },
     {
       name: "Integración de ecommerce",
+      icon: "cart",
       description:
         "Si vendes, la tienda es parte del desarrollo: productos, categorías, checkout y los métodos de pago que tus clientes usan de verdad, incluida la transferencia local donde la tarjeta no es lo habitual.",
     },
     {
       name: "Widget de atención al cliente",
+      icon: "whatsapp",
       description:
         "Un botón flotante anclado abajo a la izquierda en todas las páginas que abre un chat de WhatsApp contigo. La gente pregunta desde donde esté en vez de ir a buscar la página de contacto, que es donde se pierden la mayoría de las consultas.",
     },
     {
       name: "Contacto y captación",
+      icon: "envelope",
       description:
         "Formularios que llegan a tu correo de forma fiable, con manejo de spam, para que una consulta no se pierda en silencio.",
     },
     {
       name: "Accesibilidad básica",
+      icon: "accessibility",
       description:
         "Contraste verificado contra los umbrales de WCAG, navegación por teclado que funciona y marcado semántico que un lector de pantalla puede seguir.",
     },
     {
       name: "Entrega",
+      icon: "handover-key",
       description:
         "Te quedas con las cuentas, los archivos y una explicación de cómo editar tu propio contenido. Aquí no se secuestra nada.",
     },
@@ -618,36 +642,43 @@ const es: PackagesCopy = {
   needFromYou: [
     {
       name: "Para qué es el sitio",
+      icon: "target",
       description:
         "Unas frases sobre el negocio: qué vendes, qué quieres lograr con esta web, a quién le hablas, quiénes son tus competidores y qué te diferencia de ellos.",
     },
     {
       name: "El estilo que quieres",
+      icon: "palette",
       description:
         "Sé específica con el estilo. Solo fotografía, ilustración 2D, 3D, video, animaciones o nada de eso. Manda entre dos y cinco sitios de referencia, así hablamos de lo mismo y no de adjetivos.",
     },
     {
       name: "Colores principales",
+      icon: "droplet",
       description:
         "Dos o tres es el número útil. Más que eso y la paleta deja de ser una paleta. Si tienes manual de marca, con eso está resuelto.",
     },
     {
       name: "Tu logo",
+      icon: "shapes",
       description:
         "En vectorial si lo tienes. Si aún no tienes, puedo diseñarlo como extra, y conviene resolverlo antes del sitio y no después.",
     },
     {
       name: "Textos y contenido",
+      icon: "document",
       description:
         "Textos, datos de producto e imágenes, en un documento o una hoja de cálculo. Si los textos no están listos maqueto con texto de relleno, pero el diseño siempre queda mejor contra palabras reales.",
     },
     {
       name: "Acceso a hosting y dominio",
+      icon: "server",
       description:
         "Hace falta para publicar. Si prefieres, me lo pasas por chat en vez de por correo, y te digo exactamente qué credenciales se necesitan y cuáles no.",
     },
     {
       name: "Preferencias de plugins",
+      icon: "puzzle",
       description:
         "En desarrollos con WordPress, dime si ya dependes de plugins concretos. Si no tienes preferencia, instalo el conjunto que considero necesario para seguridad, rendimiento y SEO.",
     },
