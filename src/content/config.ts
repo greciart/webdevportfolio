@@ -57,6 +57,9 @@ const projectSchema = ({ image }: { image: () => any }) =>
       url: image(),
       alt: z.string(),
     }),
+    // Keeps the cover out of the case study body when the same shot already
+    // runs in the side gallery. It still serves as the card and OG image.
+    hideCover: z.boolean().optional(),
     // Optional looping clip for the card in the projects grid. `src` lives in
     // /public/videos; `poster` is a still from the same clip so the card keeps
     // its box before a single byte of video is fetched.

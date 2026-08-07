@@ -45,11 +45,11 @@ const gallery = frontmatter.gallery ?? [];
         </div>
       )}
 
-<figure>
-  {frontmatter.image?.url && (
+{!frontmatter.hideCover && frontmatter.image?.url && (
+  <figure>
     <Image class="w-full rounded-xl" src={frontmatter.image.url} alt={frontmatter.image.alt || "Article image"} />
-  )}
-</figure>
+  </figure>
+)}
 
       <div class="markdown" id="content">
         <slot />
