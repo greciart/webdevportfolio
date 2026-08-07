@@ -210,13 +210,13 @@ const en: PackagesCopy = {
       name: "Two rounds of revisions",
       icon: "pen-nib",
       description:
-        "Two revision rounds are free in every project, whatever the tier. You gather your notes, we go through them in one session, and I apply the changes in a single pass instead of chasing them one message at a time.",
+        "Two rounds free in every project, whatever the tier. You gather your notes, we go through them in one session, and I apply them in a single pass.",
     },
     {
       name: "Handover",
       icon: "handover-key",
       description:
-        "You get the accounts, the files and a wireflow, a flow diagram of the finished site that shows how every page and action connects, delivered with the project. What I don't give is a tutorial on using WordPress, Shopify or Framer itself: learning the tool is your side of it. Nothing is held hostage.",
+        "You get the accounts, the files and a wireflow: a diagram showing how every page and action connects. Not a tutorial on using WordPress, Shopify or Framer, since learning the tool is your side of it. Nothing is held hostage.",
     },
   ],
 
@@ -253,7 +253,7 @@ const en: PackagesCopy = {
     {
       name: "Revision rounds",
       description:
-        "Two rounds are free in every project. Any change asked for outside those two sessions counts as an additional round, and once the second one is closed, further revisions are charged by difficulty: $5 for the simplest change and $20 for the most complex. Complete redesigns are not done after the project is delivered. I always flag it before it becomes a cost.",
+        "Two rounds free. Anything asked for outside those two sessions counts as an additional round, charged by difficulty: $5 the simplest change, $20 the most complex. No complete redesigns after delivery.",
     },
   ],
 
@@ -531,13 +531,13 @@ const es: PackagesCopy = {
       name: "Dos rondas de revisión",
       icon: "pen-nib",
       description:
-        "Dos rondas de revisión van gratis en todo proyecto, sea cual sea el nivel. Juntas tus observaciones, las repasamos en una sesión y aplico los cambios de una sola vez, en lugar de irlos persiguiendo mensaje a mensaje.",
+        "Dos rondas gratis en todo proyecto, sea cual sea el nivel. Juntas tus observaciones, las repasamos en una sesión y las aplico de una sola vez.",
     },
     {
       name: "Entrega",
       icon: "handover-key",
       description:
-        "Te quedas con las cuentas, los archivos y un wireflow, un diagrama de flujo del sitio terminado que muestra cómo se conecta cada página y cada acción, entregado con el proyecto. Lo que no doy es un tutorial de cómo usar WordPress, Shopify o Framer: aprender la herramienta te toca a ti. Aquí no se secuestra nada.",
+        "Te quedas con las cuentas, los archivos y un wireflow: un diagrama que muestra cómo se conecta cada página y cada acción. No un tutorial de cómo usar WordPress, Shopify o Framer, porque aprender la herramienta te toca a ti. Aquí no se secuestra nada.",
     },
   ],
 
@@ -574,7 +574,7 @@ const es: PackagesCopy = {
     {
       name: "Rondas de revisión",
       description:
-        "Dos rondas van gratis en todo proyecto. Cualquier cambio que pidas fuera de esas dos sesiones cuenta como una ronda adicional, y una vez cerrada la segunda, las revisiones siguientes se cobran por dificultad: 5 USD el cambio más sencillo y 20 USD el más complejo. No se hacen rediseños completos después de entregar el proyecto. Siempre te lo aviso antes de que se convierta en un costo.",
+        "Dos rondas gratis. Lo que pidas fuera de esas dos sesiones cuenta como ronda adicional, cobrada por dificultad: 5 USD el cambio más sencillo, 20 USD el más complejo. No se hacen rediseños completos después de entregar.",
     },
   ],
 
