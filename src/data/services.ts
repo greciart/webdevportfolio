@@ -23,7 +23,6 @@ import illoCharacter from "../assets/services/illustration/lineart-character-des
 import illoMoonCat from "../assets/services/illustration/lineart-moon-cat-brand-asset.webp";
 import illoCake from "../assets/services/illustration/lineart-melting-cake-surreal-ink.webp";
 import illoWitch from "../assets/services/illustration/lineart-witch-antler-hat-portrait.webp";
-import illoBoots from "../assets/services/illustration/charcoal-platform-boots-white-on-black.webp";
 import illoEye from "../assets/services/illustration/charcoal-cosmic-eye-eclipse.webp";
 import illoJelly from "../assets/services/illustration/charcoal-jellyfish-bioluminescent.webp";
 import illoPainting from "../assets/services/illustration/acrylic-jellyfish-moon-painting.webp";
@@ -457,19 +456,6 @@ const illustration: Entry[] = [
       title: "Reloj de bolsillo roto · pastel",
       alt: "Dibujo a pastel sobre papel negro de un reloj de bolsillo rompiéndose, con las esquirlas suspendidas alrededor atrapando luz de color",
       tags: ["Pastel","Conceptual","Papel negro"],
-    },
-  },
-  {
-    url: illoBoots,
-    en: {
-      title: "Platform boots · white pencil",
-      alt: "White pencil study on black paper of a pair of laced platform boots, built entirely from highlights",
-      tags: ["Pencil","Still life","Black paper"],
-    },
-    es: {
-      title: "Botas de plataforma · lápiz blanco",
-      alt: "Estudio a lápiz blanco sobre papel negro de un par de botas de plataforma con cordones, construido solo con luces",
-      tags: ["Lápiz","Naturaleza muerta","Papel negro"],
     },
   },
     {

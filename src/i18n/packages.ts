@@ -207,10 +207,16 @@ const en: PackagesCopy = {
         "Contrast checked against WCAG thresholds, keyboard navigation that works, and semantic markup that screen readers can follow.",
     },
     {
+      name: "Two rounds of revisions",
+      icon: "pen-nib",
+      description:
+        "Two revision rounds are free in every project, whatever the tier. You gather your notes, we go through them in one session, and I apply the changes in a single pass instead of chasing them one message at a time.",
+    },
+    {
       name: "Handover",
       icon: "handover-key",
       description:
-        "You get the accounts, the files and a walkthrough of how to edit your own content. Nothing is held hostage.",
+        "You get the accounts, the files and a wireflow, a flow diagram of the finished site that shows how every page and action connects, delivered with the project. What I don't give is a tutorial on using WordPress, Shopify or Framer itself: learning the tool is your side of it. Nothing is held hostage.",
     },
   ],
 
@@ -247,7 +253,7 @@ const en: PackagesCopy = {
     {
       name: "Revision rounds",
       description:
-        "A couple of rounds are built into every project. Repeated changes of direction after a stage is signed off are not, and I will always flag it before it becomes a cost.",
+        "Two rounds are free in every project. Any change asked for outside those two sessions counts as an additional round, and once the second one is closed, further revisions are charged by difficulty: $5 for the simplest change and $20 for the most complex. Complete redesigns are not done after the project is delivered. I always flag it before it becomes a cost.",
     },
   ],
 
@@ -323,7 +329,7 @@ const en: PackagesCopy = {
   needTitle: "What I need",
   needTitleAccent: "from you",
   needIntro:
-    "Every project that ran late did so for the same reason: it started before this was ready. None of it is difficult, but the more of it you bring on day one, the faster and cheaper the build goes.",
+    "Every project that ran late did so for the same reason: it started before this was ready. You don't have to write the brief yourself or work out what to send me. I hand you a short document with the questions already in it, covering what the site is for, the references, the colours and the rest, and you fill it in. What follows is what that document asks for, so you know what is coming. None of it is difficult, but the more of it you bring on day one, the faster and cheaper the build goes.",
   needFromYou: [
     {
       name: "What the site is for",
@@ -374,7 +380,7 @@ const en: PackagesCopy = {
     "Read through this page, so the scope we agree on is the scope you expect",
   ],
   needNote:
-    "I don't design from nothing. Without direction the result is a guess, and guesses cost revisions. Two rounds of revisions are included in every project; each specific change counts as one, so it pays to bring the real information up front.",
+    "I don't design from nothing. Without direction the result is a guess, and guesses cost revisions. Two rounds of revisions are free in every project, and anything asked for outside those two sessions counts as an additional round, so it pays to fill the brief in properly up front.",
 
   ctaTitle: "Want a number",
   ctaTitleAccent: "for your project?",
@@ -522,10 +528,16 @@ const es: PackagesCopy = {
         "Contraste verificado contra los umbrales de WCAG, navegación por teclado que funciona y marcado semántico que un lector de pantalla puede seguir.",
     },
     {
+      name: "Dos rondas de revisión",
+      icon: "pen-nib",
+      description:
+        "Dos rondas de revisión van gratis en todo proyecto, sea cual sea el nivel. Juntas tus observaciones, las repasamos en una sesión y aplico los cambios de una sola vez, en lugar de irlos persiguiendo mensaje a mensaje.",
+    },
+    {
       name: "Entrega",
       icon: "handover-key",
       description:
-        "Te quedas con las cuentas, los archivos y una explicación de cómo editar tu propio contenido. Aquí no se secuestra nada.",
+        "Te quedas con las cuentas, los archivos y un wireflow, un diagrama de flujo del sitio terminado que muestra cómo se conecta cada página y cada acción, entregado con el proyecto. Lo que no doy es un tutorial de cómo usar WordPress, Shopify o Framer: aprender la herramienta te toca a ti. Aquí no se secuestra nada.",
     },
   ],
 
@@ -562,7 +574,7 @@ const es: PackagesCopy = {
     {
       name: "Rondas de revisión",
       description:
-        "Un par de rondas van incluidas en todo proyecto. Los cambios de rumbo repetidos después de aprobar una etapa no, y siempre te lo aviso antes de que se convierta en un costo.",
+        "Dos rondas van gratis en todo proyecto. Cualquier cambio que pidas fuera de esas dos sesiones cuenta como una ronda adicional, y una vez cerrada la segunda, las revisiones siguientes se cobran por dificultad: 5 USD el cambio más sencillo y 20 USD el más complejo. No se hacen rediseños completos después de entregar el proyecto. Siempre te lo aviso antes de que se convierta en un costo.",
     },
   ],
 
@@ -638,7 +650,7 @@ const es: PackagesCopy = {
   needTitle: "Qué necesito",
   needTitleAccent: "de ti",
   needIntro:
-    "Todos los proyectos que se me han alargado fue por el mismo motivo: empezaron antes de tener esto listo. Nada de esto es difícil, pero cuanto más traigas el primer día, más rápido y más barato sale el desarrollo.",
+    "Todos los proyectos que se me han alargado fue por el mismo motivo: empezaron antes de tener esto listo. No tienes que armar el brief por tu cuenta ni adivinar qué mandarme: te paso un documento breve con las preguntas ya hechas, sobre para qué es el sitio, las referencias, los colores y lo demás, y tú lo llenas. Lo que viene abajo es justo lo que ese documento pregunta, para que sepas qué esperar. Nada de esto es difícil, pero cuanto más traigas el primer día, más rápido y más barato sale el desarrollo.",
   needFromYou: [
     {
       name: "Para qué es el sitio",
@@ -689,7 +701,7 @@ const es: PackagesCopy = {
     "Esta página leída, para que el alcance que acordemos sea el que esperas",
   ],
   needNote:
-    "No diseño desde cero sin especificaciones. Sin dirección el resultado es una adivinanza, y las adivinanzas se pagan en revisiones. Cada proyecto incluye dos rondas de revisión y cada cambio concreto cuenta como una, así que conviene traer la información real desde el principio.",
+    "No diseño desde cero sin especificaciones. Sin dirección el resultado es una adivinanza, y las adivinanzas se pagan en revisiones. Todo proyecto incluye dos rondas de revisión gratis, y lo que pidas fuera de esas dos sesiones cuenta como una ronda adicional, así que conviene llenar bien el brief desde el principio.",
 
   ctaTitle: "¿Quieres una cifra",
   ctaTitleAccent: "para tu proyecto?",
