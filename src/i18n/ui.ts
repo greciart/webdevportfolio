@@ -92,6 +92,7 @@ export const ui = {
     // --- Footer ---
     "footer.developedBy": "Developed by",
     "footer.with": "with Astro",
+    "footer.rights": "All rights reserved.",
     "footer.home": "Go to home",
     "footer.nav": "Footer navigation",
     "footer.social": "Social media links",
@@ -233,6 +234,7 @@ export const ui = {
     // --- Pie de página ---
     "footer.developedBy": "Desarrollado por",
     "footer.with": "con Astro",
+    "footer.rights": "Todos los derechos reservados.",
     "footer.home": "Ir al inicio",
     "footer.nav": "Navegación del pie de página",
     "footer.social": "Redes sociales",

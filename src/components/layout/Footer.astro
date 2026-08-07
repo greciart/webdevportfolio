@@ -25,6 +25,8 @@ const {
   instagramIconName,
   githubIconName,
 } = staticData.data;
+
+const year = new Date().getFullYear();
 ---
 
 <footer
@@ -55,15 +57,18 @@ const {
   </div>
 </a>
     </div>
-    <div class="text-center max-sm:py-7">
+    <div class="flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-center max-sm:py-7">
       <a
         href={github}
         class="flex items-center justify-center gap-3 text-sm font-normal italic max-sm:text-sm"
         aria-label="About the website development"
         ><Icon name="code" aria-hidden="true" /> {t("footer.developedBy")} <strong
           >{alias}</strong
-        > {t("footer.with")}</
+        > {t("footer.with")}</a
       >
+      <span class="text-sm font-normal italic max-sm:text-sm">
+        © {year} {alias} {t("footer.rights")}
+      </span>
     </div>
     <div
       class="flex items-center justify-center gap-5"
