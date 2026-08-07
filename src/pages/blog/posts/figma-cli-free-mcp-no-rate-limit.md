@@ -1,6 +1,6 @@
 ---
 layout: /src/layouts/MarkdownPostLayout.astro
-title: "Use Figma With AI, No Rate Limits: figma-cli Setup Guide"
+title: "Use Figma MCP without Rate Limits: figma-cli Setup Guide"
 author: Grecia V.
 description: "figma-cli lets Claude Code or Cursor build designs straight into Figma Desktop. Open source, no API keys, no rate limits. Full setup guide."
 image:

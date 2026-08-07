@@ -1,6 +1,6 @@
 ---
 layout: /src/layouts/MarkdownPostLayout.astro
-title: "Usa Figma con IA sin límites: guía de figma-cli"
+title: "Usa el MCP de Figma sin límites: guía de figma-cli"
 author: Grecia V.
 description: "figma-cli permite a Claude Code o Cursor construir diseños directamente en Figma Desktop. Código abierto, sin API keys y sin límites de uso. Guía completa."
 image:
