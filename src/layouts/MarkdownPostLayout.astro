@@ -8,6 +8,7 @@ import NavArticle from "../components/layout/NavArticle.astro";
 import ListPosts from "../components/blog/ListPosts.astro";
 import NavigationArticles from "../components/layout/NavigationArticles.astro";
 import Share from "../components/ui/Share.astro";
+import RssLinks from "../components/blog/RssLinks.astro";
 const { frontmatter } = Astro.props;
 const currentUrl = new URL(Astro.url.pathname, Astro.site).href;
 const tweetText = encodeURIComponent(
@@ -131,6 +132,8 @@ const p = (path) => localizePath(path, uiLang);
         <slot />
       </div>
       <Share currentUrl={currentUrl} tweetText={tweetText} />
+      <hr class="my-6 text-mint-300/50" />
+      <RssLinks />
     </article>
     <NavArticle title={frontmatter.title} />
   </section>

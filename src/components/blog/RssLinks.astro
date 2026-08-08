@@ -1,0 +1,85 @@
+---
+// Three ways to subscribe, on the blog indexes and on every post.
+// "Follow by RSS" copies the feed URL, because that is what a reader asks you
+// to paste. "Go to the RSS" opens the raw feed. The third hands off to
+// rssby.email for people who would rather get posts in their inbox.
+import { Icon } from "astro-icon/components";
+import { getLangFromUrl, useTranslations, localizePath } from "../../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const feedPath = localizePath("/rss.xml", lang);
+const feedUrl = new URL(feedPath, Astro.site).href;
+
+const RSS_BY_EMAIL = "https://rssby.email/";
+
+const pill =
+  "inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-semibold transition-all hover:scale-105 max-sm:w-full max-sm:justify-center";
+---
+
+<div class="flex flex-wrap items-center gap-3 max-sm:flex-col" data-rss-links>
+  <button
+    type="button"
+    data-rss-copy
+    data-rss-url={feedUrl}
+    data-label-copy={t("rss.follow")}
+    data-label-copied={t("rss.copied")}
+    class={`${pill} cursor-pointer bg-linear-to-r from-riptide-300 to-mint-300 text-blacktext dark:from-riptide-500 dark:to-mint-500`}
+  >
+    <Icon name="rss" class="size-4" aria-hidden="true" />
+    <span data-rss-copy-label>{t("rss.follow")}</span>
+  </button>
+
+  <a
+    href={feedPath}
+    target="_blank"
+    rel="noopener noreferrer"
+    class={`${pill} border border-mint-300 text-blacktext hover:border-mint-500 dark:border-zinc-700 dark:text-mint-50 dark:hover:border-mint-400`}
+  >
+    <Icon name="rss" class="size-4" aria-hidden="true" />
+    {t("rss.open")}
+  </a>
+
+  <a
+    href={RSS_BY_EMAIL}
+    target="_blank"
+    rel="noopener noreferrer"
+    class={`${pill} border border-mint-300 text-blacktext hover:border-mint-500 dark:border-zinc-700 dark:text-mint-50 dark:hover:border-mint-400`}
+  >
+    <Icon name="envelope" class="size-4" aria-hidden="true" />
+    {t("rss.email")}
+  </a>
+</div>
+
+<script>
+  // Progressive: without JS the copy button simply does nothing, and the two
+  // links still work. Clipboard access needs a secure context, so fall back to
+  // opening the feed when it is unavailable or denied.
+  document
+    .querySelectorAll<HTMLButtonElement>("[data-rss-copy]")
+    .forEach((button) => {
+      const label = button.querySelector<HTMLElement>("[data-rss-copy-label]");
+      // Both labels are rendered per language into data attributes, so there is
+      // no English default to fall back to and none is hardcoded here.
+      const url = button.dataset.rssUrl ?? "";
+      const copied = button.dataset.labelCopied ?? "";
+      const idle = button.dataset.labelCopy ?? "";
+      let timer: number | undefined;
+
+      button.addEventListener("click", async () => {
+        try {
+          await navigator.clipboard.writeText(url);
+        } catch {
+          window.open(url, "_blank", "noopener");
+          return;
+        }
+        if (!label) return;
+        label.textContent = copied;
+        window.clearTimeout(timer);
+        timer = window.setTimeout(() => {
+          label.textContent = idle;
+        }, 2000);
+      });
+    });
+</script>

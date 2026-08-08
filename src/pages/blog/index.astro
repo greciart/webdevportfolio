@@ -3,6 +3,7 @@ import Layout from "../../layouts/Layout.astro";
 import Hero from "../../components/blog/Hero.astro";
 import Tags from "../../components/blog/Tags.astro";
 import ListPosts from "../../components/blog/ListPosts.astro";
+import RssLinks from "../../components/blog/RssLinks.astro";
 import { getLangFromUrl, useTranslations } from "../../i18n/utils";
 const t = useTranslations(getLangFromUrl(Astro.url));
 const pageTitle = t("seo.blog.title");
@@ -16,6 +17,9 @@ const ogimage ={
 <Layout  pageTitle={pageTitle} description={description} ogimage={ogimage}>
    
     <Hero />
+    <div class="mx-auto max-w-7xl px-8 max-sm:px-4">
+        <RssLinks />
+    </div>
     <Tags />
     <div class="px-8 max-sm:px-4">
         <ListPosts />

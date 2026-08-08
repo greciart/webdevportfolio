@@ -7,6 +7,8 @@ import {
   getLangFromUrl,
   getAlternateLinks,
   languages,
+  localizePath,
+  useTranslations,
   withTrailingSlash,
 } from "../i18n/utils";
 import defaultOgImage from "../assets/greciavdev.webp";
@@ -21,7 +23,9 @@ const {
 } = Astro.props;
 
 const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 const alternates = getAlternateLinks(Astro.url);
+const feedPath = localizePath("/rss.xml", lang);
 
 // One URL per page, in the one shape the host actually serves. Everything that
 // names this page — canonical, hreflang, og:url — has to agree on it, or Google
@@ -122,6 +126,15 @@ const ogimageUrl = new URL(ogimageSrc, Astro.site).href;
 
     <!-- Sitemap -->
     <link rel="sitemap" href="/sitemap-index.xml" />
+
+    <!-- Feed discovery. Points at this language's feed, so a reader landing on
+         /es/ subscribes to the Spanish posts rather than the English ones. -->
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title={t("seo.blog.title")}
+      href={new URL(feedPath, Astro.site).href}
+    />
 
     <!-- Arms the scroll-reveal styles before first paint so nothing flashes.
          Without JS this class is never set and no element is ever hidden. -->
