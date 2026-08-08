@@ -53,6 +53,9 @@ export const ui = {
     "home.available": "Available for work",
     "home.greeting": "Hello, I'm",
     "home.role": "Web Designer & Frontend Developer",
+    // Joins role and years in the hero sentence. Lived in the markup, so the
+    // Spanish page read "…desarrolladora frontend with más de 5 años…".
+    "home.with": "with",
     "home.years": "5+ years of experience",
     "home.intro":
       "creating modern, user-focused digital experiences.",
@@ -160,6 +163,9 @@ export const ui = {
     "seo.home.title": "Grecia V. | Web Designer & Frontend Developer Portfolio",
     "seo.home.description":
       "Portfolio of Grecia V., a web designer and frontend developer specializing in UX/UI design, modern websites, and e-commerce experiences. Explore projects built with WordPress, Shopify, and Astro.",
+    "post.previous": "Previous Post",
+    "post.next": "Next Post",
+
     "seo.blog.title": "Web Design and Development Blog | Grecia V.",
     "seo.blog.description":
       "Notes on frontend development, web design and the tools I actually use day to day, written up as I go.",
@@ -209,6 +215,7 @@ export const ui = {
     "home.available": "Disponible para trabajar",
     "home.greeting": "Hola, soy",
     "home.role": "Diseñadora web y desarrolladora frontend",
+    "home.with": "con",
     "home.years": "más de 5 años de experiencia",
     "home.intro": "creando experiencias digitales modernas y centradas en el usuario.",
     "home.intro2":
@@ -315,6 +322,9 @@ export const ui = {
       "Grecia V. | Diseñadora web y desarrolladora frontend",
     "seo.home.description":
       "Portafolio de Grecia V., diseñadora web y desarrolladora frontend especializada en diseño UX/UI, sitios modernos y tiendas online. Proyectos hechos con WordPress, Shopify y Astro.",
+    "post.previous": "Artículo anterior",
+    "post.next": "Artículo siguiente",
+
     "seo.blog.title": "Blog de diseño y desarrollo web | Grecia V.",
     "seo.blog.description":
       "Apuntes sobre desarrollo frontend, diseño web y las herramientas que uso de verdad en el día a día, escritos sobre la marcha.",

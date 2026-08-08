@@ -1,7 +1,7 @@
 ---
 layout: /src/layouts/MarkdownPostLayout.astro
 title: La guía completa de Markdown
-author: Fernando López
+author: Grecia V.
 description: "Guía completa de la sintaxis de Markdown, desde el formato básico hasta las funciones avanzadas. Aprende a crear encabezados, listas, énfasis y más con este lenguaje de marcado esencial para crear contenido."
 image:
   url: "/images/posts/markdown.webp"
