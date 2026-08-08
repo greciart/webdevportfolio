@@ -1,10 +1,12 @@
 ---
 import { Image } from 'astro:assets';
 import type { ImageMetadata } from 'astro';
+import { getLangFromUrl, useTranslations } from '../../i18n/utils';
 
 type GalleryImage = { url: ImageMetadata; alt: string };
 
 const { images = [] }: { images?: GalleryImage[] } = Astro.props;
+const t = useTranslations(getLangFromUrl(Astro.url));
 
 const isLandscape = (img: GalleryImage) => img.url.height <= img.url.width;
 // Landscape shots are short enough to stack several per page; tall page
@@ -30,7 +32,7 @@ const allLandscape = images.length > 0 && images.every(isLandscape);
                 href={(img.url as any).src}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Ver imagen completa"
+                aria-label={t("aria.openImage")}
               >
                 {isLandscape(img) ? (
                   <Image
@@ -56,7 +58,7 @@ const allLandscape = images.length > 0 && images.every(isLandscape);
             <button
               id="gallery-prev"
               class="text-xs text-mint-400 hover:text-mint-300 transition-colors disabled:opacity-30 font-bold px-2 py-1 rounded"
-              aria-label="Imagen anterior"
+              aria-label={t("aria.prevImage")}
             >
               ← Prev
             </button>
@@ -64,7 +66,7 @@ const allLandscape = images.length > 0 && images.every(isLandscape);
             <button
               id="gallery-next"
               class="text-xs text-mint-400 hover:text-mint-300 transition-colors disabled:opacity-30 font-bold px-2 py-1 rounded"
-              aria-label="Siguiente imagen"
+              aria-label={t("aria.nextImage")}
             >
               Next →
             </button>

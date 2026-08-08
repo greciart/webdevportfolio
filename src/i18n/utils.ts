@@ -19,6 +19,24 @@ export function useTranslations(lang: Lang) {
 }
 
 /**
+ * `t()` that fills in `{placeholder}` slots. Needed because word order moves
+ * between languages: "Blender icon" is "Icono de Blender", so the variable
+ * cannot just be concatenated onto a translated prefix.
+ */
+export function useLabels(lang: Lang) {
+  const t = useTranslations(lang);
+  return function tf(
+    key: keyof (typeof ui)[typeof defaultLang],
+    vars: Record<string, string>,
+  ): string {
+    return Object.entries(vars).reduce(
+      (out, [name, value]) => out.replaceAll(`{${name}}`, value),
+      t(key),
+    );
+  };
+}
+
+/**
  * The site builds to directories, so `/packages` exists only as a 301 to
  * `/packages/`. Linking to the slashless form costs the visitor a redirect and
  * hands Google a second URL for the same page, which is what Search Console

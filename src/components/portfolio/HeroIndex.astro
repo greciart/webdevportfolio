@@ -30,7 +30,7 @@ const {
 <section
   class="scroll-m-16 px-8 max-sm:px-4 py-8"
   id="home"
-  aria-label="Professional profile and introduction"
+  aria-label={t("aria.hero")}
 >
   <!-- Fades in immediately from CSS instead of waiting on the observer: this is
        the LCP block, so it must not depend on JavaScript to become visible. -->
@@ -69,7 +69,7 @@ const {
       <a
         href={p("/about-me")}
         class="absolute inset-0"
-        aria-label="View about me page"
+        aria-label={t("aria.aboutPage")}
       ></a>
 
     </div>
@@ -151,7 +151,7 @@ const {
           <a
             target="_blank"
             href={github}
-            aria-label="View this site's code repository on GitHub"
+            aria-label={t("aria.repo")}
           >
             <div
               class="relative flex h-full flex-col gap-8 p-8 dark:before:bg-[radial-gradient(circle,rgba(13,188,130)_0,rgba(1,45,34)_100%)] before:bg-[radial-gradient(circle,rgba(95,255,202)_0,rgba(144,253,210)_100%)] before:absolute before:left-30 before:bottom-30 before:h-[30%] before:aspect-square before:rounded-full before:blur-3xl before:opacity-90 before:transition before:z-0 max-xl:p-5 max-md:p-4 xl:before:bottom-10"
@@ -203,7 +203,7 @@ const {
         <a
           href="#projects"
           class="absolute left-0 top-0 z-40 h-full w-full bg-transparent"
-          aria-label="View projects section"></a>
+          aria-label={t("aria.projectsSection")}></a>
         <div class="flex items-center gap-4 max-md:gap-2">
           <Icon
             class="text-3xl dark:text-white text-mint-500 max-md:text-2xl max-sm:text-xl"

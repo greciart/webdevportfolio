@@ -1,5 +1,5 @@
 ---
-import { getLangFromUrl, localizePath } from "../../i18n/utils";
+import { getLangFromUrl, localizePath, useTranslations } from "../../i18n/utils";
 import Button from "../ui/Button.astro";
 import LastPost from "../blog/LastPost.astro";
 import Languages from "../blog/Languages.astro";
@@ -22,6 +22,7 @@ const {
 
 const uiLang = getLangFromUrl(Astro.url);
 const p = (path) => localizePath(path, uiLang);
+const t = useTranslations(uiLang);
 ---
 
 <section class="py-8 px-8 max-sm:px-4 max-sm:py-2">
@@ -104,7 +105,7 @@ const p = (path) => localizePath(path, uiLang);
           <Heading text={profileName} level={3} />
           <Button
             link={p("/about-me")}
-            text="About Me"
+            text={t("home.aboutBtn")}
             iconName="person"
             class="drop-shadow-xl"
           />

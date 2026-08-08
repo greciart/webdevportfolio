@@ -5,8 +5,10 @@ import Capsule from "../ui/Capsule.astro";
 import DatePub from "./DatePub.astro";
 
 import { getPosts } from "../../i18n/posts";
-import { getLangFromUrl, withTrailingSlash } from "../../i18n/utils";
+import { getLangFromUrl, useLabels, useTranslations, withTrailingSlash } from "../../i18n/utils";
 const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const tf = useLabels(lang);
 const allPostsByLang = getPosts(lang);
 const allPosts: any[] = allPostsByLang;
 
@@ -34,12 +36,12 @@ const imageAlt = latestPost.frontmatter.image.alt || latestPost.frontmatter.titl
         <a href="" class="sm:hidden relative top-0 left-0 w-full h-auto -z-0" aria-hidden="true">
           <img src={image} alt={imageAlt} class="w-full h-auto" loading="lazy" />
         </a>
-        <div class="w-full flex pb-5 gap-2 flex-wrap justify-end z-10 max-sm:px-6 max-sm:pt-6" role="list" aria-label="Programming languages">
+        <div class="w-full flex pb-5 gap-2 flex-wrap justify-end z-10 max-sm:px-6 max-sm:pt-6" role="list" aria-label={t("aria.langs")}>
           {languages.map((language: unknown) => (
             <Capsule lang={language?.toString() || ""} />
           ))}
         </div>
-        <a href={withTrailingSlash(latestPost.url)} class="text-mint-50 gap-3 h-full flex items-end max-sm:px-6 rounded-lg transition-all" aria-label={`Read article: ${latestPost.frontmatter.title}`}>
+        <a href={withTrailingSlash(latestPost.url)} class="text-mint-50 gap-3 h-full flex items-end max-sm:px-6 rounded-lg transition-all" aria-label={tf("aria.readArticle", { title: latestPost.frontmatter.title })}>
           <div class="gap-3 flex flex-col justify-end drop-shadow-[1px_6px_1px_rgba(0,0,0,0.3)]">
             <DatePub date={latestPost.frontmatter.pubDate} class="text-mint-50" />
             <h2 id="post-title" class="text-4xl max-xl:text-3xl max-sm:text-2xl font-bold">
@@ -48,7 +50,7 @@ const imageAlt = latestPost.frontmatter.image.alt || latestPost.frontmatter.titl
             <ReadMore class="text-mint-50" />
           </div>
         </a>
-        <div class="gap-2 mt-3 justify-start items-center flex flex-row flex-wrap max-sm:px-6 max-sm:pb-6" role="list" aria-label="Article tags">
+        <div class="gap-2 mt-3 justify-start items-center flex flex-row flex-wrap max-sm:px-6 max-sm:pb-6" role="list" aria-label={t("aria.tags")}>
           {tags.map((tag) => (
             <Tag tag={tag} forceDark="true">{tag}</Tag>
           ))}

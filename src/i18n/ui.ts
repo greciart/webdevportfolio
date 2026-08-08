@@ -49,6 +49,41 @@ export const ui = {
     "a11y.motion": "Reduce motion",
     "a11y.reset": "Reset",
 
+    // --- Screen reader labels ---
+    // Nothing here is visible, which is exactly why it went untranslated for so
+    // long. `{name}`/`{title}` are filled in by `useLabels`.
+    "aria.footer": "Site footer",
+    "aria.footerCredit": "About the website development",
+    "aria.mainNav": "Main navigation",
+    "aria.themeToggle": "Switch between light and dark mode",
+    "aria.hero": "Professional profile and introduction",
+    "aria.aboutPage": "View about me page",
+    "aria.repo": "View this site's code repository on GitHub",
+    "aria.projectsSection": "View projects section",
+    "aria.services": "Services",
+    "aria.share": "Share on social media",
+    "aria.shareOn": "Share on {name}",
+    "aria.langs": "Programming languages",
+    "aria.tags": "Article tags",
+    "aria.readArticle": "Read article: {title}",
+    "aria.openFullSize": "Open {title} in full size",
+    "aria.openImage": "View full image",
+    "aria.viewArticlesAbout": "View articles about {name}",
+    "aria.techIcon": "{name} icon",
+    "aria.lightbox": "Image viewer",
+    "aria.lightboxClose": "Close viewer",
+    "aria.prevImage": "Previous image",
+    "aria.nextImage": "Next image",
+    "aria.close": "Close",
+    "share.label": "Share",
+    "gallery.viewCase": "View full case study",
+
+    // --- RSS ---
+    "rss.follow": "Follow by RSS",
+    "rss.copied": "Feed URL copied",
+    "rss.open": "Go to the RSS",
+    "rss.email": "Follow RSS by email",
+
     // --- Home hero ---
     "home.available": "Available for work",
     "home.greeting": "Hello, I'm",
@@ -210,6 +245,39 @@ export const ui = {
     "a11y.underline": "Subrayar enlaces",
     "a11y.motion": "Reducir movimiento",
     "a11y.reset": "Restablecer",
+
+    // --- Etiquetas para lectores de pantalla ---
+    "aria.footer": "Pie de página",
+    "aria.footerCredit": "Sobre el desarrollo del sitio",
+    "aria.mainNav": "Navegación principal",
+    "aria.themeToggle": "Alternar entre modo claro y oscuro",
+    "aria.hero": "Perfil profesional y presentación",
+    "aria.aboutPage": "Ver la página sobre mí",
+    "aria.repo": "Ver el repositorio de código de este sitio en GitHub",
+    "aria.projectsSection": "Ver la sección de proyectos",
+    "aria.services": "Servicios",
+    "aria.share": "Compartir en redes sociales",
+    "aria.shareOn": "Compartir en {name}",
+    "aria.langs": "Lenguajes de programación",
+    "aria.tags": "Etiquetas del artículo",
+    "aria.readArticle": "Leer el artículo: {title}",
+    "aria.openFullSize": "Abrir {title} a tamaño completo",
+    "aria.openImage": "Ver la imagen completa",
+    "aria.viewArticlesAbout": "Ver artículos sobre {name}",
+    "aria.techIcon": "Icono de {name}",
+    "aria.lightbox": "Visor de imágenes",
+    "aria.lightboxClose": "Cerrar el visor",
+    "aria.prevImage": "Imagen anterior",
+    "aria.nextImage": "Imagen siguiente",
+    "aria.close": "Cerrar",
+    "share.label": "Compartir",
+    "gallery.viewCase": "Ver el caso completo",
+
+    // --- RSS ---
+    "rss.follow": "Seguir por RSS",
+    "rss.copied": "URL del feed copiada",
+    "rss.open": "Ir al RSS",
+    "rss.email": "Seguir RSS by email",
 
     // --- Hero del inicio ---
     "home.available": "Disponible para trabajar",

@@ -1,5 +1,5 @@
 ---
-import { getLangFromUrl, localizePath } from "../../i18n/utils";
+import { getLangFromUrl, localizePath, useLabels } from "../../i18n/utils";
 import { Icon } from "astro-icon/components";
 import { Image } from "astro:assets";
 import { getLanguage } from "../../utils/languages";
@@ -7,6 +7,7 @@ import { getLanguage } from "../../utils/languages";
 // Named uiLang so it doesn't shadow the `lang` prop, which is the tech tag.
 const uiLang = getLangFromUrl(Astro.url);
 const p = (path: string) => localizePath(path, uiLang);
+const tf = useLabels(uiLang);
 
 interface Props {
   lang: string;
@@ -56,7 +57,7 @@ const getIconContainerClasses = () => {
     <a
       class="cursor-pointer"
       href={p(`/blog/techs/${lang}`)}
-      aria-label={`View articles about ${selectedLanguage.name}`}
+      aria-label={tf("aria.viewArticlesAbout", { name: selectedLanguage.name })}
       role="link"
     >
       <span
@@ -67,7 +68,7 @@ const getIconContainerClasses = () => {
         <div
           class={getIconContainerClasses()}
           role="img"
-          aria-label={`${selectedLanguage.name} icon`}
+          aria-label={tf("aria.techIcon", { name: selectedLanguage.name })}
         >
           {selectedLanguage.logo ? (
           <Image class="w-full! rounded-full" src={selectedLanguage.logo} alt="" width={40} height={40} loading="lazy" />
@@ -87,7 +88,7 @@ const getIconContainerClasses = () => {
       <div
         class={getIconContainerClasses()}
         role="img"
-        aria-label={`${selectedLanguage.name} icon`}
+        aria-label={tf("aria.techIcon", { name: selectedLanguage.name })}
       >
         {selectedLanguage.logo ? (
           <Image class="w-full! rounded-full" src={selectedLanguage.logo} alt="" width={40} height={40} loading="lazy" />

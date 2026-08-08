@@ -1,6 +1,9 @@
 ---
 import { Image } from "astro:assets";
 import type { GalleryItem } from "../../data/services";
+import { getLangFromUrl, useLabels } from "../../i18n/utils";
+
+const tf = useLabels(getLangFromUrl(Astro.url));
 
 interface Props {
   items?: GalleryItem[];
@@ -40,7 +43,7 @@ const {
               data-lb-alt={item.alt}
               data-lb-title={item.title}
               data-lb-href={item.href ?? ""}
-              aria-label={`Open ${item.title} in full size`}
+              aria-label={tf("aria.openFullSize", { title: item.title })}
             >
               <div class="relative overflow-hidden">
                 <Image

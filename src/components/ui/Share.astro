@@ -1,5 +1,10 @@
 ---
 import { Icon } from "astro-icon/components";
+import { getLangFromUrl, useTranslations, useLabels } from "../../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const tf = useLabels(lang);
 
 const { tweetText, currentUrl } = Astro.props;
 
@@ -22,8 +27,8 @@ const shareLinks = [
 ];
 ---
 
-<div class="flex items-center gap-5 text-lg" role="group" aria-label="Share on social media">
-  <span class="text-base font-bold text-blacktext dark:text-white">Share </span>
+<div class="flex items-center gap-5 text-lg" role="group" aria-label={t("aria.share")}>
+  <span class="text-base font-bold text-blacktext dark:text-white">{t("share.label")}</span>
   {
     shareLinks.map((link) => (
       <a
@@ -31,8 +36,8 @@ const shareLinks = [
         class="bg-blacktext rounded-full p-2"
         target="_blank"
         rel="noopener noreferrer"
-        aria-label={`Share on ${link.name}`}
-        title={`Share on ${link.name}`}
+        aria-label={tf("aria.shareOn", { name: link.name })}
+        title={tf("aria.shareOn", { name: link.name })}
       >
         <Icon name={link.icon} />
       </a>

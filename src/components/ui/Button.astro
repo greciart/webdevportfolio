@@ -184,8 +184,9 @@ const iconClasses = {
 // Combine base classes with variant-specific classes
 const buttonClasses = `${baseClasses} ${variantClasses[variant]}`;
 
-// Generate aria-label if not provided
-const buttonAriaLabel = ariaLabel || (iconName ? `${text} ${iconName}` : text);
+// The icon name used to be appended here, so screen readers announced
+// "Contáctame paperplane". The icon is decorative; the text is the label.
+const buttonAriaLabel = ariaLabel || text;
 
 // Determine if it's an external link
 const isExternalLink = isExternal || link.startsWith('http');
