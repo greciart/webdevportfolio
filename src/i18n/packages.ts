@@ -253,7 +253,7 @@ const en: PackagesCopy = {
     {
       name: "Revision rounds",
       description:
-        "Two rounds free. Anything asked for outside those two sessions counts as an additional round, charged by difficulty: $5 the simplest change, $20 the most complex. No complete redesigns after delivery.",
+        "Two rounds are included. Any round after those is charged by difficulty, $5 to $20. No complete redesigns after delivery.",
     },
   ],
 
@@ -574,7 +574,7 @@ const es: PackagesCopy = {
     {
       name: "Rondas de revisión",
       description:
-        "Dos rondas gratis. Lo que pidas fuera de esas dos sesiones cuenta como ronda adicional, cobrada por dificultad: 5 USD el cambio más sencillo, 20 USD el más complejo. No se hacen rediseños completos después de entregar.",
+        "Dos rondas incluidas. Cada ronda extra se cobra por dificultad, de 5 a 20 USD. No se hacen rediseños completos después de entregar.",
     },
   ],
 

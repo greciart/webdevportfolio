@@ -18,11 +18,9 @@ import threeDCommissioned from "../assets/services/3d/3d-commissioned-work.webp"
 import threeDObjects from "../assets/services/3d/3d-objects-collection-part-2.webp";
 
 // Hand-inked line art, from gvpv12.github.io/biblioteca/dibujos/lineart
-import illoPortrait from "../assets/services/illustration/lineart-portrait-crosshatching-ink.webp";
 import illoCharacter from "../assets/services/illustration/lineart-character-design-fantasy.webp";
 import illoMoonCat from "../assets/services/illustration/lineart-moon-cat-brand-asset.webp";
 import illoCake from "../assets/services/illustration/lineart-melting-cake-surreal-ink.webp";
-import illoWitch from "../assets/services/illustration/lineart-witch-antler-hat-portrait.webp";
 import illoEye from "../assets/services/illustration/charcoal-cosmic-eye-eclipse.webp";
 import illoJelly from "../assets/services/illustration/charcoal-jellyfish-bioluminescent.webp";
 import illoPainting from "../assets/services/illustration/acrylic-jellyfish-moon-painting.webp";
@@ -458,19 +456,6 @@ const illustration: Entry[] = [
       tags: ["Pastel","Conceptual","Papel negro"],
     },
   },
-    {
-    url: illoPortrait,
-    en: {
-      title: "Portrait study · crosshatching",
-      alt: "Hand drawn ink portrait in profile, shaded entirely with crosshatching and fine parallel line work",
-      tags: ["Ink", "Editorial", "Shading"],
-    },
-    es: {
-      title: "Estudio de retrato · tramado",
-      alt: "Retrato a tinta de perfil dibujado a mano, sombreado por completo con tramado cruzado y líneas paralelas finas",
-      tags: ["Tinta", "Editorial", "Sombreado"],
-    },
-  },
   {
     url: illoCharacter,
     en: {
@@ -482,19 +467,6 @@ const illustration: Entry[] = [
       title: "Diseño de personaje · concepto original",
       alt: "Ilustración a tinta de un personaje original con trenzas, túnicas superpuestas y detalles de estampado",
       tags: ["Personaje", "Concepto", "Tinta"],
-    },
-  },
-  {
-    url: illoWitch,
-    en: {
-      title: "Witch portrait · antlered hat",
-      alt: "Hand inked portrait of a witch in a pointed hat sprouting antlers and leaves, with hair and fabric shaded in fine hatching",
-      tags: ["Ink", "Character", "Portrait"],
-    },
-    es: {
-      title: "Retrato de bruja · sombrero con astas",
-      alt: "Retrato a tinta de una bruja con sombrero puntiagudo del que brotan astas y hojas, con el cabello y la tela sombreados con tramado fino",
-      tags: ["Tinta", "Personaje", "Retrato"],
     },
   },
   {
