@@ -18,11 +18,26 @@ export function useTranslations(lang: Lang) {
   };
 }
 
+/**
+ * The site builds to directories, so `/packages` exists only as a 301 to
+ * `/packages/`. Linking to the slashless form costs the visitor a redirect and
+ * hands Google a second URL for the same page, which is what Search Console
+ * files under "alternate page with proper canonical tag". Anchors, queries and
+ * real files (`/rss.xml`) are left exactly as they are.
+ */
+export function withTrailingSlash(path: string): string {
+  const cut = path.search(/[#?]/);
+  const pathname = cut === -1 ? path : path.slice(0, cut);
+  const suffix = cut === -1 ? "" : path.slice(cut);
+  if (pathname.endsWith("/") || /\.[a-z0-9]+$/i.test(pathname)) return path;
+  return `${pathname}/${suffix}`;
+}
+
 /** Prefixes a root-relative path with the language segment (English keeps `/`). */
 export function localizePath(path: string, lang: Lang): string {
   const clean = path.startsWith("/") ? path : `/${path}`;
-  if (lang === defaultLang) return clean;
-  return `/${lang}${clean === "/" ? "" : clean}`;
+  if (lang === defaultLang) return withTrailingSlash(clean);
+  return withTrailingSlash(`/${lang}${clean}`);
 }
 
 /** Strips the language segment, giving the canonical English path. */

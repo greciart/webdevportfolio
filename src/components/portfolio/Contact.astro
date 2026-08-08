@@ -2,7 +2,7 @@
 import Heading from "../ui/Heading.astro";
 import Button from "../ui/Button.astro";
 import { getCollection } from "astro:content";
-import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+import { getLangFromUrl, useTranslations, localizePath } from "../../i18n/utils";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -37,7 +37,7 @@ const {
         >
         <Button
           variant="mediumbig"
-          link={lang === "en" ? "/contact" : `/${lang}/contact`}
+          link={localizePath("/contact", lang)}
           text={t("contactBand.button")}
           iconName={contactSectionButtonIcon}
         />

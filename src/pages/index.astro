@@ -5,14 +5,19 @@ import HeroIndex from "../components/portfolio/HeroIndex.astro";
 import Contact from "../components/portfolio/Contact.astro";
 import ListProjects from "../components/portfolio/ListProjects.astro";
 import { getCollection } from "astro:content";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
 
 const [staticData] = await getCollection("staticData");
-const { pageTitle, pageDescription, OGImage } = staticData.data;
+const { OGImage } = staticData.data;
+
+// Title and description come from i18n, not from staticData: the same English
+// pair on / and /es/ made the two pages look like duplicates to Google.
+const t = useTranslations(getLangFromUrl(Astro.url));
 ---
 
 <Layout
-  pageTitle={pageTitle}
-  description={pageDescription}
+  pageTitle={t("seo.home.title")}
+  description={t("seo.home.description")}
   ogimage={{ alt: OGImage.alt, url: OGImage.url }}
 >
   <HeroIndex />

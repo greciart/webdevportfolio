@@ -20,9 +20,12 @@ export default defineConfig({
   },
 
   integrations: [preact(), icon(), mdx(),sitemap({
+    // Tag and tech listings are thin index pages, and a 404 has no business
+    // being submitted for indexing at all.
     filter: (page) =>
       !page.includes("/blog/tags") &&
-      !page.includes("/blog/techs"),
+      !page.includes("/blog/techs") &&
+      !page.includes("/404"),
   }),],
   
   // Añade esta sección para eliminar el bloqueo de renderizado

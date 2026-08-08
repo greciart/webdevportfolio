@@ -5,7 +5,7 @@ import Capsule from "../ui/Capsule.astro";
 import DatePub from "./DatePub.astro";
 
 import { getPosts } from "../../i18n/posts";
-import { getLangFromUrl } from "../../i18n/utils";
+import { getLangFromUrl, withTrailingSlash } from "../../i18n/utils";
 const lang = getLangFromUrl(Astro.url);
 const allPostsByLang = getPosts(lang);
 const allPosts: any[] = allPostsByLang;
@@ -39,7 +39,7 @@ const imageAlt = latestPost.frontmatter.image.alt || latestPost.frontmatter.titl
             <Capsule lang={language?.toString() || ""} />
           ))}
         </div>
-        <a href={latestPost.url} class="text-mint-50 gap-3 h-full flex items-end max-sm:px-6 rounded-lg transition-all" aria-label={`Read article: ${latestPost.frontmatter.title}`}>
+        <a href={withTrailingSlash(latestPost.url)} class="text-mint-50 gap-3 h-full flex items-end max-sm:px-6 rounded-lg transition-all" aria-label={`Read article: ${latestPost.frontmatter.title}`}>
           <div class="gap-3 flex flex-col justify-end drop-shadow-[1px_6px_1px_rgba(0,0,0,0.3)]">
             <DatePub date={latestPost.frontmatter.pubDate} class="text-mint-50" />
             <h2 id="post-title" class="text-4xl max-xl:text-3xl max-sm:text-2xl font-bold">

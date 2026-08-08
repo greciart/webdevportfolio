@@ -154,6 +154,19 @@ export const ui = {
     "404.title": "Page not found",
     "404.copy": "The page you're looking for doesn't exist or has moved.",
     "404.back": "Back to home",
+
+    // --- Page metadata ---
+    // Per language, or Google reads /es/… as a duplicate of /… and drops it.
+    "seo.home.title": "Grecia V. | Web Designer & Frontend Developer Portfolio",
+    "seo.home.description":
+      "Portfolio of Grecia V., a web designer and frontend developer specializing in UX/UI design, modern websites, and e-commerce experiences. Explore projects built with WordPress, Shopify, and Astro.",
+    "seo.blog.title": "Web Design and Development Blog | Grecia V.",
+    "seo.blog.description":
+      "Notes on frontend development, web design and the tools I actually use day to day, written up as I go.",
+    "seo.allPosts.title":
+      "Web Design, Frontend Development & UI/UX Blog | Grecia V.",
+    "seo.allPosts.description":
+      "A blog about UI design, web design, frontend development, and UI/UX, where I share insights, projects, and ideas on building modern websites and digital experiences.",
   },
 
   es: {
@@ -296,5 +309,18 @@ export const ui = {
     "404.title": "Página no encontrada",
     "404.copy": "La página que buscas no existe o fue movida.",
     "404.back": "Volver al inicio",
+
+    // --- Metadatos de página ---
+    "seo.home.title":
+      "Grecia V. | Diseñadora web y desarrolladora frontend",
+    "seo.home.description":
+      "Portafolio de Grecia V., diseñadora web y desarrolladora frontend especializada en diseño UX/UI, sitios modernos y tiendas online. Proyectos hechos con WordPress, Shopify y Astro.",
+    "seo.blog.title": "Blog de diseño y desarrollo web | Grecia V.",
+    "seo.blog.description":
+      "Apuntes sobre desarrollo frontend, diseño web y las herramientas que uso de verdad en el día a día, escritos sobre la marcha.",
+    "seo.allPosts.title":
+      "Blog de diseño web, frontend y UI/UX | Grecia V.",
+    "seo.allPosts.description":
+      "Un blog sobre diseño UI, diseño web, desarrollo frontend y UX, donde comparto ideas, proyectos y lo que aprendo construyendo sitios modernos.",
   },
 } as const;

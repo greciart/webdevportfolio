@@ -3,15 +3,16 @@ import Layout from "../../../layouts/Layout.astro";
 import Hero from "../../../components/blog/Hero.astro";
 import Tags from "../../../components/blog/Tags.astro";
 import ListPosts from "../../../components/blog/ListPosts.astro";
-const pageTitle = "Web Design, Frontend Development & UI/UX Blog | Grecia V.";
-
-const description = "A blog about UI design, web design, frontend development, and UI/UX, where I share insights, projects, and ideas on building modern websites and digital experiences.";
+import { getLangFromUrl, useTranslations } from "../../../i18n/utils";
+const t = useTranslations(getLangFromUrl(Astro.url));
+const pageTitle = t("seo.allPosts.title");
+const description = t("seo.allPosts.description");
 
 const ogimage = {
   url: "/images/blogimage.webp",
   alt: "Web design and frontend development blog by Grecia V., featuring UI/UX, modern websites, and digital projects."
 };
-const currentUrl = `${Astro.site}${Astro.url.pathname}`;
+const currentUrl = new URL(Astro.url.pathname, Astro.site).href;
 const tweetText = encodeURIComponent(`"${pageTitle}"`);
 import Heading from "../../../components/ui/Heading.astro";
 import Share from "../../../components/ui/Share.astro";
