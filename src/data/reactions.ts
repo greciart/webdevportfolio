@@ -28,13 +28,19 @@ export const reactions: Reaction[] = [
 /** How much the topic gets searched for. Drives the size of the numbers. */
 type Demand = "low" | "medium" | "high";
 
-// Ranges follow the brief: under 20 for a topic nobody searches, 20 to 50 for a
-// middling one, and up to 50 for a topic in real demand.
-const RANGES: Record<Demand, [number, number]> = {
-  low: [4, 19],
-  medium: [20, 34],
-  high: [35, 49],
+// How high the *top* reaction on a post can go: under 20 for a topic nobody
+// searches, the thirties for a middling one, up to 50 for one in real demand.
+// The other four fall away from that peak rather than sitting beside it.
+const PEAKS: Record<Demand, [number, number]> = {
+  low: [14, 19],
+  medium: [29, 39],
+  high: [43, 50],
 };
+
+// Share of the peak for each place in the ranking. Drawing five independent
+// numbers out of one band gave things like 47 46 48 44 49, which reads as fake;
+// a real reaction bar has one clear winner and a tail trailing off behind it.
+const FALLOFF = [1, 0.66, 0.44, 0.27, 0.15];
 
 // My read of the search demand per topic, not measured data. Move a slug between
 // tiers here and its five numbers move with it.
@@ -81,24 +87,35 @@ export function slugFromPath(pathname: string): string {
 /**
  * All five counts for one post, keyed by reaction id.
  *
- * Computed together rather than one at a time so they can be kept distinct: two
- * reactions landing on the same number looks like a bug even though the hash was
- * behaving. On a clash the value walks up through the range until it finds a
- * free slot, which stays stable because the walk is deterministic too. Each tier
- * has at least 15 values for 5 reactions, so it always terminates.
+ * Shaped rather than sampled: one peak per post, then each reaction placed at a
+ * rank below it. Which reaction takes the peak is itself derived from the slug,
+ * so the winner changes from post to post instead of the heart always leading.
+ * The ranking only decides which number each reaction gets — they still render
+ * in their fixed order, so the row does not read as a sorted list.
  */
 export function reactionCounts(slug: string): Record<string, number> {
-  const [min, max] = RANGES[DEMAND[slug] ?? "medium"];
-  const span = max - min + 1;
-  const taken = new Set<number>();
-  const counts: Record<string, number> = {};
+  const [peakMin, peakMax] = PEAKS[DEMAND[slug] ?? "medium"];
+  const peak = peakMin + (hash(`${slug}:peak`) % (peakMax - peakMin + 1));
 
-  for (const reaction of reactions) {
-    let value = min + (hash(`${slug}:${reaction.id}`) % span);
-    while (taken.has(value)) value = min + ((value - min + 1) % span);
-    taken.add(value);
+  const ranked = [...reactions]
+    .map((reaction) => ({ reaction, key: hash(`${slug}:rank:${reaction.id}`) }))
+    .sort((a, b) => a.key - b.key)
+    .map((entry) => entry.reaction);
+
+  const counts: Record<string, number> = {};
+  let previous = Infinity;
+
+  ranked.forEach((reaction, rank) => {
+    // A couple either way, so the gaps are uneven instead of a clean curve.
+    const jitter = (hash(`${slug}:jitter:${reaction.id}`) % 5) - 2;
+    let value = Math.round(peak * FALLOFF[rank]) + jitter;
+    // Strictly descending, and never under one per remaining rank, which keeps
+    // every number distinct without the two constraints fighting each other.
+    value = Math.min(value, previous - 1);
+    value = Math.max(value, ranked.length - rank);
+    previous = value;
     counts[reaction.id] = value;
-  }
+  });
 
   return counts;
 }
