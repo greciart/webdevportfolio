@@ -1,0 +1,248 @@
+---
+import { Icon } from "astro-icon/components";
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+import {
+  reactions,
+  reactionCounts,
+  slugFromPath,
+} from "../../data/reactions";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const slug = slugFromPath(Astro.url.pathname);
+const counts = reactionCounts(slug);
+
+// Eight sparks per button, pre-rendered so a click costs no DOM building. Angles
+// are spread by hand rather than evenly, which reads as a burst instead of a
+// clock face.
+const SPARK_ANGLES = [0, 52, 94, 138, 180, 226, 268, 312];
+---
+
+<section class="mt-10" aria-labelledby="reactions-title">
+  <h2
+    id="reactions-title"
+    class="mb-5 text-center text-sm font-bold tracking-wide text-blacktext dark:text-mint-50"
+  >
+    {t("reaction.title")}
+  </h2>
+
+  <div
+    class="flex flex-wrap items-center justify-center gap-3 max-sm:gap-2"
+    data-reactions
+    data-slug={slug}
+  >
+    {
+      reactions.map((reaction) => (
+        <button
+          type="button"
+          data-reaction={reaction.id}
+          data-count={counts[reaction.id]}
+          aria-pressed="false"
+          class="reaction group relative inline-flex cursor-pointer items-center gap-2 rounded-full border border-mint-200 bg-white/70 px-4 py-2 text-xs font-semibold text-blacktext transition-all duration-300 hover:-translate-y-0.5 hover:border-mint-400 hover:shadow-lg hover:shadow-mint-500/20 dark:border-zinc-700 dark:bg-zinc-900/60 dark:text-mint-50 dark:hover:border-mint-400"
+        >
+          <span class="reaction-sparks" aria-hidden="true">
+            {SPARK_ANGLES.map((angle) => (
+              <span class="reaction-spark" style={`--a:${angle}deg`} />
+            ))}
+          </span>
+
+          <Icon name={reaction.icon} class="reaction-icon size-4 shrink-0" />
+          <span>{t(reaction.labelKey)}</span>
+          <span class="reaction-count" aria-hidden="true"></span>
+        </button>
+      ))
+    }
+  </div>
+</section>
+
+<style>
+  /* The pill turns mint once it is your reaction, so the state survives a
+     reload without needing the count to carry the meaning. */
+  .reaction[aria-pressed="true"] {
+    border-color: transparent;
+    background-image: linear-gradient(
+      to right,
+      var(--color-riptide-300),
+      var(--color-mint-300)
+    );
+    color: var(--color-blacktext);
+  }
+
+  :global(html.dark) .reaction[aria-pressed="true"],
+  :global(.dark) .reaction[aria-pressed="true"] {
+    background-image: linear-gradient(
+      to right,
+      var(--color-riptide-500),
+      var(--color-mint-500)
+    );
+  }
+
+  .reaction-icon {
+    transition: transform 300ms cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  .reaction:hover .reaction-icon {
+    transform: scale(1.15);
+  }
+
+  /* The count is laid out from the start and only revealed, so nothing on the
+     row shifts sideways when it appears. */
+  .reaction-count {
+    display: inline-block;
+    width: 0;
+    opacity: 0;
+    overflow: hidden;
+    font-variant-numeric: tabular-nums;
+    transition:
+      width 320ms cubic-bezier(0.4, 0, 0.2, 1),
+      opacity 320ms ease 80ms;
+  }
+
+  .reaction[aria-pressed="true"] .reaction-count {
+    width: 1.85em;
+    opacity: 0.75;
+  }
+
+  /* --- The burst --- */
+
+  .reaction-sparks {
+    position: absolute;
+    /* Centred on the icon rather than the pill: that is where the eye is when
+       the click lands. */
+    left: 1.55rem;
+    top: 50%;
+    width: 0;
+    height: 0;
+  }
+
+  .reaction-spark {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    border-radius: 9999px;
+    background: var(--color-mint-500);
+    opacity: 0;
+    /* Each spark starts at the centre and is thrown along its own angle. */
+    transform: rotate(var(--a)) translateY(0) scale(0.4);
+  }
+
+  :global(html.dark) .reaction-spark {
+    background: var(--color-mint-300);
+  }
+
+  .reaction.is-bursting .reaction-spark {
+    animation: reaction-spark 620ms cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+  }
+
+  .reaction.is-bursting .reaction-icon {
+    animation: reaction-pop 620ms cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  @keyframes reaction-spark {
+    0% {
+      opacity: 0;
+      transform: rotate(var(--a)) translateY(0) scale(0.4);
+    }
+    18% {
+      opacity: 1;
+      transform: rotate(var(--a)) translateY(-7px) scale(1);
+    }
+    100% {
+      opacity: 0;
+      transform: rotate(var(--a)) translateY(-26px) scale(0.25);
+    }
+  }
+
+  @keyframes reaction-pop {
+    0% { transform: scale(1); }
+    35% { transform: scale(1.45) rotate(-8deg); }
+    65% { transform: scale(0.92) rotate(4deg); }
+    100% { transform: scale(1); }
+  }
+
+  /* The site's accessibility menu already flattens every animation through
+     html[data-a11y-motion="off"]; this covers the OS-level setting. */
+  @media (prefers-reduced-motion: reduce) {
+    .reaction.is-bursting .reaction-spark,
+    .reaction.is-bursting .reaction-icon {
+      animation: none;
+    }
+    .reaction-count,
+    .reaction-icon {
+      transition: none;
+    }
+  }
+</style>
+
+<script>
+  // No backend, so a reaction lives in this browser only. localStorage rather
+  // than a cookie: it never rides along on a request, and the value is of no
+  // interest to the server.
+  const group = document.querySelector<HTMLElement>("[data-reactions]");
+
+  if (group) {
+    const slug = group.dataset.slug ?? "";
+    const key = `reactions:${slug}`;
+
+    const read = (): string[] => {
+      try {
+        const raw = JSON.parse(localStorage.getItem(key) || "[]");
+        return Array.isArray(raw) ? raw.filter((v) => typeof v === "string") : [];
+      } catch {
+        // Private mode, blocked storage, corrupted value: fall back to none
+        // rather than breaking the whole bar.
+        return [];
+      }
+    };
+
+    const write = (ids: string[]) => {
+      try {
+        localStorage.setItem(key, JSON.stringify(ids));
+      } catch {
+        // Reacting still works for this pageview; it just will not be remembered.
+      }
+    };
+
+    let mine = read();
+
+    const buttons = Array.from(
+      group.querySelectorAll<HTMLButtonElement>("[data-reaction]"),
+    );
+
+    const paint = (button: HTMLButtonElement) => {
+      const id = button.dataset.reaction ?? "";
+      const base = Number(button.dataset.count ?? 0);
+      const active = mine.includes(id);
+      const count = button.querySelector<HTMLElement>(".reaction-count");
+
+      button.setAttribute("aria-pressed", active ? "true" : "false");
+      // Your own reaction is counted in, so the number moves when you press it.
+      if (count) count.textContent = active ? String(base + 1) : "";
+    };
+
+    buttons.forEach((button) => {
+      paint(button);
+
+      button.addEventListener("click", () => {
+        const id = button.dataset.reaction ?? "";
+        const wasActive = mine.includes(id);
+
+        // Reactions are independent: any number of them can be on at once.
+        mine = wasActive ? mine.filter((v) => v !== id) : [...mine, id];
+        write(mine);
+        paint(button);
+
+        // Only burst on the way in. Un-reacting should feel like a quiet undo.
+        if (!wasActive) {
+          button.classList.remove("is-bursting");
+          // Forces the animation to restart when the same button is pressed
+          // again after being toggled off.
+          void button.offsetWidth;
+          button.classList.add("is-bursting");
+          window.setTimeout(() => button.classList.remove("is-bursting"), 700);
+        }
+      });
+    });
+  }
+</script>

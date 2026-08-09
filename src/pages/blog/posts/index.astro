@@ -13,7 +13,7 @@ const ogimage = {
   alt: "Web design and frontend development blog by Grecia V., featuring UI/UX, modern websites, and digital projects."
 };
 const currentUrl = new URL(Astro.url.pathname, Astro.site).href;
-const tweetText = encodeURIComponent(`"${pageTitle}"`);
+const shareImage = new URL(ogimage.url, Astro.site).href;
 import Heading from "../../../components/ui/Heading.astro";
 import Share from "../../../components/ui/Share.astro";
 
@@ -52,7 +52,7 @@ import RssLinks from "../../../components/blog/RssLinks.astro";
           </div>
         </div>
         <div class="my-8 flex justify-end">
-          <Share currentUrl={currentUrl} tweetText={tweetText} />
+          <Share title={pageTitle} url={currentUrl} image={shareImage} />
         </div>
       </div>
     </div>

@@ -9,11 +9,14 @@ import ListPosts from "../components/blog/ListPosts.astro";
 import NavigationArticles from "../components/layout/NavigationArticles.astro";
 import Share from "../components/ui/Share.astro";
 import RssLinks from "../components/blog/RssLinks.astro";
+import Reactions from "../components/blog/Reactions.astro";
+import ReplyByEmail from "../components/blog/ReplyByEmail.astro";
 const { frontmatter } = Astro.props;
 const currentUrl = new URL(Astro.url.pathname, Astro.site).href;
-const tweetText = encodeURIComponent(
-  `"${frontmatter.title}" - by ${frontmatter.author} | Grevaleart`
-);
+// Pinterest needs an absolute image or the pin has nothing to show.
+const shareImage = frontmatter.image?.url
+  ? new URL(frontmatter.image.url, Astro.site).href
+  : undefined;
 import Heading from "../components/ui/Heading.astro";
 
 const uiLang = getLangFromUrl(Astro.url);
@@ -112,7 +115,6 @@ const p = (path) => localizePath(path, uiLang);
               >Grecia V.
             </a>
           </div>
-          <Share currentUrl={currentUrl} tweetText={tweetText} />
         </div>
       </header>
 
@@ -131,8 +133,13 @@ const p = (path) => localizePath(path, uiLang);
       <div class="markdown" id="content">
         <slot />
       </div>
-      <Share currentUrl={currentUrl} tweetText={tweetText} />
-      <hr class="my-6 text-mint-300/50" />
+      <Reactions />
+      <hr class="my-8 text-mint-300/50" />
+      <ReplyByEmail title={frontmatter.title} />
+      <div class="mt-8">
+        <Share title={frontmatter.title} url={currentUrl} image={shareImage} />
+      </div>
+      <hr class="my-8 text-mint-300/50" />
       <RssLinks />
     </article>
     <NavArticle title={frontmatter.title} />

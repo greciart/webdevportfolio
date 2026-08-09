@@ -76,7 +76,16 @@ export const ui = {
     "aria.nextImage": "Next image",
     "aria.close": "Close",
     "share.label": "Share",
+    "share.replyEmail": "Reply by email",
     "gallery.viewCase": "View full case study",
+
+    // --- Post reactions ---
+    "reaction.title": "What did you make of it?",
+    "reaction.love": "Love it",
+    "reaction.like": "Like",
+    "reaction.useful": "Useful",
+    "reaction.amazing": "Amazing",
+    "reaction.interesting": "Interesting",
 
     // --- RSS ---
     "rss.follow": "Follow by RSS",
@@ -271,7 +280,16 @@ export const ui = {
     "aria.nextImage": "Imagen siguiente",
     "aria.close": "Cerrar",
     "share.label": "Compartir",
+    "share.replyEmail": "Responder por email",
     "gallery.viewCase": "Ver el caso completo",
+
+    // --- Reacciones de los artículos ---
+    "reaction.title": "¿Qué te pareció?",
+    "reaction.love": "Me encanta",
+    "reaction.like": "Me gusta",
+    "reaction.useful": "Útil",
+    "reaction.amazing": "Increíble",
+    "reaction.interesting": "Interesante",
 
     // --- RSS ---
     "rss.follow": "Seguir por RSS",

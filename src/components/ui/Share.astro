@@ -6,41 +6,67 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 const tf = useLabels(lang);
 
-const { tweetText, currentUrl } = Astro.props;
+interface Props {
+  /** Plain, unencoded. Each network gets it escaped the way it wants. */
+  title: string;
+  /** Absolute URL of the page being shared. */
+  url: string;
+  /** Absolute URL of an image. Pinterest pins without one have nothing to show. */
+  image?: string;
+}
 
+const { title, url, image }: Props = Astro.props;
+
+const e = encodeURIComponent;
+const titleAndUrl = `${e(title)}%20${e(url)}`;
+
+// Real brand marks from the `logos` Iconify set, which ships full colour art
+// rather than a monochrome pictogram.
 const shareLinks = [
+  { name: "X", icon: "logos:x", href: `https://x.com/intent/post?text=${e(title)}&url=${e(url)}` },
+  { name: "Facebook", icon: "logos:facebook", href: `https://www.facebook.com/sharer/sharer.php?u=${e(url)}` },
+  { name: "WhatsApp", icon: "logos:whatsapp-icon", href: `https://api.whatsapp.com/send?text=${titleAndUrl}` },
+  { name: "LinkedIn", icon: "logos:linkedin-icon", href: `https://www.linkedin.com/sharing/share-offsite/?url=${e(url)}` },
+  { name: "Reddit", icon: "logos:reddit-icon", href: `https://www.reddit.com/submit?url=${e(url)}&title=${e(title)}` },
+  { name: "Telegram", icon: "logos:telegram", href: `https://t.me/share/url?url=${e(url)}&text=${e(title)}` },
+  { name: "Bluesky", icon: "logos:bluesky", href: `https://bsky.app/intent/compose?text=${titleAndUrl}` },
+  { name: "Threads", icon: "logos:threads-icon", href: `https://www.threads.net/intent/post?text=${titleAndUrl}` },
   {
-    name: "Twitter",
-    icon: "twitter",
-    href: `https://twitter.com/intent/tweet?text=${tweetText}&url=${currentUrl}`,
-  },
-  {
-    name: "Facebook",
-    icon: "facebook",
-    href: `https://www.facebook.com/sharer/sharer.php?u=${currentUrl}`,
-  },
-  {
-    name: "WhatsApp",
-    icon: "whatsapp",
-    href: `https://api.whatsapp.com/send?text=${encodeURIComponent(`${currentUrl}`)}`,
+    name: "Pinterest",
+    icon: "logos:pinterest",
+    href: `https://www.pinterest.com/pin/create/button/?url=${e(url)}&description=${e(title)}${image ? `&media=${e(image)}` : ""}`,
   },
 ];
 ---
 
-<div class="flex items-center gap-5 text-lg" role="group" aria-label={t("aria.share")}>
-  <span class="text-base font-bold text-blacktext dark:text-white">{t("share.label")}</span>
-  {
-    shareLinks.map((link) => (
-      <a
-        href={link.href}
-        class="bg-blacktext rounded-full p-2"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label={tf("aria.shareOn", { name: link.name })}
-        title={tf("aria.shareOn", { name: link.name })}
-      >
-        <Icon name={link.icon} />
-      </a>
-    ))
-  }
+<div class="flex flex-col items-center gap-4">
+  <span
+    class="text-sm font-bold tracking-wide text-blacktext dark:text-mint-50"
+    id="share-label"
+  >
+    {t("share.label")}
+  </span>
+
+  <div
+    class="flex flex-wrap items-center justify-center gap-3 max-sm:gap-2"
+    role="group"
+    aria-labelledby="share-label"
+  >
+    {
+      shareLinks.map((link) => (
+        <a
+          href={link.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={tf("aria.shareOn", { name: link.name })}
+          title={tf("aria.shareOn", { name: link.name })}
+          /* Every mark sits on the same light disc: X and Threads are pure
+             black art and would vanish against the dark theme otherwise. */
+          class="flex size-10 items-center justify-center rounded-full border border-mint-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-mint-400 hover:shadow-lg hover:shadow-mint-500/25 dark:border-zinc-700 dark:bg-zinc-100 dark:hover:border-mint-400 max-sm:size-9"
+        >
+          <Icon name={link.icon} class="size-5 max-sm:size-4" />
+        </a>
+      ))
+    }
+  </div>
 </div>
