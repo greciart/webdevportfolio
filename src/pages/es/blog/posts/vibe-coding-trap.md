@@ -45,7 +45,7 @@ Estoy en contra de usar IA sin supervisión.
 
 Y estoy especialmente en contra de usar IA sin supervisión cuando la persona que construye el producto no tiene idea de cómo funciona la tecnología por debajo.
 
-![Meme de vibe coding contra vibe debugging](/images/posts/vibecodingmeme.jpeg)
+![Meme de vibe coding contra vibe debugging](/images/posts/vibecodingmeme.webp)
 
 Por eso muchos sitios y aplicaciones construidos enteramente con vibe coding acaban fallando en una de dos áreas:
 
@@ -68,7 +68,7 @@ Y sobre todo, quien construye el proyecto debería estar dispuesta a aprender la
 
 Porque tarde o temprano, algo siempre se rompe.
 
-![Usar IA para programar no es lo mismo que hacer vibe coding](/images/posts/aicode.png)
+![Usar IA para programar no es lo mismo que hacer vibe coding](/images/posts/aicode.webp)
 
 ## ¿Qué es el vibe coding?
 

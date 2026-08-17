@@ -45,7 +45,7 @@ I'm against using AI without supervision.
 
 And I'm especially against using AI without supervision when the person building the product has no idea how the underlying technology works.
 
-![Vibe coding vs Vibe debugging meme](/images/posts/vibecodingmeme.jpeg)
+![Vibe coding vs Vibe debugging meme](/images/posts/vibecodingmeme.webp)
 
 That's why many websites and applications built entirely through vibe coding eventually fail in one of two areas:
 
@@ -68,7 +68,7 @@ And most importantly, the person building the project should be willing to learn
 
 Because eventually, something always breaks.
 
-![Using AI for code is not the same as Vibe coding](/images/posts/aicode.png)
+![Using AI for code is not the same as Vibe coding](/images/posts/aicode.webp)
 
 ## What Is Vibe Coding?
 
