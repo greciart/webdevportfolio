@@ -56,6 +56,14 @@ Disallow: /
 User-agent: *
 Allow: /
 
+# The clips under /videos/previews/ are decorative: silent three-second loops
+# that sit inside a project card, next to the real link. They are not the
+# subject of any page, which is precisely what Search Console means by "video is
+# not on a watch page". Blocking the files is Google's own documented way of
+# saying "this is not a video worth indexing", and it leaves the actual
+# walkthroughs in /videos/ free to be indexed.
+Disallow: /videos/previews/
+
 Sitemap: ${sitemapURL.href}
 `;
 

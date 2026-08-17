@@ -2,8 +2,16 @@
 import { Image } from 'astro:assets';
 import type { ImageMetadata } from 'astro';
 import Capsule from "../ui/Capsule.astro";
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
 
 const { title, url, image, video, languages, description, size = "xs" } = Astro.props;
+
+// These clips are silent by design. A caption track that says so is both the
+// honest answer for anyone who cannot hear and what the automated audits are
+// asking for when they flag a <video> with no <track kind="captions">.
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const captionsSrc = `/videos/previews/silent.${lang}.vtt`;
 ---
 
 <a href={url} class="w-full h-full hover:scale-105  transition-all duration-300 ease-in-out rounded-3xl bg-linear-to-br from-mint-50/50 to-mint-300/10 dark:from-zinc-800 dark:to-mint-800/10">
@@ -24,7 +32,9 @@ const { title, url, image, video, languages, description, size = "xs" } = Astro.
       preload="none"
       disablepictureinpicture
       aria-label={image.alt}
-    />
+    >
+      <track kind="captions" src={captionsSrc} srclang={lang} label={t("a11y.noAudio")} default />
+    </video>
   ) : (
   <Image
     class="w-full aspect-[3/2] object-cover object-top rounded-xl transition-all duration-300 ease-in-out group-hover:scale-105"
