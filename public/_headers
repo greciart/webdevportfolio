@@ -1,0 +1,25 @@
+# Astro fingerprints everything under /_astro/, so the filename changes whenever
+# the contents do. That makes it safe to cache forever, which is the whole point
+# of moving the stylesheet out of the HTML: it is downloaded on the first page
+# and read from disk on every page after it.
+/_astro/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/videos/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/images/*
+  Cache-Control: public, max-age=2592000
+
+# Feeds are for readers, not for the index. Search Console files them under
+# "crawled, currently not indexed", which is correct but reads like a fault;
+# saying it out loud makes it a decision instead of a symptom. Google can still
+# crawl the feed and follow the links inside it.
+/rss.xml
+  X-Robots-Tag: noindex, follow
+
+/es/rss.xml
+  X-Robots-Tag: noindex, follow

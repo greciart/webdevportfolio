@@ -3,6 +3,68 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 /* ================================
+   SELF-HOSTED FONTS
+   These used to come from fonts.googleapis.com, which cost two extra origins
+   (the stylesheet, then the font files) before a single glyph could be drawn.
+   Served from our own domain they ride the connection the HTML already opened.
+   Only the latin and latin-ext subsets are shipped: between them they cover
+   English and Spanish completely, and the browser only downloads latin-ext if
+   a character actually needs it.
+
+   Open Sans was declared but used nowhere, so it is gone. Roboto is still here
+   for the 404 heading; because a font file is only fetched when something on
+   the page uses it, declaring it costs nothing on every other page.
+================================ */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('/fonts/montserrat-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('/fonts/montserrat-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: italic;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('/fonts/montserrat-italic-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: italic;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('/fonts/montserrat-italic-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('/fonts/roboto-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('/fonts/roboto-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* ================================
    BASE TEXT SIZE
    Every size in the site is expressed in rem, so this single value sets the
    scale of the whole page. 15px instead of the 16px default takes the copy
@@ -45,10 +107,126 @@ html[data-a11y-motion="off"] *::after {
   scroll-behavior: auto !important;
 }
 
+/* Accessibility: reading spacing. The three values are the minimums WCAG 1.4.12
+   asks a page to survive, applied as an opt-in rather than a default so the
+   typography keeps its intended rhythm for everyone else. `em` units mean the
+   spacing tracks whatever text size is currently selected. */
+html[data-a11y-spacing="on"] :is(p, li, dd, dt, blockquote, figcaption, h1, h2, h3, h4, h5, h6) {
+  line-height: 1.75 !important;
+  letter-spacing: 0.06em !important;
+  word-spacing: 0.14em !important;
+}
+html[data-a11y-spacing="on"] :is(p, li) + :is(p, li) {
+  margin-top: 0.6em;
+}
+
+/* Accessibility: a plainer typeface. Verdana and Tahoma ship with every desktop
+   and phone, so switching to them downloads nothing; the wide default spacing
+   and the unmistakable letterforms are what make them easier to decode for
+   readers with dyslexia. Headings move too, otherwise half the page stays hard
+   to read. */
+html[data-a11y-font="readable"],
+html[data-a11y-font="readable"] :is(body, p, li, a, h1, h2, h3, h4, h5, h6, button, input, textarea, select, span, strong, em, blockquote, figcaption, label, td, th) {
+  font-family: Verdana, Tahoma, 'DejaVu Sans', sans-serif !important;
+  font-variant-ligatures: none;
+}
+/* The gradient-filled bold text turns to soup once the letterforms change, so
+   in this mode it goes back to a plain solid colour. */
+html[data-a11y-font="readable"] .markdown :is(strong, strong em, em strong) {
+  background: none !important;
+  -webkit-text-fill-color: currentColor !important;
+  color: var(--color-mint-700);
+}
+/* `.dark` lives on <html>, the same element that carries these attributes, so
+   the dark variants have to be compounded onto the selector rather than
+   written as a descendant. */
+html[data-a11y-font="readable"].dark .markdown :is(strong, strong em, em strong) {
+  color: var(--color-mint-300);
+}
+
+/* Accessibility: a focus ring you cannot miss. The default one is a thin
+   browser outline that disappears against the mint palette; this draws a solid
+   band plus a light halo so the keyboard position is obvious on any
+   background, dark mode included. */
+html[data-a11y-focus="on"] :is(a, button, input, textarea, select, summary, [tabindex]):focus-visible {
+  outline: 3px solid #111827 !important;
+  outline-offset: 3px !important;
+  box-shadow: 0 0 0 6px #6ce9b7 !important;
+  border-radius: 4px;
+}
+html[data-a11y-focus="on"].dark :is(a, button, input, textarea, select, summary, [tabindex]):focus-visible {
+  outline-color: #ffffff !important;
+}
+
+/* Accessibility: higher contrast. Body copy and headings go to the ends of the
+   scale, the decorative blurred blobs stop washing the text out, and the
+   gradient-filled bold text becomes solid. Layout, spacing and colour *roles*
+   are untouched — only their contrast ratio moves. */
+/* Running text goes to the ends of the scale. `span` is deliberately not in
+   this list: the gradient headings are spans whose colour is transparent on
+   purpose, and recolouring them here would erase them. They are handled
+   separately, below. */
+html[data-a11y-contrast="on"] :is(p, li, dd, dt, figcaption, td, th, label, blockquote) {
+  color: #0b0f19;
+}
+html[data-a11y-contrast="on"].dark :is(p, li, dd, dt, figcaption, td, th, label, blockquote) {
+  color: #ffffff;
+}
+
+/* Text painted with a gradient clipped to the glyphs has a different contrast
+   ratio at every letter, and the lowest one is the one that counts. In this
+   mode it becomes a single solid colour. */
+html[data-a11y-contrast="on"] :is(.text-transparent, .markdown strong, .markdown em) {
+  background-image: none !important;
+  color: var(--color-mint-800) !important;
+  -webkit-text-fill-color: var(--color-mint-800) !important;
+}
+html[data-a11y-contrast="on"].dark :is(.text-transparent, .markdown strong, .markdown em) {
+  color: var(--color-mint-200) !important;
+  -webkit-text-fill-color: var(--color-mint-200) !important;
+}
+
+html[data-a11y-contrast="on"] .markdown a {
+  text-decoration-thickness: 2px;
+}
+
+/* The soft green glows sit behind the copy and quietly cost contrast the whole
+   time. Only the blurred decorative layers are dimmed — matched through the
+   pseudo-element that declares the blur, never the element itself, or a card
+   that merely *contains* a glow would fade out along with it. */
+html[data-a11y-contrast="on"] .blur-circle,
+html[data-a11y-contrast="on"] .blur-circle::after,
+html[data-a11y-contrast="on"] [class*="before:blur-3xl"]::before,
+html[data-a11y-contrast="on"] [class*="before:blur-2xl"]::before,
+html[data-a11y-contrast="on"] [class*="after:blur-3xl"]::after,
+html[data-a11y-contrast="on"] [class*="after:blur-2xl"]::after {
+  opacity: 0.1 !important;
+}
+
+/* Skip link. Off-screen until it takes focus, which is the first thing a Tab
+   press from the address bar reaches. */
+.skip-link {
+  position: absolute;
+  left: 0.75rem;
+  top: -6rem;
+  z-index: 100;
+  border-radius: 0 0 0.75rem 0.75rem;
+  background: var(--color-mint-500);
+  color: #ffffff;
+  padding: 0.65rem 1.1rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  transition: top 160ms ease-out;
+}
+.skip-link:focus {
+  top: 0;
+}
+
 @theme {
+  /* Open Sans was declared here but never applied to anything, and it was still
+     being requested from Google on every page load. */
   --font-montserrat: 'Montserrat', sans-serif;
   --font-roboto: 'Roboto', sans-serif;
-  --font-opensans: 'Open Sans', sans-serif;
   --color-blacktext: #171717;
   --color-mint-50: #ecfdf5;
   --color-mint-100: #d0fbe5;
@@ -579,12 +757,21 @@ a.inline-block.leading-5.pl-12{
 .js-reveal [data-reveal].reveal-in:not([class*="animate-"]),
 .js-reveal [data-reveal-stagger].reveal-in > *:not([class*="animate-"]) {
   animation-play-state: running;
+  /* The blur variants animate `filter`, which Chrome will not run on the
+     compositor thread — Lighthouse counts every one of them under "avoid
+     non-composited animations". Promoting the element to its own layer for the
+     length of the animation keeps the re-rasterisation inside that layer
+     instead of repainting whatever sits behind it. The hint is granted only
+     while the animation is actually running and withdrawn on `.reveal-done`,
+     because a permanent `will-change` is its own memory problem. */
+  will-change: filter, opacity, transform;
 }
 
 /* Hand the element back to its normal styles once it has settled. */
 .js-reveal [data-reveal].reveal-done:not([class*="animate-"]),
 .js-reveal [data-reveal-stagger].reveal-done > *:not([class*="animate-"]) {
   animation: none;
+  will-change: auto;
 }
 
 .js-reveal [data-reveal-stagger] > *:nth-child(1):not([class*="animate-"])  { animation-delay: 0ms; }
