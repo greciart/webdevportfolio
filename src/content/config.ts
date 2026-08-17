@@ -17,7 +17,6 @@ const staticData = defineCollection({
 
       email: z.string().email(),
       linkedin: z.string().url(),
-      instagram: z.string().url(),
       youtube: z.string().url(),
       contra: z.string().url(),
       behance: z.string().url(),
@@ -28,7 +27,6 @@ const staticData = defineCollection({
       contactSectionButtonText: z.string(),
       contactSectionButtonIcon: z.string(),
       techsTitle: z.string(),
-      instagramIconName: z.string(),
       youtubeIconName: z.string(),
       githubIconName: z.string(),
       contraIconName: z.string(),

@@ -47,7 +47,13 @@ export const ui = {
     "a11y.textLarger": "Larger",
     "a11y.underline": "Underline links",
     "a11y.motion": "Reduce motion",
+    "a11y.contrast": "Higher contrast",
+    "a11y.spacing": "Roomier text",
+    "a11y.readableFont": "Plainer typeface",
+    "a11y.focus": "Strong focus outline",
     "a11y.reset": "Reset",
+    "a11y.skip": "Skip to content",
+    "a11y.noAudio": "No audio",
 
     // --- Screen reader labels ---
     // Nothing here is visible, which is exactly why it went untranslated for so
@@ -205,8 +211,10 @@ export const ui = {
     // --- Page metadata ---
     // Per language, or Google reads /es/… as a duplicate of /… and drops it.
     "seo.home.title": "Grecia V. | Web Designer & Frontend Developer Portfolio",
+    // Kept under 160 characters: past that, Google cuts the snippet mid-sentence
+    // and the part that gets dropped is the part naming the stack.
     "seo.home.description":
-      "Portfolio of Grecia V., a web designer and frontend developer specializing in UX/UI design, modern websites, and e-commerce experiences. Explore projects built with WordPress, Shopify, and Astro.",
+      "Portfolio of Grecia V., web designer and frontend developer. UX/UI design, modern websites and online stores built with Astro, WordPress and Shopify.",
     "post.previous": "Previous Post",
     "post.next": "Next Post",
 
@@ -216,7 +224,7 @@ export const ui = {
     "seo.allPosts.title":
       "Web Design, Frontend Development & UI/UX Blog | Grecia V.",
     "seo.allPosts.description":
-      "A blog about UI design, web design, frontend development, and UI/UX, where I share insights, projects, and ideas on building modern websites and digital experiences.",
+      "Posts on UI design, web design and frontend development: what I learn building modern websites, and the tools I keep coming back to.",
   },
 
   es: {
@@ -253,7 +261,13 @@ export const ui = {
     "a11y.textLarger": "Más grande",
     "a11y.underline": "Subrayar enlaces",
     "a11y.motion": "Reducir movimiento",
+    "a11y.contrast": "Más contraste",
+    "a11y.spacing": "Texto más espaciado",
+    "a11y.readableFont": "Tipografía más simple",
+    "a11y.focus": "Foco muy visible",
     "a11y.reset": "Restablecer",
+    "a11y.skip": "Saltar al contenido",
+    "a11y.noAudio": "Sin audio",
 
     // --- Etiquetas para lectores de pantalla ---
     "aria.footer": "Pie de página",
@@ -407,7 +421,7 @@ export const ui = {
     "seo.home.title":
       "Grecia V. | Diseñadora web y desarrolladora frontend",
     "seo.home.description":
-      "Portafolio de Grecia V., diseñadora web y desarrolladora frontend especializada en diseño UX/UI, sitios modernos y tiendas online. Proyectos hechos con WordPress, Shopify y Astro.",
+      "Portafolio de Grecia V., diseñadora web y desarrolladora frontend. Diseño UX/UI, sitios modernos y tiendas online con Astro, WordPress y Shopify.",
     "post.previous": "Artículo anterior",
     "post.next": "Artículo siguiente",
 

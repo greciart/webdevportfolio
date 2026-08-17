@@ -13,6 +13,21 @@ import Reactions from "../components/blog/Reactions.astro";
 import ReplyByEmail from "../components/blog/ReplyByEmail.astro";
 const { frontmatter } = Astro.props;
 const currentUrl = new URL(Astro.url.pathname, Astro.site).href;
+
+// The article shows its own image at whatever shape it was written for; the
+// share card needs 1200x630 or X drops to the small preview. scripts/og-cards.mjs
+// crops one for every post image at build time, under the same file name.
+const ogCard = frontmatter.image?.url
+  ? {
+      url: String(frontmatter.image.url)
+        .replace("/images/posts/", "/images/og/")
+        .replace(/\.(png|jpe?g)$/i, ".webp"),
+      alt: frontmatter.image.alt || frontmatter.title,
+      // Known, because the script that makes them writes exactly this size.
+      width: 1200,
+      height: 630,
+    }
+  : undefined;
 // Pinterest needs an absolute image or the pin has nothing to show.
 const shareImage = frontmatter.image?.url
   ? new URL(frontmatter.image.url, Astro.site).href
@@ -21,6 +36,25 @@ import Heading from "../components/ui/Heading.astro";
 
 const uiLang = getLangFromUrl(Astro.url);
 const p = (path) => localizePath(path, uiLang);
+
+// Tells Google this is an article, who wrote it and when, rather than leaving it
+// to infer all three from the markup. `mainEntityOfPage` points at the WebPage
+// node Layout emits, so the two describe one thing instead of two.
+const articleSchema = [
+  {
+    "@type": "BlogPosting",
+    "@id": `${currentUrl}#article`,
+    headline: frontmatter.title,
+    description: frontmatter.description,
+    datePublished: new Date(frontmatter.pubDate).toISOString().slice(0, 10),
+    inLanguage: uiLang,
+    author: { "@id": `${Astro.site}#person` },
+    publisher: { "@id": `${Astro.site}#person` },
+    mainEntityOfPage: { "@id": currentUrl },
+    ...(shareImage ? { image: shareImage } : {}),
+    ...(frontmatter.tags?.length ? { keywords: frontmatter.tags.join(", ") } : {}),
+  },
+];
 ---
 
 <script>
@@ -72,7 +106,8 @@ const p = (path) => localizePath(path, uiLang);
 <Layout
   pageTitle={frontmatter.title}
   description={frontmatter.description}
-  ogimage={frontmatter.image}
+  ogimage={ogCard ?? frontmatter.image}
+  schema={articleSchema}
 >
   <!-- The article grows to fill whatever the table of contents does not use, so
        the gap between them stays constant instead of widening on big monitors. -->

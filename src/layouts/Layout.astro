@@ -2,7 +2,7 @@
 import "../styles/global.css";
 import Header from "../components/layout/Header.astro";
 import Footer from "../components/layout/Footer.astro";
-import  SpeedInsights  from "@vercel/speed-insights/astro"
+import { getCollection } from "astro:content";
 import {
   getLangFromUrl,
   getAlternateLinks,
@@ -11,15 +11,19 @@ import {
   useTranslations,
   withTrailingSlash,
 } from "../i18n/utils";
-import defaultOgImage from "../assets/greciavdev.webp";
+import defaultOgImage from "../assets/og-grecia-v-web-designer-frontend-developer.webp";
 const {
   pageTitle = "Grecia V. | Web Designer & Frontend Developer Portfolio",
   description = "Web designer and frontend developer portfolio showcasing UX/UI design, e-commerce websites, and modern web development projects built with WordPress, Shopify, and Astro.",
   ogimage = {
     url: defaultOgImage,
-    alt: "Portfolio of Grecia V., web designer and frontend developer, featuring modern website design, UX/UI projects, and e-commerce platforms.",
+    alt: "Share card for the portfolio of Grecia V., web designer and frontend developer, showing her logo beside three project mockups on desktop, laptop and mobile and a 3D quetzal mascot.",
   },
   noindex = false,
+  // Extra schema.org nodes for this specific page (an Article, a case study, a
+  // video). They are merged into the site-wide @graph below so every page ships
+  // exactly one JSON-LD block instead of three competing ones.
+  schema = [],
 } = Astro.props;
 
 const lang = getLangFromUrl(Astro.url);
@@ -47,6 +51,79 @@ const SEO = {
 const ogimageSrc =
   typeof ogimage.url === "string" ? ogimage.url : ogimage.url.src;
 const ogimageUrl = new URL(ogimageSrc, Astro.site).href;
+// Width and height let a platform reserve the card's box before the image
+// arrives, instead of reflowing the preview once it lands. ImageMetadata knows
+// them; a plain string path does not, so those tags are simply left off.
+const ogimageDims =
+  ogimage.width && ogimage.height
+    ? { width: ogimage.width, height: ogimage.height }
+    : typeof ogimage.url === "string"
+      ? null
+      : { width: ogimage.url.width, height: ogimage.url.height };
+const ogimageType = /\.(\w+)(?:\?|$)/.exec(ogimageSrc)?.[1].toLowerCase();
+const OG_MIME: Record<string, string> = {
+  webp: "image/webp",
+  png: "image/png",
+  jpg: "image/jpeg",
+  jpeg: "image/jpeg",
+  avif: "image/avif",
+};
+
+// One identity for the whole site, declared once. Without this Google has to
+// infer who the site is about from the prose; with it, the portfolio, the blog
+// and the social profiles are explicitly the same person.
+const [staticData] = await getCollection("staticData");
+const { github, linkedin, behance, contra, youtube, email } = staticData.data;
+
+const personId = `${Astro.site}#person`;
+const siteId = `${Astro.site}#website`;
+
+const graph = [
+  {
+    "@type": "Person",
+    "@id": personId,
+    name: "Grecia V.",
+    url: Astro.site?.href,
+    image: new URL("/isotipo.jpg", Astro.site).href,
+    jobTitle: "Web Designer & Frontend Developer",
+    email: `mailto:${email}`,
+    knowsLanguage: ["en", "es"],
+    knowsAbout: [
+      "Web design",
+      "Frontend development",
+      "UX/UI design",
+      "Astro",
+      "WordPress",
+      "Shopify",
+      "Web accessibility",
+    ],
+    // `sameAs` is how Google ties this site to those profiles, so a wrong URL
+    // here is worse than a missing one. Only accounts that actually exist go in.
+    sameAs: [github, linkedin, behance, contra, youtube].filter(Boolean),
+  },
+  {
+    "@type": "WebSite",
+    "@id": siteId,
+    url: Astro.site?.href,
+    name: SEO.sitename,
+    inLanguage: languages[lang].htmlLang,
+    publisher: { "@id": personId },
+  },
+  {
+    "@type": "WebPage",
+    "@id": canonical,
+    url: canonical,
+    name: pageTitle,
+    description,
+    inLanguage: languages[lang].htmlLang,
+    isPartOf: { "@id": siteId },
+    about: { "@id": personId },
+    primaryImageOfPage: ogimageUrl,
+  },
+  ...schema,
+];
+
+const jsonLd = { "@context": "https://schema.org", "@graph": graph };
 ---
 
 <html
@@ -54,21 +131,26 @@ const ogimageUrl = new URL(ogimageSrc, Astro.site).href;
   class="dark:bg-[#0E0E11] bg-mint-50/5 font-montserrat scroll-smooth"
 >
   <head>
-    <!-- Fonts optimizadas (NO bloqueantes) -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link 
-  href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" 
-  rel="stylesheet" 
-  media="print" 
-  onload="this.media='all'"
->
-
     <meta charset="UTF-8" />
+    <!-- Fonts are served from this domain now. The old setup asked
+         fonts.googleapis.com for a stylesheet and fonts.gstatic.com for the
+         files, which is two DNS lookups and two TLS handshakes before any real
+         text can be drawn, and it pulled three families when the design only
+         ever uses one. This preload starts the single file the first paint
+         needs while the HTML is still being parsed. -->
+    <link
+      rel="preload"
+      as="font"
+      type="font/woff2"
+      href="/fonts/montserrat-latin.woff2"
+      crossorigin
+    />
     <meta name="viewport" content="width=device-width" />
     <title>{pageTitle}</title>
-    <!-- Favicon for different platforms -->
+    <!-- Favicon for different platforms. The SVG goes first: a browser that
+         understands `type="image/svg+xml"` takes it and ignores the rest, and
+         one that does not skips straight past to the PNGs. -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" href="/favicon-32x32.png" sizes="32x32" />
     <link rel="icon" href="/favicon-16x16.png" sizes="16x16" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
@@ -108,6 +190,22 @@ const ogimageUrl = new URL(ogimageSrc, Astro.site).href;
     <meta property="og:description" content={description} />
     <meta property="og:image" content={ogimageUrl} />
     <meta property="og:image:alt" content={ogimage.alt} />
+    {
+      ogimageDims && (
+        <>
+          <meta property="og:image:width" content={String(ogimageDims.width)} />
+          <meta
+            property="og:image:height"
+            content={String(ogimageDims.height)}
+          />
+        </>
+      )
+    }
+    {
+      ogimageType && OG_MIME[ogimageType] && (
+        <meta property="og:image:type" content={OG_MIME[ogimageType]} />
+      )
+    }
     <meta property="og:url" content={canonical} />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content={SEO.sitename} />
@@ -120,9 +218,19 @@ const ogimageUrl = new URL(ogimageSrc, Astro.site).href;
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogimageUrl} />
     <meta name="twitter:image:alt" content={ogimage.alt} />
-    <!-- <meta name="twitter:site" content={SEO.twitter} /> -->
-  
+    <!-- twitter:site wants an @handle on X. There isn't one in staticData, and
+         a made-up one would attribute the card to somebody else's account. Add
+         `twitter: "@handle"` there and this tag can come back. -->
+
     <meta name="theme-color" content="#0E0E11"/>
+
+    <!-- Structured data. One block per page, describing the same person and
+         site everywhere, plus whatever the page itself passes in. -->
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify(jsonLd)}
+      is:inline
+    />
 
     <!-- Sitemap -->
     <link rel="sitemap" href="/sitemap-index.xml" />
@@ -157,25 +265,57 @@ const ogimageUrl = new URL(ogimageSrc, Astro.site).href;
       // menu's own script runs.
       try {
         var a11y = JSON.parse(localStorage.getItem("a11y-prefs") || "{}");
-        if (a11y.text) document.documentElement.style.setProperty("--a11y-text-scale", a11y.text);
-        document.documentElement.dataset.a11yUnderline = a11y.underline ? "on" : "off";
-        document.documentElement.dataset.a11yMotion = a11y.motion ? "off" : "on";
+        var el = document.documentElement;
+        if (a11y.text) el.style.setProperty("--a11y-text-scale", a11y.text);
+        el.dataset.a11yUnderline = a11y.underline ? "on" : "off";
+        el.dataset.a11yMotion = a11y.motion ? "off" : "on";
+        el.dataset.a11yContrast = a11y.contrast ? "on" : "off";
+        el.dataset.a11ySpacing = a11y.spacing ? "on" : "off";
+        el.dataset.a11yFont = a11y.readableFont ? "readable" : "default";
+        el.dataset.a11yFocus = a11y.focus ? "on" : "off";
       } catch (e) {}
+    </script>
+
+    <!-- Microsoft Clarity. `defer` on a dynamically inserted script is a no-op,
+         so the load is pushed behind the first paint by waiting for the load
+         event instead: nothing here is needed to render the page. -->
+    <script is:inline>
+      window.addEventListener("load", function () {
+        (function (c, l, a, r, i, t, y) {
+          c[a] =
+            c[a] ||
+            function () {
+              (c[a].q = c[a].q || []).push(arguments);
+            };
+          t = l.createElement(r);
+          t.async = 1;
+          t.src = "https://www.clarity.ms/tag/" + i;
+          y = l.getElementsByTagName(r)[0];
+          y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "y3bujw5ptv");
+      });
     </script>
   </head>
   <body class="overflow-x-hidden">
-    <SpeedInsights/>
-    <div class="blur-circle"></div>
+    <!-- First stop for a Tab press, and the only way past the header for anyone
+         navigating by keyboard. -->
+    <a class="skip-link" href="#main-content">{t("a11y.skip")}</a>
+    <div class="blur-circle" aria-hidden="true"></div>
     <div
       style="  background:linear-gradient(45deg, rgba(96, 250, 155, 0) 10.79%, rgba(96, 250, 170, 0.03) 40.92%, rgba(96, 250, 155, 0) 90.35%)"
       class="fixed top-0 left-0 w-full h-full pointer-events-none -z-1"
+      aria-hidden="true"
     >
     </div>
     <Header />
 
-    <div class="min-h-[85vh] ">
+    <!-- Was a plain <div>, which left the page with no main landmark at all:
+         screen reader users had no way to jump straight to the content, and it
+         is what Lighthouse reports as "document does not have a main landmark".
+         `tabindex="-1"` makes it a valid target for the skip link. -->
+    <main id="main-content" tabindex="-1" class="min-h-[85vh] ">
       <slot />
-    </div>
+    </main>
 
     <Footer />
     <script>

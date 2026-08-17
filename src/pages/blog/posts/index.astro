@@ -10,7 +10,9 @@ const description = t("seo.allPosts.description");
 
 const ogimage = {
   url: "/images/blogimage.webp",
-  alt: "Web design and frontend development blog by Grecia V., featuring UI/UX, modern websites, and digital projects."
+  alt: "Web design and frontend development blog by Grecia V., featuring UI/UX, modern websites, and digital projects.",
+    width: 1200,
+    height: 630
 };
 const currentUrl = new URL(Astro.url.pathname, Astro.site).href;
 const shareImage = new URL(ogimage.url, Astro.site).href;

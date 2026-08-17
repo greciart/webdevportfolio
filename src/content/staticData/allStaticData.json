@@ -10,7 +10,6 @@
   "email": "greciavalentinapv@gmail.com",
   "linkedin": "https://www.linkedin.com/in/grecia-valentina-valero/",
   "youtube": "https://www.youtube.com/@grevaleart",
-  "instagram": "https://instagram.com/yourhandle",
   "contra": "https://contra.com/greciavalentina_/work?r=greciavalentina_",
   "behance": "https://www.behance.net/greciavalero",
   "calendly": "https://calendly.com/greciavalentinapv",
@@ -20,7 +19,6 @@
   "contactSectionButtonText": "Contact Me",
   "contactSectionButtonIcon": "paperplane",
   "techsTitle": "TECHS",
-  "instagramIconName": "instagram",
   "youtubeIconName": "youtube",
   "githubIconName": "github",
   "contraIconName": "contra",
@@ -42,7 +40,7 @@
   "pageTitle": "Grecia V. | Web Designer & Frontend Developer Portfolio",
   "pageDescription": "Portfolio of Grecia V., a web designer and frontend developer specializing in UX/UI design, modern websites, and e-commerce experiences. Explore projects built with WordPress, Shopify, and Astro.",
   "OGImage": {
-    "url": "../../assets/greciavdev.webp",
-    "alt": "Portfolio of Grecia V., web designer and frontend developer, featuring modern website design, UX/UI projects, and e-commerce platforms built with WordPress, Shopify, and Astro."
+    "url": "../../assets/og-grecia-v-web-designer-frontend-developer.webp",
+    "alt": "Share card for the portfolio of Grecia V., web designer and frontend developer, showing her logo beside three project mockups on desktop, laptop and mobile and a 3D quetzal mascot."
   }
 }
