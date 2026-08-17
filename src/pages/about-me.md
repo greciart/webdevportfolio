@@ -3,9 +3,6 @@ layout: /src/layouts/MarkdownAbout.astro
 title: "About Me | Grecia V. - UI Designer & Web Dev"
 description: "Specialized in WordPress, Elementor, Astro JS, Shopify, GSAP Animations and 3D integration"
 author: "Grecia V."
-image:
-  url: "/images/profile.jpg"
-  alt: "Photo of Grecia Valentina Pernía Valero (Grevaleart) for the blog"
 ---
 
 I am a UI Designer and Web Developer focused on creating digital experiences that engage users and deliver real results. My work sits at the intersection of visual design, frontend development, and interactive web experiences.

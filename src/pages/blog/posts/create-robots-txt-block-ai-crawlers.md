@@ -19,7 +19,7 @@ languages: ["AI", "LLM"]
 
 ![A close-up of a sturdy padlock secured on a teal door, symbolizing website security and the controlled access provided by a robots.txt file.](/images/posts/website-content-security-shield.webp)
 
-# How to Create a robots.txt File to Block AI Crawlers from Scraping Your Website
+## How to Create a robots.txt File to Block AI Crawlers from Scraping Your Website
 
 Many AI systems crawl publicly available websites to gather text, images, and other data for training large language models. While not every crawler respects website owners' preferences, many legitimate companies do honor exclusion rules when they're properly configured.
 

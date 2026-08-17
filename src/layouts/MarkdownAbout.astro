@@ -87,7 +87,9 @@ const t = useTranslations(uiLang);
 
           <div class="w-full flex flex-col justify-center gap-4 max-md:gap-2">
             <div class="text-center">
-              <Heading textGradient="Grecia V." />
+              <!-- The page's h1 is "About me" further down. This is the card
+                   above it, so it is an h2 that happens to be set at h1 size. -->
+              <Heading textGradient="Grecia V." level={2} size={1} />
             </div>
 
             <p

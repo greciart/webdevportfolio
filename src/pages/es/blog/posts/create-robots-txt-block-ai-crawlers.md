@@ -19,7 +19,7 @@ languages: ["AI", "LLM"]
 
 ![Primer plano de un candado robusto asegurado en una puerta color verde azulado, simbolizando la seguridad de un sitio web y el acceso controlado que proporciona un archivo robots.txt.](/images/posts/website-content-security-shield.webp)
 
-# Cómo crear un archivo robots.txt para impedir que los rastreadores de IA raspen tu sitio
+## Cómo crear un archivo robots.txt para impedir que los rastreadores de IA raspen tu sitio
 
 Muchos sistemas de IA rastrean sitios web públicos para recopilar texto, imágenes y otros datos con los que entrenar modelos de lenguaje. Aunque no todos los rastreadores respetan las preferencias de quien posee el sitio, muchas empresas legítimas sí honran las reglas de exclusión cuando están bien configuradas.
 

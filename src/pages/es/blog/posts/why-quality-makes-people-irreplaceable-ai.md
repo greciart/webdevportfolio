@@ -15,7 +15,7 @@ tags:
 languages: ["AI", "LLM"]
 ---
 
-# Por qué la calidad vuelve irreemplazables a los diseñadores web en la era de la IA
+## Por qué la calidad vuelve irreemplazables a los diseñadores web en la era de la IA
 
 La inteligencia artificial cambió la forma en que se crean los sitios web. Hoy cualquiera puede generar una landing page, escribir código, crear maquetas y lanzar un sitio más rápido que nunca. ¿Pero cuál es el costo real? La calidad.
 

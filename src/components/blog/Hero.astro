@@ -33,7 +33,7 @@ const t = useTranslations(uiLang);
     <div
       class="p-8 max-md:gap-0 max-xl:p-5 h-full max-md:p-4 max-lg:gap-1 gap-3 flex flex-col border border-emerald-50 rounded-2xl dark:bg-zinc-800 bg-linear-to-r from-riptide-200 to-mint-200 dark:from-riptide-500 dark:to-mint-500 dark:border-zinc-800 dark:border-2 dark:bg-gradient-radial md:col-start-4 col-start-2 row-start-2"
     >
-      <Heading text={techsTitle} textGradient="" level={3} />
+      <Heading text={techsTitle} textGradient="" level={2} size={3} />
 
       <div class="overflow-y-auto">
         <Languages />
@@ -52,7 +52,7 @@ const t = useTranslations(uiLang);
               class="p-8 h-full relative max-xl:p-5 max-md:p-4 flex flex-col gap-8 dark:before:bg-[radial-gradient(circle,rgba(13,188,130)_0,rgba(1,45,34)_100%)] before:bg-[radial-gradient(circle,rgba(95,255,202)_0,rgba(144,253,210)_100%)] before:h-[30%] before:absolute before:aspect-square xl:before:bottom-10 before:left-30 before:bottom-30 before:rounded-full before:blur-3xl before:opacity-90 before:transition before:z-0"
             >
               <div class="z-2">
-                <Heading text={githubText} textGradient="" level={3} />
+                <Heading text={githubText} textGradient="" level={2} size={3} />
               </div>
 
               <Icon
@@ -102,7 +102,7 @@ const t = useTranslations(uiLang);
               >{profileTitle}</b
             > 🚀</span
           >
-          <Heading text={profileName} level={3} />
+          <Heading text={profileName} level={1} size={3} />
           <Button
             link={p("/about-me")}
             text={t("home.aboutBtn")}

@@ -3,9 +3,6 @@ layout: /src/layouts/MarkdownAbout.astro
 title: "Sobre mí | Grecia V. - Diseñadora UI y desarrolladora web"
 description: "Especializada en WordPress, Elementor, Astro JS, Shopify, animaciones con GSAP e integración 3D."
 author: "Grecia V."
-image:
-  url: "/images/profile.jpg"
-  alt: "Fotografía de Grecia Valentina Pernía Valero (Grevaleart) para el blog"
 ---
 
 Soy diseñadora UI y desarrolladora web, enfocada en crear experiencias digitales que enganchan a las personas y dan resultados reales. Mi trabajo vive en el cruce entre diseño visual, desarrollo frontend y experiencias web interactivas.

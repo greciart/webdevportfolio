@@ -39,7 +39,7 @@ The configuration is global, meaning you only need to set it up once.
 
 ---
 
-# Windows (PowerShell)
+## Windows (PowerShell)
 
 ### Step 1. Open PowerShell
 
@@ -109,7 +109,7 @@ From now on, Claude Code will automatically use this global configuration for ev
 
 ---
 
-# Windows (Git Bash or Bash-Compatible Terminal)
+## Windows (Git Bash or Bash-Compatible Terminal)
 
 If you're using Git Bash or another Bash-style terminal on Windows, run:
 
@@ -133,7 +133,7 @@ Paste the same JSON configuration shown above and save the file.
 
 ---
 
-# macOS
+## macOS
 
 The process on macOS is almost identical.
 
@@ -199,7 +199,7 @@ Save the file, and the configuration will automatically apply to every Claude Co
 
 ---
 
-# Linux
+## Linux
 
 Linux follows exactly the same steps as macOS.
 
@@ -265,7 +265,7 @@ Claude Code will now use these restrictions automatically whenever it starts.
 
 ![A laptop displaying code editor settings with a protective digital barrier, illustrating how to restrict Claude Code access to personal folders.](/images/posts/restrict-claude-code-access-guide.webp)
 
-# What Does This Configuration Do?
+## What Does This Configuration Do?
 
 The configuration has two main sections.
 

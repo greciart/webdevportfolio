@@ -4,11 +4,22 @@ import { getLangFromUrl, useTranslations } from "../../i18n/utils";
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
-// Multipliers applied to the 15px base in global.css.
+// Multipliers applied to the base size in global.css.
 const textSizes = [
   { value: "1", label: t("a11y.textNormal"), sample: "A" },
   { value: "1.15", label: t("a11y.textLarge"), sample: "A" },
   { value: "1.3", label: t("a11y.textLarger"), sample: "A" },
+];
+
+// Every switch is a boolean that maps to one data attribute on <html>, so the
+// whole feature stays in CSS and the script only writes attributes.
+const toggles = [
+  { key: "contrast", label: t("a11y.contrast") },
+  { key: "spacing", label: t("a11y.spacing") },
+  { key: "readableFont", label: t("a11y.readableFont") },
+  { key: "underline", label: t("a11y.underline") },
+  { key: "focus", label: t("a11y.focus") },
+  { key: "motion", label: t("a11y.motion") },
 ];
 ---
 
@@ -80,19 +91,18 @@ const textSizes = [
         }
       </div>
 
-      <label
-        class="flex cursor-pointer items-center justify-between gap-3 rounded-xl px-1 py-1.5 text-xs font-medium text-blacktext transition-colors hover:text-mint-600 dark:text-zinc-300 dark:hover:text-mint-300"
-      >
-        {t("a11y.underline")}
-        <input type="checkbox" data-a11y-toggle="underline" class="size-4 accent-mint-500 cursor-pointer" />
-      </label>
-
-      <label
-        class="flex cursor-pointer items-center justify-between gap-3 rounded-xl px-1 py-1.5 text-xs font-medium text-blacktext transition-colors hover:text-mint-600 dark:text-zinc-300 dark:hover:text-mint-300"
-      >
-        {t("a11y.motion")}
-        <input type="checkbox" data-a11y-toggle="motion" class="size-4 accent-mint-500 cursor-pointer" />
-      </label>
+      {
+        toggles.map((toggle) => (
+          <label class="flex cursor-pointer items-center justify-between gap-3 rounded-xl px-1 py-1.5 text-xs font-medium text-blacktext transition-colors hover:text-mint-600 dark:text-zinc-300 dark:hover:text-mint-300">
+            {toggle.label}
+            <input
+              type="checkbox"
+              data-a11y-toggle={toggle.key}
+              class="size-4 shrink-0 accent-mint-500 cursor-pointer"
+            />
+          </label>
+        ))
+      }
 
       <button
         type="button"
@@ -112,26 +122,58 @@ const textSizes = [
   const root = document.documentElement;
   const STORE = "a11y-prefs";
 
-  type Prefs = { text: string; underline: boolean; motion: boolean };
+  type Prefs = {
+    text: string;
+    underline: boolean;
+    motion: boolean;
+    contrast: boolean;
+    spacing: boolean;
+    readableFont: boolean;
+    focus: boolean;
+  };
+
+  const DEFAULTS: Prefs = {
+    text: "1",
+    underline: false,
+    motion: false,
+    contrast: false,
+    spacing: false,
+    readableFont: false,
+    focus: false,
+  };
 
   const read = (): Prefs => {
     try {
-      return { text: "1", underline: false, motion: false, ...JSON.parse(localStorage.getItem(STORE) || "{}") };
+      return { ...DEFAULTS, ...JSON.parse(localStorage.getItem(STORE) || "{}") };
     } catch {
-      return { text: "1", underline: false, motion: false };
+      return { ...DEFAULTS };
     }
   };
 
   function apply(prefs: Prefs) {
     root.style.setProperty("--a11y-text-scale", prefs.text);
     root.dataset.a11yUnderline = prefs.underline ? "on" : "off";
+    // `motion: true` means "reduce it", so the attribute is the inverse.
     root.dataset.a11yMotion = prefs.motion ? "off" : "on";
+    root.dataset.a11yContrast = prefs.contrast ? "on" : "off";
+    root.dataset.a11ySpacing = prefs.spacing ? "on" : "off";
+    root.dataset.a11yFont = prefs.readableFont ? "readable" : "default";
+    root.dataset.a11yFocus = prefs.focus ? "on" : "off";
 
     document.querySelectorAll<HTMLButtonElement>("[data-a11y-text]").forEach((btn) => {
       btn.setAttribute("aria-pressed", String(btn.dataset.a11yText === prefs.text));
     });
     document.querySelectorAll<HTMLInputElement>("[data-a11y-toggle]").forEach((box) => {
-      box.checked = box.dataset.a11yToggle === "underline" ? prefs.underline : prefs.motion;
+      const key = box.dataset.a11yToggle as keyof Prefs;
+      box.checked = prefs[key] === true;
+    });
+
+    // Reducing motion has to reach the looping project previews too, otherwise
+    // the one thing actually moving on the page keeps moving.
+    document.querySelectorAll<HTMLVideoElement>("video[data-lazy-preview]").forEach((video) => {
+      if (!prefs.motion) return;
+      video.pause();
+      video.currentTime = 0;
     });
   }
 
@@ -152,12 +194,12 @@ const textSizes = [
 
   document.querySelectorAll<HTMLInputElement>("[data-a11y-toggle]").forEach((box) => {
     box.addEventListener("change", () => {
-      const key = box.dataset.a11yToggle === "underline" ? "underline" : "motion";
+      const key = box.dataset.a11yToggle as keyof Prefs;
       save({ ...read(), [key]: box.checked });
     });
   });
 
   document.querySelector("[data-a11y-reset]")?.addEventListener("click", () => {
-    save({ text: "1", underline: false, motion: false });
+    save({ ...DEFAULTS });
   });
 </script>

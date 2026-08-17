@@ -2,19 +2,30 @@
 interface Props {
     text?: string;
     textGradient?: string;
+    /** The heading rank in the document outline: h1, h2, h3. */
     level?: 1 | 2 | 3;
+    /**
+     * The visual size, when it needs to differ from the rank. The bento tiles on
+     * the home page are top-level sections of the page — an h1 followed
+     * straight by four h3s is the "heading elements are not in sequentially
+     * descending order" report — but they are small cards and have to keep
+     * reading as small cards. Defaults to `level`, so nothing that does not ask
+     * for it changes.
+     */
+    size?: 1 | 2 | 3;
     className?: string;
 }
 
-const { text = "", textGradient = "", level = 1, className = "" } = Astro.props;
+const { text = "", textGradient = "", level = 1, size, className = "" } = Astro.props;
 
 const Tag = `h${level}`;
+const visual = size ?? level;
 ---
 
 <Tag class:list={[
     "font-extrabold text-4xl max-xl:text-3xl",
-    level === 2 && "max-md:text-3xl ",
-    level === 3 && "max-md:text-xl ",
+    visual === 2 && "max-md:text-3xl ",
+    visual === 3 && "max-md:text-xl ",
     "dark:text-white text-blacktext",
     className
 ]}>
@@ -22,14 +33,14 @@ const Tag = `h${level}`;
         <>
             {text}
             {textGradient && " "}
-        </> 
+        </>
     )}
     {textGradient && (
         <b
             class:list={[
                 "bg-linear-to-r from-riptide-500 to-mint-400 dark:from-riptide-500 dark:to-mint-500 text-transparent bg-clip-text",
-                level === 1 
+                visual === 1
             ]}
         >{textGradient}</b>
     )}
-</Tag> 
+</Tag>

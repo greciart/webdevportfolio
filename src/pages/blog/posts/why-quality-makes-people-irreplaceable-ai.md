@@ -15,7 +15,7 @@ tags:
 languages: ["AI", "LLM"]
 ---
 
-# Why Quality Makes Web Designers Irreplaceable in the Age of AI
+## Why Quality Makes Web Designers Irreplaceable in the Age of AI
 
 Artificial intelligence has changed the way websites are created. Today, anyone can generate a landing page, write code, create layouts, and launch a website faster than ever before. But what is the real cost? the quality.
 

@@ -18,7 +18,7 @@ languages: ["AI", "LLM"]
 
 
 
-# How to Protect Your Designs and Artwork from AI Training: A Practical Guide for Artists and Designers
+## How to Protect Your Designs and Artwork from AI Training: A Practical Guide for Artists and Designers
 
 Creating original artwork takes time, creativity, and years of practice. Whether you're a designer, illustrator, photographer, or digital artist, seeing your work scraped by AI datasets or copied without permission can be incredibly frustrating.
 
@@ -51,7 +51,7 @@ Protecting your files only takes a few minutes:
 
 The exported file contains cryptographic credentials that help identify you as the original creator while communicating your AI training preferences.
 
-![Red prohibition symbol over an AI robotic hand, representing the fight against AI art theft and unauthorized use of creative work for training.](/images/posts/no-to-ai-scraping.jpg)
+![Red prohibition symbol over an AI robotic hand, representing the fight against AI art theft and unauthorized use of creative work for training.](/images/posts/no-to-ai-scraping.webp)
 
 ## Where You Publish Your Work Matters
 
@@ -123,7 +123,7 @@ Figma may use project files to improve certain AI-powered features.
 
 If you work in a team workspace, review your settings and disable AI training if the option is available.
 
-![Robotic arm connected to a laptop with gear icons, representing AI training pipelines that scrape artwork from online portfolios and galleries.](/images/posts/ai-training-workflow-automation.jpg)
+![Robotic arm connected to a laptop with gear icons, representing AI training pipelines that scrape artwork from online portfolios and galleries.](/images/posts/ai-training-workflow-automation.webp)
 
 ## Additional Strategies to Protect Your Portfolio
 

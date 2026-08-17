@@ -18,7 +18,7 @@ languages: ["AI", "LLM"]
 
 
 
-# Cómo proteger tus diseños e ilustraciones del entrenamiento de IA: guía práctica para artistas y diseñadoras
+## Cómo proteger tus diseños e ilustraciones del entrenamiento de IA: guía práctica para artistas y diseñadoras
 
 Crear trabajo original toma tiempo, creatividad y años de práctica. Ya seas diseñadora, ilustradora, fotógrafa o artista digital, ver tu trabajo raspado por conjuntos de datos de IA o copiado sin permiso puede ser increíblemente frustrante.
 
@@ -51,7 +51,7 @@ Proteger tus archivos toma solo unos minutos:
 
 El archivo exportado contiene credenciales criptográficas que ayudan a identificarte como la creadora original y comunican tus preferencias sobre el entrenamiento de IA.
 
-![Símbolo rojo de prohibición sobre una mano robótica de IA, representando la lucha contra el robo de arte por IA y el uso no autorizado del trabajo creativo para entrenamiento.](/images/posts/no-to-ai-scraping.jpg)
+![Símbolo rojo de prohibición sobre una mano robótica de IA, representando la lucha contra el robo de arte por IA y el uso no autorizado del trabajo creativo para entrenamiento.](/images/posts/no-to-ai-scraping.webp)
 
 ## Dónde publicas tu trabajo importa
 
@@ -123,7 +123,7 @@ Figma puede usar los archivos de proyecto para mejorar ciertas funciones impulsa
 
 Si trabajas en un espacio de equipo, revisa tu configuración y desactiva el entrenamiento de IA si la opción está disponible.
 
-![Brazo robótico conectado a una laptop con iconos de engranajes, representando los procesos de entrenamiento de IA que raspan trabajo de portafolios y galerías en línea.](/images/posts/ai-training-workflow-automation.jpg)
+![Brazo robótico conectado a una laptop con iconos de engranajes, representando los procesos de entrenamiento de IA que raspan trabajo de portafolios y galerías en línea.](/images/posts/ai-training-workflow-automation.webp)
 
 ## Otras estrategias para proteger tu portafolio
 
