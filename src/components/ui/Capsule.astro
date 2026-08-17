@@ -1,5 +1,5 @@
 ---
-import { getLangFromUrl, localizePath, useLabels } from "../../i18n/utils";
+import { getLangFromUrl, localizePath, toSlug, useLabels } from "../../i18n/utils";
 import { Icon } from "astro-icon/components";
 import { Image } from "astro:assets";
 import { getLanguage } from "../../utils/languages";
@@ -56,7 +56,7 @@ const getIconContainerClasses = () => {
   linkEnabled ? (
     <a
       class="cursor-pointer"
-      href={p(`/blog/techs/${lang}`)}
+      href={p(`/blog/techs/${toSlug(lang)}`)}
       aria-label={tf("aria.viewArticlesAbout", { name: selectedLanguage.name })}
       role="link"
     >

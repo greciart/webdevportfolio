@@ -14,3 +14,62 @@
 /:a/:b/index.html           /:a/:b/          301!
 /:a/:b/:c/index.html        /:a/:b/:c/       301!
 /:a/:b/:c/:d/index.html     /:a/:b/:c/:d/    301!
+
+# Tag and tech pages used to be addressed by their raw label, so the same page
+# answered to "/blog/tags/SEO & Content/", to the percent-encoded version of it,
+# and to nothing else. Search Console counted those as duplicates of each other.
+# The pages now live at a lowercase hyphenated slug; these keep the addresses
+# Google already crawled pointing at the new one instead of at a 404.
+#
+# No force flag here on purpose. These only fire when nothing is served at the
+# old address, which after the rename is exactly the case. A forced rule would
+# also match the new lowercase path if Netlify ever compares paths without
+# regard to case, and that is a redirect loop.
+/blog/tags/AI%20&%20Web%20Design    /blog/tags/ai-web-design/    301
+/blog/tags/AI%20&%20Web%20Design/*    /blog/tags/ai-web-design/    301
+/blog/tags/Career%20&%20Craft    /blog/tags/career-craft/    301
+/blog/tags/Career%20&%20Craft/*    /blog/tags/career-craft/    301
+/blog/tags/Creative%20Coding    /blog/tags/creative-coding/    301
+/blog/tags/Creative%20Coding/*    /blog/tags/creative-coding/    301
+/blog/tags/Web%20Development    /blog/tags/web-development/    301
+/blog/tags/Web%20Development/*    /blog/tags/web-development/    301
+/blog/tags/Security%20&%20Privacy    /blog/tags/security-privacy/    301
+/blog/tags/Security%20&%20Privacy/*    /blog/tags/security-privacy/    301
+/blog/tags/SEO%20&%20Content    /blog/tags/seo-content/    301
+/blog/tags/SEO%20&%20Content/*    /blog/tags/seo-content/    301
+/blog/tags/Tutorials%20&%20Guides    /blog/tags/tutorials-guides/    301
+/blog/tags/Tutorials%20&%20Guides/*    /blog/tags/tutorials-guides/    301
+/blog/tags/AI%20Tools%20&%20Coding    /blog/tags/ai-tools-coding/    301
+/blog/tags/AI%20Tools%20&%20Coding/*    /blog/tags/ai-tools-coding/    301
+/blog/tags/Web%20Design%20&%20UX    /blog/tags/web-design-ux/    301
+/blog/tags/Web%20Design%20&%20UX/*    /blog/tags/web-design-ux/    301
+/blog/tags/Developer%20Tools    /blog/tags/developer-tools/    301
+/blog/tags/Developer%20Tools/*    /blog/tags/developer-tools/    301
+/blog/techs/AI    /blog/techs/ai/    301
+/blog/techs/AI/*    /blog/techs/ai/    301
+/blog/techs/LLM    /blog/techs/llm/    301
+/blog/techs/LLM/*    /blog/techs/llm/    301
+/es/blog/tags/AI%20&%20Web%20Design    /es/blog/tags/ai-web-design/    301
+/es/blog/tags/AI%20&%20Web%20Design/*    /es/blog/tags/ai-web-design/    301
+/es/blog/tags/Career%20&%20Craft    /es/blog/tags/career-craft/    301
+/es/blog/tags/Career%20&%20Craft/*    /es/blog/tags/career-craft/    301
+/es/blog/tags/Creative%20Coding    /es/blog/tags/creative-coding/    301
+/es/blog/tags/Creative%20Coding/*    /es/blog/tags/creative-coding/    301
+/es/blog/tags/Web%20Development    /es/blog/tags/web-development/    301
+/es/blog/tags/Web%20Development/*    /es/blog/tags/web-development/    301
+/es/blog/tags/Security%20&%20Privacy    /es/blog/tags/security-privacy/    301
+/es/blog/tags/Security%20&%20Privacy/*    /es/blog/tags/security-privacy/    301
+/es/blog/tags/SEO%20&%20Content    /es/blog/tags/seo-content/    301
+/es/blog/tags/SEO%20&%20Content/*    /es/blog/tags/seo-content/    301
+/es/blog/tags/Tutorials%20&%20Guides    /es/blog/tags/tutorials-guides/    301
+/es/blog/tags/Tutorials%20&%20Guides/*    /es/blog/tags/tutorials-guides/    301
+/es/blog/tags/AI%20Tools%20&%20Coding    /es/blog/tags/ai-tools-coding/    301
+/es/blog/tags/AI%20Tools%20&%20Coding/*    /es/blog/tags/ai-tools-coding/    301
+/es/blog/tags/Web%20Design%20&%20UX    /es/blog/tags/web-design-ux/    301
+/es/blog/tags/Web%20Design%20&%20UX/*    /es/blog/tags/web-design-ux/    301
+/es/blog/tags/Developer%20Tools    /es/blog/tags/developer-tools/    301
+/es/blog/tags/Developer%20Tools/*    /es/blog/tags/developer-tools/    301
+/es/blog/techs/AI    /es/blog/techs/ai/    301
+/es/blog/techs/AI/*    /es/blog/techs/ai/    301
+/es/blog/techs/LLM    /es/blog/techs/llm/    301
+/es/blog/techs/LLM/*    /es/blog/techs/llm/    301

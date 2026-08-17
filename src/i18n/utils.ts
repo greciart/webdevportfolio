@@ -51,6 +51,28 @@ export function withTrailingSlash(path: string): string {
   return `${pathname}/${suffix}`;
 }
 
+/**
+ * Turns a human tag or tech label into a URL segment.
+ *
+ * Tag and tech pages used to be addressed by their raw label, which put spaces
+ * and ampersands straight into the path: `/blog/tags/seo & content/`. A browser
+ * sends that as `seo%20&%20content`, the page's own canonical says the same,
+ * and the readable version anyone actually links to is a third string — which
+ * is exactly what Search Console was reporting as "alternate page with proper
+ * canonical tag". Techs had the same problem through casing: the label is `AI`,
+ * so the URL was `/blog/techs/AI/` while the crawler kept trying `/ai/`.
+ *
+ * One lowercase, ASCII, hyphenated form per label ends both.
+ */
+export function toSlug(value: string): string {
+  return value
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+
 /** Prefixes a root-relative path with the language segment (English keeps `/`). */
 export function localizePath(path: string, lang: Lang): string {
   const clean = path.startsWith("/") ? path : `/${path}`;
