@@ -203,14 +203,19 @@ Vale la pena preguntárselo con honestidad. Combina tus defensas y entiende qué
 
 Si tu formulario recibe un par de mensajes de spam al mes, puede que el honeypot solo sea suficiente y les ahorres la fricción a tus visitantes. Si estás ahogándote en ellos, añade el captcha. Y si prefieres no pasar a tus visitantes por Google, Cloudflare Turnstile es una alternativa más ligera y privada, aunque necesita una función serverless para verificar los tokens, ya que Netlify no lo comprueba de forma nativa.
 
-## Para cerrar
+## Dónde suele romperse esto
 
-Hacer esto bien se reduce a cinco cosas:
+Casi todas las configuraciones rotas de reCAPTCHA que he revisado fallan en los
+mismos sitios, y ninguno es raro.
 
-1. Genera llaves **v2 con casilla**, nunca v3
-2. Ten claras cuál es la clave de sitio y cuál la secreta, y nunca subas la secreta al repositorio
-3. Crea las tres variables de entorno, y después vuelve a desplegar
-4. Reserva 78px para que el widget no desplace tu maquetado
-5. Carga el script de Google solo al primer contacto, para que tu puntuación de rendimiento quede intacta
+Las llaves son v3 en lugar de v2 con casilla, así que el widget nunca se dibuja
+y la verificación del servidor no tiene nada que comprobar. La clave secreta
+acabó pegada en el marcado en vez de en el entorno, o sea que ya es pública y
+hay que regenerarla. Falta una de las tres variables de entorno, y Netlify
+despliega igual porque una variable que falta no es un error de compilación. O
+las tres variables están bien pero nunca se volvió a desplegar, así que la
+compilación que sigue en línea es la de antes.
 
-Hecho así, el spam se acaba y nadie, incluido Lighthouse, se entera de que el captcha está ahí.
+Si el widget aparece y aun así pasan envíos, revisa primero la clave secreta.
+Es la que Netlify usa para hablar con Google, y un valor equivocado ahí falla
+en silencio.

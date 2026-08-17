@@ -203,14 +203,19 @@ Worth asking honestly. Layer your defenses and understand what each one actually
 
 If your form gets a couple of spam messages a month, the honeypot alone may be enough and you spare visitors the friction. If you're drowning in them, add the captcha. And if you'd rather not send visitors through Google at all, Cloudflare Turnstile is a lighter, more private alternative, though it needs a serverless function to verify tokens since Netlify doesn't check it natively.
 
-## Wrapping Up
+## Where this usually goes wrong
 
-Getting this right comes down to five things:
+Almost every broken reCAPTCHA setup I have looked at fails in one of the same
+few places, and none of them are exotic.
 
-1. Generate **v2 Checkbox** keys, never v3
-2. Keep the site key and secret key straight, and never commit the secret
-3. Create all three environment variables, then redeploy
-4. Reserve 78px so the widget doesn't shift your layout
-5. Load Google's script only on first interaction, so your performance score is untouched
+The keys are v3 instead of v2 Checkbox, so the widget never renders and the
+server-side check has nothing to verify. The secret key was pasted into the
+markup instead of the environment, which means it is now public and needs
+regenerating. One of the three environment variables is missing, and Netlify
+happily deploys anyway because a missing variable is not a build error. Or the
+variables are all correct but the site was never redeployed, so the build still
+running is the one from before.
 
-Done this way, spam stops and nobody, including Lighthouse, notices the captcha is there.
+If the widget renders and submissions still get through, check the secret key
+first. That is the one Netlify uses to talk to Google, and a wrong value there
+fails quietly.

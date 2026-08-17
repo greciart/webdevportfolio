@@ -146,14 +146,9 @@ The reason it's compelling compared to the alternatives is the constraint it rem
 
 And being MIT licensed and fully local, nothing about your files leaves your machine.
 
-## Wrapping Up
+## Credit where it is due
 
-To recap:
-
-1. Get Figma **Desktop**, Node 18+ and Claude Code or Cursor ready
-2. Have your AI assistant clone `github.com/silships/figma-cli` and read its docs
-3. Connect with `--safe` mode and import the plugin manifest
-4. Keep the plugin window open while you work
-5. Feed it your design system before asking for output
-
-The full source and documentation live at [github.com/silships/figma-cli](https://github.com/silships/figma-cli), built by Sil Bormüller.
+figma-cli is built and maintained by Sil Bormüller, and the whole thing is out
+in the open at [github.com/silships/figma-cli](https://github.com/silships/figma-cli).
+If it saves you the price of a Dev Mode seat, the least you can do is star the
+repo and file a decent issue when something breaks.

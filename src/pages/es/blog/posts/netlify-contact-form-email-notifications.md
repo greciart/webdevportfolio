@@ -168,15 +168,18 @@ El plan gratuito incluye **100 envíos al mes**. A partir de ahí, los formulari
 
 Esta es otra razón para configurar el honeypot desde el primer día, y para plantearte añadir un captcha si tu formulario empieza a atraer bots.
 
-## Para cerrar
+## Si el correo sigue sin llegar
 
-Un formulario de contacto en Netlify que funciona de forma fiable se reduce a cuatro cosas:
+Ve hacia atrás, porque cada paso te dice dónde se rompió la cadena.
 
-1. Marcado con `data-netlify="true"`, un `form-name` oculto que coincida, y atributos `name` en todos los campos
-2. Un formulario presente en el HTML estático publicado, confirmado en el panel
-3. Notificaciones por correo activadas a mano
-4. Una alternativa en JavaScript que nunca deje al visitante atrapado
+Abre la pestaña Forms en tu panel de Netlify. Si el envío no aparece ahí, el
+problema está en el marcado o en el despliegue: Netlify nunca vio un
+formulario, así que no capturó nada. Si el envío **sí** aparece y no llegó
+ningún correo, el formulario estaba bien y lo que falta es la notificación.
+Revisa la carpeta de spam una vez, y después comprueba que la notificación esté
+puesta en el formulario correcto y no en uno con el mismo nombre de otro sitio.
 
-Si aciertas en esas cuatro, dejas de preguntarte si los mensajes te están llegando.
-
-Si quieres ir más allá y bloquear el spam automatizado como se debe, el siguiente paso es añadir Google reCAPTCHA al mismo formulario, que Netlify verifica en el servidor.
+El caso que despista a todo el mundo: un envío que llega con todos los campos
+vacíos. Eso es un formulario cuyos campos no tienen atributo `name`. El
+navegador solo manda los campos con nombre, así que Netlify registró un envío
+real que no contenía absolutamente nada.

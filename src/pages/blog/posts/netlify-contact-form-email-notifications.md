@@ -168,15 +168,18 @@ The free tier includes **100 submissions per month**. Beyond that, forms stop ac
 
 This is another reason to set up the honeypot from day one, and to consider adding a captcha if your form starts attracting bots.
 
-## Wrapping Up
+## If the email still does not arrive
 
-A Netlify contact form that works reliably comes down to four things:
+Work backwards, because each step tells you where the chain broke.
 
-1. Markup with `data-netlify="true"`, a matching hidden `form-name`, and `name` attributes on every field
-2. A form present in the deployed static HTML, confirmed in the dashboard
-3. Email notifications turned on manually
-4. A JavaScript fallback that never leaves the visitor stuck
+Open the Forms tab in your Netlify dashboard. If the submission is not listed
+there, the problem is in the markup or the deploy: Netlify never saw a form,
+so nothing was captured. If the submission *is* listed and no email came, the
+form was fine and the notification is what is missing. Check the spam folder
+once, then check that the notification is attached to the right form rather
+than to a form of the same name on another site.
 
-Get those right and you'll stop wondering whether messages are reaching you.
-
-If you want to go further and block automated spam properly, the next step is adding Google reCAPTCHA to the same form, which Netlify verifies server-side.
+The one case that catches people out: a submission that arrives with every
+field empty. That is a form whose inputs have no `name` attribute. The browser
+only sends named fields, so Netlify recorded a real submission containing
+nothing at all.

@@ -147,14 +147,9 @@ La razón por la que resulta interesante frente a las alternativas es la restric
 
 Y al ser MIT y totalmente local, nada de tus archivos sale de tu máquina.
 
-## Para cerrar
+## Los créditos
 
-Recapitulando:
-
-1. Ten listos Figma **Desktop**, Node 18+ y Claude Code o Cursor
-2. Pide a tu asistente de IA que clone `github.com/silships/figma-cli` y lea su documentación
-3. Conéctate con el modo `--safe` e importa el manifiesto del plugin
-4. Deja la ventana del plugin abierta mientras trabajas
-5. Dale tu sistema de diseño antes de pedirle resultados
-
-El código fuente y la documentación completa están en [github.com/silships/figma-cli](https://github.com/silships/figma-cli), creado por Sil Bormüller.
+figma-cli lo construye y lo mantiene Sil Bormüller, y está todo a la vista en
+[github.com/silships/figma-cli](https://github.com/silships/figma-cli). Si te
+ahorra el precio de un asiento de Dev Mode, lo mínimo es darle una estrella al
+repositorio y abrir un issue decente cuando algo se rompa.
