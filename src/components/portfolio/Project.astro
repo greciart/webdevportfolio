@@ -25,7 +25,7 @@ const { title, url, image, video, languages, description, size = "xs" } = Astro.
       preload="none"
       disablepictureinpicture
       aria-label={image.alt}
-    </video>
+    ></video>
   ) : (
   <Image
     class="w-full aspect-[3/2] object-cover object-top rounded-xl transition-all duration-300 ease-in-out group-hover:scale-105"
