@@ -43,11 +43,7 @@ const { title, url, image, video, languages, description, size = "xs" } = Astro.
         </h2>
 
         <div class="flex flex-wrap gap-3">
-          {
-            languages.map((language: string) => (
-              <Capsule size={size} linkEnabled={false} lang={language} />
-            ))
-          }
+          {languages.map((language) => <Capsule size={size} linkEnabled={false} lang={language} />)}
         </div>
 
         <p class="text-sm w-full max-md:max-w-[85%] my-2 leading-relaxed font-normal text-blacktext dark:text-gray-200">
