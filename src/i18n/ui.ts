@@ -53,8 +53,6 @@ export const ui = {
     "a11y.focus": "Strong focus outline",
     "a11y.reset": "Reset",
     "a11y.skip": "Skip to content",
-    "a11y.noAudio": "No audio",
-
     // --- Screen reader labels ---
     // Nothing here is visible, which is exactly why it went untranslated for so
     // long. `{name}`/`{title}` are filled in by `useLabels`.
@@ -267,8 +265,6 @@ export const ui = {
     "a11y.focus": "Foco muy visible",
     "a11y.reset": "Restablecer",
     "a11y.skip": "Saltar al contenido",
-    "a11y.noAudio": "Sin audio",
-
     // --- Etiquetas para lectores de pantalla ---
     "aria.footer": "Pie de página",
     "aria.footerCredit": "Sobre el desarrollo del sitio",
