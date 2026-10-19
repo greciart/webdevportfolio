@@ -253,7 +253,7 @@ No asumas que la IA lo hizo bien.
 Usa herramientas como:
 
 * npm audit
-* pnpm audit
+* [pnpm audit](/es/blog/posts/use-pnpm/)
 * Snyk
 * Dependabot
 * Semgrep
@@ -291,6 +291,8 @@ Cada paquete aumenta:
 * El tamaño del bundle
 * La superficie de ataque
 * La carga de mantenimiento
+
+Un gestor de paquetes más estricto también ayuda aquí. [Te cuento por qué cambié a pnpm](/es/blog/posts/use-pnpm/).
 
 ### Mide antes de optimizar
 

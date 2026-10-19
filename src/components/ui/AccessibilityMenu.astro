@@ -25,7 +25,9 @@ const toggles = [
 
 <!-- Mirrors the language switcher: hover or keyboard focus opens it, and the
      preferences live on <html> so CSS alone applies them. -->
-<div class="a11y-menu relative flex items-center group" data-a11y-menu>
+<!-- Static on phones: the button sits on the left there, so the panel anchors
+     to the header row instead and opens from its left edge, not off-screen. -->
+<div class="a11y-menu relative max-md:static flex items-center group" data-a11y-menu>
   <button
     type="button"
     class="flex cursor-pointer items-center gap-1.5 rounded-full border border-mint-200 bg-white/70 px-3 py-1.5 max-md:px-2 text-xs font-bold tracking-wide text-blacktext transition-all hover:border-mint-400 hover:text-mint-600 dark:border-zinc-700 dark:bg-zinc-900/70 dark:text-zinc-200 dark:hover:border-mint-400 dark:hover:text-mint-300"
@@ -62,7 +64,7 @@ const toggles = [
   </button>
 
   <div
-    class="absolute right-0 top-full z-50 pt-3 opacity-0 invisible translate-y-1 transition-all duration-200 ease-out group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 group-focus-within:opacity-100 group-focus-within:visible group-focus-within:translate-y-0"
+    class="absolute right-0 max-md:right-auto max-md:left-3 top-full z-50 pt-3 opacity-0 invisible translate-y-1 transition-all duration-200 ease-out group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 group-focus-within:opacity-100 group-focus-within:visible group-focus-within:translate-y-0"
   >
     <div
       class="min-w-[230px] rounded-2xl border border-mint-100 bg-white/95 p-3 shadow-xl shadow-mint-500/10 backdrop-blur-md dark:border-zinc-800 dark:bg-zinc-900/95"

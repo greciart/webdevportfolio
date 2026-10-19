@@ -71,6 +71,8 @@ cd figma-cli
 npm install
 ```
 
+Si usas pnpm, `pnpm install` funciona igual. ([Por qué uso pnpm en lugar de npm](/es/blog/posts/use-pnpm/).)
+
 ## Paso 2. Conéctalo a Figma
 
 figma-cli ofrece tres modos de conexión, y vale la pena entender la diferencia antes de elegir:

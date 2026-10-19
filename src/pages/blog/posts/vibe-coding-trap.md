@@ -253,7 +253,7 @@ Do not assume AI got it right.
 Use tools such as:
 
 * npm audit
-* pnpm audit
+* [pnpm audit](/blog/posts/use-pnpm/)
 * Snyk
 * Dependabot
 * Semgrep
@@ -291,6 +291,8 @@ Every package increases:
 * Bundle size
 * Attack surface
 * Maintenance burden
+
+Using a stricter package manager helps here too. [Here's why I switched to pnpm](/blog/posts/use-pnpm/).
 
 ### Measure Before Optimizing
 

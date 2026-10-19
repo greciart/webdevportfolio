@@ -14,7 +14,7 @@ const [staticData] = await getCollection("staticData");
 const { github, githubIconName, linkedin, linkedinIconName, contra, contraIconName } = staticData.data;
 
 // Home and About carry their own sub-menus, so the same set works on every route.
-const navItems = ["home", "about", "blog", "reviews", "contact"];
+const navItems = ["home", "about", "shop", "blog", "reviews", "contact"];
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -42,12 +42,15 @@ const t = useTranslations(lang);
   height={50}
   loading="eager"
   decoding="async"
-  class="h-[35px] max-lg:h-6 w-auto object-contain"
+  class="h-[35px] max-lg:h-6 max-md:h-7 w-auto object-contain"
 />
 
     <Navigation items={navItems} />
 
-    <div class="flex items-center gap-5 max-lg:gap-3 max-md:gap-4 text-xl">
+    <!-- On phones the settings sit on the left, right after the logo, and the
+         hamburger takes the far right on its own with a full 44px target. It
+         used to share that corner and was hard to hit with a thumb. -->
+    <div class="flex items-center gap-5 max-lg:gap-3 max-md:flex-1 max-md:ml-3 max-md:gap-3 text-xl">
       <AccessibilityMenu />
       <LanguageSwitcher />
       <!-- Held back to lg: at 768px the desktop nav is already competing with
@@ -59,7 +62,7 @@ const t = useTranslations(lang);
       </div>
       <ThemeIcon />
       <button
-        class="hamburger"
+        class="hamburger max-md:ml-auto max-md:flex max-md:size-11 max-md:items-center max-md:justify-center max-md:rounded-full max-md:text-2xl"
         aria-label={t("nav.openMenu")}
         aria-expanded="false"
         aria-controls="mobile-menu"

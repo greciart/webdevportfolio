@@ -280,3 +280,5 @@ Together, these settings create a safer default environment without affecting yo
 Claude Code is designed to make development faster, but it's still a good idea to follow the principle of least privilege. Giving any tool access only to the files it truly needs helps reduce unnecessary exposure and keeps personal information separate from your work.
 
 Since this configuration is global, you only need to set it up once. Every future Claude Code project will automatically inherit these permissions, giving you a more secure starting point without any additional configuration.
+
+If you're tightening up your development setup, these go well with it: [why I use pnpm instead of npm](/blog/posts/use-pnpm/) and [the risks of blindly trusting AI-generated code](/blog/posts/vibe-coding-trap/).

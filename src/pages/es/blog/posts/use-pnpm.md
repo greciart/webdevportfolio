@@ -317,6 +317,8 @@ Lo que recomiendo:
 
 Los ataques recientes han demostrado que incluso paquetes muy confiables pueden convertirse en vectores de ataque cuando se comprometen las cuentas de sus mantenedores.
 
+Si quieres profundizar en esto, lee [La trampa del vibe coding](/es/blog/posts/vibe-coding-trap/).
+
 ## Reflexión final
 
 npm sigue siendo el gestor de paquetes estándar del ecosistema Node.js, y millones de proyectos dependen de él cada día.

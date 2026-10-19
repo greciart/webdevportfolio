@@ -317,6 +317,8 @@ I recommend:
 
 Recent attacks have shown that even highly trusted packages can become attack vectors when maintainer accounts are compromised.
 
+For more on this, see [The Vibe Coding Trap](/blog/posts/vibe-coding-trap/).
+
 ## Final Thoughts
 
 npm remains the standard package manager in the Node.js ecosystem, and millions of projects depend on it every day.
