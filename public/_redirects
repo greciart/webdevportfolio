@@ -75,3 +75,48 @@
 /es/blog/techs/AI/*    /es/blog/techs/ai/    301
 /es/blog/techs/LLM    /es/blog/techs/llm/    301
 /es/blog/techs/LLM/*    /es/blog/techs/llm/    301
+
+# Hubo una version intermedia en la que las etiquetas ya iban en minusculas pero
+# seguian con espacios ("/blog/tags/seo & content/"). Google las rastreo y ahora
+# las reporta como 404 o como alternativa con canonica. Netlify distingue
+# mayusculas, asi que las reglas de arriba no las cubren.
+/blog/tags/ai%20&%20web%20design    /blog/tags/ai-web-design/    301
+/blog/tags/ai%20&%20web%20design/*    /blog/tags/ai-web-design/    301
+/blog/tags/career%20&%20craft    /blog/tags/career-craft/    301
+/blog/tags/career%20&%20craft/*    /blog/tags/career-craft/    301
+/blog/tags/creative%20coding    /blog/tags/creative-coding/    301
+/blog/tags/creative%20coding/*    /blog/tags/creative-coding/    301
+/blog/tags/web%20development    /blog/tags/web-development/    301
+/blog/tags/web%20development/*    /blog/tags/web-development/    301
+/blog/tags/security%20&%20privacy    /blog/tags/security-privacy/    301
+/blog/tags/security%20&%20privacy/*    /blog/tags/security-privacy/    301
+/blog/tags/seo%20&%20content    /blog/tags/seo-content/    301
+/blog/tags/seo%20&%20content/*    /blog/tags/seo-content/    301
+/blog/tags/tutorials%20&%20guides    /blog/tags/tutorials-guides/    301
+/blog/tags/tutorials%20&%20guides/*    /blog/tags/tutorials-guides/    301
+/blog/tags/ai%20tools%20&%20coding    /blog/tags/ai-tools-coding/    301
+/blog/tags/ai%20tools%20&%20coding/*    /blog/tags/ai-tools-coding/    301
+/blog/tags/web%20design%20&%20ux    /blog/tags/web-design-ux/    301
+/blog/tags/web%20design%20&%20ux/*    /blog/tags/web-design-ux/    301
+/blog/tags/developer%20tools    /blog/tags/developer-tools/    301
+/blog/tags/developer%20tools/*    /blog/tags/developer-tools/    301
+/es/blog/tags/ai%20&%20web%20design    /es/blog/tags/ai-web-design/    301
+/es/blog/tags/ai%20&%20web%20design/*    /es/blog/tags/ai-web-design/    301
+/es/blog/tags/career%20&%20craft    /es/blog/tags/career-craft/    301
+/es/blog/tags/career%20&%20craft/*    /es/blog/tags/career-craft/    301
+/es/blog/tags/creative%20coding    /es/blog/tags/creative-coding/    301
+/es/blog/tags/creative%20coding/*    /es/blog/tags/creative-coding/    301
+/es/blog/tags/web%20development    /es/blog/tags/web-development/    301
+/es/blog/tags/web%20development/*    /es/blog/tags/web-development/    301
+/es/blog/tags/security%20&%20privacy    /es/blog/tags/security-privacy/    301
+/es/blog/tags/security%20&%20privacy/*    /es/blog/tags/security-privacy/    301
+/es/blog/tags/seo%20&%20content    /es/blog/tags/seo-content/    301
+/es/blog/tags/seo%20&%20content/*    /es/blog/tags/seo-content/    301
+/es/blog/tags/tutorials%20&%20guides    /es/blog/tags/tutorials-guides/    301
+/es/blog/tags/tutorials%20&%20guides/*    /es/blog/tags/tutorials-guides/    301
+/es/blog/tags/ai%20tools%20&%20coding    /es/blog/tags/ai-tools-coding/    301
+/es/blog/tags/ai%20tools%20&%20coding/*    /es/blog/tags/ai-tools-coding/    301
+/es/blog/tags/web%20design%20&%20ux    /es/blog/tags/web-design-ux/    301
+/es/blog/tags/web%20design%20&%20ux/*    /es/blog/tags/web-design-ux/    301
+/es/blog/tags/developer%20tools    /es/blog/tags/developer-tools/    301
+/es/blog/tags/developer%20tools/*    /es/blog/tags/developer-tools/    301
