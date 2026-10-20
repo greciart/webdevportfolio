@@ -131,7 +131,12 @@ const sectionWrap = "scroll-m-24 px-8 py-16 max-sm:px-4 max-sm:py-10";
                   widths={[480, 800]}
                   sizes="(max-width: 767px) 100vw, (max-width: 1279px) 50vw, 400px"
                   loading={i < 3 ? "eager" : "lazy"}
-                  class="size-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105"
+                  class:list={[
+                    "size-full object-cover transition-transform duration-700 ease-out group-hover:scale-105",
+                    // Template covers are page screenshots, whose header is the
+                    // part worth showing. Model renders are centred subjects.
+                    item.kind === "template" ? "object-top" : "object-center",
+                  ]}
                 />
                 <div class="absolute left-3 top-3 flex gap-2">
                   {item.price === 0 && (

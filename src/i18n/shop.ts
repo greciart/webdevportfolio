@@ -247,7 +247,7 @@ const productCopy: Record<Lang, Record<string, ProductCopy>> = {
 };
 
 export type ShopProduct = ProductBase &
-  ProductCopy & { url: string; poster: string; preview?: string };
+  ProductCopy & { url: string; poster: string; posterLarge: string; preview?: string };
 
 export function getShopProducts(lang: Lang): ShopProduct[] {
   return products.map((product) => {
@@ -257,6 +257,8 @@ export function getShopProducts(lang: Lang): ShopProduct[] {
       ...productCopy[lang][product.id],
       url: `https://contra.com/products/${product.slug}`,
       poster: `/images/shop/${coverFile[product.id]}.webp`,
+      // 1600px twin for retina screens and Google Images.
+      posterLarge: `/images/shop/${coverFile[product.id]}-large.webp`,
       preview:
         type === "video"
           ? `${MEDIA}/video/upload/c_fill,w_640,h_360,q_auto/${id}.mp4`

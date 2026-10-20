@@ -32,7 +32,8 @@ const schema = [
         "@type": "Product",
         name: product.name,
         description: product.blurb,
-        image: new URL(product.poster, Astro.site).href,
+        // The large version: Google prefers big images for product results.
+        image: new URL(product.posterLarge, Astro.site).href,
         url: product.url,
         brand: { "@type": "Brand", name: "Grecia V." },
         offers: {
@@ -153,6 +154,8 @@ const sectionWrap = "scroll-m-24 px-8 py-16 max-sm:px-4 max-sm:py-10";
                 >
                   <img
                     src={product.poster}
+                    srcset={`${product.poster} 800w, ${product.posterLarge} 1600w`}
+                    sizes="(max-width: 767px) 100vw, (max-width: 1279px) 50vw, 400px"
                     alt={product.alt}
                     width="800"
                     height="450"
