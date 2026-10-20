@@ -2,16 +2,41 @@
 import Layout from "../layouts/Layout.astro";
 import Heading from "../components/ui/Heading.astro";
 import Button from "../components/ui/Button.astro";
+import GalleryLightbox from "../components/portfolio/GalleryLightbox.astro";
+import { Image, getImage } from "astro:assets";
+import type { ImageMetadata } from "astro";
 import { Icon } from "astro-icon/components";
 import { labCopy, getLabGroups, githubProfile } from "../i18n/lab";
-import { getLangFromUrl, localizePath } from "../i18n/utils";
+import { getLangFromUrl, localizePath, useTranslations } from "../i18n/utils";
+
+// A project's preview is whatever image in src/assets/lab/ is named after its
+// id (serperwave.png, focus-time.jpg...). Dropping a file there is all it takes;
+// projects without one get an icon tile instead.
+const previewFiles = import.meta.glob<{ default: ImageMetadata }>(
+  "../assets/lab/*.{png,jpg,jpeg,webp}",
+  { eager: true },
+);
+const previews = new Map(
+  Object.entries(previewFiles).map(([path, mod]) => [
+    path.split("/").pop()!.replace(/\.\w+$/, ""),
+    mod.default,
+  ]),
+);
 
 const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 const c = labCopy[lang];
 const groups = getLabGroups(lang);
 const p = (path: string) => localizePath(path, lang);
 
 const { pageTitle, description } = c;
+
+// Full-size webp for the lightbox, one per project that has a preview.
+const fullSize = new Map(
+  await Promise.all(
+    [...previews].map(async ([id, image]) => [id, (await getImage({ src: image, format: "webp" })).src] as const),
+  ),
+);
 
 // Every project is a piece of source code with a public repository, which is
 // exactly what SoftwareSourceCode describes.
@@ -106,9 +131,40 @@ const sectionWrap = "scroll-m-24 px-8 py-16 max-sm:px-4 max-sm:py-10";
             data-reveal-stagger={gi % 2 === 0 ? "up" : "scale"}
             class="grid grid-cols-3 gap-6 max-lg:grid-cols-2 max-md:grid-cols-1"
           >
-            {group.projects.map((project) => (
+            {group.projects.map((project, pi) => (
               <li class={`${cardBorder} group`}>
-                <article class={`${cardInner} flex flex-col gap-4`}>
+                <article class="flex h-full flex-col gap-4 rounded-[calc(1rem-1px)] bg-white p-3 dark:bg-zinc-900/80">
+                  <div class="relative aspect-video overflow-hidden rounded-xl bg-mint-50 dark:bg-zinc-800">
+                    {previews.has(project.id) ? (
+                      <>
+                        <Image
+                          src={previews.get(project.id)!}
+                          alt={`${project.name}: ${project.description}`}
+                          widths={[480, 800]}
+                          sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 400px"
+                          loading="lazy"
+                          class="size-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105"
+                        />
+                        <button
+                          type="button"
+                          data-lb
+                          data-lb-group={`lab-${group.id}`}
+                          data-lb-index={group.projects.slice(0, pi).filter((p) => previews.has(p.id)).length}
+                          data-lb-src={fullSize.get(project.id)}
+                          data-lb-alt={project.name}
+                          data-lb-title={project.name}
+                          aria-label={t("aria.openFullSize").replace("{title}", project.name)}
+                          class="absolute inset-0 z-1 cursor-zoom-in focus-visible:outline-2 focus-visible:outline-offset-[-4px] focus-visible:outline-mint-400"
+                        />
+                      </>
+                    ) : (
+                      <div class="flex size-full items-center justify-center bg-linear-to-br from-riptide-100 to-mint-50 dark:from-mint-950 dark:to-zinc-900" aria-hidden="true">
+                        <Icon name={group.icon} class="size-14 text-mint-500/70 transition-transform duration-700 group-hover:scale-110 dark:text-mint-300/70" />
+                      </div>
+                    )}
+                  </div>
+
+                  <div class="flex flex-1 flex-col gap-4 px-4 pb-4">
                   <h3 class="text-lg font-bold text-blacktext dark:text-white">{project.name}</h3>
                   <span
                     class="h-0.5 w-10 rounded-full bg-linear-to-r from-riptide-400 to-mint-500 transition-all duration-500 group-hover:w-20"
@@ -144,6 +200,7 @@ const sectionWrap = "scroll-m-24 px-8 py-16 max-sm:px-4 max-sm:py-10";
                         {c.postLink} →
                       </a>
                     )}
+                  </div>
                   </div>
                 </article>
               </li>
@@ -206,4 +263,6 @@ const sectionWrap = "scroll-m-24 px-8 py-16 max-sm:px-4 max-sm:py-10";
       </div>
     </div>
   </section>
+
+  <GalleryLightbox />
 </Layout>

@@ -2,11 +2,13 @@
 import Layout from "../../layouts/Layout.astro";
 import Heading from "../../components/ui/Heading.astro";
 import Button from "../../components/ui/Button.astro";
+import GalleryLightbox from "../../components/portfolio/GalleryLightbox.astro";
 import { Icon } from "astro-icon/components";
 import { shopCopy, getShopProducts } from "../../i18n/shop";
-import { getLangFromUrl, localizePath } from "../../i18n/utils";
+import { getLangFromUrl, localizePath, useTranslations } from "../../i18n/utils";
 
 const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 const c = shopCopy[lang];
 const products = getShopProducts(lang);
 const p = (path: string) => localizePath(path, lang);
@@ -176,7 +178,19 @@ const sectionWrap = "scroll-m-24 px-8 py-16 max-sm:px-4 max-sm:py-10";
                     />
                   )}
 
-                  <div class="absolute left-3 top-3 flex gap-2">
+                  <button
+                    type="button"
+                    data-lb
+                    data-lb-group="models"
+                    data-lb-index={i}
+                    data-lb-src={product.posterLarge}
+                    data-lb-alt={product.alt}
+                    data-lb-title={product.name}
+                    aria-label={t("aria.openFullSize").replace("{title}", product.name)}
+                    class="absolute inset-0 z-1 cursor-zoom-in focus-visible:outline-2 focus-visible:outline-offset-[-4px] focus-visible:outline-mint-400"
+                  />
+
+                  <div class="pointer-events-none absolute left-3 top-3 z-2 flex gap-2">
                     {product.animated && (
                       <span class="flex items-center gap-1.5 rounded-full bg-white/90 px-2.5 py-1 text-[10px] font-bold uppercase tracking-widest text-mint-700 backdrop-blur-sm dark:bg-zinc-950/80 dark:text-mint-300">
                         <span class="size-1.5 animate-pulse rounded-full bg-mint-500" aria-hidden="true" />
@@ -330,6 +344,8 @@ const sectionWrap = "scroll-m-24 px-8 py-16 max-sm:px-4 max-sm:py-10";
       </div>
     </div>
   </section>
+
+  <GalleryLightbox />
 </Layout>
 
 <script>

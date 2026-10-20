@@ -100,7 +100,7 @@ const copy: Record<Lang, Record<string, KofiCopy>> = {
       name: "Aqua Blog, Frutiger Aero Template",
       blurb:
         "The blue-green glass of Windows Vista and MSN Messenger, as a blog. Tabs, music player, lightbox and floating bubbles all work out of the box.",
-      alt: "Aqua Frutiger Aero Y2K blog template with blue-green glassmorphism and floating bubbles",
+      alt: "Free Aqua Frutiger Aero Y2K blog template with blue-green glassmorphism and floating bubbles",
       features: [
         "Plain HTML, CSS and JavaScript",
         "Guide for posts, Nekoweb .shtml and RSS",
@@ -112,7 +112,7 @@ const copy: Record<Lang, Record<string, KofiCopy>> = {
       name: "Purple Kawaii Y2K Blog Template",
       blurb:
         "The purple, kawaii side of the same idea, inspired by early 2000s Windows and MSN. The shell works out of the box and the included guide walks you through adding posts.",
-      alt: "Purple kawaii Y2K blog template inspired by early 2000s Windows and MSN Messenger",
+      alt: "Free purple kawaii Y2K blog template inspired by early 2000s Windows and MSN Messenger",
       features: [
         "Tabs, music player and image lightbox",
         "Automation scripts and RSS guide",
@@ -194,7 +194,7 @@ const copy: Record<Lang, Record<string, KofiCopy>> = {
       name: "Aqua Blog, plantilla Frutiger Aero",
       blurb:
         "El vidrio azul verdoso de Windows Vista y MSN Messenger, convertido en blog. Las pestañas, el reproductor, el lightbox y las burbujas funcionan desde el primer momento.",
-      alt: "Plantilla de blog Aqua Frutiger Aero Y2K con glassmorphism azul verdoso y burbujas flotantes",
+      alt: "Plantilla de blog Aqua Frutiger Aero Y2K gratis, con glassmorphism azul verdoso y burbujas flotantes",
       features: [
         "HTML, CSS y JavaScript puros",
         "Guía para posts, .shtml de Nekoweb y RSS",
@@ -206,7 +206,7 @@ const copy: Record<Lang, Record<string, KofiCopy>> = {
       name: "Plantilla de blog Y2K morada y kawaii",
       blurb:
         "El lado morado y kawaii de la misma idea, inspirado en el Windows y el MSN de principios de los 2000. La estructura funciona de entrada y la guía incluida te enseña a añadir posts.",
-      alt: "Plantilla de blog Y2K morada y kawaii inspirada en Windows y MSN Messenger de principios de los 2000",
+      alt: "Plantilla de blog Y2K morada y kawaii gratis, inspirada en Windows y MSN Messenger de principios de los 2000",
       features: [
         "Pestañas, reproductor de música y lightbox",
         "Guía de scripts de automatización y RSS",

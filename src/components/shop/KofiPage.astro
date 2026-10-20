@@ -4,10 +4,11 @@
 import Layout from "../../layouts/Layout.astro";
 import Heading from "../ui/Heading.astro";
 import Button from "../ui/Button.astro";
-import { Image } from "astro:assets";
+import GalleryLightbox from "../portfolio/GalleryLightbox.astro";
+import { Image, getImage } from "astro:assets";
 import { Icon } from "astro-icon/components";
 import { kofiLabels, type KofiItem } from "../../i18n/kofi";
-import { getLangFromUrl, localizePath } from "../../i18n/utils";
+import { getLangFromUrl, localizePath, useTranslations } from "../../i18n/utils";
 
 interface Props {
   items: KofiItem[];
@@ -29,7 +30,14 @@ interface Props {
 const { items, copy: c, icon } = Astro.props;
 const lang = getLangFromUrl(Astro.url);
 const l = kofiLabels[lang];
+const t = useTranslations(lang);
 const p = (path: string) => localizePath(path, lang);
+
+// The card shows a resized cover; the lightbox gets the full-size image, still
+// converted to webp so it stays light.
+const fullSize = await Promise.all(
+  items.map(async (item) => (await getImage({ src: item.image, format: "webp" })).src),
+);
 
 // The button names the store the visitor is about to land on.
 const buttonText = (item: KofiItem) =>
@@ -132,13 +140,26 @@ const sectionWrap = "scroll-m-24 px-8 py-16 max-sm:px-4 max-sm:py-10";
                   sizes="(max-width: 767px) 100vw, (max-width: 1279px) 50vw, 400px"
                   loading={i < 3 ? "eager" : "lazy"}
                   class:list={[
-                    "size-full object-cover transition-transform duration-700 ease-out group-hover:scale-105",
+                    "size-full transition-transform duration-700 ease-out group-hover:scale-105",
                     // Template covers are page screenshots, whose header is the
-                    // part worth showing. Model renders are centred subjects.
-                    item.kind === "template" ? "object-top" : "object-center",
+                    // part worth showing. Model renders are square, so in a 16:9
+                    // box `cover` cut away most of the subject; `contain` keeps
+                    // the whole render, centred on the card's tinted background.
+                    item.kind === "template" ? "object-cover object-top" : "object-contain object-center",
                   ]}
                 />
-                <div class="absolute left-3 top-3 flex gap-2">
+                <button
+                  type="button"
+                  data-lb
+                  data-lb-group="kofi"
+                  data-lb-index={i}
+                  data-lb-src={fullSize[i]}
+                  data-lb-alt={item.alt}
+                  data-lb-title={item.name}
+                  aria-label={t("aria.openFullSize").replace("{title}", item.name)}
+                  class="absolute inset-0 z-1 cursor-zoom-in focus-visible:outline-2 focus-visible:outline-offset-[-4px] focus-visible:outline-mint-400"
+                />
+                <div class="pointer-events-none absolute left-3 top-3 z-2 flex gap-2">
                   {item.price === 0 && (
                     <span class="rounded-full bg-linear-to-r from-riptide-300 to-mint-300 px-2.5 py-1 text-[10px] font-bold uppercase tracking-widest text-blacktext">
                       {l.free}
@@ -256,4 +277,6 @@ const sectionWrap = "scroll-m-24 px-8 py-16 max-sm:px-4 max-sm:py-10";
       </div>
     </div>
   </section>
+
+  <GalleryLightbox />
 </Layout>
