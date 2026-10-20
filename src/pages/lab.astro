@@ -1,0 +1,209 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Heading from "../components/ui/Heading.astro";
+import Button from "../components/ui/Button.astro";
+import { Icon } from "astro-icon/components";
+import { labCopy, getLabGroups, githubProfile } from "../i18n/lab";
+import { getLangFromUrl, localizePath } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const c = labCopy[lang];
+const groups = getLabGroups(lang);
+const p = (path: string) => localizePath(path, lang);
+
+const { pageTitle, description } = c;
+
+// Every project is a piece of source code with a public repository, which is
+// exactly what SoftwareSourceCode describes.
+const schema = [
+  {
+    "@type": "ItemList",
+    name: pageTitle,
+    itemListElement: groups
+      .flatMap((g) => g.projects)
+      .map((project, i) => ({
+        "@type": "ListItem",
+        position: i + 1,
+        item: {
+          "@type": "SoftwareSourceCode",
+          name: project.name,
+          description: project.description,
+          ...(project.repos[0] && { codeRepository: project.repos[0].url }),
+          programmingLanguage: project.stack[0],
+          author: { "@id": `${Astro.site}#person` },
+          ...((project.demo || project.itch) && { url: project.demo ?? project.itch }),
+        },
+      })),
+  },
+];
+
+// Same tokens as packages, extras and the shop.
+const cardBorder =
+  "relative rounded-2xl bg-linear-to-br from-mint-300 dark:from-mint-600 to-mint-50 dark:to-mint-200/5 p-[2px] transition-all duration-500 hover:shadow-[0_10px_50px_rgba(13,188,130,0.2)]";
+const cardInner =
+  "h-full rounded-[calc(1rem-1px)] bg-white p-7 max-sm:p-5 dark:bg-zinc-900/80";
+const eyebrow =
+  "inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-mint-600 dark:text-mint-300";
+const bodyText =
+  "text-base max-md:text-sm font-normal leading-7 text-blacktext/80 dark:text-gray-300";
+const chip =
+  "rounded-full border border-mint-200 bg-mint-50 px-2.5 py-1 text-[11px] font-semibold text-mint-700 dark:border-mint-800/50 dark:bg-mint-900/30 dark:text-mint-300";
+const linkClass =
+  "inline-flex items-center gap-1.5 text-sm font-semibold text-mint-600 underline-offset-4 transition-colors hover:text-riptide-500 hover:underline dark:text-mint-300";
+const sectionWrap = "scroll-m-24 px-8 py-16 max-sm:px-4 max-sm:py-10";
+---
+
+<Layout pageTitle={pageTitle} description={description} schema={schema}>
+  <!-- ===================== HERO ===================== -->
+  <section class="relative px-8 pb-8 pt-16 max-sm:px-4 max-sm:pt-10">
+    <div class="blur-circle"></div>
+    <div
+      data-reveal="sharpen"
+      class="mx-auto flex max-w-4xl flex-col items-center gap-6 text-center"
+    >
+      <span class={eyebrow}>
+        <Icon name="github" class="size-4" aria-hidden="true" />
+        {c.heroEyebrow}
+      </span>
+
+      <Heading text={c.heroTitle} textGradient={c.heroTitleAccent} level={1} />
+
+      <p class={`${bodyText} max-w-2xl`}>{c.heroIntro}</p>
+
+      <nav class="mt-2 flex flex-wrap items-center justify-center gap-3" aria-label={c.heroEyebrow}>
+        {
+          groups.map((group) => (
+            <a
+              href={`#${group.id}`}
+              class="group flex items-center gap-2 rounded-full border border-mint-200 bg-white px-5 py-2.5 text-sm font-semibold text-blacktext transition-all hover:-translate-y-0.5 hover:border-mint-400 hover:text-mint-600 dark:border-zinc-800 dark:bg-zinc-900 dark:text-white dark:hover:border-mint-500 dark:hover:text-mint-300 max-sm:text-xs"
+            >
+              <Icon name={group.icon} class="size-4 text-mint-500 dark:text-mint-300" aria-hidden="true" />
+              {group.title}
+            </a>
+          ))
+        }
+      </nav>
+
+      <Button link={githubProfile} text={c.githubButton} iconName="github" variant="smalldark" />
+    </div>
+  </section>
+
+  <!-- ===================== GROUPS ===================== -->
+  {
+    groups.map((group, gi) => (
+      <section id={group.id} class={sectionWrap}>
+        <div class="mx-auto flex max-w-7xl flex-col gap-10">
+          <header data-reveal={gi % 2 === 0 ? "blur" : "blur-up"} class="flex flex-col gap-4">
+            <span class={eyebrow}>{String(gi + 1).padStart(2, "0")}</span>
+            <div class="flex items-center gap-4">
+              <Icon class="text-3xl text-mint-500 dark:text-white max-sm:text-2xl" name={group.icon} aria-hidden="true" />
+              <Heading text={group.title} level={2} />
+            </div>
+            <p class={bodyText}>{group.intro}</p>
+          </header>
+
+          <ul
+            data-reveal-stagger={gi % 2 === 0 ? "up" : "scale"}
+            class="grid grid-cols-3 gap-6 max-lg:grid-cols-2 max-md:grid-cols-1"
+          >
+            {group.projects.map((project) => (
+              <li class={`${cardBorder} group`}>
+                <article class={`${cardInner} flex flex-col gap-4`}>
+                  <h3 class="text-lg font-bold text-blacktext dark:text-white">{project.name}</h3>
+                  <span
+                    class="h-0.5 w-10 rounded-full bg-linear-to-r from-riptide-400 to-mint-500 transition-all duration-500 group-hover:w-20"
+                    aria-hidden="true"
+                  />
+                  <p class="text-sm font-normal leading-6 text-blacktext/70 dark:text-zinc-400">
+                    {project.description}
+                  </p>
+                  <ul class="flex flex-wrap gap-2" aria-label="Stack">
+                    {project.stack.map((tech) => (
+                      <li class={chip}>{tech}</li>
+                    ))}
+                  </ul>
+                  <div class="mt-auto flex flex-wrap items-center gap-x-5 gap-y-2 pt-2">
+                    {project.repos.map((repo) => (
+                      <a href={repo.url} target="_blank" rel="noopener noreferrer" class={linkClass}>
+                        <Icon name="github" class="size-4" aria-hidden="true" />
+                        {project.repos.length > 1 ? repo.label : c.codeLink}
+                      </a>
+                    ))}
+                    {project.demo && (
+                      <a href={project.demo} target="_blank" rel="noopener noreferrer" class={linkClass}>
+                        {c.demoLink} ↗
+                      </a>
+                    )}
+                    {project.itch && (
+                      <a href={project.itch} target="_blank" rel="noopener noreferrer" class={linkClass}>
+                        {group.id === "games" ? c.playLink : c.itchLink} ↗
+                      </a>
+                    )}
+                    {project.post && (
+                      <a href={p(project.post)} class={linkClass}>
+                        {c.postLink} →
+                      </a>
+                    )}
+                  </div>
+                </article>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+    ))
+  }
+
+  <!-- ===================== WORKBENCH ===================== -->
+  <section id="workbench" class={sectionWrap}>
+    <div class="mx-auto flex max-w-7xl flex-col gap-10">
+      <header data-reveal="blur-up" class="flex flex-col gap-4">
+        <Heading text={c.workbenchTitle} textGradient={c.workbenchTitleAccent} level={2} />
+        <p class={bodyText}>{c.workbenchIntro}</p>
+      </header>
+
+      <ul
+        data-reveal-stagger="up"
+        class="grid grid-cols-4 gap-6 max-xl:grid-cols-2 max-md:grid-cols-1"
+      >
+        {
+          c.workbench.map((item) => (
+            <li class="rounded-2xl border border-dashed border-mint-300 bg-white/70 p-6 transition-colors hover:border-mint-400 dark:border-zinc-700 dark:bg-zinc-900/50 dark:hover:border-mint-700 max-sm:p-5">
+              <span class="flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-mint-600 dark:text-mint-300">
+                <span class="size-1.5 animate-pulse rounded-full bg-mint-500" aria-hidden="true" />
+                WIP
+              </span>
+              <h3 class="mt-3 text-base font-bold text-blacktext dark:text-white">{item.name}</h3>
+              <p class="mt-2 text-sm font-normal leading-6 text-blacktext/70 dark:text-zinc-400">
+                {item.description}
+              </p>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===================== CTA ===================== -->
+  <section class="px-8 pb-20 max-sm:px-4 max-sm:pb-12">
+    <div
+      data-reveal="scale"
+      class="mx-auto max-w-7xl rounded-2xl bg-linear-to-r from-mint-300 to-mint-50 p-[2px] dark:from-mint-600 dark:to-mint-200/5"
+    >
+      <div
+        class="flex items-center justify-between gap-8 rounded-[calc(1rem-1px)] bg-linear-to-tr from-riptide-100 to-white px-10 py-12 dark:from-mint-950 dark:to-zinc-950 max-sm:flex-col max-sm:px-6 max-sm:py-8 max-sm:text-center"
+      >
+        <div class="flex max-w-3xl flex-col gap-3">
+          <Heading text={c.ctaTitle} textGradient={c.ctaTitleAccent} level={2} />
+          <p class="text-sm font-normal leading-6 text-blacktext/80 dark:text-gray-300">
+            {c.ctaCopy}
+          </p>
+        </div>
+        <div class="flex shrink-0 gap-4 max-sm:flex-col max-sm:items-center">
+          <Button link={p("/contact")} text={c.ctaButton} iconName="envelope" variant="small" />
+          <Button link={p("/shop")} text={c.ctaSecondary} iconName="cart" variant="smalldark" />
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

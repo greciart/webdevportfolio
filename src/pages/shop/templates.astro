@@ -1,0 +1,9 @@
+---
+import KofiPage from "../../components/shop/KofiPage.astro";
+import { getPaidTemplates, templatesCopy } from "../../i18n/kofi";
+import { getLangFromUrl } from "../../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+---
+
+<KofiPage items={getPaidTemplates(lang)} copy={templatesCopy[lang]} icon="code" />

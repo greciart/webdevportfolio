@@ -22,6 +22,7 @@ const menu = {
     dropdown: [
       { name: t("nav.experience"), path: `${p("/")}#experience`.replace("//#", "/#"), desc: t("nav.experience.desc") },
       { name: t("nav.projects"), path: `${p("/")}#projects`.replace("//#", "/#"), desc: t("nav.projects.desc") },
+      { name: t("nav.lab"), path: p("/lab"), desc: t("nav.lab.desc") },
     ],
   },
   about: {
@@ -31,15 +32,23 @@ const menu = {
       { name: t("nav.aboutMe"), path: p("/about-me"), desc: t("nav.aboutMe.desc") },
       { name: t("nav.packages"), path: p("/packages"), desc: t("nav.packages.desc") },
       { name: t("nav.services"), path: p("/extras"), desc: t("nav.services.desc") },
+      { name: t("nav.reviews"), path: p("/reviews"), desc: t("nav.reviews.desc") },
     ],
   },
-  shop: { name: t("nav.shop"), path: p("/shop") },
+  shop: {
+    name: t("nav.shop"),
+    path: p("/shop"),
+    dropdown: [
+      { name: t("nav.shop3d"), path: p("/shop/3d-models"), desc: t("nav.shop3d.desc") },
+      { name: t("nav.templates"), path: p("/shop/templates"), desc: t("nav.templates.desc") },
+      { name: t("nav.freebies"), path: p("/shop/freebies"), desc: t("nav.freebies.desc") },
+    ],
+  },
   blog: {
     name: t("nav.blog"),
     path: p("/blog/"),
     dropdown: [{ name: t("nav.allPosts"), path: p("/blog/posts/"), desc: t("nav.allPosts.desc") }],
   },
-  reviews: { name: t("nav.reviews"), path: p("/reviews") },
   contact: { name: t("nav.contact"), path: p("/contact") },
 };
 

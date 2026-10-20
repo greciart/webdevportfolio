@@ -4,10 +4,34 @@ import type { Lang } from "./ui";
  * The shop lists the 3D models sold on Contra. Checkout and delivery stay
  * there; this page is the storefront that ranks and links out.
  *
- * Media lives on Contra's Cloudinary, which resizes on the fly, so the grid
- * asks for exactly the size it draws instead of the 2000px originals.
+ * Covers are served from this domain (public/images/shop/) under descriptive
+ * names. On Contra's CDN the same file also sits on Contra's own product page,
+ * and Google Images credits the image to whichever page it trusts more. The
+ * hover previews are video, which image search ignores, so those still stream
+ * from Contra's Cloudinary at the size the card draws.
  */
 const MEDIA = "https://media.contra.com";
+
+/** Filename in public/images/shop/, without the .webp extension. */
+const coverFile: Record<string, string> = {
+  "triangle-tunnel": "neon-triangle-tunnel-3d-model-blender",
+  "rainbow-jelly": "rainbow-jelly-cube-3d-model-blender",
+  "energy-sphere": "blue-energy-sphere-3d-model-bundle-blender",
+  "retro-sun": "retro-sun-retrowave-3d-scene-blender",
+  "ice-cube": "neon-energy-ice-cube-3d-model-blender",
+  cupcake: "stylized-pink-cupcake-3d-model-blender",
+  "panda-donut": "panda-donut-restaurant-3d-scene-blender",
+  breakfast: "cute-breakfast-3d-props-bundle-blender",
+  mug: "square-ceramic-mug-3d-model-blender",
+  "circular-tunnel": "circular-neon-tunnel-3d-model-blender",
+  "particle-ball": "particle-emission-ball-3d-model-blender",
+  "crystal-bear": "crystal-pink-baby-bear-3d-model-blender",
+  "handheld-console": "retro-pink-handheld-console-3d-model-blender",
+  jellyfish: "bioluminescent-jellyfish-3d-model-blender",
+  "green-gem": "green-diamond-gemstone-3d-model-blender",
+  "cube-scrambled": "rubiks-cube-scrambled-3d-model-blender",
+  "cube-solved": "rubiks-cube-solved-3d-model-blender",
+};
 
 type Category = "neon" | "cute" | "props";
 
@@ -223,22 +247,16 @@ const productCopy: Record<Lang, Record<string, ProductCopy>> = {
 };
 
 export type ShopProduct = ProductBase &
-  ProductCopy & { url: string; poster: string; posterSmall: string; preview?: string };
+  ProductCopy & { url: string; poster: string; preview?: string };
 
 export function getShopProducts(lang: Lang): ShopProduct[] {
   return products.map((product) => {
     const { type, id } = product.media;
-    // A video's public id also serves stills: `so_1` grabs the frame at 1s.
-    const still = (w: number, h: number) =>
-      type === "video"
-        ? `${MEDIA}/video/upload/so_1,c_fill,w_${w},h_${h},q_auto/${id}.webp`
-        : `${MEDIA}/image/upload/c_fill,w_${w},h_${h},q_auto/${id}.webp`;
     return {
       ...product,
       ...productCopy[lang][product.id],
       url: `https://contra.com/products/${product.slug}`,
-      poster: still(800, 450),
-      posterSmall: still(480, 270),
+      poster: `/images/shop/${coverFile[product.id]}.webp`,
       preview:
         type === "video"
           ? `${MEDIA}/video/upload/c_fill,w_640,h_360,q_auto/${id}.mp4`
@@ -254,6 +272,7 @@ export type ShopCopy = {
   pageTitle: string;
   description: string;
 
+  backToShop: string;
   heroEyebrow: string;
   heroTitle: string;
   heroTitleAccent: string;
@@ -294,7 +313,8 @@ const en: ShopCopy = {
   description:
     "Hand-made 3D models for Blender: animated neon loops, cute stylized props and everyday objects. Native .blend files, ready for Cycles and Eevee.",
 
-  heroEyebrow: "3D shop",
+  backToShop: "Back to the shop",
+  heroEyebrow: "Shop · 3D models",
   heroTitle: "3D models,",
   heroTitleAccent: "made by hand",
   heroIntro:
@@ -381,7 +401,8 @@ const es: ShopCopy = {
   description:
     "Modelos 3D hechos a mano para Blender: loops de neón animados, props estilizados y objetos cotidianos. Archivos .blend nativos, listos para Cycles y Eevee.",
 
-  heroEyebrow: "Tienda 3D",
+  backToShop: "Volver a la tienda",
+  heroEyebrow: "Tienda · Modelos 3D",
   heroTitle: "Modelos 3D,",
   heroTitleAccent: "hechos a mano",
   heroIntro:
