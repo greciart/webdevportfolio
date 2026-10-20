@@ -5,10 +5,11 @@ import Layout from "../../layouts/Layout.astro";
 import Heading from "../ui/Heading.astro";
 import Button from "../ui/Button.astro";
 import GalleryLightbox from "../portfolio/GalleryLightbox.astro";
-import { Image, getImage } from "astro:assets";
+import Carousel from "../ui/Carousel.astro";
 import { Icon } from "astro-icon/components";
 import { kofiLabels, type KofiItem } from "../../i18n/kofi";
-import { getLangFromUrl, localizePath, useTranslations } from "../../i18n/utils";
+import { getLangFromUrl, localizePath } from "../../i18n/utils";
+import { buildSlides, shopExtrasFor } from "../../lib/carousel";
 
 interface Props {
   items: KofiItem[];
@@ -30,13 +31,18 @@ interface Props {
 const { items, copy: c, icon } = Astro.props;
 const lang = getLangFromUrl(Astro.url);
 const l = kofiLabels[lang];
-const t = useTranslations(lang);
 const p = (path: string) => localizePath(path, lang);
 
-// The card shows a resized cover; the lightbox gets the full-size image, still
-// converted to webp so it stays light.
-const fullSize = await Promise.all(
-  items.map(async (item) => (await getImage({ src: item.image, format: "webp" })).src),
+// Cover plus up to two extras from src/assets/shop/gallery, found by name.
+// RenderHub covers are square thumbnails, but their extra renders are 16:9 and
+// fill the card exactly, so for models those lead and the square cover closes
+// the set, shown whole instead of cropped.
+const slides = await Promise.all(
+  items.map(async (item) => {
+    const [cover, ...extras] = await buildSlides({ image: item.image, alt: item.alt }, shopExtrasFor(item.file), lang);
+    if (item.kind !== "model" || extras.length === 0) return [cover, ...extras];
+    return [...extras, { ...cover, fit: "object-contain object-center" }];
+  }),
 );
 
 // The button names the store the visitor is about to land on.
@@ -64,7 +70,8 @@ const schema = [
         "@type": "Product",
         name: item.name,
         description: item.blurb,
-        image: new URL(item.image.src, Astro.site).href,
+        // Every view, not just the cover: Google may pick any of them.
+        image: slides[i].map((s) => new URL(s.full!, Astro.site).href),
         url: item.url,
         brand: { "@type": "Brand", name: "Grecia V." },
         offers: {
@@ -132,34 +139,24 @@ const sectionWrap = "scroll-m-24 px-8 py-16 max-sm:px-4 max-sm:py-10";
         items.map((item, i) => (
           <li class={`${cardBorder} group`}>
             <article class={productInner}>
-              <div class="relative aspect-video overflow-hidden rounded-xl bg-mint-50 dark:bg-zinc-800">
-                <Image
-                  src={item.image}
-                  alt={item.alt}
-                  widths={[480, 800]}
-                  sizes="(max-width: 767px) 100vw, (max-width: 1279px) 50vw, 400px"
-                  loading={i < 3 ? "eager" : "lazy"}
-                  class:list={[
-                    "size-full transition-transform duration-700 ease-out group-hover:scale-105",
-                    // Template covers are page screenshots, whose header is the
-                    // part worth showing. Model renders are square, so in a 16:9
-                    // box `cover` cut away most of the subject; `contain` keeps
-                    // the whole render, centred on the card's tinted background.
-                    item.kind === "template" ? "object-cover object-top" : "object-contain object-center",
-                  ]}
+              <div class="relative">
+                {/* Template covers are page screenshots, whose header is the
+                    part worth showing. A model with no 16:9 render falls back
+                    to its square cover, shown whole. */}
+                <Carousel
+                  slides={slides[i]}
+                  title={item.name}
+                  lightboxGroup={`item-${item.id}`}
+                  eager={i < 3}
+                  fit={
+                    item.kind === "template"
+                      ? "object-cover object-top"
+                      : slides[i].length > 1
+                        ? "object-cover object-center"
+                        : "object-contain object-center"
+                  }
                 />
-                <button
-                  type="button"
-                  data-lb
-                  data-lb-group="kofi"
-                  data-lb-index={i}
-                  data-lb-src={fullSize[i]}
-                  data-lb-alt={item.alt}
-                  data-lb-title={item.name}
-                  aria-label={t("aria.openFullSize").replace("{title}", item.name)}
-                  class="absolute inset-0 z-1 cursor-zoom-in focus-visible:outline-2 focus-visible:outline-offset-[-4px] focus-visible:outline-mint-400"
-                />
-                <div class="pointer-events-none absolute left-3 top-3 z-2 flex gap-2">
+                <div class="pointer-events-none absolute left-3 top-3 z-4 flex gap-2">
                   {item.price === 0 && (
                     <span class="rounded-full bg-linear-to-r from-riptide-300 to-mint-300 px-2.5 py-1 text-[10px] font-bold uppercase tracking-widest text-blacktext">
                       {l.free}

@@ -33,6 +33,8 @@ type KofiBase = {
   ref: string;
   price: number;
   image: ImageMetadata;
+  /** Cover file name without extension; "-2" and "-3" are its carousel extras. */
+  file: string;
   demo?: string;
   /** Id of the paid or free sibling, when one is the other's easier version. */
   sibling?: string;
@@ -47,15 +49,15 @@ type KofiCopy = {
 };
 
 const items: KofiBase[] = [
-  { id: "y2k-blog-nocode", store: "kofi", kind: "template", ref: "c85b39c455", price: 12.99, image: y2kBlogNoCode, sibling: "purple-blog" },
-  { id: "bio-link", store: "kofi", kind: "template", ref: "c50cd32930", price: 14.99, image: bioLink },
-  { id: "xp-links", store: "kofi", kind: "template", ref: "9368c014f7", price: 10, image: xpLinks },
-  { id: "aqua-blog", store: "kofi", kind: "template", ref: "df52250b4a", price: 0, image: aquaBlog, demo: "https://aquafrutiger.netlify.app/" },
-  { id: "purple-blog", store: "kofi", kind: "template", ref: "85c0e669bc", price: 0, image: purpleBlog, sibling: "y2k-blog-nocode" },
-  { id: "neon-orb", store: "renderhub", kind: "model", ref: "abstract-floating-sphere", price: 0, image: neonOrb },
-  { id: "magic-spheres", store: "renderhub", kind: "model", ref: "floating-magic-spheres-galaxy-and-stars-reflected", price: 0, image: magicSpheres },
-  { id: "pink-gem", store: "renderhub", kind: "model", ref: "pink-crystal-gem-rpg-style-low-poly-3d-model", price: 0, image: pinkGem },
-  { id: "smartphone-ui", store: "renderhub", kind: "model", ref: "youtube-interface-user-mobile-ui-ux-model", price: 0, image: smartphoneUi },
+  { id: "y2k-blog-nocode", store: "kofi", kind: "template", ref: "c85b39c455", price: 12.99, image: y2kBlogNoCode, file: "y2k-retro-blog-template-no-code", sibling: "purple-blog" },
+  { id: "bio-link", store: "kofi", kind: "template", ref: "c50cd32930", price: 14.99, image: bioLink, file: "frutiger-aero-bio-link-template" },
+  { id: "xp-links", store: "kofi", kind: "template", ref: "9368c014f7", price: 10, image: xpLinks, file: "windows-xp-y2k-links-page-template" },
+  { id: "aqua-blog", store: "kofi", kind: "template", ref: "df52250b4a", price: 0, image: aquaBlog, file: "aqua-frutiger-aero-blog-template-free", demo: "https://aquafrutiger.netlify.app/" },
+  { id: "purple-blog", store: "kofi", kind: "template", ref: "85c0e669bc", price: 0, image: purpleBlog, file: "purple-kawaii-y2k-blog-template-free", sibling: "y2k-blog-nocode" },
+  { id: "neon-orb", store: "renderhub", kind: "model", ref: "abstract-floating-sphere", price: 0, image: neonOrb, file: "glowing-neon-orb-free-3d-model-blender" },
+  { id: "magic-spheres", store: "renderhub", kind: "model", ref: "floating-magic-spheres-galaxy-and-stars-reflected", price: 0, image: magicSpheres, file: "floating-magic-spheres-galaxy-free-3d-model" },
+  { id: "pink-gem", store: "renderhub", kind: "model", ref: "pink-crystal-gem-rpg-style-low-poly-3d-model", price: 0, image: pinkGem, file: "pink-crystal-gem-low-poly-free-3d-model" },
+  { id: "smartphone-ui", store: "renderhub", kind: "model", ref: "youtube-interface-user-mobile-ui-ux-model", price: 0, image: smartphoneUi, file: "stylized-smartphone-social-media-ui-free-3d-model" },
 ];
 
 const copy: Record<Lang, Record<string, KofiCopy>> = {

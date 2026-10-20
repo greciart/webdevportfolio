@@ -247,7 +247,14 @@ const productCopy: Record<Lang, Record<string, ProductCopy>> = {
 };
 
 export type ShopProduct = ProductBase &
-  ProductCopy & { url: string; poster: string; posterLarge: string; preview?: string };
+  ProductCopy & {
+    url: string;
+    /** Cover file name without extension; extra carousel images extend it. */
+    file: string;
+    poster: string;
+    posterLarge: string;
+    preview?: string;
+  };
 
 export function getShopProducts(lang: Lang): ShopProduct[] {
   return products.map((product) => {
@@ -256,6 +263,7 @@ export function getShopProducts(lang: Lang): ShopProduct[] {
       ...product,
       ...productCopy[lang][product.id],
       url: `https://contra.com/products/${product.slug}`,
+      file: coverFile[product.id],
       poster: `/images/shop/${coverFile[product.id]}.webp`,
       // 1600px twin for retina screens and Google Images.
       posterLarge: `/images/shop/${coverFile[product.id]}-large.webp`,

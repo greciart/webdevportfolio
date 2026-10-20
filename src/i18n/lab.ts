@@ -165,6 +165,8 @@ type LabCopy = {
   githubButton: string;
   groups: Record<GroupId, { title: string; intro: string }>;
   codeLink: string;
+  /** Alt text for a project preview: {name}, {group} and {stack} are filled in. */
+  previewAlt: string;
   demoLink: string;
   playLink: string;
   itchLink: string;
@@ -204,6 +206,7 @@ const en: LabCopy = {
     desktop: { title: "Desktop apps", intro: "Small Python utilities that do one job well." },
   },
   codeLink: "Code",
+  previewAlt: "Screenshot of {name}, a {group} project built with {stack} by Grecia V.",
   demoLink: "Live demo",
   playLink: "Play on itch.io",
   itchLink: "Get it on itch.io",
@@ -241,6 +244,7 @@ const es: LabCopy = {
     desktop: { title: "Apps de escritorio", intro: "Pequeñas utilidades en Python que hacen una sola cosa bien." },
   },
   codeLink: "Código",
+  previewAlt: "Captura de {name}, proyecto de {group} hecho con {stack} por Grecia V.",
   demoLink: "Demo en vivo",
   playLink: "Jugar en itch.io",
   itchLink: "Descargar en itch.io",

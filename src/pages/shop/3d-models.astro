@@ -3,14 +3,33 @@ import Layout from "../../layouts/Layout.astro";
 import Heading from "../../components/ui/Heading.astro";
 import Button from "../../components/ui/Button.astro";
 import GalleryLightbox from "../../components/portfolio/GalleryLightbox.astro";
+import Carousel from "../../components/ui/Carousel.astro";
 import { Icon } from "astro-icon/components";
 import { shopCopy, getShopProducts } from "../../i18n/shop";
-import { getLangFromUrl, localizePath, useTranslations } from "../../i18n/utils";
+import { getLangFromUrl, localizePath } from "../../i18n/utils";
+import { buildSlides, shopExtrasFor } from "../../lib/carousel";
 
 const lang = getLangFromUrl(Astro.url);
-const t = useTranslations(lang);
 const c = shopCopy[lang];
 const products = getShopProducts(lang);
+
+// Cover from /public (already 800px, with a 1600px twin for the lightbox),
+// then up to two extra renders from src/assets/shop/gallery.
+const slidesById = new Map(
+  await Promise.all(
+    products.map(
+      async (product) =>
+        [
+          product.id,
+          await buildSlides(
+            { image: product.poster, alt: product.alt, full: product.posterLarge, width: 800, height: 450 },
+            shopExtrasFor(product.file),
+            lang,
+          ),
+        ] as const,
+    ),
+  ),
+);
 const p = (path: string) => localizePath(path, lang);
 
 const { pageTitle, description } = c;
@@ -34,8 +53,8 @@ const schema = [
         "@type": "Product",
         name: product.name,
         description: product.blurb,
-        // The large version: Google prefers big images for product results.
-        image: new URL(product.posterLarge, Astro.site).href,
+        // The large versions of every view: Google prefers big images.
+        image: slidesById.get(product.id)!.map((s) => new URL(s.full!, Astro.site).href),
         url: product.url,
         brand: { "@type": "Brand", name: "Grecia V." },
         offers: {
@@ -150,47 +169,29 @@ const sectionWrap = "scroll-m-24 px-8 py-16 max-sm:px-4 max-sm:py-10";
           products.map((product, i) => (
             <li class={`${cardBorder} group`} data-category={product.category}>
               <article class={productInner}>
-                <div
-                  class="relative aspect-video overflow-hidden rounded-xl bg-mint-50 dark:bg-zinc-800"
-                  data-shop-media
-                >
-                  <img
-                    src={product.poster}
-                    srcset={`${product.poster} 800w, ${product.posterLarge} 1600w`}
-                    sizes="(max-width: 767px) 100vw, (max-width: 1279px) 50vw, 400px"
-                    alt={product.alt}
-                    width="800"
-                    height="450"
-                    loading={i < 3 ? "eager" : "lazy"}
-                    decoding="async"
-                    class="size-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                  />
-                  {product.preview && (
-                    <video
-                      data-src={product.preview}
-                      muted
-                      loop
-                      playsinline
-                      preload="none"
-                      aria-hidden="true"
-                      tabindex="-1"
-                      class="pointer-events-none absolute inset-0 size-full object-cover opacity-0 transition-opacity duration-500"
-                    />
-                  )}
+                <div class="relative" data-shop-media>
+                  <Carousel
+                    slides={slidesById.get(product.id)!}
+                    title={product.name}
+                    lightboxGroup={`model-${product.id}`}
+                    eager={i < 3}
+                  >
+                    {product.preview && (
+                      <video
+                        slot="first"
+                        data-src={product.preview}
+                        muted
+                        loop
+                        playsinline
+                        preload="none"
+                        aria-hidden="true"
+                        tabindex="-1"
+                        class="pointer-events-none absolute inset-0 size-full object-cover opacity-0 transition-opacity duration-500"
+                      />
+                    )}
+                  </Carousel>
 
-                  <button
-                    type="button"
-                    data-lb
-                    data-lb-group="models"
-                    data-lb-index={i}
-                    data-lb-src={product.posterLarge}
-                    data-lb-alt={product.alt}
-                    data-lb-title={product.name}
-                    aria-label={t("aria.openFullSize").replace("{title}", product.name)}
-                    class="absolute inset-0 z-1 cursor-zoom-in focus-visible:outline-2 focus-visible:outline-offset-[-4px] focus-visible:outline-mint-400"
-                  />
-
-                  <div class="pointer-events-none absolute left-3 top-3 z-2 flex gap-2">
+                  <div class="pointer-events-none absolute left-3 top-3 z-4 flex gap-2">
                     {product.animated && (
                       <span class="flex items-center gap-1.5 rounded-full bg-white/90 px-2.5 py-1 text-[10px] font-bold uppercase tracking-widest text-mint-700 backdrop-blur-sm dark:bg-zinc-950/80 dark:text-mint-300">
                         <span class="size-1.5 animate-pulse rounded-full bg-mint-500" aria-hidden="true" />

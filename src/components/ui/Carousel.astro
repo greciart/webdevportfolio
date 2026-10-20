@@ -1,0 +1,177 @@
+---
+// Card carousel, up to three images. Swiping is plain horizontal scroll with
+// snap points, so it works on touch with no JS at all; the script only adds
+// arrows, dots and keeps the dots in sync. Slides after the first carry
+// loading="lazy", and browsers don't fetch a lazy image inside a scroller until
+// it nears the visible area, so a card costs one image until someone browses.
+//
+// A slide is either a lightbox trigger (shop, Lab) or a link (home projects),
+// never both, and never nested inside another link.
+import { Image } from "astro:assets";
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+import type { CarouselSlide } from "../../lib/carousel";
+
+interface Props {
+  slides: CarouselSlide[];
+  /** Tailwind aspect class for the frame, e.g. "aspect-video". */
+  aspect?: string;
+  /** 2 shows two slides side by side: square renders fill a 16:9 card that way. */
+  perView?: 1 | 2;
+  /** object-fit / object-position classes for the images. */
+  fit?: string;
+  /** Opens the shared GalleryLightbox; each card is its own group. */
+  lightboxGroup?: string;
+  /** Turns the slides into links to this page instead. */
+  href?: string;
+  /** Title used in the lightbox and in the "open image" label. */
+  title: string;
+  eager?: boolean;
+  sizes?: string;
+  class?: string;
+}
+
+const {
+  slides: allSlides,
+  aspect = "aspect-video",
+  perView = 1,
+  fit = "object-cover",
+  lightboxGroup,
+  href,
+  title,
+  eager = false,
+  sizes,
+  class: className = "",
+} = Astro.props;
+
+const t = useTranslations(getLangFromUrl(Astro.url));
+const slides = allSlides.slice(0, 3);
+const pages = Math.max(1, slides.length - perView + 1);
+const slideWidth = perView === 2 ? "w-1/2" : "w-full";
+const widths = perView === 2 ? [360, 640] : [480, 800];
+const imageSizes =
+  sizes ?? (perView === 2 ? "(max-width: 767px) 50vw, 200px" : "(max-width: 767px) 100vw, (max-width: 1279px) 50vw, 400px");
+const imgClass = (slide: CarouselSlide) =>
+  `size-full ${slide.fit ?? fit} transition-transform duration-700 ease-out group-hover:scale-105`;
+const navButton =
+  "absolute top-1/2 z-3 flex size-8 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-base font-bold text-blacktext shadow-md backdrop-blur-sm transition-all hover:scale-110 hover:text-mint-600 disabled:pointer-events-none disabled:opacity-0 dark:bg-zinc-950/80 dark:text-white dark:hover:text-mint-300 md:opacity-0 md:group-hover/carousel:opacity-100 md:group-focus-within/carousel:opacity-100";
+---
+
+<div class={`group/carousel relative overflow-hidden rounded-xl bg-mint-50 dark:bg-zinc-800 ${aspect} ${className}`} data-carousel>
+  <div
+    class="flex size-full snap-x snap-mandatory overflow-x-auto overscroll-x-contain scroll-smooth [scrollbar-width:none] motion-reduce:scroll-auto [&::-webkit-scrollbar]:hidden"
+    data-carousel-track
+  >
+    {
+      slides.map((slide, i) => (
+        <div class={`relative h-full shrink-0 snap-start overflow-hidden ${slideWidth}`} data-carousel-slide>
+          {typeof slide.image === "string" ? (
+            <img
+              src={slide.image}
+              alt={slide.alt}
+              width={slide.width}
+              height={slide.height}
+              loading={eager && i < perView ? "eager" : "lazy"}
+              decoding="async"
+              class={imgClass(slide)}
+            />
+          ) : (
+            <Image
+              src={slide.image}
+              alt={slide.alt}
+              widths={widths}
+              sizes={imageSizes}
+              quality={60}
+              loading={eager && i < perView ? "eager" : "lazy"}
+              class={imgClass(slide)}
+            />
+          )}
+          {i === 0 && <slot name="first" />}
+          {lightboxGroup && (
+            <button
+              type="button"
+              data-lb
+              data-lb-group={lightboxGroup}
+              data-lb-index={i}
+              data-lb-src={slide.full ?? (typeof slide.image === "string" ? slide.image : slide.image.src)}
+              data-lb-alt={slide.alt}
+              data-lb-title={title}
+              aria-label={t("aria.openFullSize").replace("{title}", title)}
+              class="absolute inset-0 z-1 cursor-zoom-in focus-visible:outline-2 focus-visible:outline-offset-[-4px] focus-visible:outline-mint-400"
+            />
+          )}
+          {href && (
+            // The card's title is the keyboard and screen reader link; this one
+            // only makes the picture clickable, so it stays out of both.
+            <a href={href} tabindex="-1" aria-hidden="true" class="absolute inset-0 z-1" />
+          )}
+        </div>
+      ))
+    }
+  </div>
+
+  {
+    pages > 1 && (
+      <>
+        <button type="button" data-carousel-prev aria-label={t("aria.prevImage")} class={`${navButton} left-2`} disabled>
+          ‹
+        </button>
+        <button type="button" data-carousel-next aria-label={t("aria.nextImage")} class={`${navButton} right-2`}>
+          ›
+        </button>
+        <div class="absolute bottom-2 left-1/2 z-3 flex -translate-x-1/2 gap-1.5 rounded-full bg-white/70 px-2 py-1 backdrop-blur-sm dark:bg-zinc-950/60">
+          {Array.from({ length: pages }, (_, i) => (
+            <button
+              type="button"
+              data-carousel-dot={i}
+              aria-label={t("carousel.goTo").replace("{n}", String(i + 1)).replace("{total}", String(pages))}
+              aria-current={i === 0 ? "true" : undefined}
+              class="size-2 cursor-pointer rounded-full bg-blacktext/25 transition-all aria-current:w-4 aria-current:bg-mint-500 dark:bg-white/30 dark:aria-current:bg-mint-400"
+            />
+          ))}
+        </div>
+      </>
+    )
+  }
+</div>
+
+<script>
+  document.querySelectorAll<HTMLElement>("[data-carousel]").forEach((root) => {
+    const track = root.querySelector<HTMLElement>("[data-carousel-track]");
+    const prev = root.querySelector<HTMLButtonElement>("[data-carousel-prev]");
+    const next = root.querySelector<HTMLButtonElement>("[data-carousel-next]");
+    const dots = Array.from(root.querySelectorAll<HTMLButtonElement>("[data-carousel-dot]"));
+    if (!track || !prev || !next || dots.length < 2) return;
+
+    const slideWidth = () =>
+      track.querySelector<HTMLElement>("[data-carousel-slide]")?.offsetWidth ?? track.clientWidth;
+    const current = () => Math.round(track.scrollLeft / slideWidth());
+    const go = (page: number) => track.scrollTo({ left: page * slideWidth() });
+
+    // Buttons inside a card must never trigger the card itself.
+    const handle = (event: Event, page: number) => {
+      event.preventDefault();
+      event.stopPropagation();
+      go(Math.max(0, Math.min(dots.length - 1, page)));
+    };
+    prev.addEventListener("click", (e) => handle(e, current() - 1));
+    next.addEventListener("click", (e) => handle(e, current() + 1));
+    dots.forEach((dot, i) => dot.addEventListener("click", (e) => handle(e, i)));
+
+    let frame = 0;
+    track.addEventListener(
+      "scroll",
+      () => {
+        cancelAnimationFrame(frame);
+        frame = requestAnimationFrame(() => {
+          const page = Math.min(dots.length - 1, current());
+          dots.forEach((dot, i) =>
+            i === page ? dot.setAttribute("aria-current", "true") : dot.removeAttribute("aria-current"),
+          );
+          prev.disabled = page === 0;
+          next.disabled = page === dots.length - 1;
+        });
+      },
+      { passive: true },
+    );
+  });
+</script>
