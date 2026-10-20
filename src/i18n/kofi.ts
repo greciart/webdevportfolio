@@ -8,16 +8,29 @@ import aquaBlog from "../assets/shop/aqua-frutiger-aero-blog-template-free.png";
 import purpleBlog from "../assets/shop/purple-kawaii-y2k-blog-template-free.png";
 import bioLink from "../assets/shop/frutiger-aero-bio-link-template.png";
 import xpLinks from "../assets/shop/windows-xp-y2k-links-page-template.png";
+import neonOrb from "../assets/shop/glowing-neon-orb-free-3d-model-blender.jpg";
+import magicSpheres from "../assets/shop/floating-magic-spheres-galaxy-free-3d-model.jpg";
+import pinkGem from "../assets/shop/pink-crystal-gem-low-poly-free-3d-model.jpg";
+import smartphoneUi from "../assets/shop/stylized-smartphone-social-media-ui-free-3d-model.jpg";
 
 /**
- * Templates sold (and given away) on Ko-fi. Payment and download happen there;
- * `price: 0` marks a freebie, which lands on the Freebies page instead of
- * Templates.
+ * Templates sold (and given away) on Ko-fi, plus the free 3D models on
+ * RenderHub. Payment and download happen on those stores; `price: 0` marks a
+ * freebie, which lands on the Freebies page instead of Templates.
  */
+type Store = "kofi" | "renderhub";
+
+const storeUrl: Record<Store, (ref: string) => string> = {
+  kofi: (ref) => `https://ko-fi.com/s/${ref}`,
+  renderhub: (ref) => `https://www.renderhub.com/gvart/${ref}`,
+};
+
 type KofiBase = {
   id: string;
-  /** The Ko-fi shop item id, the part after ko-fi.com/s/. */
-  kofiId: string;
+  store: Store;
+  kind: "template" | "model";
+  /** The item's id on its store: the Ko-fi shop id or the RenderHub slug. */
+  ref: string;
   price: number;
   image: ImageMetadata;
   demo?: string;
@@ -34,11 +47,15 @@ type KofiCopy = {
 };
 
 const items: KofiBase[] = [
-  { id: "y2k-blog-nocode", kofiId: "c85b39c455", price: 12.99, image: y2kBlogNoCode, sibling: "purple-blog" },
-  { id: "bio-link", kofiId: "c50cd32930", price: 14.99, image: bioLink },
-  { id: "xp-links", kofiId: "9368c014f7", price: 10, image: xpLinks },
-  { id: "aqua-blog", kofiId: "df52250b4a", price: 0, image: aquaBlog, demo: "https://aquafrutiger.netlify.app/" },
-  { id: "purple-blog", kofiId: "85c0e669bc", price: 0, image: purpleBlog, sibling: "y2k-blog-nocode" },
+  { id: "y2k-blog-nocode", store: "kofi", kind: "template", ref: "c85b39c455", price: 12.99, image: y2kBlogNoCode, sibling: "purple-blog" },
+  { id: "bio-link", store: "kofi", kind: "template", ref: "c50cd32930", price: 14.99, image: bioLink },
+  { id: "xp-links", store: "kofi", kind: "template", ref: "9368c014f7", price: 10, image: xpLinks },
+  { id: "aqua-blog", store: "kofi", kind: "template", ref: "df52250b4a", price: 0, image: aquaBlog, demo: "https://aquafrutiger.netlify.app/" },
+  { id: "purple-blog", store: "kofi", kind: "template", ref: "85c0e669bc", price: 0, image: purpleBlog, sibling: "y2k-blog-nocode" },
+  { id: "neon-orb", store: "renderhub", kind: "model", ref: "abstract-floating-sphere", price: 0, image: neonOrb },
+  { id: "magic-spheres", store: "renderhub", kind: "model", ref: "floating-magic-spheres-galaxy-and-stars-reflected", price: 0, image: magicSpheres },
+  { id: "pink-gem", store: "renderhub", kind: "model", ref: "pink-crystal-gem-rpg-style-low-poly-3d-model", price: 0, image: pinkGem },
+  { id: "smartphone-ui", store: "renderhub", kind: "model", ref: "youtube-interface-user-mobile-ui-ux-model", price: 0, image: smartphoneUi },
 ];
 
 const copy: Record<Lang, Record<string, KofiCopy>> = {
@@ -103,6 +120,38 @@ const copy: Record<Lang, Record<string, KofiCopy>> = {
       ],
       bestFor: "People who don't mind editing a bit of code",
     },
+    "neon-orb": {
+      name: "Glowing Neon Orb",
+      blurb:
+        "An abstract sci-fi orb that glows like it's plugged into something. A quick way to add a focal point to a futuristic scene.",
+      alt: "Glowing neon orb free 3D model, an abstract sci-fi prop for Blender",
+      features: ["Free Blender 3D model", "Glowing neon look"],
+      bestFor: "Sci-fi and abstract scenes",
+    },
+    "magic-spheres": {
+      name: "Floating Magic Spheres",
+      blurb:
+        "Floating spheres with a galaxy and stars reflected on their surface. Dreamy, a little magical, and free.",
+      alt: "Free 3D model of floating magic spheres reflecting a galaxy and stars",
+      features: ["Free 3D model", "Galaxy and stars in the reflections"],
+      bestFor: "Fantasy, space and dreamy renders",
+    },
+    "pink-gem": {
+      name: "Pink Crystal Gem",
+      blurb:
+        "A stylized pink crystal in low poly, the kind you'd pick up in an RPG. Light enough to drop into any scene.",
+      alt: "Pink crystal gem free 3D model in low poly, stylized fantasy RPG style",
+      features: ["Free low poly 3D model", "Stylized fantasy RPG look"],
+      bestFor: "Games, loot icons and fantasy props",
+    },
+    "smartphone-ui": {
+      name: "Stylized Smartphone & Social Media UI",
+      blurb:
+        "A stylized phone with a social media interface on screen. Handy for tech scenes, app promos and social media mockups.",
+      alt: "Free 3D model of a stylized smartphone showing a social media user interface",
+      features: ["Free 3D tech prop for Blender", "Phone and app UI in one model"],
+      bestFor: "Tech, app and social media scenes",
+    },
   },
   es: {
     "y2k-blog-nocode": {
@@ -165,6 +214,38 @@ const copy: Record<Lang, Record<string, KofiCopy>> = {
       ],
       bestFor: "Quien no tiene problema en editar un poco de código",
     },
+    "neon-orb": {
+      name: "Orbe de neón brillante",
+      blurb:
+        "Un orbe abstracto sci-fi que brilla como si estuviera enchufado a algo. Una forma rápida de darle un punto focal a una escena futurista.",
+      alt: "Modelo 3D gratis de un orbe de neón brillante, prop abstracto sci-fi para Blender",
+      features: ["Modelo 3D gratis para Blender", "Acabado de neón brillante"],
+      bestFor: "Escenas sci-fi y abstractas",
+    },
+    "magic-spheres": {
+      name: "Esferas mágicas flotantes",
+      blurb:
+        "Esferas flotando con una galaxia y estrellas reflejadas en su superficie. Soñadoras, un poco mágicas y gratis.",
+      alt: "Modelo 3D gratis de esferas mágicas flotantes que reflejan una galaxia y estrellas",
+      features: ["Modelo 3D gratis", "Galaxia y estrellas en los reflejos"],
+      bestFor: "Renders de fantasía, espacio y ambientes soñadores",
+    },
+    "pink-gem": {
+      name: "Gema de cristal rosa",
+      blurb:
+        "Un cristal rosa estilizado en low poly, de esos que recoges en un RPG. Lo bastante ligero para meterlo en cualquier escena.",
+      alt: "Modelo 3D gratis de una gema de cristal rosa low poly, estilo RPG de fantasía",
+      features: ["Modelo 3D low poly gratis", "Estilo RPG de fantasía"],
+      bestFor: "Juegos, íconos de botín y props de fantasía",
+    },
+    "smartphone-ui": {
+      name: "Smartphone estilizado con interfaz de redes",
+      blurb:
+        "Un teléfono estilizado con una interfaz de red social en pantalla. Útil para escenas tech, promos de apps y mockups de redes sociales.",
+      alt: "Modelo 3D gratis de un smartphone estilizado con interfaz de red social",
+      features: ["Prop 3D tech gratis para Blender", "Teléfono e interfaz en un solo modelo"],
+      bestFor: "Escenas de tecnología, apps y redes sociales",
+    },
   },
 };
 
@@ -176,10 +257,10 @@ function build(lang: Lang): KofiItem[] {
     return {
       ...item,
       ...copy[lang][item.id],
-      url: `https://ko-fi.com/s/${item.kofiId}`,
+      url: storeUrl[item.store](item.ref),
       siblingItem: sibling && {
         name: copy[lang][sibling.id].name,
-        url: `https://ko-fi.com/s/${sibling.kofiId}`,
+        url: storeUrl[sibling.store](sibling.ref),
         free: sibling.price === 0,
       },
     };
@@ -198,6 +279,9 @@ export const kofiLabels: Record<
     buyAria: string;
     download: string;
     downloadAria: string;
+    downloadRenderhub: string;
+    downloadRenderhubAria: string;
+    kind: Record<"template" | "model", string>;
     demo: string;
     bestFor: string;
     siblingPaid: string;
@@ -211,6 +295,9 @@ export const kofiLabels: Record<
     buyAria: "Buy {name} on Ko-fi",
     download: "Download on Ko-fi",
     downloadAria: "Download {name} for free on Ko-fi",
+    downloadRenderhub: "Download on RenderHub",
+    downloadRenderhubAria: "Download the free 3D model {name} on RenderHub",
+    kind: { template: "Template", model: "3D model" },
     demo: "Live demo",
     bestFor: "Best for",
     siblingPaid: "Want it ready with zero setup? Get the no-code edition",
@@ -223,6 +310,9 @@ export const kofiLabels: Record<
     buyAria: "Comprar {name} en Ko-fi",
     download: "Descargar en Ko-fi",
     downloadAria: "Descargar {name} gratis en Ko-fi",
+    downloadRenderhub: "Descargar en RenderHub",
+    downloadRenderhubAria: "Descargar gratis el modelo 3D {name} en RenderHub",
+    kind: { template: "Plantilla", model: "Modelo 3D" },
     demo: "Demo en vivo",
     bestFor: "Ideal para",
     siblingPaid: "¿La quieres lista sin configurar nada? Llévate la edición sin código",
@@ -311,23 +401,23 @@ export const templatesCopy: Record<Lang, PageCopy> = {
 
 export const freebiesCopy: Record<Lang, PageCopy> = {
   en: {
-    pageTitle: "Free Y2K Blog Templates | Freebies by Grecia V.",
+    pageTitle: "Free Y2K Templates & Free 3D Models | Grecia V.",
     description:
-      "Free Frutiger Aero and kawaii Y2K blog templates in plain HTML, CSS and JavaScript, for Nekoweb, Neocities or any static hosting.",
+      "Free Frutiger Aero and Y2K blog templates in plain HTML, CSS and JavaScript, plus free 3D models for Blender. Made by hand, free to download.",
     heroEyebrow: "Shop · Freebies",
     heroTitle: "Free",
     heroTitleAccent: "downloads",
     heroIntro:
-      "Things I made and want people to use. They're complete and they work, not watered-down demos. Download them, edit them, make them yours.",
+      "Blog templates and 3D models I made and want people to use. They're complete and they work, not watered-down demos. Download them, edit them, make them yours.",
     heroNote:
-      "Downloads happen on Ko-fi. You can grab them for free, and if one saves you a weekend, a tip there is always appreciated.",
+      "Templates download from Ko-fi and 3D models from RenderHub. Both are free, and if one saves you a weekend, a tip on Ko-fi is always appreciated.",
     faqTitle: "Good to",
     faqTitleAccent: "know",
     faq: [
       {
         question: "Are they really free?",
         answer:
-          "Yes. Ko-fi lets you add a tip if you want to, but you don't have to pay anything to download.",
+          "Yes. Ko-fi lets you add a tip if you want to, but you don't have to pay anything to download. RenderHub may ask you to sign in before the download starts.",
       },
       {
         question: "What's the difference with the paid templates?",
@@ -337,23 +427,23 @@ export const freebiesCopy: Record<Lang, PageCopy> = {
     ],
   },
   es: {
-    pageTitle: "Plantillas de blog Y2K gratis | Freebies de Grecia V.",
+    pageTitle: "Plantillas Y2K y modelos 3D gratis | Grecia V.",
     description:
-      "Plantillas de blog Frutiger Aero y Y2K kawaii gratis, en HTML, CSS y JavaScript puros, para Nekoweb, Neocities o cualquier hosting estático.",
+      "Plantillas de blog Frutiger Aero y Y2K gratis en HTML, CSS y JavaScript puros, más modelos 3D gratis para Blender. Hechos a mano, gratis para descargar.",
     heroEyebrow: "Tienda · Gratis",
     heroTitle: "Descargas",
     heroTitleAccent: "gratis",
     heroIntro:
-      "Cosas que hice y quiero que la gente use. Están completas y funcionan, no son demos recortadas. Descárgalas, edítalas y hazlas tuyas.",
+      "Plantillas de blog y modelos 3D que hice y quiero que la gente use. Están completos y funcionan, no son demos recortadas. Descárgalos, edítalos y hazlos tuyos.",
     heroNote:
-      "Las descargas se hacen en Ko-fi. Puedes llevártelas gratis, y si alguna te ahorra un fin de semana, una propina allí siempre se agradece.",
+      "Las plantillas se descargan en Ko-fi y los modelos 3D en RenderHub. Las dos cosas son gratis, y si alguna te ahorra un fin de semana, una propina en Ko-fi siempre se agradece.",
     faqTitle: "Bueno",
     faqTitleAccent: "saberlo",
     faq: [
       {
         question: "¿De verdad son gratis?",
         answer:
-          "Sí. Ko-fi te deja dejar una propina si quieres, pero no tienes que pagar nada para descargarlas.",
+          "Sí. Ko-fi te deja dejar una propina si quieres, pero no tienes que pagar nada para descargarlas. RenderHub puede pedirte que inicies sesión antes de la descarga.",
       },
       {
         question: "¿Qué diferencia hay con las plantillas de pago?",

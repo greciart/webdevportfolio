@@ -47,7 +47,7 @@ const en: ShopHubCopy = {
     freebies: {
       title: "Freebies",
       description:
-        "Complete blog templates I give away. Not demos, the real thing, with a guide to get you posting.",
+        "Blog templates and 3D models I give away. Not demos, the real thing, ready to download and use.",
       cta: "Get freebies",
       countLabel: "free downloads",
     },
@@ -89,7 +89,7 @@ const es: ShopHubCopy = {
     freebies: {
       title: "Gratis",
       description:
-        "Plantillas de blog completas que regalo. No son demos, son las de verdad, con una guía para que empieces a publicar.",
+        "Plantillas de blog y modelos 3D que regalo. No son demos, son los de verdad, listos para descargar y usar.",
       cta: "Descargar gratis",
       countLabel: "descargas gratis",
     },

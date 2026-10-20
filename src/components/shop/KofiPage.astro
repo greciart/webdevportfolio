@@ -31,6 +31,16 @@ const lang = getLangFromUrl(Astro.url);
 const l = kofiLabels[lang];
 const p = (path: string) => localizePath(path, lang);
 
+// The button names the store the visitor is about to land on.
+const buttonText = (item: KofiItem) =>
+  item.store === "renderhub" ? l.downloadRenderhub : item.price === 0 ? l.download : l.buy;
+const buttonAria = (item: KofiItem) =>
+  item.store === "renderhub"
+    ? l.downloadRenderhubAria
+    : item.price === 0
+      ? l.downloadAria
+      : l.buyAria;
+
 const formatPrice = (price: number) =>
   price === 0 ? l.free : `$${Number.isInteger(price) ? price : price.toFixed(2)}`;
 
@@ -123,11 +133,16 @@ const sectionWrap = "scroll-m-24 px-8 py-16 max-sm:px-4 max-sm:py-10";
                   loading={i < 3 ? "eager" : "lazy"}
                   class="size-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105"
                 />
-                {item.price === 0 && (
-                  <span class="absolute left-3 top-3 rounded-full bg-linear-to-r from-riptide-300 to-mint-300 px-2.5 py-1 text-[10px] font-bold uppercase tracking-widest text-blacktext">
-                    {l.free}
+                <div class="absolute left-3 top-3 flex gap-2">
+                  {item.price === 0 && (
+                    <span class="rounded-full bg-linear-to-r from-riptide-300 to-mint-300 px-2.5 py-1 text-[10px] font-bold uppercase tracking-widest text-blacktext">
+                      {l.free}
+                    </span>
+                  )}
+                  <span class="rounded-full bg-white/90 px-2.5 py-1 text-[10px] font-bold uppercase tracking-widest text-blacktext backdrop-blur-sm dark:bg-zinc-950/80 dark:text-white">
+                    {l.kind[item.kind]}
                   </span>
-                )}
+                </div>
               </div>
 
               <div class="flex flex-1 flex-col gap-3 px-3 pb-3">
@@ -187,8 +202,8 @@ const sectionWrap = "scroll-m-24 px-8 py-16 max-sm:px-4 max-sm:py-10";
                     )}
                     <Button
                       link={item.url}
-                      text={item.price === 0 ? l.download : l.buy}
-                      ariaLabel={(item.price === 0 ? l.downloadAria : l.buyAria).replace("{name}", item.name)}
+                      text={buttonText(item)}
+                      ariaLabel={buttonAria(item).replace("{name}", item.name)}
                       iconName={item.price === 0 ? "document" : "cart"}
                       variant="small"
                     />
