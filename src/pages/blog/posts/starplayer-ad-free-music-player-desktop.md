@@ -116,4 +116,4 @@ If you like customizable music players, retro interfaces, vaporwave or desktop s
 
 **[Explore STARPLAYER on GitHub](https://github.com/GVPV12/STARPLAYER)**
 
-It lives in [the Lab](/lab/) with the rest of my open source tools and games. I'd love to keep finding features that make listening to music on a computer feel personal again, instead of like one more generic app.
+It lives with the rest of my [open source side projects](/side-projects/), tools and games included. I'd love to keep finding features that make listening to music on a computer feel personal again, instead of like one more generic app.

@@ -116,4 +116,4 @@ Si te gustan los reproductores de música personalizables, las interfaces retro,
 
 **[Explora STARPLAYER en GitHub](https://github.com/GVPV12/STARPLAYER)**
 
-Vive en [el Lab](/es/lab/) junto al resto de mis herramientas y juegos open source. Me encantaría seguir encontrando funciones que hagan que escuchar música en la computadora vuelva a sentirse personal, y no como otra app genérica más.
+Vive junto al resto de mis [proyectos personales open source](/es/side-projects/), herramientas y juegos incluidos. Me encantaría seguir encontrando funciones que hagan que escuchar música en la computadora vuelva a sentirse personal, y no como otra app genérica más.

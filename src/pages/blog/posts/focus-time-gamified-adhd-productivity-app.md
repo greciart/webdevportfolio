@@ -116,7 +116,7 @@ If you're curious about designing for neurodivergent users beyond this app, I we
 - **GitHub repo:** [github.com/GVPV12/focus-time](https://github.com/GVPV12/focus-time)
 - **Substack (in Spanish):** [Construí FOCUS TIME, una app para TDAH](https://greciart.substack.com/p/construi-focus-time-app-tdah)
 
-The repo is open to contributions if you want to make it better. It also lives in [the Lab](/lab/), next to the other tools and games I build when nobody is paying me to.
+The repo is open to contributions if you want to make it better. It also lives in my [side projects](/side-projects/), next to the other tools and games I build when nobody is paying me to.
 
 You don't need to do more to prove your day was productive. Sometimes progress is finishing a task. Sometimes it's focusing for 20 minutes. Sometimes it's stopping before you burn out. And sometimes it's just finding a way to start again.
 

@@ -27,8 +27,8 @@ export const ui = {
     "nav.services.desc": "Branding · 3D · Illustration",
     "nav.packages": "Packages",
     "nav.packages.desc": "Tiers, pricing & what is included",
-    "nav.lab": "Lab",
-    "nav.lab.desc": "Open source & games",
+    "nav.lab": "Side Projects",
+    "nav.lab.desc": "Open source apps & games",
     "nav.reviews.desc": "What clients say",
     "nav.shop": "Shop",
     "nav.shop3d": "3D Models",
@@ -162,7 +162,7 @@ export const ui = {
     // --- Sidebar ---
     "sidebar.languages": "Languages",
     "sidebar.softSkills": "Soft Skills",
-    "sidebar.labProgress": "Lab Progress",
+    "sidebar.labProgress": "Side Projects",
     "sidebar.toc": "Table of Contents",
 
     // --- Blog ---
@@ -250,8 +250,8 @@ export const ui = {
     "nav.services.desc": "Branding · 3D · Ilustración",
     "nav.packages": "Paquetes",
     "nav.packages.desc": "Niveles, precios y qué incluye",
-    "nav.lab": "Lab",
-    "nav.lab.desc": "Open source y juegos",
+    "nav.lab": "Proyectos personales",
+    "nav.lab.desc": "Apps y juegos open source",
     "nav.reviews.desc": "Lo que dicen mis clientes",
     "nav.shop": "Tienda",
     "nav.shop3d": "Modelos 3D",
@@ -380,7 +380,7 @@ export const ui = {
     // --- Barra lateral ---
     "sidebar.languages": "Idiomas",
     "sidebar.softSkills": "Habilidades blandas",
-    "sidebar.labProgress": "Progreso del laboratorio",
+    "sidebar.labProgress": "Proyectos personales",
     "sidebar.toc": "Tabla de contenidos",
 
     // --- Blog ---

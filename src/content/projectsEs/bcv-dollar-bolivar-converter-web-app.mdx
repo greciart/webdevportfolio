@@ -1,0 +1,83 @@
+---
+title: 'Convertidor BCV: app web de dólares a bolívares con la tasa oficial del BCV'
+pubDate: 2026-10-26
+description: 'Caso de estudio: una app web gratis que convierte dólares y euros a bolívares con la tasa oficial del BCV de hoy, gráfica histórica de la tasa e interfaz liquid glass. Hecha con HTML, CSS, JavaScript y Tailwind CSS.'
+languages: ["html", "css", "javascript", "tailwind", "netlify", "uiux"]
+image:
+  url: "../../assets/projects/convertidor-bcv-dolar-bolivares-tasa-oficial.webp"
+  alt: "Demo animada del Convertidor BCV web: la tasa oficial del BCV de hoy en bolívares, una gráfica de 30 días y una calculadora de dólares a bolívares con interfaz liquid glass verde oscuro"
+gallery:
+  - url: "../../assets/projects/convertidor-bcv-dolar-bolivares-tasa-oficial-2.webp"
+    alt: "Convertidor BCV con la skin azul Fluido, mostrando la tasa oficial del dólar, la gráfica histórica y el convertidor de USD a Bs"
+  - url: "../../assets/projects/convertidor-bcv-dolar-bolivares-tasa-oficial-3.webp"
+    alt: "Convertidor de dólares a bolívares con la skin Esmeralda, con botones rápidos de $1 a $100 y el equivalente en bolívares a tasa BCV"
+  - url: "../../assets/projects/convertidor-bcv-dolar-bolivares-tasa-oficial-4.webp"
+    alt: "Panel de ajustes del Convertidor BCV con español e inglés, tres skins (Fluido, Holograma, Esmeralda) y opciones de skin automática, solo precio y otras monedas oficiales del BCV"
+---
+
+import Button from "/src/components/Button.astro"
+
+En Venezuela, revisar la tasa del BCV es parte de la rutina de la mañana. Antes de pagar el mercado, cotizarle a un cliente o mandarle dinero a la familia, necesitas saber cuánto vale hoy un dólar en bolívares según la tasa oficial del Banco Central de Venezuela.
+
+La mayoría de los sitios que te lo dicen son lentos, están llenos de publicidad o parecen diseñados en 2009. Yo ya tenía una [versión de escritorio en Python](https://github.com/GVPV12/usdtoves), pero una app de escritorio hay que instalarla, y nadie instala nada para hacer un cálculo de dos segundos en el teléfono.
+
+Así que diseñé la versión web: **un convertidor de dólares a bolívares que se abre en una pestaña, muestra la tasa BCV de hoy antes que cualquier otra cosa y convierte mientras escribes.**
+
+<div style="display: flex; justify-content: center; gap: 16px; margin: 2rem 0; flex-wrap: wrap;">
+<Button
+  text="Probar el Convertidor BCV"
+  href="https://usdbcv.netlify.app/"
+  target="_blank"
+/>
+<Button
+  text="Ver el código fuente"
+  href="https://github.com/GVPV12/convertidor-bcv-web"
+  target="_blank"
+/>
+</div>
+
+## El problema de diseño
+
+Un convertidor de moneda tiene un solo trabajo, y la gente lo usa con apuro. Eso marcó las prioridades de toda la interfaz:
+
+1. **Primero la tasa.** La tasa BCV de hoy es lo más grande de la pantalla, con cuánto se movió en los últimos 30 días justo debajo. La mayoría de las visitas terminan ahí.
+2. **Después, convertir.** La calculadora está al lado de la tasa, con botones rápidos de $1, $10, $15, $30, $50 y $100, los montos que la gente de verdad consulta.
+3. **Todo lo demás es opcional.** La gráfica, las otras monedas y los ajustes están para quien los quiera, sin estorbarle a quien no.
+
+## Decisiones de interfaz
+
+**Conversión en vivo.** El resultado se actualiza con cada tecla, en las dos direcciones: de USD a Bs y de Bs a USD. Hay un botón de Convertir para quien espera uno, pero nunca hace falta apretarlo.
+
+**Gráfica histórica de la tasa.** La tasa en bolívares cambia casi todos los días, así que el número solo no dice mucho. La gráfica de 7, 30 y 90 días muestra la tendencia de un vistazo, y el porcentaje de variación lo pone en palabras simples.
+
+**Liquid glass, en tres skins.** Paneles translúcidos con brillo suave sobre un degradado oscuro, en tres skins: Fluido (azul), Holograma (tornasol) y Esmeralda (verde). Puedes elegir una, rotarlas automáticamente o que salga una al azar cada vez que abres la página. Es una herramienta, pero no hay razón para que una herramienta se vea triste.
+
+**Vista de solo precio.** Para quien solo quiere el número, una opción oculta la gráfica y el porcentaje y deja la tasa sola.
+
+**Confianza en la interfaz.** Un botón opcional de Verificar lleva directo a la página oficial del BCV, para que cualquiera compare el número. Cuando hay dinero de por medio, poder comprobar importa más que verse bonito.
+
+**Un toque humano.** Cada visita muestra una frase distinta de esperanza y motivación, 38 en total, en español e inglés. No es una función que alguien pidiera. Está porque la gente también revisa el dólar en los días malos.
+
+## Cómo funciona
+
+La app no usa frameworks ni necesita compilación: **HTML, CSS y JavaScript puro**, con **Tailwind CSS** para el layout.
+
+- Las tasas oficiales del dólar y el euro, actuales e históricas, vienen de **DolarApi Venezuela**.
+- El yuan, la lira turca y el rublo, las otras monedas oficiales del BCV, vienen de **BCV Today**, que además sirve de respaldo para el dólar y el euro.
+- Todos los ajustes se guardan en el navegador, así que el convertidor abre como lo dejaste.
+- Si no hay conexión, muestra la última tasa que cargó en lugar de una pantalla vacía.
+- Es totalmente responsivo, del teléfono a un monitor grande, y funciona en español e inglés.
+- Está desplegado en **Netlify**.
+
+## Stack
+
+- **HTML, CSS y JavaScript**, sin herramientas de compilación
+- **Tailwind CSS** para el layout, con CSS escrito a mano para los efectos liquid glass y las skins
+- **DolarApi** y **BCV Today** para las tasas oficiales del BCV
+- **Netlify** para el hosting
+
+## Resultado
+
+Un convertidor BCV gratis que abre rápido, responde de inmediato la única pregunta por la que la gente lo abre, y todavía tiene espacio para una gráfica, tres skins y un poco de personalidad. Guárdalo en tus marcadores o en la pantalla de inicio del teléfono y funciona como una app.
+
+Las tasas que muestra son referenciales. La fuente oficial siempre es el [Banco Central de Venezuela](https://www.bcv.org.ve/).

@@ -1,0 +1,83 @@
+---
+title: 'BCV Converter: A Dollar to Bolívar Web App with the Official BCV Rate'
+pubDate: 2026-10-26
+description: 'Case study: a free web app that converts US dollars and euros to Venezuelan bolívars with today''s official BCV rate, a rate history chart and a liquid glass interface. Built with HTML, CSS, JavaScript and Tailwind CSS.'
+languages: ["html", "css", "javascript", "tailwind", "netlify", "uiux"]
+image:
+  url: "../../assets/projects/convertidor-bcv-dolar-bolivares-tasa-oficial.webp"
+  alt: "Animated demo of the BCV Converter web app: today's official BCV rate in bolívars, a 30 day rate chart and a dollar to bolívar calculator in a dark green liquid glass interface"
+gallery:
+  - url: "../../assets/projects/convertidor-bcv-dolar-bolivares-tasa-oficial-2.webp"
+    alt: "BCV Converter in the blue Fluido skin, showing the official dollar rate, the rate history chart and the USD to Bs converter"
+  - url: "../../assets/projects/convertidor-bcv-dolar-bolivares-tasa-oficial-3.webp"
+    alt: "Dollar to bolívar converter in the Esmeralda skin, with quick amount buttons from $1 to $100 and the equivalent in bolívars at the BCV rate"
+  - url: "../../assets/projects/convertidor-bcv-dolar-bolivares-tasa-oficial-4.webp"
+    alt: "Settings panel of the BCV Converter with Spanish and English, three skins (Fluido, Holograma, Esmeralda) and options for auto skin, price only view and other BCV currencies"
+---
+
+import Button from "/src/components/Button.astro"
+
+In Venezuela, checking the BCV rate is part of the morning routine. Before you pay for groceries, quote a client or send money to your family, you need to know what one dollar is worth in bolívars today, according to the official rate of the Banco Central de Venezuela.
+
+Most of the places that tell you are either slow, buried in ads, or look like they were designed in 2009. I already had a [desktop version in Python](https://github.com/GVPV12/usdtoves), but a desktop app has to be installed, and nobody installs anything to do a two second calculation on their phone.
+
+So I designed the web version: **a dollar to bolívar converter that opens in a browser tab, shows today's BCV rate before anything else and converts while you type.**
+
+<div style="display: flex; justify-content: center; gap: 16px; margin: 2rem 0; flex-wrap: wrap;">
+<Button
+  text="Try the BCV Converter"
+  href="https://usdbcv.netlify.app/"
+  target="_blank"
+/>
+<Button
+  text="View Source Code"
+  href="https://github.com/GVPV12/convertidor-bcv-web"
+  target="_blank"
+/>
+</div>
+
+## The design problem
+
+A currency converter has one job, and people use it in a hurry. That set the priorities for the whole interface:
+
+1. **The rate first.** Today's BCV rate is the biggest thing on the screen, with how much it moved in the last 30 days right under it. Most visits end there.
+2. **Converting second.** The calculator sits next to the rate, with quick buttons for $1, $10, $15, $30, $50 and $100, the amounts people actually check.
+3. **Everything else is optional.** The chart, the extra currencies and the settings are there for whoever wants them, without getting in the way of whoever doesn't.
+
+## Interface decisions
+
+**Live conversion.** The result updates on every keystroke, in both directions: USD to Bs and Bs to USD. There is a Convert button for people who expect one, but you never need to press it.
+
+**A rate history chart.** The rate in bolívars changes almost every day, so the number alone doesn't say much. The 7, 30 and 90 day chart shows the trend at a glance, and the percentage change puts it in plain words.
+
+**Liquid glass, in three skins.** Translucent panels with soft glow over a dark gradient, in three skins: Fluido (blue), Holograma (iridescent) and Esmeralda (green). You can pick one, rotate them automatically or get a random one each time you open the page. It's a utility, but there's no reason a utility has to look sad.
+
+**A price only view.** For people who just want the number, a toggle hides the chart and the percentage and leaves the rate on its own.
+
+**Trust built into the UI.** An optional Verify button links straight to the official BCV page, so anyone can compare the number. With money involved, being able to check matters more than looking polished.
+
+**A small human touch.** Every visit shows a different quote about hope and motivation, 38 of them, in Spanish and English. It's not a feature anyone asked for. It's there because people check the exchange rate on bad days too.
+
+## How it works
+
+The app uses no frameworks and needs no build step: **HTML, CSS and vanilla JavaScript**, with **Tailwind CSS** for the layout.
+
+- The official dollar and euro rates, current and historical, come from **DolarApi Venezuela**.
+- Yuan, Turkish lira and ruble, the other official BCV currencies, come from **BCV Today**, which also works as a backup for the dollar and euro.
+- Every setting is saved in the browser, so the converter opens the way you left it.
+- If there is no connection, it shows the last rate it loaded instead of an empty screen.
+- It's fully responsive, from a phone to a large monitor, and works in Spanish and English.
+- It's deployed on **Netlify**.
+
+## Stack
+
+- **HTML, CSS and JavaScript**, no build tools
+- **Tailwind CSS** for the layout, with hand-written CSS for the liquid glass effects and skins
+- **DolarApi** and **BCV Today** for the official BCV exchange rates
+- **Netlify** for hosting
+
+## Result
+
+A free BCV converter that opens fast, answers the one question people open it for right away, and still has room for a chart, three skins and a bit of personality. Save it to your bookmarks or your phone's home screen and it works like an app.
+
+The rates shown are for reference. The official source is always the [Banco Central de Venezuela](https://www.bcv.org.ve/).

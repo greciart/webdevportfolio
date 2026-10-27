@@ -116,7 +116,7 @@ Si te interesa el diseño para usuarios neurodivergentes más allá de esta app,
 - **Repositorio en GitHub:** [github.com/GVPV12/focus-time](https://github.com/GVPV12/focus-time)
 - **Substack:** [la historia completa en mi Substack](https://greciart.substack.com/p/construi-focus-time-app-tdah)
 
-El repo está abierto a contribuciones si quieres mejorarla. También vive en [el Lab](/es/lab/), junto a las otras herramientas y juegos que hago cuando nadie me está pagando.
+El repo está abierto a contribuciones si quieres mejorarla. También está entre mis [proyectos personales](/es/side-projects/), junto a las otras herramientas y juegos que hago cuando nadie me está pagando.
 
 No necesitas hacer más para demostrar que tu día fue productivo. A veces avanzar es terminar una tarea. A veces es concentrarte 20 minutos. A veces es parar antes de agotarte. Y a veces es simplemente encontrar una forma de volver a empezar.
 

@@ -163,7 +163,7 @@ Considera también:
 * Incrustar metadatos IPTC en tus imágenes.
 * Publicar versiones de menor resolución de tus ilustraciones.
 * Firmar archivos digitalmente con Adobe Content Authenticity (lo explico paso a paso en [cómo proteger tu arte del entrenamiento de IA](/es/blog/posts/protect-artwork-from-ai-training/)).
-* Añadir marcas de agua visibles o sutiles cuando sea apropiado. Si tienes una carpeta entera por marcar, [BWM](/es/lab/) es una herramienta gratuita que hice para poner marcas de agua en lote.
+* Añadir marcas de agua visibles o sutiles cuando sea apropiado. Si tienes una carpeta entera por marcar, [BWM](/es/side-projects/) es una herramienta gratuita que hice para poner marcas de agua en lote.
 * Revisar las políticas de entrenamiento de IA de cada plataforma antes de subir tu trabajo.
 
 Ninguna técnica por sí sola puede impedir del todo el raspado no autorizado, pero combinar varios métodos aumenta significativamente el esfuerzo necesario para reutilizar tu trabajo.

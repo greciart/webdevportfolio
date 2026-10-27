@@ -134,4 +134,4 @@ Si te interesa tener un commonplace book digital, self-hosted y open source, ús
 
 ---
 
-*Hecho con HTML, CSS, JS y demasiado cian. Código en [GitHub](https://github.com/GVPV12/commonplacebook). En vivo en [starmoon.nekoweb.org](https://starmoon.nekoweb.org/commonplace_book.html). Más proyectos open source en [el Lab](/es/lab/).*
+*Hecho con HTML, CSS, JS y demasiado cian. Código en [GitHub](https://github.com/GVPV12/commonplacebook). En vivo en [starmoon.nekoweb.org](https://starmoon.nekoweb.org/commonplace_book.html). Más proyectos open source en mis [proyectos personales](/es/side-projects/).*

@@ -4,6 +4,12 @@
 /services      /extras/      301
 /es/services   /es/extras/   301
 
+# El Lab paso a llamarse Side Projects. Mismo motivo: 301 directo a la barra final.
+/lab           /side-projects/      301
+/lab/          /side-projects/      301
+/es/lab        /es/side-projects/   301
+/es/lab/       /es/side-projects/   301
+
 # Astro genera cada pagina como carpeta/index.html, y Netlify sirve ese archivo
 # con 200 en las dos rutas: /packages/ y /packages/index.html. La segunda lleva
 # canonical a la primera, y eso es exactamente lo que Search Console reporta

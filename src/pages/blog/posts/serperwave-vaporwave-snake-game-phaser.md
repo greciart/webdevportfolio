@@ -104,6 +104,6 @@ And the pixels stay crisp: the game only scales by whole numbers, so it never lo
 - **YouTube:** [official trailer](https://www.youtube.com/watch?v=quV0Fv8Er4Y) and [full gameplay walkthrough](https://www.youtube.com/watch?v=LXP5P6Qlcwc)
 - **Substack:** [Snake game, but it's a 90s arcade cabinet](https://greciart.substack.com/p/snake-game-but-its-a-90s-arcade-cabinet)
 
-It's one of the games in [the Lab](/lab/), next to *El Peso del Sí*, a short visual novel I made with Zim Yi, also in Phaser. And there are more SERPERWAVE games on the workbench, set in the same universe.
+It's one of the games in my [side projects](/side-projects/), next to *El Peso del Sí*, a short visual novel I made with Zim Yi, also in Phaser. And there are more SERPERWAVE games on the workbench, set in the same universe.
 
 Go lose an evening to it. Then tell me which level killed you the most.

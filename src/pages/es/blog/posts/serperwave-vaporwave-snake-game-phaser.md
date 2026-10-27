@@ -104,6 +104,6 @@ Y los píxeles se mantienen nítidos: el juego solo escala en números enteros, 
 - **YouTube:** [tráiler oficial](https://www.youtube.com/watch?v=quV0Fv8Er4Y) y [gameplay completo](https://www.youtube.com/watch?v=LXP5P6Qlcwc)
 - **Substack:** [la historia completa en mi Substack](https://greciart.substack.com/p/snake-game-but-its-a-90s-arcade-cabinet)
 
-Es uno de los juegos de [el Lab](/es/lab/), junto a *El Peso del Sí*, una novela visual corta que hice con Zim Yi, también en Phaser. Y hay más juegos de SERPERWAVE en el taller, ambientados en el mismo universo.
+Es uno de los juegos de mis [proyectos personales](/es/side-projects/), junto a *El Peso del Sí*, una novela visual corta que hice con Zim Yi, también en Phaser. Y hay más juegos de SERPERWAVE en el taller, ambientados en el mismo universo.
 
 Ve y piérdete una tarde jugándolo. Después cuéntame qué nivel te mató más veces.

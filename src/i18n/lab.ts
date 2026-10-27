@@ -1,7 +1,7 @@
 import type { Lang } from "./ui";
 
 /**
- * The Lab: open source and personal projects, mirrored from the GitHub profile
+ * Side projects (formerly "the Lab", still lab.ts inside the code): open source and personal projects, mirrored from the GitHub profile
  * README. Client work lives in the home page projects; this is what I build
  * when nobody is paying for it.
  */
@@ -212,12 +212,12 @@ const groupIcons: Record<GroupId, string> = {
 };
 
 const en: LabCopy = {
-  pageTitle: "Lab: Open Source Projects & Games | Grecia V.",
+  pageTitle: "Side Projects: Open Source Apps, Games & Tools | Grecia V.",
   description:
-    "Open source games, retro web templates and small tools I build in my own time, with Phaser, TypeScript, Python and plain HTML and CSS.",
+    "My side projects: open source games, apps, retro web templates and small tools I build in my own time, with Phaser, TypeScript, Python and plain HTML and CSS.",
   heroEyebrow: "Open source & games",
-  heroTitle: "Open source games & tools from the",
-  heroTitleAccent: "Lab",
+  heroTitle: "Open source apps, games & tools:",
+  heroTitleAccent: "my side projects",
   heroIntro:
     "This is what I build when nobody is paying for it. Games, retro web templates and small tools that solve problems I actually had. Most of it is open source, so you can read the code, fork it or borrow the bits you like.",
   githubButton: "See everything on GitHub",
@@ -249,12 +249,12 @@ const en: LabCopy = {
 };
 
 const es: LabCopy = {
-  pageTitle: "Lab: proyectos open source y juegos | Grecia V.",
+  pageTitle: "Proyectos personales: apps y juegos open source | Grecia V.",
   description:
-    "Juegos open source, plantillas web retro y pequeñas herramientas que hago en mi tiempo libre, con Phaser, TypeScript, Python y HTML y CSS puros.",
+    "Mis proyectos personales: juegos, apps, plantillas web retro y pequeñas herramientas open source que hago en mi tiempo libre, con Phaser, TypeScript, Python y HTML y CSS puros.",
   heroEyebrow: "Open source y juegos",
-  heroTitle: "Juegos y herramientas open source del",
-  heroTitleAccent: "Lab",
+  heroTitle: "Apps, juegos y herramientas open source:",
+  heroTitleAccent: "mis proyectos personales",
   heroIntro:
     "Esto es lo que construyo cuando nadie me está pagando. Juegos, plantillas web retro y pequeñas herramientas que resuelven problemas que de verdad tuve. Casi todo es open source, así que puedes leer el código, hacerle fork o llevarte lo que te sirva.",
   githubButton: "Ver todo en GitHub",
