@@ -26,12 +26,15 @@ const allLandscape = images.length > 0 && images.every(isLandscape);
             class="flex flex-col transition-transform duration-500 ease-in-out"
             data-stacked={allLandscape ? 'true' : 'false'}
           >
-            {images.map((img) => (
-              <a
-                class="gallery-slide block"
-                href={(img.url as any).src}
-                target="_blank"
-                rel="noopener noreferrer"
+            {images.map((img, i) => (
+              <button
+                type="button"
+                class="gallery-slide block w-full cursor-zoom-in"
+                data-lb
+                data-lb-group="project-gallery"
+                data-lb-index={i}
+                data-lb-src={img.url.src}
+                data-lb-alt={img.alt}
                 aria-label={t("aria.openImage")}
               >
                 {isLandscape(img) ? (
@@ -48,7 +51,7 @@ const allLandscape = images.length > 0 && images.every(isLandscape);
                     style="height: calc(100svh - 10rem);"
                   />
                 )}
-              </a>
+              </button>
             ))}
           </div>
         </div>

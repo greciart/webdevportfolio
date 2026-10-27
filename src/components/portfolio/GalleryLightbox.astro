@@ -1,9 +1,13 @@
 ---
 // Rendered once per page. Every MasonryGallery item on the page hooks into it
 // through the `data-lb-*` attributes and pages within its own `data-lb-group`.
+// Images shown smaller than their real size (tall page captures above all) can
+// be zoomed: click, the +/− buttons, Ctrl + wheel or the + / − / 0 keys.
 import { getLangFromUrl, useTranslations } from "../../i18n/utils";
 
 const t = useTranslations(getLangFromUrl(Astro.url));
+const zoomButton =
+  "flex size-8 items-center justify-center rounded-full text-base font-bold text-white transition-colors hover:text-mint-300 disabled:pointer-events-none disabled:opacity-30";
 ---
 
 <div
@@ -41,16 +45,36 @@ const t = useTranslations(getLangFromUrl(Astro.url));
   </button>
 
   <figure class="flex max-h-full max-w-6xl flex-col items-center gap-4" data-lb-stage>
-    <img
-      data-lb-image
-      src=""
-      alt=""
-      class="max-h-[76vh] w-auto max-w-full rounded-2xl object-contain shadow-2xl"
-    />
+    <div
+      data-lb-scroller
+      class="max-h-[76vh] max-w-full overflow-auto overscroll-contain rounded-2xl [scrollbar-width:thin]"
+    >
+      <img
+        data-lb-image
+        src=""
+        alt=""
+        class="mx-auto block max-h-[76vh] w-auto max-w-full rounded-2xl object-contain shadow-2xl"
+      />
+    </div>
     <figcaption class="flex flex-col items-center gap-3 text-center">
       <p data-lb-title class="text-sm font-bold text-white max-sm:text-xs"></p>
-      <div class="flex items-center gap-4">
+      <div class="flex flex-wrap items-center justify-center gap-4">
         <span data-lb-counter class="text-xs font-medium text-zinc-400"></span>
+        <div
+          data-lb-zoom
+          class="hidden items-center gap-1 rounded-full border border-zinc-700 bg-zinc-900/80 px-1"
+        >
+          <button type="button" data-lb-zoom-out class={zoomButton} aria-label={t("aria.zoomOut")}>−</button>
+          <button
+            type="button"
+            data-lb-zoom-reset
+            class="min-w-12 text-xs font-medium text-zinc-300 transition-colors hover:text-mint-300"
+            aria-label={t("aria.zoomReset")}
+          >
+            100%
+          </button>
+          <button type="button" data-lb-zoom-in class={zoomButton} aria-label={t("aria.zoomIn")}>+</button>
+        </div>
         <a
           data-lb-link
           href="#"
@@ -79,6 +103,7 @@ const t = useTranslations(getLangFromUrl(Astro.url));
   );
 
   if (root && triggers.length > 0) {
+    const scroller = root.querySelector<HTMLElement>("[data-lb-scroller]")!;
     const image = root.querySelector<HTMLImageElement>("[data-lb-image]")!;
     const titleEl = root.querySelector<HTMLElement>("[data-lb-title]")!;
     const counter = root.querySelector<HTMLElement>("[data-lb-counter]")!;
@@ -86,6 +111,10 @@ const t = useTranslations(getLangFromUrl(Astro.url));
     const prevBtn = root.querySelector<HTMLButtonElement>("[data-lb-prev]")!;
     const nextBtn = root.querySelector<HTMLButtonElement>("[data-lb-next]")!;
     const closeBtn = root.querySelector<HTMLButtonElement>("[data-lb-close]")!;
+    const zoomBar = root.querySelector<HTMLElement>("[data-lb-zoom]")!;
+    const zoomInBtn = root.querySelector<HTMLButtonElement>("[data-lb-zoom-in]")!;
+    const zoomOutBtn = root.querySelector<HTMLButtonElement>("[data-lb-zoom-out]")!;
+    const zoomResetBtn = root.querySelector<HTMLButtonElement>("[data-lb-zoom-reset]")!;
 
     // Bucket every trigger by its gallery so arrows never cross sections.
     const groups = new Map<string, Slide[]>();
@@ -104,9 +133,85 @@ const t = useTranslations(getLangFromUrl(Astro.url));
     let index = 0;
     let lastFocused: HTMLElement | null = null;
 
+    // Zoom is relative to the fitted size: 1 means "whole image on screen".
+    let zoom = 1;
+    let fitWidth = 0;
+    let maxZoom = 1;
+    const ZOOM_STEP = 1.5;
+
+    const canZoom = () => maxZoom > 1.05;
+    // The width the zoomed view gets, never wider than the real pixels.
+    const viewerWidth = () => Math.min(window.innerWidth * 0.92, 1152);
+
+    function measure() {
+      if (zoom !== 1 || !image.naturalWidth) return;
+      fitWidth = image.offsetWidth;
+      maxZoom = fitWidth ? Math.min(6, image.naturalWidth / fitWidth) : 1;
+      zoomBar.classList.toggle("hidden", !canZoom());
+      zoomBar.classList.toggle("flex", canZoom());
+      updateZoomUi();
+    }
+
+    function updateZoomUi() {
+      zoomResetBtn.textContent = `${Math.round(zoom * 100)}%`;
+      zoomOutBtn.disabled = zoom <= 1;
+      zoomInBtn.disabled = zoom >= maxZoom;
+      image.style.cursor = !canZoom() ? "" : zoom > 1 ? "grab" : "zoom-in";
+    }
+
+    function applyZoom() {
+      if (zoom === 1) {
+        image.style.width = "";
+        image.style.maxWidth = "";
+        image.style.maxHeight = "";
+        scroller.style.width = "";
+        scroller.style.height = "";
+      } else {
+        image.style.width = `${fitWidth * zoom}px`;
+        image.style.maxWidth = "none";
+        image.style.maxHeight = "none";
+        scroller.style.width = `${viewerWidth()}px`;
+        scroller.style.height = "76vh";
+      }
+      updateZoomUi();
+    }
+
+    /** Zooms keeping the point under (x, y), or the view's centre, in place. */
+    function setZoom(next: number, x?: number, y?: number) {
+      if (!canZoom()) return;
+      next = Math.min(Math.max(next, 1), maxZoom);
+      if (Math.abs(next - 1) < 0.01) next = 1;
+      if (next === zoom) return;
+
+      const view = scroller.getBoundingClientRect();
+      const before = image.getBoundingClientRect();
+      const px = x ?? view.left + view.width / 2;
+      const py = y ?? view.top + view.height / 2;
+      const fx = (px - before.left) / before.width;
+      const fy = (py - before.top) / before.height;
+
+      zoom = next;
+      applyZoom();
+      if (zoom === 1) return;
+
+      const after = image.getBoundingClientRect();
+      scroller.scrollLeft += after.left + fx * after.width - px;
+      scroller.scrollTop += after.top + fy * after.height - py;
+    }
+
+    function resetZoom() {
+      zoom = 1;
+      applyZoom();
+      scroller.scrollTo(0, 0);
+    }
+
     function render() {
       const slide = slides[index];
       if (!slide) return;
+      resetZoom();
+      zoomBar.classList.add("hidden");
+      zoomBar.classList.remove("flex");
+      maxZoom = 1;
       image.src = slide.src;
       image.alt = slide.alt;
       titleEl.textContent = slide.title;
@@ -142,6 +247,7 @@ const t = useTranslations(getLangFromUrl(Astro.url));
       root.classList.add("hidden");
       root.classList.remove("flex");
       document.body.style.overflow = "";
+      resetZoom();
       image.src = "";
       lastFocused?.focus();
       lastFocused = null;
@@ -164,6 +270,77 @@ const t = useTranslations(getLangFromUrl(Astro.url));
       });
     });
 
+    image.addEventListener("load", measure);
+    window.addEventListener("resize", () => {
+      if (root.classList.contains("hidden")) return;
+      if (zoom === 1) measure();
+      else scroller.style.width = `${viewerWidth()}px`;
+    });
+
+    zoomInBtn.addEventListener("click", () => setZoom(zoom * ZOOM_STEP));
+    zoomOutBtn.addEventListener("click", () => setZoom(zoom / ZOOM_STEP));
+    zoomResetBtn.addEventListener("click", resetZoom);
+
+    // Mouse drag pans the zoomed image; touch keeps native scrolling. A drag
+    // that moved is not a click, so it doesn't toggle the zoom on release.
+    let drag: { x: number; y: number; left: number; top: number; moved: boolean } | null = null;
+    let suppressClick = false;
+
+    scroller.addEventListener("pointerdown", (event) => {
+      if (event.pointerType !== "mouse" || zoom === 1 || event.button !== 0) return;
+      drag = {
+        x: event.clientX,
+        y: event.clientY,
+        left: scroller.scrollLeft,
+        top: scroller.scrollTop,
+        moved: false,
+      };
+      scroller.setPointerCapture(event.pointerId);
+    });
+    scroller.addEventListener("pointermove", (event) => {
+      if (!drag) return;
+      const dx = event.clientX - drag.x;
+      const dy = event.clientY - drag.y;
+      if (!drag.moved && Math.hypot(dx, dy) > 4) {
+        drag.moved = true;
+        image.style.cursor = "grabbing";
+      }
+      scroller.scrollLeft = drag.left - dx;
+      scroller.scrollTop = drag.top - dy;
+    });
+    const endDrag = () => {
+      if (!drag) return;
+      suppressClick = drag.moved;
+      drag = null;
+      updateZoomUi();
+    };
+    scroller.addEventListener("pointerup", endDrag);
+    scroller.addEventListener("pointercancel", endDrag);
+
+    image.addEventListener("click", (event) => {
+      if (suppressClick) {
+        suppressClick = false;
+        return;
+      }
+      if (!canZoom()) return;
+      if (zoom > 1) {
+        resetZoom();
+        return;
+      }
+      // Tall captures open filling the viewer's width, so their text is legible.
+      setZoom(Math.max(2, viewerWidth() / fitWidth), event.clientX, event.clientY);
+    });
+
+    scroller.addEventListener(
+      "wheel",
+      (event) => {
+        if (!event.ctrlKey || !canZoom()) return;
+        event.preventDefault();
+        setZoom(zoom * (event.deltaY < 0 ? 1.15 : 1 / 1.15), event.clientX, event.clientY);
+      },
+      { passive: false },
+    );
+
     closeBtn.addEventListener("click", close);
     prevBtn.addEventListener("click", () => step(-1));
     nextBtn.addEventListener("click", () => step(1));
@@ -178,6 +355,9 @@ const t = useTranslations(getLangFromUrl(Astro.url));
       if (event.key === "Escape") close();
       if (event.key === "ArrowLeft") step(-1);
       if (event.key === "ArrowRight") step(1);
+      if (event.key === "+" || event.key === "=") setZoom(zoom * ZOOM_STEP);
+      if (event.key === "-") setZoom(zoom / ZOOM_STEP);
+      if (event.key === "0") resetZoom();
     });
   }
 </script>

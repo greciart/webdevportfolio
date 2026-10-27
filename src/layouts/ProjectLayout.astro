@@ -5,10 +5,13 @@ import Heading from "../components/ui/Heading.astro";
 import NavArticle from "../components/layout/NavArticle.astro";
 import Contact from "../components/portfolio/Contact.astro";
 import ProjectGallery from "../components/layout/ProjectGallery.astro";
+import GalleryLightbox from "../components/portfolio/GalleryLightbox.astro";
 import { Image } from 'astro:assets';  // 👈 agrega esto
 import type { ImageMetadata } from 'astro';
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
 
 const { frontmatter } = Astro.props;
+const t = useTranslations(getLangFromUrl(Astro.url));
 const gallery = frontmatter.gallery ?? [];
 
 const projectUrl = new URL(Astro.url.pathname, Astro.site).href;
@@ -60,10 +63,19 @@ const projectSchema = [
           <!-- h2, not h3: the case study body starts at h2, so an h3 here left
                the outline jumping straight from the title to a third level. -->
           <h2 class="dark:text-zinc-400 text-blacktext/90 font-black tracking-wide text-sm uppercase">Project Gallery</h2>
-{gallery.map((img: {url: ImageMetadata, alt: string}) => (
-  <a href={(img.url as any).src} target="_blank">
+{gallery.map((img: {url: ImageMetadata, alt: string}, i: number) => (
+  <button
+    type="button"
+    class="block w-full cursor-zoom-in"
+    data-lb
+    data-lb-group="project-gallery-mobile"
+    data-lb-index={i}
+    data-lb-src={img.url.src}
+    data-lb-alt={img.alt}
+    aria-label={t("aria.openImage")}
+  >
     <Image src={img.url} alt={img.alt} class="w-full rounded-xl" />
-  </a>
+  </button>
 ))}
         </div>
       )}
@@ -82,4 +94,5 @@ const projectSchema = [
     <NavArticle title={frontmatter.title} />
   </section>
   <Contact />
+  <GalleryLightbox />
 </Layout>
