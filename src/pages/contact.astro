@@ -74,7 +74,9 @@ const eyebrow =
 ---
 
 <Layout pageTitle={pageTitle} description={description}>
-  <section class="relative px-8 pb-8 pt-16 max-sm:px-4 max-sm:pt-10">
+  <!-- data-selectable: people copy the email and details from here, so this
+       page is exempt from the site-wide copy protection. -->
+  <section data-selectable class="relative px-8 pb-8 pt-16 max-sm:px-4 max-sm:pt-10">
     <div class="blur-circle"></div>
     <div data-reveal="sharpen" class="mx-auto flex max-w-3xl flex-col items-center gap-5 text-center">
       <span class={eyebrow}>
@@ -100,7 +102,7 @@ const eyebrow =
     </div>
   </section>
 
-  <section class="px-8 pb-20 pt-8 max-sm:px-4 max-sm:pb-12">
+  <section data-selectable class="px-8 pb-20 pt-8 max-sm:px-4 max-sm:pb-12">
     <div class="mx-auto grid max-w-7xl grid-cols-[1.6fr_1fr] items-start gap-8 max-lg:grid-cols-1">
       <!-- ===================== FORM ===================== -->
       <div

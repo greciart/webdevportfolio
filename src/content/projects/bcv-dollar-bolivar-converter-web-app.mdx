@@ -4,9 +4,15 @@ pubDate: 2026-10-26
 description: 'Case study: a free web app that converts US dollars and euros to Venezuelan bolívars with today''s official BCV rate, a rate history chart and a liquid glass interface. Built with HTML, CSS, JavaScript and Tailwind CSS.'
 languages: ["html", "css", "javascript", "tailwind", "netlify", "uiux"]
 image:
-  url: "../../assets/projects/convertidor-bcv-dolar-bolivares-tasa-oficial.webp"
-  alt: "Animated demo of the BCV Converter web app: today's official BCV rate in bolívars, a 30 day rate chart and a dollar to bolívar calculator in a dark green liquid glass interface"
+  url: "../../assets/projects/convertidor-bcv-dolar-bolivares-tasa-oficial-holograma.webp"
+  alt: "BCV Converter web app in the Holograma skin: today's official BCV rate of 886.23 Bs per dollar, a 30 day rate chart and a USD to bolívar calculator in a purple liquid glass interface"
+hideCover: true
+video:
+  src: "/videos/previews/bcv-converter-preview.mp4"
+  poster: "../../assets/projects/bcv-converter-preview-poster.webp"
 gallery:
+  - url: "../../assets/projects/convertidor-bcv-dolar-bolivares-tasa-oficial-holograma.webp"
+    alt: "BCV Converter web app in the Holograma skin: today's official BCV rate of 886.23 Bs per dollar, a 30 day rate chart and a USD to bolívar calculator in a purple liquid glass interface"
   - url: "../../assets/projects/convertidor-bcv-dolar-bolivares-tasa-oficial-2.webp"
     alt: "BCV Converter in the blue Fluido skin, showing the official dollar rate, the rate history chart and the USD to Bs converter"
   - url: "../../assets/projects/convertidor-bcv-dolar-bolivares-tasa-oficial-3.webp"
@@ -16,6 +22,10 @@ gallery:
 ---
 
 import Button from "/src/components/Button.astro"
+import Video from '/src/components/Video.astro';
+import poster from "../../assets/projects/bcv-converter-preview-poster.webp";
+
+<Video provider="file" src="/videos/bcv-dollar-bolivar-converter-demo.mp4" poster={poster.src} alt="Video demo of the BCV Converter web app: converting dollars to bolívars with today's official BCV rate, switching skins and the rate history chart" aria-label="Play the BCV Converter demo video" />
 
 In Venezuela, checking the BCV rate is part of the morning routine. Before you pay for groceries, quote a client or send money to your family, you need to know what one dollar is worth in bolívars today, according to the official rate of the Banco Central de Venezuela.
 

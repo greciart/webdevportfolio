@@ -4,9 +4,15 @@ pubDate: 2026-10-26
 description: 'Caso de estudio: una app web gratis que convierte dólares y euros a bolívares con la tasa oficial del BCV de hoy, gráfica histórica de la tasa e interfaz liquid glass. Hecha con HTML, CSS, JavaScript y Tailwind CSS.'
 languages: ["html", "css", "javascript", "tailwind", "netlify", "uiux"]
 image:
-  url: "../../assets/projects/convertidor-bcv-dolar-bolivares-tasa-oficial.webp"
-  alt: "Demo animada del Convertidor BCV web: la tasa oficial del BCV de hoy en bolívares, una gráfica de 30 días y una calculadora de dólares a bolívares con interfaz liquid glass verde oscuro"
+  url: "../../assets/projects/convertidor-bcv-dolar-bolivares-tasa-oficial-holograma.webp"
+  alt: "Convertidor BCV web con la skin Holograma: la tasa oficial del BCV de hoy, 886,23 Bs por dólar, una gráfica de 30 días y una calculadora de dólares a bolívares con interfaz liquid glass morada"
+hideCover: true
+video:
+  src: "/videos/previews/bcv-converter-preview.mp4"
+  poster: "../../assets/projects/bcv-converter-preview-poster.webp"
 gallery:
+  - url: "../../assets/projects/convertidor-bcv-dolar-bolivares-tasa-oficial-holograma.webp"
+    alt: "Convertidor BCV web con la skin Holograma: la tasa oficial del BCV de hoy, 886,23 Bs por dólar, una gráfica de 30 días y una calculadora de dólares a bolívares con interfaz liquid glass morada"
   - url: "../../assets/projects/convertidor-bcv-dolar-bolivares-tasa-oficial-2.webp"
     alt: "Convertidor BCV con la skin azul Fluido, mostrando la tasa oficial del dólar, la gráfica histórica y el convertidor de USD a Bs"
   - url: "../../assets/projects/convertidor-bcv-dolar-bolivares-tasa-oficial-3.webp"
@@ -16,6 +22,10 @@ gallery:
 ---
 
 import Button from "/src/components/Button.astro"
+import Video from '/src/components/Video.astro';
+import poster from "../../assets/projects/bcv-converter-preview-poster.webp";
+
+<Video provider="file" src="/videos/bcv-dollar-bolivar-converter-demo.mp4" poster={poster.src} alt="Video demo del Convertidor BCV web: conversión de dólares a bolívares con la tasa oficial del BCV de hoy, cambio de skins y gráfica histórica de la tasa" aria-label="Reproducir el video demo del Convertidor BCV" />
 
 En Venezuela, revisar la tasa del BCV es parte de la rutina de la mañana. Antes de pagar el mercado, cotizarle a un cliente o mandarle dinero a la familia, necesitas saber cuánto vale hoy un dólar en bolívares según la tasa oficial del Banco Central de Venezuela.
 

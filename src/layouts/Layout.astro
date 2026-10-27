@@ -323,6 +323,37 @@ const jsonLd = { "@context": "https://schema.org", "@graph": graph };
     </script>
 
     <script>
+      // Content protection, the script half of the rules in global.css. A
+      // deterrent, not security: screenshots and the network tab still work.
+      // Form fields and code blocks are left alone so typing and copying code
+      // behave normally.
+      const allowed = (node: EventTarget | Node | null) =>
+        node instanceof Element
+          ? !!node.closest("input, textarea, select, [contenteditable='true'], pre, code, [data-selectable]")
+          : node instanceof Node && allowed(node.parentElement);
+
+      const blockCopy = (event: ClipboardEvent) => {
+        const selection = document.getSelection();
+        if (allowed(event.target) || (selection && allowed(selection.anchorNode))) return;
+        event.preventDefault();
+      };
+      document.addEventListener("copy", blockCopy);
+      document.addEventListener("cut", blockCopy);
+
+      // No "Open image in new tab" / "Save image as": the right-click menu is
+      // cancelled on media only, so links still get theirs. The lightbox and
+      // carousel buttons sit on top of their images, so they count as media.
+      const media = "img, picture, video, [data-lb], [data-lightbox], .astro-video-placeholder";
+      document.addEventListener("contextmenu", (event) => {
+        if ((event.target as Element | null)?.closest?.(media)) event.preventDefault();
+      });
+      // Dragging an image onto the tab bar opens it on its own.
+      document.addEventListener("dragstart", (event) => {
+        if ((event.target as Element | null)?.closest?.("img, picture, video")) event.preventDefault();
+      });
+    </script>
+
+    <script>
       // Scroll reveal. All the animation lives in CSS; this only decides *when*
       // to un-pause it, so there is no per-frame JavaScript at all.
       const root = document.documentElement;

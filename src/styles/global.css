@@ -89,6 +89,17 @@ video {
   -webkit-touch-callout: none;
 }
 
+/* The same deterrent for the writing: page text can't be selected, so it
+   can't be copied either (Layout.astro also cancels the copy shortcut). Form
+   fields stay selectable so people can still edit what they type, and code
+   blocks too, since those are meant to be copied. */
+body {
+  user-select: none;
+}
+:is(input, textarea, select, [contenteditable="true"], pre, code, [data-selectable]) {
+  user-select: text;
+}
+
 /* Accessibility: underline every link in running text, for readers who need
    links distinguishable by more than colour. */
 html[data-a11y-underline="on"] :is(main, article, footer) a {
