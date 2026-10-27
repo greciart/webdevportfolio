@@ -43,7 +43,7 @@ I designed and developed a medical consultation platform with integrated payment
 ## 🛠️ Technical Toolbox
 - **CMS & E-commerce:** Shopify, WordPress, Elementor, WooCommerce, Kajabi.
 - **Frontend Development:** Astro JS, HTML5, CSS3, Tailwind CSS, JavaScript (React, Node.js), GSAP (for beautiful and complex animations, parallax, etc), Git/GitHub.
-- **Design & 3D:** Figma, Blender (Modeling & Animation), Spline, Photoshop, Illustrator, Inkscape.
+- **Design & 3D:** Figma, Blender (Modeling & Animation), Photoshop, Illustrator, Inkscape.
 - **Workflow:** VS Code, Obsidian (Zettelkasten), Notion, Trello, Netlify.
 
 ## 🧪 Creative Exploration & Experimental Projects

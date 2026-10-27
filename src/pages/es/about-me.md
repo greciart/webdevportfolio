@@ -43,7 +43,7 @@ Diseñé y desarrollé una plataforma de consultas médicas con sistemas de pago
 ## 🛠️ Caja de herramientas técnica
 - **CMS y comercio electrónico:** Shopify, WordPress, Elementor, WooCommerce, Kajabi.
 - **Desarrollo frontend:** Astro JS, HTML5, CSS3, Tailwind CSS, JavaScript (React, Node.js), GSAP (para animaciones complejas, parallax, etc.), Git/GitHub.
-- **Diseño y 3D:** Figma, Blender (modelado y animación), Spline, Photoshop, Illustrator, Inkscape.
+- **Diseño y 3D:** Figma, Blender (modelado y animación), Photoshop, Illustrator, Inkscape.
 - **Flujo de trabajo:** VS Code, Obsidian (Zettelkasten), Notion, Trello, Netlify.
 
 ## 🧪 Exploración creativa y proyectos experimentales
