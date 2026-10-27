@@ -189,6 +189,8 @@ Do not use AI as:
 
 Always verify what it generates.
 
+If you want a concrete example of what that looks like, here's [how I built FOCUS TIME](/blog/posts/focus-time-gamified-adhd-productivity-app/): Figma first, a written specification second, and only then AI to speed up the implementation.
+
 ## Security Recommendations for AI-Assisted Websites and Apps
 
 If you're building with AI, these practices are non-negotiable.

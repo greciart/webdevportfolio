@@ -8,6 +8,7 @@ import { Icon } from "astro-icon/components";
 import { labCopy, getLabGroups, githubProfile } from "../i18n/lab";
 import { getLangFromUrl, localizePath } from "../i18n/utils";
 import { buildSlides, labCoverFor, labExtrasFor, type CarouselSlide } from "../lib/carousel";
+import { ogFrom } from "../lib/og";
 
 const lang = getLangFromUrl(Astro.url);
 const c = labCopy[lang];
@@ -16,21 +17,20 @@ const p = (path: string) => localizePath(path, lang);
 
 const { pageTitle, description } = c;
 
-// A project's preview is the image in src/assets/lab/ named after its id
-// (serperwave.png), plus "-2" and "-3" for the carousel. Dropping files there
-// is all it takes; projects with none get an icon tile instead.
+// A project's preview is the image in src/assets/lab/ named after its `file`
+// (serperwave-vaporwave-snake-game.png), plus "-2" and "-3" for the carousel.
+// Dropping files there is all it takes; projects with none get an icon tile instead.
 const slidesById = new Map<string, CarouselSlide[]>();
 for (const group of groups) {
   for (const project of group.projects) {
-    const cover = labCoverFor(project.id);
+    const cover = labCoverFor(project.file);
     if (!cover) continue;
-    const alt = c.previewAlt
-      .replace("{name}", project.name)
-      .replace("{group}", group.title.toLowerCase())
-      .replace("{stack}", project.stack.join(", "));
-    slidesById.set(project.id, await buildSlides({ image: cover, alt }, labExtrasFor(project.id), lang));
+    slidesById.set(project.id, await buildSlides({ image: cover, alt: project.alt }, labExtrasFor(project.file), lang));
   }
 }
+
+const shareCover = labCoverFor("serperwave-vaporwave-snake-game");
+const ogimage = shareCover && (await ogFrom(shareCover, slidesById.get("serperwave")![0].alt));
 
 // Every project is a piece of source code with a public repository, which is
 // exactly what SoftwareSourceCode describes.
@@ -49,6 +49,9 @@ const schema = [
           description: project.description,
           ...(project.repos[0] && { codeRepository: project.repos[0].url }),
           programmingLanguage: project.stack[0],
+          ...(slidesById.has(project.id) && {
+            image: new URL(slidesById.get(project.id)![0].full!, Astro.site).href,
+          }),
           author: { "@id": `${Astro.site}#person` },
           ...((project.demo || project.itch) && { url: project.demo ?? project.itch }),
         },
@@ -70,7 +73,7 @@ const linkClass =
 const sectionWrap = "scroll-m-24 px-8 py-16 max-sm:px-4 max-sm:py-10";
 ---
 
-<Layout pageTitle={pageTitle} description={description} schema={schema}>
+<Layout pageTitle={pageTitle} description={description} schema={schema} ogimage={ogimage}>
   <!-- ===================== HERO ===================== -->
   <section class="relative px-8 pb-8 pt-16 max-sm:px-4 max-sm:pt-10">
     <div class="blur-circle"></div>

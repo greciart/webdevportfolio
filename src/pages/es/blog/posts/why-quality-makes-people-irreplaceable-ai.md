@@ -95,6 +95,8 @@ Estas decisiones vienen de la experiencia y del entendimiento.
 
 La IA puede sugerir posibilidades, pero una diseñadora con oficio sabe cuáles de esas posibilidades tienen sentido de verdad.
 
+Un ejemplo real: en la [tienda Shopify de Dana Shape](/es/portfolio/projects/dana-shape-shopify-ecommerce-website/) el wireflow se mapeó antes de cualquier diseño visual, y los filtros se construyeron alrededor de la talla y el ajuste, porque esa es la pregunta que de verdad se hace quien compra fajas.
+
 ![Una mano usando un lápiz digital para marcar una lista de control de calidad en una tableta, destacando el enfoque con supervisión humana en el diseño web profesional.](/images/posts/human-quality-assurance-web-design.webp)
 
 ## El futuro es de quienes usan la IA como herramienta

@@ -147,6 +147,8 @@ Aunque esto no va a detener a los bots automatizados, te da una base legal más 
 
 Aunque a mucha gente que crea no le gustan las marcas de agua, una marca sutil y repetida con opacidad baja hace la eliminación automática considerablemente más difícil que poner un solo logo en una esquina.
 
+Hacerlo a mano en una carpeta entera de imágenes cansa rapidísimo, por eso hice [BWM](/es/lab/), una pequeña herramienta gratuita que pone marcas de agua de texto en lote. Tiene versión de línea de comandos y app de escritorio, y es open source.
+
 ### Añade directivas NoAI
 
 Si tienes tu propio sitio web, considera añadir directivas relacionadas con IA en tu archivo robots.txt o en etiquetas meta del HTML, como:
@@ -167,7 +169,7 @@ En mi opinión, la solución más efectiva a largo plazo es tener tu propio siti
 
 A diferencia de las redes sociales, un sitio propio te da mucho más control sobre cómo se indexa, se muestra y se accede a tu contenido. Puedes configurar reglas en robots.txt, gestionar metadatos, elegir tu entorno de hosting e implementar medidas de seguridad adicionales que simplemente no existen en la mayoría de las plataformas de portafolio.
 
-Si quieres aprender a configurar un archivo robots.txt, aunque no tengas perfil técnico, explico todo el proceso paso a paso en mi blog.
+Si quieres aprender a configurar un archivo robots.txt, aunque no tengas perfil técnico, explico todo el proceso paso a paso en [cómo crear un archivo robots.txt para bloquear los rastreadores de IA](/es/blog/posts/create-robots-txt-block-ai-crawlers/).
 
 ![Candado digital luminoso sobre una placa de circuitos, simbolizando la autenticidad del contenido, la protección de derechos de autor y la seguridad frente a los raspadores de entrenamiento de IA.](/images/posts/ai-content-protection-lock.webp)
 

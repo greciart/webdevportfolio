@@ -159,6 +159,8 @@ html[data-a11y-motion="off"] *::after {
 
 Poner la duración en `0.001ms` en lugar de `none` es el truco que mantiene vivos los manejadores de `animationend`, así que cualquier código esperando a que una animación termine sigue recibiendo su evento.
 
+Los juegos necesitan lo mismo, y casi nunca lo reciben. En [SERPERWAVE](/es/blog/posts/serperwave-vaporwave-snake-game-phaser/), mi juego de la viborita vaporwave, hay un control de efectos que baja el temblor de pantalla, el glitch y la estática hasta cero, y el juego se sigue pudiendo jugar completo.
+
 Un sitio por donde esto se me escapó al principio: las vistas previas en bucle de mi cuadrícula de proyectos son elementos `<video>`, y el CSS no puede pausar un vídeo. Reducir el movimiento tiene que alcanzarlos también desde el script, o la cosa más animada de la página sigue animándose después de que pediste que parara.
 
 ## Dos cosas que no están en el menú

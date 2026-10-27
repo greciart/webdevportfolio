@@ -167,3 +167,5 @@ Abre las dos versiones lado a lado y léelas como visitante, no como quien las e
 * Manda el sitemap y observa Search Console un par de semanas
 
 Lo último no es opcional. Casi todos los errores de este artículo son invisibles en el navegador y evidentes en un informe de rastreo, que es una combinación frustrante hasta que te acostumbras a leerlo.
+
+¿No usas Astro y solo quieres un sitio personal pequeño en dos idiomas sin nada de esto? Mi [plantilla Frutiger Aero Personal Site](/es/shop/templates/) trae dos idiomas incluidos, en HTML, CSS y JavaScript puros.

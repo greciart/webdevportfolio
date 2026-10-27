@@ -147,6 +147,8 @@ Although this won't stop automated bots, it provides a stronger legal foundation
 
 While many artists dislike watermarks, a subtle repeating watermark with low opacity makes automated removal considerably more difficult than placing a single logo in one corner.
 
+Doing that by hand on a whole folder of images gets old fast, which is why I made [BWM](/lab/), a small free tool that adds text watermarks to images in bulk. It comes as a command line version and a desktop app, and it's open source.
+
 ### Add NoAI Directives
 
 If you own your own website, consider adding AI-related directives through your robots.txt file or HTML meta tags, such as:
@@ -167,7 +169,7 @@ In my opinion, the most effective long-term solution is having your own website.
 
 Unlike social media platforms, a personal website gives you much greater control over how your content is indexed, displayed, and accessed. You can configure robots.txt rules, manage metadata, choose your hosting environment, and implement additional security measures that simply aren't available on most portfolio platforms.
 
-If you'd like to learn how to configure a robots.txt file, even if you don't have a technical background, I explain the entire process step by step on my blog.
+If you'd like to learn how to configure a robots.txt file, even if you don't have a technical background, I explain the entire process step by step in [how to create a robots.txt file to block AI crawlers](/blog/posts/create-robots-txt-block-ai-crawlers/).
 
 ![Glowing digital padlock over a circuit board, symbolizing content authenticity, copyright protection, and security against AI training scrapers.](/images/posts/ai-content-protection-lock.webp)
 

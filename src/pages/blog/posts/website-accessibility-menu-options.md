@@ -159,6 +159,8 @@ html[data-a11y-motion="off"] *::after {
 
 Setting duration to `0.001ms` instead of `none` is the trick that keeps `animationend` handlers firing, so any code waiting for an animation to finish still gets its event.
 
+Games need the same thinking, and usually get it less. In [SERPERWAVE](/blog/posts/serperwave-vaporwave-snake-game-phaser/), my vaporwave snake game, there's an effects slider that takes screen shake, glitch and static down to zero, and the game stays fully playable there.
+
 One place this leaked at first: the looping video previews in my project grid are `<video>` elements, and CSS cannot pause a video. Reducing motion has to reach them in script as well, or the single most animated thing on the page keeps animating after you asked it to stop.
 
 ## Two things that are not in the menu

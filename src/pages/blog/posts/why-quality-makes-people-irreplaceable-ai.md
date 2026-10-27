@@ -95,6 +95,8 @@ These decisions come from experience and understanding.
 
 AI can suggest possibilities, but a skilled designer knows which possibilities actually make sense.
 
+For a real example, in the [Dana Shape Shopify store](/portfolio/projects/dana-shape-shopify-ecommerce-website/) the wireflow was mapped before any visual design, and the filters were built around fit, because that's the question a shapewear customer is actually asking.
+
 ![Hand using a digital stylus to check off a quality assurance task list on a tablet, highlighting the human-in-the-loop approach to professional web design.](/images/posts/human-quality-assurance-web-design.webp)
 
 ## The Future Belongs to Designers Who Use AI as a Tool

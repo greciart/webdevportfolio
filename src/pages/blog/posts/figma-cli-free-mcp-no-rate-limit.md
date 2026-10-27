@@ -142,7 +142,7 @@ A few habits that make the difference between a novelty and something you actual
 
 Honest assessment: this is not a replacement for designing. It's a very fast pair of hands.
 
-Where it pays off is anything mechanical and specification-driven, the work that's tedious precisely because it's already decided. Where it won't help is the judgment: hierarchy, rhythm, what to cut. That's still you.
+Where it pays off is anything mechanical and specification-driven, the work that's tedious precisely because it's already decided. Where it won't help is the judgment: hierarchy, rhythm, what to cut. That's still you. (It's the same split I used to build [FOCUS TIME](/blog/posts/focus-time-gamified-adhd-productivity-app/), a gamified productivity app that started as a Figma file and a spec before any AI touched it.)
 
 The reason it's compelling compared to the alternatives is the constraint it removes. Working locally with no API keys and no rate limits means you can iterate as much as you want without a meter running, which changes how willing you are to experiment.
 

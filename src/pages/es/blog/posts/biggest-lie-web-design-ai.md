@@ -108,7 +108,7 @@ Pero si tu ventaja es la calidad, ya no estás compitiendo realmente con la mult
 
 No escribí esto porque suene inspirador en un carrusel de LinkedIn. Lo escribí porque he vivido la diferencia.
 
-He elegido la opción lenta más de una vez. He dedicado horas extra a refinar detalles que la mayoría nunca va a notar conscientemente: el kerning de un titular, la curva de aceleración de un menú, cómo se comporta un formulario cuando alguien escribe algo mal. Y esos detalles han sido consistentemente la razón por la que los clientes vuelven y me recomiendan a otras personas.
+He elegido la opción lenta más de una vez. He dedicado horas extra a refinar detalles que la mayoría nunca va a notar conscientemente: el kerning de un titular, la curva de aceleración de un menú, cómo se comporta un formulario cuando alguien escribe algo mal. Y esos detalles han sido consistentemente la razón por la que los clientes vuelven y me recomiendan a otras personas. ([Ellos lo dicen mejor que yo](/es/reviews/).)
 
 La IA no es la razón por la que la gente deja de crecer. El miedo sí. Creer que no hay futuro sí. Creer que no tienes nada único que ofrecer sí.
 

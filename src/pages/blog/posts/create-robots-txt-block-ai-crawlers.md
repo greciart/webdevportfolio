@@ -162,8 +162,8 @@ Consider also:
 * Using copyright notices on your website.
 * Embedding IPTC metadata in images.
 * Publishing lower-resolution versions of artwork.
-* Digitally signing files with Adobe Content Authenticity.
-* Adding visible or subtle watermarks where appropriate.
+* Digitally signing files with Adobe Content Authenticity (I walk through it in [how to protect your artwork from AI training](/blog/posts/protect-artwork-from-ai-training/)).
+* Adding visible or subtle watermarks where appropriate. If you have a whole folder to do, [BWM](/lab/) is a free tool I made that watermarks images in bulk.
 * Reviewing each platform's AI training policies before uploading your work.
 
 No single technique can completely prevent unauthorized scraping, but combining several methods significantly increases the effort required to reuse your work.

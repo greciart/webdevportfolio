@@ -23,8 +23,8 @@ const en: ShopHubCopy = {
   description:
     "Hand-made 3D models for Blender, Y2K and Frutiger Aero website templates, and free downloads, all made by a web designer and 3D artist.",
   heroEyebrow: "Shop",
-  heroTitle: "Things I make,",
-  heroTitleAccent: "ready for your project",
+  heroTitle: "3D models, website templates &",
+  heroTitleAccent: "freebies, made by hand",
   heroIntro:
     "The same craft I put into client work, packed so you can use it today. 3D models, website templates and a few things I give away for free. Everything here is made by me, by hand.",
   heroNote:
@@ -65,8 +65,8 @@ const es: ShopHubCopy = {
   description:
     "Modelos 3D para Blender hechos a mano, plantillas web Y2K y Frutiger Aero, y descargas gratis, de una diseñadora web y artista 3D.",
   heroEyebrow: "Tienda",
-  heroTitle: "Cosas que hago,",
-  heroTitleAccent: "listas para tu proyecto",
+  heroTitle: "Modelos 3D, plantillas web y",
+  heroTitleAccent: "descargas gratis, hechos a mano",
   heroIntro:
     "El mismo cuidado que pongo en el trabajo con clientes, empaquetado para que lo uses hoy. Modelos 3D, plantillas web y algunas cosas que regalo. Todo lo que ves aquí lo hice yo, a mano.",
   heroNote:

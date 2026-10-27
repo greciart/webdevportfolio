@@ -167,3 +167,5 @@ Open both versions side by side and read them as a visitor, not as the person wh
 * Submit the sitemap and watch Search Console for a couple of weeks
 
 The last one is not optional. Almost every mistake in this article is invisible in a browser and obvious in a crawl report, which is a frustrating combination until you get used to reading it.
+
+Not on Astro, and just want a small personal site in two languages without any of this? My [Frutiger Aero Personal Site template](/shop/templates/) has two languages built in, in plain HTML, CSS and JavaScript.

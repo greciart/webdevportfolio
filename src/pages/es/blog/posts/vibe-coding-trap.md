@@ -189,6 +189,8 @@ No uses la IA como:
 
 Verifica siempre lo que genera.
 
+Si quieres un ejemplo concreto de cómo se ve eso, aquí cuento [cómo construí FOCUS TIME](/es/blog/posts/focus-time-gamified-adhd-productivity-app/): primero Figma, después una especificación escrita, y recién entonces la IA para acelerar la implementación.
+
 ## Recomendaciones de seguridad para sitios y apps asistidos por IA
 
 Si estás construyendo con IA, estas prácticas no son negociables.

@@ -8,6 +8,7 @@ import { Icon } from "astro-icon/components";
 import { shopCopy, getShopProducts } from "../../i18n/shop";
 import { getLangFromUrl, localizePath } from "../../i18n/utils";
 import { buildSlides, shopExtrasFor } from "../../lib/carousel";
+import { digitalOffer } from "../../lib/offer";
 
 const lang = getLangFromUrl(Astro.url);
 const c = shopCopy[lang];
@@ -34,6 +35,10 @@ const p = (path: string) => localizePath(path, lang);
 
 const { pageTitle, description } = c;
 
+// The share card is a product, not the generic portfolio card.
+const retroSun = products.find((product) => product.id === "retro-sun")!;
+const ogimage = { url: retroSun.posterLarge, alt: retroSun.alt };
+
 const filterKeys = ["all", "neon", "cute", "props"] as const;
 
 const formatPrice = (price: number) =>
@@ -57,13 +62,7 @@ const schema = [
         image: slidesById.get(product.id)!.map((s) => new URL(s.full!, Astro.site).href),
         url: product.url,
         brand: { "@type": "Brand", name: "Grecia V." },
-        offers: {
-          "@type": "Offer",
-          price: product.price.toFixed(2),
-          priceCurrency: "USD",
-          availability: "https://schema.org/InStock",
-          url: product.url,
-        },
+        offers: digitalOffer(product.price, product.url),
       },
     })),
   },
@@ -85,7 +84,7 @@ const bodyText =
 const sectionWrap = "scroll-m-24 px-8 py-16 max-sm:px-4 max-sm:py-10";
 ---
 
-<Layout pageTitle={pageTitle} description={description} schema={schema}>
+<Layout pageTitle={pageTitle} description={description} schema={schema} ogimage={ogimage}>
   <!-- ===================== HERO ===================== -->
   <section class="relative px-8 pb-8 pt-16 max-sm:px-4 max-sm:pt-10">
     <div class="blur-circle"></div>
@@ -371,9 +370,9 @@ const sectionWrap = "scroll-m-24 px-8 py-16 max-sm:px-4 max-sm:py-10";
   });
 
   // --- Animated previews -----------------------------------------------------
-  // The grid shows stills. The video for an animated model is only fetched the
-  // first time someone hovers it (or, on touch screens, scrolls it into the
-  // middle of the view), so the page does not pull five MP4s on load.
+  // Animated models play on their own while their card is on screen and pause
+  // when it leaves. The MP4 is only fetched the first time the card shows up,
+  // so the page does not pull five videos on load.
   const root = document.documentElement;
   const motionOff = () =>
     window.matchMedia("(prefers-reduced-motion: reduce)").matches ||
@@ -393,19 +392,8 @@ const sectionWrap = "scroll-m-24 px-8 py-16 max-sm:px-4 max-sm:py-10";
   };
 
   const media = document.querySelectorAll<HTMLElement>("[data-shop-media]");
-  const canHover = window.matchMedia("(hover: hover)").matches;
 
-  if (canHover) {
-    media.forEach((box) => {
-      const video = box.querySelector("video");
-      const card = box.closest("li");
-      if (!video || !card) return;
-      card.addEventListener("mouseenter", () => play(video));
-      card.addEventListener("mouseleave", () => stop(video));
-      card.addEventListener("focusin", () => play(video));
-      card.addEventListener("focusout", () => stop(video));
-    });
-  } else if ("IntersectionObserver" in window) {
+  if ("IntersectionObserver" in window) {
     const observer = new IntersectionObserver(
       (entries) => {
         for (const entry of entries) {
@@ -415,7 +403,7 @@ const sectionWrap = "scroll-m-24 px-8 py-16 max-sm:px-4 max-sm:py-10";
           else stop(video);
         }
       },
-      { rootMargin: "-30% 0px -30% 0px" },
+      { threshold: 0.4 },
     );
     media.forEach((box) => box.querySelector("video") && observer.observe(box));
   }

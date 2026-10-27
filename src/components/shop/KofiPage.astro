@@ -10,6 +10,8 @@ import { Icon } from "astro-icon/components";
 import { kofiLabels, type KofiItem } from "../../i18n/kofi";
 import { getLangFromUrl, localizePath } from "../../i18n/utils";
 import { buildSlides, shopExtrasFor } from "../../lib/carousel";
+import { digitalOffer } from "../../lib/offer";
+import { ogFrom } from "../../lib/og";
 
 interface Props {
   items: KofiItem[];
@@ -74,17 +76,14 @@ const schema = [
         image: slides[i].map((s) => new URL(s.full!, Astro.site).href),
         url: item.url,
         brand: { "@type": "Brand", name: "Grecia V." },
-        offers: {
-          "@type": "Offer",
-          price: item.price.toFixed(2),
-          priceCurrency: "USD",
-          availability: "https://schema.org/InStock",
-          url: item.url,
-        },
+        offers: digitalOffer(item.price, item.url),
       },
     })),
   },
 ];
+
+// The share card is the first item on the page, not the generic portfolio card.
+const ogimage = await ogFrom(items[0].image, items[0].alt);
 
 const cardBorder =
   "relative rounded-2xl bg-linear-to-br from-mint-300 dark:from-mint-600 to-mint-50 dark:to-mint-200/5 p-[2px] transition-all duration-500 hover:shadow-[0_10px_50px_rgba(13,188,130,0.2)]";
@@ -97,7 +96,7 @@ const bodyText =
 const sectionWrap = "scroll-m-24 px-8 py-16 max-sm:px-4 max-sm:py-10";
 ---
 
-<Layout pageTitle={c.pageTitle} description={c.description} schema={schema}>
+<Layout pageTitle={c.pageTitle} description={c.description} schema={schema} ogimage={ogimage}>
   <!-- ===================== HERO ===================== -->
   <section class="relative px-8 pb-8 pt-16 max-sm:px-4 max-sm:pt-10">
     <div class="blur-circle"></div>
