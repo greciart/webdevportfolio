@@ -22,7 +22,6 @@ Trece niveles después tengo un sistema de combos con un medidor que se vacía, 
 Eso es **SERPERWAVE**: una versión nostálgica y vaporwave del juego de la viborita con el que crecimos, con estética de máquina arcade de los 90 y gratis para jugar en el navegador. El mismo juego sencillo de siempre, pero más bonito, más brillante y muchísimo más rosado.
 
 - **Juégalo gratis:** [grecia-v.itch.io/serperwave](https://grecia-v.itch.io/serperwave)
-- **Código fuente:** [github.com/GVPV12/serperwave](https://github.com/GVPV12/serperwave)
 
 <iframe style="width:100%;aspect-ratio:16/9;border:0;border-radius:12px" src="https://www.youtube-nocookie.com/embed/quV0Fv8Er4Y" title="SERPERWAVE: juego de la viborita vaporwave de los 90, tráiler oficial" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
@@ -100,7 +99,6 @@ Y los píxeles se mantienen nítidos: el juego solo escala en números enteros, 
 ## Juega SERPERWAVE
 
 - **itch.io (gratis, en el navegador):** [grecia-v.itch.io/serperwave](https://grecia-v.itch.io/serperwave)
-- **GitHub:** [github.com/GVPV12/serperwave](https://github.com/GVPV12/serperwave)
 - **YouTube:** [tráiler oficial](https://www.youtube.com/watch?v=quV0Fv8Er4Y) y [gameplay completo](https://www.youtube.com/watch?v=LXP5P6Qlcwc)
 - **Substack:** [la historia completa en mi Substack](https://greciart.substack.com/p/snake-game-but-its-a-90s-arcade-cabinet)
 

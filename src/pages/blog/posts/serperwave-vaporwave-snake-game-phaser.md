@@ -22,7 +22,6 @@ Thirteen levels later I have a combo system with a decaying meter, twenty myster
 That's **SERPERWAVE**: a free, nostalgic vaporwave version of the snake game you grew up with, styled like a 90s arcade cabinet and playable right in your browser. The same simple game, just prettier, glowier and a lot more pink.
 
 - **Play it free in your browser:** [grecia-v.itch.io/serperwave](https://grecia-v.itch.io/serperwave)
-- **Source code:** [github.com/GVPV12/serperwave](https://github.com/GVPV12/serperwave)
 
 <iframe style="width:100%;aspect-ratio:16/9;border:0;border-radius:12px" src="https://www.youtube-nocookie.com/embed/quV0Fv8Er4Y" title="SERPERWAVE: Free 90s Vaporwave Snake Game, Official Trailer" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
@@ -100,7 +99,6 @@ And the pixels stay crisp: the game only scales by whole numbers, so it never lo
 ## Play SERPERWAVE
 
 - **itch.io (free, in your browser):** [grecia-v.itch.io/serperwave](https://grecia-v.itch.io/serperwave)
-- **GitHub:** [github.com/GVPV12/serperwave](https://github.com/GVPV12/serperwave)
 - **YouTube:** [official trailer](https://www.youtube.com/watch?v=quV0Fv8Er4Y) and [full gameplay walkthrough](https://www.youtube.com/watch?v=LXP5P6Qlcwc)
 - **Substack:** [Snake game, but it's a 90s arcade cabinet](https://greciart.substack.com/p/snake-game-but-its-a-90s-arcade-cabinet)
 
