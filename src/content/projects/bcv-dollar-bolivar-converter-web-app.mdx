@@ -1,7 +1,7 @@
 ---
 title: 'BCV Converter: A Dollar to Bolívar Web App with the Official BCV Rate'
 pubDate: 2026-10-26
-description: 'Case study: a free web app that converts US dollars and euros to Venezuelan bolívars with today''s official BCV rate, a rate history chart and a liquid glass interface. Built with HTML, CSS, JavaScript and Tailwind CSS.'
+description: 'Case study: a free web app that converts US dollars and euros to Venezuelan bolívars with today''s official BCV rate, read straight from the BCV website, with a rate history chart and a liquid glass interface. Built with HTML, CSS, JavaScript and Tailwind CSS.'
 languages: ["html", "css", "javascript", "tailwind", "netlify", "uiux"]
 image:
   url: "../../assets/projects/convertidor-bcv-dolar-bolivares-tasa-oficial-holograma.webp"
@@ -13,25 +13,29 @@ video:
 gallery:
   - url: "../../assets/projects/convertidor-bcv-dolar-bolivares-tasa-oficial-holograma.webp"
     alt: "BCV Converter web app in the Holograma skin: today's official BCV rate of 886.23 Bs per dollar, a 30 day rate chart and a USD to bolívar calculator in a purple liquid glass interface"
+  - url: "../../assets/projects/convertidor-bcv-dolar-euro-bolivares-skins.webp"
+    alt: "Euro to bolívar converter at the official BCV rate of 994.04 Bs per euro, shown side by side in the three skins: Fluido (blue), Holograma (purple) and Esmeralda (green)"
   - url: "../../assets/projects/convertidor-bcv-dolar-bolivares-tasa-oficial-2.webp"
     alt: "BCV Converter in the blue Fluido skin, showing the official dollar rate, the rate history chart and the USD to Bs converter"
   - url: "../../assets/projects/convertidor-bcv-dolar-bolivares-tasa-oficial-3.webp"
     alt: "Dollar to bolívar converter in the Esmeralda skin, with quick amount buttons from $1 to $100 and the equivalent in bolívars at the BCV rate"
   - url: "../../assets/projects/convertidor-bcv-dolar-bolivares-tasa-oficial-4.webp"
-    alt: "Settings panel of the BCV Converter with Spanish and English, three skins (Fluido, Holograma, Esmeralda) and options for auto skin, price only view and other BCV currencies"
+    alt: "Settings panel of the BCV Converter with Spanish and English, three skins (Fluido, Holograma, Esmeralda) and options for auto skin, random skin, price only view and the Verify button"
 ---
 
 import Button from "/src/components/Button.astro"
 import Video from '/src/components/Video.astro';
+import { Image } from 'astro:assets';
 import poster from "../../assets/projects/bcv-converter-preview-poster.webp";
+import skins from "../../assets/projects/convertidor-bcv-dolar-euro-bolivares-skins.webp";
 
 <Video provider="file" src="/videos/bcv-dollar-bolivar-converter-demo.mp4" poster={poster.src} alt="Video demo of the BCV Converter web app: converting dollars to bolívars with today's official BCV rate, switching skins and the rate history chart" aria-label="Play the BCV Converter demo video" />
 
-In Venezuela, checking the BCV rate is part of the morning routine. Before you pay for groceries, quote a client or send money to your family, you need to know what one dollar is worth in bolívars today, according to the official rate of the Banco Central de Venezuela.
+In Venezuela, checking the BCV rate is part of the morning routine. Before you pay for groceries, quote a client or send money to your family, you need to know what one dollar (or one euro) is worth in bolívars today, according to the official rate of the Banco Central de Venezuela.
 
 Most of the places that tell you are either slow, buried in ads, or look like they were designed in 2009. I already had a [desktop version in Python](https://github.com/GVPV12/usdtoves), but a desktop app has to be installed, and nobody installs anything to do a two second calculation on their phone.
 
-So I designed the web version: **a dollar to bolívar converter that opens in a browser tab, shows today's BCV rate before anything else and converts while you type.**
+So I designed the web version: **a dollar and euro to bolívar converter that opens in a browser tab, shows today's BCV rate before anything else and converts while you type.**
 
 <div style="display: flex; justify-content: center; gap: 16px; margin: 2rem 0; flex-wrap: wrap;">
 <Button
@@ -51,16 +55,20 @@ So I designed the web version: **a dollar to bolívar converter that opens in a 
 A currency converter has one job, and people use it in a hurry. That set the priorities for the whole interface:
 
 1. **The rate first.** Today's BCV rate is the biggest thing on the screen, with how much it moved in the last 30 days right under it. Most visits end there.
-2. **Converting second.** The calculator sits next to the rate, with quick buttons for $1, $10, $15, $30, $50 and $100, the amounts people actually check.
-3. **Everything else is optional.** The chart, the extra currencies and the settings are there for whoever wants them, without getting in the way of whoever doesn't.
+2. **Converting second.** The calculator sits next to the rate, with quick buttons for 1, 10, 15, 30, 50 and 100, the amounts people actually check, in dollars or euros.
+3. **Everything else is optional.** The chart, the settings and the extra buttons are there for whoever wants them, without getting in the way of whoever doesn't.
 
 ## Interface decisions
 
-**Live conversion.** The result updates on every keystroke, in both directions: USD to Bs and Bs to USD. There is a Convert button for people who expect one, but you never need to press it.
+**Live conversion.** The result updates on every keystroke, in both directions: USD or EUR to Bs, and Bs back. There is a Convert button for people who expect one, but you never need to press it.
+
+**Dollar or euro, one tap.** The BCV publishes both rates, and plenty of people get paid or quote in euros. A button in the header switches the whole app between dollar and euro: the big rate, the calculator, the quick amounts and the chart. No second page, no dropdown.
 
 **A rate history chart.** The rate in bolívars changes almost every day, so the number alone doesn't say much. The 7, 30 and 90 day chart shows the trend at a glance, and the percentage change puts it in plain words.
 
 **Liquid glass, in three skins.** Translucent panels with soft glow over a dark gradient, in three skins: Fluido (blue), Holograma (iridescent) and Esmeralda (green). You can pick one, rotate them automatically or get a random one each time you open the page. It's a utility, but there's no reason a utility has to look sad.
+
+<Image src={skins} alt="Euro to bolívar converter at the official BCV rate of 994.04 Bs per euro, shown side by side in the three skins: Fluido (blue), Holograma (purple) and Esmeralda (green)" widths={[480, 960, 1444]} sizes="(max-width: 768px) 100vw, 768px" loading="lazy" decoding="async" />
 
 **A price only view.** For people who just want the number, a toggle hides the chart and the percentage and leaves the rate on its own.
 
@@ -72,22 +80,27 @@ A currency converter has one job, and people use it in a hurry. That set the pri
 
 The app uses no frameworks and needs no build step: **HTML, CSS and vanilla JavaScript**, with **Tailwind CSS** for the layout.
 
-- The official dollar and euro rates, current and historical, come from **DolarApi Venezuela**.
-- Yuan, Turkish lira and ruble, the other official BCV currencies, come from **BCV Today**, which also works as a backup for the dollar and euro.
-- Every setting is saved in the browser, so the converter opens the way you left it.
+The first version got the rate from a third party API, and that was the weak spot: when the BCV published the new rate in the afternoon, the API sometimes took hours to catch up. So now the rate comes from the source:
+
+- Every 30 minutes, a **GitHub Action** runs a small Node script that reads the dollar and euro rates, with their value date, straight from **bcv.org.ve**.
+- If the rate changed, it saves it to a `rates.json` file and commits it, and **Netlify** publishes the update on its own.
+- The site reads that file and **DolarApi** at the same time and shows whichever is most recent, so the new rate shows up as soon as the BCV publishes it.
+- The script rejects any rate that jumps more than 25% from the last one. A typo on the BCV website shouldn't become the rate on your phone.
+- The 7, 30 and 90 day history comes from **DolarApi Venezuela**.
 - If there is no connection, it shows the last rate it loaded instead of an empty screen.
+- Every setting is saved in the browser, so the converter opens the way you left it.
 - It's fully responsive, from a phone to a large monitor, and works in Spanish and English.
-- It's deployed on **Netlify**.
 
 ## Stack
 
 - **HTML, CSS and JavaScript**, no build tools
 - **Tailwind CSS** for the layout, with hand-written CSS for the liquid glass effects and skins
-- **DolarApi** and **BCV Today** for the official BCV exchange rates
-- **Netlify** for hosting
+- **GitHub Actions** and **Node 20**, with zero dependencies, to read the official rate from the BCV website
+- **DolarApi** for the rate history and as a fallback
+- **Netlify** for hosting, redeploying on every commit
 
 ## Result
 
-A free BCV converter that opens fast, answers the one question people open it for right away, and still has room for a chart, three skins and a bit of personality. Save it to your bookmarks or your phone's home screen and it works like an app.
+A free BCV converter that opens fast, answers the one question people open it for right away, in dollars or euros, and still has room for a chart, three skins and a bit of personality. Save it to your bookmarks or your phone's home screen and it works like an app.
 
-The rate can vary depending on the day, the time and how stable the API is, so it's a good idea to verify it on the [Banco Central de Venezuela](https://www.bcv.org.ve/) website with the Verify button. If the app loses its connection to the API, the status dot next to "BCV · Live" turns red instead of green.
+The rate is read from the BCV website, but it's still a good idea to compare it on the [Banco Central de Venezuela](https://www.bcv.org.ve/) page with the Verify button, especially right when the new rate comes out. If the app loses its connection, the status dot in the header turns red instead of green.
