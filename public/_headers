@@ -14,12 +14,8 @@
 /images/*
   Cache-Control: public, max-age=2592000
 
-# Feeds are for readers, not for the index. Search Console files them under
-# "crawled, currently not indexed", which is correct but reads like a fault;
-# saying it out loud makes it a decision instead of a symptom. Google can still
-# crawl the feed and follow the links inside it.
-/rss.xml
-  X-Robots-Tag: noindex, follow
-
-/es/rss.xml
-  X-Robots-Tag: noindex, follow
+# Los feeds (/rss.xml, /es/rss.xml) NO llevan X-Robots-Tag: noindex a proposito.
+# Google nunca indexa un feed como pagina de todas formas; con noindex, Search
+# Console abria una categoria aparte ("Excluida por noindex") y mandaba un correo
+# de "nuevo motivo" cada vez que reaparecia. Sin el header el feed cae en
+# "Rastreada: actualmente sin indexar", que ya existe y no genera avisos.
