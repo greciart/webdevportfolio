@@ -13,7 +13,7 @@ tags:
     "Security & Privacy",
     "Developer Tools"
   ]
-languages: ["typescript"]
+languages: ["typescript", "claude"]
 ---
 
 Me cansé. Me cansé de la publicidad (que ahora encima es hecha con IA), de las interfaces que no me gustan y de los reproductores de música que vienen instalados por defecto en los sistemas operativos.
@@ -83,6 +83,8 @@ La app de escritorio usa **Tauri 2, React y Vite**, y la lógica compartida est�
 Tauri permite crear apps de escritorio con tecnologías web para la interfaz y piezas nativas para integrarse con el sistema operativo. React se encarga de la interfaz y Vite del entorno de desarrollo y compilación. La biblioteca musical vive en **SQLite**, en local, y la app lee los metadatos de tus archivos de audio para organizar la colección.
 
 Elegí una arquitectura que separa la lógica de la app, los componentes visuales y los recursos compartidos. Eso importa muchísimo en un proyecto donde la interfaz puede cambiar por completo según la skin.
+
+Usé Claude Code para ayudarme con la programación, pero la idea, la UX y el diseño UI de cada skin los hizo una persona, no una IA.
 
 ![Dos skins de STARPLAYER reproduciendo música: una ventana retro monocromática con una portada calificada con cinco estrellas y una ventana de cristal morado neón con un visualizador de audio animado](../../../../assets/blog/starplayer-two-skins-now-playing.webp)
 

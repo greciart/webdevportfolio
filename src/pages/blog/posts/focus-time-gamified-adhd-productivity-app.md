@@ -96,7 +96,7 @@ I made a video that goes mechanic by mechanic: which ones are aimed at ADHD brai
 
 <iframe style="width:100%;aspect-ratio:16/9;border:0;border-radius:12px" src="https://www.youtube-nocookie.com/embed/pKM_wpzLSVk" title="How I Designed a Productivity App That Actually Works for ADHD and Non-ADHD Brains" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-Short on time (no judgment, it's on brand)? [Here's the short version](https://www.youtube.com/watch?v=H1q0V8ISxkE).
+There's also a [short version](https://www.youtube.com/watch?v=H1q0V8ISxkE).
 
 ## It's not just an ADHD problem anymore
 

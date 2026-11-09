@@ -52,6 +52,23 @@ Disallow: /
 User-agent: img2dataset
 Disallow: /
 
+# anthropic-ai y Claude-Web son nombres antiguos; el crawler actual de
+# Anthropic es ClaudeBot.
+User-agent: ClaudeBot
+Disallow: /
+
+User-agent: meta-externalagent
+Disallow: /
+
+User-agent: Diffbot
+Disallow: /
+
+User-agent: ImagesiftBot
+Disallow: /
+
+User-agent: Timpibot
+Disallow: /
+
 # Allow search engines
 User-agent: *
 Allow: /

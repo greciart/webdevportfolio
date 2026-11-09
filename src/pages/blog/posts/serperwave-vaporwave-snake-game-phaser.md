@@ -12,7 +12,7 @@ tags:
     "Creative Coding",
     "Web Development"
   ]
-languages: ["typescript", "javascript"]
+languages: ["typescript", "javascript", "claude"]
 ---
 
 I said I was going to make a snake game. That was the whole plan. Eat food, get longer, don't hit the wall, ship it in a weekend.
@@ -30,6 +30,8 @@ That's **SERPERWAVE**: a free, nostalgic vaporwave version of the snake game you
 ## Why Phaser and not Godot
 
 I spent way too long deciding which engine to use for my first game good enough to publish. I wanted to use Godot, and I still plan to, but I think it shines for other kinds of games. Or maybe I just prefer sticking to what I know, and what I know is web development. For a simple 2D arcade game that should open instantly in a browser tab, **Phaser** with TypeScript was the obvious fit.
+
+I used Claude Code to help with the programming, but the idea, the game design and the UI/UX design were all done by a human, not by AI.
 
 ## How it plays
 
@@ -54,7 +56,7 @@ Outside the boxes there are four more pickups. Apples restore a full heart, star
 
 ![SERPERWAVE title screen with the Start, Mode, How to Play, Options and Records menu over a collage of neon levels from the vaporwave snake game](../../../assets/blog/serperwave-snake-game-development-screens.webp)
 
-## 13 neon levels (yes, that's the final count)
+## 13 neon levels
 
 MIAMI SUNSET · NEON GRID · TERMINAL · AQUA / 水 · TOKYO NIGHT · MAGIC HOUR · OUTRUN · DIGITAL VOID · VAPOR TEMPLE · SYSTEM OVERLOAD · GAME BOY · GRID HORIZON · LIGHTFALL
 

@@ -96,7 +96,7 @@ Hice un video que va mecánica por mecánica: cuáles apuntan a cerebros con TDA
 
 <iframe style="width:100%;aspect-ratio:16/9;border:0;border-radius:12px" src="https://www.youtube-nocookie.com/embed/pKM_wpzLSVk" title="Cómo diseñé una app de productividad que funciona para cerebros con y sin TDAH" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-¿Poco tiempo? (Cero juicio, es muy TDAH de tu parte.) [Aquí está la versión corta](https://www.youtube.com/watch?v=H1q0V8ISxkE).
+También hay una [versión corta](https://www.youtube.com/watch?v=H1q0V8ISxkE).
 
 ## Ya no es solo cosa del TDAH
 

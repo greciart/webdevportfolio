@@ -50,8 +50,7 @@ Tiene nueve pestañas:
 - **Study Log**: un seguimiento de mis sesiones de estudio de japonés con valoraciones, notas y una galería de imágenes
 - **日本語**: el registro de estudio filtrado solo a japonés, con barras de progreso
 
-O sea, es mitad commonplace book, mitad tracker personal y mitad pequeña base de datos visual. (Sí, son tres mitades. Así es el TDAH.)
-
+O sea, es en parte commonplace book, en parte tracker personal y en parte una pequeña base de datos visual.
 ---
 
 ## Por qué archivos JSON y no una app

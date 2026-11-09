@@ -13,7 +13,7 @@ tags:
     "Security & Privacy",
     "Developer Tools"
   ]
-languages: ["typescript"]
+languages: ["typescript", "claude"]
 ---
 
 I got tired. Tired of ads (which are now AI-generated, because of course they are), tired of interfaces I don't like, and tired of the music players that come preinstalled with every operating system.
@@ -83,6 +83,8 @@ The desktop app uses **Tauri 2, React and Vite**, and the shared logic is writte
 Tauri lets you build desktop apps with web technologies for the interface and native pieces to talk to the operating system. React handles the UI and Vite the dev and build setup. The music library lives in **SQLite**, locally, and the app reads the metadata embedded in your audio files to organize the collection.
 
 I picked an architecture that keeps the app logic, the visual components and the shared resources apart. That matters a lot in a project where the interface can change completely depending on the skin.
+
+I used Claude Code to help with the programming, but the idea, the UX and the UI design of every skin were done by a human, not by AI.
 
 ![Two STARPLAYER skins playing music: a monochrome retro window with a five-star rated album cover and a neon purple glass window with an animated audio visualizer](../../../assets/blog/starplayer-two-skins-now-playing.webp)
 

@@ -19,8 +19,6 @@ languages: ["AI", "LLM"]
 
 ![A close-up of a sturdy padlock secured on a teal door, symbolizing website security and the controlled access provided by a robots.txt file.](/images/posts/website-content-security-shield.webp)
 
-## How to Create a robots.txt File to Block AI Crawlers from Scraping Your Website
-
 Many AI systems crawl publicly available websites to gather text, images, and other data for training large language models. While not every crawler respects website owners' preferences, many legitimate companies do honor exclusion rules when they're properly configured.
 
 One of the easiest steps you can take is creating a **robots.txt** file. It won't stop every scraper on the internet, but it tells compliant AI crawlers and search bots which parts of your website they shouldn't access.
@@ -120,7 +118,7 @@ These rules tell each crawler not to access any page on your website.
 
 As AI companies introduce new crawlers, you can update this file with additional entries.
 
-## Step 4. Upload the File
+### Step 4. Upload the File
 
 Place **robots.txt** in the root directory of your website.
 

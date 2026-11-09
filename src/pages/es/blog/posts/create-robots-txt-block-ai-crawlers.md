@@ -19,8 +19,6 @@ languages: ["AI", "LLM"]
 
 ![Primer plano de un candado robusto asegurado en una puerta color verde azulado, simbolizando la seguridad de un sitio web y el acceso controlado que proporciona un archivo robots.txt.](/images/posts/website-content-security-shield.webp)
 
-## Cómo crear un archivo robots.txt para impedir que los rastreadores de IA raspen tu sitio
-
 Muchos sistemas de IA rastrean sitios web públicos para recopilar texto, imágenes y otros datos con los que entrenar modelos de lenguaje. Aunque no todos los rastreadores respetan las preferencias de quien posee el sitio, muchas empresas legítimas sí honran las reglas de exclusión cuando están bien configuradas.
 
 Uno de los pasos más sencillos que puedes dar es crear un archivo **robots.txt**. No va a detener a todos los raspadores de internet, pero le dice a los rastreadores de IA y a los bots de buscadores que sí cumplen las reglas a qué partes de tu sitio no deberían acceder.
@@ -120,7 +118,7 @@ Estas reglas le dicen a cada rastreador que no acceda a ninguna página de tu si
 
 A medida que las empresas de IA lancen rastreadores nuevos, puedes actualizar este archivo con más entradas.
 
-## Paso 4. Sube el archivo
+### Paso 4. Sube el archivo
 
 Coloca **robots.txt** en el directorio raíz de tu sitio web.
 

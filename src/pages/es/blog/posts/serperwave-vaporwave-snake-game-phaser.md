@@ -12,7 +12,7 @@ tags:
     "Creative Coding",
     "Web Development"
   ]
-languages: ["typescript", "javascript"]
+languages: ["typescript", "javascript", "claude"]
 ---
 
 Dije que iba a hacer un juego de la viborita. Ese era todo el plan. Comer, crecer, no chocar con la pared y publicarlo en un fin de semana.
@@ -30,6 +30,8 @@ Eso es **SERPERWAVE**: una versión nostálgica y vaporwave del juego de la vibo
 ## Por qué Phaser y no Godot
 
 Le di demasiadas vueltas a qué motor usar para mi primer juego lo bastante bueno como para publicarlo. Quería usar Godot, y lo voy a usar en el futuro, pero creo que brilla más en otro tipo de juegos. O quizás simplemente prefiero quedarme con lo que conozco, y lo que conozco es el desarrollo web. Para un arcade 2D sencillo que tiene que abrirse al instante en una pestaña del navegador, **Phaser** con TypeScript era la opción obvia.
+
+Usé Claude Code para ayudarme con la programación, pero la idea, el game design y el diseño UI/UX los hizo una persona, no una IA.
 
 ## Cómo se juega
 
@@ -54,7 +56,7 @@ Fuera de las cajas hay cuatro objetos más. Las manzanas te devuelven un corazó
 
 ![Pantalla de título de SERPERWAVE con el menú Start, Mode, How to Play, Options y Records sobre un collage de niveles neón del juego de la viborita vaporwave](../../../../assets/blog/serperwave-snake-game-development-screens.webp)
 
-## 13 niveles neón (sí, es la cifra final)
+## 13 niveles neón
 
 MIAMI SUNSET · NEON GRID · TERMINAL · AQUA / 水 · TOKYO NIGHT · MAGIC HOUR · OUTRUN · DIGITAL VOID · VAPOR TEMPLE · SYSTEM OVERLOAD · GAME BOY · GRID HORIZON · LIGHTFALL
 
