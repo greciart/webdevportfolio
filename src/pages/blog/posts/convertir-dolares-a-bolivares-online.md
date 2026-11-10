@@ -88,19 +88,25 @@ This is the source. Every other tool on this list, mine included, takes the offi
 
 The problem is that it isn't built for converting. It shows you the day's rate and you do the multiplication yourself. It also doesn't always load fast, and on a phone it looks like a desktop page. It's for checking, not for everyday use.
 
-## 3. Hacé Cuentas
+## 3. Kontave
 
-**Link:** [hacecuentas.com](https://hacecuentas.com/ve/finanzas/dolar-y-bolivares)
+**Link:** [kontave.com/herramientas/divisas](https://kontave.com/herramientas/divisas)
 
-It has a dollar to bolívar calculator that also adds **VAT (IVA, 16%)** and the **IGTF tax (3%)**, which is really useful if you're working out the final price of a product or putting together an invoice. It also has calculators for euros and USDT.
+A really well made currency calculator, with a dark, tidy design. At the top it shows the official rate for the dollar, the euro and the yuan with the rate's date and how much each one moved, and below that is the converter, which goes from bolívars to dollars, euros, pounds, Mexican pesos, reais and several more currencies.
 
-The downside is that you type the BCV rate in by hand, so you have to look it up somewhere else first. It's better for sums with taxes than for a quick check.
+![Kontave's BCV currency calculator with the official rate for November 10, 2026: the dollar at 899.27 bolívars, the euro at 1,006.61 and the yuan at 134.78, and a converter turning 100 dollars into 89,927 bolívars](../../../assets/blog/kontave-calculadora-divisas-bcv-tasa-oficial.png)
 
-## 4. Google search
+What I like most is that you can pick a date and see the rate for that day, which is really useful if you need to invoice or check a payment at an earlier date's rate. You can also choose how many decimals to show. You don't need an account to use the calculator, although Kontave is a bigger platform of accounting tools.
 
-Typing "1 USD to VES" into Google gives you a converter instantly, without visiting any page. For a rough idea, it works.
+## 4. ¿Cuánto es?
 
-But careful: Google doesn't say where that number comes from, and it doesn't always match the official BCV rate. For charging, paying or quoting in Venezuela, where what matters is the day's official rate, I wouldn't use it.
+**Link:** [cuantoeseldolares.netlify.app](https://cuantoeseldolares.netlify.app/)
+
+The simplest one on the list, and that's exactly what's good about it. When you open it you see the day's BCV dollar, BCV euro and USDT at a glance, and below that you pick what you have (bolívars, dollars, euros or another rate) and what you want to convert it to.
+
+![The ¿Cuánto es? calculator with today's rates: the BCV dollar at 897.54 bolívars, the BCV euro at 1,001.19 and USDT at 1,055, and the bolívar to dollar converter with quick amounts](../../../assets/blog/cuanto-es-calculadora-dolar-bolivares-bcv.png)
+
+It has quick amounts, a rate history and a light or dark mode. And if you get paid at a rate other than the BCV's, the **Otra tasa** (other rate) option lets you type in your own. No ads and nothing to distract you.
 
 ## 5. Your phone's calculator
 
@@ -114,13 +120,13 @@ With an app that already has the day's rate and converts as you type, you skip a
 
 ## Quick comparison
 
-| Tool | Official BCV rate | Converts for you | Dollar and euro | Offline |
+| Tool | Day's BCV rate | Converts for you | Currencies | Best at |
 |---|---|---|---|---|
-| BCV Converter | Yes, from bcv.org.ve | Yes, as you type | Yes | Last rate |
-| BCV website | Yes, it's the source | No | Yes | No |
-| Hacé Cuentas | You type it in | Yes, with IVA and IGTF | Yes | No |
-| Google | Not guaranteed | Yes | Yes | No |
-| Phone calculator | You copy it | No | Yes | Yes |
+| BCV Converter | Yes, read from bcv.org.ve | Yes, as you type | Dollar and euro | Installs as an app and works offline |
+| BCV website | Yes, it's the source | No | Several | Checking the number |
+| Kontave | Yes | Yes | Many | The rate for any date |
+| ¿Cuánto es? | Yes | Yes | Dollar, euro and USDT | Simple, with a custom rate |
+| Phone calculator | You copy it | No | Whatever you copy | Needs nothing |
 
 ## Bookmark it and use it like an app
 
@@ -146,7 +152,7 @@ With the icon on your home screen you open it like any other app, but without in
 
 ## Which one do I use?
 
-For everyday use, the [BCV Converter](https://usdbcv.netlify.app/) saved to my home screen. For sums with IVA and IGTF, Hacé Cuentas. And if a number looks off, I check it on the BCV website.
+For everyday use, the [BCV Converter](https://usdbcv.netlify.app/) saved to my home screen. If I need the rate for an earlier date, Kontave. And if a number looks off, I check it on the BCV website.
 
 What I wouldn't do is install an app for this. If a web page already does the job, fast, with no permissions and no ads, there isn't much to gain by downloading something.
 

@@ -88,19 +88,25 @@ Es la fuente. Todas las demás herramientas de esta lista, la mía incluida, sac
 
 El problema es que no está pensada para convertir. Te muestra la tasa del día y tienes que hacer la multiplicación tú. Además no siempre carga rápido y en el teléfono se ve como una página de escritorio. Sirve para verificar, no para el día a día.
 
-## 3. Hacé Cuentas
+## 3. Kontave
 
-**Enlace:** [hacecuentas.com](https://hacecuentas.com/ve/finanzas/dolar-y-bolivares)
+**Enlace:** [kontave.com/herramientas/divisas](https://kontave.com/herramientas/divisas)
 
-Tiene una calculadora de dólares a bolívares que además suma el **IVA (16%)** y el **IGTF (3%)**, algo muy útil si estás calculando el precio final de un producto o armando una factura. También tiene calculadoras de euros y de USDT.
+Una calculadora de divisas muy bien hecha, con un diseño oscuro y ordenado. Arriba te muestra la tasa oficial del dólar, el euro y el yuan con la fecha de la tasa y cuánto variaron, y debajo está el conversor, que va de bolívares a dólares, euros, libras, pesos mexicanos, reales y varias monedas más.
 
-La contra es que la tasa del BCV la escribes tú a mano, así que primero tienes que buscarla en otro lado. Es mejor para cuentas con impuestos que para una consulta rápida.
+![Calculadora de divisas BCV de Kontave con la tasa oficial del 10 de noviembre de 2026: dólar a 899,27 bolívares, euro a 1.006,61 y yuan a 134,78, y un conversor que pasa 100 dólares a 89.927 bolívares](../../../../assets/blog/kontave-calculadora-divisas-bcv-tasa-oficial.png)
 
-## 4. El buscador de Google
+Lo que más me gusta es que puedes elegir una fecha y ver la tasa de ese día, algo muy útil si tienes que facturar o revisar un pago con la tasa de una fecha anterior. También puedes elegir cuántos decimales quieres ver. No hace falta crear cuenta para usar la calculadora, aunque Kontave es una plataforma más grande de herramientas contables.
 
-Escribir "1 USD a VES" en Google te da un convertidor al instante, sin entrar a ninguna página. Para tener una idea aproximada sirve.
+## 4. ¿Cuánto es?
 
-Pero ojo: Google no dice de dónde saca ese número, y no siempre coincide con la tasa oficial del BCV. Para cobrar, pagar o cotizar en Venezuela, donde lo que importa es la tasa oficial del día, no lo usaría.
+**Enlace:** [cuantoeseldolares.netlify.app](https://cuantoeseldolares.netlify.app/)
+
+La más sencilla de la lista, y eso es justamente lo bueno. Al abrirla ves de un vistazo el dólar BCV, el euro BCV y el USDT del día, y debajo eliges qué tienes (bolívares, dólares, euros u otra tasa) y a qué lo quieres convertir.
+
+![Calculadora ¿Cuánto es? con las tasas de hoy: dólar BCV a 897,54 bolívares, euro BCV a 1.001,19 y USDT a 1.055, y el conversor de bolívares a dólares con montos rápidos](../../../../assets/blog/cuanto-es-calculadora-dolar-bolivares-bcv.png)
+
+Tiene montos rápidos, un histórico de la tasa y modo claro u oscuro. Y si te pagan con una tasa distinta a la del BCV, la opción **Otra tasa** te deja escribir la tuya. Sin publicidad y sin nada que distraiga.
 
 ## 5. La calculadora del teléfono
 
@@ -114,13 +120,13 @@ Con una app que ya trae la tasa del día y convierte mientras escribes, te ahorr
 
 ## Comparación rápida
 
-| Herramienta | Tasa oficial BCV | Convierte por ti | Dólar y euro | Sin conexión |
+| Herramienta | Tasa BCV del día | Convierte por ti | Monedas | Lo mejor |
 |---|---|---|---|---|
-| Convertidor BCV | Sí, de bcv.org.ve | Sí, mientras escribes | Sí | Última tasa |
-| Página del BCV | Sí, es la fuente | No | Sí | No |
-| Hacé Cuentas | La escribes tú | Sí, con IVA e IGTF | Sí | No |
-| Google | No garantizada | Sí | Sí | No |
-| Calculadora del teléfono | La copias tú | No | Sí | Sí |
+| Convertidor BCV | Sí, leída de bcv.org.ve | Sí, mientras escribes | Dólar y euro | Se instala como app y funciona sin conexión |
+| Página del BCV | Sí, es la fuente | No | Varias | Para verificar |
+| Kontave | Sí | Sí | Muchas | Tasa de cualquier fecha |
+| ¿Cuánto es? | Sí | Sí | Dólar, euro y USDT | Sencilla y con tasa propia |
+| Calculadora del teléfono | La copias tú | No | Las que copies | No necesita nada |
 
 ## Guárdala en tus marcadores y úsala como una app
 
@@ -146,7 +152,7 @@ Con el ícono en la pantalla de inicio la abres igual que cualquier otra app, pe
 
 ## ¿Cuál uso?
 
-Para el día a día, el [Convertidor BCV](https://usdbcv.netlify.app/) guardado en la pantalla de inicio. Para cuentas con IVA e IGTF, Hacé Cuentas. Y si un número me parece raro, lo verifico en la página del BCV.
+Para el día a día, el [Convertidor BCV](https://usdbcv.netlify.app/) guardado en la pantalla de inicio. Si necesito la tasa de una fecha anterior, Kontave. Y si un número me parece raro, lo verifico en la página del BCV.
 
 Lo que no haría es instalar una app para esto. Si una página web ya hace el trabajo, rápido, sin permisos y sin publicidad, no hay mucho que ganar descargando algo.
 
