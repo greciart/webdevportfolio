@@ -84,11 +84,13 @@ If you're curious about how it's built, I go through it in the [BCV Converter ca
 
 This is the source. Every other tool on this list, mine included, takes the official rate from here, so if you ever doubt a number, this is the page you compare it against.
 
+![The official Banco Central de Venezuela website showing the day's reference exchange rate: the dollar at 899.27 bolívars and the euro at 1,006.61 bolívars, with a value date of November 10, 2026](../../../assets/blog/pagina-oficial-bcv-tasa-dolar-euro-hoy.png)
+
 The problem is that it isn't built for converting. It shows you the day's rate and you do the multiplication yourself. It also doesn't always load fast, and on a phone it looks like a desktop page. It's for checking, not for everyday use.
 
 ## 3. Hacé Cuentas
 
-**Link:** [hacecuentas.com](https://hacecuentas.com/ve/calculadora-precio-dolares-a-bolivares-bcv-venezuela)
+**Link:** [hacecuentas.com](https://hacecuentas.com/ve/finanzas/dolar-y-bolivares)
 
 It has a dollar to bolívar calculator that also adds **VAT (IVA, 16%)** and the **IGTF tax (3%)**, which is really useful if you're working out the final price of a product or putting together an invoice. It also has calculators for euros and USDT.
 

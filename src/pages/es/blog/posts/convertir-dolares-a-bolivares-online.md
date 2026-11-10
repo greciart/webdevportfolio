@@ -84,11 +84,13 @@ Si te interesa cómo está hecha por dentro, lo cuento en el [caso de estudio de
 
 Es la fuente. Todas las demás herramientas de esta lista, la mía incluida, sacan la tasa oficial de aquí, así que si tienes alguna duda sobre un número, esta es la página con la que comparas.
 
+![Página oficial del Banco Central de Venezuela con el tipo de cambio de referencia del día: dólar a 899,27 bolívares y euro a 1.006,61 bolívares, con fecha valor del 10 de noviembre de 2026](../../../../assets/blog/pagina-oficial-bcv-tasa-dolar-euro-hoy.png)
+
 El problema es que no está pensada para convertir. Te muestra la tasa del día y tienes que hacer la multiplicación tú. Además no siempre carga rápido y en el teléfono se ve como una página de escritorio. Sirve para verificar, no para el día a día.
 
 ## 3. Hacé Cuentas
 
-**Enlace:** [hacecuentas.com](https://hacecuentas.com/ve/calculadora-precio-dolares-a-bolivares-bcv-venezuela)
+**Enlace:** [hacecuentas.com](https://hacecuentas.com/ve/finanzas/dolar-y-bolivares)
 
 Tiene una calculadora de dólares a bolívares que además suma el **IVA (16%)** y el **IGTF (3%)**, algo muy útil si estás calculando el precio final de un producto o armando una factura. También tiene calculadoras de euros y de USDT.
 
