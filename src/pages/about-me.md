@@ -70,7 +70,7 @@ These experiments are where I refine my skills in interactive storytelling and U
     Ready to build something remarkable?
   </p>
   <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
-    <a href="https://calendly.com/greciavalentinapv" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; border-radius: 9999px; background: linear-gradient(to right, #2bd6c1, #0dbc82); color: #171717 !important; font-weight: 600; text-decoration: none !important; -webkit-text-fill-color: #171717 !important; font-size: 0.875rem;">
+    <a href="https://calendly.com/greciavalentinapv" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; border-radius: 9999px; background: linear-gradient(to right, #2bd6c1, #0dbc82); color: #171717 !important; font-weight: 600; text-decoration: none !important; -webkit-text-fill-color: #171717 !important; font-size: 0.875rem;">
       Book a Free Call
     </a>
     <a href="mailto:greciavalentinapv@gmail.com" style="display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; border-radius: 9999px; background: transparent; color: #2bd6c1 !important; font-weight: 600; text-decoration: none !important; -webkit-text-fill-color: #2bd6c1 !important; font-size: 0.875rem; border: 2px solid #2bd6c1;">

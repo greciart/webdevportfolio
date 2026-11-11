@@ -161,6 +161,18 @@ export const ui = {
     "footer.home": "Go to home",
     "footer.nav": "Footer navigation",
     "footer.social": "Social media links",
+    "footer.legal": "Legal",
+    "footer.privacy": "Privacy Policy",
+    "footer.cookies": "Cookie Policy",
+    "footer.cookieSettings": "Cookie settings",
+
+    // --- Cookie consent ---
+    "consent.title": "A quick note on cookies",
+    "consent.body": "I use Microsoft Clarity to see how people move through the site so I can keep improving it. It only loads if you say yes.",
+    "consent.more": "Read the cookie policy",
+    "consent.accept": "Accept",
+    "consent.reject": "Reject",
+    "consent.label": "Cookie consent",
 
     // --- Sidebar ---
     "sidebar.languages": "Languages",
@@ -382,6 +394,18 @@ export const ui = {
     "footer.home": "Ir al inicio",
     "footer.nav": "Navegación del pie de página",
     "footer.social": "Redes sociales",
+    "footer.legal": "Legal",
+    "footer.privacy": "Política de privacidad",
+    "footer.cookies": "Política de cookies",
+    "footer.cookieSettings": "Configurar cookies",
+
+    // --- Consentimiento de cookies ---
+    "consent.title": "Un detalle sobre las cookies",
+    "consent.body": "Uso Microsoft Clarity para ver cómo se navega el sitio y así seguir mejorándolo. Solo se carga si aceptas.",
+    "consent.more": "Leer la política de cookies",
+    "consent.accept": "Aceptar",
+    "consent.reject": "Rechazar",
+    "consent.label": "Consentimiento de cookies",
 
     // --- Barra lateral ---
     "sidebar.languages": "Idiomas",

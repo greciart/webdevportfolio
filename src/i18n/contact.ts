@@ -27,6 +27,8 @@ export type ContactCopy = {
   submit: string;
   submitting: string;
   orWrite: string;
+  /** Text before the link, link text, text after it. */
+  privacyNote: [string, string, string];
   honeypot: string;
 
   errorTooFast: string;
@@ -80,6 +82,11 @@ const en: ContactCopy = {
   submit: "Send message",
   submitting: "Sending…",
   orWrite: "Or write directly to",
+  privacyNote: [
+    "I only use your details to reply to you. More in the ",
+    "Privacy Policy",
+    ".",
+  ],
   honeypot: "Don't fill this out if you're human:",
 
   errorTooFast: "That was a little too quick · please review your message and send it again.",
@@ -140,6 +147,11 @@ const es: ContactCopy = {
   submit: "Enviar mensaje",
   submitting: "Enviando…",
   orWrite: "O escríbeme directamente a",
+  privacyNote: [
+    "Solo uso tus datos para responderte. Más detalles en la ",
+    "Política de privacidad",
+    ".",
+  ],
   honeypot: "No completes esto si eres humano:",
 
   errorTooFast: "Eso fue demasiado rápido · revisa tu mensaje y vuelve a enviarlo.",

@@ -4,7 +4,7 @@ import Heading from "../components/ui/Heading.astro";
 import { Icon } from "astro-icon/components";
 import { getCollection } from "astro:content";
 import { contactCopy } from "../i18n/contact";
-import { getLangFromUrl } from "../i18n/utils";
+import { getLangFromUrl, localizePath } from "../i18n/utils";
 
 const [staticData] = await getCollection("staticData");
 const {
@@ -130,6 +130,7 @@ const eyebrow =
             data-msg-captcha={c.errorCaptcha}
             data-msg-error={c.errorGeneric}
             data-msg-sending={c.submitting}
+            data-clarity-mask="true"
             class="flex flex-col gap-5"
           >
             <input type="hidden" name="form-name" value="contact" />
@@ -241,6 +242,14 @@ const eyebrow =
                 >
               </p>
             </div>
+
+            <p class="-mt-1 text-xs font-normal leading-5 text-blacktext/50 dark:text-zinc-500">
+              {c.privacyNote[0]}<a
+                href={localizePath("/privacy", lang)}
+                class="font-semibold text-mint-600 underline underline-offset-4 transition-colors hover:text-riptide-500 dark:text-mint-300"
+                >{c.privacyNote[1]}</a
+              >{c.privacyNote[2]}
+            </p>
 
             <p
               id="contact-error"

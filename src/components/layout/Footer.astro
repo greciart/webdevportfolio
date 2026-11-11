@@ -4,7 +4,7 @@ import { Icon } from "astro-icon/components";
 import { getCollection } from "astro:content";
 import { Image } from "astro:assets";
 import logo from "../../assets/logo.png";
-import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+import { getLangFromUrl, localizePath, useTranslations } from "../../i18n/utils";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -96,5 +96,37 @@ const year = new Date().getFullYear();
         label={`Visit ${alias} on LinkedIn`}
       />
     </div>
+  </nav>
+
+  <!-- Legal links sit on their own quiet line under the main row: small,
+       muted, and only coloured on hover, so they are easy to find without
+       competing with the logo, the credit or the social icons. -->
+  <nav
+    class="mx-auto mt-6 flex max-w-7xl flex-wrap items-center justify-center gap-x-3 gap-y-2 max-sm:gap-x-5 border-t border-blacktext/5 pt-5 text-xs font-normal text-blacktext/60 dark:border-zinc-800/70 dark:text-zinc-500 max-xl:px-6 max-sm:mt-0"
+    aria-label={t("footer.legal")}
+  >
+    <a
+      href={localizePath("/privacy", lang)}
+      class="transition-colors hover:text-mint-600 dark:hover:text-mint-300"
+    >
+      {t("footer.privacy")}
+    </a>
+    <!-- Separators hide on phones: there the links wrap, and a dot left hanging
+         at the end of a line looks like a mistake. The gap alone spaces them. -->
+    <span aria-hidden="true" class="opacity-50 max-sm:hidden">·</span>
+    <a
+      href={localizePath("/cookies", lang)}
+      class="transition-colors hover:text-mint-600 dark:hover:text-mint-300"
+    >
+      {t("footer.cookies")}
+    </a>
+    <span aria-hidden="true" class="opacity-50 max-sm:hidden">·</span>
+    <button
+      type="button"
+      data-consent-open
+      class="cursor-pointer transition-colors hover:text-mint-600 dark:hover:text-mint-300"
+    >
+      {t("footer.cookieSettings")}
+    </button>
   </nav>
 </footer>

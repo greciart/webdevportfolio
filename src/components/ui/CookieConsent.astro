@@ -1,0 +1,198 @@
+---
+/**
+ * Cookie notice, and the only place Microsoft Clarity is ever loaded from.
+ *
+ * Nothing third-party runs until the visitor clicks Accept. The choice is kept
+ * in localStorage for a year, then asked again. A Global Privacy Control
+ * signal counts as a rejection and the notice is never shown.
+ *
+ * Any element with `data-consent-open` (the footer link, the cookie policy)
+ * reopens the notice so the choice can be changed.
+ *
+ * Styled as a sibling of the accessibility menu panel: same card, same border,
+ * same blur, so it reads as part of the site rather than a bolted-on widget.
+ */
+import { getLangFromUrl, localizePath, useTranslations } from "../../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<div
+  id="cookie-consent"
+  role="dialog"
+  aria-modal="false"
+  aria-labelledby="cookie-consent-title"
+  aria-describedby="cookie-consent-body"
+  hidden
+  class="fixed bottom-4 left-4 z-60 w-[min(24rem,calc(100vw-2rem))] translate-y-3 opacity-0 transition-all duration-300 ease-out data-open:translate-y-0 data-open:opacity-100 motion-reduce:transition-none max-sm:bottom-3 max-sm:left-3 max-sm:w-[calc(100vw-1.5rem)]"
+>
+  <div
+    class="rounded-2xl border border-mint-100 bg-white/95 p-5 shadow-xl shadow-mint-500/10 backdrop-blur-md dark:border-zinc-800 dark:bg-zinc-900/95"
+  >
+    <p
+      id="cookie-consent-title"
+      class="flex items-center gap-2 text-sm font-bold text-blacktext dark:text-white"
+    >
+      <span
+        class="size-1.5 shrink-0 rotate-45 bg-linear-to-br from-riptide-400 to-mint-500"
+        aria-hidden="true"></span>
+      {t("consent.title")}
+    </p>
+
+    <p
+      id="cookie-consent-body"
+      class="mt-2 text-xs font-normal leading-5 text-blacktext/70 dark:text-zinc-400"
+    >
+      {t("consent.body")}
+      <a
+        href={localizePath("/cookies", lang)}
+        class="font-semibold text-mint-600 underline underline-offset-4 transition-colors hover:text-riptide-500 dark:text-mint-300"
+      >
+        {t("consent.more")}
+      </a>
+    </p>
+
+    <!-- Equal size and weight on purpose: rejecting must be as easy as
+         accepting, which is also what the GDPR guidance asks for. -->
+    <div class="mt-4 flex gap-2">
+      <button
+        type="button"
+        data-consent="denied"
+        class="flex-1 cursor-pointer rounded-full border border-mint-200 px-4 py-2 text-xs font-semibold text-blacktext transition-colors hover:border-mint-400 hover:text-mint-600 dark:border-zinc-700 dark:text-zinc-200 dark:hover:border-mint-400 dark:hover:text-mint-300"
+      >
+        {t("consent.reject")}
+      </button>
+      <button
+        type="button"
+        data-consent="granted"
+        class="flex-1 cursor-pointer rounded-full bg-linear-to-r from-riptide-400 to-mint-500 px-4 py-2 text-xs font-semibold text-blacktext transition-transform hover:scale-105 motion-reduce:hover:scale-100"
+      >
+        {t("consent.accept")}
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  type Choice = "granted" | "denied";
+
+  const STORE = "cookie-consent";
+  const CLARITY_ID = "y3bujw5ptv";
+  // Ask again after a year, the usual ceiling for how long consent is valid.
+  const MAX_AGE = 365 * 24 * 60 * 60 * 1000;
+
+  const banner = document.getElementById("cookie-consent");
+  let clarityLoaded = false;
+
+  function readChoice(): Choice | null {
+    try {
+      const saved = JSON.parse(localStorage.getItem(STORE) || "null");
+      if (!saved || (saved.value !== "granted" && saved.value !== "denied")) return null;
+      if (Date.now() - Number(saved.at) > MAX_AGE) return null;
+      return saved.value;
+    } catch {
+      return null;
+    }
+  }
+
+  function saveChoice(value: Choice) {
+    try {
+      localStorage.setItem(STORE, JSON.stringify({ value, at: Date.now() }));
+    } catch {
+      // Private mode or blocked storage: the choice still holds for this page.
+    }
+  }
+
+  function loadClarity() {
+    if (clarityLoaded) return;
+    clarityLoaded = true;
+    const w = window as any;
+    // Microsoft's own snippet: a stub that queues calls until the real script
+    // arrives, so the consent call below is never lost.
+    w.clarity =
+      w.clarity ||
+      function (...args: unknown[]) {
+        (w.clarity.q = w.clarity.q || []).push(args);
+      };
+    const script = document.createElement("script");
+    script.async = true;
+    script.src = `https://www.clarity.ms/tag/${CLARITY_ID}`;
+    document.head.appendChild(script);
+    // Analytics granted, advertising never.
+    w.clarity("consentv2", { ad_Storage: "denied", analytics_Storage: "granted" });
+  }
+
+  // Clarity is not needed to draw anything, so it waits for the page to finish
+  // loading, exactly as it did before the consent notice existed.
+  function loadClarityWhenIdle() {
+    if (document.readyState === "complete") loadClarity();
+    else window.addEventListener("load", loadClarity, { once: true });
+  }
+
+  function clearClarityCookies() {
+    const names = ["_clck", "_clsk", "CLID", "ANONCHK", "SM", "MR"];
+    const host = location.hostname;
+    const domains = ["", host, `.${host}`, `.${host.replace(/^www\./, "")}`];
+    for (const name of names) {
+      for (const domain of domains) {
+        document.cookie = `${name}=; Max-Age=0; path=/${domain ? `; domain=${domain}` : ""}`;
+      }
+    }
+  }
+
+  function show() {
+    if (!banner) return;
+    banner.hidden = false;
+    // Next frame, so the transition starts from the hidden state.
+    requestAnimationFrame(() => banner.setAttribute("data-open", ""));
+  }
+
+  function hide() {
+    if (!banner) return;
+    banner.removeAttribute("data-open");
+    window.setTimeout(() => (banner.hidden = true), 300);
+  }
+
+  function decide(value: Choice) {
+    const wasLoaded = clarityLoaded;
+    saveChoice(value);
+    hide();
+
+    if (value === "granted") {
+      loadClarity();
+      return;
+    }
+
+    // Withdrawing consent: tell Clarity, remove what it left on this domain,
+    // and reload so its script is gone from the page entirely.
+    if (wasLoaded) {
+      (window as any).clarity?.("consentv2", {
+        ad_Storage: "denied",
+        analytics_Storage: "denied",
+      });
+      clearClarityCookies();
+      window.setTimeout(() => location.reload(), 150);
+    }
+  }
+
+  banner?.querySelectorAll<HTMLButtonElement>("[data-consent]").forEach((button) => {
+    button.addEventListener("click", () => decide(button.dataset.consent as Choice));
+  });
+
+  // Delegated, so links added anywhere (footer, policy page) work without
+  // their own script.
+  document.addEventListener("click", (event) => {
+    const opener = (event.target as Element | null)?.closest?.("[data-consent-open]");
+    if (!opener) return;
+    event.preventDefault();
+    show();
+    banner?.querySelector<HTMLButtonElement>("[data-consent]")?.focus();
+  });
+
+  const gpc = (navigator as any).globalPrivacyControl === true;
+  const choice = readChoice();
+
+  if (choice === "granted" && !gpc) loadClarityWhenIdle();
+  else if (choice === null && !gpc) show();
+</script>

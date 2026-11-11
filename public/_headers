@@ -1,3 +1,26 @@
+# Security headers for every response. Netlify merges these with the more
+# specific cache rules below, so nothing here changes how assets are cached.
+#
+# The CSP starts as Report-Only: the browser logs what it *would* block in the
+# console without blocking anything. Once a few days of browsing the home page,
+# the contact form (with the captcha), the shop and a video show no CSP errors,
+# rename the header to `Content-Security-Policy` to enforce it.
+# 'unsafe-inline' is needed by the inline scripts (theme, a11y, JSON-LD) and by
+# the style="" attributes. Sources it allows:
+#   *.clarity.ms / c.bing.com   Microsoft Clarity, only after cookie consent
+#   google.com / gstatic.com    reCAPTCHA on the contact form
+#   youtube-nocookie / vimeo    video embeds, mounted on click
+#   i.ytimg.com                 YouTube poster images
+#   media.contra.com            shop hover previews
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=(), browsing-topics=()
+  Strict-Transport-Security: max-age=31536000; includeSubDomains
+  Cross-Origin-Opener-Policy: same-origin
+  Content-Security-Policy-Report-Only: default-src 'self'; script-src 'self' 'unsafe-inline' https://www.clarity.ms https://*.clarity.ms https://www.google.com https://www.gstatic.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://i.ytimg.com https://*.clarity.ms https://c.bing.com https://www.gstatic.com https://media.contra.com; media-src 'self' https://media.contra.com; font-src 'self'; connect-src 'self' https://*.clarity.ms https://c.bing.com https://www.google.com; frame-src https://www.google.com https://www.youtube-nocookie.com https://www.youtube.com https://player.vimeo.com; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests
+
 # Astro fingerprints everything under /_astro/, so the filename changes whenever
 # the contents do. That makes it safe to cache forever, which is the whole point
 # of moving the stylesheet out of the HTML: it is downloaded on the first page

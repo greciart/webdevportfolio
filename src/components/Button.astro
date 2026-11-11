@@ -16,7 +16,7 @@ const Element = href ? 'a' : 'button';
   <Element 
     href={href} 
     target={href ? target : undefined}
-    rel={target === '_blank' ? 'noopener' : undefined}
+    rel={target === '_blank' ? 'noopener noreferrer' : undefined}
     class="custom-btn"
   >
     {text}
