@@ -1,0 +1,92 @@
+---
+title: 'Zeta Line | Web corporativa en WordPress y Elementor para mamparas de oficina'
+pubDate: 2026-08-24
+description: 'Diseño y desarrollo web para una empresa de Madrid de mamparas de oficina y tabiques móviles acústicos. Seis sistemas técnicos explicados con claridad, una ruta para arquitectos y un 91 en rendimiento con 100 en SEO en PageSpeed.'
+languages: ["wordpress", "elementor", "uiux"]
+image:
+  url: "../../assets/projects/zetaline-mamparas-oficina-web-responsive-mockup.webp"
+  alt: "Web de Zeta Line en laptop, tableta y móvil: portada de mamparas de oficina y tabiques móviles acústicos, proyectos destacados y la ficha de Smart Glass."
+gallery:
+  - url: "../../assets/projects/zetaline-aplicaciones-tabiques-moviles-web.webp"
+    alt: "Sección Aplicaciones clave de la web de Zeta Line en laptop, con tabiques móviles para hoteles, centros de convenciones, auditorios y oficinas corporativas."
+  - url: "../../assets/projects/zetaline-proyectos-destacados-mamparas-web.webp"
+    alt: "Galería de proyectos destacados de Zeta Line en pantalla de escritorio y laptop, con mamparas de vidrio y tabiques móviles instalados."
+---
+
+import { Image } from 'astro:assets';
+import Button from "/src/components/Button.astro";
+import zetalineWireflow from '/src/assets/projects/zetaline-arquitectura-web-wireflow.jpg';
+import zetalinePagespeed from '/src/assets/projects/zetaline-pagespeed-escritorio-rendimiento-91.png';
+
+Zeta Line es una empresa de Madrid que diseña, fabrica e instala mamparas de oficina y tabiques móviles acústicos. Sus clientes son empresas que quieren dividir una planta sin hacer obra, y hoteles, colegios o auditorios que necesitan convertir una sala grande en varias más pequeñas.
+
+Es un producto técnico que se presupuesta a medida y se decide despacio. Nadie compra un tabique móvil desde el móvil un martes por la tarde. Lo que sí pasa es que alguien entra en la web, compara, se la pasa a su arquitecto y, si la web le dio confianza, pide un estudio. Mi trabajo era que ese recorrido funcionara.
+
+<Button text="Ver la web de Zeta Line" href="https://zetaline.es/" target="_blank" />
+
+## El problema real
+
+Zeta Line tiene seis sistemas distintos: tres de mamparas (Smart Glass, Twin Glass y Strong) y tres de tabiques móviles (Maxparete, Domino y E-motion). Para quien los fabrica, la diferencia es obvia. Para un director de oficina que solo quiere "separar la sala de reuniones", son seis nombres que no le dicen nada.
+
+Y había un segundo público con necesidades opuestas: arquitectos e interioristas. Ellos no necesitan que les vendan nada. Necesitan especificaciones, acabados y documentación para meter el sistema en su proyecto.
+
+Una web que intenta hablarle igual a los dos acaba sin convencer a ninguno.
+
+## Cómo lo resolví
+
+**Dos líneas antes que seis productos.** La web se ordena alrededor de las dos líneas de la empresa, que responden a la pregunta que el cliente sí sabe contestar: ¿quieres una división fija o una que se mueva? Mamparas o tabiques. Cada línea tiene su página de categoría, y cada sistema su propia página de producto.
+
+**El producto se explica por su uso, no por su ficha.** Cada página arranca con para qué sirve y en qué tipo de espacio encaja. Los detalles técnicos están, pero debajo, para quien los busca.
+
+**Una ruta propia para arquitectos.** Una sección de documentación técnica con especificaciones, detalles constructivos y manuales de instalación, sin pasar por el discurso comercial.
+
+**Las aplicaciones como atajo.** Oficinas, salas de reuniones, hoteles, colegios, auditorios, restaurantes, eventos y centros de formación. Mucha gente no sabe qué sistema necesita, pero sí sabe qué tipo de espacio tiene.
+
+**Las dudas resueltas antes del contacto.** Las preguntas frecuentes cubren lo que cualquiera pregunta antes de pedir presupuesto: la diferencia entre los tres tipos de mampara, el aislamiento acústico, los acabados, si se puede cambiar la distribución más adelante y en qué espacios se instalan los tabiques.
+
+**Una sola conversión.** "Solicitar estudio" en todas las páginas, con llamada directa y WhatsApp como alternativa. Para un producto que siempre se presupuesta a medida, el estudio es el primer paso real, así que es lo único que se pide.
+
+<Image src={zetalineWireflow} alt="Wireflow de la web de Zeta Line: inicio, mamparas, tabiques y contacto, con las páginas de Smart Glass, Twin Glass, Strong, Maxparete, Domino y E-motion." widths={[480, 960, 1387]} sizes="(max-width: 768px) 100vw, 768px" loading="lazy" decoding="async" />
+
+## Arquitectura
+
+Inicio, dos páginas de categoría y seis de producto, más proyectos realizados, contacto y las páginas legales. Cualquier producto está a dos clics de la portada.
+
+Esa estructura no es solo para quien navega. Cada página de producto apunta a una búsqueda concreta ("mamparas de oficina", "tabiques móviles acústicos" o el nombre del propio sistema) y la de categoría las agrupa. Google entiende qué responde cada URL, y nadie aterriza en una página genérica que le obligue a buscar otra vez.
+
+## Diseño
+
+El cliente quería algo minimalista, limpio y profesional, con mucho aire y un enfoque editorial. Encajaba con el producto: el sector se vende con fotografía de espacios terminados, vidrio y luz, así que la interfaz tenía que apartarse.
+
+Lo traduje en blanco, grises, una sola línea del azul de la marca y tipografía fina, con una jerarquía clara y espaciado generoso. Las fotos de proyectos reales hacen el trabajo y la interfaz no compite con ellas.
+
+## SEO y rendimiento
+
+Aquí está la trampa de una web así: casi todo el contenido son fotos grandes. Es fácil acabar con una web preciosa que tarda cinco segundos en cargar.
+
+<Image src={zetalinePagespeed} alt="Informe de PageSpeed Insights de zetaline.es en escritorio: 91 en rendimiento, 91 en accesibilidad, 96 en recomendaciones y 100 en SEO." widths={[480, 1005]} sizes="(max-width: 768px) 100vw, 768px" loading="lazy" decoding="async" />
+
+El resultado en escritorio, medido con PageSpeed Insights: **91 en rendimiento, 91 en accesibilidad, 96 en recomendaciones y 100 en SEO.** Lo que entró en el proyecto:
+
+- Imágenes optimizadas y con textos alternativos descriptivos en las fotos de proyecto
+- Títulos, metadescripciones, encabezados y URLs pensados para una palabra clave por página
+- Textos de la web escritos con esas búsquedas en mente, sin rellenar
+- **Google Search Console** configurado y el sitemap enviado
+- Perfil de **Google Business** creado, para que la empresa aparezca en búsquedas locales en Madrid
+
+Una nota honesta: esa puntuación es de escritorio. En móvil una web con tanta fotografía siempre puntúa más bajo, y ese es el siguiente punto a optimizar.
+
+## Stack
+
+- **WordPress** con **Elementor Pro**
+- SEO on-page por producto: una página, una búsqueda objetivo
+- Google Search Console y Google Business Profile
+- Contacto por formulario, llamada y **WhatsApp**
+
+## Resultado
+
+Una web que separa al cliente que necesita que le orienten del arquitecto que necesita datos, explica seis sistemas técnicos sin abrumar y lleva a los dos al mismo sitio: pedir un estudio. Y lo hace cargando rápido a pesar de ser, sobre todo, fotografía.
+
+## ¿Vendes un producto técnico?
+
+Si tu web lista todo lo que fabricas pero tus clientes siguen llamando para preguntar lo básico, el problema no suele ser el diseño. Es el orden en que cuentas las cosas. Eso es lo primero que reviso.
