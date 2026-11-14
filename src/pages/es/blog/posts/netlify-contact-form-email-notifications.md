@@ -96,9 +96,7 @@ No sigas adelante hasta que el formulario aparezca aquí.
 
 ## Paso 3. Activa las notificaciones por correo
 
-Aquí viene la parte que nadie te cuenta.
-
-Un formulario registrado que recibe envíos los va a recopilar tan tranquilo **sin enviarte jamás un correo**. Se quedan en el panel bajo **Forms → nombre de tu formulario**, esperando a que alguien los mire.
+Este paso es fácil de pasar por alto. Un formulario registrado que recibe envíos los va a recopilar tan tranquilo **sin enviarte jamás un correo**. Se quedan en el panel bajo **Forms → nombre de tu formulario**, esperando a que alguien los mire.
 
 Para que te avisen de verdad:
 

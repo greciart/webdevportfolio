@@ -349,27 +349,11 @@ Separately they are incomplete.
 
 As you can see, my thoughts are not black or white. Not another AI obsessed person that makes AI their entire personality or an intense AI hater that lives in fear because of AI. I think AI is not for that. For this complex context, I think it's important to know the limitations and the dangerous line of AI and copyright. And of course, as I mentioned before, the issue is with security and lack of soul / creativity.
 
-The goal should never be to remove yourself from the process.
+The goal should be to remove unnecessary friction from the process, never to remove yourself from it.
 
-The goal should be to remove unnecessary friction from the process.
+AI is one of the best productivity tools software development has ever had, but productivity without understanding is a liability. If you’re building a website, an app, a SaaS product, etc, learn enough about the technology to understand what is happening behind the scenes.
 
-AI is one of the greatest productivity tools software development has ever seen.
-
-But productivity without understanding is a liability.
-
-If you’re building a website, an app, a SaaS product, etc, learn enough about the technology to understand what is happening behind the scenes.
-
-Use AI as leverage.
-
-Use AI as an assistant.
-
-Use AI as a multiplier.
-
-Just don’t outsource your thinking to it.
-
-Because when things go wrong, AI won’t be the one responsible for fixing the problem.
-
-You will.
+Use AI as an assistant and a multiplier, just don’t outsource your thinking to it. When things go wrong, AI won’t be the one responsible for fixing the problem. You will.
 
 So, it's better to know when to use it and how to use it for speeding up repetitive tasks, not soul-driven and creative tasks.
 

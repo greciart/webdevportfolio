@@ -40,23 +40,23 @@ import Button from "/src/components/Button.astro"
 
 Anywhere Healing sells products for insomnia and stress. Their previous site took four seconds to become usable.
 
-That is not a performance statistic, it is a credibility problem. A visitor arriving stressed, watching a spinner, has already been told something about the brand before reading a word. The interface had to be the first part of the product, not an obstacle in front of it.
+For a brand that sells calm, that's a credibility problem. A visitor arriving stressed, watching a spinner, has already learned something about the brand before reading a word. The interface had to feel like the first part of the product.
 
 ## The technical choice
 
-I built the site in **Astro**, and the reason is specific rather than a framework preference.
+I built the site in **Astro**, for a specific reason.
 
 Astro ships zero JavaScript by default and generates static HTML at build time. For a site that is essentially content plus a checkout, most of the page needs no runtime code at all. Interactive pieces load only where they are used. The result is a page that is readable almost immediately rather than after a framework boots.
 
-Deployed on **Netlify**, so pages are served from a CDN close to the visitor. The calm the brand sells is partly just the absence of waiting.
+Deployed on **Netlify**, so pages are served from a CDN close to the visitor.
 
 ## Interface decisions
 
-**A palette borrowed from chromotherapy.** Soft greens and muted blues, chosen because they are what the product itself is about, not because they are fashionable.
+**A palette borrowed from chromotherapy.** Soft greens and muted blues, taken from what the product itself is about.
 
 **Whitespace as pacing.** Generous spacing between sections gives the eye somewhere to rest. On a site aimed at people with sleep problems, density is the wrong texture.
 
-**Images sized for their slot.** Every asset exported at its real display dimensions in a modern format. Rich photography and a light page are not in conflict if the export is done properly.
+**Images sized for their slot.** Every asset exported at its real display dimensions in a modern format, so the photography stays rich and the page stays light.
 
 <Image src={ahWireflow} alt="Information architecture and wireflow for the Anywhere Healing platform, mapping the route from home page to completed checkout." />
 
@@ -108,4 +108,4 @@ A site whose speed is part of what it is selling, and a checkout that made the e
 
 ## Does your site contradict your product?
 
-Wellness, finance and healthcare brands all sell a feeling that a slow, cluttered site immediately undermines. That is a solvable problem, and usually a technical one.
+Wellness, finance and healthcare brands all sell a feeling that a slow, cluttered site immediately undermines. Most of the time the fix is technical.

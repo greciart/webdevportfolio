@@ -177,7 +177,7 @@ Si quieres aprender a configurar un archivo robots.txt, aunque no tengas perfil 
 
 Este artículo cubre solo algunas de las plataformas más populares, así que antes de publicar tu trabajo en cualquier sitio, dedica unos minutos a revisar la política de entrenamiento de IA vigente de esa plataforma y su configuración de privacidad.
 
-La realidad es que todo lo que se publica en internet público conlleva cierto nivel de riesgo. Sin embargo, combinar varias medidas de protección (firmar digitalmente tus archivos, exportar versiones de menor resolución, incrustar metadatos, usar avisos de copyright y elegir con cuidado dónde publicas) puede hacer el entrenamiento de IA no autorizado y el robo de contenido considerablemente más difíciles.
+Todo lo que se publica en internet público conlleva cierto nivel de riesgo. Sin embargo, combinar varias medidas de protección (firmar digitalmente tus archivos, exportar versiones de menor resolución, incrustar metadatos, usar avisos de copyright y elegir con cuidado dónde publicas) puede hacer el entrenamiento de IA no autorizado y el robo de contenido considerablemente más difíciles.
 
 Ninguna solución es perfecta, pero cada capa adicional de protección aumenta el esfuerzo necesario para usar mal tu trabajo.
 

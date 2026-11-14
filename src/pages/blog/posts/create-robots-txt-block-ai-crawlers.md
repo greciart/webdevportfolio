@@ -170,8 +170,8 @@ No single technique can completely prevent unauthorized scraping, but combining 
 
 ## Is this the final solution?
 
-As AI continues to evolve, protecting creative work requires more than simply publishing it online. While robots.txt isn't a magic solution, it remains one of the easiest and most widely supported ways to communicate your website's crawling preferences.
+While robots.txt isn't a magic solution, it remains one of the easiest and most widely supported ways to communicate your website's crawling preferences.
 
 Combined with metadata, copyright information, content authenticity credentials, and careful platform choices, it becomes part of a stronger strategy for safeguarding your writing, artwork, photography, and other original creations.
 
-Ultimately, owning your own website gives you the greatest level of control. Unlike social media platforms, you decide how your content is hosted, indexed, and accessed, making it one of the best long-term investments for protecting your work online.
+Owning your own website gives you the most control. Unlike social media platforms, you decide how your content is hosted, indexed, and accessed, making it one of the best long-term investments for protecting your work online.

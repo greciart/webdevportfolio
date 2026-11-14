@@ -40,7 +40,7 @@ Lo que no me gusta es lo que pasa cuando la gente cree que no hay trabajo sufici
 
 ¿Te suena?
 
-Aquí está lo que nadie dice en voz alta: el miedo no te hace más valiosa. Te hace intercambiable. En el momento en que toda tu propuesta es "estoy disponible y soy barata", le entregaste a otra persona la única palanca que necesita para reemplazarte.
+El miedo no te hace más valiosa. Te hace intercambiable. En el momento en que toda tu propuesta es "estoy disponible y soy barata", le entregaste a otra persona la única palanca que necesita para reemplazarte.
 
 ![Renderizado 3D abstracto de una esfera translúcida de colores representando una red neuronal, ilustrando los algoritmos complejos de inteligencia artificial y la generación automatizada de diseño web.](/images/posts/artificial-intelligence-neural-network-abstract-3d.webp)
 
@@ -60,7 +60,7 @@ Esos son problemas completamente distintos, y resolverlos sigue requiriendo crit
 
 ## La calidad se está volviendo escasa (y esa es buena noticia para ti)
 
-Aquí está la parte que me parece genuinamente graciosa. La IA no está haciendo la calidad menos valiosa. La está haciendo escasa.
+Lo que me hace gracia es que la IA está haciendo que la calidad sea escasa.
 
 Cada día internet se llena de miles de sitios que se parecen casi exactamente. La misma sección hero. La misma cuadrícula de tres columnas. La misma mancha con degradado. Las mismas ilustraciones de stock de personas con proporciones imposibles. El mismo texto, el mismo fade-in al hacer scroll, lo mismo en todo.
 

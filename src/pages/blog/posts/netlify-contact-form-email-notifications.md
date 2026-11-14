@@ -96,9 +96,7 @@ Don't move on until the form shows up here.
 
 ## Step 3. Turn On Email Notifications
 
-Here is the part nobody tells you.
-
-A registered form that receives submissions will happily collect them **without ever sending you an email**. They sit in the dashboard under **Forms → your form name**, waiting for someone to look.
+This step is easy to miss. A registered form that receives submissions will happily collect them **without ever sending you an email**. They sit in the dashboard under **Forms → your form name**, waiting for someone to look.
 
 To actually get notified:
 

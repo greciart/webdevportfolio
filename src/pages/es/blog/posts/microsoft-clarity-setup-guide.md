@@ -30,10 +30,10 @@ Lo instalé en este sitio la semana pasada. Aquí va la configuración, las part
 
 **Señales automáticas de frustración**, que es la parte que no esperaba que me gustara y ahora reviso primero:
 
-* **Clics de rabia** — clics repetidos en el mismo punto, casi siempre porque algo parece interactivo y no lo es
-* **Clics muertos** — un clic que no produce ninguna respuesta
-* **Scroll excesivo** — buscar algo que debería haber sido fácil de encontrar
-* **Vueltas rápidas** — llegar a una página y volver atrás de inmediato, la señal más clara que existe de "esto no era lo que me prometieron"
+* **Clics de rabia:** clics repetidos en el mismo punto, casi siempre porque algo parece interactivo y no lo es
+* **Clics muertos:** un clic que no produce ninguna respuesta
+* **Scroll excesivo:** buscar algo que debería haber sido fácil de encontrar
+* **Vueltas rápidas:** llegar a una página y volver atrás de inmediato, la señal más clara que existe de "esto no era lo que me prometieron"
 
 Puedes filtrar las grabaciones por cualquiera de esas, lo que convierte horas de material en una lista corta de sesiones donde algo salió mal de verdad.
 

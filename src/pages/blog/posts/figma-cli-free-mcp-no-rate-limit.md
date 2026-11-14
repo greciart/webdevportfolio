@@ -140,7 +140,7 @@ A few habits that make the difference between a novelty and something you actual
 
 ## Is It Worth It?
 
-Honest assessment: this is not a replacement for designing. It's a very fast pair of hands.
+Honestly, it's a very fast pair of hands, and the designing is still on you.
 
 Where it pays off is anything mechanical and specification-driven, the work that's tedious precisely because it's already decided. Where it won't help is the judgment: hierarchy, rhythm, what to cut. That's still you. (It's the same split I used to build [FOCUS TIME](/blog/posts/focus-time-gamified-adhd-productivity-app/), a gamified productivity app that started as a Figma file and a spec before any AI touched it.)
 

@@ -40,23 +40,23 @@ import Button from "/src/components/Button.astro"
 
 Anywhere Healing vende productos para el insomnio y el estrés. Su sitio anterior tardaba cuatro segundos en ser usable.
 
-Eso no es un dato de rendimiento, es un problema de credibilidad. Alguien que llega estresado y se queda mirando un indicador de carga ya recibió un mensaje sobre la marca antes de leer una palabra. La interfaz tenía que ser la primera parte del producto, no un obstáculo delante de él.
+Para una marca que vende calma, eso es un problema de credibilidad. Alguien que llega estresado y se queda mirando un indicador de carga ya recibió un mensaje sobre la marca antes de leer una palabra. La interfaz tenía que sentirse como la primera parte del producto.
 
 ## La decisión técnica
 
-Construí el sitio en **Astro**, y la razón es concreta, no una preferencia de framework.
+Construí el sitio en **Astro** por una razón concreta.
 
 Astro no envía JavaScript por defecto y genera HTML estático durante el build. Para un sitio que es esencialmente contenido más un proceso de pago, la mayor parte de la página no necesita código en tiempo de ejecución. Las piezas interactivas se cargan solo donde se usan. El resultado es una página legible casi al instante, no después de que arranque un framework.
 
-Desplegado en **Netlify**, así que las páginas se sirven desde un CDN cercano a quien visita. La calma que vende la marca es, en parte, simplemente la ausencia de espera.
+Desplegado en **Netlify**, así que las páginas se sirven desde un CDN cercano a quien visita.
 
 ## Decisiones de interfaz
 
-**Una paleta tomada de la cromoterapia.** Verdes suaves y azules apagados, elegidos porque son de lo que trata el producto, no porque estén de moda.
+**Una paleta tomada de la cromoterapia.** Verdes suaves y azules apagados, tomados de lo que trata el propio producto.
 
 **El espacio en blanco como ritmo.** Un espaciado generoso entre secciones le da a la vista dónde descansar. En un sitio dirigido a personas con problemas de sueño, la densidad es la textura equivocada.
 
-**Imágenes dimensionadas a su hueco.** Cada recurso exportado al tamaño real en que se muestra y en formato moderno. La fotografía rica y una página ligera no están reñidas si la exportación se hace bien.
+**Imágenes dimensionadas a su hueco.** Cada recurso exportado al tamaño real en que se muestra y en formato moderno, para que la fotografía siga siendo rica y la página siga siendo ligera.
 
 <Image src={ahWireflow} alt="Arquitectura de información y wireflow de la plataforma Anywhere Healing, trazando la ruta desde la página de inicio hasta el pago completado." />
 
@@ -108,4 +108,4 @@ Un sitio cuya velocidad forma parte de lo que vende, y un proceso de pago que hi
 
 ## ¿Tu sitio contradice tu producto?
 
-Las marcas de bienestar, finanzas y salud venden una sensación que un sitio lento y recargado desmiente de inmediato. Eso tiene solución, y normalmente es técnica.
+Las marcas de bienestar, finanzas y salud venden una sensación que un sitio lento y recargado desmiente de inmediato. Casi siempre la solución es técnica.

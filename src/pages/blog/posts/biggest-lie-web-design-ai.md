@@ -40,7 +40,7 @@ What I don't like is what happens when people believe there isn't enough work to
 
 Sound familiar?
 
-Here's the thing nobody says out loud: fear doesn't make you more valuable. It makes you interchangeable. The moment your entire pitch is "I'm available and I'm cheap," you've handed someone else the only lever they need to replace you.
+Fear doesn't make you more valuable. It makes you interchangeable. The moment your entire pitch is "I'm available and I'm cheap," you've handed someone else the only lever they need to replace you.
 
 ![Abstract 3D rendering of a colorful translucent neural network sphere, illustrating complex artificial intelligence algorithms and automated web design generation.](/images/posts/artificial-intelligence-neural-network-abstract-3d.webp)
 
@@ -60,7 +60,7 @@ Those are completely different problems, and solving them still requires judgmen
 
 ## Quality is getting rarer (and that's good news for you)
 
-Here's the part I find genuinely funny. AI isn't making quality less valuable. It's making it scarce.
+What I find funny is that AI is making quality scarce.
 
 Every single day the internet fills up with thousands of sites that look almost exactly alike. Same hero section. Same three-column feature grid. Same gradient blob. Same stock illustrations of people with impossible proportions. Same copy, same fade-in-on-scroll, same everything.
 

@@ -177,7 +177,7 @@ If you'd like to learn how to configure a robots.txt file, even if you don't hav
 
 This article covers only some of the most popular platforms, so before publishing your artwork anywhere, take a few minutes to review that platform's current AI training policy and privacy settings.
 
-The reality is that anything published on the public internet carries some level of risk. However, combining multiple protective measures, digitally signing your files, exporting lower-resolution versions, embedding metadata, using copyright notices, and carefully choosing where you publish, can make unauthorized AI training and content theft considerably more difficult.
+Anything published on the public internet carries some level of risk. However, combining multiple protective measures, digitally signing your files, exporting lower-resolution versions, embedding metadata, using copyright notices, and carefully choosing where you publish, can make unauthorized AI training and content theft considerably more difficult.
 
 No solution is perfect, but every additional layer of protection increases the effort required to misuse your work.
 

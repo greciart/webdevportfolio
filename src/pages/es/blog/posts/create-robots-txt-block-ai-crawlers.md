@@ -170,8 +170,8 @@ Ninguna técnica por sí sola puede impedir del todo el raspado no autorizado, p
 
 ## ¿Es esta la solución definitiva?
 
-A medida que la IA sigue evolucionando, proteger el trabajo creativo requiere más que simplemente publicarlo en línea. Aunque robots.txt no es una solución mágica, sigue siendo una de las formas más fáciles y con más soporte para comunicar tus preferencias de rastreo.
+Aunque robots.txt no es una solución mágica, sigue siendo una de las formas más fáciles y con más soporte para comunicar tus preferencias de rastreo.
 
 Combinado con metadatos, información de copyright, credenciales de autenticidad de contenido y una elección cuidadosa de plataformas, se convierte en parte de una estrategia más sólida para salvaguardar tus textos, ilustraciones, fotografías y demás creaciones originales.
 
-Al final, tener tu propio sitio web te da el mayor nivel de control. A diferencia de las redes sociales, tú decides cómo se aloja, se indexa y se accede a tu contenido, lo que lo convierte en una de las mejores inversiones a largo plazo para proteger tu trabajo en internet.
+Tener tu propio sitio web te da el mayor control. A diferencia de las redes sociales, tú decides cómo se aloja, se indexa y se accede a tu contenido, lo que lo convierte en una de las mejores inversiones a largo plazo para proteger tu trabajo en internet.

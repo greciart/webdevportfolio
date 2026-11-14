@@ -30,10 +30,10 @@ I installed it on this site last week. Here is the setup, the parts of it that a
 
 **Automatic frustration signals**, which is the part I did not expect to like and now check first:
 
-* **Rage clicks** — repeated clicking in the same spot, usually because something looks interactive and is not
-* **Dead clicks** — a click that produces no response at all
-* **Excessive scrolling** — hunting for something that should have been findable
-* **Quick backs** — arriving on a page and immediately going back, the clearest "this was not what I was promised" signal there is
+* **Rage clicks:** repeated clicking in the same spot, usually because something looks interactive and is not
+* **Dead clicks:** a click that produces no response at all
+* **Excessive scrolling:** hunting for something that should have been findable
+* **Quick backs:** arriving on a page and immediately going back, the clearest "this was not what I was promised" signal there is
 
 You can filter recordings by any of those, which turns hours of footage into a short list of sessions where something actually went wrong.
 

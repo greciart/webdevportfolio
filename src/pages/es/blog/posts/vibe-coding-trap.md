@@ -349,27 +349,11 @@ Por separado están incompletos.
 
 Como puedes ver, mi postura no es blanco o negro. Ni soy otra persona obsesionada con la IA que la convierte en su personalidad entera, ni una detractora intensa que vive con miedo por culpa de ella. Creo que la IA no va de eso. Para un contexto tan complejo, me parece importante conocer las limitaciones y la línea peligrosa entre la IA y los derechos de autor. Y por supuesto, como mencioné antes, el problema está en la seguridad y en la falta de alma y creatividad.
 
-El objetivo nunca debería ser sacarte a ti del proceso.
+El objetivo debería ser sacar la fricción innecesaria del proceso, nunca sacarte a ti de él.
 
-El objetivo debería ser sacar la fricción innecesaria del proceso.
+La IA es una de las mejores herramientas de productividad que ha tenido el desarrollo de software, pero productividad sin entendimiento es un riesgo. Si estás construyendo un sitio web, una app, un producto SaaS, lo que sea, aprende lo suficiente de la tecnología para entender qué está pasando por detrás.
 
-La IA es una de las mayores herramientas de productividad que ha visto el desarrollo de software.
-
-Pero productividad sin entendimiento es un riesgo.
-
-Si estás construyendo un sitio web, una app, un producto SaaS, lo que sea, aprende lo suficiente de la tecnología para entender qué está pasando por detrás.
-
-Usa la IA como palanca.
-
-Usa la IA como asistente.
-
-Usa la IA como multiplicador.
-
-Pero no le subcontrates tu pensamiento.
-
-Porque cuando las cosas salgan mal, la IA no va a ser la responsable de arreglar el problema.
-
-Vas a ser tú.
+Usa la IA como asistente y como multiplicador, pero no le subcontrates tu pensamiento. Cuando las cosas salgan mal, la IA no va a ser la responsable de arreglar el problema. Vas a ser tú.
 
 Así que es mejor saber cuándo usarla y cómo usarla para acelerar tareas repetitivas, no tareas creativas y con alma.
 

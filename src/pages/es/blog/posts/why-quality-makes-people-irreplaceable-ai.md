@@ -25,7 +25,7 @@ La respuesta depende de qué tipo de valor aportas.
 
 Si tu única ventaja es la velocidad, la IA acabará convirtiéndose en una competidora fuerte. Pero si tu ventaja es crear experiencias digitales de alta calidad, entender a los usuarios, construir marcas y entregar resultados, tu valor se vuelve mucho más difícil de reemplazar.
 
-El futuro del diseño web no consiste en competir con la IA en velocidad. Consiste en dominar aquello que la IA no puede entender de verdad: calidad, estrategia, creatividad y toma de decisiones humana.
+El futuro del diseño web está en dominar aquello que la IA no puede entender de verdad: calidad, estrategia, creatividad y toma de decisiones humana.
 
 ![Primer plano de una diseñadora usando una lupa sobre el teclado de una laptop, simbolizando la atención meticulosa al detalle y los estándares de alta calidad en desarrollo web.](/images/posts/attention-to-detail-web-design.webp)
 

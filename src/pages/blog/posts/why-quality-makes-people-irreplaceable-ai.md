@@ -25,7 +25,7 @@ The answer depends on what kind of value you provide.
 
 If your only advantage is speed, AI will eventually become a strong competitor. But if your advantage is creating high-quality digital experiences, understanding users, building brands, and delivering results, your value becomes much harder to replace.
 
-The future of web design is not about competing with AI in speed. It is about mastering the things AI cannot truly understand: quality, strategy, creativity, and human decision-making.
+The future of web design is in mastering the things AI cannot truly understand: quality, strategy, creativity, and human decision-making.
 
 ![Close-up of a designer using a magnifying glass on a laptop keyboard, symbolizing meticulous attention to detail and high-quality web development standards.](/images/posts/attention-to-detail-web-design.webp)
 

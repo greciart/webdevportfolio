@@ -195,7 +195,7 @@ export const ui = {
     "about.role": "Web developer and designer",
     "about.years": "5+ years of experience",
     "about.intro":
-      ", passionate about design, development, user interfaces and user experience (UI/UX). I love bringing digital projects to life.",
+      ". I design and build websites, from the user interface and experience (UI/UX) to the code.",
     "about.stack": "Technological",
     "about.stackAccent": "Stack",
 
@@ -428,7 +428,7 @@ export const ui = {
     "about.role": "Diseñadora y desarrolladora web",
     "about.years": "más de 5 años de experiencia",
     "about.intro":
-      ", apasionada por el diseño, el desarrollo, las interfaces y la experiencia de usuario (UI/UX). Me encanta dar vida a proyectos digitales.",
+      ". Diseño y desarrollo sitios web, desde la interfaz y la experiencia de usuario (UI/UX) hasta el código.",
     "about.stack": "Stack",
     "about.stackAccent": "tecnológico",
 

@@ -141,7 +141,7 @@ Unas cuantas costumbres marcan la diferencia entre una curiosidad y algo que rea
 
 ## ¿Vale la pena?
 
-Valoración honesta: esto no sustituye al diseño. Es un par de manos muy rápido.
+Siendo honesta, es un par de manos muy rápido, y el diseño sigue siendo cosa tuya.
 
 Donde compensa es en todo lo mecánico y guiado por especificación, ese trabajo que es tedioso precisamente porque ya está decidido. Donde no te va a ayudar es en el criterio: la jerarquía, el ritmo, qué quitar. Eso sigue siendo cosa tuya. (Es la misma división que usé para construir [FOCUS TIME](/es/blog/posts/focus-time-gamified-adhd-productivity-app/), una app de productividad gamificada que empezó como un archivo de Figma y una especificación antes de que la IA tocara nada.)
 
