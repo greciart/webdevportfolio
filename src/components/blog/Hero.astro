@@ -11,8 +11,7 @@ import { Image } from "astro:assets";
 const [staticData] = await getCollection("staticData");
 const {
   techsTitle,
-  github,
-  githubText,
+  linkedin,
   profileAlt,
   profileImage,
   profileLink,
@@ -47,17 +46,18 @@ const t = useTranslations(uiLang);
         <div
           class="w-full h-full relative overflow-hidden rounded-2xl bg-linear-to-tr from-riptide-100 to-white dark:from-transparent dark:bg-linear-to-bl dark:to-transparent"
         >
-          <a target="_blank" rel="noopener noreferrer" href={github}>
+          <a target="_blank" rel="noopener noreferrer" href={linkedin} aria-label={t("aria.linkedin")}>
             <div
               class="p-8 h-full relative max-xl:p-5 max-md:p-4 flex flex-col gap-8 dark:before:bg-[radial-gradient(circle,rgba(13,188,130)_0,rgba(1,45,34)_100%)] before:bg-[radial-gradient(circle,rgba(95,255,202)_0,rgba(144,253,210)_100%)] before:h-[30%] before:absolute before:aspect-square xl:before:bottom-10 before:left-30 before:bottom-30 before:rounded-full before:blur-3xl before:opacity-90 before:transition before:z-0"
             >
               <div class="z-2">
-                <Heading text={githubText} textGradient="" level={2} size={3} />
+                <Heading text={t("home.visitLinkedin")} textGradient="" level={2} size={3} />
               </div>
 
               <Icon
                 class="group-hover:animate-pulse ease-in-out size-50 absolute -bottom-10 xl:size-56 xl:-bottom-5 left-30 max-sm:left-10 max-md:left-30 xl:-right-24 text-mint-500/30"
-                name="github-svg"
+                name="linkedin-svg"
+                aria-hidden="true"
               />
             </div>
           </a>

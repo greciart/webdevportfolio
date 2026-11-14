@@ -21,7 +21,7 @@ const {
   profileTitle,
   email,
   emailIconName,
-  github,
+  linkedin,
   portfolioImage,
   contactSectionButtonText,
 } = staticData.data;
@@ -151,19 +151,19 @@ const {
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href={github}
-            aria-label={t("aria.repo")}
+            href={linkedin}
+            aria-label={t("aria.linkedin")}
           >
             <div
               class="relative flex h-full flex-col gap-8 p-8 dark:before:bg-[radial-gradient(circle,rgba(13,188,130)_0,rgba(1,45,34)_100%)] before:bg-[radial-gradient(circle,rgba(95,255,202)_0,rgba(144,253,210)_100%)] before:absolute before:left-30 before:bottom-30 before:h-[30%] before:aspect-square before:rounded-full before:blur-3xl before:opacity-90 before:transition before:z-0 max-xl:p-5 max-md:p-4 xl:before:bottom-10"
             >
               <div class="z-2">
-                <Heading text={t("home.visitGithub")} level={2} size={3} />
+                <Heading text={t("home.visitLinkedin")} level={2} size={3} />
               </div>
 
               <Icon
                 class="absolute -bottom-10 left-30 size-50 text-mint-500/30 group-hover:animate-pulse ease-in-out max-sm:left-10 max-md:left-30 xl:size-56 xl:-bottom-5 xl:-right-24"
-                name="github-svg"
+                name="linkedin-svg"
                 aria-hidden="true"
               />
             </div>

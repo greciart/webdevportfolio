@@ -8,7 +8,7 @@ const t = useTranslations(lang);
 const p = (path: string) => localizePath(path, lang);
 
 const [staticData] = await getCollection("staticData");
-const { github, githubIconName, linkedin, linkedinIconName, contra, contraIconName } = staticData.data;
+const { linkedin, linkedinIconName, contra, contraIconName } = staticData.data;
 
 const { items = [] }: { items: (keyof typeof menu)[] } = Astro.props as {
   items: (keyof typeof menu)[];
@@ -277,7 +277,6 @@ const baseClasses = {
     role="group"
     aria-label={t("nav.social")}
   >
-    <Social link={github} iconName={githubIconName} />
     <Social link={linkedin} iconName={linkedinIconName} />
     <Social link={contra} iconName={contraIconName} />
   </div>

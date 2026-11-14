@@ -11,7 +11,7 @@ import { Image } from "astro:assets";
 import logo from "../../assets/logo.png";
 
 const [staticData] = await getCollection("staticData");
-const { github, githubIconName, linkedin, linkedinIconName, contra, contraIconName } = staticData.data;
+const { linkedin, linkedinIconName, contra, contraIconName } = staticData.data;
 
 // Home and About carry their own sub-menus, so the same set works on every route.
 const navItems = ["home", "about", "shop", "blog", "contact"];
@@ -57,7 +57,6 @@ const t = useTranslations(lang);
            the logo and the two menus, and the social row tipped it over. -->
       <div class="max-lg:hidden flex items-center justify-center gap-5" role="group">
         <Social link={contra} iconName={contraIconName} />
-        <Social link={github} iconName={githubIconName} />
         <Social link={linkedin} iconName={linkedinIconName} />
       </div>
       <ThemeIcon />
