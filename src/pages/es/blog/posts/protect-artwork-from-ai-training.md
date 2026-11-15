@@ -146,9 +146,6 @@ Aunque esto no va a detener a los bots automatizados, te da una base legal más 
 ### Usa marcas de agua estratégicas
 
 Aunque a mucha gente que crea no le gustan las marcas de agua, una marca sutil y repetida con opacidad baja hace la eliminación automática considerablemente más difícil que poner un solo logo en una esquina.
-
-Hacerlo a mano en una carpeta entera de imágenes cansa rapidísimo, por eso hice [BWM](/es/side-projects/), una pequeña herramienta gratuita que pone marcas de agua de texto en lote. Tiene versión de línea de comandos y app de escritorio, y es open source.
-
 ### Añade directivas NoAI
 
 Si tienes tu propio sitio web, considera añadir directivas relacionadas con IA en tu archivo robots.txt o en etiquetas meta del HTML, como:

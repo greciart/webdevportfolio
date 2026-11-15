@@ -146,9 +146,6 @@ Although this won't stop automated bots, it provides a stronger legal foundation
 ### Use Strategic Watermarks
 
 While many artists dislike watermarks, a subtle repeating watermark with low opacity makes automated removal considerably more difficult than placing a single logo in one corner.
-
-Doing that by hand on a whole folder of images gets old fast, which is why I made [BWM](/side-projects/), a small free tool that adds text watermarks to images in bulk. It comes as a command line version and a desktop app, and it's open source.
-
 ### Add NoAI Directives
 
 If you own your own website, consider adding AI-related directives through your robots.txt file or HTML meta tags, such as:

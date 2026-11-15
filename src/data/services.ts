@@ -283,18 +283,6 @@ const immersiveMeta: Record<string, Record<Lang, Caption>> = {
       tags: ["UI de juego", "Estado final"],
     },
   },
-  "balam-ball-credits-pixel-art": {
-    en: {
-      title: "Balam Ball · Credits & Pixel Art",
-      alt: "Balam Ball credits screen with a pixel art jaguar mask crediting programming, art and music",
-      tags: ["Game art", "Credits"],
-    },
-    es: {
-      title: "Balam Ball · Créditos y pixel art",
-      alt: "Pantalla de créditos de Balam Ball con una máscara de jaguar en pixel art acreditando programación, arte y música",
-      tags: ["Arte de juego", "Créditos"],
-    },
-  },
   "starmoon-boot-sequence": {
     en: {
       title: "Starmoon · Boot Sequence",
@@ -353,18 +341,6 @@ const immersiveMeta: Record<string, Record<Lang, Caption>> = {
       title: "Starmoon · Explorador de archivos",
       alt: "Aplicación de explorador de archivos de Starmoon con navegación lateral, ruta de migas y rejilla de carpetas, con estética de sistema operativo retro",
       tags: ["Nekoweb", "UI de app"],
-    },
-  },
-  "game-jam-isometric-map-hud-tutorial": {
-    en: {
-      title: "Isometric City Map · HUD & Tutorial",
-      alt: "Game jam UI: isometric city map with a stats HUD, location markers and a tutorial dialog box",
-      tags: ["Game UI", "HUD", "Onboarding"],
-    },
-    es: {
-      title: "Mapa isométrico de ciudad · HUD y tutorial",
-      alt: "Interfaz de game jam: mapa isométrico de ciudad con HUD de estadísticas, marcadores de ubicación y un cuadro de diálogo de tutorial",
-      tags: ["UI de juego", "HUD", "Onboarding"],
     },
   },
   "game-jam-venue-open-air-stage": {

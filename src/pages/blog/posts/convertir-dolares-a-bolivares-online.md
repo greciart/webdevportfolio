@@ -26,7 +26,7 @@ So I put together the options that actually work for converting **US dollars and
 
 ## Why a web app and not an installed app
 
-Before the list, here's what made me move my own converter from a desktop app to the web. I started with a [Python version](https://github.com/GVPV12/usdtoves) you had to install on your computer, and I quickly noticed that nobody, me included, opened it for a quick calculation while out.
+Before the list, here's what made me move my own converter from a desktop app to the web. I started with a Python version you had to install on your computer, and I quickly noticed that nobody, me included, opened it for a quick calculation while out.
 
 A web app has some very concrete advantages:
 

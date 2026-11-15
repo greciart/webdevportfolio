@@ -8,7 +8,7 @@ import type { Lang } from "./ui";
 const GITHUB = "https://github.com/GVPV12";
 const ITCH = "https://grecia-v.itch.io";
 
-type GroupId = "games" | "retroWeb" | "tools" | "desktop";
+type GroupId = "games" | "retroWeb" | "tools";
 
 type ProjectBase = {
   id: string;
@@ -36,9 +36,6 @@ const projects: ProjectBase[] = [
   { id: "focus-time", file: "focus-time-adhd-productivity-app", group: "tools", stack: ["TypeScript"], repos: [{ label: "focus-time", url: `${GITHUB}/focus-time` }], demo: "https://focustimeisnow.netlify.app/", post: "/blog/posts/focus-time-gamified-adhd-productivity-app" },
   { id: "commonplace", file: "digital-commonplace-book-tracker", group: "tools", stack: ["HTML", "CSS", "JavaScript"], repos: [{ label: "commonplacebook", url: `${GITHUB}/commonplacebook` }], demo: "https://starmoon.nekoweb.org/commonplace_book.html", post: "/blog/posts/blog-post-commonplace" },
   { id: "starplayer", file: "starplayer-ad-free-music-player", group: "tools", stack: ["TypeScript", "Desktop"], repos: [{ label: "STARPLAYER", url: `${GITHUB}/STARPLAYER` }], post: "/blog/posts/starplayer-ad-free-music-player-desktop" },
-  { id: "bwm", file: "bwm-bulk-watermark-maker", group: "desktop", stack: ["Python"], repos: [{ label: "BWM (CLI)", url: `${GITHUB}/BWM` }, { label: "BWM-GUI", url: `${GITHUB}/BWM-GUI` }], itch: `${ITCH}/bulk-watermark-maker` },
-  { id: "commission", file: "commission-calculator-desktop-app", group: "desktop", stack: ["Python"], repos: [{ label: "commissioncalculador", url: `${GITHUB}/commissioncalculador` }] },
-  { id: "usdtoves", file: "usd-to-ves-bcv-converter", group: "desktop", stack: ["Python"], repos: [{ label: "usdtoves", url: `${GITHUB}/usdtoves` }] },
 ];
 
 const projectCopy: Record<Lang, Record<string, ProjectCopy>> = {
@@ -85,24 +82,6 @@ const projectCopy: Record<Lang, Record<string, ProjectCopy>> = {
         "An ad-free, privacy-first desktop music player with its own tagging system and several skins to choose from.",
       alt: "STARPLAYER ad-free desktop music player in three skins: a purple glass song list, a retro pixel album grid and a soft glass now playing screen",
     },
-    bwm: {
-      name: "BWM",
-      description:
-        "Batch text watermarks for your images. There's a command line version and a desktop app, for when you have a whole folder to protect.",
-      alt: "BWM free bulk image watermark maker: the desktop app settings, a process completed dialog and the command line version",
-    },
-    commission: {
-      name: "Commission Calculator",
-      description:
-        "A small desktop app for working out commissions and percentages in seconds. Handy if you freelance and quote often.",
-      alt: "Commission and percentage calculator desktop app calculating 20% of 1500 and showing the amount to subtract and the final value",
-    },
-    usdtoves: {
-      name: "USD to VES",
-      description:
-        "A desktop converter between US dollars and Venezuelan bolívars using the official BCV rate. Very local, very useful if you live here.",
-      alt: "USD to VES currency converter desktop app with buttons to convert dollars to bolívars and check today's BCV rate",
-    },
   },
   es: {
     serperwave: {
@@ -147,24 +126,6 @@ const projectCopy: Record<Lang, Record<string, ProjectCopy>> = {
         "Un reproductor de música de escritorio sin anuncios y que respeta tu privacidad, con su propio sistema de etiquetas y varias skins para elegir.",
       alt: "Reproductor de música de escritorio STARPLAYER, sin anuncios, en tres skins: lista de canciones en cristal morado, cuadrícula de portadas en pixel retro y pantalla de reproducción en cristal suave",
     },
-    bwm: {
-      name: "BWM",
-      description:
-        "Marcas de agua de texto en lote para tus imágenes. Tiene versión de línea de comandos y app de escritorio, para cuando tienes una carpeta entera que proteger.",
-      alt: "BWM, generador gratis de marcas de agua en lote: ajustes de la app de escritorio, aviso de proceso completado y la versión de línea de comandos",
-    },
-    commission: {
-      name: "Calculadora de comisiones",
-      description:
-        "Una pequeña app de escritorio para sacar comisiones y porcentajes en segundos. Muy práctica si trabajas por tu cuenta y cotizas seguido.",
-      alt: "App de escritorio calculadora de comisiones y porcentajes calculando el 20% de 1500, con el valor a restar y el valor final",
-    },
-    usdtoves: {
-      name: "USD a VES",
-      description:
-        "Un convertidor de escritorio entre dólares y bolívares con la tasa oficial del BCV. Muy local, y muy útil si vives aquí.",
-      alt: "App de escritorio convertidor de USD a VES con botones para convertir dólares a bolívares y ver la tasa BCV del día",
-    },
   },
 };
 
@@ -208,13 +169,12 @@ const groupIcons: Record<GroupId, string> = {
   tools: "code",
   games: "rocket",
   retroWeb: "palette",
-  desktop: "devices",
 };
 
 const en: LabCopy = {
   pageTitle: "Side Projects: Open Source Apps, Games & Tools | Grecia V.",
   description:
-    "My side projects: open source games, apps, retro web templates and small tools I build in my own time, with Phaser, TypeScript, Python and plain HTML and CSS.",
+    "My side projects: open source games, apps, retro web templates and small tools I build in my own time, with Phaser, TypeScript and plain HTML and CSS.",
   heroEyebrow: "Open source & games",
   heroTitle: "Open source apps, games & tools:",
   heroTitleAccent: "my side projects",
@@ -225,7 +185,6 @@ const en: LabCopy = {
     games: { title: "Games", intro: "Arcade and narrative games built with Phaser." },
     retroWeb: { title: "Retro web & templates", intro: "Y2K and Frutiger Aero sites for the indie web." },
     tools: { title: "Productivity & tools", intro: "Apps I made for myself first." },
-    desktop: { title: "Desktop apps", intro: "Small Python utilities that do one job well." },
   },
   codeLink: "Code",
   demoLink: "Live demo",
@@ -251,7 +210,7 @@ const en: LabCopy = {
 const es: LabCopy = {
   pageTitle: "Proyectos personales: apps y juegos open source | Grecia V.",
   description:
-    "Mis proyectos personales: juegos, apps, plantillas web retro y pequeñas herramientas open source que hago en mi tiempo libre, con Phaser, TypeScript, Python y HTML y CSS puros.",
+    "Mis proyectos personales: juegos, apps, plantillas web retro y pequeñas herramientas open source que hago en mi tiempo libre, con Phaser, TypeScript y HTML y CSS puros.",
   heroEyebrow: "Open source y juegos",
   heroTitle: "Apps, juegos y herramientas open source:",
   heroTitleAccent: "mis proyectos personales",
@@ -262,7 +221,6 @@ const es: LabCopy = {
     games: { title: "Juegos", intro: "Juegos arcade y narrativos hechos con Phaser." },
     retroWeb: { title: "Web retro y plantillas", intro: "Sitios Y2K y Frutiger Aero para la web indie." },
     tools: { title: "Productividad y herramientas", intro: "Apps que primero hice para mí." },
-    desktop: { title: "Apps de escritorio", intro: "Pequeñas utilidades en Python que hacen una sola cosa bien." },
   },
   codeLink: "Código",
   demoLink: "Demo en vivo",

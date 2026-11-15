@@ -26,7 +26,7 @@ Así que reuní las formas que de verdad sirven para convertir **dólares y euro
 
 ## Por qué una app web y no una app instalada
 
-Antes de la lista, lo que me hizo pasar mi propio convertidor de una app de escritorio a una web. Yo empecé con una [versión en Python](https://github.com/GVPV12/usdtoves) que había que instalar en la computadora, y me di cuenta rápido de que nadie, ni yo, la abría para un cálculo rápido en la calle.
+Antes de la lista, lo que me hizo pasar mi propio convertidor de una app de escritorio a una web. Yo empecé con una versión en Python que había que instalar en la computadora, y me di cuenta rápido de que nadie, ni yo, la abría para un cálculo rápido en la calle.
 
 Una app web tiene ventajas muy concretas:
 
