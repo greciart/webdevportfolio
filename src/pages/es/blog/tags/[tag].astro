@@ -30,7 +30,7 @@ export async function getStaticPaths() {
 const { posts, label } = Astro.props;
 ---
 
-<Layout pageTitle={`Artículos sobre ${label} | Grecia V.`} description={`Todos los artículos etiquetados como ${label} en el blog de Grecia V., diseñadora web y desarrolladora frontend.`}>
+<Layout pageTitle={`Artículos sobre ${label} | Grecia V.`} description={`Todos los artículos etiquetados como ${label} en el blog de Grecia V., diseñadora web y desarrolladora frontend.`} noindex>
     <section class="py-8">
         <div class="flex flex-col gap-8 max-w-4xl mx-auto">
             <Heading text="Artículos sobre" textGradient={label}/>

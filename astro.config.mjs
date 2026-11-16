@@ -5,6 +5,26 @@ import preact from "@astrojs/preact";
 import sitemap from "@astrojs/sitemap"
 import icon from "astro-icon";
 import mdx from '@astrojs/mdx';
+import { readFileSync, readdirSync } from "node:fs";
+
+// Fecha de cada post para el <lastmod> del sitemap. Sin lastmod Google no tiene
+// forma de saber que algo cambio y recrawlea "cuando le toca"; con el, los posts
+// que se actualizan (poniendo `updatedDate:` en el frontmatter) vuelven a la cola
+// antes. Si no hay updatedDate se usa pubDate.
+const postDates = new Map();
+for (const [dir, prefix] of [
+  ["src/pages/blog/posts/", "/blog/posts/"],
+  ["src/pages/es/blog/posts/", "/es/blog/posts/"],
+]) {
+  for (const file of readdirSync(new URL(`./${dir}`, import.meta.url))) {
+    if (!file.endsWith(".md")) continue;
+    const src = readFileSync(new URL(`./${dir}${file}`, import.meta.url), "utf8");
+    const pick = (key) =>
+      src.match(new RegExp(`^${key}:\\s*["']?(\\d{4}-\\d{2}-\\d{2})`, "m"))?.[1];
+    const date = pick("updatedDate") ?? pick("pubDate");
+    if (date) postDates.set(`${prefix}${file.replace(/\.md$/, "")}/`, date);
+  }
+}
 
 // https://astro.build/config
 export default defineConfig({
@@ -32,6 +52,11 @@ export default defineConfig({
       !page.includes("/blog/tags") &&
       !page.includes("/blog/techs") &&
       !page.includes("/404"),
+    serialize(item) {
+      const date = postDates.get(new URL(item.url).pathname);
+      if (date) item.lastmod = new Date(date).toISOString();
+      return item;
+    },
   }),],
   
   // The stylesheet is ~130 KB. Inlined into every page it was re-downloaded on

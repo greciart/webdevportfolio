@@ -7,6 +7,7 @@ image:
   url: "/images/posts/serperwave-vaporwave-snake-game.webp"
   alt: "SERPERWAVE gameplay on level 6 Prism Peak: a cyan and pink pixel moon over neon mountains and a synthwave grid in a free vaporwave snake game."
 pubDate: 2026-09-23
+updatedDate: 2026-11-16
 tags:
   [
     "Creative Coding",
@@ -15,11 +16,9 @@ tags:
 languages: ["typescript", "javascript", "claude"]
 ---
 
-I said I was going to make a snake game. That was the whole plan. Eat food, get longer, don't hit the wall, ship it in a weekend.
+Snake was supposed to be a weekend project. The whole plan fit on a sticky note: food, a longer snake, walls, done.
 
-Thirteen levels later I have a combo system with a decaying meter, twenty mystery box outcomes across four rarity tiers, three game modes, two soundtracks you can swap between, and a level called GAME BOY where the entire board lives inside a tiny handheld screen. None of that was the plan. Every time I finished a piece I could see the next thing that was missing, and I have never once in my life left a "next thing" alone.
-
-That's **SERPERWAVE**: a free, nostalgic vaporwave version of the snake game you grew up with, styled like a 90s arcade cabinet and playable right in your browser. The same simple game, just prettier, glowier and a lot more pink.
+What I shipped instead is **SERPERWAVE**, a free vaporwave snake game you play in the browser, dressed up as a 90s arcade cabinet. It has 13 levels, three game modes, a loot system with twenty possible outcomes and two soundtracks. Every time I finished one piece I could see the next one missing, and I added it. That's a habit of mine, not a plan.
 
 - **Play it free in your browser:** [grecia-v.itch.io/serperwave](https://grecia-v.itch.io/serperwave)
 
@@ -29,30 +28,32 @@ That's **SERPERWAVE**: a free, nostalgic vaporwave version of the snake game you
 
 ## Why Phaser and not Godot
 
-I spent way too long deciding which engine to use for my first game good enough to publish. I wanted to use Godot, and I still plan to, but I think it shines for other kinds of games. Or maybe I just prefer sticking to what I know, and what I know is web development. For a simple 2D arcade game that should open instantly in a browser tab, **Phaser** with TypeScript was the obvious fit.
+Choosing an engine took me longer than making some of the levels. Godot was the one I wanted, and I still plan to make something with it. But a small 2D arcade game that has to start the second you open a tab is web territory, and the web is what I know. So: **Phaser** with TypeScript.
 
-I used Claude Code to help with the programming, but the idea, the game design and the UI/UX design were all done by a human, not by AI.
+There isn't a single sprite sheet, font file or audio file in the game. Every pixel is drawn in code, and both soundtracks come from a step sequencer that plays live in your browser.
+
+Claude Code helped me write the code. The concept, the game design and the UI/UX design are mine.
 
 ## How it plays
 
-It's still snake at its core. Arrow keys or WASD, or swipe on mobile. What's different is that holding the direction you're already moving in makes the snake burst forward, and letting go settles it back to normal speed. Inputs are buffered two deep, so you can queue two turns into a tight corner and both fire in order, instead of the game only catching the last key you hit.
+The controls are the ones you remember: arrow keys, WASD, or swipe on a phone. Two things are new. If you hold the key for the direction you're already going, the snake speeds up until you let go. And the game remembers your next two turns, so a quick double turn into a tight corner does both moves in order instead of dropping one.
 
-The part that actually runs the game is the **streak meter**. It's not a counter, it's a timer. Every piece of food fills it and it's always draining, so a streak is something you defend, not something that piles up. Let it drain and you're back to pulling mostly junk. Keep it alive and the mystery boxes swing hard toward RARE and EPIC loot. Even the eating sound climbs a semitone with every point, so a good run genuinely *sounds* like one before you check the score.
+The rest of the game hangs on the **streak meter**. Food fills it, and it empties on its own the whole time. Keep it up and the mystery boxes start paying out RARE and EPIC items. Let it run dry and you'll mostly pull junk. The sound follows it too: each point raises the eating sound by a semitone, so you can hear a good run building before you look at the score.
 
 ![SERPERWAVE level 8 Digital Void: a cyan pixel snake on a black board with falling green code, pink striped lethal blocks and pixel hearts for lives](../../../assets/blog/serperwave-neon-pixel-level-obstacles.webp)
 
 ## The loot: 20 mystery box outcomes
 
-Four rarities, twenty items:
+Boxes come in four rarities:
 
-- **EPIC:** GHOST.EXE makes you immune to blocks. DATA HARVEST turns every lethal block on the board into food.
+- **EPIC:** GHOST.EXE lets you pass through blocks. DATA HARVEST turns every lethal block on the board into food.
 - **RARE:** OVERCLOCK ×2, MAGNET, BLUE SCREEN, SLOW.SYS, COMBO LOCK.
-- **COMMON:** DEFRAG, SHIELD, TELEPORT, SHUFFLE, flat points.
-- **BAD:** INVERT.DLL flips your controls, plus TURBO ERROR, BLOCK RAIN, VHS TRACKING, BLOAT and TAX.
+- **COMMON:** DEFRAG, SHIELD, TELEPORT, SHUFFLE, or plain points.
+- **BAD:** INVERT.DLL reverses your controls. TURBO ERROR, BLOCK RAIN, VHS TRACKING, BLOAT and TAX make up the rest of the bad luck.
 
-A box never kills you outright, though a bad pull will happily hand you the shovel.
+No box can end your run by itself. A bad one can set you up to end it on your own, though.
 
-Outside the boxes there are four more pickups. Apples restore a full heart, stars restore half, flowers go straight to your score. And if a rainbow **PRISM STAR** ever shows up, which is rare, grab it: it skips you straight to the next level.
+Four more pickups live outside the boxes. Apples give back a whole heart, stars give back half, and flowers are pure score. The rare one is the rainbow **PRISM STAR**: grab it and you jump straight to the next level.
 
 ![SERPERWAVE title screen with the Start, Mode, How to Play, Options and Records menu over a collage of neon levels from the vaporwave snake game](../../../assets/blog/serperwave-snake-game-development-screens.webp)
 
@@ -60,21 +61,23 @@ Outside the boxes there are four more pickups. Apples restore a full heart, star
 
 MIAMI SUNSET · NEON GRID · TERMINAL · AQUA / 水 · TOKYO NIGHT · MAGIC HOUR · OUTRUN · DIGITAL VOID · VAPOR TEMPLE · SYSTEM OVERLOAD · GAME BOY · GRID HORIZON · LIGHTFALL
 
-Each one has its own palette, animated backdrop and soundtrack. You should be able to tell which level you're on with your eyes closed. Some bend the rules too: wrap-around edges that turn walls into doors, and a couple that trap the whole board inside something else, like an old arcade cabinet or that handheld console. The space you can move in shrinks as the game gets harder, which was a fun problem to design and a slightly less fun problem to build.
+Every level has its own colors, moving background and music, and I wanted them different enough that you'd know where you are from the sound alone. Some of them change the rules. On a few, the edges wrap around, so a wall becomes a way through. Two squeeze the whole board inside an object: an arcade cabinet in one, and in GAME BOY, a pink handheld screen. The area you can move in gets smaller as the difficulty goes up. Designing that was fun. Getting the collisions right inside a tiny screen was less fun.
 
 ![SERPERWAVE level 1 Miami Sunset: the neon snake framed by a glowing pink and cyan ring over a synthwave perspective grid](../../../assets/blog/serperwave-neon-snake-glowing-rings.webp)
 
-If you like this look, by the way, I also sell [synthwave and neon 3D models for Blender](/shop/3d-models/), tunnels and spheres included, in case you want a backdrop like this for your own project.
+If you want this look for your own project, I sell [synthwave and neon 3D models for Blender](/shop/3d-models/), tunnels and spheres included.
 
 ## Three modes, three different games
 
-- **NORMAL** is the default. 5 lives, and getting hit restarts the level with your score and progress intact. Clear all 13 levels and you get a real ending.
-- **RUNNER** has no lives. One hit and the run is over. It's also the only mode where the broken VHS shaders show up, glitch and tracking distortion degrading the screen while you play. It has its own ending too.
-- **RANDOM** is endless. Levels in random order, 3 lives, no finish line. Built for chasing a high score.
+- **NORMAL:** five lives. A hit sends you back to the start of the level but keeps your score and progress. Beat level 13 and there's an ending waiting for you.
+- **RUNNER:** no lives at all, one hit and it's over. This is the mode with the broken VHS shaders, where glitches and tracking noise eat the screen while you play. It has an ending of its own.
+- **RANDOM:** endless, with the levels shuffled and three lives. No ending here, only your high score.
+
+Clear enough levels and a level select unlocks, so you can go back to your favorite without replaying the whole run.
 
 ![The classic 1997 snake game on a green phone screen next to SERPERWAVE now: a glowing cyan snake, a synthwave sunset and neon grid](../../../assets/blog/serperwave-vs-classic-1997-snake-game.webp)
 
-Here's a full walkthrough if you want to see all 13 levels before you play:
+This walkthrough shows all 13 levels, if you'd rather see them before you play:
 
 <iframe style="width:100%;aspect-ratio:16/9;border:0;border-radius:12px" src="https://www.youtube-nocookie.com/embed/LXP5P6Qlcwc" title="SERPERWAVE Gameplay Walkthrough, 13-Level Vaporwave Snake Game" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
@@ -82,19 +85,19 @@ Here's a full walkthrough if you want to see all 13 levels before you play:
 
 ## Accessible by default, not as an afterthought
 
-There's a pause-on-pickup toggle, so opening a box freezes the game and shows you what you got until you press a key, or you can turn it off and keep the pace. And an **effects intensity slider** at 0, 50 or 100% that scales screen shake, glitch and static all the way down to nothing.
+Two settings change how the game feels. Pause-on-pickup stops the action when you open a box and keeps the result on screen until you press a key. Turn it off if you'd rather not break your rhythm. The effects slider has three steps, 0, 50 and 100%, and at 0 there's no screen shake, glitch or static left.
 
-It respects `prefers-reduced-motion` and stays fully playable with every effect at zero. Lethal blocks are marked three ways at once, color, diagonal stripes and a blinking outline, so they still read if you're colorblind. And it's playable with only a keyboard or only touch. (I care about this stuff on websites too: here's [how the accessibility menu on this site is built](/blog/posts/website-accessibility-menu-options/).)
+If your system has `prefers-reduced-motion` turned on, the game follows it, and every level can be finished with the effects off. Lethal blocks carry three signals at once (color, diagonal stripes and a blinking border), so color isn't the only clue if you're colorblind. A keyboard alone or a touchscreen alone is enough to play. I care about this on websites too, and here's [how the accessibility menu on this site is built](/blog/posts/website-accessibility-menu-options/).
 
 ## Why it feels like a 90s arcade
 
-Snake was one of the first games a lot of us ever played, on an old Nokia or a computer at school. I wanted SERPERWAVE to feel like that memory, but in the version your brain remembers instead of the real one: neon sunsets, synthwave grids, CRT glow and scanlines, a level hiding inside an arcade cabinet and another inside a pink handheld console.
+A lot of us met snake on an old Nokia or a school computer. SERPERWAVE is that memory the way your head stored it, which is brighter than the real thing: neon sunsets, synthwave grids, CRT glow and scanlines.
 
 ![90s retro snake: SERPERWAVE running on an old CRT monitor, wrapped by a neon pixel snake, with pixel palm trees, holographic stars and an Out Now button](../../../assets/blog/serperwave-90s-vaporwave-snake-arcade.webp)
 
-The music matters as much as the colors. There are two full retro soundtracks to switch between in the main menu, one with the full synthwave energy and a softer one, in case you'd rather not have OUTRUN's tempo living in your chest the whole session.
+The music does half of that work. From the main menu you can switch between two soundtracks: the full synthwave one, and a calmer one for when OUTRUN's beat starts to feel like too much.
 
-And the pixels stay crisp: the game only scales by whole numbers, so it never looks blurry at any window size, on any screen.
+The pixel art stays sharp because the game only scales in whole-number steps, whatever the size of your window or screen.
 
 ---
 
@@ -104,6 +107,6 @@ And the pixels stay crisp: the game only scales by whole numbers, so it never lo
 - **YouTube:** [official trailer](https://www.youtube.com/watch?v=quV0Fv8Er4Y) and [full gameplay walkthrough](https://www.youtube.com/watch?v=LXP5P6Qlcwc)
 - **Substack:** [Snake game, but it's a 90s arcade cabinet](https://greciart.substack.com/p/snake-game-but-its-a-90s-arcade-cabinet)
 
-It's one of the games in my [side projects](/side-projects/), next to *El Peso del Sí*, a short visual novel I made with Zim Yi, also in Phaser. And there are more SERPERWAVE games on the workbench, set in the same universe.
+It lives in my [side projects](/side-projects/) next to *El Peso del Sí*, a short visual novel I made with Zim Yi, also in Phaser. More SERPERWAVE games set in the same universe are already in the works.
 
 Go lose an evening to it. Then tell me which level killed you the most.

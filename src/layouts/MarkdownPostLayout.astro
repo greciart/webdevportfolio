@@ -47,6 +47,9 @@ const articleSchema = [
     headline: frontmatter.title,
     description: frontmatter.description,
     datePublished: new Date(frontmatter.pubDate).toISOString().slice(0, 10),
+    dateModified: new Date(frontmatter.updatedDate ?? frontmatter.pubDate)
+      .toISOString()
+      .slice(0, 10),
     inLanguage: uiLang,
     author: { "@id": `${Astro.site}#person` },
     publisher: { "@id": `${Astro.site}#person` },

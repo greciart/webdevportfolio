@@ -29,14 +29,27 @@ allPosts.sort((a, b) => {
 let postsToShow = allPosts;
 
 if (currentPostUrl) {
-  // Exclude current post if its URL is provided
-  postsToShow = postsToShow.filter((post) => {
-    if (!post.url) return false; // If no URL, keep the post
-    // Normalize URLs for comparison
-    const normalizedPostUrl = post.url.replace(/\/$/, ""); // Remove trailing slash if exists
-    const normalizedCurrentUrl = currentPostUrl.replace(/\/$/, ""); // Remove trailing slash if exists
-    return normalizedPostUrl !== normalizedCurrentUrl;
-  });
+  const norm = (u: string) => u.replace(/\/$/, "");
+  const current = allPosts.find((post) => post.url && norm(post.url) === norm(currentPostUrl));
+  postsToShow = postsToShow.filter((post) => post.url && norm(post.url) !== norm(currentPostUrl));
+
+  // Related posts instead of "the 4 newest". With the newest list, every
+  // article linked to the same four, and older posts were only reachable from
+  // /blog/posts/; Google read that as "not important" and left them in
+  // "Crawled - currently not indexed". Ranking by shared tags/techs spreads the
+  // internal links across the whole archive. Ties keep newest-first (the sort
+  // above is stable).
+  if (current) {
+    const topics = new Set([
+      ...(current.frontmatter.tags ?? []),
+      ...(current.frontmatter.languages ?? []),
+    ]);
+    const score = (post: any) =>
+      [...(post.frontmatter.tags ?? []), ...(post.frontmatter.languages ?? [])].filter((x) =>
+        topics.has(x),
+      ).length;
+    postsToShow = [...postsToShow].sort((a, b) => score(b) - score(a));
+  }
 } else if (excludeLatest) {
   // If no specific URL but want to exclude the latest
   postsToShow = postsToShow.slice(1);
