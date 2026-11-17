@@ -408,10 +408,10 @@ const immersiveMeta: Record<string, Record<Lang, Caption>> = {
 /** Shown first, in this order (best screens first); everything else follows alphabetically. */
 const immersiveFirst = [
   "el-peso-del-si-isometric-room",
+  "el-peso-del-si-desktop-chat",
   "unspoken-words-aquarium",
   "el-peso-del-si-multitask-central",
   "unspoken-words-starry-bedroom",
-  "el-peso-del-si-desktop-chat",
   "unspoken-words-library-hall",
   "unspoken-words-planetarium",
 ];
