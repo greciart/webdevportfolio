@@ -97,6 +97,11 @@ const chip =
       <p class={`${bodyText} max-w-2xl`}>
         {c.heroIntro}
       </p>
+      <a
+        href="#showreel-3d"
+        class="text-sm font-semibold text-mint-600 underline underline-offset-4 transition-colors hover:text-riptide-500 dark:text-mint-300"
+        >{c.showreelLink} →</a
+      >
 
       <nav
         class="mt-2 flex flex-wrap items-center justify-center gap-3"
@@ -278,7 +283,7 @@ c.brandingTools.map((tool) => <span class={chip}>{tool}</span>)
       </header>
 
       <!-- Showreel first: it is the strongest proof in the section. -->
-      <figure data-reveal="scale" class="flex flex-col gap-3">
+      <figure id="showreel-3d" data-reveal="scale" class="flex scroll-m-24 flex-col gap-3">
         <div class="mx-auto w-full overflow-hidden rounded-2xl border border-mint-100 dark:border-zinc-800 max-md:max-w-sm">
           <Video
             provider="file"

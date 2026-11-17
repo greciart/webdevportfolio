@@ -4,8 +4,8 @@ title: "BrainDeck: 20+ Free Browser Tools to Study and Create"
 author: Grecia V.
 description: "BrainDeck puts 20+ free tools in your browser: an ADHD-friendly study planner, progress tracker, palettes, watermarks, PDF tools and more. No accounts, open source."
 image:
-  url: "/images/posts/braindeck-herramientas-gratis-estudiar-crear.webp"
-  alt: "BrainDeck home screen in the grid paper style: pixel art cat avatar, level 3, RPG style stats, item bag and the tools sidebar"
+  url: "/images/posts/braindeck-free-study-art-tools.webp"
+  alt: "BrainDeck home screen in the glassy Frost style: pixel art cat avatar, level, RPG style stats, item bag, Install app button and the tools sidebar"
 pubDate: 2026-11-17
 tags:
   [
@@ -23,6 +23,8 @@ My study and art tools were scattered everywhere: an ad-filled site to compress 
 
 - **Try it:** [mybraindeck.netlify.app](https://mybraindeck.netlify.app/)
 - **Source code:** [github.com/GVPV12/braindeck](https://github.com/GVPV12/braindeck)
+
+![BrainDeck's four visual styles on the home screen: Paper with grid paper, neobrutalist Neo pixel, dark glass Cosmos and light glass Frost](../../../assets/blog/braindeck-cuatro-estilos-en.webp)
 
 ---
 
@@ -120,13 +122,7 @@ On mobile the sidebar becomes a bottom bar, and I tested it at 360, 390 and 768 
 
 ## Four visual styles
 
-Paper is the default, with grid paper and black and white retro windows. There's also Neo pixel, which is neobrutalist, Cosmos, in dark glass, and Frost, which is more minimal. Whichever you pick is remembered on every visit.
-
-![BrainDeck home screen in the neobrutalist Neo pixel style](../../../assets/blog/braindeck-tema-neo-pixel-en.webp)
-
-![BrainDeck home screen in the dark glass Cosmos style](../../../assets/blog/braindeck-tema-cosmos-en.webp)
-
-![BrainDeck home screen in the minimal Frost style](../../../assets/blog/braindeck-tema-frost-en.webp)
+Paper is the default, with grid paper and black and white retro windows. There's also Neo pixel, which is neobrutalist, Cosmos, in dark glass, and Frost, in light glass. All four are in the collage at the top, and whichever you pick is remembered on every visit.
 
 ## Privacy: your data never leaves your browser
 

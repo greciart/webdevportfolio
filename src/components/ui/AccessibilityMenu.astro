@@ -172,7 +172,7 @@ const toggles = [
 
     // Reducing motion has to reach the looping project previews too, otherwise
     // the one thing actually moving on the page keeps moving.
-    document.querySelectorAll<HTMLVideoElement>("video[data-lazy-preview]").forEach((video) => {
+    document.querySelectorAll<HTMLVideoElement>("video[data-lazy-preview], video[data-motion-loop]").forEach((video) => {
       if (!prefs.motion) return;
       video.pause();
       video.currentTime = 0;

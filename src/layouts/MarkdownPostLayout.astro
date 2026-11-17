@@ -56,6 +56,19 @@ const articleSchema = [
     mainEntityOfPage: { "@id": currentUrl },
     ...(shareImage ? { image: shareImage } : {}),
     ...(frontmatter.tags?.length ? { keywords: frontmatter.tags.join(", ") } : {}),
+    // Lets Google show the hero loop in video results.
+    ...(frontmatter.heroVideo
+      ? {
+          video: {
+            "@type": "VideoObject",
+            name: frontmatter.title,
+            description: frontmatter.description,
+            thumbnailUrl: shareImage,
+            contentUrl: new URL(frontmatter.heroVideo, Astro.site).href,
+            uploadDate: new Date(frontmatter.pubDate).toISOString().slice(0, 10),
+          },
+        }
+      : {}),
   },
 ];
 ---
@@ -103,6 +116,16 @@ const articleSchema = [
     setTimeout(() => {
       button.innerHTML = copyButtonLabel;
     }, 700);
+  }
+
+  // Autoplaying loops (hero and in-post) stop on their poster frame when the
+  // system asks for reduced motion. The accessibility menu's toggle covers the rest.
+  if (matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    document.querySelectorAll<HTMLVideoElement>("video[data-motion-loop]").forEach((video) => {
+      video.removeAttribute("autoplay");
+      video.pause();
+      video.currentTime = 0;
+    });
   }
 </script>
 
@@ -158,7 +181,24 @@ const articleSchema = [
 
       <figure>
         {
-          frontmatter.image?.url && (
+          /* `heroVideo` swaps the cover for a short muted loop. The still in
+             `image` stays as its poster and as the share/schema image. */
+          frontmatter.heroVideo ? (
+            <video
+              class="w-full rounded-xl"
+              src={frontmatter.heroVideo}
+              poster={frontmatter.image?.url}
+              width={frontmatter.heroVideoWidth}
+              height={frontmatter.heroVideoHeight}
+              aria-label={frontmatter.image?.alt}
+              data-motion-loop
+              autoplay
+              muted
+              loop
+              playsinline
+              preload="auto"
+            />
+          ) : frontmatter.image?.url && (
             <img
               class="w-full rounded-xl"
               src={frontmatter.image.url}

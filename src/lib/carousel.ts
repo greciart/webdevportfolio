@@ -41,7 +41,7 @@ const shopByStem = byStem(shopExtras);
 const labByStem = byStem(labFiles);
 
 const extrasFrom = (pool: Map<string, ImageMetadata>, base: string) =>
-  [2, 3].map((n) => pool.get(`${base}-${n}`)).filter((img): img is ImageMetadata => !!img);
+  [2, 3, 4].map((n) => pool.get(`${base}-${n}`)).filter((img): img is ImageMetadata => !!img);
 
 export const shopExtrasFor = (base: string) => extrasFrom(shopByStem, base);
 export const labCoverFor = (id: string) => labByStem.get(id);

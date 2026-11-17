@@ -9,6 +9,8 @@ type Tier = {
   bestFor: string;
   includes: string[];
   featured?: boolean;
+  /** Link to a showreel. `path` is localized at render time; omit it for an anchor on this page. */
+  workLink?: { text: string; path?: string; hash: string };
 };
 
 /** `icon` is a name from src/icons. Optional: the pricing factors go without. */
@@ -121,6 +123,7 @@ const en: PackagesCopy = {
         "Payment methods your customers actually use, local transfer included",
         "Contact and lead forms wired to your inbox",
       ],
+      workLink: { text: "See my WordPress work", hash: "showreel-wordpress" },
     },
     {
       step: "02",
@@ -170,6 +173,7 @@ const en: PackagesCopy = {
         "Reduced motion support for accessibility",
         "Everything from the coded tier",
       ],
+      workLink: { text: "See my 3D work", path: "/extras", hash: "showreel-3d" },
     },
   ],
 
@@ -450,6 +454,7 @@ const es: PackagesCopy = {
         "Métodos de pago que tus clientes usan de verdad, transferencia local incluida",
         "Formularios de contacto conectados a tu correo",
       ],
+      workLink: { text: "Ver mi trabajo en WordPress", hash: "showreel-wordpress" },
     },
     {
       step: "02",
@@ -499,6 +504,7 @@ const es: PackagesCopy = {
         "Soporte de movimiento reducido por accesibilidad",
         "Todo lo del nivel en código",
       ],
+      workLink: { text: "Ver mi trabajo en 3D", path: "/extras", hash: "showreel-3d" },
     },
   ],
 

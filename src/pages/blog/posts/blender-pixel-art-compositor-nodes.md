@@ -5,7 +5,10 @@ author: Grecia V.
 description: "Turn a 3D render into pixel art in Blender 5.2 in five minutes with compositor nodes: Blender's official Dithering node and PixelAlchemy (Pixel Art, ASCII, CRT)."
 image:
   url: "/images/posts/blender-pixel-art-compositor-nodes.webp"
-  alt: "3D jellyfish turned into pixel art in Blender 5.2 with the PixelAlchemy Pixel Art node and Fog Glow in the compositor"
+  alt: "Blender 3D animations turned into pixel art with compositor nodes: a crown coin, a jellyfish, a synthwave landscape with a sun and a neon tunnel"
+heroVideo: "/videos/blender-pixel-art-compositor-nodes.mp4"
+heroVideoWidth: 1280
+heroVideoHeight: 720
 pubDate: 2026-11-16
 tags:
   [
@@ -173,4 +176,6 @@ Yes. The compositor runs on every frame you render, so if you render the whole a
 
 No. The official Dithering node is already in Blender once online access is on, and PixelAlchemy is a set of node groups you bring into your file with **File → Append**, with nothing to install in the preferences.
 
-More of my 3D work is in [extras](/extras/). And if you try this on your own model, I'd love to see how it turns out.
+<video class="w-full rounded-xl" src="/videos/pixel-art-crown-coin-blender-loop.mp4" poster="/videos/posters/pixel-art-crown-coin-blender-loop.webp" width="800" height="450" aria-label="Blender 3D crown coin turned into dithered pixel art, spinning in a loop" data-motion-loop autoplay muted loop playsinline preload="metadata"></video>
+
+To see more of my 3D work, [watch my showreel](/extras/#showreel-3d). And if you try this on your own model, I'd love to see how it turns out.

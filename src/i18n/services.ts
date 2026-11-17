@@ -46,6 +46,7 @@ export type ServicesCopy = {
   pipeline: string[];
   threeDGalleryTitle: string;
   showreelTitle: string;
+  showreelLink: string;
   showreelText: string;
   showreelAlt: string;
   showreelPlay: string;
@@ -190,6 +191,7 @@ const en: ServicesCopy = {
   pipeline: ["Blender · modeling", "Blender · animation & render", "Premiere Pro / CapCut · edit"],
   threeDGalleryTitle: "3D work",
   showreelTitle: "3D showreel 2026",
+  showreelLink: "See my 3D work",
   showreelText:
     "Modeling, animation and rendering in Blender, all original work made without AI.",
   showreelAlt: "Frame from Grecia V.'s 2026 3D showreel, made in Blender",
@@ -387,6 +389,7 @@ const es: ServicesCopy = {
   pipeline: ["Blender · modelado", "Blender · animación y render", "Premiere Pro / CapCut · edición"],
   threeDGalleryTitle: "Trabajos en 3D",
   showreelTitle: "Showreel 3D 2026",
+  showreelLink: "Ver mi trabajo en 3D",
   showreelText:
     "Modelado, animación y render en Blender, todo trabajo original hecho sin IA.",
   showreelAlt: "Fotograma del showreel 3D 2026 de Grecia V., hecho en Blender",

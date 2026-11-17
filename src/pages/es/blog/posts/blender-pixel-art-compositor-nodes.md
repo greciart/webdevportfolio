@@ -5,7 +5,10 @@ author: Grecia V.
 description: "Convierte un render 3D en pixel art en Blender 5.2 en cinco minutos con nodos del compositor: el Dithering oficial de Blender y PixelAlchemy (Pixel Art, ASCII, CRT)."
 image:
   url: "/images/posts/blender-pixel-art-compositor-nodes.webp"
-  alt: "Medusa 3D convertida en pixel art en Blender 5.2 con el nodo Pixel Art de PixelAlchemy y Fog Glow en el compositor"
+  alt: "Animaciones 3D de Blender convertidas en pixel art con nodos del compositor: una moneda con corona, una medusa, un paisaje synthwave con sol y un túnel de neón"
+heroVideo: "/videos/blender-pixel-art-compositor-nodes.mp4"
+heroVideoWidth: 1280
+heroVideoHeight: 720
 pubDate: 2026-11-16
 tags:
   [
@@ -173,4 +176,6 @@ Sí. El compositor se aplica a cada frame que renderizas, así que si renderizas
 
 No. El Dithering oficial ya está en Blender cuando activas el acceso en línea, y PixelAlchemy son grupos de nodos que traes a tu archivo con **File → Append**, sin instalar nada en las preferencias.
 
-Si quieres ver más cosas que hago en 3D, están en [extras](/es/extras/). Y si lo pruebas con tu propio modelo, me encantaría ver cómo te queda.
+<video class="w-full rounded-xl" src="/videos/pixel-art-crown-coin-blender-loop.mp4" poster="/videos/posters/pixel-art-crown-coin-blender-loop.webp" width="800" height="450" aria-label="Moneda 3D con corona de Blender convertida en pixel art con dithering, girando en bucle" data-motion-loop autoplay muted loop playsinline preload="metadata"></video>
+
+Si quieres ver más de lo que hago en 3D, [mira mi showreel](/es/extras/#showreel-3d). Y si lo pruebas con tu propio modelo, me encantaría ver cómo te queda.

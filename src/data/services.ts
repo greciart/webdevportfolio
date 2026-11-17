@@ -247,16 +247,88 @@ const immersiveFiles = import.meta.glob<{ default: ImageMetadata }>(
  * deserves a proper title; anything without one still shows up automatically.
  */
 const immersiveMeta: Record<string, Record<Lang, Caption>> = {
-  "balam-ball-title-screen-logo": {
+  "el-peso-del-si-isometric-room": {
     en: {
-      title: "Balam Ball · Title Screen & Logo",
-      alt: "Balam Ball title screen with the pixel art game logo, jaguar deity masks and the main menu",
-      tags: ["Game art", "Logo", "Menu UI"],
+      title: "El Peso del Sí · Isometric Room",
+      alt: "El Peso del Sí visual novel: an isometric pixel art bedroom full of boxes to sort, with Ari, a task checklist and a dialogue box",
+      tags: ["Visual novel", "Pixel art", "Game UI"],
     },
     es: {
-      title: "Balam Ball · Pantalla de título y logo",
-      alt: "Pantalla de título de Balam Ball con el logo del juego en pixel art, máscaras de deidades jaguar y el menú principal",
-      tags: ["Arte de juego", "Logo", "UI de menú"],
+      title: "El Peso del Sí · Cuarto isométrico",
+      alt: "Novela visual El Peso del Sí: un cuarto isométrico en pixel art lleno de cajas por ordenar, con Ari, una lista de tareas y un cuadro de diálogo",
+      tags: ["Novela visual", "Pixel art", "UI de juego"],
+    },
+  },
+  "el-peso-del-si-multitask-central": {
+    en: {
+      title: "El Peso del Sí · Multitask Central",
+      alt: "El Peso del Sí retro desktop: Ari's browser open on Multitask Central, a parody productivity site claiming tiredness is a myth, with articles like how to do 47 things at once without ever getting tired",
+      tags: ["UI/UX", "Retro web", "Satire"],
+    },
+    es: {
+      title: "El Peso del Sí · Multitask Central",
+      alt: "Escritorio retro de El Peso del Sí: el navegador de Ari abierto en Multitask Central, una web de productividad paródica que dice que el cansancio es mental, con artículos como cómo hacer 47 cosas a la vez sin cansarte jamás",
+      tags: ["UI/UX", "Web retro", "Sátira"],
+    },
+  },
+  "el-peso-del-si-desktop-chat": {
+    en: {
+      title: "El Peso del Sí · Desktop & Chat UI",
+      alt: "El Peso del Sí retro desktop: a chat window where people ask Ari for favors, three reply options and a sticky note with her to-do list",
+      tags: ["UI/UX", "Retro OS", "Choices"],
+    },
+    es: {
+      title: "El Peso del Sí · Escritorio y chat",
+      alt: "Escritorio retro de El Peso del Sí: una ventana de chat donde le piden favores a Ari, tres opciones de respuesta y una nota adhesiva con sus pendientes",
+      tags: ["UI/UX", "OS retro", "Decisiones"],
+    },
+  },
+  "unspoken-words-aquarium": {
+    en: {
+      title: "Unspoken Words · Glowing Aquarium",
+      alt: "Unspoken Words: Maia in a glowing underwater aquarium world, with a floating starry book, a ghostly figure and a dialogue box",
+      tags: ["3D exploration", "Visual novel", "Game UI"],
+    },
+    es: {
+      title: "Unspoken Words · Acuario luminoso",
+      alt: "Unspoken Words: Maia en un mundo de acuario submarino luminoso, con un libro estrellado flotando, una figura fantasmal y un cuadro de diálogo",
+      tags: ["Exploración 3D", "Novela visual", "UI de juego"],
+    },
+  },
+  "unspoken-words-library-hall": {
+    en: {
+      title: "Unspoken Words · Library of Whispers",
+      alt: "Unspoken Words: a long library corridor lined with tall bookshelves and light at the end, with Maia and a dialogue box",
+      tags: ["3D exploration", "Environment"],
+    },
+    es: {
+      title: "Unspoken Words · Biblioteca de susurros",
+      alt: "Unspoken Words: un pasillo largo de biblioteca con estanterías altas y luz al fondo, con Maia y un cuadro de diálogo",
+      tags: ["Exploración 3D", "Entorno"],
+    },
+  },
+  "unspoken-words-starry-bedroom": {
+    en: {
+      title: "Unspoken Words · Starry Bedroom",
+      alt: "Unspoken Words: Maia's dark blue starry bedroom with a crescent moon, a telescope and her broken music box glowing in the middle",
+      tags: ["3D exploration", "Narrative"],
+    },
+    es: {
+      title: "Unspoken Words · Cuarto estrellado",
+      alt: "Unspoken Words: el cuarto azul estrellado de Maia con una luna creciente, un telescopio y su caja de música rota brillando en el centro",
+      tags: ["Exploración 3D", "Narrativa"],
+    },
+  },
+  "unspoken-words-planetarium": {
+    en: {
+      title: "Unspoken Words · Planetarium",
+      alt: "Unspoken Words final world: a planetarium dome with a brass telescope and a ring of smiling stars around Maia",
+      tags: ["3D exploration", "Ending"],
+    },
+    es: {
+      title: "Unspoken Words · Planetario",
+      alt: "Último mundo de Unspoken Words: la cúpula de un planetario con un telescopio de bronce y un círculo de estrellas sonrientes alrededor de Maia",
+      tags: ["Exploración 3D", "Final"],
     },
   },
   "balam-ball-arena-round-ui": {
@@ -269,18 +341,6 @@ const immersiveMeta: Record<string, Record<Lang, Caption>> = {
       title: "Balam Ball · Arena e interfaz de ronda",
       alt: "Arena de juego de Balam Ball: un juego de pelota mesoamericano en la selva con máscaras de jugador, marcadores y el cartel de ronda",
       tags: ["Arte de juego", "Entorno", "UI de marcador"],
-    },
-  },
-  "balam-ball-victory-screen": {
-    en: {
-      title: "Balam Ball · Victory State",
-      alt: "Balam Ball victory screen showing the game logo, the player record and the replay options",
-      tags: ["Game UI", "End state"],
-    },
-    es: {
-      title: "Balam Ball · Pantalla de victoria",
-      alt: "Pantalla de victoria de Balam Ball mostrando el logo del juego, el récord del jugador y las opciones para volver a jugar",
-      tags: ["UI de juego", "Estado final"],
     },
   },
   "starmoon-boot-sequence": {
@@ -343,30 +403,21 @@ const immersiveMeta: Record<string, Record<Lang, Caption>> = {
       tags: ["Nekoweb", "UI de app"],
     },
   },
-  "game-jam-venue-open-air-stage": {
-    en: {
-      title: "Open-Air Venue & Crowd Traits",
-      alt: "Game jam UI: lit open-air plaza stage showing the audience type label and the crowd trait selector",
-      tags: ["Game UI", "Environment"],
-    },
-    es: {
-      title: "Escenario al aire libre y rasgos del público",
-      alt: "Interfaz de game jam: escenario iluminado en una plaza al aire libre mostrando la etiqueta del tipo de público y el selector de rasgos",
-      tags: ["UI de juego", "Entorno"],
-    },
-  },
-  "game-jam-credits-art-direction": {
-    en: {
-      title: "Credits Screen & Art Direction",
-      alt: "Game jam credits screen with rubber hose style cartoon illustrations crediting the team",
-      tags: ["Art direction", "Credits"],
-    },
-    es: {
-      title: "Pantalla de créditos y dirección de arte",
-      alt: "Pantalla de créditos de game jam con ilustraciones de dibujos animados estilo rubber hose acreditando al equipo",
-      tags: ["Dirección de arte", "Créditos"],
-    },
-  },
+};
+
+/** Shown first, in this order (best screens first); everything else follows alphabetically. */
+const immersiveFirst = [
+  "el-peso-del-si-isometric-room",
+  "unspoken-words-aquarium",
+  "el-peso-del-si-multitask-central",
+  "unspoken-words-starry-bedroom",
+  "el-peso-del-si-desktop-chat",
+  "unspoken-words-library-hall",
+  "unspoken-words-planetarium",
+];
+const immersiveRank = (slug: string) => {
+  const i = immersiveFirst.indexOf(slug);
+  return i === -1 ? immersiveFirst.length : i;
 };
 
 const titleFromFilename = (slug: string) =>
@@ -491,8 +542,9 @@ export function getThreeDGallery(lang: Lang): GalleryItem[] {
 }
 
 export function getImmersiveGallery(lang: Lang): GalleryItem[] {
+  const slugOf = (p: string) => p.split("/").pop()!.replace(/\.\w+$/, "");
   return Object.entries(immersiveFiles)
-    .sort(([a], [b]) => a.localeCompare(b))
+    .sort(([a], [b]) => immersiveRank(slugOf(a)) - immersiveRank(slugOf(b)) || a.localeCompare(b))
     .map(([path, mod]) => {
       const slug = path.split("/").pop()!.replace(/\.\w+$/, "");
       const meta = immersiveMeta[slug];

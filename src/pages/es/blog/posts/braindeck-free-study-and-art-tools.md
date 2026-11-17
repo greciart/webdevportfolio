@@ -5,7 +5,7 @@ author: Grecia V.
 description: "BrainDeck reúne más de 20 herramientas gratis en el navegador: plan de estudios para TDAH, tracker, paletas, marca de agua, PDFs y más. Sin cuentas y open source."
 image:
   url: "/images/posts/braindeck-herramientas-gratis-estudiar-crear.webp"
-  alt: "Inicio de BrainDeck con estilo de papel cuadriculado: avatar de gato en pixel art, nivel 3, stats estilo RPG, bolsa de items y menú lateral con las herramientas"
+  alt: "Inicio de BrainDeck con el estilo Frost en glass: avatar de gato en pixel art, nivel, stats estilo RPG, bolsa de items, botón Instalar app y menú lateral con las herramientas"
 pubDate: 2026-11-17
 tags:
   [
@@ -23,6 +23,8 @@ Para estudiar y crear tenía las herramientas repartidas por todos lados: una we
 
 - **Pruébala:** [mybraindeck.netlify.app](https://mybraindeck.netlify.app/)
 - **Código fuente:** [github.com/GVPV12/braindeck](https://github.com/GVPV12/braindeck)
+
+![Los cuatro estilos visuales de BrainDeck en el inicio: Paper con papel cuadriculado, Neo pixel neobrutalista, Cosmos en glass oscuro y Frost en glass claro](../../../../assets/blog/braindeck-cuatro-estilos-es.webp)
 
 ---
 
@@ -120,13 +122,7 @@ En móvil el menú lateral pasa a una barra inferior, y lo probé a 360, 390 y 7
 
 ## Cuatro estilos visuales
 
-Paper es el predeterminado, con papel cuadriculado y ventanas retro en blanco y negro. También están Neo pixel, que es neobrutalista, Cosmos, en glass oscuro, y Frost, más minimal. El que elijas se recuerda en cada visita.
-
-![Inicio de BrainDeck con el estilo Neo pixel, neobrutalista](../../../../assets/blog/braindeck-tema-neo-pixel-es.webp)
-
-![Inicio de BrainDeck con el estilo Cosmos, en glass oscuro](../../../../assets/blog/braindeck-tema-cosmos-es.webp)
-
-![Inicio de BrainDeck con el estilo Frost, minimal](../../../../assets/blog/braindeck-tema-frost-es.webp)
+Paper es el predeterminado, con papel cuadriculado y ventanas retro en blanco y negro. También están Neo pixel, que es neobrutalista, Cosmos, en glass oscuro, y Frost, en glass claro. Los cuatro están en el collage del principio, y el que elijas se recuerda en cada visita.
 
 ## Privacidad: tus datos no salen de tu navegador
 

@@ -13,8 +13,7 @@ const en: Job[] = [
     title: "Freelance Visual Designer and Web Developer",
     company: "Self Employed",
     description:
-      "Currently working as a freelance web designer and frontend developer, building high-performance websites using WordPress, Shopify, and Astro, with a strong focus on user experience, scalability, and conversion optimization.",
-  },
+      "Currently working as a freelance web designer and frontend developer, building high-performance websites using WordPress, Shopify, and Astro, with a strong focus on user experience, scalability, and conversion optimization.",  },
   {
     date: "Jun 2019 - Jan 2020",
     title: "Web developer",
@@ -37,8 +36,7 @@ const es: Job[] = [
     title: "Diseñadora visual y desarrolladora web freelance",
     company: "Por cuenta propia",
     description:
-      "Actualmente trabajo como diseñadora web y desarrolladora frontend freelance, construyendo sitios de alto rendimiento con WordPress, Shopify y Astro, con foco en la experiencia de usuario, la escalabilidad y la optimización de la conversión.",
-  },
+      "Actualmente trabajo como diseñadora web y desarrolladora frontend freelance, construyendo sitios de alto rendimiento con WordPress, Shopify y Astro, con foco en la experiencia de usuario, la escalabilidad y la optimización de la conversión.",  },
   {
     date: "Jun 2019 - Ene 2020",
     title: "Desarrolladora web",
