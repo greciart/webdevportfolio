@@ -5,12 +5,32 @@ import Button from "../components/ui/Button.astro";
 import { Icon } from "astro-icon/components";
 import { packagesCopy } from "../i18n/packages";
 import { getLangFromUrl, localizePath } from "../i18n/utils";
+import Video from "../components/Video.astro";
 
 const lang = getLangFromUrl(Astro.url);
 const c = packagesCopy[lang];
 const p = (path: string) => localizePath(path, lang);
 
 const { pageTitle, description } = c;
+
+// WordPress reel sits under the tiers as proof of tier 01. File and poster are
+// written to public/videos by the compression script.
+const reel = {
+  src: "/videos/showreel-wordpress-web-design-grecia-v.mp4",
+  poster: "/videos/posters/showreel-wordpress-web-design-grecia-v.webp",
+};
+const videoSchema = [
+  {
+    "@type": "VideoObject",
+    name: c.reelSchemaName,
+    description: c.reelSchemaDescription,
+    thumbnailUrl: new URL(reel.poster, Astro.site).href,
+    contentUrl: new URL(reel.src, Astro.site).href,
+    uploadDate: "2026-11-17",
+    inLanguage: lang,
+    author: { "@id": `${Astro.site}#person` },
+  },
+];
 
 // Same tokens as the extras page, so the two read as one site.
 const cardBorder =
@@ -26,7 +46,7 @@ const chip =
 const sectionWrap = "scroll-m-24 px-8 py-16 max-sm:px-4 max-sm:py-10";
 ---
 
-<Layout pageTitle={pageTitle} description={description}>
+<Layout pageTitle={pageTitle} description={description} schema={videoSchema}>
   <!-- ===================== HERO ===================== -->
   <section class="relative px-8 pb-8 pt-16 max-sm:px-4 max-sm:pt-10">
     <div class="blur-circle"></div>
@@ -129,6 +149,22 @@ const sectionWrap = "scroll-m-24 px-8 py-16 max-sm:px-4 max-sm:py-10";
           ))
         }
       </div>
+
+      <figure data-reveal="up" class="mx-auto flex w-full max-w-4xl flex-col gap-3">
+        <div class="overflow-hidden rounded-2xl border border-mint-100 dark:border-zinc-800">
+          <Video
+            provider="file"
+            src={reel.src}
+            poster={reel.poster}
+            alt={c.reelAlt}
+            aria-label={c.reelPlay}
+          />
+        </div>
+        <figcaption class="flex flex-col gap-1 text-center">
+          <span class="text-base font-bold text-blacktext dark:text-white">{c.reelTitle}</span>
+          <span class="text-sm font-normal text-blacktext/70 dark:text-zinc-400">{c.reelText}</span>
+        </figcaption>
+      </figure>
     </div>
   </section>
 

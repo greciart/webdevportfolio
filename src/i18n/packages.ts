@@ -28,6 +28,12 @@ export type PackagesCopy = {
   tiersTitle: string;
   tiersTitleAccent: string;
   tiersIntro: string;
+  reelTitle: string;
+  reelText: string;
+  reelAlt: string;
+  reelPlay: string;
+  reelSchemaName: string;
+  reelSchemaDescription: string;
   tierLabel: string;
   bestForLabel: string;
   includesLabel: string;
@@ -86,6 +92,14 @@ const en: PackagesCopy = {
   tiersTitleAccent: "tiers",
   tiersIntro:
     "These are not rigid boxes, and they are not ordered by price. They describe how a build is put together, which is what actually decides the timeline. Startups mostly begin at the first one because it is the fastest way to a working store. Larger companies, and anyone with room to invest more, pick the other three just as often, and for them the choice is about what the site has to do rather than about cost.",
+  reelTitle: "Tier 01 in practice: WordPress sites",
+  reelText:
+    "A reel of WordPress sites I've built. No heavy animation: the work goes into clean design, SEO and load speed.",
+  reelAlt: "Frame from Grecia V.'s WordPress web design showreel",
+  reelPlay: "Play the WordPress web design showreel",
+  reelSchemaName: "WordPress Web Design Showreel · Grecia V.",
+  reelSchemaDescription:
+    "WordPress websites designed and built by Grecia V., optimized for SEO and load speed.",
   tierLabel: "Tier",
   bestForLabel: "Best for",
   includesLabel: "What you get",
@@ -407,6 +421,14 @@ const es: PackagesCopy = {
   tiersTitleAccent: "niveles",
   tiersIntro:
     "No son cajas rígidas, ni están ordenados por precio. Describen cómo se construye cada sitio, que es lo que de verdad decide el tiempo. Las startups suelen empezar por el primero porque es la vía más rápida a una tienda funcionando. Las empresas más grandes, y quien tenga margen para invertir más, eligen los otros tres con la misma frecuencia, y ahí la decisión va de qué tiene que hacer el sitio y no de cuánto cuesta.",
+  reelTitle: "El nivel 01 en la práctica: sitios en WordPress",
+  reelText:
+    "Un recorrido por sitios en WordPress que he hecho. Sin animaciones pesadas: el trabajo va en un diseño limpio, el SEO y la velocidad de carga.",
+  reelAlt: "Fotograma del showreel de diseño web en WordPress de Grecia V.",
+  reelPlay: "Reproducir el showreel de diseño web en WordPress",
+  reelSchemaName: "Showreel de diseño web en WordPress · Grecia V.",
+  reelSchemaDescription:
+    "Sitios web en WordPress diseñados y desarrollados por Grecia V., optimizados para SEO y velocidad de carga.",
   tierLabel: "Nivel",
   bestForLabel: "Ideal para",
   includesLabel: "Qué obtienes",

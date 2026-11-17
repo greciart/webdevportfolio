@@ -11,15 +11,21 @@
  *  - poster: poster image url
  *  - captions: optional VTT url
  *  - aspect: padding-top percentage, e.g. '56.25%'
+ *  - srcMobile / posterMobile / aspectMobile: optional second cut of the video
+ *    (e.g. a vertical one) used below 768px. The choice is made when the
+ *    viewer presses play, so only one of the two files is ever downloaded.
  *  - class: extra classes on the wrapper
  */
 interface Props {
   provider?: "youtube" | "vimeo" | "file";
   id?: string;
   src?: string;
+  srcMobile?: string;
   poster?: string;
+  posterMobile?: string;
   captions?: string;
   aspect?: string;
+  aspectMobile?: string;
   alt?: string;
   class?: string;
   "aria-label"?: string;
@@ -29,9 +35,12 @@ const {
   provider = "youtube",
   id = "",
   src = "",
+  srcMobile = "",
   poster = "",
+  posterMobile = "",
   captions = "",
   aspect = "56.25%",
+  aspectMobile = "",
   alt = "Video preview",
   class: className = "",
   "aria-label": ariaLabel = "Reproducir video",
@@ -42,7 +51,10 @@ const fallbackPoster =
 ---
 
 <div class:list={["astro-video-wrapper", className]}>
-  <div class="astro-video-inner" style={`padding-top:${aspect};`}>
+  <div
+    class="astro-video-inner"
+    style={`--video-aspect:${aspect};--video-aspect-mobile:${aspectMobile || aspect};`}
+  >
     <div
       class="astro-video-placeholder"
       role="button"
@@ -51,10 +63,16 @@ const fallbackPoster =
       data-provider={provider}
       data-id={id}
       data-src={src}
+      data-src-mobile={srcMobile}
       data-poster={poster}
       data-captions={captions}
     >
-      {fallbackPoster ? (
+      {fallbackPoster && posterMobile ? (
+        <picture>
+          <source media="(max-width: 767px)" srcset={posterMobile} />
+          <img src={fallbackPoster} alt={alt} loading="lazy" decoding="async" />
+        </picture>
+      ) : fallbackPoster ? (
         <img src={fallbackPoster} alt={alt} />
       ) : (
         <div style="background:#000;width:100%;height:100%;"></div>
@@ -67,7 +85,8 @@ const fallbackPoster =
 <style>
   .astro-video-wrapper { max-width:100%; }
   /* Clips the poster and the mounted player to the wrapper's rounded corners. */
-  .astro-video-inner { position:relative; width:100%; overflow:hidden; border-radius:inherit; }
+  .astro-video-inner { position:relative; width:100%; overflow:hidden; border-radius:inherit; padding-top:var(--video-aspect); }
+  @media (max-width: 767px) { .astro-video-inner { padding-top:var(--video-aspect-mobile); } }
   .astro-video-placeholder { position:absolute; left:0; top:0; width:100%; height:100%; cursor:pointer; display:flex; align-items:center; justify-content:center; }
   .astro-video-placeholder img { position:absolute; left:0; top:0; width:100%; height:100%; object-fit:cover; }
   .astro-video-play { position:relative; z-index:2; background:rgba(0,0,0,0.6); color:#fff; border:0; border-radius:999px; padding:0.5rem 0.7rem; font-size:1.25rem; }
@@ -86,7 +105,12 @@ const fallbackPoster =
 
   function mountVideo(el: HTMLElement | null) {
     if (!el) return;
-    const { provider, id, src, captions } = el.dataset;
+    const { provider, id, captions, srcMobile } = el.dataset;
+    // Same breakpoint as the poster's <source media> and the aspect switch.
+    const src =
+      srcMobile && window.matchMedia("(max-width: 767px)").matches
+        ? srcMobile
+        : el.dataset.src;
 
     if ((provider === "youtube" || provider === "vimeo") && id) {
       const iframe = document.createElement("iframe");

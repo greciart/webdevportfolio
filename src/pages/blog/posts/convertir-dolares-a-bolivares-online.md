@@ -11,6 +11,7 @@ tags:
   [
     "Web Development",
     "Web Design & UX",
+    "Creative Coding",
     "Developer Tools"
   ]
 languages: ["html", "javascript", "tailwind", "netlify"]

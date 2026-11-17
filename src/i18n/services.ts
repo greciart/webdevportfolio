@@ -45,6 +45,12 @@ export type ServicesCopy = {
   polyLevels: Level[];
   pipeline: string[];
   threeDGalleryTitle: string;
+  showreelTitle: string;
+  showreelText: string;
+  showreelAlt: string;
+  showreelPlay: string;
+  showreelSchemaName: string;
+  showreelSchemaDescription: string;
 
   immersiveTitle: string;
   immersiveTitleAccent: string;
@@ -183,6 +189,14 @@ const en: ServicesCopy = {
   ],
   pipeline: ["Blender · modeling", "Blender · animation & render", "Premiere Pro / CapCut · edit"],
   threeDGalleryTitle: "3D work",
+  showreelTitle: "3D showreel 2026",
+  showreelText:
+    "Modeling, animation and rendering in Blender, all original work made without AI.",
+  showreelAlt: "Frame from Grecia V.'s 2026 3D showreel, made in Blender",
+  showreelPlay: "Play the 3D showreel",
+  showreelSchemaName: "3D Showreel 2026 · Grecia V.",
+  showreelSchemaDescription:
+    "3D showreel by Grecia V.: modeling, animation and rendering made in Blender. Original 3D art made without AI.",
 
   immersiveTitle: "Immersive Interactive",
   immersiveTitleAccent: "Experiences",
@@ -372,6 +386,14 @@ const es: ServicesCopy = {
   ],
   pipeline: ["Blender · modelado", "Blender · animación y render", "Premiere Pro / CapCut · edición"],
   threeDGalleryTitle: "Trabajos en 3D",
+  showreelTitle: "Showreel 3D 2026",
+  showreelText:
+    "Modelado, animación y render en Blender, todo trabajo original hecho sin IA.",
+  showreelAlt: "Fotograma del showreel 3D 2026 de Grecia V., hecho en Blender",
+  showreelPlay: "Reproducir el showreel 3D",
+  showreelSchemaName: "Showreel 3D 2026 · Grecia V.",
+  showreelSchemaDescription:
+    "Showreel 3D de Grecia V.: modelado, animación y render hechos en Blender. Arte 3D original hecho sin IA.",
 
   immersiveTitle: "Experiencias interactivas",
   immersiveTitleAccent: "inmersivas",

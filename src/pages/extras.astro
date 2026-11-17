@@ -4,6 +4,7 @@ import Heading from "../components/ui/Heading.astro";
 import Button from "../components/ui/Button.astro";
 import MasonryGallery from "../components/portfolio/MasonryGallery.astro";
 import GalleryLightbox from "../components/portfolio/GalleryLightbox.astro";
+import Video from "../components/Video.astro";
 import { Icon } from "astro-icon/components";
 import {
   getBrandingGallery,
@@ -25,6 +26,28 @@ const immersiveGallery = getImmersiveGallery(lang);
 const p = (path) => localizePath(path, lang);
 
 const { pageTitle, description } = c;
+
+// Showreel files live in public/videos, written by the compression script.
+// The vertical cut is only fetched on phones, when the viewer presses play.
+const showreel = {
+  src: "/videos/showreel-3d-blender-grecia-v.mp4",
+  srcMobile: "/videos/showreel-3d-blender-grecia-v-vertical.mp4",
+  poster: "/videos/posters/showreel-3d-blender-grecia-v.webp",
+  posterMobile: "/videos/posters/showreel-3d-blender-grecia-v-vertical.webp",
+};
+// VideoObject lets Google list the showreel in video results.
+const videoSchema = [
+  {
+    "@type": "VideoObject",
+    name: c.showreelSchemaName,
+    description: c.showreelSchemaDescription,
+    thumbnailUrl: new URL(showreel.poster, Astro.site).href,
+    contentUrl: new URL(showreel.src, Astro.site).href,
+    uploadDate: "2026-11-17",
+    inLanguage: lang,
+    author: { "@id": `${Astro.site}#person` },
+  },
+];
 
 // Illustration sits third, between 3D and Interactive: the page then runs from
 // brand identity through visual craft and ends on the most technical service.
@@ -60,7 +83,7 @@ const chip =
   "rounded-full border border-mint-200 bg-mint-50 px-3 py-1.5 text-xs font-semibold text-mint-700 dark:border-mint-800/50 dark:bg-mint-900/30 dark:text-mint-300";
 ---
 
-<Layout pageTitle={pageTitle} description={description}>
+<Layout pageTitle={pageTitle} description={description} schema={videoSchema}>
   <!-- ===================== HERO ===================== -->
   <section class="relative px-8 pb-8 pt-16 max-sm:px-4 max-sm:pt-10">
     <div class="blur-circle"></div>
@@ -253,6 +276,27 @@ c.brandingTools.map((tool) => <span class={chip}>{tool}</span>)
           }
         </p>
       </header>
+
+      <!-- Showreel first: it is the strongest proof in the section. -->
+      <figure data-reveal="scale" class="flex flex-col gap-3">
+        <div class="mx-auto w-full overflow-hidden rounded-2xl border border-mint-100 dark:border-zinc-800 max-md:max-w-sm">
+          <Video
+            provider="file"
+            src={showreel.src}
+            srcMobile={showreel.srcMobile}
+            poster={showreel.poster}
+            posterMobile={showreel.posterMobile}
+            aspect="56.25%"
+            aspectMobile="177.78%"
+            alt={c.showreelAlt}
+            aria-label={c.showreelPlay}
+          />
+        </div>
+        <figcaption class="flex flex-col gap-1 text-center">
+          <span class="text-base font-bold text-blacktext dark:text-white">{c.showreelTitle}</span>
+          <span class="text-sm font-normal text-blacktext/70 dark:text-zinc-400">{c.showreelText}</span>
+        </figcaption>
+      </figure>
 
       <div data-reveal-stagger="scale" class="grid grid-cols-3 gap-6 max-lg:grid-cols-1">
         {
